@@ -2,7 +2,7 @@
 title: Android SDK概述
 description: Android SDK概述
 exl-id: a1d98325-32a1-4881-8635-9a3c38169422
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
 source-wordcount: '2720'
 ht-degree: 0%
@@ -14,9 +14,6 @@ ht-degree: 0%
 >[!NOTE]
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
-
-</br>
-
 
 ## 介绍 {#intro}
 
@@ -34,8 +31,6 @@ Android AccessEnabler是一个Java Android库，它使移动设备应用程序�
 - [通用初始身份验证工作流](#generic)
 - [注销工作流](#logout)
 
-
-
 ### 初始化后工作流 {#post-init}
 
 AccessEnabler支持的所有权利工作流假定您之前已调用 [`setRequestor()`](#setRequestor) 以确立你的身份。 进行此调用以仅提供一次请求者ID，通常在应用程序的初始化/设置阶段进行。
@@ -50,8 +45,6 @@ AccessEnabler支持的所有权利工作流假定您之前已调用 [`setRequest
 - 或者两者都做。
 
 至于是否等待成功的通知，将由您自行决定。 [`setRequestor()`](#setRequestor) 或者依赖AccessEnabler的呼叫队列机制。 由于所有后续授权和身份验证请求都需要请求者ID和相关配置信息， [`setRequestor()`](#setRequestor) 方法会有效地阻止所有身份验证和授权API调用，直到初始化完成。
-
-
 
 ### 通用初始身份验证工作流 {#generic}
 

@@ -2,9 +2,9 @@
 title: Android 10应用程序上的Access Enabler Android SDK单点登录(SSO)
 description: Android 10应用程序上的Access Enabler Android SDK单点登录(SSO)
 exl-id: dedade15-c451-4757-b684-d3728e11dd87
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '377'
+source-wordcount: '374'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 ## 行为
 
-根据您应用程序的 **目标SDK级别** 或使用 **android：requestLegacyExternalStorage** 清单属性Access Enabler Android版本3.2.1 SDK（最新）和先前版本提供的单点登录(SSO)当前行为如下所示：
+根据您应用程序的 **[!UICONTROL target SDK level]** 或使用 **android：requestLegacyExternalStorage** 清单属性Access Enabler Android版本3.2.1 SDK（最新）和先前版本提供的单点登录(SSO)当前行为如下所示：
 
 - 您的应用程序目标 **Android 9（API级别28）** 或以下 **-\>** 单点登录(SSO) **将起作用**
 - 您的应用程序目标 **Android 10** **（API级别29）** 并且会 **设置** 的值 **requestLegacyExternalStorage设置为true** 在应用程序的清单文件中 **-\>** 单点登录(SSO) **将起作用**

@@ -2,7 +2,7 @@
 title: Android SDK指南
 description: Android SDK指南
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
 source-wordcount: '1685'
 ht-degree: 0%
@@ -32,10 +32,13 @@ ht-degree: 0%
 
 AccessEnabler域的目标是隐藏授权工作流的所有复杂内容，并（通过AccessEnabler库）向上层应用程序提供一组用于实施授权工作流的简单授权基元：
 
-1. 设置请求者身份
-1. 检查并获取针对特定身份提供者的身份验证
-1. 检查并获取特定资源的授权
-1. 注销
+1. 设置请求者身份。
+
+1. 检查并获取针对特定身份提供者的身份验证。
+
+1. 检查并获取特定资源的授权。
+
+1. 注销。
 
 AccessEnabler的网络活动发生在不同的线程中，因此从不阻止UI线程。 因此，两个应用程序域之间的双向通信渠道必须遵循完全异步模式：
 
@@ -50,8 +53,6 @@ AccessEnabler的网络活动发生在不同的线程中，因此从不阻止UI�
 1. [授权流程](#authz_flow)
 1. [查看媒体流](#media_flow)
 1. [注销流程](#logout_flow)
-
-
 
 ### A.先决条件 {#prereqs}
 
@@ -137,8 +138,6 @@ AccessEnabler的网络活动发生在不同的线程中，因此从不阻止UI�
 
    - **触发器：** setAuthenticationStatus()回调
 
-
-
 ### C.身份验证流程 {#authn_flow}
 
 1. 调用 [`getAuthentication()`](#$getAuthN) 启动身份验证流程，或获取用户已进行身份验证的确认。\
@@ -151,7 +150,6 @@ AccessEnabler的网络活动发生在不同的线程中，因此从不阻止UI�
 1. 用户选择提供程序后，请从获取用户MVPD的URL `navigateToUrl()` 回调。  打开WebView并将该WebView控件定向到URL。
 
 1. 通过上一步中实例化的WebView，用户登陆MVPD的登录页面并输入登录凭据。 在WebView中执行了若干重定向操作。
-
 
    **注意：** 此时，用户可以取消身份验证流程。 如果发生这种情况，您的UI层负责通过调用，向AccessEnabler通知此事件 `setSelectedProvider()` 替换为 `null` 作为参数。 这允许AccessEnabler清理其内部状态并重置身份验证流程。
 

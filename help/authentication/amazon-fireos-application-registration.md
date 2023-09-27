@@ -2,9 +2,9 @@
 title: Amazon FireOS应用程序注册
 description: Amazon FireOS应用程序注册
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '513'
 ht-degree: 0%
 
 ---
@@ -33,25 +33,37 @@ ht-degree: 0%
 
 ### 如果您有权访问Adobe的TVE仪表板：
 
-- 打开浏览器并导航到 <https://console.auth.adobe.com>
-- 导航到 `Channels` 部分，然后选择您的渠道。
-- 导航到 `Registered Applications` 选项卡。
-- 单击 `Add new application`.
-- 提供应用程序的名称和版本，并选择可在哪些平台上使用该应用程序（例如，我们示例中为Android）。
-- 通过从已为程序员配置的域列表中进行选择，提供域名。
-- 将更改推送到服务器，然后导航回渠道的已注册应用程序选项卡。
-- 您应该会看到一个包含所有已注册应用程序的列表。 单击 `Download` 您刚刚创建的应用程序上的按钮。 注：您可能需要等待几分钟，软件语句才可供下载。
-- 将下载文本文件。 将其内容用作软件声明。
+1. 打开浏览器并导航到 `https://console.auth.adobe.com`.
+
+1. 导航至 **[!UICONTROL Channels]** 部分，然后选择您的渠道。
+
+1. 导航至 **[!UICONTROL Registered Applications]** 选项卡。
+
+1. 单击 **[!UICONTROL Add new application]**.
+
+1. 提供应用程序的名称和版本，并选择可在其中使用该应用程序的平台（例如Android）。
+
+1. 提供 **[!UICONTROL Domain Name]** 从已为程序员配置的域列表中进行选择。
+
+1. 将更改推送到服务器，然后导航回您渠道的 **[!UICONTROL Registered Applications]** 选项卡。
+
+   您应该会看到一个包含所有已注册应用程序的列表。
+
+1. 单击 **[!UICONTROL Download]** 在您刚刚创建的应用程序上。
+
+   您可能需要等待几分钟，软件语句才可供下载。
+
+   下载文本文件。 将其内容用作软件声明。
 
 有关更多信息，请参阅 [动态客户端注册管理](/help/authentication/dynamic-client-registration-management.md)
 
 ### 如果您无权访问Adobe的TVE功能板：
 
-将票证提交到 <tve-support@adobe.com>. 请包括所有必需的信息，包括渠道、应用程序名称、版本和平台，我们的支持团队将为您制作一份软件声明。
+将票证提交到 [tve-support@adobe.com](mailto:tve-support@adobe.com). 包括所有必需的信息（包括渠道、应用程序名称、版本和平台），我们的支持团队将为您创建一份软件声明。
 
-## 如何使用软件声明？ {#use}
+## 如何使用软件声明 {#use}
 
-获取软件语句后，您需要在Access Enabler构造函数中将其作为参数传递。 我们建议将软件声明托管在远程位置。 这样，您就可以轻松地撤销和更改软件语句，而无需发布应用程序的新版本。
+获取软件语句后，需要将其作为参数在Access Enabler构造函数中传递。 Adobe建议将软件语句托管在远程位置。 这样，您就可以轻松地撤销和更改软件语句，而无需发布应用程序的新版本。
 
 ## 如何使用软件声明 {#use-both}
 

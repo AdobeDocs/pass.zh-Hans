@@ -2,7 +2,7 @@
 title: Apple SSO指南(REST API)
 description: Apple SSO指南(REST API)
 exl-id: cb27c4b7-bdb4-44a3-8f84-c522a953426f
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
 source-wordcount: '1435'
 ht-degree: 0%
@@ -21,13 +21,9 @@ Adobe Pass身份验证REST API可以通过我们所说的Apple SSO工作流程�
 
 请注意，本文档可用作现有REST API文档的扩展，您可以找到该文档 [此处](/help/authentication/rest-api-reference.md).
 
-</br>
-
 ## 指南 {#Cookbooks}
 
 为了从Apple SSO用户体验中获益，一个应用程序需要将 [视频订阅者帐户](https://developer.apple.com/documentation/videosubscriberaccount) 由Apple开发的框架，而关于Adobe Pass身份验证REST API通信，则必须遵循下面提供的提示顺序。
-
-</br>
 
 ### 身份验证 {#Authentication}
 
@@ -44,10 +40,8 @@ Adobe Pass身份验证REST API可以通过我们所说的Apple SSO工作流程�
 - [继续授权流程](#Proceed_with_authorization_flows)
 
 
-
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/qu/platform-sso.jpeg)
 
-</br>
 
 #### 步骤：“是否存在有效的Adobe身份验证令牌？” {#Is_there_a_valid_Adobe_authentication_token}
 
@@ -55,7 +49,6 @@ Adobe Pass身份验证REST API可以通过我们所说的Apple SSO工作流程�
 >
 > **<u>提示：</u>** 通过以下媒体实施此操作 [Adobe Pass身份验证](/help/authentication/check-authentication-token.md) 服务。
 
-</br>
 
 #### 步骤：“用户是否通过Platform SSO登录？” {#Is_the_user_logged_in_via_Platform_SSO}
 
@@ -127,8 +120,6 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 ...  
 ```
 
-</br>
-
 #### 步骤：“获取Adobe配置” {#Fetch_Adobe_configuration}
 
 >[!TIP]
@@ -139,8 +130,6 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 >[!TIP]
 >
 > **<u>专业提示：</u>** 请注意MVPD属性： *`enablePlatformServices`*， *`boardingStatus`*， *`displayInPlatformPicker`*， *`platformMappingId`*， *`requiredMetadataFields`* 并特别注意其他步骤的代码片段中的注释。
-
-</br>
 
 #### 步骤“使用Adobe配置启动平台SSO工作流” {#Initiate_Platform_SSO_workflow_with_Adobe_config}
 
@@ -263,8 +252,6 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 >
 > **<u>专业提示：</u>** 请注意中的代码片段 [“使用Adobe配置启动平台SSO工作流”](#Initiate_Platform_SSO_workflow_with_Adobe_config) 步骤。 用户登录成功，以防出现 *`vsaMetadata!.accountProviderIdentifier`* 包含有效值，并且当前日期未超过 *`vsaMetadata!.authenticationExpirationDate`* 值。
 
-</br>
-
 #### 步骤“从Adobe获取所选MVPD的配置文件请求” {#Obtain_a_profile_request_from_Adobe_for_the_selected_MVPD}
 
 >[!TIP]
@@ -274,8 +261,6 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 >[!TIP]
 >
 > **<u>专业提示：</u>** 请注意，从视频订阅者帐户框架中获取的提供程序标识符表示 *`platformMappingId`* 在Adobe Pass身份验证配置方面。 因此，应用程序必须使用 *`platformMappingId`* 值，通过Adobe Pass身份验证 [提供MVPD列表](/help/authentication/provide-mvpd-list.md) 服务。
-
-</br>
 
 #### 步骤：“将Adobe请求转发给Platform SSO以获取配置文件” {#Forward_the_Adobe_request_to_Platform_SSO_to_obtain_the_profile}
 
