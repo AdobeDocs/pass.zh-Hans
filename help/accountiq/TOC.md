@@ -2,11 +2,11 @@
 product: adobe primetime
 audience: end-user
 feature: Account IQ
-user-guide-description: Adobe Pass Account IQ帮助提供有关帐户IQ组件的信息，并引导您了解使用各种组件的用户旅程。
+user-guide-description: Adobe Pass 帐户 IQ 帮助提供有关帐户 IQ 组件的信息，并引导您了解使用各种组件的用户历程。
 source-git-commit: 2ced89dc1f77d2c090b599c40e778f3054f1a8dd
 workflow-type: tm+mt
 source-wordcount: '142'
-ht-degree: 0%
+ht-degree: 16%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 0%
 + Account IQ组件 {#account-iq-components}
    + [区段和时间范围](/help/accountiq/segments-timeframe.md)
    + [仪表板](/help/accountiq/dashboard.md)
-   + 报表 {#reports-account-iq}
+   + 报告 {#reports-account-iq}
    + [一般使用情况报表](/help/accountiq/general-usage-reports.md)
    + [共享帐户报表](/help/accountiq/shared-acc-reports.md)
    + 共享组件 {#sharing-components}
