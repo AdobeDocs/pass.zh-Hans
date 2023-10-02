@@ -3,7 +3,7 @@ product: adobe primetime
 feature: Concurrency Monitoring
 audience: end-user
 user-guide-title: Adobe Pass 并发监控
-user-guide-description: 了解如何定义和强制限制多个应用程序的并发使用。
+user-guide-description: 了解如何定义并在多个应用程序上施加并发使用限制。
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
 source-wordcount: '141'

@@ -3,7 +3,7 @@ product: adobe primetime
 audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
-user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架来确定请求访问资源的人员是否有权访问。
+user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
 source-git-commit: fd65582522d6b40e5797dff192e2340c5575ef3b
 workflow-type: tm+mt
 source-wordcount: '776'
