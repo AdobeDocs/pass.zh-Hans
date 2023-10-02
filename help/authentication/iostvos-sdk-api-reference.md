@@ -2,9 +2,9 @@
 title: iOS/tvOS API参考
 description: iOS/tvOS API参考
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: 2ccfa8e018b854a359881eab193c1414103eb903
+source-git-commit: 854698397d9d14c1bfddcc10eecc61c7e3c32b71
 workflow-type: tm+mt
-source-wordcount: '7010'
+source-wordcount: '7018'
 ht-degree: 0%
 
 ---
@@ -365,7 +365,8 @@ ht-degree: 0%
 **文件：** AccessEnabler/headers/AccessEnabler.h
 
 **描述：** 检查当前用户的身份验证状态。
-它通过在本地令牌存储空间中搜索有效的身份验证令牌来完成此操作。 调用此方法不会执行任何网络调用。 应用程序使用它来查询用户的身份验证状态并相应地更新UI（即更新登录/注销UI）。 身份验证状态通过 [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) 回调。
+它通过在本地令牌存储空间中搜索有效的身份验证令牌来完成此操作。 此方法不执行任何网络调用，我们建议在主线程上调用它。
+应用程序使用它来查询用户的身份验证状态并相应地更新UI（即更新登录/注销UI）。 身份验证状态通过 [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) 回调。
 
 
 <table class="pass_api_table">

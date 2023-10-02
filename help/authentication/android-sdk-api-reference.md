@@ -2,9 +2,9 @@
 title: Android SDK API参考
 description: Android SDK API参考
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: 2ccfa8e018b854a359881eab193c1414103eb903
+source-git-commit: 854698397d9d14c1bfddcc10eecc61c7e3c32b71
 workflow-type: tm+mt
-source-wordcount: '4518'
+source-wordcount: '4526'
 ht-degree: 0%
 
 ---
@@ -165,7 +165,7 @@ ht-degree: 0%
 
 ### checkAuthentication {#checkAuthN}
 
-**描述：** 检查身份验证状态。 它通过在本地令牌存储空间中搜索有效的身份验证令牌来完成此操作。 调用此方法不会执行任何网络调用。 应用程序使用它来查询用户的身份验证状态并相应地更新UI（即更新登录/注销UI）。 身份验证状态通过 [*setAuthenticationStatus()*](#setAuthNStatus) 回调。
+**描述：** 检查身份验证状态。 它通过在本地令牌存储空间中搜索有效的身份验证令牌来完成此操作。 此方法不执行任何网络调用，我们建议在主线程上调用它。 应用程序使用它来查询用户的身份验证状态并相应地更新UI（即更新登录/注销UI）。 身份验证状态通过 [*setAuthenticationStatus()*](#setAuthNStatus) 回调。
 
 如果MVPD支持“每个请求者的身份验证”功能，则可以在设备上存储多个身份验证令牌。  有关此功能的详细信息，请参阅 [缓存准则](#$caching) 部分（位于Android技术概述中）。
 
