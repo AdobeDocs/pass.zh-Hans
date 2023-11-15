@@ -1,9 +1,9 @@
 ---
 title: Adobe Pass Authentication 2.68发行说明
 description: Adobe Pass Authentication 2.68发行说明
-source-git-commit: 47e663b9bc2044a182abede390aa15c5bf7d2e87
+source-git-commit: 3271a0c31670ba086d1b0d464f4f255d1d311808
 workflow-type: tm+mt
-source-wordcount: '137'
+source-wordcount: '135'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,6 @@ ht-degree: 0%
 
 * [内部版本号](#build-number-268)
 * [新增功能](#new-features-268)
-* [MVPD更新](#mvpd-updates-268)
 * [错误修复](#bug-fixes-268)
 
 ### 内部版本号 {#build-number-268}
