@@ -1,9 +1,9 @@
 ---
 title: Adobe Pass Authentication 2.68发行说明
 description: Adobe Pass Authentication 2.68发行说明
-source-git-commit: 68e572797a39327682ea7f491ef2109374fadc2e
+source-git-commit: 47e663b9bc2044a182abede390aa15c5bf7d2e87
 workflow-type: tm+mt
-source-wordcount: '131'
+source-wordcount: '137'
 ht-degree: 0%
 
 ---
@@ -30,13 +30,9 @@ Adobe Pass身份验证： adobe-pass-**2.68.0.5**
 
 ### 新增功能 {#new-features-268}
 
-* 继续进行新REST API的内部更新。
+* 我们新的REST API的更新。  新端点尚不可用，但我们正在努力更新详细说明这些新API用法的文档。
 * 持续改善内部架构。
 * 更新了Device Atlas库以改进设备识别。
-
-### MVPD更新 {#mvpd-updates-268}
-
-* 添加了一个新的MVPD： **MAX**. 请联系您的TAM以了解更多详细信息。
 
 #### 错误修复 {#bug-fixes-268}
 
