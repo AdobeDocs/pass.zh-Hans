@@ -1,7 +1,8 @@
 ---
 title: Adobe Pass Authentication 2.68发行说明
 description: Adobe Pass Authentication 2.68发行说明
-source-git-commit: dc9572912371fb23586eafa93d06c3f3a5c546bc
+exl-id: 88628696-448e-4afa-91f0-d3767d68d2f4
+source-git-commit: 87d7380aa7045e64e8caff6d5d7610bd0917181e
 workflow-type: tm+mt
 source-wordcount: '142'
 ht-degree: 0%
@@ -25,7 +26,7 @@ ht-degree: 0%
 ### 内部版本号 {#build-number-268}
 
 Adobe Pass身份验证： adobe-pass-**2.68.0.5**
-发行日期： **11/21/2023 - 11/23/2023**
+发行日期： **12/05/2023 - 12/07/2023**
 
 ### 新增功能 {#new-features-268}
 
