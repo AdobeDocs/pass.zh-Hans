@@ -1,72 +1,83 @@
 ---
-title: 订阅者区段和时间间隔
+title: 订阅者区段和时间范围
 description: 定义同类群组或选择订阅者区段，以衡量渠道查看者在帐户IQ中使用图形工具和报表时帐户共享的可能性和模式。
 exl-id: c38cde37-70d9-486d-b8d0-7c1cbd2baf2e
-source-git-commit: 6b790728f3d6a8eed5dfc0f8b3d0dad283af6418
+source-git-commit: 567f674e14cd0fea672c99b51baf641d0092560e
 workflow-type: tm+mt
-source-wordcount: '346'
+source-wordcount: '295'
 ht-degree: 0%
 
 ---
 
 
-# 订阅者区段和时间间隔 {#cohorts-segments}
+# 订阅者区段和时间范围 {#cohorts-segments}
 
+登录Account IQ时，顶部有一个面板，可让您定义订阅者 [区段](/help/accountiq/product-concepts.md#segment-segmet-def) 筛选结果以查看订阅者共享行为和模式的报表。
 
-登录Account IQ时，顶部的区段启动器面板允许您指定订阅者 [区段](/help/accountiq/product-concepts.md#segment-segmet-def). 在查看关于订阅者共享行为和模式的报表时，这有助于筛选结果。 已选择名为“All accounts in your properties（资产中的所有帐户）”的默认区段，并且您会在区段启动器中看到以下选项：
+<!--![](assets/segment-timeframe-panel.png)-->
 
-![](assets/new-segment-selector-collapsed.png){width="800" align="left"}
++++程序员的区段选择面板
 
-*图：包含折叠区段摘要的区段启动器*
+![](assets/segment-panel-programmer.png)
 
-**A** 当前选定的区段名称<br/>
-**B** 时间间隔和粒度选择器<br/>
-**C** 区段摘要已折叠<br/>
-**D** 用于展开区段摘要的选项<br/>
-**E** 区段数据（根据一段时间内区段中的订阅者账户数计算）<br/>
-**F** 打开区段列表选项<br/>
-**G** “编辑区段”选项<br/>
-**H** “创建新区段”选项<br/>
+<!--![](assets/filter-panel.png)-->
 
-## 区段选择 {#segment-selection}
+以下下拉选项用于定义区段：
 
-对于程序员或MVPD用户，导航到 **打开区段** 选项。 从列表中选择一个区段，然后选择 **打开区段** 查看帐户共享报表。
+**[!UICONTROL MVPDs in segment]**
 
-使用 **眼睛** 图标以查看详细的段摘要，其中显示有关订户帐户数的信息，以及订户在所选时间间隔内发出的回放请求。
+此 **[!UICONTROL MVPDs in segment]** 选择器可让您选择 [MVPDs](/help/accountiq/product-concepts.md#mvpd-def) 要为其订阅者查看帐户共享报告的（个人或组）。
 
-+++程序员/MVPD的区段选择面板
+在此选择器中，除了选择单个MVPD外，您还可以选择以下组：
 
-![](assets/segment-panel-programmers-mvpds.png) {width="800" align="left"}
+* [前10个MVPD（按共享得分）](/help/accountiq/product-concepts.md#top-mvpds-def)
 
-*图：程序员/MVPD的区段面板*
+* [按使用量列出的10大MVPD](/help/accountiq/product-concepts.md#top-mvpds-def)
 
-+++
+* [按帐户列出的10大MVPD](/help/accountiq/product-concepts.md#top-mvpds-def)
 
-区段摘要用于定义以下参数：
-
-**[!UICONTROL Programmers in segment]**
+* [隔离模式](/help/accountiq/isolation-mode.md)
 
 **[!UICONTROL Channels in segment]**
 
-**[!UICONTROL MVPD in segment]**
+当您以程序员用户身份登录时，您可以选择您的渠道以查看其帐户共享分析。 使用 **[!UICONTROL Channels in segment]** 下拉选项以选择组织中的单个或多个渠道。
 
-**[!UICONTROL Metrics in segment]**
++++
 
-<!-- The definitions of these parameters will be defined in the glossary article-->
++++MVPD的区段选择面板
 
-## [!UICONTROL Granularity and time interval] {#granularity-timeinterval}
+![](assets/segment-panel-mvpd.png)
 
-此 **[!UICONTROL Granularity and time interval]** 通过选择器，可指定每周/每月聚合的日期和持续时间，用于观察订阅者帐户共享行为。 时间间隔的默认选择为当前周，但您可以使用图像中所示的选项修改持续时间。
+以下下拉选项用于定义区段：
 
-![[!UICONTROL Granularity and timeinterval]](assets/granularity-timeinterval-weekwise.png){width="350" align="left"}
+**[!UICONTROL Channels in segment]**
 
-*图：粒度和时间间隔对话框*
+此 **[!UICONTROL Channels in segment]** 通过选择器，可进一步缩小过滤器范围以选择与所选MVPD对应的渠道。
 
-**A** 从日期选取器选取日期<br/>
-**B** 选择向左箭头以向后移动<br/>
-**C** 选择向右箭头以向前移动<br/>
-**D** 按周/月选择粒度<br/>
-**E** 选定的时间间隔<br/>
+* [前10名程序员（按分享得分）](/help/accountiq/product-concepts.md#top-mvpds-def)
 
-应用这些控件，您可以将问题语句定义为“10月份观看频道X、Y和Z的MVPD A订阅者”。
+* [按使用量列出的10大程序员](/help/accountiq/product-concepts.md#top-mvpds-def)
+
+* [按帐户划分的前10名程序员](/help/accountiq/product-concepts.md#top-mvpds-def)
+
+**区段中的MVPD**
+
+当您以MVPD用户身份登录时，您的姓名将显示在的字段中 **[!UICONTROL MVPDs in segment]**.
+
++++
+
+
+
+
+<!--For example, you can define your segment as the "subscribers of the MVPD A that watched the channels X, Y, and Z".-->
+
+
+
+## [!UICONTROL Granularity and time frame] {#granularity-timeframe}
+
+此 **[!UICONTROL Granularity and time frame]** 通过选择器，可指定要查看订阅者共享行为的日期和持续时间或时间大小。
+
+![[!UICONTROL Granularity and timeframe]](assets/granularity-timeframe-weekwise.png)
+
+因此，使用这些控件，您可以将问题语句定义为“5月份观看了频道X、Y和Z的MVPD A订阅者”。
 
