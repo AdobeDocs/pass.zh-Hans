@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
 user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: 7057aeda34b4fe0d059912ab0a71ea856427654c
+source-git-commit: 31620db6a05d4c7043e49c03099e9f84cdbad4fb
 workflow-type: tm+mt
-source-wordcount: '892'
+source-wordcount: '901'
 ht-degree: 3%
 
 ---
@@ -173,6 +173,7 @@ ht-degree: 3%
       + [Adobe Pass Authentication JavaScript 4.4.0发行说明](authn-rn-javascript-440.md)
       + [Adobe Pass Authentication JavaScript 4.6.0发行说明](authn-rn-javascript-460.md)
    + iOS/tvOS SDK发行说明  {#release-notes-ios}
+      + [Adobe Pass Authentication iOS / tvOS 3.8.4发行说明](authn-rn-ios-tvos-384.md)
       + [Adobe Pass Authentication iOS / tvOS 3.8.3发行说明](authn-rn-ios-tvos-383.md)
       + [Adobe Pass Authentication iOS / tvOS 3.8.2发行说明](authn-rn-ios-tvos-382.md)
       + [Adobe Pass Authentication iOS / tvOS 3.8.1发行说明](authn-rn-ios-tvos-381.md)
