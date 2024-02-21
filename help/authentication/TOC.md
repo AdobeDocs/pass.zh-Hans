@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
 user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: 31620db6a05d4c7043e49c03099e9f84cdbad4fb
+source-git-commit: 2dbb45aebb1a00863a9344114963f6df95763dfc
 workflow-type: tm+mt
-source-wordcount: '901'
+source-wordcount: '915'
 ht-degree: 3%
 
 ---
@@ -155,6 +155,7 @@ ht-degree: 3%
    + [监控Adobe PassAdobePayTV Pass](monitoring-adobe-pay-tv-pass.md)
    + [最低系统要求](minimum-system-requirements.md)
 + 发行说明 {#release-notes}
+   + [Adobe Pass Authentication 2.69发行说明](auth-rn-269.md)
    + [Adobe Pass Authentication 2.68发行说明](auth-rn-268.md)
    + [Adobe Pass Authentication 2.67发行说明](auth-rn-267.md)
    + [Adobe Pass Authentication 2.66发行说明](auth-rn-266.md)
@@ -165,13 +166,14 @@ ht-degree: 3%
    + [Adobe Pass Authentication 2.63发行说明](auth-rn-263.md)
    + [Adobe Pass Authentication 2.62.1发行说明](auth-rn-2621.md)
    + JavaScript SDK发行说明  {#release-notes-javascript}
-      + [Adobe Pass Authentication JavaScript 3.5.0发行说明](authn-rn-javascript-350.md)
-      + [Adobe Pass Authentication JavaScript 4.0.0发行说明](authn-rn-javascript-400.md)
-      + [Adobe Pass Authentication JavaScript 4.1.0发行说明](authn-rn-javascript-410.md)
-      + [Adobe Pass身份验证JavaScript 4.1.1发行说明](authn-rn-javascript-411.md)
-      + [Adobe Pass Authentication JavaScript 4.2.0发行说明](authn-rn-javascript-420.md)
-      + [Adobe Pass Authentication JavaScript 4.4.0发行说明](authn-rn-javascript-440.md)
+      + [Adobe Pass Authentication JavaScript 4.7.0发行说明](authn-rn-javascript-470.md)
       + [Adobe Pass Authentication JavaScript 4.6.0发行说明](authn-rn-javascript-460.md)
+      + [Adobe Pass Authentication JavaScript 4.4.0发行说明](authn-rn-javascript-440.md)
+      + [Adobe Pass Authentication JavaScript 4.2.0发行说明](authn-rn-javascript-420.md)
+      + [Adobe Pass身份验证JavaScript 4.1.1发行说明](authn-rn-javascript-411.md)
+      + [Adobe Pass Authentication JavaScript 4.1.0发行说明](authn-rn-javascript-410.md)
+      + [Adobe Pass Authentication JavaScript 4.0.0发行说明](authn-rn-javascript-400.md)
+      + [Adobe Pass Authentication JavaScript 3.5.0发行说明](authn-rn-javascript-350.md)
    + iOS/tvOS SDK发行说明  {#release-notes-ios}
       + [Adobe Pass Authentication iOS / tvOS 3.8.4发行说明](authn-rn-ios-tvos-384.md)
       + [Adobe Pass Authentication iOS / tvOS 3.8.3发行说明](authn-rn-ios-tvos-383.md)
@@ -185,7 +187,7 @@ ht-degree: 3%
       + [证书常见问题解答](certificates-qa.md)
       + JavaScript SDK {#javascript}
          + [适用于Safari浏览器的JS SDK限制](js-sdk-limitations-for-safari-browser.md)
-         + [Cookie更新 — SameSite和Secure标记](cookies-updates--samesite-and-secure-flags.md)
+         + [Cookie更新 — SameSite和Secure标记](cookies-updates-samesite-and-secure-flags.md)
       + Android SDK {#android}
          + [Android 10应用程序上的Access Enabler Android SDK单点登录(SSO)](access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
          + [Adobe Pass身份验证和Android 6“Marshmallow”新权限模型](adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model.md)
@@ -202,7 +204,7 @@ ht-degree: 3%
       + [在资格预审中设置环境和测试](setting-up-your-environment-and-testing-in-prequal.md)
       + [如何使用AdobeAPI测试站点测试身份验证和授权流](test-authn-authz-flows-using-adobes-api-test-site.md)
    + 无客户端API {#clientless-api}
-      + [无客户端API实施 — 错误代码/包含可能原因/原因的消息](clientless-api-implementation-error-codes--messages-with-probable-reason--cause.md)
+      + [无客户端API实施 — 错误代码/包含可能原因/原因的消息](clientless-api-implementation-error-codes-messages-with-probable-reason-cause.md)
       + [缺少设备ID时的无客户端API流](clientless-api-flow-in-the-absence-of-device-id.md)
       + [无客户端：避免在/authenticate请求中使用&#39;&amp;&#39;reg_code](clientless-avoid-using-reg-code-in-authenticate-request.md)
       + [为Xbox 360和XboxOne无客户端程序员启用Adobe Pass授权服务](enabling-primetime-entitlement-services-for-a-programmer-on-xbox-360-and-xboxone-clientless-solution.md)
