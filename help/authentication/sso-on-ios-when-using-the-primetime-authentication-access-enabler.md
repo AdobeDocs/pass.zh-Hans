@@ -2,9 +2,9 @@
 title: 使用iOS Authentication Access Enabler时Adobe Pass上的SSO
 description: 使用iOS Authentication Access Enabler时Adobe Pass上的SSO
 exl-id: 882f0abb-2e6e-461d-a375-3ab410991935
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 929d1cc2e0466155b29d1f905f2979c942c9ab8c
 workflow-type: tm+mt
-source-wordcount: '1164'
+source-wordcount: '1121'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ SSO行为如下所示：
    - **重要提示：** 请注意，iOS SDK 1.9.4版本具有 [将iOS的最低部署目标提高到了iOS 7。](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
 - **iOS 7及更高版本**：SSO将在以下条件下工作：
 
-1. 使用相同的Apple分发配置文件或属于同一团队的配置文件发布应用程序。 这是应用程序在iOS 7和更高版本上共享自定义粘贴板的唯一方法。 在所有其他情况下，粘贴板是按应用程序沙箱的。 从 [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html)： \+\[UIPasteboard粘贴板WithName:create:\]和+\[UIPasteboard粘贴板WithUniqueName\]现在唯一给定名称，仅允许同一应用程序组中的这些应用程序访问粘贴板。 如果开发人员尝试使用已存在的名称创建粘贴板，并且这些名称不属于同一应用程序包，则将获取他们自己的独特专用粘贴板。 请注意，这不会影响系统提供的粘贴板、“常规”和“查找”。
+1. 使用相同的Apple分发配置文件或属于同一团队的配置文件发布应用程序。 这是应用程序在iOS 7和更高版本上共享自定义粘贴板的唯一方法。 在所有其他情况下，粘贴板是按应用程序沙箱的。 从 [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html)： \+\[`UIPasteboard pasteboardWithName:create:\`]和+\[`UIPasteboard pasteboardWithUniqueName`\]现在唯一指定名称，以便仅允许同一应用程序组中的这些应用程序访问粘贴板。 如果开发人员尝试使用已存在的名称创建粘贴板，并且这些名称不属于同一应用程序包，则将获取他们自己的独特专用粘贴板。 请注意，这不会影响系统提供的粘贴板、“常规”和“查找”。
 
 1. 应用程序具有相同的捆绑ID前缀（除最后一个组件之外的所有组件）。 只有共享同一捆绑ID前缀的应用程序才会计算相同的IDFV。 从 [*https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice\_Class/index.html\#//apple\_ref/occ/instp/UIDevice/identifierForVendor*](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/identifierForVendor)：在IOS 7上，捆绑包的所有组件（最后一个组件除外）都用于生成供应商ID。 如果捆绑ID只有一个组件，则使用整个捆绑ID。
 

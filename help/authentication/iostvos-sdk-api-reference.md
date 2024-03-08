@@ -2,9 +2,9 @@
 title: iOS/tvOS API参考
 description: iOS/tvOS API参考
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: 854698397d9d14c1bfddcc10eecc61c7e3c32b71
+source-git-commit: 929d1cc2e0466155b29d1f905f2979c942c9ab8c
 workflow-type: tm+mt
-source-wordcount: '7018'
+source-wordcount: '6933'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-## 介绍 {#intro}
+## 简介 {#intro}
 
 本页介绍用于Adobe Pass身份验证的iOS/tvOS本机客户端公开的方法和回调函数。 此处介绍的方法和回调函数在中定义 `AccessEnabler.h` 和 `EntitlementDelegate.h` 头文件；您可以在iOS AccessEnabler SDK中的以下位置找到它们： `[SDK directory]/AccessEnabler/headers/api/`
 
@@ -41,67 +41,67 @@ ht-degree: 0%
 
 * **[已弃用]** [init](#init)  — 实例化AccessEnabler对象。
 
-* [setOptions:options:](#setOptions)  — 配置全局SDK选项，如profile或visitorID。
+* [`setOptions:options:`](#setOptions)  — 配置全局SDK选项，如profile或visitorID。
 
-* [设置请求者：](#setReqV3)[请求者ID](#setReqV3)，[setRequestor:requestorID:服务提供商：](#setReqV3)  — 确定程序员的身份。
+* [`setRequestor:`](#setReqV3)[`requestorID`](#setReqV3)，[`setRequestor:requestorID:serviceProviders:`](#setReqV3)  — 确定程序员的身份。
 
-* **[已弃用]** [setRequestor:signedRequestorId:](#setReq)，[setRequestor:signedRequestorId:服务提供商：](#setReq)  — 确定程序员的身份。
+* **[已弃用]** [`setRequestor:signedRequestorId:`](#setReq)，[`setRequestor:signedRequestorId:serviceProviders:`](#setReq)  — 确定程序员的身份。
 
-* **[已弃用]** [setRequestor:signedRequestorId:secret：publicKey](#setReq_tvos)， [setRequestor:signedRequestorId:服务提供商:secret:公共密钥](#setReq_tvos) — 确定程序员的身份。
+* **[已弃用]** [`setRequestor:signedRequestorId:secret:publicKey`](#setReq_tvos)， [`setRequestor:signedRequestorId:serviceProviders:secret:publicKey`](#setReq_tvos) — 确定程序员的身份。
 
-* [setRequestorComplete：](#setReqComplete)  — 通知应用程序配置阶段已完成。
+* [`setRequestorComplete:`](#setReqComplete)  — 通知应用程序配置阶段已完成。
 
-* [checkAuthentication](#checkAuthN)  — 检查当前用户的身份验证状态。
+* [`checkAuthentication`](#checkAuthN)  — 检查当前用户的身份验证状态。
 
-* [getAuthentication](#getAuthN)， [getAuthentication:withData:](#getAuthN)  — 启动完整的身份验证工作流。
+* [`getAuthentication`](#getAuthN)， [`getAuthentication:withData:`](#getAuthN)  — 启动完整的身份验证工作流。
 
-* [getAuthentication：filter](#getAuthN_filter)，[getAuthentication:withData:](#getAuthN)[andFilter](#getAuthN_filter)  — 启动完整的身份验证工作流。
+* [`getAuthentication:filter`](#getAuthN_filter)，[`getAuthentication:withData:`](#getAuthN)[andFilter](#getAuthN_filter)  — 启动完整的身份验证工作流。
 
-* [displayProviderDialog：](#dispProvDialog)  — 通知您的应用程序实例化相应的UI元素，以便用户选择MVPD。
+* [`displayProviderDialog:`](#dispProvDialog)  — 通知您的应用程序实例化相应的UI元素，以便用户选择MVPD。
 
-* [setSelectedProvider：](#setSelProv)  — 通知AccessEnabler用户的MVPD选择。
+* [`setSelectedProvider:`](#setSelProv)  — 通知AccessEnabler用户的MVPD选择。
 
-* [navigateToUrl：](#nav2url)  — 通知您的应用程序需要向用户显示MVPD登录页面。
+* [`navigateToUrl:`](#nav2url)  — 通知您的应用程序需要向用户显示MVPD登录页面。
 
-* [navigateToUrl:useSVC:](#nav2urlSVC)  — 使用SFSafariViewController通知应用程序需要向用户显示MVPD登录页面
+* [`navigateToUrl:useSVC:`](#nav2urlSVC)  — 使用SFSafariViewController通知应用程序需要向用户显示MVPD登录页面
 
-* [handleExternalURL：url](#handleExternalURL)  — 完成身份验证/注销流程。
+* [`handleExternalURL:url`](#handleExternalURL)  — 完成身份验证/注销流程。
 
-* **[已弃用]** [getAuthenticationToken](#getAuthNToken)  — 从后端服务器请求身份验证令牌。
+* **[已弃用]** [`getAuthenticationToken`](#getAuthNToken)  — 从后端服务器请求身份验证令牌。
 
-* [setAuthenticationStatus:errorCode:](#setAuthNStatus)  — 通知应用程序身份验证流的状态。
+* [`setAuthenticationStatus:errorCode:`](#setAuthNStatus)  — 通知应用程序身份验证流的状态。
 
-* [checkPreauthorizedResources：](#checkPreauth)  — 确定用户是否已获得查看特定受保护资源的授权。
+* [`checkPreauthorizedResources:`](#checkPreauth)  — 确定用户是否已获得查看特定受保护资源的授权。
 
-* [checkPreauthorizedResources:cache:](#checkPreauthCache)  — 确定用户是否已获得查看特定受保护资源的授权。
+* [`checkPreauthorizedResources:cache:`](#checkPreauthCache)  — 确定用户是否已获得查看特定受保护资源的授权。
 
-* [预授权资源：](#preauthResources)  — 提供用户已被授权查看的资源列表。
+* [`preauthorizedResources:`](#preauthResources)  — 提供用户已被授权查看的资源列表。
 
-* [checkAuthorization：](#checkAuthZ)， [checkAuthorization:withData:](#checkAuthZ)  — 检查当前用户的授权状态。
+* [`checkAuthorization:`](#checkAuthZ)， [`checkAuthorization:withData:`](#checkAuthZ)  — 检查当前用户的授权状态。
 
-* [getAuthorization：](#getAuthZ)， [getAuthorization:withData:](#getAuthZ)  — 启动授权流。
+* [`getAuthorization:`](#getAuthZ)， [`getAuthorization:withData:`](#getAuthZ)  — 启动授权流。
 
-* [setToken:forResource:](#setToken)  — 通知您的应用程序已成功完成授权流程。
+* [`setToken:forResource:`](#setToken)  — 通知您的应用程序已成功完成授权流程。
 
-* [tokenRequestFailed:errorCode:errorDescription：](#tokenReqFailed)  — 通知应用程序授权流失败。
+* [`tokenRequestFailed:errorCode:errorDescription:`](#tokenReqFailed)  — 通知应用程序授权流失败。
 
-* [注销](#logout)  — 启动注销流程。
+* [`logout`](#logout)  — 启动注销流程。
 
-* [getselectedprovider](#getSelProv)  — 确定当前选择的提供程序。
+* [`getSelectedProvider`](#getSelProv)  — 确定当前选择的提供程序。
 
-* [selectedProvider：](#selProv)  — 将有关当前选定的MVPD的信息提供给应用程序。
+* [`selectedProvider:`](#selProv)  — 将有关当前选定的MVPD的信息提供给应用程序。
 
-* [getMetadata：](#getMeta)  — 检索AccessEnabler库公开为元数据的信息。
+* [`getMetadata:`](#getMeta)  — 检索AccessEnabler库公开为元数据的信息。
 
-* [presentTvProviderDialog：](#presentTvDialog)  — 通知应用程序显示Apple SSO对话框。
+* [`presentTvProviderDialog:`](#presentTvDialog)  — 通知应用程序显示Apple SSO对话框。
 
-* [cissisTvProviderDialog：](#dismissTvDialog)  — 通知应用程序隐藏Apple SSO对话框。
+* [`dismissTvProviderDialog:`](#dismissTvDialog)  — 通知应用程序隐藏Apple SSO对话框。
 
-* [setmetadatastatus:encrypted:forKey:andArguments:](#setMetaStatus)  — 提供所请求的元数据 [getMetadata：](#getMeta) 呼叫。
+* [`setMetadataStatus:encrypted:forKey:andArguments:`](#setMetaStatus)  — 提供所请求的元数据 [`getMetadata:`](#getMeta) 呼叫。
 
-* [sendTrackingData:forEventType:](#sendTracking)  — 提供跟踪数据信息。
+* [`sendTrackingData:forEventType:`](#sendTracking)  — 提供跟踪数据信息。
 
-* [MVPD](#mvpd) - MVPD类。 [包含有关MVPD的信息]
+* [`MVPD`](#mvpd) - MVPD类。 [包含有关MVPD的信息]
 
 ### init：softwareStatement {#initWithSoftwareStatement}
 
@@ -170,7 +170,7 @@ ht-degree: 0%
 [返回页首……](#apis)
 
 
-### setRequestor：requestorID， setRequestor:requestorID:服务提供商： {#setReqV3}
+### `setRequestor:requestorID`， `setRequestor:requestorID:serviceProviders:` {#setReqV3}
 
 **文件：** AccessEnabler/headers/AccessEnabler.h
 
@@ -212,7 +212,7 @@ ht-degree: 0%
 
 </br>
 
-### setRequestor:setSignedRequestorId:， setRequestor:setSignedRequestorId:服务提供商： - [已弃用] {#setReq}
+### `setRequestor:setSignedRequestorId:`， `setRequestor:setSignedRequestorId:serviceProviders:` - [已弃用] {#setReq}
 
 **文件：** AccessEnabler/headers/AccessEnabler.h
 
@@ -249,7 +249,7 @@ ht-degree: 0%
 
 [返回页首……](#apis)
 
-### setRequestor:setSignedRequestorId:密钥：publicKey， setRequestor:setSignedRequestorId:服务提供商:secret:公钥 —  [已弃用] {#setReq_tvos}
+### `setRequestor:setSignedRequestorId:secret:publicKey`， `setRequestor:setSignedRequestorId:serviceProviders:secret:publicKey` - [已弃用] {#setReq_tvos}
 
 **文件：** AccessEnabler/headers/AccessEnabler.h
 
@@ -354,6 +354,7 @@ ht-degree: 0%
    * `ACCESS_ENABLER_STATUS_ERROR`  — 配置阶段失败
 
 **触发者：**
+
 `setRequestor:setSignedRequestorId:, `[`setRequestor:setSignedRequestorId:serviceProviders:`](#setReq)
 
 [返回页首……](#apis)
@@ -396,7 +397,7 @@ ht-degree: 0%
 
 </br>
 
-### getAuthentication， getAuthentication:withData: {#getAuthN}
+### `getAuthentication`， `getAuthentication:withData:` {#getAuthN}
 
 **文件：** AccessEnabler/headers/AccessEnabler.h
 
@@ -407,7 +408,7 @@ ht-degree: 0%
 
 在MVPD登录页面上验证用户的凭据时，应用程序需要监视用户在MVPD登录页面上验证时发生的多个重定向操作。 输入正确的凭据后，WebView控件将被重定向到由定义的自定义URL。 `ADOBEPASS_REDIRECT_URL` 常量。 此URL不打算由WebView加载。 应用程序必须拦截此URL，并将此事件解释为登录阶段已完成的信号。 然后，它应该将控制权移交给AccessEnabler，以便完成身份验证流程(通过调用 [handleExternalURL](#handleExternalURL) 方法)。
 
-最后，验证状态通过 [setAuthenticationStatus:errorCode:](#setAuthNStatus) 回调。
+最后，验证状态通过 [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) 回调。
 
 <table class="pass_api_table">
 <colgroup>
@@ -456,23 +457,23 @@ ht-degree: 0%
 * *forceAuthn*：指定是否应启动身份验证流程的标记，无论用户是否已进行身份验证。
 * *数据*：包含要发送到Pay-TV密码服务的键值对的词典。 Adobe可以使用此数据启用未来的功能，而无需更改SDK。
 
-**触发的回调：** ` setAuthenticationStatus:errorCode:, `[`displayProviderDialog:`](#dispProvDialog)`,`` sendTrackingData:forEventType:`
+**触发的回调：** `setAuthenticationStatus:errorCode:`， [`displayProviderDialog:`](#dispProvDialog)， `sendTrackingData:forEventType:`
 
 
 [返回页首……](#apis)
 
 </br>
 
-### getAuthentication：filter， getAuthentication:withData:andFilter {#getAuthN_filter}
+### `getAuthentication:filter`， `getAuthentication:withData:andFilter` {#getAuthN_filter}
 
 **文件：** AccessEnabler/headers/AccessEnabler.h
 
 **描述：** 启动完整的身份验证工作流。 首先检查身份验证状态。 如果尚未经过身份验证，则身份验证流状态 — 计算机将启动：
 
 * [presentTvProviderDialog()](#presentTvDialog) 如果当前请求者至少有一个支持SSO的MVPD，则将调用。 如果没有任何MVPD支持SSO，则将开始经典身份验证流程并忽略过滤器参数。
-* 用户完成Apple SSO流程后 [cissisTvProviderDialog()](#dismissTvDialog) 将触发，身份验证过程将结束。
+* 用户完成Apple SSO流程后 [`dismissTvProviderDialog()`](#dismissTvDialog) 将触发，身份验证过程将结束。
 
-最后，验证状态通过 [setAuthenticationStatus:errorCode:](#setAuthNStatus) 回调。
+最后，验证状态通过 [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) 回调。
 
 **可用性：** v2.4+
 
@@ -509,8 +510,7 @@ ht-degree: 0%
                   withData:(NSDictionary* )data
                  andFilter:(NSDictionary *)filter;</code></pre>
 <div>
-
-</div></td>
+ </div></td>
 </tr>
 </tbody>
 </table>
@@ -615,7 +615,7 @@ ht-degree: 0%
 
 * *mvpds*：MVPD对象列表，其中包含应用程序可用于构建MVPD选择UI元素的MVPD相关信息。
 
-**触发者：** ` getAuthentication, `[getAuthentication:withData:](#getAuthN)，` getAuthorization:, `[getAuthorization:withData:](#getAuthZ)
+**触发者：** `getAuthentication`， [`getAuthentication:withData:`](#getAuthN)，`getAuthorization:`， [`getAuthorization:withData:`](#getAuthZ)
 
 
 [返回页首……](#apis)
@@ -632,7 +632,7 @@ ht-degree: 0%
 
 请注意，这不适用于提升临时传递，因为getAuthentication()方法提供了额外的参数。
 
-传递时 *null* 作为参数， Access Enabler假定用户已取消身份验证流程（即按下“后退”按钮），并通过重置身份验证状态机和调用 [setAuthenticationStatus:errorCode:](#setAuthNStatus) 使用进行回调 `AccessEnabler.PROVIDER_NOT_SELECTED_ERROR` 错误代码。
+传递时 *null* 作为参数， Access Enabler假定用户已取消身份验证流程（即按下“后退”按钮），并通过重置身份验证状态机和调用 [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) 使用进行回调 `AccessEnabler.PROVIDER_NOT_SELECTED_ERROR` 错误代码。
 
 <table class="pass_api_table">
 <colgroup>
@@ -654,7 +654,7 @@ ht-degree: 0%
 
 **参数：** 无
 
-**触发的回调：** ` setAuthenticationStatus:errorCode:,sendTrackingData:forEventType:,  `[`navigateToUrl:`](#nav2url)
+**触发的回调：** `setAuthenticationStatus:errorCode:`，`sendTrackingData:forEventType:`，  [`navigateToUrl:`](#nav2url)
 
 [返回页首……](#apis)
 
@@ -700,7 +700,7 @@ ht-degree: 0%
 
 </br>
 
-#### navigateToUrl:useSVC: {#nav2urlSVC}
+#### `navigateToUrl:useSVC:` {#nav2urlSVC}
 
 **文件：** AccessEnabler/headers/EntitlementDelegate.h
 
@@ -812,7 +812,7 @@ ht-degree: 0%
 
 &lt;/br
 
-#### setAuthenticationStatus:errorCode: {#setAuthNStatus}
+#### `setAuthenticationStatus:errorCode:` {#setAuthNStatus}
 
 **文件：** AccessEnabler/headers/EntitlementDelegate.h
 
@@ -848,7 +848,7 @@ ht-degree: 0%
    * `PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler在上层应用程序通过后重置了身份验证状态计算机 *null* 到 [`setSelectedProvider:`](#setSelProv) 中止身份验证流程。  用户可能已取消身份验证流程（例如，已按下“后退”按钮）。
    * `GENERIC_AUTHENTICATION_ERROR`  — 由于网络不可用或用户明确取消身份验证流等原因，身份验证流失败。
 
-**触发者：** ` checkAuthentication, getAuthentication, `[getAuthentication:withData:](#getAuthN)，` checkAuthorization:, `[checkAuthorization:withData:](#checkAuthZ)
+**触发者：** `checkAuthentication`， `getAuthentication`， [`getAuthentication:withData:`](#getAuthN)， `checkAuthorization:`， [`checkAuthorization:withData:`](#checkAuthZ)
 
 [返回页首……](#apis)
 
@@ -889,7 +889,7 @@ ht-degree: 0%
 
 </br>
 
-### checkPreauthorizedResources:cache: {#checkPreauthCache}
+### `checkPreauthorizedResources:cache:` {#checkPreauthCache}
 
 **文件：** AccessEnabler/headers/AccessEnabler.h
 
@@ -964,11 +964,11 @@ ht-degree: 0%
 
 </br>
 
-### checkAuthorization：， checkAuthorization:withData: {#checkAuthZ}
+### `checkAuthorization:`， `checkAuthorization:withData:` {#checkAuthZ}
 
 **文件：** AccessEnabler/headers/AccessEnabler.h
 
-**描述：** 应用程序使用此方法来检查授权状态。 首先检查身份验证状态。 如果未经过身份验证， [tokenRequestFailed:errorCode:errorDescription：](#tokenReqFailed) 会触发回调，并且方法退出。 如果用户通过了身份验证，它还会触发授权流。 欲知详情，请参阅 [`getAuthorization:`](#getAuthZ) 方法。
+**描述：** 应用程序使用此方法来检查授权状态。 首先检查身份验证状态。 如果未经过身份验证， [`tokenRequestFailed:errorCode:errorDescription:`](#tokenReqFailed) 会触发回调，并且方法退出。 如果用户通过了身份验证，它还会触发授权流。 欲知详情，请参阅 [`getAuthorization:`](#getAuthZ) 方法。
 
 
 <table class="pass_api_table">
@@ -1014,17 +1014,18 @@ ht-degree: 0%
 * *数据*：包含要发送到Pay-TV密码服务的键值对的词典。 Adobe可以使用此数据启用未来的功能，而无需更改SDK。
 
 **触发的回调：**
-[tokenRequestFailed:errorCode:errorDescription：](#tokenReqFailed)`,setToken:forResource:, sendTrackingData:forEventType:, setAuthenticationStatus:errorCode:`
+
+[`tokenRequestFailed:errorCode:errorDescription:`](#tokenReqFailed)，`setToken:forResource:`， `sendTrackingData:forEventType:`， `setAuthenticationStatus:errorCode:`
 
 [返回页首……](#apis)
 
 </br>
 
-### getAuthorization：， getAuthorization:withData: {#getAuthZ}
+### `getAuthorization:`， `getAuthorization:withData:` {#getAuthZ}
 
 **文件：** AccessEnabler/headers/AccessEnabler.h
 
-**描述：** 应用程序使用此方法来启动授权流。 如果用户尚未经过身份验证，它还会启动身份验证流程。 如果用户通过了身份验证，AccessEnabler将继续发出对授权令牌（如果本地令牌缓存中不存在有效的授权令牌）和短期媒体令牌的请求。 获得短媒体令牌后，授权流程即被视为完成。 此 [setToken:forResource:](#setToken) 会触发回调，并将短媒体令牌作为参数提供给应用程序。 如果由于任何原因，授权失败， [tokenRequestFailed:forEventType:](#tokenReqFailed) 会触发回调，并提供错误代码/详细信息。
+**描述：** 应用程序使用此方法来启动授权流。 如果用户尚未经过身份验证，它还会启动身份验证流程。 如果用户通过了身份验证，AccessEnabler将继续发出对授权令牌（如果本地令牌缓存中不存在有效的授权令牌）和短期媒体令牌的请求。 获得短媒体令牌后，授权流程即被视为完成。 此 [`setToken:forResource:`](#setToken) 会触发回调，并将短媒体令牌作为参数提供给应用程序。 如果由于任何原因，授权失败， [`tokenRequestFailed:forEventType:`](#tokenReqFailed) 会触发回调，并提供错误代码/详细信息。
 
 <table class="pass_api_table">
 <colgroup>
@@ -1075,13 +1076,15 @@ ht-degree: 0%
 **触发的其他回调：**\
 此方法还可以触发以下回调（如果还启动了身份验证流程）： `setAuthenticationStatus:errorCode:`， `displayProviderDialog:`
 
-**注意：请使用checkAuthorization： / checkAuthorization:withData: 而不是getAuthorization： / getAuthorization:withData: 尽可能。 getAuthorization： / getAuthorization:withData: 方法将启动一个完整的身份验证流程（如果用户未经身份验证），这可能会导致程序员端的复杂实施。**
+>[!NOTE]
+>
+>请使用 `checkAuthorization:` / `checkAuthorization:withData:` 而不是 `getAuthorization:` / `getAuthorization:withData:` 尽可能。 此 `getAuthorization:` / `getAuthorization:withData:` 方法将启动一个完整的身份验证流程（如果用户未经身份验证），这可能会导致程序员端的复杂实施。
 
 [返回页首……](#apis)
 
 </br>
 
-### setToken:forResource: {#setToken}
+### `setToken:forResource:` {#setToken}
 
 **文件：** AccessEnabler/headers/EntitlementDelegate.h
 
@@ -1112,13 +1115,13 @@ ht-degree: 0%
 * *令牌*：短期媒体令牌
 * *资源*：获得授权的资源
 
-**触发者：** [checkAuthorization：](#checkAuthZ)` , `[checkAuthorization:withData:](#checkAuthZ)，` `[getAuthorization：](#getAuthZ)， [getAuthorization:withData:](#getAuthZ)
+**触发者：** [`checkAuthorization:`](#checkAuthZ) ， [`checkAuthorization:withData:`](#checkAuthZ)， [`getAuthorization:`](#getAuthZ)， [`getAuthorization:withData:`](#getAuthZ)
 
 [返回页首……](#apis)
 
 </br>
 
-### tokenRequestFailed:errorCode:errorDescription： {#tokenReqFailed}
+### `tokenRequestFailed:errorCode:errorDescription:` {#tokenReqFailed}
 
 **文件：** AccessEnabler/headers/EntitlementDelegate.h
 
@@ -1152,7 +1155,7 @@ ht-degree: 0%
 * *描述*：有关失败场景的其他详细信息。 如果此描述性字符串由于任何原因不可用，Adobe Pass身份验证将发送空字符串 **(“”)**.\
   MVPD可使用此字符串传递自定义错误消息或与销售相关的消息。 例如，如果订阅者被拒绝对资源的授权，则MVPD会发送消息，例如：“您当前在包中无法访问此渠道。 如果要升级包，请单击 **此处**“ 消息由Adobe Pass身份验证通过此回调传递给程序员，程序员可以选择显示或忽略该消息。 Adobe Pass身份验证还可以使用此参数来提供可能导致错误的状况通知。 例如，“与提供商的授权服务通信时出现网络错误”。
 
-**触发者：** ` checkAuthorization:, `[checkAuthorization:withData:](#checkAuthZ)， `getAuthorization:, `[getAuthorization:withData:](#getAuthZ)
+**触发者：** `checkAuthorization:`， [`checkAuthorization:withData:`](#checkAuthZ)， `getAuthorization:`， [`getAuthorization:withData:`](#getAuthZ)
 
 [返回页首……](#apis)
 
@@ -1195,7 +1198,7 @@ ht-degree: 0%
 
 **参数：** 无
 
-**触发的回调：** `navigateToUrl:, `[`setAuthenticationStatus:errorCode:`](#setAuthNStatus)
+**触发的回调：** `navigateToUrl:`， [`setAuthenticationStatus:errorCode:`](#setAuthNStatus)
 
 
 
@@ -1396,7 +1399,7 @@ ht-degree: 0%
 
 </br>
 
-### setmetadatastatus:encrypted:forKey:andArguments: {#setMetaStatus}
+### `setMetadataStatus:encrypted:forKey:andArguments:` {#setMetaStatus}
 
 **文件：** AccessEnabler/headers/EntitlementDelegate.h
 
@@ -1525,7 +1528,7 @@ AccessEnabler会触发一个附加回调，该回调不一定与权利文件流�
    * **mvpdSelection：** 当用户在MVPD选择表单中选择MVPD时(事件为 `TRACKING_GET_SELECTED_PROVIDER`)
 * *数据*：与所报告事件关联的其他数据。 此数据以值列表的形式提供。
 
-**触发者：** `checkAuthentication, getAuthentication, `[getAuthentication:withData:](#getAuthN)， `checkAuthorization:, `[checkAuthorization:withData:](#checkAuthZ)， `getAuthorization:, `[getAuthorization:withData:](#getAuthZ)， `setSelectedProvider:`
+**触发者：** `checkAuthentication`， `getAuthentication`， [`getAuthentication:withData:`](#getAuthN)， `checkAuthorization:`， [`checkAuthorization:withData:`](#checkAuthZ)， `getAuthorization:`， [`getAuthorization:withData:`](#getAuthZ)， `setSelectedProvider:`
 
 有关解释 *数据* 数组：
 
