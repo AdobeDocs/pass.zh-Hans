@@ -2,9 +2,9 @@
 title: REST API指南（服务器到服务器）
 description: Rest API指南服务器到服务器。
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '1825'
+source-wordcount: '1847'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,9 @@ ht-degree: 0%
 
 本Cookbook文档的目的是详细介绍使用服务器到服务器体系结构实施Adobe Pass身份验证的最佳实践。  它提供了生产环境和操作的基本要求、分步流程实施以及一般注意事项。
 
+### 节流机构
+
+Adobe Pass身份验证REST API受 [节流机构](/help/authentication/throttling-mechanism.md).
 
 
 ## 组件 {#components}

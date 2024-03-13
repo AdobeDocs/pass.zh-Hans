@@ -2,9 +2,9 @@
 title: 注册页面
 description: 注册页面
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '487'
+source-wordcount: '498'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+
+>[!NOTE]
+>
+> REST API实施受限制 [节流机构](/help/authentication/throttling-mechanism.md)
 
 &lt;reggie_fqdn>：
 

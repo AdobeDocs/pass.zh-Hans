@@ -2,9 +2,9 @@
 title: 通过第二屏幕Web应用程序检查身份验证流程
 description: 通过第二屏幕Web应用程序检查身份验证流程
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '206'
+source-wordcount: '211'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+
+>[!NOTE]
+>
+> REST API实施受限制 [节流机构](/help/authentication/throttling-mechanism.md)
 
 ## REST API端点 {#clientless-endpoints}
 

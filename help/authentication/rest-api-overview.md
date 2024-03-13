@@ -2,9 +2,9 @@
 title: REST API概述
 description: Rest API概述
 exl-id: 5533d852-f644-417e-bf80-6f7aa1edd6b2
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '1599'
+source-wordcount: '1612'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,9 @@ ht-degree: 0%
 
 Adobe Pass身份验证REST API允许直接访问TV Everywhere (TVE)身份验证和授权服务。 此API支持两种主要体系结构：服务器到服务器或连接的设备（例如游戏机、智能电视、机顶盒等） 没有Web浏览功能的应用程序。
 
+### 节流机构
+
+Adobe Pass身份验证REST API受 [节流机构](/help/authentication/throttling-mechanism.md).
 
 
 ### 服务器到服务器

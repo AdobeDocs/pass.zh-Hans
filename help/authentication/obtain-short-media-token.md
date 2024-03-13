@@ -2,7 +2,7 @@
 title: 获取短媒体令牌
 description: 获取短媒体令牌
 exl-id: 667eaaba-423e-4d54-9dbe-084b3c049e1f
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
 source-wordcount: '370'
 ht-degree: 0%
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+
+>[!NOTE]
+>
+> REST API实施受限制 [节流机构](/help/authentication/throttling-mechanism.md)
 
 ## REST API端点 {#clientless-endpoints}
 
