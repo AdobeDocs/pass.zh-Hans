@@ -2,9 +2,9 @@
 title: Primetime TVE仪表板用户指南
 description: Primetime TVE仪表板用户指南
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: c6afb9b080ffe36344d7a3d658450e9be767be61
 workflow-type: tm+mt
-source-wordcount: '4386'
+source-wordcount: '4377'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-## 介绍 {#tve-db-intro}
+## 简介 {#tve-db-intro}
 
 [[!DNL Adobe] 动态仪表板（动态仪表板）](https://console.auth.adobe.com/) 是一个自助仪表板，面向为与Adobe Pass身份验证产品团队有业务关系的媒体公司（程序员）工作的用户。
 
@@ -60,6 +60,7 @@ TVE Dashboard提供两个名为Prequal (Prequalification)和Release的环境，�
 *图2： Adobe Pass TVE功能板环境下拉列表*
 
 >[!IMPORTANT]
+>
 >请务必注意，在通过TVE仪表板对Adobe Pass身份验证配置进行管理更改时，我们强烈建议您遵循以下顺序以确保正常运行。
 
 要通过TVE仪表板对Adobe Pass身份验证配置进行管理更改，请执行以下操作：
@@ -69,6 +70,7 @@ TVE Dashboard提供两个名为Prequal (Prequalification)和Release的环境，�
 * 在中执行更改 [发布生产环境并验证它们](http://sp.auth-staging.adobe.com/apitest/api.html).
 
 >[!IMPORTANT]
+>
 >要使管理更改生效，用户必须通过选择按钮（将显示在侧栏的左下方）导航到“审阅和推送更改”部分，以便审阅更改、为新创建的更改添加描述并通过选择“推送配置”确认配置更新。
 
 ![让功能板审核推送通知](assets/tve-review-push-notifications.png)
@@ -327,7 +329,7 @@ TVE Dashboard提供两个名为Prequal (Prequalification)和Release的环境，�
       * **注销动态规则**
          * 此子选项卡显示适用于注销流程的规则。 按下图表的 **请求/响应/令牌**，则您会看到高亮显示的应用于该部分注销流的参数。
 
-### 报表 {#tve-db-reports-sec}
+### 报告 {#tve-db-reports-sec}
 
 要导航到此部分，请单击“[仪表板节](#sections)”菜单。 该操作将导航到包含3个选项卡的屏幕，以下子部分将详细介绍这些选项卡： [AuthN TTL报表](#authn-ttl-reports)， [AuthZ TTL报表](#authz-ttl-reports)， [SSO报告](#sso-reports).
 
@@ -489,7 +491,7 @@ AuthZ TTL报告表格包含页面，并可根据屏幕大小进行水平和垂�
 
 * [如何在Mac上捕获屏幕截图](https://support.apple.com/en-us/HT201361)
 
-## 疑难解答 {#tve-db-troubleshoot}
+## 故障排除 {#tve-db-troubleshoot}
 
 ### 维护模式 {#maintenance-mode}
 

@@ -1,42 +1,35 @@
 ---
-title: 限制和已知问题
-description: 产品中的已知问题。
+title: 限制
+description: 了解帐户IQ中面向程序员的限制和隔离模式MVPD 。
 exl-id: 08d65716-8b6a-4300-acda-fec63e1e6815
-source-git-commit: 2ced89dc1f77d2c090b599c40e778f3054f1a8dd
+source-git-commit: 791d661e1495bdb6fe4eb25efbefeecd813f0f3a
 workflow-type: tm+mt
-source-wordcount: '415'
+source-wordcount: '273'
 ht-degree: 0%
 
 ---
 
-# 已知问题和限制 {#known-issues}
+# 限制 {#limitations}
 
-Adobe致力于通过其产品提供强大的功能以及无缝的用户体验。 Account IQ的当前版本（版本1.0）高度信任地向流提供商提供使用情况和订阅共享分析。 但是，即将发布的版本将解决以下限制。
+D2C和TV Everywhere版本的Account IQ为流媒体提供商提供使用和订阅共享分析。 但是，当前版本1.3存在一些限制，将在未来版本中予以解决。
 
-* 在功能板或报告页面中定义同类群组时，当前无法添加量度，例如 **设备数量** 以优化区段。 此功能将在未来版本中提供。
+* 此 [总体共享得分](/help/accountiq/data-panels.md#overall-sharing-score) 当前包括 [共享级别](/help/accountiq/data-panels.md#sharing-level) 和 [共享帐户的使用情况](/help/accountiq/data-panels.md#usage-from-shared-accounts). 未来版本将包含更多量度。
 
-* 在评估单个帐户的共享得分时，帐户IQ会采取一种保守的方法，使公司能够高度自信地对待共享。 但是，这种方法往往会低估在汇总多个帐户之间的共享总量。
+* 在功能板或使用模式中定义区段时， [区段中的视频类别](/help/accountiq/data-panels.md#video-categories-segment)， [按渠道和MVPD共享得分](/help/accountiq/data-panels.md#sharin-score-by-channels-and-mvpds)、和 [视频类别的使用模式分发](/help/accountiq/usage-patterns.md#usage-pattern-dis-video-categories) 报表最多只能显示20个的数据 [视频类别](product-concepts.md#video-category-def). 包含超过20个视频类别的区段将不会在这些报表中显示数据。
 
-* 此 [总体共享得分](/help/accountiq/dashboard.md#overall-sharing-score) 当前仅因子 [共享级别](/help/accountiq/dashboard.md#sharing-level) 和 [共享帐户的使用情况](/help/accountiq/dashboard.md#usage-from-shared-accounts). 未来的版本将考虑其他量度。
+* 目前，导出帐户统计信息的选项仅限于导出1000个帐户。
 
-* 在功能板或报告页面中定义同类群组时，截至目前，MVPD和渠道的选择器缺乏搜索机制。
+* 定义操作时，要选择的选项 [区段类型](/help/accountiq/operations.md#segment) 限制为 **固定帐户数**. 此 **帐户的可变数量** 选项将在未来版本中提供。
 
-* 在功能板或报告页面中定义同类群组时，限制最多只能选择10个MVPD和程序员（或单个渠道）。
+* 此 **基准测试**， **检测模型**， **操作**、和 **设置** 左侧导航中的部分当前已禁用，并将在未来版本中提供。
 
-* 截至目前，导出帐户统计的选项仅限于导出1000个帐户。
+* 创建操作时，只能应用两种 [操作](/help/accountiq/operations.md#action)  — 并发监视规则和外部操作。
 
-* 要选择的选项 [区段类型](#segment-type) 定义操作时，仅限于 **固定帐户数**. 此 **帐户的可变数量** 选项将在即将发布的版本中提供。
+* 目前，您只能 [创建](/help/accountiq/operations.md#create-new-operation) 和 [计划](/help/accountiq/operations.md#schedule) 操作。 在未来的版本中，您可以暂停、继续并完全管理这些页面。
 
-* 左侧导航中的“基准”、“检测模型”、“区段”、“快照”和“规则”部分当前已禁用，并将在下一版本中提供。
+* 选择“粒度”和“时间间隔”时，您一次只能分析一周或一个月的数据。
 
-* 创建时 [操作](/help/accountiq/operation-affecting-user-segment.md)，您只能识别两种 [操作](/help/accountiq/operation-affecting-user-segment.md) 截至现在 — 并发监视规则和外部操作。
+* 不能将隔离模式MVPD与任何其他MVPD一起添加到段定义中。 某些MVPD无法唯一识别多个程序员渠道中的订户。 因此，这些MVPD对于TV Everywhere程序员是分开处理的。
 
-* 目前，只能创建操作 [已计划](/help/accountiq/operation-affecting-user-segment.md#action). 未来的版本将允许您暂停、恢复和完全管理它们。
 
-* 由于使用的数据集较为有限，因此隔离模式无法真正反映共享的数量。 因此，隔离模式下的MVPD无法与任何其他MVPD进行比较。 <!--do we need to separate out this limitation, which is from a different persona i.e. only for Programmer persona?-->
 
-* 在定义新的 [区段](/help/accountiq/segments-timeframe.md) 对于操作，您可以添加量度。 但是，如果选择保存的区段，则无法添加更多量度来优化该区段。
-
-* 粒度和时间范围选择器限制为一周或一个月，这意味着只能在一周或一个月内评估数据。
-
-* 当前在粒度和时间范围选择器中禁用预定义的时间间隔，并且将在未来版本中提供。

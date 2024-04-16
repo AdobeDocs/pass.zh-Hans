@@ -2,9 +2,9 @@
 title: 促销临时通票
 description: 促销临时通票
 exl-id: 705c1ba9-0430-4e3b-add1-d9e4da3f82d1
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: c88fba76b1805dd88fccb68b13bde11b1b8ea181
 workflow-type: tm+mt
-source-wordcount: '1529'
+source-wordcount: '1510'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ Adobe Pass身份验证将根据设备ID和用户提供的信息并按照以下�
 
 * 用户提供的信息键（例如，电子邮件）
 * 用户有权使用的资源数
-* TTL — 用户有权使用所配置的资源数的时间范围
+* TTL — 用户有权使用配置资源数的时间间隔
 
 ### 用户元数据 {#user-metadata}
 
@@ -74,7 +74,7 @@ Adobe Pass身份验证将根据设备ID和用户提供的信息并按照以下�
 
 ### 如何计算观看时间？ {#compute-viewing-time}
 
-临时传递保持有效的时间与用户在程序员应用程序上查看内容所花费的时间无关。 在通过“提升临时传递”对授权进行初始用户请求时，通过将初始当前请求时间添加到由程序员指定的TTL（持续时间时间范围）来计算到期时间。
+临时传递保持有效的时间与用户在程序员应用程序上查看内容所花费的时间无关。 在通过“提升临时传递”对初始用户请求授权时，通过将初始当前请求时间添加到由程序员指定的TTL（持续时间时间间隔）来计算到期时间。
 
 ### 身份验证和授权 {#authn-authz}
 
