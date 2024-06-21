@@ -1,13 +1,13 @@
 ---
 title: API概述
 description: 并发监控的API概述
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
+source-git-commit: dd370b231acc08ea0544c0dedaa1bdb0683e378f
 workflow-type: tm+mt
-source-wordcount: '1425'
+source-wordcount: '1556'
 ht-degree: 0%
 
 ---
-
 
 # API概述 {#api-overview}
 
@@ -18,7 +18,7 @@ ht-degree: 0%
 当实施与并发监控的集成时，本文档可帮助应用程序开发人员使用我们的Swagger API规范。 强烈建议读者先了解服务定义的概念，然后再遵循本准则。 要理解这一点，有必要概述 [产品文档](/help/concurrency-monitoring/cm-home.md) 和 [Swagger API规范](http://docs.adobeptime.io/cm-api-v2/).
 
 
-## 介绍 {#api-overview-intro}
+## 简介 {#api-overview-intro}
 
 在开发过程中，Swagger公共文档体现了了解和测试API流的参考准则。 这是一个绝佳的起点，以便能够有一个实际操作方法，并熟悉现实世界应用程序在不同用户交互场景中的行为方式。
 
@@ -101,6 +101,24 @@ ht-degree: 0%
 * 202成功响应被接受
 * 如果会话已停止，则返回410。
 
+#### 获取所有正在运行的流 {#get-all-running-streams}
+
+此端点为其所有应用程序上的特定租户提供当前运行的所有会话。 使用 **主题** 和 **idp** 调用的参数：
+
+![](assets/get-all-running-streams-parameters.png)
+
+当您进行调用时，您会得到以下响应：
+
+![](assets/get-all-running-streams-success.png)
+
+请注意 **过期** 标题。 这是第一个会话在发送心跳之前应过期的时间。 OtherStreams具有值0，因为没有针对此用户在其他租户的应用程序上运行的其他流。
+元数据字段将填充会话启动时发送的所有元数据。 我们不筛选它，你将收到你发送的所有内容。
+如果调用时没有针对特定用户的运行会话，您将收到此响应：
+
+![](assets/get-all-running-streams-empty.png)
+
+另请注意，在本例中， **过期** 标头不存在。
+
 #### 破坏策略 {#breaking-policy-app-first}
 
 
@@ -157,4 +175,3 @@ ht-degree: 0%
 如果我们每次创建新会话时都对渠道元数据使用不同的值，则所有调用都将成功，因为阈值2单独限定于每个值的范围。
 
 像第一个示例一样，我们可以使用终止代码来远程停止冲突的流，也可以等待其中一个流过期，假设不会对其运行任何心跳。
-
