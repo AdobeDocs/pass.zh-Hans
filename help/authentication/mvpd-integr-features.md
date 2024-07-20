@@ -4,7 +4,7 @@ description: MVPD集成功能
 exl-id: fcd65940-9a86-49b2-9d52-9031fb763338
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1711'
+source-wordcount: '1733'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 ## 概述 {#mvpd-int-features-overview}
 
-Adobe Pass身份验证支持世界各地电视的新兴标准。 它符合 **CableLabs OLCA（在线内容访问）规范**，为从在线来源向付费电视客户交付视频提供了技术要求和架构。 Adobe在2011年6月参与了CableLabs的联合互操作测试项目，并通过了服务提供商实施的测试流程。  Adobe也是 **OATC（开放式身份验证技术联盟）** 并作为该机构的一部分，参与若干小组委员会的规格起草项目。
+Adobe Pass身份验证支持世界各地电视的新兴标准。 它符合&#x200B;**CableLabs OLCA（在线内容访问）规范**，该规范为从在线来源向付费电视客户交付视频提供了技术要求和体系结构。 Adobe在2011年6月参与了CableLabs的联合互操作测试项目，并通过了服务提供商实施的测试流程。  Adobe也是&#x200B;**OATC（开放式身份验证技术联盟）**&#x200B;的积极成员，并作为该机构的一部分参与若干小组委员会的规范起草项目。
 
 在描述了Adobe Pass身份验证OLCA合规性以及Adobe对OATC的参与之后，还应注意Adobe Pass身份验证实际上是“与协议无关的”。  但在TVE时代的这个阶段，Adobe Pass身份验证无疑是面向OLCA标准的。  这些标准描述了不同TVE参与者（程序员、MVPD和服务供应商）实施TVE功能的当前商定方法。 下表列出了其中的许多功能，并包含相关页面的链接，这些页面提供了如何实施这些功能的详细信息和示例。
 
@@ -43,8 +43,8 @@ Adobe Pass身份验证支持世界各地电视的新兴标准。 它符合 **Cab
 | 1.8 | [多渠道授权](/help/authentication/mvpd-preflight-authz.md#preflight-multich-authz) | MVPD支持程序员在单个授权请求中发送多个通道。 | B+ |                                                                                                                                                         |
 | 1.9 | 基于iFrame或“JS弹出窗口”的身份验证 | 该程序员能够将登录流集成到iFrame或弹出窗口体验中，而不是HTTP重定向中。 | B |                                                                                                                                                         |
 | 1.10 | [程序员启动的注销](/help/authentication/usecase-mvpd-logout.md) | 查看器在程序员的网站或应用程序上以及与MVPD之间都有一个经过身份验证的会话。 查看器可以从程序员站点启动联合注销，该注销还会清除MVPD门户上的会话。 | B | 从程序员的角度来看，确保共享计算机受到更好的保护，免遭滥用。 |
-| 1.11 | [自定义授权错误消息传递](/help/authentication/error-reporting.md) | MVPD会传递其自身的自定义错误字符串，该字符串适合程序员的联合站点或应用程序向用户显示。 | B | 支持追加销售方案 |
-| 1.12 | **身份验证响应的用户元数据** | MVPD AuthN响应可以包括用户元数据，这些元数据在权利流期间充当个性化用户体验的提示。 此要求允许将家长控制提示从MVPD发送给程序员。 | B- |                                                                                                                                                         |
+| 1.11 | [自定义授权错误消息](/help/authentication/error-reporting.md) | MVPD会传递其自身的自定义错误字符串，该字符串适合程序员的联合站点或应用程序向用户显示。 | B | 支持追加销售方案 |
+| 1.12 | 身份验证响应中的&#x200B;**用户元数据** | MVPD AuthN响应可以包括用户元数据，这些元数据在权利流期间充当个性化用户体验的提示。 此要求允许将家长控制提示从MVPD发送给程序员。 | B- |                                                                                                                                                         |
 | 1.13 | MVPD启动的身份验证 | 查看器在MVPD门户上成功完成AuthN会话，然后导航到程序员的TVE站点。 系统不会提示用户输入MVPD选取器，并且会自动对其进行身份验证。 | B- |                                                                                                                                                         |
 | 1.14 | 用户ID范围 | MVPD UserID应采用两种形式 — 一种形式适用于程序员，另一种形式适用于整个Adobe范围以防欺诈。  这允许Adobe共享程序员范围的MVPD UserID，而无需进一步的加密/模糊处理。 | C |                                                                                                                                                         |
 | 1.15 | 基于资产的授权 | 一旦完成AuthN，就可以通过传递结构化数据（包括网络、节目、资产、家长控制评级等）在后台进行AuthZ。 这可以对程序员到MVPD的每个AuthZ调用启用家长控制。 | C |                                                                                                                                                         |

@@ -4,7 +4,7 @@ description: 缺少设备ID时的无客户端API流
 exl-id: 6549a6d6-03a9-4d95-99fb-d3ada832323d
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '238'
+source-wordcount: '242'
 ht-degree: 0%
 
 ---
@@ -27,9 +27,9 @@ ht-degree: 0%
 
 对于没有设备ID的客户端：
 
-1. 使用首次调用注册代码服务 `deviceId=dummy`
+1. 使用`deviceId=dummy`第一次调用注册代码服务
 1. 从响应中提取UUID。 UUID在注册代码响应（XML和JSON响应格式）的“id”元素中可用。
-1. 再次调用注册服务。 这一次，通过 `deviceId=<uuid obtained in step #2>`
+1. 再次调用注册服务。 这一次，传递`deviceId=<uuid obtained in step #2>`
 1. 在控制台UI上显示在步骤3中获得的注册码
 
 
@@ -39,7 +39,7 @@ ht-degree: 0%
 
 ## 永久解决方案
 
-Adobe将在未来版本中更改此设置，方法是 `deviceId` 创建注册代码并使用UUID作为令牌键而非时的可选有效负载 `deviceId`，时间 `deviceId` 不存在。
+Adobe将在未来版本中更改此设置，方法是在创建注册代码时将`deviceId`设为可选有效负载，并在`deviceId`不存在时将UUID而不是`deviceId`用作令牌键。
 
 <!--
 ## Related Information

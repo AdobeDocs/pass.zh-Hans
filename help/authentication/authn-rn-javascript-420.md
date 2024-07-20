@@ -1,7 +1,8 @@
 ---
 title: Adobe Pass Authentication JavaScript 4.2.0发行说明
 description: Adobe Pass Authentication JavaScript 4.2.0发行说明
-source-git-commit: 7057aeda34b4fe0d059912ab0a71ea856427654c
+exl-id: 2b022d31-a062-4b4e-b2cd-25749ce38f74
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '99'
 ht-degree: 0%
@@ -25,7 +26,7 @@ Adobe Pass身份验证： JavaScript 4.2.0
 
 ## 发行版概述 {#overview-javascript-sdk-420}
 
-* 更新以支持SameSite Cookie的新策略（详细信息） [此处](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cookie-same-site-00))。
+* 更新以支持SameSite Cookie的新策略（详见[此处](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cookie-same-site-00)）。
 
 
 ## 发行包 {#rel-pkg-javascript-sdk-420}

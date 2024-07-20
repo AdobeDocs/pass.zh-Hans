@@ -4,8 +4,8 @@ description: 将Adobe Pass身份验证服务器端数据集成到Adobe Analytics
 exl-id: c1f1f2a3-c98c-4aed-92ad-1f9bfd80b82b
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1138'
-ht-degree: 4%
+source-wordcount: '1139'
+ht-degree: 0%
 
 ---
 
@@ -19,7 +19,7 @@ Adobe Pass身份验证客户希望在Adobe Analytics功能板中查看Adobe Pass
 
 该数据将用于跟踪重要的TVE量度，例如每个MVPD的身份验证转换率、基于MVPD用户ID的唯一用户等等。
 
-如果客户端实施已经存在，则它不能替代该实施，因为如果没有访客ID，则无法跟踪用户活动超出以下特定事件。 如果客户在Pass调用中提供访客ID，那么我们可以解锁另一类型的Analytics集成（实时），该集成可以将所有Pass事件与现有客户数据联接，有关这种新型的可能集成的更多详细信息，请单击此处： ”[在Adobe Pass身份验证中使用Experience CloudID](/help/authentication/exp-cloud-id-authn.md)&quot;
+如果客户端实施已经存在，则它不能替代该实施，因为如果没有访客ID，则无法跟踪用户活动超出以下特定事件。 如果客户在Pass调用中提供访客ID，那么我们可以解锁另一种类型的Analytics集成（实时），该集成可以将所有Pass事件与现有客户数据联接，有关这种新型的可能集成的更多详细信息，请单击此处：“[在Adobe Pass身份验证中使用Experience CloudID](/help/authentication/exp-cloud-id-authn.md)”
 
 ## 包含的量度 {#metrics-included-int-authn-analyt}
 
@@ -45,12 +45,12 @@ Adobe Pass身份验证客户希望在Adobe Analytics功能板中查看Adobe Pass
 | 渠道 | 用于执行授权请求的请求者ID |
 | MVPD | 负责向用户授予权利的MVPD |
 | 代理 | 代理MVPD（对于直接集成，它为“直接”） |
-| SDK类型 | 使用的客户端SDK(Flash、HTML5、Android Native、iOS、无客户端SDK等) |
+| SDK类型 | 使用的客户端SDK(Flash、HTML5、Android本机、iOS、无客户端SDK等) |
 | SDK版本 | Adobe Pass身份验证客户端SDK的版本 |
 | 资源ID | 授权请求中涉及的实际资源标题（从MRSS有效负载提取为项目/标题，如果提供） |
-| AuthZ错误类型 | 失败的原因，由Adobe Pass身份验证报告 <br/> 以下是一些最常见的值 <br/> **noAuthZ** = MVPD答复用户在其包中没有渠道<br/> **网络** =我们无法联系MVPD（MVPD在呼叫时遇到问题且未回复）<br/> **norefreshtoken** =这仅适用于OAuth实施，如果用户更改其密码或MVPD出于某种原因拒绝了该密码，则可能会导致出现这种情况。 它通常会导致新的身份验证<br/> **不匹配** =如果请求来自与具有身份验证令牌的设备不同的设备。 如果用户试图欺骗系统，但大多数此类情况发生在旧的JavaScript SDK的上下文中，其中设备ID使用IP地址作为计算的一部分，则会导致出现这种情况。 如果用户在家查看TVE，然后又在工作时，将会触发此错误，并且用户必须再次进行身份验证<br/> **无效** =无效请求，参数缺失或无效<br/>  **authzNone** =程序员能够拒绝对特定channelxMVPD组合的授权。 它由程序员有权访问的后端API触发<br/> **欺诈** =这是我们的保护机制。 如果用户授权失败，然后在短时间间隔（秒）内再次请求该授权，我们直接拒绝呼叫。 通常，当程序员的实施中存在错误，在失败时不断请求授权时，就会发生这种情况。 |
-| 令牌类型 | 如果令牌是通过AuthZ All和AuthN All创建的，我们必须了解退化测量会引发什么情况。<br/> 它们是：<br/> &quot;normal&quot; =正常情况<br/> &quot;authnall&quot; =启用“全部身份验证”时<br/> &quot;authzall&quot; =启用“全部身份验证”时<br/>  “hba” =启用HBA时 |
-| 无客户端设备类型 | 当前用于无客户端的设备平台（替代）。<br/> 值可以是：<br/> 不适用 — 事件并非源自无客户端SDK<br/> 未知 — 由于来自的deviceType参数 **无客户端API** 是可选的，因为有些调用不包含任何值。<br/> 通过发送的任何其他值 **无客户端API**. 例如，xbox、appletv和roku。 |
+| AuthZ错误类型 | Adobe Pass身份验证<br/>报告的失败原因以下是最常见的值<br/> **noAuthZ** = MVPD回复用户在其包中没有渠道<br/> **网络** =我们无法访问MVPD （MVPD在调用时有问题，没有回复）<br/> **norefreshtoken** =这严格适用于OAuth实施，如果用户更改其密码或MVPD出于某种原因拒绝了该密码，则可能会导致出现这种情况。 它通常会导致新的身份验证<br/> **不匹配** =如果请求来自与具有身份验证令牌的设备不同的设备。 如果用户试图欺骗系统，但大多数此类情况发生在旧的JavaScript SDK的上下文中，其中设备ID使用IP地址作为计算的一部分，则可能会导致。 如果用户在家观看TVE，然后在公司观看，则会触发此错误，用户必须再次进行身份验证<br/> **无效** =请求无效、参数缺失或无效<br/>  **authzNone** =程序员能够拒绝对特定channelxMVPD组合的授权。 这是由程序员有权访问<br/>的后端API触发的 **欺诈** =这是我们的一种保护机制。 如果用户授权失败，然后在短时间间隔（秒）内再次请求该授权，我们直接拒绝呼叫。 通常，当程序员的实施中存在错误，在失败时不断请求授权时，就会发生这种情况。 |
+| 令牌类型 | 如果令牌是通过AuthZ All和AuthN All创建的，我们必须了解退化测量会引发什么情况。<br/>它们是：<br/>“正常”=正常的大小写<br/>“authnall”=启用AuthN All时<br/>“authzall”=启用AuthZ All时<br/>“hba”=启用HBA时 |
+| 无客户端设备类型 | 当前用于无客户端的设备平台（替代）。<br/>值可以是：<br/> N/A — 事件并非源自无客户端SDK<br/>未知 — 由于来自&#x200B;**无客户端API**&#x200B;的deviceType参数是可选的，因此有些调用不包含任何值。<br/>通过&#x200B;**无客户端API**&#x200B;发送的任何其他值。 例如，xbox、appletv和roku。 |
 | MVPD用户ID | 替换基于Cookie的访客ID |
 
 
@@ -114,15 +114,15 @@ Adobe Pass身份验证客户希望在Adobe Analytics功能板中查看Adobe Pass
 
 | 属性 | eVar |
 |-----------------------------------|--------------------------------|
-| 渠道 | eVar1 |
-| MVPD | eVar2 |
-| 代理 | eVar3 |
-| SDK类型 | eVar4 |
-| SDK版本 | eVar5 |
-| 资源ID | eVar6 |
-| AuthZ错误类型 | eVar7 |
-| 令牌类型 | eVar8 |
-| 无客户端设备类型 | eVar9 |
+| 渠道 | EVAR1 |
+| MVPD | EVAR2 |
+| 代理 | EVAR3 |
+| SDK类型 | EVAR4 |
+| SDK版本 | EVAR5 |
+| 资源ID | EVAR6 |
+| AuthZ错误类型 | EVAR7 |
+| 令牌类型 | EVAR8 |
+| 无客户端设备类型 | EVAR9 |
 | MVPD用户ID | visitorID（自动完成） |
 | MVPD用户ID | eVar10 |
 | 设备类型 | eVar11 |

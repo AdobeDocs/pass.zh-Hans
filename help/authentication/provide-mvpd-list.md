@@ -17,19 +17,19 @@ ht-degree: 2%
 
 >[!NOTE]
 >
-> REST API实施受限制 [节流机构](/help/authentication/throttling-mechanism.md)
+> REST API实现受[限制机制](/help/authentication/throttling-mechanism.md)限制
 
 ## REST API端点 {#clientless-endpoints}
 
-&lt;reggie_fqdn>：
+&lt;REGGIE_FQDN>：
 
-* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 — [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>：
+&lt;SP_FQDN>：
 
-* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 — [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -37,9 +37,9 @@ ht-degree: 2%
 
 返回请求者的已配置MVPD列表。
 
-| 端点 | 已调用  </br>按 | 输入   </br>参数 | HTTP  </br>方法 | 响应 | HTTP  </br>响应 |
+| 端点 | </br>调用者 | 输入   </br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/config/{requestorId}</br></br>例如：</br></br>&lt;sp_fqdn>/api/v1/config/sampleRequestorId | Adobe Pass 身份验证 | 1.请求人</br>    （路径组件）</br>_2.  设备类型（已弃用）_ | GET | 包含MVPD列表的XML或JSON。 | 200 |
+| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>例如：</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Adobe Pass 身份验证 | 1.请求者</br>    （路径组件）</br>_2。  deviceType（已弃用）_ | GET | 包含MVPD列表的XML或JSON。 | 200 |
 
 {style="table-layout:auto"}
 
@@ -47,7 +47,7 @@ ht-degree: 2%
 | 输入参数 | 描述 |
 | --------------- | ------------------------------------------------------------- |
 | 请求者 | 此操作有效的程序员requestorId。 |
-| *设备类型* | 设备类型。 |
+| *deviceType* | 设备类型。 |
 
 {style="table-layout:auto"}
 
@@ -57,8 +57,8 @@ ht-degree: 2%
 
 注意：配置为使用Platform SSO的所有MVPD在其相应节点(JSON/XML)中将具有以下额外属性：
 
-* **enablePlatformServices（布尔值）：** 指示此MVPD是否通过Platform SSO集成的标志
-* **boardingStatus（字符串）：** 表示MVPD是否完全支持Platform SSO (SUPPORTED)或MVPD是否仅出现在平台选取器(PICKER)中的标记
-* **displayInPlatformPicker（布尔值）：** 是否应在平台选取器中显示此MVPD
-* **platformMappingId（字符串）：** 平台已知的此MVPD的标识符
-* **requiredMetadataFields（字符串数组）：** 用户元数据字段应在成功登录后可用
+* **enablePlatformServices （布尔值）：**&#x200B;指示此MVPD是否通过Platform SSO集成的标志
+* **boardingStatus (string)：**&#x200B;标志，指示MVPD是否完全支持Platform SSO (SUPPORTED)，或者MVPD是否仅出现在平台选取器(PICKER)中
+* **displayInPlatformPicker （布尔值）：**&#x200B;如果此MVPD出现在平台选取器中
+* **platformMappingId （字符串）：**&#x200B;平台已知的此MVPD的标识符
+* **requiredMetadataFields （字符串数组）：**&#x200B;用户元数据字段应在成功登录时可用

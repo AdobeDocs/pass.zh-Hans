@@ -4,7 +4,7 @@ description: 在“选择”对话框中允许MVPD
 exl-id: 2c0e0f06-ddc6-4bea-90dc-d7ef8e78d27e
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '129'
+source-wordcount: '128'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## 解决方案 {#solution}
 
-在 `displayProviderDialog()` callback， Adobe Pass身份验证返回与所选程序员（请求者ID）集成的所有MVPD。 但是，程序员可以在MVPD的返回数组中应用过滤器，并且只显示同时位于两个列表中的那些。
+在`displayProviderDialog()`回调中，Adobe Pass身份验证返回与所选程序员（请求者ID）集成的所有MVPD。 但是，程序员可以在MVPD的返回数组中应用过滤器，并且只显示同时位于两个列表中的那些。
 
 ## 示例 {#example}
 

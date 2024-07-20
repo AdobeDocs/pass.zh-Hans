@@ -4,7 +4,7 @@ description: 程序员kickstart指南
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '971'
+source-wordcount: '972'
 ht-degree: 0%
 
 ---
@@ -15,18 +15,18 @@ ht-degree: 0%
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-## 介绍 {#prog-kickstart-guide-intro}
+## 简介 {#prog-kickstart-guide-intro}
 
 欢迎使用Adobe Pass Authentication for TV Everywhere。 我们期待着与您合作。
 
 >[!NOTE]
 >
->这是面向程序员（内容提供商）的Kickstart指南。 如果您是多频道视频播放分发商(MVPD)，请务必查看 [MVPD快速入门指南](/help/authentication/mvpd-kickstart-guide.md).
+>这是面向程序员（内容提供商）的Kickstart指南。 如果您使用多通道视频编程分发服务器(MVPD)，请务必查看[MVPD快速入门指南](/help/authentication/mvpd-kickstart-guide.md)。
 
 
 Adobe Pass身份验证联系人：
 
-* 支持 — 针对所有问题、事件或功能请求， `tve-support@adobe.com`
+* 支持 — 针对所有问题、事件或功能请求，`tve-support@adobe.com`
 * 到项目启动时，会向项目分配一个支持联系人。
 
 以下信息概述了一些重要的首要步骤，以便我们开始一个扎实而有效的计划。 我们的目标是提供有关我们将如何与合作伙伴合作来实现集成的解释和预期。 请注意下面每个项目的“您将提供”/“Adobe将提供”部分。 在我们完成项目时，这些内容以核对清单或指南的方式列出。
@@ -50,9 +50,9 @@ Adobe Pass身份验证联系人：
 Adobe将提供：
 
 * 部署指南： **`https://tve.zendesk.com/entries/498741-tve-deployment-guide`**
-* 访问我们的Zendesk客户支持系统。 您还可以在这里找到有关某些流程的示例、信息和视频教程。 要在Zendesk上访问此文档以及张贴在该文档上的其他文档，您必须在 `https://tve.zendesk.com/home`. 您可以注册的用户数量没有限制。  您可以查看和共享任何已归档票证的评论。 所有支持问题都应发送至 `tve-support@adobe.com`.
+* 访问我们的Zendesk客户支持系统。 您还可以在这里找到有关某些流程的示例、信息和视频教程。 若要在Zendesk上访问此文档以及在其中发布的其他文档，您必须在`https://tve.zendesk.com/home`注册并创建一个帐户。 您可以注册的用户数量没有限制。  您可以查看和共享任何已归档票证的评论。 所有支持问题都应发送至`tve-support@adobe.com`。
 * [程序员集成指南](/help/authentication/programmer-integration-guide-overview.md)
-* 媒体令牌验证器库： `https://tve.zendesk.com/entries/471323-media-token-validator-library`.
+* 媒体令牌验证器库： `https://tve.zendesk.com/entries/471323-media-token-validator-library`。
 
 ## 测试环境设置 {#test-env-setup}
 
@@ -77,19 +77,19 @@ Adobe将设置帐户，Adobe将提供：
 * **两组凭据**：
    * AuthN + AuthZ ：经过身份验证和授权的用户的登录/密码
    * AuthN + Non-AuthZ ：已验证但未授权的用户的登录/密码
-* **资源ID**. 这是一个特定的内容标识符，将通过AuthZ协议通过MVPD进行验证。 这可以在渠道、节目、集或资产级别；它应与您的MVPD商定。
+* **资源ID**。 这是一个特定的内容标识符，将通过AuthZ协议通过MVPD进行验证。 这可以在渠道、节目、集或资产级别；它应与您的MVPD商定。
 
 Adobe Pass身份验证支持基于MRSS的元数据架构，这意味着资源ID可以根据需要而特定，并且可以包含对于特定MVPD唯一的标识符。
 
-**新的MVPD集成**：请务必记住，您选择的MVPD在完成任何集成过程中都起着不可或缺的作用。 Adobe需要根据每个MVPD的规范为其编写代码。 在这些步骤完成之前，您将无法从对话框中选择该MVPD，也无法完成产品测试。 Adobe需要提前安排此工作，以便与下一个可用冲刺相匹配。 （有关当前计划信息，请参阅发布日历。）
+**新MVPD集成**：请务必记住，您选择的MVPD在完成任何集成时都起着不可或缺的作用。 Adobe需要根据每个MVPD的规范为其编写代码。 在这些步骤完成之前，您将无法从对话框中选择该MVPD，也无法完成产品测试。 Adobe需要提前安排此工作，以便与下一个可用冲刺相匹配。 （有关当前计划信息，请参阅发布日历。）
 
-**现有MVPD集成**：如果您选择的MVPD已使用Adobe进行设置，则连接步骤应简单得多（更快），并且通常可以通过更改配置来实现连接。
+**现有MVPD集成**：如果您选择的MVPD已使用Adobe进行设置，那么连接步骤应该简单得多（更快），并且通常可以通过配置更改实现连接。
 
 >[!NOTE]
 >
 >MVPD仍必须启用程序员，并签署任何相关的商业交易。
 
-**带MVPD的QE**：所有集成都将涉及联合QE，并且由于最终用户最终是MVPD的客户，因此许多人在推送“实时”应用程序之前设置了测试周期。 由于这涉及MVPD资源的调度，因此这是一个潜在的延迟区域。
+**QE与MVPD**：所有集成都将涉及联合QE，由于最终用户最终是MVPD的客户，因此许多人在推送“实时”之前设置了测试周期。 由于这涉及MVPD资源的调度，因此这是一个潜在的延迟区域。
 
 <!--
 >[RELATEDINFORMATION]

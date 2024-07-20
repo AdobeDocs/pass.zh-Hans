@@ -4,7 +4,7 @@ description: MVPD用户元数据交换
 exl-id: 8bce6acc-cd33-476c-af5e-27eb2239cad1
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '943'
+source-wordcount: '940'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-## 介绍 {#intro-user-metadata-exchange}
+## 简介 {#intro-user-metadata-exchange}
 
 MVPD维护有关其客户的特定于用户的元数据，这些元数据在某些情况下与程序员共享。 Adobe Pass身份验证的目标是代理此“用户元数据”的交换，但不实施任何有关该交换的规则。 交换规则是供MVPD与其程序员合作伙伴协商的。
 
@@ -55,7 +55,7 @@ MVPD维护有关其客户的特定于用户的元数据，这些元数据在某�
 
 目前，程序员API、Adobe Pass身份验证和MVPD授权程序都仅支持通道级授权。 该渠道在程序员的getAuthorization() API调用中指定为纯文本字符串。 此字符串会一直传播到MVPD的授权后端：
 
-从程序员的应用程序或站点中，用户选择支持XACML的MVPD（在本例中为“TNT”）。 有关XACML的信息，请参见 [可扩展访问控制标记语言](https://en.wikipedia.org/wiki/XACML){target=_blank}.
+从程序员的应用程序或站点中，用户选择支持XACML的MVPD（在本例中为“TNT”）。 有关XACML的信息，请参阅[可扩展访问控制标记语言](https://en.wikipedia.org/wiki/XACML){target=_blank}。
 程序员的应用程序形成包含资源及其元数据的AuthZ请求。  此示例在渠道元素的媒体属性中包括“pg”的MPAA评级：
 
 ```XML
@@ -105,13 +105,13 @@ Adobe Pass身份验证做出了以下假设：
 
 ### 注释 {#notes-mvpd-progr-metadata-exch-flow}
 
-**资源标准化和验证。** 资源ID可以作为纯字符串或MRSS字符串进行传递。 程序员可以决定使用纯字符串格式或MRSS，但需要事先与MVPD达成协议，以便MVPD知道如何处理该资源。
+**资源规范化和验证。**&#x200B;资源ID可以作为纯字符串或MRSS字符串进行传递。 程序员可以决定使用纯字符串格式或MRSS，但需要事先与MVPD达成协议，以便MVPD知道如何处理该资源。
 
-**资源ID和元数据规范。** Adobe Pass身份验证使用带有Media RSS扩展的RSS标准指定资源及其元数据。 Adobe Pass身份验证与Media RSS扩展结合使用时，支持多种元数据，例如家长控制(通过 `<media:rating>`)或地理位置(`<media:location>`)。
+**资源ID和元数据规范。** Adobe Pass身份验证使用带有Media RSS扩展的RSS标准指定资源及其元数据。 Adobe Pass身份验证与Media RSS扩展结合使用时，支持多种元数据，例如家长控制（通过`<media:rating>`）或地理位置(`<media:location>`)。
 
 Adobe Pass身份验证还可以支持从旧版渠道字符串到需要RSS的MVPD的对应RSS资源的透明转换。 另一方面，Adobe Pass身份验证支持从RSS+MRSS转换为纯通道标题，适用于纯通道MVPD。
 
-**Adobe Pass身份验证确保与现有集成完全向后兼容。** 也就是说，对于使用渠道级别身份验证的程序员，Adobe Pass身份验证在将该渠道ID发送到了解该格式的MVPD之前，会注意以必要的格式将其打包。 反之亦然：如果程序员以新格式指定其所有资源，且仅针对进行渠道级别授权的MVPD进行授权，则Adobe Pass身份验证会将新格式转换为简单的渠道字符串。
+**Adobe Pass身份验证确保与现有集成完全向后兼容。**&#x200B;也就是说，对于使用渠道级别身份验证的程序员，Adobe Pass身份验证在将该渠道ID发送到了解该格式的MVPD之前，会注意以必要的格式将其打包。 反之亦然：如果程序员以新格式指定其所有资源，且仅针对进行渠道级别授权的MVPD进行授权，则Adobe Pass身份验证会将新格式转换为简单的渠道字符串。
 
 ## 用户元数据用例 {#user-metadata-use-cases}
 

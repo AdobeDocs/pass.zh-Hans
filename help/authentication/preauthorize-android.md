@@ -36,7 +36,8 @@ ht-degree: 0%
 
 - *PreauthorizeRequest*：用于定义请求的生成器对象
 - AccessEnablerCallback ：用于返回API响应的回调
-- PreauthorizeResponse ：用于返回API响应内容的对象
+- PreauthorizeResponse ：用于返回API的对象
+响应内容
 
 
 ### 公共类PreauthorizeRequest {#androidpreauthorizerequest}
@@ -62,7 +63,7 @@ ht-degree: 0%
     ///
 ```
 
-**公共生成器setResources(List\&lt;string> resources)**
+**公共生成器setResources（List\&lt;String\>资源）**
 
 ```
     ///
@@ -84,7 +85,7 @@ ht-degree: 0%
 ```
 
 
-**公共生成器disableFeatures(Set\&lt;preauthorizerequest.feature>
+**公共生成器disableFeatures(Set\&lt;PreauthorizeRequest.Feature\>
 功能)**
 
 ```
@@ -105,7 +106,7 @@ ht-degree: 0%
     ///
 ```
 
-**公共PreauthorizeRequest build()**
+**公共PreauthorizeRequest生成()**
 
 **枚举PreauthorizeRequest.Feature**
 
@@ -226,7 +227,7 @@ ht-degree: 0%
 
 </br>
 
->**类别决策** {#decision}
+>**类决策** {#decision}
 
 ```
     ///

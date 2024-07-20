@@ -43,7 +43,7 @@ ht-degree: 0%
 ```
 
 
-例如，更复杂的说明符可能包括其他评级信息。 您可以将整个RSS字符串传递到需要资源ID的Access Enabler函数，例如 [`getAuthorization()`](/help/authentication/rest-api-reference.md)：
+例如，更复杂的说明符可能包括其他评级信息。 您可以将整个RSS字符串传递到需要资源ID的Access Enabler函数，例如[`getAuthorization()`](/help/authentication/rest-api-reference.md)：
 
 ```rss
     var resource = 
@@ -56,7 +56,7 @@ ht-degree: 0%
     getAuthorization(resource);
 ```
 
-资源说明符对Adobe Pass身份验证是不透明的；它们只是传递到MVPD。 如果MVPD无法识别或无法解析您的资源说明符，则会向Adobe Pass身份验证返回错误，该错误会将错误传递回 `tokenRequestFailed()` 回调。
+资源说明符对Adobe Pass身份验证是不透明的；它们只是传递到MVPD。 如果MVPD无法识别或无法解析您的资源说明符，则会向Adobe Pass身份验证返回错误，该错误会将错误传递回`tokenRequestFailed()`回调。
 
 <!--
 ## Related Information {#related}

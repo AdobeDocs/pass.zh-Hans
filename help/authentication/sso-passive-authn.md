@@ -4,7 +4,7 @@ description: 通过被动身份验证进行SSO
 exl-id: ce45899f-6e94-4bb0-a2c1-51f03bd66d8d
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '776'
+source-wordcount: '778'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 
-## 介绍
+## 简介
 
 本文档的范围是介绍被动身份验证流程的实现，以及它如何与我们的标准单点登录方法配合使用。
 
@@ -76,7 +76,8 @@ Adobe Pass身份验证在应用程序/站点之间启用单点登录(SSO)。 用
 
 
 
-SAML请求示例以下是被动authN流的SAML请求示例：
+SAML请求示例
+以下是被动authN流的SAML请求示例：
 
 
 ```xml

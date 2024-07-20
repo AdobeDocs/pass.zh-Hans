@@ -4,7 +4,7 @@ description: 面向程序员的概述
 exl-id: 64a12e49-0ecb-4b81-977d-60c10925bb59
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '4273'
+source-wordcount: '4274'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-## 介绍 {#introduction}
+## 简介 {#introduction}
 
 此概述适用于计划将Adobe®传递到其网站或应用程序的内容提供商（程序员）。 有关其他文档，包括Kickstart和集成指南，请参阅下面的相关信息。
 
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 ![](assets/user-ent-by-progr.png)
 
-*图：由程序员直接确定的用户权利*
+*图：由程序员直接决定的用户权利*
 
 Adobe Pass Authentication for TV Everywhere可在程序员和MVPD之间安全地协调这些授权事务。 Adobe Pass身份验证使程序员可以轻松、快速且安全地向有效客户提供受保护的内容：
 
@@ -37,8 +37,8 @@ Adobe Pass Authentication for TV Everywhere可在程序员和MVPD之间安全地
 
 Adobe Pass身份验证作为您的代理，与参与的MVPD进行交换，因此您可以使用一致的跨站点界面呈现查看器。 Adobe Pass身份验证还允许您为查看器提供单点登录(SSO)身份验证和授权。 将跟踪所有参与服务的身份验证和授权，这样用户在其自己的系统上首次进行身份验证后就不需要再次登录。
 
-* **身份验证**  — 向MVPD确认给定用户是已知客户的过程。
-* **授权**  — 向MVPD确认经过身份验证的用户对指定资源具有有效订阅的过程。
+* **身份验证** — 向MVPD确认给定用户是已知客户的过程。
+* **授权** — 向MVPD确认经过身份验证的用户具有指定资源的有效订阅的过程。
 
 ### Adobe Pass身份验证的工作方式 {#HowItWorks}
 
@@ -73,13 +73,13 @@ Adobe Pass身份验证权利解决方案重点关注成功完成身份验证和�
 
 在身份验证和授权工作流期间会颁发三种类型的令牌。 AuthN和AuthZ令牌是“长期”的，为用户的观看体验提供了连续性。 媒体令牌是一个生命周期较短的令牌，它支持行业最佳实践，以防止通过流盗用进行欺诈。 程序员根据与MVPD达成的协议为每种类型的令牌指定生存时间(TTL)值。 程序员决定最适合您的企业和客户的TTL价值。
 
-* **身份验证令牌** （“长期”）：身份验证成功后，Adobe Pass身份验证将创建一个与请求设备和全局唯一标识符(GUID)都关联的AuthN令牌。
+* **AuthN令牌** （“长寿命”）：在成功进行身份验证后，Adobe Pass身份验证将创建一个与请求设备和全局唯一标识符(GUID)都关联的AuthN令牌。
    * Adobe Pass身份验证将AuthN令牌发送到Access Enabler，后者会在客户端系统上安全地缓存该令牌。  当AuthN令牌存在且未过期时，它可供所有使用Adobe Pass身份验证的应用程序使用。 Access Enabler将AuthN令牌用于授权流。
    * 在任何给定时刻，仅缓存一个AuthN令牌。 每当颁发了新的AuthN令牌并且存在旧令牌时，Adobe Pass身份验证都会覆盖缓存的令牌。
-* **AuthZ令牌** （“长期”）：在成功授权后，Adobe Pass身份验证将创建与请求设备和特定受保护资源关联的AuthZ令牌。  受保护的资源由唯一的资源ID标识。
+* **AuthZ令牌** （“长期”）：在成功授权后，Adobe Pass身份验证将创建与请求设备和特定的受保护资源关联的AuthZ令牌。  受保护的资源由唯一的资源ID标识。
    * Adobe Pass身份验证将AuthZ令牌发送到Access Enabler，后者在本地系统上安全地缓存它。 然后，访问启用程序使用AuthZ令牌创建用于实际查看访问的短暂媒体令牌。
    * 在任意给定时间，每个资源仅缓存一个AuthZ令牌。 Adobe Pass身份验证可以缓存多个AuthZ令牌，前提是它们与其他资源关联。 每当颁发了新的AuthZ令牌并且同一资源已存在旧令牌时，Adobe Pass身份验证会覆盖缓存的令牌。
-* **媒体令牌** （“短期”）：访问启用程序使用AuthZ令牌生成短期（默认值： 7分钟）媒体令牌。 在这一点上，即认为播放请求已成功。
+* **媒体令牌** （“短期”）： Access Enabler使用AuthZ令牌生成短期（默认值： 7分钟）媒体令牌。 在这一点上，即认为播放请求已成功。
    * 在提供对受保护资源的访问权限之前，您的媒体服务器必须使用Adobe Pass身份验证组件（媒体令牌验证器）来验证媒体令牌。
    * 由于媒体令牌未绑定到设备，因此其生命周期明显短于长期AuthN和AuthZ令牌的生命周期（默认值： 7分钟）。
    * 短暂的媒体令牌限制为一次性使用，并且从不进行缓存。 每次调用授权API时，都会从Adobe Pass身份验证服务器检索授权服务。
@@ -88,20 +88,20 @@ Adobe Pass身份验证权利解决方案重点关注成功完成身份验证和�
 
 Access Enabler将长期令牌（AuthN和AuthZ）存储在特定于其环境的位置：
 
-* **Flash10.1** （或更高版本）：长生命周期令牌存储为本地共享对象。
-* **HTML5**：长生命周期令牌安全地保存在HTML5浏览器的本地存储中。
-* **iOS**：长生命周期令牌存储在永久粘贴板上，其他Adobe Pass身份验证客户端应用程序可在其中访问它们。
-* **Android**：长生命周期令牌存储在共享数据库文件中，其他Adobe Pass身份验证客户端应用程序可在其中访问它们。
+* **Flash10.1**（或更高版本）：长生命周期令牌存储为本地共享对象。
+* **HTML5**：长期令牌安全地保存在HTML5浏览器的本地存储中。
+* **iOS**：长生命周期令牌存储在永久粘贴板上，其他Adobe Pass身份验证客户端应用程序可以在该处访问它们。
+* **Android**：长生命周期令牌存储在共享数据库文件中，其他Adobe Pass身份验证客户端应用程序可以在该文件中访问它们。
 * **无客户端API设备**：令牌存储在Adobe Pass身份验证服务器上。
 
 ### 令牌安全 {#token-security}
 
 Adobe Pass Authentication Server使用设备ID（派生自设备的硬件特征）对所有长期令牌进行数字签名。 数字签名的生成、保护和验证方式因环境而异：
 
-* **Flash10.1** （或更高版本） — 设备ID依赖于设备凭据，该凭据是从Adobe个性化服务器颁发的唯一证书。 此安全性相当于FAXS DRM技术。 此服务器端验证会将令牌中的唯一设备ID与设备凭据(安全地从Flash Player通信到Adobe Pass身份验证)进行比较。 设备凭据还标识了FAXS客户端版本以及向其发出凭据的Flash Player(或AIR)版本。 设备绑定比使用HTML5绑定更强，因此使用Flash时，令牌的生存时间(TTL)通常更长。
-* **HTML5**  — 设备在客户端个性化。 它使用JavaScript提供的特征来生成包括浏览器和操作系统版本的伪设备ID、IP地址和浏览器Cookie GUID（全局唯一标识符）。 此令牌设备ID将与设备的当前伪设备ID进行比较。 由于IP地址在正常使用期间可能会更改，因此即使在同一个会话中，Adobe Pass身份验证也会将HTML5令牌存储在两个位置：localStorage和sessionStorage。 如果IP发生更改并且sessionStorage令牌在其他情况下仍然有效，则会维护会话。 使用HTML5时，设备绑定没有那么强，因此令牌的TTL通常比Flash的TTL短。
-* **本机客户端** (iOS和Android) — 长效令牌包含本机设备ID个性化信息，因此将绑定到请求设备。 身份验证和授权请求通过HTTPS发送，设备ID信息在发送到后端服务器之前由Access Enabler库进行数字签名。 在服务器端，设备ID信息将根据其相关联的数字签名进行验证。
-* **无客户端API客户端**  — 无客户端API解决方案具有一组涉及对所有API调用进行数字签名的安全协议。 权利流期间生成的令牌安全地存储在Adobe Pass身份验证服务器上。
+* **Flash10.1**（或更高版本） — 设备ID依赖于设备凭据，该凭据是从Adobe个性化服务器颁发的唯一证书。 此安全性相当于FAXS DRM技术。 此服务器端验证会将令牌中的唯一设备ID与设备凭据(安全地从Flash Player通信到Adobe Pass身份验证)进行比较。 设备凭据还标识了FAXS客户端版本以及向其发出凭据的Flash Player(或AIR)版本。 设备绑定比使用HTML5绑定更强，因此使用Flash时，令牌的生存时间(TTL)通常更长。
+* **HTML5** — 设备在客户端已个性化。 它使用JavaScript提供的特征来生成虚拟设备ID，其中包括浏览器和操作系统版本、IP地址以及浏览器Cookie GUID（全局唯一标识符）。 此令牌设备ID将与设备的当前伪设备ID进行比较。 由于IP地址在正常使用期间可能会更改，因此即使在同一个会话中，Adobe Pass身份验证也会将HTML5令牌存储在两个位置：localStorage和sessionStorage。 如果IP发生更改并且sessionStorage令牌在其他情况下仍然有效，则会维护会话。 使用HTML5时，设备绑定没有那么强，因此令牌的TTL通常比Flash的TTL短。
+* **本机客户端** (iOS和Android) — 长效令牌包含本机设备ID个性化信息，因此已绑定到请求设备。 身份验证和授权请求通过HTTPS发送，设备ID信息在发送到后端服务器之前由Access Enabler库进行数字签名。 在服务器端，设备ID信息将根据其相关联的数字签名进行验证。
+* **无客户端API客户端** — 无客户端API解决方案具有一组涉及对所有API调用进行数字签名的安全协议。 权利流期间生成的令牌安全地存储在Adobe Pass身份验证服务器上。
 
 Adobe Pass身份验证会验证每个长期使用的令牌，以确保访问内容的设备与颁发令牌的设备相同。 对于所有令牌，客户端验证可确保数字签名保持不变，并保留令牌的完整性。 当设备ID验证失败时，身份验证会话将失效，并提示用户再次登录，这将重置令牌。
 
@@ -109,7 +109,7 @@ Adobe Pass身份验证会验证每个长期使用的令牌，以确保访问内�
 
 不同平台上的应用程序不共享令牌。 这种情况有很多原因，包括：
 
-* 如中所述 [令牌存储](#token-storage)，令牌的存储方法因平台而异(例如，用于Flash的本地共享对象，用于JavaScript的WebStorage )。
+* 如[令牌存储](#token-storage)中所述，存储令牌的方法因平台而异(例如，用于Flash的本地共享对象，用于JavaScript的WebStorage)。
 * 不同平台之间的令牌安全程度不同。 例如，使用FAXS将Flash令牌强绑定到设备。 纯JavaScript环境中的令牌不具备与Flash中相同级别的DRM支持。  如果与Flash应用程序共享JS令牌，则会增加安全级别较低的令牌利用更安全环境的可能性。
 
 ## 程序员集成生命周期 {#prog-integ-lifecycle}
@@ -133,9 +133,9 @@ Adobe Pass身份验证会验证每个长期使用的令牌，以确保访问内�
 
 以下步骤显示了Adobe Pass身份验证流程的示例。  这是授权过程的一部分，在该过程中，程序员确定用户是否为MVPD的有效客户。  在此方案中，用户是MVPD的有效订阅者。  用户正尝试使用程序员的Flash应用程序查看受保护的内容：
 
-1. 用户浏览到程序员的网页，该网页将程序员的Flash应用程序和Adobe Pass Authentication Access Enabler组件加载到用户的计算机上。 Flash应用程序使用Access Enabler设置程序员的身份与Adobe Pass Authentication，而Adobe Pass Authentication为该程序员（“请求者”）的配置和状态数据预定Access Enabler。 在执行任何其他API调用之前，Access Enabler必须从服务器接收此数据。 技术说明：程序员使用Access Enabler的 `setRequestor()` 方法；有关详细信息，请参见 [程序员集成指南](/help/authentication/programmer-integration-guide-overview.md).
+1. 用户浏览到程序员的网页，该网页将程序员的Flash应用程序和Adobe Pass Authentication Access Enabler组件加载到用户的计算机上。 Flash应用程序使用Access Enabler设置程序员的身份与Adobe Pass Authentication，而Adobe Pass Authentication为该程序员（“请求者”）的配置和状态数据预定Access Enabler。 在执行任何其他API调用之前，Access Enabler必须从服务器接收此数据。 技术说明：程序员使用Access Enabler的`setRequestor()`方法设置其标识；有关详细信息，请参阅[程序员集成指南](/help/authentication/programmer-integration-guide-overview.md)。
 1. 当用户尝试查看程序员的受保护内容时，程序员的应用程序向用户显示MVPD列表，用户从中选择提供程序。
-1. 用户将被重定向到Adobe Pass身份验证服务器，在该服务器上， [SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language) 将创建用户选择的MVPD的请求。 此请求将作为代表程序员的身份验证请求发送到MVPD。 根据MVPD的系统，随后用户的浏览器将被重定向到MVPD的站点以登录，或者在程序员的应用程序中创建一个登录iFrame。
+1. 用户被重定向到Adobe Pass身份验证服务器，该服务器为用户选择的MVPD创建加密的[SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language)请求。 此请求将作为代表程序员的身份验证请求发送到MVPD。 根据MVPD的系统，随后用户的浏览器将被重定向到MVPD的站点以登录，或者在程序员的应用程序中创建一个登录iFrame。
 1. 无论是哪种情况（重定向还是iFrame），MVPD都会接受请求并显示其登录页面。
 1. 用户使用MVPD登录，MVPD验证用户作为付费客户的状态，然后MVPD创建自己的HTTP会话。
 1. 验证用户后，MVPD会创建一个响应（SAML和加密），MVPD会将该响应发送回Adobe Pass身份验证。
@@ -146,9 +146,9 @@ Adobe Pass身份验证会验证每个长期使用的令牌，以确保访问内�
 
 ### 授权步骤 {#authz-steps}
 
-以下步骤继续从 [身份验证步骤](#authn-steps)：
+从[身份验证步骤](#authn-steps)继续执行以下步骤：
 
-1. 当用户尝试访问程序员的受保护内容时，程序员的应用程序首先会检查用户的本地计算机或设备上是否存在身份验证令牌。  如果令牌不存在，则 [身份验证步骤](#authn-steps) 以上步骤如下所示。  如果存在AuthN令牌，则授权流程继续进行，程序员的应用程序启动对访问启用程序的调用，请求获取用户对受保护内容的特定项目的查看权限。
+1. 当用户尝试访问程序员的受保护内容时，程序员的应用程序首先会检查用户的本地计算机或设备上是否存在身份验证令牌。  如果该令牌不存在，则执行上述[身份验证步骤](#authn-steps)。  如果存在AuthN令牌，则授权流程继续进行，程序员的应用程序启动对访问启用程序的调用，请求获取用户对受保护内容的特定项目的查看权限。
 1. 受保护内容的特定项目由“资源标识符”表示。  这可以是简单的字符串或更复杂的结构，但在任何情况下，资源标识符的性质都事先在程序员和MVPD之间商定。  程序员的应用程序将资源标识符传递给Access Enabler。  Access Enabler检查用户的本地计算机或设备上是否存在AuthZ令牌。  如果没有AuthZ令牌，Access Enabler会将请求传递到后端Adobe Pass身份验证服务器。
 1. Adobe Pass身份验证服务器使用标准化协议与MVPDs授权端点进行通信。  如果MVPD的响应指示用户有权查看受保护的内容，则Adobe Pass身份验证服务器会创建一个AuthZ令牌并将其传递回Access Enabler，后者将AuthZ令牌存储在用户的计算机上。
 1. 当用户计算机或设备上存储有AuthZ令牌时，程序员的应用程序会调用Access Enabler以从Adobe Pass身份验证服务器获取媒体令牌，并将该令牌提供给程序员的应用程序。
@@ -177,7 +177,7 @@ Adobe Pass身份验证会验证每个长期使用的令牌，以确保访问内�
 
 >[!TIP]
 >
->如果您使用AdobeOpen Source Media Framework(“OSMF”)进行媒体播放器开发，使用Adobe Pass身份验证的最快方法是集成OSMF插件 *（已弃用）* 到你的玩家代码中。
+>如果您使用AdobeOpen Source Media Framework(“OSMF”)进行媒体播放器开发，使用Adobe Pass身份验证的最快方法是将OSMF插件&#x200B;*（已弃用）*&#x200B;集成到播放器的代码中。
 >
 ><!--For details, see [Adobe Pass Authentication Plugin For OSMF](https://tve.helpdocsonline.com/9-2-2) in the Programmer Integration Guide.-->
 
@@ -189,13 +189,13 @@ Adobe Pass身份验证会验证每个长期使用的令牌，以确保访问内�
 
 #### 1a. 在Adobe中注册
 
-第一步是向Adobe或Adobe Pass Authentication授权合作伙伴注册。  注册时，会向您颁发一个或多个全局唯一标识符(GUID)。 您颁发的每个GUID都与一个允许从中访问Adobe Pass身份验证的域相关联。 您可以为请求域传递一个GUID（称为请求者ID），以便在与Access Enabler交互的每个会话中注册您的身份。 有关详细信息，请参阅 [注册和初始化](#reg-and-init) 在程序员集成指南中。
+第一步是向Adobe或Adobe Pass Authentication授权合作伙伴注册。  注册时，会向您颁发一个或多个全局唯一标识符(GUID)。 您颁发的每个GUID都与一个允许从中访问Adobe Pass身份验证的域相关联。 您可以为请求域传递一个GUID（称为请求者ID），以便在与Access Enabler交互的每个会话中注册您的身份。 有关详细信息，请参阅《程序员集成指南》中的[注册和初始化](#reg-and-init)。
 
 #### 1b. Initial Access Enabler集成
 
 下一步是将Access Enabler集成到您现有的媒体播放器应用程序或网页中：
 
-* 您可以嵌入Flash版本， `AccessEnabler.swf`Flash ，或者，您可以将其直接嵌入到网页的HTML中。 您可以使用ActionScript或JavaScript与Access EnablerSWF通信。 基本APIActionScript，但是，如果您希望使用JavaScript，可以在您的页面上包含完整的包装器库。
+* 您可以在基于Flash的视频播放器中嵌入Flash版本`AccessEnabler.swf`，也可以直接将其嵌入到网页的HTML中。 您可以在ActionScript或JavaScript中与Access EnablerSWF通信。 基本APIActionScript，但是，如果您希望使用JavaScript，可以在您的页面上包含完整的包装器库。
 * 对于非Flash环境，您可以：
    * 使用HTML5/JavaScript版本AccessEnabler.js，并通过JavaScript API与其通信
    * 使用适用于Adobe Pass身份验证的AIR本机扩展将本机代码与内置的ActionScript类结合使用
@@ -221,9 +221,9 @@ Access Enabler与网页或播放器应用程序之间的通信是异步的。 �
 
 您提供自己的UI，以便用户访问您的内容。 某些元素（例如实际登录流程）由MVPD提供，而某些元素可以选择作为Adobe Pass身份验证的一部分提供。 您至少应执行以下操作：
 
-* **实施MVPD选择接口，该接口允许新用户识别其MVPD并首次登录**. 对于开发， Access Enabler提供了一个基本的用户界面，使客户能够选择MVPD并启动登录过程。 对于生产，您必须实施自己的MVPD选择器对话框。 有些MVPD会重定向到自己的网站进行登录，而有些则要求在iFrame中显示其登录页面。 您必须实施创建此iFrame的回调以处理用户的MVPD在iFrame中显示其登录页的情况。
-* **识别受保护的内容**. 受保护的内容需要授权才能访问。 您的界面应指示哪些内容受保护，以及哪些内容已获得授权。  授权状态通常以“已解锁”和“已锁定”图标表示。
-* **显示用户已通过身份验证**. 您应该将用户的身份验证状态指示为您用于识别受保护内容的任何方法的一部分。 您可以查询Access Enabler以确定客户是否已通过身份验证。
+* **实施一个MVPD选择接口，该接口允许新用户识别其MVPD并首次登录**。 对于开发， Access Enabler提供了一个基本的用户界面，使客户能够选择MVPD并启动登录过程。 对于生产，您必须实施自己的MVPD选择器对话框。 有些MVPD会重定向到自己的网站进行登录，而有些则要求在iFrame中显示其登录页面。 您必须实施创建此iFrame的回调以处理用户的MVPD在iFrame中显示其登录页的情况。
+* **识别受保护的内容**。 受保护的内容需要授权才能访问。 您的界面应指示哪些内容受保护，以及哪些内容已获得授权。  授权状态通常以“已解锁”和“已锁定”图标表示。
+* **显示用户已通过身份验证**。 您应该将用户的身份验证状态指示为您用于识别受保护内容的任何方法的一部分。 您可以查询Access Enabler以确定客户是否已通过身份验证。
 
 #### 2c. 集成媒体令牌验证器 {#int-media-token-ver}
 
@@ -250,18 +250,18 @@ Short Media令牌中的sessionGUID是UserID的安全形式，可通过sendTracki
 以下是在Adobe Pass身份验证API中表示用户ID的不同方式：
 
 * `sendTrackingData()` GUID属性 — 这是MVPD UserID的Adobe哈希版本。  此用户ID经过哈希处理，因此不能从MVPD跟踪回源。   此ID是唯一的，且通常具有持久性，但无法与MVPD共享，因此无法将其特定使用行为与MVPD在其一侧具有的行为进行比较。   它没有经过数字签名，因此对于防欺诈而言并非不可欺骗，但对于分析而言，它已经足够好了。  此形式的用户ID在Adobe Pass身份验证在AuthN/AuthZ流中生成的所有事件的客户端提供。
-* 短媒体令牌 `sessionGUID` 属性 — 这与UserID相同，具体方式为 `sendTrackingData()`但是，此服务器进行了数字签名以保护其完整性。  这使得此值足以很好地用于并发使用情况的欺诈跟踪。 它可在使用我们的验证器库后在服务器端进行处理，并可在向客户端发布视频流之前分析欺诈模式。  这些任务中的任何一个都由程序员来完成。
-* `getMetadata() userID `property — 此属性将允许Adobe向程序员公开实际的源MVPD UserID。 它将使用我们从程序员那里获得的证书中的公钥进行加密，因此它不会以明文形式向客户端公开。 这为Programmer提供了来自MVPD的实际UserID，因此它可用于直接与MVPD进行帐户关联或欺诈调查。
+* 短媒体令牌的`sessionGUID`属性 — 通过`sendTrackingData()`与UserID相同，但是，此令牌经过数字签名以保护其完整性。  这使得此值足以很好地用于并发使用情况的欺诈跟踪。 它可在使用我们的验证器库后在服务器端进行处理，并可在向客户端发布视频流之前分析欺诈模式。  这些任务中的任何一个都由程序员来完成。
+* `getMetadata() userID `属性 — 此属性将允许Adobe向程序员公开实际的源MVPD UserID。 它将使用我们从程序员那里获得的证书中的公钥进行加密，因此它不会以明文形式向客户端公开。 这为Programmer提供了来自MVPD的实际UserID，因此它可用于直接与MVPD进行帐户关联或欺诈调查。
 
-**总结**
+**结论**
 
-* MVPD用户ID通常是永久性唯一ID，但不保证是 **从MVPD生成，并在成功验证时传递给Adobe**. 除某些例外情况外，所有网络通常都是一致的。
+* MVPD用户ID通常是从MVPD生成&#x200B;**并在成功身份验证**&#x200B;时传递给Adobe的永久唯一ID，但并不保证此ID。 除某些例外情况外，所有网络通常都是一致的。
 * MVPD用户ID不包含PII，它不是帐号。 它不需要以加密形式公开，因为我们已通过所有MVPD验证未发送任何PII。
 
 
 用户ID的使用方式取决于用例：
 
-* 如果您需要它来进行跟踪/分析，则最切实可行的做法是从中获取它 `sendTrackingData()`.
+* 如果您需要它来进行跟踪/分析，最切实可行的做法是从`sendTrackingData()`中获取它。
 * 如果在服务器端需要用于流发布、欺诈或操作数据，则可以从“媒体令牌验证器”中获取它。
 * 如果您需要它来关联帐户和进行更深入的欺诈，请咨询您的Adobe联系人以获取可用性。
 

@@ -4,7 +4,7 @@ description: MVPD内容元数据交换
 exl-id: d17e60dc-6c61-4ca2-bad8-1840c95261e0
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '404'
+source-wordcount: '402'
 ht-degree: 0%
 
 ---
@@ -31,8 +31,8 @@ ht-degree: 0%
 
 Adobe Pass身份验证支持两种将MRSS转换为MVPD支持的格式的方法：
 
-* **XACML**.  第一种方法符合OLCA标准。  它使用XACML，其中提取MRSS值以构建具有映射到MRSS元素的属性的XACMLResource。  然后传递给MVPD。
-* **REST**.  第二种方法是基于REST的。  MRSS经过base64编码，并在REST调用中作为URL参数传递。
+* **XACML**。  第一种方法符合OLCA标准。  它使用XACML，其中提取MRSS值以构建具有映射到MRSS元素的属性的XACMLResource。  然后传递给MVPD。
+* **重设**。  第二种方法是基于REST的。  MRSS经过base64编码，并在REST调用中作为URL参数传递。
 
 在这两种方法中，MVPD通过将提取的值包含在其自己的逻辑流中并返回授权响应来处理授权请求。
 

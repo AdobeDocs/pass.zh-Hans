@@ -4,7 +4,7 @@ description: 附录B “调试提示”
 exl-id: ea024797-315e-47c0-99ea-1ac49c8c9697
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '170'
+source-wordcount: '161'
 ht-degree: 0%
 
 ---
@@ -31,9 +31,9 @@ Adobe Pass身份验证存储临时数据，例如浏览器缓存、LSO缓存和C
 
 ## 正在清除LSO缓存 {#clearing-lsos-cache}
 
-访问 [Flash Player帮助](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
+访问[Flash Player帮助](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html)。
 
-选择 ```entitlement.\*``` （具体取决于测试的内容）并单击“删除网站”。
+选择```entitlement.\*```（取决于测试的内容）并单击“删除网站”。
 
 
 ## 调试工具 {#tools}
@@ -42,8 +42,8 @@ Adobe Pass身份验证工程师使用以下调试工具：
 
 - Firebug - <http://www.getfirebug.com/>
 - Flashbug（与Flash Player的调试版本配合使用）
-- 菲德勒 —  <http://www.fiddler2.com/fiddler2/>
-- 查尔斯 —  <http://www.charlesproxy.com/>
+- Fiddler - <http://www.fiddler2.com/fiddler2/>
+- Charles - <http://www.charlesproxy.com/>
 - Wireshark - <http://www.wireshark.org/>
 
 

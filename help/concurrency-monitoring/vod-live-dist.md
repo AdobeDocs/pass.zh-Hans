@@ -1,21 +1,21 @@
 ---
 title: 如何在并发监控中区分VOD和实时内容
 description: 如何在并发监控中区分VOD和实时内容
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 51ba686a-7c1f-4403-9e8e-cd247bf9e345
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '219'
+source-wordcount: '221'
 ht-degree: 0%
 
 ---
 
-
 # 方法：在并发监控中区分VOD和实时内容 {#dist-vod-live}
 
-**问：** 并发监控服务能否区分正在播放的内容类型（实时内容与点播视频）？
+**问：**&#x200B;并发监控服务能否区分正在播放的内容类型（实时内容与点播视频）？
 
 
 
-**答：** 并发监控无法直接区分实时内容和视频点播(VOD)。 视频播放器必须知道正在播放的内容类型，并在以下时间内发送此信息： [会话初始化调用](/help/concurrency-monitoring/cm-api-overview.md#session-initial) （并发监控需要）。 常规工作流如下所示：
+**A：**&#x200B;并发监视无法直接区分实时内容和点播视频(VOD)。 视频播放器必须知道正在播放的内容类型，并在[会话初始化调用](/help/concurrency-monitoring/cm-api-overview.md#session-initial)期间发送此信息（并发监视所需）。 常规工作流如下所示：
 
 1. 并发监控客户定义了一组他们希望对其实施规则的元数据（例如content-type=live|vod、device-type=mobile|console|desktop）。
 1. 并发监控团队会实施所需的策略。 示例：

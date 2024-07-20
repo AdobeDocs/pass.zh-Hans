@@ -5,7 +5,7 @@ exl-id: 6c83e703-d8cd-476b-8514-05b8230902be
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
 source-wordcount: '711'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -65,7 +65,7 @@ ht-degree: 1%
 
 在SAML AuthN请求中，代理集成包含以下需要由MVPD代理处理的其他属性。  要代表代理的MVPD正确处理请求者并呈现正确的登录体验，此属性是必需的。 （此属性在下面的示例请求中突出显示。）
 
-**范围属性**  — 包含包含包含特定MVPD_ID和MVPD名称的IDPEntry项。  它表示用户实际从程序员的选取器中选择的MVPD，并且与代理Web服务中指定的MVPD_ID匹配。
+**作用域属性** — 包含包含特定MVPD_ID和MVPD名称的IDPEntry项。  它表示用户实际从程序员的选取器中选择的MVPD，并且与代理Web服务中指定的MVPD_ID匹配。
 
 RequestorID还有一个作用域属性，可用于自定义程序员特定品牌的登录（如果需要）。 或者，它可以仅用于分析请求的来源。
 

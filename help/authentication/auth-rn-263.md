@@ -4,7 +4,7 @@ description: Adobe Pass Authentication 2.63发行说明
 exl-id: 40987328-6d41-4948-aa4a-bab31f98a18a
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '296'
+source-wordcount: '304'
 ht-degree: 0%
 
 ---
@@ -54,5 +54,5 @@ Adobe Pass身份验证： adobe-pass-**2.63**
 
 #### JavaScript SDK 4.6.0 {#js-sdk}
 
-* 删除了 `eval` 函数，从而使SDK符合内容安全策略。
+* 删除了`eval`函数的使用，从而使SDK符合内容安全策略。
 * 修复了合作伙伴应用程序明确清除浏览器的本地存储时，身份验证流无法成功完成的问题。

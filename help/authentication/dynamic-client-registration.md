@@ -4,7 +4,7 @@ description: 动态客户端注册
 exl-id: 9bc2597d-b634-4542-849b-8e91a76cb8da
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '265'
+source-wordcount: '263'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,8 @@ ht-degree: 0%
 
 ## 上下文 {#context}
 
-为了与现代安全实践、改进的UX和平台所有者要求保持一致，Adobe Pass Authentication Android SDK和iOS SDK正在朝着采用方向发展 [Android Chrome自定义选项卡](https://developer.chrome.com/multidevice/android/customtabs){target=_blank} and [Apple Safari view controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}.
+为了与现代安全实践保持一致，改进了UX和平台所有者
+要求，Adobe Pass Authentication Android SDK和iOS SDK正在朝着采用[Android Chrome自定义选项卡](https://developer.chrome.com/multidevice/android/customtabs){target=_blank}和[Apple Safari视图控制器](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}的方向发展。
 
 当前AdobePass实施使用平台特定的Web视图，以提供用于显示MVPD登录页面的Web环境。 这些Web视图不会与平台浏览器共享凭据管理，因此，在使用Adobe Pass身份验证应用程序时，用户无法使用浏览器保存的密码。 此外，出于安全原因，一些平台正逐渐弃用WebView控制器来执行身份验证任务。 Google和Apple都提供替代选项，如“Chrome自定义选项卡”和“Safari视图控制器”。 这些基本上是其各自浏览器的单一使用选项卡。 Adobe Pass身份验证将在2018年采用这些新组件。
 

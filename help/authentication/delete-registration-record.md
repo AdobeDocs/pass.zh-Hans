@@ -17,19 +17,19 @@ ht-degree: 1%
 
 >[!NOTE]
 >
-> REST API实施受限制 [节流机构](/help/authentication/throttling-mechanism.md)
+> REST API实现受[限制机制](/help/authentication/throttling-mechanism.md)限制
 
 ## REST API端点 {#clientless-endpoints}
 
-&lt;reggie_fqdn>：
+&lt;REGGIE_FQDN>：
 
-* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 — [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>：
+&lt;SP_FQDN>：
 
-* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 — [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -38,9 +38,9 @@ ht-degree: 1%
 
 删除注册代码记录并释放注册代码以供重用。
 
-| 端点 | 已调用  </br>按 | 输入   </br>参数 | HTTP  </br>方法 | 响应 | HTTP  </br>响应 |
+| 端点 | </br>调用者 | 输入   </br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;reggie_fqdn>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>例如：</br></br>&lt;reggie_fqdn>/reggie/v1/regcode/ER45RTY | 流应用程序</br></br>或</br></br>程序员服务 | 1.请求者ID  </br>    （路径组件）</br>2.  注册码  </br>    （路径组件） | DELETE | 无 | 204 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>例如：</br></br>&lt;REGGIE_FQDN>/reggie/v1/regcode/ER45RTY | 流式处理应用程序</br></br>或</br></br>程序员服务 | 1.请求者ID </br>    （路径组件）</br>2。  注册码</br>    （路径组件） | DELETE | 无 | 204 |
 
 {style="table-layout:auto"}
 
@@ -55,4 +55,4 @@ ht-degree: 1%
 
 </br>
 
-### [返回REST API参考](/help/authentication/rest-api-reference.md)
+### [返回REST API引用](/help/authentication/rest-api-reference.md)

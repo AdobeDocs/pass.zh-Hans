@@ -1,13 +1,13 @@
 ---
 title: 节流机构
 description: 了解Adobe Pass身份验证中使用的限制机制。 在此页面中浏览此机制的概述。
-source-git-commit: 4f81f39427d87e4274c27d8f1b4bd1eb366d9abb
+exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '987'
 ht-degree: 0%
 
 ---
-
 
 # 节流机构 {#throttling-mechanism}
 
@@ -40,7 +40,7 @@ Pass Authentication引入了Throttling机制，以确保在客户的用户之间
 
 服务器到服务器实施必须使用“X-Forwarded-For”标头机制转发其客户端的IP地址。
 
-您可以找到有关如何传递X-Forwarded-For标头的更多详细信息 [此处](rest-api-cookbook-servertoserver.md).
+您可以在[此处](rest-api-cookbook-servertoserver.md)找到有关如何传递X-Forwarded-For标头的更多详细信息。
 
 ### 实际限制和端点
 
@@ -76,19 +76,19 @@ Pass Authentication引入了Throttling机制，以确保在客户的用户之间
 
 #### setRequestor
 
-使用达到限制时 `setRequestor` 函数中，SDK将返回一个CFG429错误代码，途径为 `errorHandler` 回调。
+在从SDK中使用`setRequestor`函数达到限制限制时，SDK将通过`errorHandler`回调返回CFG429错误代码。
 
 #### getAuthorization
 
-使用达到限制时 `getAuthorization` 函数中，SDK将返回一个Z100错误代码。 `errorHandler` 回调。
+在从SDK中使用`getAuthorization`函数达到限制限制时，SDK将通过`errorHandler`回调返回Z100错误代码。
 
 #### checkPreauthorizedResources
 
-使用达到限制时 `checkPreauthorizedResources` 函数中，SDK将返回一个P100错误代码。 `errorHandler` 回调。
+在从SDK中使用`checkPreauthorizedResources`函数达到限制限制时，SDK将通过`errorHandler`回调返回P100错误代码。
 
 #### getMetadata
 
-使用达到限制时 `getMetadata` 函数，则SDK将通过返回空响应 `setMetadataStatus` 回调。
+使用SDK中的`getMetadata`函数达到限制时，SDK将通过`setMetadataStatus`回调返回空响应。
 
 有关每个特定实施的详细信息，请参阅特定SDK文档。
 
@@ -135,7 +135,7 @@ p3p: CP="NOI DSP COR CURa ADMa DEVa OUR BUS IND UNI COM NAV STA"
 
 使用自定义实施（包括服务器到服务器）与Pass Authentication API进行交互的客户应确保他们能够捕获其用户IP地址并正确转发该地址，使用X-Forwarded-For标头进一步传递身份验证API。
 
-请参阅 [此处](rest-api-cookbook-servertoserver.md) 以了解更多详细信息。
+有关更多详细信息，请参阅[此处](rest-api-cookbook-servertoserver.md)。
 
 ### 响应新的响应代码
 

@@ -4,12 +4,12 @@ description: iOS SDK 3.1+上的WKWebView支持
 exl-id: 90062be0-1a0a-44ae-8d8e-f4d97a92b17a
 source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '311'
 ht-degree: 0%
 
 ---
 
-# iOS SDK 3.1+上的WKWebView支持 {#wkwebview-support-on-ios-sdk-3.1}
+# iOS SDK 3.1+ {#wkwebview-support-on-ios-sdk-3.1}上的WKWebView支持
 
 >[!NOTE]
 >
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 </br>
 
-**由于Apple在iOS上弃用UIWebView，我们已更新iOS SDK 3.1并支持WKWebView。**
+**由于Apple在iOS上弃用UIWebView，我们已更新支持WKWebView的iOS SDK 3.1。**
 
 ## 兼容性 {#compatibility}
 
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 ## 已知问题 {#known-issues}
 
-Adobe的AccessEnabler使用隐藏的内部UIWebView实例执行»[被动认证](/help/authentication/sso-passive-authn.md)”适用于某些MVPD。 “被动”流对于要求为每个请求者ID进行身份验证的MVPD很有用，并且通过该流，那些在多个iOS应用程序中使用同一团队ID以模拟SSO体验(AdobeSSO)的程序员将从中受益。 此功能当前由有限数量的MVPD使用。
+Adobe的AccessEnabler使用隐藏的内部UIWebView实例对某些MVPD执行“[被动身份验证](/help/authentication/sso-passive-authn.md)”。 “被动”流对于要求为每个请求者ID进行身份验证的MVPD很有用，并且通过该流，那些在多个iOS应用程序中使用同一团队ID以模拟SSO体验(AdobeSSO)的程序员将从中受益。 此功能当前由有限数量的MVPD使用。
 
 该功能使用了UIWebView的行为，允许Adobe捕获身份验证Cookie并在“被动”流期间重放它们。 WKWebView引入了更强的安全性，可阻止Adobe捕获在登录时设置的Cookie，并使用WKWebView的隐藏实例重放它们。 由于此安全改进，并且考虑到“被动”流仅惠及非常特定的实施方案（多个应用程序使用相同的团队ID）中的有限的一组MVPD，Adobe删除了使用Web视图进行身份验证的MVPD的“被动身份验证”功能。
 

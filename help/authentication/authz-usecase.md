@@ -4,7 +4,7 @@ description: MVPD授权
 exl-id: 215780e4-12b6-4ba6-8377-4d21b63b6975
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '579'
+source-wordcount: '584'
 ht-degree: 0%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 0%
 
 对于AuthZ请求，授权端点应能够至少处理以下参数：
 
-* **Uid**. 从身份验证步骤收到的用户ID。
+* **Uid**。 从身份验证步骤收到的用户ID。
 
-* **资源ID**. 标识给定内容资源的字符串。 此资源ID由程序员指定，并且MVPD必须增强这些资源的业务规则（例如，通过检查用户是否订阅了特定渠道）。
+* **资源ID**。 标识给定内容资源的字符串。 此资源ID由程序员指定，并且MVPD必须增强这些资源的业务规则（例如，通过检查用户是否订阅了特定渠道）。
 
-除了确定用户是否获得授权之外，响应还必须包括此授权的生存时间(TTL)，即授权过期的时间。 如果未设置TTL，则AuthZ请求将失败。  因此， **TTL是Adobe Pass身份验证端的强制配置设置**，以涵盖MVPD在其请求中不包含TTL的情况。
+除了确定用户是否获得授权之外，响应还必须包括此授权的生存时间(TTL)，即授权过期的时间。 如果未设置TTL，则AuthZ请求将失败。  因此，**TTL是Adobe Pass身份验证端**&#x200B;上的强制配置设置，以便涵盖MVPD在其请求中未包含TTL的情况。
 
 ## 授权请求 {#authz-req}
 
@@ -106,15 +106,15 @@ http://docs.oasis-open.org/xacml/access_control-xacml-2.0-context-schema-os.xsd"
 
 以下是Adobe Pass身份验证支持并使程序员能够履行的DENY义务列表：
 
-* **urn:tve:xacml：2.0:obligations:restrict-pc**  — 订阅者未通过家长控制检查，SP必须采取适当措施限制对此内容的访问。
+* **urn:tve:xacml：2.0:obligations:restrict-pc** — 订阅者未通过家长控制检查，SP必须采取适当措施限制对此内容的访问。
 
-* **urn:tve:xacml：2.0:obligations:升级**  — 订阅者没有适当的订阅级别。  必须升级订阅才能访问内容。
+* **urn:tve:xacml：2.0:obligations:upgrade** — 订阅服务器没有适当的订阅级别。  必须升级订阅才能访问内容。
 
-Adobe Pass身份验证支持以下内容 **允许** 并使程序员能够履行这些义务：
+Adobe Pass身份验证支持以下&#x200B;**PERMIT**&#x200B;义务，并使程序员能够履行这些义务：
 
-* **urn:cablelabs:olca：1.0:obligations:日志** - Adobe Pass会记录交易，并可通过商定的报告机制提供。
+* **urn:cablelabs:olca：1.0:obligations:log** - Adobe Pass将记录该事务，并且可以通过商定的报告机制提供该事务。
 
-* **urn:cablelabs:olca：1.0:obligations:重新授权** - Adobe Pass身份验证在n秒内再次刷新授权（通过XACML AttributeAssignment指定为责任的参数 — 请参阅XACML核心规范，第5.46节）。
+* **urn:cablelabs:olca：1.0:obligations:re-authz** - Adobe Pass身份验证在n秒内再次刷新授权（通过XACML AttributeAssignment指定为责任的参数 — 请参阅XACML核心规范，第5.46节）。
 
 <!--
 >![RelatedInformation]

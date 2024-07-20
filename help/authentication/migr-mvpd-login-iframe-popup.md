@@ -4,7 +4,7 @@ description: 如何将MVPD登录页面从iFrame迁移到弹出窗口
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '686'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 * [Adobe Pass Authentication and Safari login issues](https://tve.helpdocsonline.com/adobe-pass)
 * [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)-->
 
-Adobe Pass身份验证团队 **建议实施弹出窗口/新窗口登录页面** 而不是Firefox和Safari上的iFrame版本。  但是，如果您实施的是Internet Explorer的登录页面，则可能会遇到弹出窗口实施问题。 IE问题是由以下事实造成的：用户在弹出窗口中使用其MVPD进行身份验证后，Adobe Pass身份验证强制实施父页面重定向，Internet Explorer将重定向视为弹出窗口阻止程序。 Adobe Pass身份验证团队 **建议为Internet Explorer实施iFrame登录**.
+Adobe Pass身份验证团队&#x200B;**建议在Firefox和Safari上实施弹出窗口/新窗口登录页面**，而不是iFrame版本。  但是，如果您实施的是Internet Explorer的登录页面，则可能会遇到弹出窗口实施问题。 IE问题是由以下事实造成的：用户在弹出窗口中使用其MVPD进行身份验证后，Adobe Pass身份验证强制实施父页面重定向，Internet Explorer将重定向视为弹出窗口阻止程序。 Adobe Pass身份验证团队&#x200B;**建议为Internet Explorer**&#x200B;实现iFrame登录。
 
 本技术说明中提供的示例代码使用iFrame和弹出窗口的混合实现 — 在Internet Explorer上打开iFrame，在其他浏览器上打开弹出窗口。
 
@@ -32,7 +32,7 @@ Adobe Pass身份验证团队 **建议实施弹出窗口/新窗口登录页面** 
 
 ## iFrame中具有登录页面的MVPD选取器 {#mvpd-pickr-iframe}
 
-以前的代码示例显示了一个HTML页面，该页面包含 &lt;div> 将与“关闭iFrame”按钮一起创建iFrame的标记：
+以前的代码示例显示了一个HTML页面，该页面包含要创建iFrame的&lt;div>标记以及“关闭iFrame”按钮：
 
 ```HTML
 <body> 
@@ -48,7 +48,7 @@ Adobe Pass身份验证团队 **建议实施弹出窗口/新窗口登录页面** 
 </body>
 ```
 
-以下是关联的 **JavaScript** 代码：
+以下是关联的&#x200B;**JavaScript**&#x200B;代码：
 
 ```JavaScript
 /*
@@ -105,7 +105,7 @@ function setSelectedProvider(providerID) {
 
 ## 在弹出窗口中具有登录页面的MVPD选取器 {#mvpd-pickr-popup}
 
-因为我们不会使用 **iFrame** HTML代码将不再包含iFrame或用于关闭iFrame的按钮。 之前包含iFrame的div - **mvpddiv**  — 将保留并用于以下内容：
+由于我们将不再使用&#x200B;**iFrame**，因此HTML代码将不再包含iFrame或用于关闭iFrame的按钮。 以前包含iFrame的div - **mvpddiv** — 将被保留并用于以下内容：
 
 * 通知用户如果失去弹出窗口焦点，MVPD登录页已经打开
 * 提供链接以重新获得对弹出窗口的关注
@@ -134,9 +134,9 @@ function setSelectedProvider(providerID) {
 </body>
 ```
 
-MVPD列表将显示在名为的div中 **选取器** 作为选择 **-mvpdList**.
+MVPD列表将作为选择&#x200B;**-mvpdList**&#x200B;显示在名为&#x200B;**选取器**&#x200B;的div中。
 
-将使用新的API回调 —  **setConfig(configXML)**. 调用setRequestor(requestorID)函数后会触发回调。 此回调将返回与先前设置的requestorID集成的MVPD列表。 在回调方法中，将解析传入的XML，并缓存MVPD列表。 也会创建MVPD选取器，但不显示。
+将使用新的API回调 — **setConfig(configXML)**。 调用setRequestor(requestorID)函数后会触发回调。 此回调将返回与先前设置的requestorID集成的MVPD列表。 在回调方法中，将解析传入的XML，并缓存MVPD列表。 也会创建MVPD选取器，但不显示。
 
 ```JavaScript
 var mvpdList;  // The list of cached MVPDs
@@ -187,7 +187,7 @@ function displayProviderDialog(providers) {
 "<a href="javascript:mvpdWindow.focus();">Click here to open it.</a>".
 ```
 
-在createIFrame()回调上 **mvpddiv** 将显示div。
+在createIFrame()回调中，将显示&#x200B;**mvpddiv** div。
 
 ```JavaScript
 function createIFrame(width, height) {
@@ -230,5 +230,5 @@ function checkClosed() {
 >
 >* 该示例代码包含一个用于所用requestorID - &#39;REF&#39;的硬编码变量，该变量应当被替换为真正的程序员请求者ID。
 >* 此示例代码只能从与所用请求者ID关联的已列入白名单的域中正确运行。
->* 由于整个代码均可供下载，因此本技术说明中介绍的代码已被截断。 有关完整的示例，请参见 **JS iFrame与弹出窗口示例**.
->* 外部JavaScript库链接自 [Google托管服务](https://developers.google.com/speed/libraries/).
+>* 由于整个代码均可供下载，因此本技术说明中介绍的代码已被截断。 有关完整示例，请参阅&#x200B;**JS iFrame与弹出示例**。
+>* 外部JavaScript库链接自[Google托管服务](https://developers.google.com/speed/libraries/)。

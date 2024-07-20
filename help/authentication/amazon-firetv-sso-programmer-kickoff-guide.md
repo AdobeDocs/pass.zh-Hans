@@ -4,7 +4,7 @@ description: Amazon fireTV SSO — 程序员启动指南
 exl-id: cf9ba614-57ad-46c3-b154-34204b38742d
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '793'
+source-wordcount: '782'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 0%
 
 </br>
 
-## 介绍 {#intro}
+## 简介 {#intro}
 
-本文档介绍了集成新环境所需的信息 **Adobe Pass身份验证的fireTV SDK** 在您的fireTV应用程序中。 此新SDK利用Amazon的fireTV平台上的操作系统级别集成，从而提供 **单点登录** 支持。 为了从单点登录中获益，您需要花费一些精力将应用程序从无客户端API迁移到新的fireTV SDK。 身份验证流程有一些更改，将在下面详细介绍。
+本文档描述了在fireTV应用程序中集成新&#x200B;**Adobe Pass身份验证的fireTV SDK**&#x200B;所需的信息。 此新SDK利用Amazon的fireTV平台上的操作系统级集成，从而提供&#x200B;**单点登录**&#x200B;支持。 为了从单点登录中获益，您需要花费一些精力将应用程序从无客户端API迁移到新的fireTV SDK。 身份验证流程有一些更改，将在下面详细介绍。
 
 ## 高级体系结构和操作系统级别的集成 {#high}
 
@@ -43,39 +43,39 @@ ht-degree: 0%
 
 这要求程序员将MVPD选取器添加到他们的应用程序中，以便用户可以直接在fireTV设备上选取其电视提供商。 选择MVPD后，将在fireTV设备上向用户显示MVPD登录页面。
 
-描述fireTV上的常规、HBA和SSO情况的用户流的线框位于 [Amazon Fire TV - MVVPD登录用户流程](https://xd.adobe.com/view/9058288e-4b67-43a1-9d5b-5f76ede6c51e/).
+可在[Amazon Fire TV - MVVPD登录用户流](https://xd.adobe.com/view/9058288e-4b67-43a1-9d5b-5f76ede6c51e/)中找到描述fireTV上的常规、HBA和SSO方案的用户流的线框。
 
 ## 从基于Android SDK的应用程序迁移到基于fireTV SDK的应用程序 {#migra2}
 
-这个新的fireTV SDK与我们现有的Android SDK以及我们当前拥有的文档非常相似 **集成我们的Android SDK** <!--http://tve.helpdocsonline.com/android-technical-overview-->在我们准备好fireTV SDK文档之前可以使用。 如果您已有使用我们Android SDK的Android应用程序，那么fireTV应用程序中的fireTV SDK集成应该非常简单。
+这个新的fireTV SDK与我们现有的Android SDK非常相似，在我们准备好fireTV SDK文档之前，可以使用我们当前用于&#x200B;**集成Android SDK** <!--http://tve.helpdocsonline.com/android-technical-overview-->的文档。 如果您已有使用我们Android SDK的Android应用程序，则在fireTV应用程序中集成fireTV SDK应该非常简单。
 
-与现有的Android SDK相比，在fireTV SDK上，身份验证过程将更易于开发，因为管理/呈现MVPD登录页面和检索AuthN令牌的任务将由AccessEnabler库在内部执行。
+与现有的Android SDK相比，在fireTV SDK上，身份验证过程将更易于开发，因为管理/展示MVPD登录页面和检索AuthN令牌的任务将由AccessEnabler库在内部执行。
 
 ## 常见问题解答 {#faq}
 
-1. 如何 **SSO** 工作？
+1. **SSO**&#x200B;如何工作？
 
    * SSO将在由Adobe Pass Authentication提供支持的所有程序员应用程序上运行，这些应用程序在同一台Amazon fireTV设备上使用新的fireTV SDK
-   * 在无客户端REST API上实现的程序员应用程序与在fireTV SDK上实现的应用程序之间的SSO **将不受支持**
+   * 不支持在无客户端REST API上实施的程序员应用程序与在fireTV SDK **上实施的应用程序之间的SSO**
 
 1. MVPD对fireTV SSO进行了哪些报道？
 
-   * **所有MVPD** 从技术上讲，fireTV SDK支持由Adobe Pass身份验证集成的SSO。
+   * 从技术上讲，fireTV SDK支持通过Adobe Pass身份验证集成的&#x200B;**所有MVPD**。
 
-1. 除了使用新SDK之外， **工作流更改** 程序员应该注意吗？
+1. 除了使用新SDK之外，程序员还应了解其他&#x200B;**工作流发生了什么变化**？
 
    * 程序员需要为fireTV平台实施MVPD选取器。
 
-1. 身份验证是否会有任何更改 **TTL**？
+1. 身份验证&#x200B;**TTL**&#x200B;是否有任何更改？
 
    * 关于身份验证TTL的行为没有变化。
    * 第一个有效的身份验证令牌将用于执行SSO，在这种情况下，所有其他将通过SSO进行身份验证的应用程序将使用相同的TTL，直到它过期。 因此，当从一个应用程序导航到另一个应用程序时，第二个应用程序将共享验证第一个应用程序的TTL。
 
-1. 如何 **降解API** 工作？
+1. **降级API**&#x200B;如何工作？
 
-   * 降级API无需进行更改，用户体验将与Android设备上的相同。
+   * 降级API不需要进行任何更改，用户体验将与在Android设备上相同。
 
-1. 如何 **临时传递** 流量是否受到影响？
+1. **TempPass**&#x200B;流会受到什么影响？
 
    * TempPass流是单屏幕的，其行为与任何其他本机设备一样。
 

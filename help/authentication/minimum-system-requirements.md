@@ -4,7 +4,7 @@ description: 最低系统要求
 exl-id: 57b21e2a-abd7-4b4b-85f1-25584a850e40
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '434'
+source-wordcount: '446'
 ht-degree: 0%
 
 ---
@@ -34,22 +34,22 @@ Adobe Pass鼓励我们的客户和合作伙伴考虑升级到最新版本，以�
 
 | Web/移动浏览器(†) | 支持的版本 |
 |---|---|
-| Google Chrome | **70** 或更高版本 |
-| Mozilla Firefox | **57** 或更高版本 |
-| Apple Safari | **14** 或更高版本 |
-| Microsoft Edge | **100** 或更高版本 |
+| Google Chrome | **70**&#x200B;或更高版本 |
+| Mozilla Firefox | **57**&#x200B;或更高版本 |
+| Apple Safari | **14**&#x200B;或更高版本 |
+| Microsoft Edge | **100**&#x200B;或更高版本 |
 
 (†)Adobe建议不要使用私密或无痕模式。
 
 | 操作系统 | 支持的版本 |
 |---|---|
-| *Android* | **7.0** （努加）或更高版本 |
-| *iOS* | **14** 或更高版本 |
-| *iPadOS* | **14** 或更高版本 |
-| *tvOS* | **14** 或更高版本 |
-| *Fire操作系统* | **5 (Android 5.1)** 或更高版本 |
-| *Mac操作系统* | **10.13** 或更高版本 |
-| *Microsoft Windows* | **10** 或更高版本 |
+| *Android* | **7.0** (Nougat)或更高版本 |
+| *iOS* | **14**&#x200B;或更高版本 |
+| *iPadOS* | **14**&#x200B;或更高版本 |
+| *tvOS* | **14**&#x200B;或更高版本 |
+| *触发操作系统* | **5 (Android 5.1)**&#x200B;或更高版本 |
+| *Mac OS* | **10.13**&#x200B;或更高版本 |
+| *Microsoft Windows* | **10**&#x200B;或更高版本 |
 
 
 
@@ -62,7 +62,7 @@ Adobe Pass鼓励我们的客户和合作伙伴考虑升级到最新版本，以�
 ## 无客户端(REST)实施的设备要求 {#general_clientless_reqs}
 
 
-任何将通过无客户端实施使用Adobe Pass身份验证服务的设备 **必须能够**：
+任何将通过无客户端实现使用Adobe Pass身份验证服务的设备都必须能够&#x200B;**：**
 
 * 提供唯一的哈希设备ID。 如果设备不提供唯一的经过哈希处理的设备ID，则必须能够保留由Adobe Pass身份验证提供的唯一ID。 设备应该能够在其本地存储中永久保留唯一ID，并在调用Adobe Pass身份验证API时提供唯一ID作为设备ID。
 * 使用HMAC-SHA1算法生成数字签名

@@ -4,7 +4,7 @@ description: 无刷新登录和注销
 exl-id: 3ce8dfec-279a-4d10-93b4-1fbb18276543
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1772'
+source-wordcount: '1761'
 ht-degree: 0%
 
 ---
@@ -44,18 +44,18 @@ ht-degree: 0%
 
 Adobe Pass身份验证Web客户端有两种身份验证方式，具体取决于MVPD的要求：
 
-1. **整页重定向 —** 用户从程序员网站上的MVPD选取器选择一个提供程序（配置了全页重定向）后， `setSelectedProvider(<mvpd>)` 将在AccessEnabler上调用，用户将被重定向到MVPD的登录页面。 用户提供有效凭据后，他将被重定向回程序员网站。 初始化AccessEnabler，并在以下期间从Adobe Pass身份验证中检索身份验证令牌： `setRequestor`.
-1. **iFrame/弹出窗口 —** 用户选择提供程序（使用iFrame配置）后， `setSelectedProvider(<mvpd>)` 将在AccessEnabler上调用。 此操作将触发 `createIFrame(width, height)` 回调，通知程序员使用名称创建iFrame（或弹出窗口，具体取决于浏览器/首选项） `"mvpdframe"` 以及提供的尺寸。 创建iFrame/弹出窗口后，AccessEnabler会在iFrame/弹出窗口中加载MVPD的登录页面。 用户提供有效凭据，iFrame/弹出窗口被重定向到Adobe Pass身份验证，该身份验证返回一个JS代码片段，该代码片段关闭iFrame/弹出窗口并重新加载父页面（程序员网站）。 与流程1类似，在以下期间检索身份验证令牌： `setRequestor`.
+1. **全页重定向 —**&#x200B;用户选择提供程序后    （使用全页重定向进行配置）    在AccessEnabler上调用程序员网站`setSelectedProvider(<mvpd>)`，用户将被重定向到MVPD的登录页面。 用户提供有效凭据后，他将被重定向回程序员网站。 AccessEnabler已初始化，并在`setRequestor`期间从Adobe Pass身份验证中检索身份验证令牌。
+1. **iFrame/弹出窗口 —**&#x200B;用户选择提供程序（配置了iFrame）后，将在AccessEnabler上调用`setSelectedProvider(<mvpd>)`。 此操作将触发`createIFrame(width, height)`回调，通知程序员使用名称`"mvpdframe"`和提供的维度创建一个iFrame（或弹出窗口，具体取决于浏览器/首选项）。 创建iFrame/弹出窗口后，AccessEnabler会在iFrame/弹出窗口中加载MVPD的登录页面。 用户提供有效凭据，iFrame/弹出窗口被重定向到Adobe Pass身份验证，该身份验证返回一个JS代码片段，该代码片段关闭iFrame/弹出窗口并重新加载父页面（程序员网站）。 与流程1类似，在`setRequestor`期间检索身份验证令牌。
 
-此 `displayProviderDialog` 回调(触发者： `getAuthentication`/`getAuthorization`)返回MVPD列表及其相应的设置。 此 `iFrameRequired` MVPD的属性允许程序员知道它应该激活流1还是流2。 请注意，程序员仅需要对流程2执行额外操作（创建iFrame/弹出窗口）。
+`displayProviderDialog`回调（由`getAuthentication`/`getAuthorization`触发）返回MVPD及其相应设置的列表。 MVPD的`iFrameRequired`属性允许程序员知道它应该激活流1还是流2。 请注意，程序员仅需要对流程2执行额外操作（创建iFrame/弹出窗口）。
 
 **取消身份验证**
 
 还有一种情况，用户通过关闭登录页面来显式取消身份验证流程。 以下是面向程序员的场景和建议的解决方案：
 
-1. **整页重定向 —** 当登录页面关闭时，用户需要再次导航到程序员网站，并从头开始启动整个流程。 在此方案中，程序员无需执行任何显式操作。
-1. **iFrame -** 建议程序员将iFrame托管在 `div` （或类似的UI组件）添加了关闭按钮。 当用户按下“关闭”按钮时，程序员将销毁iFrame以及关联的UI，并执行 `setSelectedProvider(null)`. 此调用允许AccessEnabler清除其内部状态，并允许用户启动后续身份验证流程。 `setAuthenticationStatus` 和 `sendTrackingData(AUTHENTICATION_DETECTION...)` 将被触发以指示失败的身份验证流程(两者均在 `getAuthentication` 和 `getAuthorization`)。
-1. **弹出窗口 —** 某些浏览器无法准确检测窗口关闭事件，因此需要在此处采取不同的方法（与上面的iFrame流程相反）。 Adobe建议程序员初始化一个定时器，定期验证登录弹出窗口是否存在。 如果该窗口不存在，程序员可以确保用户手动取消登录流程，并且程序员可以继续调用 `setSelectedProvider(null)`. 触发的回调与上面流程2中的相同。
+1. **全页重定向 —**&#x200B;当登录页面关闭时，用户需要再次导航到程序员网站，并从头开始启动整个流程。 在此方案中，程序员无需执行任何显式操作。
+1. **iFrame -**&#x200B;建议程序员将iFrame托管在附有“关闭”按钮的`div`（或类似的UI组件）中。 当用户按下“关闭”按钮时，程序员将销毁iFrame以及关联的UI并执行`setSelectedProvider(null)`。 此调用允许AccessEnabler清除其内部状态，并允许用户启动后续身份验证流程。 将触发`setAuthenticationStatus`和`sendTrackingData(AUTHENTICATION_DETECTION...)`以指示失败的身份验证流程（在`getAuthentication`和`getAuthorization`上）。
+1. **弹出窗口 —**&#x200B;某些浏览器无法准确检测窗口关闭事件，因此需要在此处采取其他方法（与上述iFrame流程相反）。 Adobe建议程序员初始化一个定时器，定期验证登录弹出窗口是否存在。 如果窗口不存在，程序员可以确保用户手动取消登录流程，并且程序员可以继续调用`setSelectedProvider(null)`。 触发的回调与上面流程2中的相同。
 
 </br>
 
@@ -75,7 +75,7 @@ AccessEnabler的注销API会清除库的本地状态，并在当前选项卡/窗
 >
 >改进的无刷新登录和注销流程要求浏览器支持现代HTML5技术，包括Web消息传送。
 
-上面讨论的身份验证（登录）和注销流都通过在每个流完成后重新加载主页提供了类似的用户体验。  当前功能旨在通过提供无刷新（后台）登录和注销来改善用户体验。 程序员可以通过传递两个布尔标记(`backgroundLogin` 和 `backgroundLogout`)到 `configInfo` 的参数 `setRequestor` API。 默认情况下，后台登录/注销处于禁用状态（这提供了与以前实施的兼容性）。
+上面讨论的身份验证（登录）和注销流都通过在每个流完成后重新加载主页提供了类似的用户体验。  当前功能旨在通过提供无刷新（后台）登录和注销来改善用户体验。 通过向`setRequestor` API的`configInfo`参数传递两个布尔标记（`backgroundLogin`和`backgroundLogout`），程序员可以启用/禁用后台登录和注销。 默认情况下，后台登录/注销处于禁用状态（这提供了与以前实施的兼容性）。
 
 **示例：**
 
@@ -92,13 +92,13 @@ AccessEnabler的注销API会清除库的本地状态，并在当前选项卡/窗
 
 以下几点描述了原始验证流和改进流之间的过渡：
 
-1. 全页重定向将被用于执行MVPD登录的新浏览器选项卡替换。 需要程序员创建新选项卡(通过 `window.open`)已命名 `mvpdwindow` 当用户选择MVPD时(使用 `iFrameRequired = false`)。 然后程序员执行 `setSelectedProvider(<mvpd>)`，从而允许AccessEnabler在新选项卡中加载MVPD登录URL。 在用户提供有效凭据后，Adobe Pass身份验证将关闭选项卡，并向程序员的网站发送window.postMessage，以向AccessEnabler发出身份验证流程已完成的信号。 将触发以下回调：
+1. 全页重定向将被用于执行MVPD登录的新浏览器选项卡替换。 当用户选择MVPD （带有`iFrameRequired = false`）时，程序员需要创建名为`mvpdwindow`的新选项卡（通过`window.open`）。 然后程序员执行`setSelectedProvider(<mvpd>)`，允许AccessEnabler在新选项卡中加载MVPD登录URL。 在用户提供有效凭据后，Adobe Pass身份验证将关闭选项卡，并向程序员的网站发送window.postMessage，以向AccessEnabler发出身份验证流程已完成的信号。 将触发以下回调：
 
-   - 如果流是由启动的 `getAuthentication`： `setAuthenticationStatus` 和 `sendTrackingData(AUTHENTICATION_DETECTION...)` 将触发以表示身份验证成功/失败。
+   - 如果流程由`getAuthentication`启动： `setAuthenticationStatus`和`sendTrackingData(AUTHENTICATION_DETECTION...)`将触发以表示身份验证成功/不成功。
 
-   - 如果流是由启动的 `getAuthorization`： `setToken/tokenRequestFailed` 和 `sendTrackingData(AUTHORIZATION_DETECTION...)` 将被触发以表示授权成功/失败。
+   - 如果流程由`getAuthorization`启动： `setToken/tokenRequestFailed`和`sendTrackingData(AUTHORIZATION_DETECTION...)`将触发以表示授权成功/不成功。
 
-1. iFrame/弹出窗口流程大致保持不变，区别在于用户提供有效凭据后，不会重新加载父页面。 登录后，iFrame/弹出窗口将自动关闭， `window.postMessage` 将发送到父页面，通知AccessEnabler流已完成。 与上一个流程中相同的回调将被触发， **加上以下新回调：`destroyIFrame`**. 此 `destroyIFrame` 回调允许程序员删除任何关联的/辅助的iFrame组件，例如UI装饰。 旧身份验证流程中不需要存在此回调，因为登录完成后，Adobe Pass身份验证将重新加载程序员页面，从而破坏其上的所有UI组件。
+1. iFrame/弹出窗口流程大致保持不变，区别在于用户提供有效凭据后，不会重新加载父页面。 iFrame/弹出窗口将在登录后自动关闭，并向父页面发送`window.postMessage`，通知AccessEnabler流已完成。 触发的回调与上一流程&#x200B;**中的相同，再加上以下新回调：`destroyIFrame`**。 `destroyIFrame`回调允许程序员删除任何关联的iFrame/辅助组件，如UI装饰。 旧身份验证流程中不需要存在此回调，因为登录完成后，Adobe Pass身份验证将重新加载程序员页面，从而破坏其上的所有UI组件。
 
 </br>
 
@@ -112,11 +112,11 @@ AccessEnabler的注销API会清除库的本地状态，并在当前选项卡/窗
 
 以下是取消身份验证的流程：
 
-1. **浏览器选项卡 —** 由于选项卡基本上是一个新窗口，因此捕获其关闭事件的限制与场景3中所述的旧身份验证流的限制相同。 此外，计时器方法在此处不可用，因为无法区分用户手动关闭的选项卡和在登录流结束时自动关闭的选项卡。 此处的解决方案是让AccessEnabler在用户取消流时保持“静默”（不触发回调）。 此外，程序员无需采取任何具体操作。 用户将能够启动另一个身份验证流程，而不会收到“多个身份验证请求错误”错误（此错误已在后台登录的AccessEnabler中禁用）。
+1. **浏览器选项卡 —**&#x200B;由于该选项卡基本上是一个新窗口，因此捕获其关闭事件与方案3中所述的旧身份验证流的限制相同。 此外，计时器方法在此处不可用，因为无法区分用户手动关闭的选项卡和在登录流结束时自动关闭的选项卡。 此处的解决方案是让AccessEnabler在用户取消流时保持“静默”（不触发回调）。 此外，程序员无需采取任何具体操作。 用户将能够启动另一个身份验证流程，而不会收到“多个身份验证请求错误”错误（此错误已在后台登录的AccessEnabler中禁用）。
 
-1. **iFrame -** 程序员可以使用旧身份验证流程（从iFrame和触发的相关“关闭”按钮创建包装器UI）中的场景2中讨论的方法 `setSelectedProvider(null)`. 尽管这种方法已不再强烈要求（后台登录允许使用多个身份验证流程，如上面的场景1中所述），但Adobe仍建议这样做。
+1. **iFrame -**&#x200B;程序员可以使用旧身份验证流程中的方案2中讨论的方法(从iFrame创建包装器UI以及触发`setSelectedProvider(null)`的相关“关闭”按钮。 尽管这种方法已不再强烈要求（后台登录允许使用多个身份验证流程，如上面的场景1中所述），但Adobe仍建议这样做。
 
-1. **弹出窗口 —** 这与上面的“浏览器”选项卡流程相同。
+1. **弹出窗口 —**&#x200B;这与上面的“浏览器”选项卡流程相同。
 
 </br>
 
@@ -124,11 +124,11 @@ AccessEnabler的注销API会清除库的本地状态，并在当前选项卡/窗
 
 新的注销流将在隐藏的iFrame中执行，从而消除完整页面重定向。  这是可能的，因为用户不需要在MVPD的注销页面上执行特定操作。
 
-注销流程完成后，它会将iFrame重定向到自定义Adobe Pass身份验证端点。 这将提供一个JS代码片段，该代码片段执行 `window.postMessage` 通知父级，通知AccessEnabler注销已完成。 将触发以下回调： `setAuthenticationStatus()` 和 `sendTrackingData(AUTHENTICATION_DETECTION ...)`，表示用户不再进行身份验证。
+注销流程完成后，它会将iFrame重定向到自定义Adobe Pass身份验证端点。 这将向父项提供执行`window.postMessage`的JS代码片段，通知AccessEnabler注销已完成。 触发了以下回调： `setAuthenticationStatus()`和`sendTrackingData(AUTHENTICATION_DETECTION ...)`，指示用户不再进行身份验证。
 
 下图显示了无刷新流程，通过该流程，用户无需刷新应用程序的主页即可登录到其MVPD：
 
-**改进了（无刷新）身份验证/注销流程**
+**已改进（无刷新）的身份验证/注销流程**
 
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/AE_with_no_refresh_web.png)
 
@@ -142,13 +142,13 @@ AccessEnabler的注销API会清除库的本地状态，并在当前选项卡/窗
 
 以下是程序员在实施TempPass以进行无刷新登录和注销时需要注意的一些方面：
 
-- 在开始身份验证之前，只需要为非TempPass MVPD创建iFrame或弹出窗口。 程序员可以通过读取 `tempPass` MVPD对象的属性(返回自 `setConfig()` / `displayProviderDialog()`)。
+- 在开始身份验证之前，只需要为非TempPass MVPD创建iFrame或弹出窗口。 通过读取MVPD对象的`tempPass`属性（由`setConfig()` / `displayProviderDialog()`返回），程序员可以检测MVPD是否为TempPass。
 
-- 此 `createIFrame()` 回调必须包含对TempPass的检查，并且仅在MVPD不是TempPass时才执行其逻辑。
+- `createIFrame()`回调必须包含对TempPass的检查，并且仅在MVPD不是TempPass时才执行其逻辑。
 
-- 此 `destroyIFrame()` 回调必须包含对TempPass的检查，并且仅在MVPD不是TempPass时才执行其逻辑。
+- `destroyIFrame()`回调必须包含对TempPass的检查，并且仅在MVPD不是TempPass时才执行其逻辑。
 
-- 此 `setAuthenticationStatus()` 和 `sendTrackingData()` 在验证完成后调用回调（与普通MVPD的无刷新流中的完全相同）。
+- 身份验证完成后将调用`setAuthenticationStatus()`和`sendTrackingData()`回调（与普通MVPD的无刷新流中完全相同）。
 
 >[!NOTE]
 >

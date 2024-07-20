@@ -1,13 +1,13 @@
 ---
 title: Adobe并发监控2.9发行说明
 description: Adobe并发监控2.9发行说明
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: fd793b1f-b704-492b-850c-dae6478b575a
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '153'
-ht-degree: 0%
+source-wordcount: '158'
+ht-degree: 1%
 
 ---
-
 
 # 并发监控2.9发行说明 {#rn-cm29}
 
@@ -24,7 +24,8 @@ ht-degree: 0%
 
 * 在每个粒度间隔内达到每个并发级别的用户数（即有多少用户曾拥有2个并发流、3个并发流等）
 * 每个并发级别的总持续时间（以分钟为单位，平均值可以通过简单地将该值除以上述计数来计算）
-* 用户遇到每个并发级别的总次数，用于根据受影响的用户和汇总的用户体验来估计给定规则的影响。有关更多详细信息，请参阅 [使用情况报表](/help/concurrency-monitoring/cm-usage-reports.md) 页面。
+* 用户遇到每个并发级别的总次数，用于根据受影响的用户和汇总的用户体验来估计给定规则的影响
+有关更多详细信息，请参阅[使用情况报表](/help/concurrency-monitoring/cm-usage-reports.md)页面。
 
 我们还改进了SQL注入保护并添加了多个错误修复。
 

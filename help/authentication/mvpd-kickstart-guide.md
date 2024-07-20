@@ -4,7 +4,7 @@ description: MVPD直接集成计划
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1067'
+source-wordcount: '1071'
 ht-degree: 0%
 
 ---
@@ -15,19 +15,19 @@ ht-degree: 0%
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-## 介绍 {#mvpd-kickstart-intro}
+## 简介 {#mvpd-kickstart-intro}
 
 欢迎使用Adobe Pass Authentication for TV Everywhere。  我们期待着与您合作。
 
 >[!NOTE]
 >
->这是多频道视频节目分发商(MVPD)的快速入门指南。 如果您是程序员（内容提供商），请参见 [程序员Kickstart指南](/help/authentication/programmer-kickstart-guide.md).
+>这是多频道视频节目分发商(MVPD)的快速入门指南。 如果您是程序员（内容提供商），请参阅[程序员快速入门指南](/help/authentication/programmer-kickstart-guide.md)。
 
-您可以随时通过Zendesk上的Adobe Pass身份验证票证系统提供支持。 在这里，您还可以找到用于我们流程的示例、文档和视频教程。 要使用 [Zendesk](https://adobeprimetime.zendesk.com/)，您必须在https://tve.zendesk.com/home上注册并创建一个帐户。 您可以注册的用户数量以及在已归档票证上可查看或发表评论的用户数量没有限制。 所有支持问题都应发送至：tve-support，网址为adobe.com
+您可以随时通过Zendesk上的Adobe Pass身份验证票证系统提供支持。 在这里，您还可以找到用于我们流程的示例、文档和视频教程。 若要使用[Zendesk](https://adobeprimetime.zendesk.com/)，您必须在https://tve.zendesk.com/home注册并创建一个帐户。 您可以注册的用户数量以及在已归档票证上可查看或发表评论的用户数量没有限制。 所有支持问题都应发送至：tve-support，网址为adobe.com
 
 **团队联系人**：
 
-**支持**  — 对于所有问题、事件或功能请求 **tve-support@adobe.com**.
+**支持** — 对于所有问题、事件或功能请求&#x200B;**tve-support@adobe.com**。
 
 ## 1.启动会议 {#kickoff-meetings}
 
@@ -37,14 +37,14 @@ ht-degree: 0%
 
 Adobe将设置每周状态调用，以讨论和跟踪集成的总体计划、步骤、时间线和实施详细信息。 在此阶段，Adobe将检查MVPD的规范。 其结果应该是详细说明了MVPD所需的所有功能的规范页面。 MVPD将向Adobe发送一份规范文档，详细介绍MVPD的身份验证/授权实现。
 
-要澄清的项目，请参阅 [MVPD集成功能](/help/authentication/mvpd-integr-features.md).
+要阐明的项目，请参阅[MVPD集成功能](/help/authentication/mvpd-integr-features.md)。
 
 有几个设置需要在此时详细描述：
 
-* **MVPD的徽标URL**  — 这是一个文件，其尺寸为：112 x 33像素。 当用户单击“登录”按钮选择他们的付费电视提供商时，程序员会在他们的网站上显示徽标。
-* **TTL（存留期）值** - TTL通常由MVPD在身份验证/授权过程中设置。 但是，Adobe可以覆盖这些TTL值，并根据程序员和MVPD商定的内容提供不同的值。
-* **显示名称**  — 当用户单击“登录”按钮选择他们的付费电视提供商时，程序员会在他们的网站上显示此信息。
-* **测试凭据**  — 两个用户档案（暂存和生产）都应具有测试凭据列表。
+* **MVPD徽标URL** — 这是具有以下维度的文件： 112 x 33像素。 当用户单击“登录”按钮选择他们的付费电视提供商时，程序员会在他们的网站上显示徽标。
+* **TTL （生存时间）值** - TTL通常由MVPD在身份验证/授权过程中设置。 但是，Adobe可以覆盖这些TTL值，并根据程序员和MVPD商定的内容提供不同的值。
+* **显示名称** — 当用户单击“登录”按钮选择他们的付费电视提供商时，程序员会在他们的网站上显示此名称。
+* **测试凭据** — 配置文件（暂存和生产）都应该有测试凭据的列表。
 
 >[!IMPORTANT]
 >
@@ -59,8 +59,8 @@ Adobe将设置每周状态调用，以讨论和跟踪集成的总体计划、步
 双方需要交换涉及的所有环境（生产、暂存等）的元数据。
 
 * **Adobe**
-   * 对于暂存环境，可以从以下位置检索Adobe的SP元数据： [身份验证暂存sp元数据](https://sp.auth-staging.adobe.com/sp/metadata)
-   * 对于生产环境，可以从以下位置检索Adobe的SP元数据： [身份验证生产sp元数据](https://sp.auth.adobe.com/sp/metadata)
+   * 对于暂存环境Adobe，可以从以下位置检索其SP元数据： [身份验证暂存SP元数据](https://sp.auth-staging.adobe.com/sp/metadata)
+   * 对于生产环境Adobe，可从以下位置检索其SP元数据： [身份验证生产sp元数据](https://sp.auth.adobe.com/sp/metadata)
 
 * **MVPD**
    * 添加元数据（暂存/生产）。
@@ -85,10 +85,10 @@ Adobe将设置每周状态调用，以讨论和跟踪集成的总体计划、步
 
 Adobe为开发过程的不同阶段提供不同的环境：
 
-* **资格预审** （预定）：预定环境包含下一个候选版本。 在将集成升级到发布环境之前，Adobe最初在此环境中集成新合作伙伴。 合作伙伴有两周时间可以在质量前环境中进行测试，并且必须明确请求对质量前配置进行任何更改(有关更改请求流程的详细信息，请与您的Adobe代表联系)。 错误修复会在此环境中触发新部署。
-* **版本** （版本）：在此处将Adobe的当前生产版本部署到实时环境中。
+* **资格预审** (PRE-QUAL)：资格预审环境包含下一个发行候选版本。 在将集成升级到发布环境之前，Adobe最初在此环境中集成新合作伙伴。 合作伙伴有两周时间可以在质量前环境中进行测试，并且必须明确请求对质量前配置进行任何更改(有关更改请求流程的详细信息，请与您的Adobe代表联系)。 错误修复会在此环境中触发新部署。
+* **版本** （版本）：Adobe的当前生产版本已部署到此处的实时环境中。
 
-有关如何使用Adobe环境的更多信息，请参阅 [了解Adobe环境](/help/authentication/understanding-the-adobe-environments.md)
+有关如何使用Adobe环境的详细信息，请参阅[了解Adobe环境](/help/authentication/understanding-the-adobe-environments.md)
 
 ## 7.暂存部署 {#stag-env}
 
@@ -98,7 +98,7 @@ MVPD需要在其QA/暂存/测试环境中执行相同的部署。
 
 ## 8.测试和故障排除 {#tes-troubleshoot}
 
-在此阶段，Adobe和MVPD测试并排除集成故障。 为了帮助测试集成，Adobe Pass身份验证团队可以使用Adobe的API测试站点。 要了解有关使用Adobe API测试站点的更多信息，请参阅 [使用AdobeAPI测试站点测试身份验证和授权流](/help/authentication/test-authn-authz-flows-using-adobes-api-test-site.md).
+在此阶段，Adobe和MVPD测试并排除集成故障。 为了帮助测试集成，Adobe Pass身份验证团队可以使用Adobe的API测试站点。 若要了解有关使用Adobe API测试站点的更多信息，请参阅[使用AdobeAPI测试站点测试身份验证和授权流程](/help/authentication/test-authn-authz-flows-using-adobes-api-test-site.md)。
 
 测试和故障排除成功完成后，会在Adobe的发布暂存环境中启用集成。 此时，Adobe可以将MVPD与实际的程序员集成。
 

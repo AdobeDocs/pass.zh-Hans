@@ -4,7 +4,7 @@ description: Apple SSO指南(REST API)
 exl-id: cb27c4b7-bdb4-44a3-8f84-c522a953426f
 source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '1435'
+source-wordcount: '1344'
 ht-degree: 0%
 
 ---
@@ -15,15 +15,15 @@ ht-degree: 0%
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-## 介绍 {#Introduction}
+## 简介 {#Introduction}
 
 Adobe Pass身份验证REST API可以通过我们所说的Apple SSO工作流程，为在iOS、iPadOS或tvOS上运行的客户端应用程序的最终用户支持平台单点登录(SSO)身份验证。
 
-请注意，本文档可用作现有REST API文档的扩展，您可以找到该文档 [此处](/help/authentication/rest-api-reference.md).
+请注意，此文档可用作现有REST API文档的扩展，该文档可在[此处](/help/authentication/rest-api-reference.md)找到。
 
 ## 指南 {#Cookbooks}
 
-为了从Apple SSO用户体验中获益，一个应用程序需要将 [视频订阅者帐户](https://developer.apple.com/documentation/videosubscriberaccount) 由Apple开发的框架，而关于Adobe Pass身份验证REST API通信，则必须遵循下面提供的提示顺序。
+为了从Apple SSO用户体验中获益，一个应用程序需要集成由Apple开发的[视频订阅者帐户](https://developer.apple.com/documentation/videosubscriberaccount)框架，而对于Adobe Pass身份验证REST API通信，它将必须遵循下面介绍的提示顺序。
 
 ### 身份验证 {#Authentication}
 
@@ -47,24 +47,24 @@ Adobe Pass身份验证REST API可以通过我们所说的Apple SSO工作流程�
 
 >[!TIP]
 >
-> **<u>提示：</u>** 通过以下媒体实施此操作 [Adobe Pass身份验证](/help/authentication/check-authentication-token.md) 服务。
+> **<u>提示：</u>**&#x200B;通过[Adobe Pass身份验证](/help/authentication/check-authentication-token.md)服务的媒体实现此功能。
 
 
 #### 步骤：“用户是否通过Platform SSO登录？” {#Is_the_user_logged_in_via_Platform_SSO}
 
 >[!TIP]
 >
-> **<u>提示：</u>** 通过以下媒体实施此操作 [视频订阅者帐户](https://developer.apple.com/documentation/videosubscriberaccount) 框架。
+> **<u>提示：</u>**&#x200B;通过[视频订阅者帐户](https://developer.apple.com/documentation/videosubscriberaccount)框架实现此功能。
 
-- 应用程序必须检查 [访问权限](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) 用户的订阅信息，只有在用户允许的情况下才会继续。
-- 申请者必须提交 [请求](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest) 以获取订阅者帐户信息。
-- 应用程序必须等待并处理 [元数据](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata) 信息。
+- 应用程序必须检查[权限以访问](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus)用户的订阅信息，并且只有在用户允许的情况下才继续。
+- 应用程序必须提交[请求](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest)以获取订阅者帐户信息。
+- 应用程序必须等待并处理[元数据](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata)信息。
 
 
 
 >[!TIP]
 >
-> **<u>专业提示：</u>** 请按照代码片段进行操作，并特别注意注释内容。
+> **<u>专业提示：</u>**&#x200B;请遵循代码片段并特别注意这些备注。
 
 ```swift
 ...
@@ -124,29 +124,29 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>提示：</u>** 通过以下媒体实施此操作 [Adobe Pass身份验证](/help/authentication/provide-mvpd-list.md) 服务。
+> **<u>提示：</u>**&#x200B;通过[Adobe Pass身份验证](/help/authentication/provide-mvpd-list.md)服务的媒体实现此功能。
 
 
 >[!TIP]
 >
-> **<u>专业提示：</u>** 请注意MVPD属性： *`enablePlatformServices`*， *`boardingStatus`*， *`displayInPlatformPicker`*， *`platformMappingId`*， *`requiredMetadataFields`* 并特别注意其他步骤的代码片段中的注释。
+> **<u>专业提示：</u>**&#x200B;请了解MVPD属性： *`enablePlatformServices`*、*`boardingStatus`*、*`displayInPlatformPicker`*、*`platformMappingId`*、*`requiredMetadataFields`*，并特别注意其他步骤中代码片段出现的注释。
 
 #### 步骤“使用Adobe配置启动平台SSO工作流” {#Initiate_Platform_SSO_workflow_with_Adobe_config}
 
 >[!TIP]
 >
-> **<u>提示：</u>** 通过以下媒体实施此操作 [视频订阅者帐户](https://developer.apple.com/documentation/videosubscriberaccount) 框架。
+> **<u>提示：</u>**&#x200B;通过[视频订阅者帐户](https://developer.apple.com/documentation/videosubscriberaccount)框架实现此功能。
 
-- 应用程序必须检查 [访问权限](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) 用户的订阅信息，只有在用户允许的情况下才会继续。
-- 应用程序必须提供 [委派](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate) 用于VSAccountManager。
-- 申请者必须提交 [请求](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest) 以获取订阅者帐户信息。
-- 应用程序必须等待并处理 [元数据](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata) 信息。
+- 应用程序必须检查[权限以访问](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus)用户的订阅信息，并且只有在用户允许的情况下才继续。
+- 应用程序必须为VSAccountManager提供[委托](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate)。
+- 应用程序必须提交[请求](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest)以获取订阅者帐户信息。
+- 应用程序必须等待并处理[元数据](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata)信息。
 
 
 
 >[!TIP]
 >
-> **<u>专业提示：</u>** 请按照代码片段进行操作，并特别注意注释内容。
+> **<u>专业提示：</u>**&#x200B;请遵循代码片段并特别注意这些备注。
 
 
 ```swift
@@ -250,34 +250,34 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>专业提示：</u>** 请注意中的代码片段 [“使用Adobe配置启动平台SSO工作流”](#Initiate_Platform_SSO_workflow_with_Adobe_config) 步骤。 用户登录成功，以防出现 *`vsaMetadata!.accountProviderIdentifier`* 包含有效值，并且当前日期未超过 *`vsaMetadata!.authenticationExpirationDate`* 值。
+> **<u>专业提示：</u>**&#x200B;请注意[“使用Adobe配置启动平台SSO工作流”](#Initiate_Platform_SSO_workflow_with_Adobe_config)步骤中的代码片段。 如果&#x200B;*`vsaMetadata!.accountProviderIdentifier`*&#x200B;包含有效值并且当前日期未传递&#x200B;*`vsaMetadata!.authenticationExpirationDate`*&#x200B;值，则用户登录成功。
 
 #### 步骤“从Adobe获取所选MVPD的配置文件请求” {#Obtain_a_profile_request_from_Adobe_for_the_selected_MVPD}
 
 >[!TIP]
 >
-> **<u>提示：</u>** 通过Adobe Pass身份验证媒体实施此操作 [配置文件请求](/help/authentication/retrieve-profilerequest.md) 服务。
+> **<u>提示：</u>**&#x200B;通过Adobe Pass身份验证[配置文件请求](/help/authentication/retrieve-profilerequest.md)服务的媒体实现此功能。
 
 >[!TIP]
 >
-> **<u>专业提示：</u>** 请注意，从视频订阅者帐户框架中获取的提供程序标识符表示 *`platformMappingId`* 在Adobe Pass身份验证配置方面。 因此，应用程序必须使用 *`platformMappingId`* 值，通过Adobe Pass身份验证 [提供MVPD列表](/help/authentication/provide-mvpd-list.md) 服务。
+> **<u>专业提示：</u>**&#x200B;请注意，从Adobe Pass身份验证配置中获得的提供程序标识符代表&#x200B;*`platformMappingId`*。 因此，应用程序必须通过Adobe Pass身份验证[提供MVPD列表](/help/authentication/provide-mvpd-list.md)服务的介质使用&#x200B;*`platformMappingId`*&#x200B;值确定MVPD ID属性值。
 
 #### 步骤：“将Adobe请求转发给Platform SSO以获取配置文件” {#Forward_the_Adobe_request_to_Platform_SSO_to_obtain_the_profile}
 
 >[!TIP]
 >
-> **<u>提示：</u>** 通过以下媒体实施此操作 [视频订阅者帐户](https://developer.apple.com/documentation/videosubscriberaccount) 框架。
+> **<u>提示：</u>**&#x200B;通过[视频订阅者帐户](https://developer.apple.com/documentation/videosubscriberaccount)框架实现此功能。
 
 
-- 应用程序必须检查 [访问权限](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) 用户的订阅信息，只有在用户允许的情况下才会继续。
-- 申请者必须提交 [请求](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest) 以获取订阅者帐户信息。
-- 应用程序必须等待并处理 [元数据](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata) 信息。
+- 应用程序必须检查[权限以访问](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus)用户的订阅信息，并且只有在用户允许的情况下才继续。
+- 应用程序必须提交[请求](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest)以获取订阅者帐户信息。
+- 应用程序必须等待并处理[元数据](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata)信息。
 
 
 
 >[!TIP]
 >
-> **<u>专业提示：</u>** 请按照代码片段进行操作，并特别注意注释内容。
+> **<u>专业提示：</u>**&#x200B;请遵循代码片段并特别注意这些备注。
 
 ```swift
     ...
@@ -347,12 +347,12 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>提示：</u>** 通过Adobe Pass身份验证媒体实施此操作 [令牌交换](/help/authentication/token-exchange.md) 服务。
+> **<u>提示：</u>**&#x200B;通过Adobe Pass身份验证[令牌交换](/help/authentication/token-exchange.md)服务实现此功能。
 
 
 >[!TIP]
 >
-> **<u>专业提示：</u>** 请注意中的代码片段 [“将Adobe请求转发给Platform SSO以获取配置文件”](#Forward_the_Adobe_request_to_Platform_SSO_to_obtain_the_profile) 步骤。 此 *`vsaMetadata!.samlAttributeQueryResponse!`* 表示 *`SAMLResponse`*，需要传递给 [令牌交换](/help/authentication/token-exchange.md) 并且需要字符串操作和编码(*比值64* 编码和 *URL* 之后编码)。
+> **<u>专业提示：</u>**&#x200B;请注意[“将Adobe请求转发到Platform SSO以获取配置文件”](#Forward_the_Adobe_request_to_Platform_SSO_to_obtain_the_profile)步骤中的代码片段。 此&#x200B;*`vsaMetadata!.samlAttributeQueryResponse!`*&#x200B;表示需要在[令牌交换](/help/authentication/token-exchange.md)上传递并需要字符串操作和编码（*Base64*&#x200B;编码后和&#x200B;*URL*&#x200B;编码）的&#x200B;*`SAMLResponse`*，然后再进行调用。
 
 </br>
 
@@ -360,41 +360,41 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>提示：</u>** 通过媒介Adobe Pass身份验证实施此操作 [令牌交换](/help/authentication/token-exchange.md) 成功响应，这将 *`204 No Content`*，指示已成功创建令牌并准备好用于授权流。
+> **<u>提示：</u>**&#x200B;通过媒介Adobe Pass身份验证[令牌交换](/help/authentication/token-exchange.md)成功响应实现此目的，响应将为&#x200B;*`204 No Content`*，指示令牌已成功创建并准备好用于授权流。
 
 </br>
 
 #### 步骤：“启动第二个屏幕身份验证工作流” {#Initiate_second_screen_authentication_workflow}
 
-**重要提示：** “第二屏幕身份验证工作流”术语适用于AppleTV，而“第一屏幕身份验证工作流”/“常规身份验证工作流”术语更适用于iPhone和iPad。
+**重要提示：**“第二屏幕身份验证工作流”术语适用于AppleTV，而“第一屏幕身份验证工作流”/“常规身份验证工作流”术语更适用于iPhone和iPad。
 
 
 >[!TIP]
 >
-> **<u>提示：</u>** 通过Adobe Pass身份验证媒体实施此操作
+> **<u>提示：</u>**&#x200B;通过Adobe Pass身份验证媒体实现此功能
 
-[注册码请求](/help/authentication/registration-code-request.md)， [启动身份验证](/help/authentication/initiate-authentication.md) 和 [REST API检索身份验证令牌](/help/authentication/retrieve-authentication-token.md) 或 [检查身份验证令牌](/help/authentication/check-authentication-token.md) 服务。
-
-
->[!TIP]
->
-> **<u>专业提示：</u>** 请按照以下步骤实施tvOS。
-
-- 该应用程序必须 [获取注册码](/help/authentication/registration-code-request.md) 并在第一个设备（屏幕）上向最终用户演示。
-- 应用程序必须启动 [轮询以确认身份验证状态](/help/authentication/retrieve-authentication-token.md) ，注册代码后在第1台设备（屏幕）上注册。
-- 另一个应用程序必须 [启动身份验证](/help/authentication/initiate-authentication.md) ，注册代码时显示在第2台设备（屏幕）上。
-- 应用程序必须停止 [轮询](/help/authentication/retrieve-authentication-token.md) 在生成身份验证令牌时显示在第一个设备（屏幕）上。
-
+[注册代码请求](/help/authentication/registration-code-request.md)、[启动身份验证](/help/authentication/initiate-authentication.md)和[REST API检索身份验证令牌](/help/authentication/retrieve-authentication-token.md)或[检查身份验证令牌](/help/authentication/check-authentication-token.md)服务。
 
 
 >[!TIP]
 >
-> **<u>专业提示：</u>** 请按照以下步骤实施iOS/iPadOS。
+> **<u>专业提示：</u>**&#x200B;请按照以下步骤实施tvOS。
 
-- 该应用程序必须 [获取注册码](/help/authentication/registration-code-request.md) 不应在第一台设备（屏幕）上向最终用户展示。
-- 该应用程序必须 [启动身份验证](/help/authentication/initiate-authentication.md) ，注册码和 [Wkwebview](https://developer.apple.com/documentation/webkit/wkwebview) 或 [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) 组件。
-- 应用程序必须启动 [轮询以了解身份验证状态](/help/authentication/retrieve-authentication-token.md) 在之后的第一个设备（屏幕）上 [Wkwebview](https://developer.apple.com/documentation/webkit/wkwebview) 或 [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) 组件关闭。
-- 应用程序必须停止 [轮询](/help/authentication/retrieve-authentication-token.md) 在生成身份验证令牌时显示在第一个设备（屏幕）上。
+- 应用程序必须[获取注册码](/help/authentication/registration-code-request.md)并在第一个设备（屏幕）上将其呈现给最终用户。
+- 在获得注册码后，应用程序必须启动[轮询以确认第1台设备（屏幕）上的身份验证状态](/help/authentication/retrieve-authentication-token.md)。
+- 使用注册码时，另一个应用程序必须在第二个设备（屏幕）上[启动身份验证](/help/authentication/initiate-authentication.md)。
+- 生成身份验证令牌时，应用程序必须停止在第1台设备（屏幕）上的[轮询](/help/authentication/retrieve-authentication-token.md)。
+
+
+
+>[!TIP]
+>
+> **<u>专业提示：</u>**&#x200B;请按照以下步骤实施iOS/iPadOS。
+
+- 应用程序必须[获取不应在第1台设备（屏幕）上呈现给最终用户的注册码](/help/authentication/registration-code-request.md)。
+- 应用程序必须在第一个设备（屏幕）上使用注册码和[WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)或[SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)组件[启动身份验证](/help/authentication/initiate-authentication.md)。
+- 在[WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)或[SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)组件关闭后，应用程序必须启动[轮询以了解第一个设备（屏幕）上的身份验证状态](/help/authentication/retrieve-authentication-token.md)。
+- 生成身份验证令牌时，应用程序必须停止在第1台设备（屏幕）上的[轮询](/help/authentication/retrieve-authentication-token.md)。
 
 </br>
 
@@ -402,37 +402,37 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>提示：</u>** 通过Adobe Pass身份验证媒体实施此操作 [启动授权](/help/authentication/initiate-authorization.md) 和 [获取短媒体令牌](/help/authentication/obtain-short-media-token.md) 服务。
+> **<u>提示：</u>**&#x200B;通过Adobe Pass身份验证[启动授权](/help/authentication/initiate-authorization.md)和[获取短媒体令牌](/help/authentication/obtain-short-media-token.md)服务实现此功能。
 
 </br>
 
 ### 注销 {#Logout}
 
-此 [视频订阅者帐户](https://developer.apple.com/documentation/videosubscriberaccount) 框架不提供API以编程方式注销在设备系统级别登录到其电视提供商帐户的人员。 因此，要完全注销，最终用户必须明确从注销 *`Settings -> TV Provider`* 在iOS/iPadOS上，或 *`Settings -> Accounts -> TV Provider`* 在tvOS上。 用户将拥有的另一个选项是从特定应用程序设置部分（TV提供商访问）撤销访问用户订阅信息的权限。
+[视频订阅者帐户](https://developer.apple.com/documentation/videosubscriberaccount)框架不提供API以编程方式注销已在设备系统级别登录其电视提供程序帐户的人员。 因此，要完全注销，最终用户必须从iOS/iPadOS上的&#x200B;*`Settings -> TV Provider`*&#x200B;或tvOS上的&#x200B;*`Settings -> Accounts -> TV Provider`*&#x200B;中显式注销。 用户将拥有的另一个选项是从特定应用程序设置部分（TV提供商访问）撤销访问用户订阅信息的权限。
 
 >[!TIP]
 >
-> **<u>提示：</u>** 通过Adobe Pass身份验证媒体实施此操作 [用户元数据调用](/help/authentication/user-metadata.md) 和 [注销](/help/authentication/initiate-logout.md) 服务。
-
-
->[!TIP]
->
-> **<u>专业提示：</u>** 请按照以下步骤实施tvOS。
-
-
-- 应用程序必须使用&#39;&#39;确定是否由于通过平台SSO登录而发生了身份验证&#x200B;*tokenSource”* [用户元数据](/help/authentication/user-metadata.md) 来自Adobe Pass身份验证服务。
-- 应用程序必须指示/提示用户明确从中注销 *`Settings -> Accounts -> TV Provider`* 在tvOS上 **仅限** 如果 *&quot;tokenSource&quot;* 值等于&quot;*Apple”。*
-- 该应用程序必须 [启动注销](/help/authentication/initiate-logout.md) Adobe Pass身份验证服务中的直接调用HTTP。 这无助于MVPD端的会话清理。
-
+> **<u>提示：</u>**&#x200B;通过Adobe Pass身份验证[用户元数据调用](/help/authentication/user-metadata.md)和[注销](/help/authentication/initiate-logout.md)服务的媒体实现此功能。
 
 
 >[!TIP]
 >
-> **<u>专业提示：</u>** 请按照以下步骤实施iOS/iPadOS。
+> **<u>专业提示：</u>**&#x200B;请按照以下步骤实施tvOS。
 
-- 应用程序必须使用&#39;&#39;确定是否由于通过平台SSO登录而发生了身份验证&#x200B;*tokenSource”* [用户元数据](/help/authentication/user-metadata.md) 来自Adobe Pass身份验证服务。
-- 应用程序必须指示/提示用户明确从中注销 *`Settings -> TV Provider`* 在iOS/iPadOS上 **仅限** 如果 *&quot;tokenSource&quot;* 值等于 *&quot;Apple&quot;*.
-- 该应用程序必须 [启动注销](/help/authentication/initiate-logout.md) 来自Adobe Pass Authentication服务，使用 [Wkwebview](https://developer.apple.com/documentation/webkit/wkwebview) 或 [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) 组件。 这将有助于MVPD端的会话清理。
+
+- 应用程序必须使用Adobe Pass身份验证服务中的&quot;*tokenSource&quot;* [user metadata](/help/authentication/user-metadata.md)，确定是否由于通过平台SSO登录而发生了身份验证。
+- 如果&#x200B;*“tokenSource”*&#x200B;值等于“*Apple”，则应用程序必须指示/提示用户仅在tvOS **上**从&#x200B;*`Settings -> Accounts -> TV Provider`*显式注销。*
+- 应用程序必须使用直接HTTP调用从Adobe Pass身份验证服务[启动注销](/help/authentication/initiate-logout.md)。 这无助于MVPD端的会话清理。
+
+
+
+>[!TIP]
+>
+> **<u>专业提示：</u>**&#x200B;请按照以下步骤实施iOS/iPadOS。
+
+- 应用程序必须使用Adobe Pass身份验证服务中的&quot;*tokenSource&quot;* [用户元数据](/help/authentication/user-metadata.md)，确定是否由于通过平台SSO登录而发生了身份验证。
+- 如果&#x200B;*“tokenSource”*&#x200B;值等于&#x200B;*“Apple”*，则应用程序必须指示/提示用户仅在iOS/iPadOS **上**&#x200B;从&#x200B;*`Settings -> TV Provider`*&#x200B;显式注销。
+- 应用程序必须使用[WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)或[SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)组件从Adobe Pass身份验证服务[启动注销](/help/authentication/initiate-logout.md)。 这将有助于MVPD端的会话清理。
 
 <!--
 

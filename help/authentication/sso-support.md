@@ -4,7 +4,7 @@ description: 单点登录支持
 exl-id: edc3719e-c627-464c-9b10-367a425698c6
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1135'
+source-wordcount: '1144'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ ht-degree: 0%
 | Android | 是 | 共享身份验证令牌(AdobeSSO) | 全部 | 如果用户不接受WRITE_EXTERNAL_STORAGE权限请求，则库将使用本地沙盒存储。 在这种情况下，这意味着使用本地存储时，不同应用程序之间将没有SSO。 |
 | tvOS — 新Apple TV | 是 | 平台SSO — 令牌交换 | 根据Apple支持 — 列表位于此处 | 从tvOS 10开始，Apple和Adobe为参与的程序员和MVPD引入了SSO功能。 通过使用最新的AdobetvOS SDK或Adobe的无客户端REST API并实施Apple SSO功能，您可以从tvOS设备上的SSO中受益。 有关tvOS SDK的更多详细信息：此处和此处，以及有关无客户端实施的更多详细信息。 |
 | Roku | 是 | 共享身份验证令牌(AdobeSSO) | 重要报道完整名单即将提供。 | 对于遵守Roku准则的所有客户，Roku SSO可开箱即用地与Clienless API配合使用，无需特殊实施。 SSO基于Roku安全发送到Adobe的设备识别信息。 |
-| Amazon FireTV | 是 | 共享身份验证令牌(AdobeSSO) | 重要报道完整名单即将提供。 | FireTV SDK支持基于Android功能的单点登录。 此平台上的SSO仅在当前使用AdobeFireTV SDK的应用程序之间可用。 有关新的FireTV SDK的更多信息，请参阅此处。 在Clienless API之上实施的FireTV应用程序将能够从EOY 2018的SSO中受益。 |
+| Amazon FireTV | 是 | 共享身份验证令牌(AdobeSSO) | 重要报道完整名单即将提供。 | FireTV SDK提供对基于Android功能的单点登录的支持。 此平台上的SSO仅在当前使用AdobeFireTV SDK的应用程序之间可用。 有关新的FireTV SDK的更多信息，请参阅此处。 在Clienless API之上实施的FireTV应用程序将能够从EOY 2018的SSO中受益。 |
 | Xbox 360 | 否 |                                         |                                                     | 没有可用的设备ID。 有一个应用程序ID，因此用户不必每次都进行身份验证。 |
 | Xbox One | 否 |                                         |                                                     | 没有可用的设备ID。 有一个应用程序ID，因此用户不必每次都进行身份验证。 |
 | Windows 8/10 | 否 |                                         |                                                     | 没有可用的设备ID。 有一个应用程序ID，因此用户不必每次都进行身份验证。 |
@@ -42,9 +42,9 @@ ht-degree: 0%
 
 ### 关于Xbox 360和Xbox One的注释 {#notes-xbox-360}
 
-* **Xbox 360**- Xbox 360依赖实时服务来提供嵌入deviceID的令牌。 实时服务将层纳入deviceID的appID值中，使其范围仅限定于应用程序。 对于Xbox 360，Microsoft为Adobe提供了一个Java库以帮助解析令牌。
+* **Xbox 360**- Xbox 360依赖实时服务提供嵌入deviceID的令牌。 实时服务将层纳入deviceID的appID值中，使其范围仅限定于应用程序。 对于Xbox 360，Microsoft为Adobe提供了一个Java库以帮助解析令牌。
 
-* **Xbox One** — 将颁发一个使用发布者的证书/密钥加密并由Microsoft签名的JSON Web令牌。 Adobe从名为DPI（设备配对ID）的参数中提取deviceID，该参数与Xbox 360参数PDID（合作伙伴设备ID）不同。 PDID也存在于Xbox One中，但旨在被这个新的参数“设备配对ID”(DPI)所取代。
+* **Xbox One** — 将颁发使用发布者的证书/密钥加密并由Microsoft签名的JSON Web令牌。 Adobe从名为DPI（设备配对ID）的参数中提取deviceID，该参数与Xbox 360参数PDID（合作伙伴设备ID）不同。 PDID也存在于Xbox One中，但旨在被这个新的参数“设备配对ID”(DPI)所取代。
 
 
 ### 禁用SSO {#disable-sso}
@@ -52,7 +52,7 @@ ht-degree: 0%
 在某些情况下，某些应用程序或站点将希望禁用SSO以满足高级业务案例。
 
 * **对于JS和本机SDK** - Adobe Pass身份验证支持团队可以为请求者ID/MVPD对禁用SSO。 无需在站点或本机应用程序中进行任何操作。  一旦Adobe Pass身份验证支持团队禁用SSO，使用指定的RequestorId/MVPD对执行的身份验证将不会与使用其他请求者ID的网站或应用程序共享。 此外，对于已禁用SSO的请求者ID/MVPD组合，具有不同请求者ID的现有身份验证将无效。 从技术上讲，禁用SSO是通过将AuthN令牌绑定到特定的请求者ID/MVPD组合来实现的。
-* **适用于无客户端API**  — 您可以通过在REST调用中指定非空的appId参数，在无客户端身份验证流中禁用SSO。 您可以将任何字符串用作值，前提是该字符串对于请求者ID是唯一的。 请注意，对于无客户端API，程序员/实现者必须更改站点或应用程序以添加此特定于请求者的参数。
+* **对于无客户端API** — 您可以通过在REST调用中指定非空的appId参数，在无客户端身份验证流中禁用SSO。 您可以将任何字符串用作值，前提是该字符串对于请求者ID是唯一的。 请注意，对于无客户端API，程序员/实现者必须更改站点或应用程序以添加此特定于请求者的参数。
 
 >[!IMPORTANT]
 >

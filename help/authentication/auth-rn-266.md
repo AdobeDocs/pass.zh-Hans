@@ -1,9 +1,10 @@
 ---
 title: Adobe Pass Authentication 2.66发行说明
 description: Adobe Pass Authentication 2.66发行说明
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 7c3cd007-ed2b-455f-8f70-6ec5d0a6552a
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '148'
+source-wordcount: '154'
 ht-degree: 0%
 
 ---
@@ -24,7 +25,7 @@ ht-degree: 0%
 ### 内部版本号 {#build-number-266}
 
 Adobe Pass身份验证： adobe-pass-**2.66.0.1**
-发行日期： **07/11/2023 - 07/13/2023**
+发行日期： **2023年7月11日 — 2023年7月13日**
 
 ### 发行版概述 {#release-overview-266}
 
@@ -33,5 +34,5 @@ Adobe Pass身份验证： adobe-pass-**2.66.0.1**
 #### 错误修复 {#release-overview-bugfixes-266}
 
 * 修复了基于SAML的MVPD的注销流程，其中注销请求中缺少RelayState参数。 我们将在发布后定位配置更新，以恢复受影响的MVPD的注销流程。
-* 在SOAP授权端点的配置中添加了更新SSL证书的功能。
+* 添加了在SOAP授权端点的配置中更新SSL证书的功能。
 * 修复了某些ESM报表中的程序员字段中记录错误数据的极端情况。

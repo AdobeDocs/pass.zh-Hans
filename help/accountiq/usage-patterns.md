@@ -11,9 +11,9 @@ ht-degree: 0%
 
 # 使用模式 {#usage-patterns}
 
-Account IQ根据用户的社交行为将订阅者帐户的用户分为不同类别，例如旅行者或通勤者、大家庭和社区共享。 此 **使用模式** 页面会显示这些用户类型的多个不同的Analytics和报表。 例如， **使用模式分布** 报表会比较当前区段与您的所有帐户的使用行为。
+Account IQ根据订阅者的社交行为将订阅者帐户用户分为不同类别，例如旅行者或通勤者、大家庭和社区共享。 **使用模式**&#x200B;页面会显示这些用户类型的多个不同分析和报告。 例如，**使用模式分布**&#x200B;报告将当前区段的使用行为与您的所有帐户的使用行为进行比较。
 
-与应用程序中的其他页面一样，此处的分析和报表也基于中定义的当前区段 [区段面板](/help/accountiq/segments-timeinterval.md).
+与应用程序中的其他页面一样，此处的分析和报表基于[区段面板](/help/accountiq/segments-timeinterval.md)中定义的当前区段。
 
 ## 使用模式分布 {#usage-pattern-dis}
 
@@ -41,7 +41,7 @@ Account IQ根据用户的社交行为将订阅者帐户的用户分为不同类�
 
 ## 区段中的使用模式分布 {#usage-pattern-dis-segment}
 
-此 **[!UICONTROL Usage patterns distribution in segment]** 面板列出每个用户模式的以下信息：
+**[!UICONTROL Usage patterns distribution in segment]**&#x200B;面板为每个用户模式列出了以下信息：
 
 * 个人帐户所属的共享概率范围。
 * 该模式中帐户的数量和百分比。
@@ -63,21 +63,21 @@ Account IQ根据用户的社交行为将订阅者帐户的用户分为不同类�
 
 +++D2C服务：区域的使用模式分布
 
-此 **[!UICONTROL Usage pattern distribution]** 该表提供了对以下各项的使用模式的比较 [视频类别](product-concepts.md##video-category-def) 于当前区段。
+**[!UICONTROL Usage pattern distribution]**&#x200B;表提供了当前区段中[视频类别](product-concepts.md##video-category-def)的使用模式比较。
 
 ![](assets/d2c-usage-patterns-regions.png)
 
-*区域的使用模式分布*
+区域&#x200B;*的使用模式分布*
 
 >[!NOTE]
 >
->上一个图像中所示的视频类别，如 **地区** 只是个例子。 当您登录到Account IQ时，标签会显示您公司的特定视频类别。
+>上图中所示的视频类别（如&#x200B;**区域**）只是一个示例。 登录到Account IQ时，标签会显示您公司的特定视频类别。
 
 +++
 
 +++程序员：MVPD的使用模式分布
 
-此 **[!UICONTROL Usage pattern distribution]** 该表提供了当前段中的MVPD的使用模式分布比较。
+**[!UICONTROL Usage pattern distribution]**&#x200B;表提供了当前区段中MVPD的使用模式分布比较。
 
 ![](assets/usage-patterns-mvpdwise.png)
 
@@ -87,7 +87,7 @@ Account IQ根据用户的社交行为将订阅者帐户的用户分为不同类�
 
 +++MVPD：程序员的使用模式分布
 
-此 **[!UICONTROL Usage pattern distribution]** 该表提供了当前段中的程序员或渠道的使用模式分布的比较。
+**[!UICONTROL Usage pattern distribution]**&#x200B;表提供了当前区段中程序员或渠道的使用模式分布比较。
 
 ![](assets/usage-patterns-programmerwise.png)
 

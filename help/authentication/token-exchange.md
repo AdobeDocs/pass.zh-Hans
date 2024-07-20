@@ -17,19 +17,19 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> REST API实施受限制 [节流机构](/help/authentication/throttling-mechanism.md)
+> REST API实现受[限制机制](/help/authentication/throttling-mechanism.md)限制
 
 ## REST API端点 {#clientless-endpoints}
 
-&lt;reggie_fqdn>：
+&lt;REGGIE_FQDN>：
 
-* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 — [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>：
+&lt;SP_FQDN>：
 
-* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 — [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -37,9 +37,9 @@ ht-degree: 0%
 
 允许将平台SSO配置文件“交换”为Adobe令牌。
 
-| 端点 | 已调用  </br>按 | 输入   </br>参数 | HTTP  </br>方法 | 响应 | HTTP  </br>响应 |
+| 端点 | </br>调用者 | 输入   </br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/tokens/authn | 流应用程序</br></br>或</br></br>程序员服务 | 1.申请人（必填）</br>    </br>2.  deviceId（必需）</br>    </br>3.  mvpd（必需）</br>    </br>4.  deviceType（必需）</br>    </br>5.  SAMLResponse（必需）</br>    </br>6.  deviceUser（已弃用）</br>    </br>7.  appId（已弃用） | POST | 成功的响应将为“204无内容”，这表示已成功创建令牌并准备好用于授权流。 | 204 — 无内容   </br>400 — 错误请求 |
+| &lt;SP_FQDN>/api/v1/tokens/authn | 流式处理应用程序</br></br>或</br></br>程序员服务 | 1.请求者（必需）</br>    </br>2。  deviceId （必需）</br>    </br>3。  mvpd （必需）</br>    </br>4。  deviceType （必需）</br>    </br>5。  SAMLResponse （必需）</br>    </br>6。  deviceUser（已弃用）</br>    </br>7。  appId（已弃用） | POST | 成功的响应将为“204无内容”，这表示已成功创建令牌并准备好用于授权流。 | 204 — 无内容   </br>400 — 错误请求 |
 
 
 | 输入参数 | 描述 |
@@ -47,7 +47,7 @@ ht-degree: 0%
 | 请求者 | 此操作有效的程序员requestorId。 |
 | deviceId | 设备ID字节。 |
 | mvpd | 此操作有效的MVPD ID。 |
-| 设备类型 | 我们尝试为其获取配置文件请求的Apple平台。  或者 **iOS** 或 **tvOS**. |
+| 设备类型 | 我们尝试为其获取配置文件请求的Apple平台。  **iOS**&#x200B;或&#x200B;**tvOS**。 |
 | SAMLResponse | Platform SSO返回的实际配置文件。 |
 | _设备用户_ | 设备用户标识符。 |
 | _appId_ | 应用程序id/名称。 |

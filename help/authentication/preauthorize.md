@@ -19,9 +19,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->授权API **必须** 在授予用户对指定资源的访问权限之前使用。
+>在授予用户访问指定资源的权限之前，必须&#x200B;**使用授权API**。
 
-如果预授权API响应结果包含一个或多个具有被拒绝的预授权决定的资源，则可以包含额外的错误信息 **（参见下面的注释）** 每个受影响的资源。
+如果Preauthorize API响应结果包含一个或多个具有被拒绝的预授权决定的资源，则可以为每个受影响的资源包含其他错误信息&#x200B;**（请参阅下面的注释）**。
 
 >[!IMPORTANT]
 >
@@ -169,7 +169,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->有关通过增强错误报告功能介质检索到的可能其他错误的列表，请参阅 [高级错误报告](/help/authentication/enhanced-error-codes.md).
+>通过[高级错误报告](/help/authentication/enhanced-error-codes.md)中记录了通过增强错误报告功能的介质检索到的可能的其他错误列表。
 
 #### 成功
 
@@ -377,7 +377,7 @@ Adobe Pass身份验证SDK在为Preauthorize API请求提供服务时命中错误
 
 <br>
 
-## **类别决策** {#decision}
+## **类决策** {#decision}
 
 ```
     ///

@@ -4,7 +4,7 @@ description: 动态客户端注册API
 exl-id: 06a76c71-bb19-4115-84bc-3d86ebcb60f3
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '930'
+source-wordcount: '904'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 目前，Adobe Pass身份验证识别和注册应用程序的方法有两种：
 
-* 基于浏览器的客户端通过允许进行注册 [域列表](/help/authentication/programmer-overview.md)
+* 通过允许的[域列表](/help/authentication/programmer-overview.md)注册基于浏览器的客户端
 * 本机应用程序客户端(如iOS和Android应用程序)通过签名的请求者机制进行注册。
 
 Adobe Pass Authentication提出了一种新的应用程序注册机制。 以下各段介绍了该机制。
@@ -28,11 +28,13 @@ Adobe Pass Authentication提出了一种新的应用程序注册机制。 以下
 
 ### 技术原因 {#reasons}
 
-Adobe Pass身份验证中的身份验证机制依赖于会话Cookie，但这是由于 [Android Chrome自定义选项卡](https://developer.chrome.com/multidevice/android/customtabs){target=_blank} and [Apple Safari View Controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}，此目标无法再实现。
+Adobe Pass身份验证中的身份验证机制依赖于会话Cookie，但由于[Android Chrome自定义选项卡](https://developer.chrome.com/multidevice/android/customtabs){target=_blank}和[Apple Safari视图控制器](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}，此目标无法再实现。
 
-鉴于这些限制，Adobe为所有客户引入了新的注册机制。 它基于OAuth 2.0 RFC，包含以下步骤：
+鉴于这些限制，Adobe为所有客户引入了新的注册机制。 它基于OAuth 2.0 RFC，包含
+，具体步骤如下：
 
-1. 从TVE仪表板检索软件语句
+1. 从TVE检索软件语句
+仪表板
 1. 获取客户端凭据
 1. 获取访问令牌
 
@@ -44,7 +46,7 @@ Adobe Pass身份验证中的身份验证机制依赖于会话Cookie，但这是�
 >
 >使用软件语句时，不再需要使用已签名的请求者ID机制。
 
-有关如何创建软件语句的更多详细信息，请访问 [在TVE仪表板中注册客户端](/help/authentication/dynamic-client-registration.md).
+有关如何创建软件语句的更多详细信息，请访问[TVE仪表板中的客户端注册](/help/authentication/dynamic-client-registration.md)。
 
 ### 获取客户端凭据 {#clientCredentials}
 
@@ -81,7 +83,7 @@ Adobe Pass身份验证中的身份验证机制依赖于会话Cookie，但这是�
 | client_id_issued_at | 长 | 必需 |
 | redirect_uris | 字符串列表 | 必需 |
 | grant_type | 字符串列表<br/> **接受值**<br/> `client_credentials`：由不安全的客户端使用，如Android SDK。 | 必需 |
-| 错误 | **接受的值**<ul><li>invalid_request</li><li>invalid_redirect_uri</li><li>invalid_software_statement</li><li>unapproved_software_statement</li></ul> | 错误流中的必需项 |
+| 错误 | **接受值**<ul><li>invalid_request</li><li>invalid_redirect_uri</li><li>invalid_software_statement</li><li>unapproved_software_statement</li></ul> | 错误流中的必需项 |
 
 
 #### 错误响应 {#error-response}
@@ -167,7 +169,7 @@ Pragma: no-cache
 
 | **请求参数** | |
 | --- | --- |
-| `grant_type` | 在客户端注册过程中接收。<br/> **接受的值**<br/>`client_credentials`：用于不安全的客户端，例如Android SDK。 |
+| `grant_type` | 在客户端注册过程中收到。<br/> **接受值**<br/>`client_credentials`：用于不安全的客户端，如Android SDK。 |
 | `client_id` | 在客户端注册过程中获取的客户端标识符。 |
 | `client_secret` | 在客户端注册过程中获取的客户端标识符。 |
 
@@ -177,7 +179,7 @@ Pragma: no-cache
 | --- | --- | --- |
 | `access_token` | 您应该用于调用Adobe Pass API的访问令牌值 | 必需 |
 | `expires_in` | access_token过期之前的秒数 | 必需 |
-| `token_type` | 令牌的类型 **持有者** | 必需 |
+| `token_type` | 令牌&#x200B;**持有者**&#x200B;的类型 | 必需 |
 | `created_at` | 令牌的问题时间 | 必需 |
 | **响应标头** | | |
 | `Content-Type` | application/json | 必需 |
@@ -232,9 +234,9 @@ Pragma: no-cache
 
 ## 执行身份验证请求 {#autheticationRequests}
 
-使用访问令牌执行Adobe Pass [身份验证API调用](/help/authentication/initiate-authentication.md). 为此，需要通过以下方式之一将访问令牌添加到API请求中：
+使用访问令牌执行Adobe Pass [身份验证API调用](/help/authentication/initiate-authentication.md)。 为此，需要通过以下方式之一将访问令牌添加到API请求中：
 
-* 向请求添加新查询参数。 该新参数名为 **access_token**.
+* 向请求添加新查询参数。 该新参数名为&#x200B;**access_token**。
 
 * 通过向请求添加新的HTTP标头： Authorization： Bearer。 我们建议您使用HTTP标头，因为查询字符串通常在服务器日志中可见。
 
@@ -248,7 +250,7 @@ Pragma: no-cache
 
 ### 执行身份验证请求示例：
 
-**将访问令牌作为请求参数发送：**
+**正在将访问令牌作为请求参数发送：**
 
 ```HTTPS
 GET adobe-services/config?access_token=<access_token>&requestor_id=... HTTP/1.1
@@ -256,7 +258,7 @@ GET adobe-services/config?access_token=<access_token>&requestor_id=... HTTP/1.1
 Host: sp.auth.adobe.com
 ```
 
-**将访问令牌作为HTTP标头发送：**
+**正在发送访问令牌作为HTTP标头：**
 
 ```HTTPS
 POST adobe-services/sessionDevice?device_id=platformDeviceId HTTP/1.1
@@ -266,7 +268,7 @@ Authorization: Bearer <access_token>
 Host: sp.auth.adobe.com
 ```
 
-**将错误响应作为响应正文：**
+**错误响应作为响应正文：**
 
 ```HTTPS
 HTTP/1.1 401 Unauthorized
@@ -277,7 +279,7 @@ Pragma: no-cache
 { "error":"invalid_client" }
 ```
 
-**作为URL参数的错误响应：**
+**错误响应为URL参数：**
 
 ```HTTPS
 HTTP/1.1 302 Found

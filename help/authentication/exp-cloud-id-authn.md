@@ -4,7 +4,7 @@ description: 在Adobe Pass身份验证中使用Experience CloudID
 exl-id: 03354c01-5aad-4d81-beee-1c3834599134
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '397'
+source-wordcount: '396'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Experience CloudID（简称ECID）是Adobe Experience Cloud为您应用程序/�
 
 如果您已具有提供访客ID的系统，则应该对此文档的范围使用同一ID。
 
-获取ECID的一种方法是使用Experience CloudID服务。 您可以使用基于TDM、JS库、服务器端、直接集成或移动设备平台本机库的首选实施类型。 有关可用服务、库、SDK和实施指南的完整视图，请参阅： <https://experienceleague.adobe.com/docs/id-service/using/implementation/implementation-guides.html>
+获取ECID的一种方法是使用Experience CloudID服务。 您可以使用基于TDM、JS库、服务器端、直接集成或移动设备平台本机库的首选实施类型。 有关可用服务、库、SDK和实施指南的完整视图，请参阅：<https://experienceleague.adobe.com/docs/id-service/using/implementation/implementation-guides.html>
 
 ## 在Adobe Pass身份验证中使用Experience CloudID有何好处？ {#benefit-ex-cloud-id}
 
@@ -35,7 +35,7 @@ Experience CloudID（简称ECID）是Adobe Experience Cloud为您应用程序/�
 
 对于JavaScript，您需要将ECID作为第三个参数传递到setRequestor调用。
 
-**使用示例：**
+**用法示例：**
 
 ```JavaScript
 accessEnabler.setRequestor("REQUESTOR_ID", ["ENDPOINT_URL"],
@@ -49,7 +49,7 @@ accessEnabler.setRequestor("REQUESTOR_ID", ["ENDPOINT_URL"],
 
 对于iOS/tvOS SDK，有一个名为setOptions的专用方法。
 
-**使用示例：**
+**用法示例：**
 
 ```JavaScript
 accessEnabler.setOptions(
@@ -63,7 +63,7 @@ accessEnabler.setOptions(
 
 对于Android/fireTV SDK，该机制类似于iOS。 只是参数名称不同。 此处记录了API。
 
-**使用示例：**
+**用法示例：**
 
 ```JavaScript
 String visitor_id = "THE_ECID_VALUE";
@@ -76,8 +76,8 @@ accessEnabler.setOptions(options);
 
 ### 无客户端API {#clientless-api}
 
-通过它的REST API使用Adobe Pass时， **ECID** 应发送值 **在所有API上** 作为参数，名为 **&#39;ap_vi&#39;**.
+通过其REST API使用Adobe Pass时，应在所有API **上将** ECID **值作为名为**&#39;ap_vi&#39;**的参数发送**。
 
-**使用示例：**
+**用法示例：**
 
 `GET: https://api.auth.adobe.com/api/v1/authorize?...&ap_vi=THE_ECID_VALUE`

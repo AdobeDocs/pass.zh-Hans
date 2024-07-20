@@ -16,14 +16,14 @@ ht-degree: 0%
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 >要使用降级API，您需要：
 >- 请向支持团队索取注册应用程序的软件声明
->- 获取访问令牌，基于 [动态客户端注册](dynamic-client-registration.md)
+>- 根据[动态客户端注册](dynamic-client-registration.md)获取访问令牌
 > 
 
 >[!NOTE]
 >
 >要使用降级API，您需要：
 >- 请向支持团队索取注册应用程序的软件声明
->- 获取访问令牌，基于 [动态客户端注册](dynamic-client-registration.md)
+>- 根据[动态客户端注册](dynamic-client-registration.md)获取访问令牌
 > 
 
 ## 一般信息 {#general_info}

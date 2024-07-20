@@ -1,13 +1,13 @@
 ---
 title: 为单个租户/策略和多个应用程序实施CM
 description: 为单个租户/策略和多个应用程序实施CM
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: 5c579c7d-f235-4dba-95c2-8485021d9065
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '236'
+source-wordcount: '241'
 ht-degree: 0%
 
 ---
-
 
 # 为单个租户/策略和多个应用程序实施CM {#imp-cm}
 
@@ -29,7 +29,7 @@ ht-degree: 0%
 
 1. 用户从iPhone应用程序开始一个流，并从iPad应用程序开始一个流。 政策允许这一点。
 1. 然后，用户从程序员网站启动第三个流。
-1. 策略中的规则（最多2个流，最新的获胜）允许播放最新的流 **已启动的第一个流将标记为不符合策略，并将停止。**
+1. 策略中的规则（最多2个流，最新的wins）允许播放最新的流，因此&#x200B;**已启动的第一个流将标记为与策略不兼容，并将停止。**
 
 
 

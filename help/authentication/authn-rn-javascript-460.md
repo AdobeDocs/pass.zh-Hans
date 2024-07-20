@@ -1,7 +1,8 @@
 ---
 title: Adobe Pass Authentication JavaScript 4.6.0发行说明
 description: Adobe Pass Authentication JavaScript 4.6.0发行说明
-source-git-commit: 7057aeda34b4fe0d059912ab0a71ea856427654c
+exl-id: 09b79384-2385-48ce-9ee2-6db93bbce15d
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '126'
 ht-degree: 0%
@@ -20,12 +21,12 @@ ht-degree: 0%
 
 Adobe Pass身份验证： JavaScript 4.6.0
 
-发行日期： **09/20/2022 - 09/22/2022**
+发行日期：**09/20/2022 - 09/22/2022**
 
 
 ## 发行版概述 {#overview-javascript-sdk-460}
 
-* 删除了 `eval` 函数，从而使SDK符合内容安全策略。
+* 删除了`eval`函数的使用，从而使SDK符合内容安全策略。
 * 修复了合作伙伴应用程序明确清除浏览器的本地存储时，身份验证流无法成功完成的问题。
 
 

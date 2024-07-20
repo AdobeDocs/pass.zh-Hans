@@ -1,25 +1,25 @@
 ---
 title: 并发监控简介
 description: 并发监控简介
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 725cc64b-6b03-46e3-a038-41e9b1341c6b
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '138'
+source-wordcount: '136'
 ht-degree: 0%
 
 ---
 
-
 # 并发监控简介 {#intro}
 
-要了解 [上报程序](/help/concurrency-monitoring/cm-escalation-procedures.md) 有关并发监控的信息，请参阅上报程序一文。
+要了解关于并发监视的[上报程序](/help/concurrency-monitoring/cm-escalation-procedures.md)，请参阅上报程序文章。
 
 并发监控允许身份和内容提供商（MVPD和程序员）定义并强制实施对多个应用程序（可能由多个合作伙伴拥有）的并发使用限制。
 
-**并发监控API托管在以下位置：**
+**并发监视API托管在以下位置：**
 
-* **V2.0： [并发监控API](http://docs.adobeptime.io/cm-api-v2/)**
+* **V2.0：[并发监视API](http://docs.adobeptime.io/cm-api-v2/)**
 
-要注册我们的并发监控服务，请联系我们的 [支持团队](mailto:tve-support@adobe.com). 指定以下信息，我们的团队将很乐意为您提供帮助：
+若要注册我们的并发监控服务，请与我们的[支持团队](mailto:tve-support@adobe.com)联系。 指定以下信息，我们的团队将很乐意为您提供帮助：
 
 1. 您的公司名称
 1. 要与并发监视集成的应用程序。 对于每个应用程序，请提供：

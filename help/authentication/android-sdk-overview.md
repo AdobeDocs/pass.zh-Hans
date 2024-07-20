@@ -4,7 +4,7 @@ description: Android SDK概述
 exl-id: a1d98325-32a1-4881-8635-9a3c38169422
 source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '2720'
+source-wordcount: '2731'
 ht-degree: 0%
 
 ---
@@ -15,13 +15,13 @@ ht-degree: 0%
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-## 介绍 {#intro}
+## 简介 {#intro}
 
-Android AccessEnabler是一个Java Android库，它使移动设备应用程序能够将Adobe Pass身份验证用于TV Everywhere的授权服务。 Android实施包括定义权利API的AccessEnabler接口以及描述库触发的回调的EntitlementDelegate协议。 接口和协议在一个常用名称（AccessEnabler Android库）下称为。
+Android AccessEnabler是一个Java Android库，它使移动应用程序能够将Adobe Pass身份验证用于TV Everywhere的授权服务。 Android实施包括定义权利API的AccessEnabler接口以及描述库触发的回调的EntitlementDelegate协议。 接口和协议在一个常用名称AccessEnabler Android库下称。
 
 ## Android要求 {#reqs}
 
-有关与Android平台和Adobe Pass身份验证相关的当前技术要求，请参阅 [平台/设备/工具要求](#android)，或参阅Android SDK下载随附的发行说明。
+有关Android平台和Adobe Pass身份验证的当前技术要求，请参阅[平台/设备/工具要求](#android)，或查阅Android SDK下载随附的发行说明。
 
 ## 了解本机客户端工作流 {#native_client_workflows}
 
@@ -33,18 +33,18 @@ Android AccessEnabler是一个Java Android库，它使移动设备应用程序�
 
 ### 初始化后工作流 {#post-init}
 
-AccessEnabler支持的所有权利工作流假定您之前已调用 [`setRequestor()`](#setRequestor) 以确立你的身份。 进行此调用以仅提供一次请求者ID，通常在应用程序的初始化/设置阶段进行。
+AccessEnabler支持的所有授权工作流都假定您之前已调用[`setRequestor()`](#setRequestor)来建立您的身份。 进行此调用以仅提供一次请求者ID，通常在应用程序的初始化/设置阶段进行。
 
 
-在本机客户端（例如Android）中，在首次调用 [`setRequestor()`](#setRequestor)，您可以选择如何继续：
+对于本机客户端(例如Android)，在首次调用[`setRequestor()`](#setRequestor)后，您可以选择如何继续：
 
 - 您可以立即开始发出授权调用，并在需要时允许静默排队等候。
 
-- 或者，您可以收到关于成功/失败的确认 [`setRequestor()`](#setRequestor) 实现setRequestorComplete()回调。
+- 或者，您可以通过实施setRequestorComplete()回调接收[`setRequestor()`](#setRequestor)成功/失败的确认。
 
 - 或者两者都做。
 
-至于是否等待成功的通知，将由您自行决定。 [`setRequestor()`](#setRequestor) 或者依赖AccessEnabler的呼叫队列机制。 由于所有后续授权和身份验证请求都需要请求者ID和相关配置信息， [`setRequestor()`](#setRequestor) 方法会有效地阻止所有身份验证和授权API调用，直到初始化完成。
+至于是等待[`setRequestor()`](#setRequestor)成功通知还是依赖AccessEnabler的呼叫队列机制，由您决定。 由于所有后续授权和身份验证请求都需要请求者ID和相关配置信息，因此[`setRequestor()`](#setRequestor)方法会在初始化完成之前有效地阻止所有身份验证和授权API调用。
 
 ### 通用初始身份验证工作流 {#generic}
 
@@ -52,23 +52,27 @@ AccessEnabler支持的所有权利工作流假定您之前已调用 [`setRequest
 
 请注意，虽然以下本机客户端工作流与典型的基于浏览器的身份验证工作流不同，但步骤1-5对于本机客户端和基于浏览器的客户端均相同：
 
-1. 您的页面或播放器通过调用启动身份验证工作流 [getAuthentication()](#getAuthN)，用于检查有效的缓存身份验证令牌。 此方法具有可选属性 `redirectURL` 参数；如果不为 `redirectURL`，在成功进行身份验证后，用户将返回到初始化身份验证的URL。
-1. AccessEnabler确定当前的身份验证状态。 如果用户当前已通过身份验证，AccessEnabler将调用 `setAuthenticationStatus()` 回调函数，传递表示成功的身份验证状态（下面的步骤7）。
-1. 如果用户未经过身份验证，则AccessEnabler通过确定用户的最后一次身份验证尝试是否成功使用给定的MVPD来继续身份验证流程。 如果缓存了MVPD ID，并且 `canAuthenticate` 标志为true或使用以下方式选择了MVPD [`setSelectedProvider()`](#setSelectedProvider)，则不会使用MVPD选择对话框提示用户。 身份验证流继续使用MVPD的缓存值（即在上次成功身份验证期间使用的MVPD值）。 对后端服务器进行网络调用，并将用户重定向到MVPD登录页面（下面的步骤6）。
-1. 如果未缓存MVPD ID，并且未使用选择MVPD [`setSelectedProvider()`](#setSelectedProvider) 或 `canAuthenticate` 标志设置为false，则 [`displayProviderDialog()`](#displayProviderDialog) 调用回调。 此回调会指示您的页面或播放器创建UI，为用户显示可从中进行选择的MVPD列表。 提供了一个MVPD对象数组，其中包含构建MVPD选择器所需的信息。 每个MVPD对象描述一个MVPD实体，并包含MVPD的ID等信息（如XFINITY、AT\&amp;T等） 以及可以找到MVPD徽标的URL。
-1. 选择特定的MVPD后，您的页面或播放器必须通知AccessEnabler用户的选择。 对于非Flash客户端，一旦用户选择了所需的MVPD，您就可以通过调用 [`setSelectedProvider()`](#setSelectedProvider) 方法。 Flash客户端改为调度共享 `MVPDEvent` 类型为&#39;&#39;`mvpdSelection`“”，传递选定的提供程序。
+1. 您的页面或播放器通过调用[getAuthentication()](#getAuthN)来启动身份验证工作流，该调用会检查缓存的有效身份验证令牌。 此方法具有可选的`redirectURL`参数；如果不提供`redirectURL`的值，则在成功进行身份验证后，用户将返回到初始化身份验证的URL。
+1. AccessEnabler确定当前的身份验证状态。 如果用户当前已通过身份验证，则AccessEnabler将调用您的`setAuthenticationStatus()`回调函数，传递一个表示成功的身份验证状态（下面的步骤7）。
+1. 如果用户未经过身份验证，则AccessEnabler通过确定用户的最后一次身份验证尝试是否成功使用给定的MVPD来继续身份验证流程。 如果已缓存MVPD ID并且`canAuthenticate`标志为true或使用[`setSelectedProvider()`](#setSelectedProvider)选择了MVPD，则不会使用MVPD选择对话框提示用户。 身份验证流继续使用MVPD的缓存值（即在上次成功身份验证期间使用的MVPD值）。 对后端服务器进行网络调用，并将用户重定向到MVPD登录页面（下面的步骤6）。
+1. 如果未缓存MVPD ID，并且未使用[`setSelectedProvider()`](#setSelectedProvider)选择MVPD，或者`canAuthenticate`标志设置为false，则调用[`displayProviderDialog()`](#displayProviderDialog)回调。 此回调会指示您的页面或播放器创建UI，为用户显示可从中进行选择的MVPD列表。 提供了一个MVPD对象数组，其中包含构建MVPD选择器所需的信息。 每个MVPD对象描述一个MVPD实体，并包含MVPD的ID等信息（如XFINITY、AT\&amp;T等） 以及可以找到MVPD徽标的URL。
+1. 选择特定的MVPD后，您的页面或播放器必须通知AccessEnabler用户的选择。 对于非Flash客户端，一旦用户选择了所需的MVPD，您就会通过调用[`setSelectedProvider()`](#setSelectedProvider)方法向AccessEnabler通知用户选择的内容。 Flash客户端改为调度类型为“`mvpdSelection`”的共享`MVPDEvent`，传递选定的提供程序。
 1. 对于Android应用程序，如果com.android.chrome可用，则身份验证URL将加载到Chrome自定义选项卡中。
 1. 通过Chrome自定义选项卡，用户访问MVPD的登录页面并输入其凭据。 请注意，在此传输过程中会执行多个重定向操作。
-1. 当Chrome自定义选项卡检测到URL与资源“redirect\_uri”(即adobepass://com.adobepass )中的方案(adobepass://)和深层链接匹配时，AccessEnabler将从后端服务器检索实际的身份验证令牌。 请注意，最终重定向URL实际上无效，它们不适用于Chrome自定义选项卡实际加载它们。 它们只能由SDK解释为身份验证流程已完成的信号。
-1. AccessEnabler会通知应用程序身份验证流程已完成。 AccessEnabler调用 [`setAuthenticationStatus()`](#setAuthNStatus) 带状态代码1的回调，表示成功。 如果在执行这些步骤的过程中出现错误， [`setAuthenticationStatus()`](#setAuthNStatus) 回调会以状态代码0以及相应的错误代码触发，指示身份验证失败。
+1. 当Chrome自定义选项卡检测到URL与资源“redirect\_uri”(即adobepass://com.adobepass )中的方案(adobepass://)和深层链接匹配时，AccessEnabler将从后端服务器检索实际的身份验证令牌。 请注意，最终重定向URL实际上无效，它们不适用于Chrome自定义标签页实际加载它们。 它们只能由SDK解释为身份验证流程已完成的信号。
+1. AccessEnabler会通知应用程序身份验证流程已完成。 AccessEnabler使用状态代码1调用[`setAuthenticationStatus()`](#setAuthNStatus)回调，表示成功。 如果在执行这些步骤的过程中出现错误，则会触发[`setAuthenticationStatus()`](#setAuthNStatus)回调，状态代码为0，并且还会显示相应的错误代码，指示身份验证失败。
 
 ### 注销工作流 {#logout}
 
-对于本机客户端，注销的处理方式类似于上述身份验证过程。 按照此模式，AccessEnabler打开Chrome自定义选项卡并在后端服务器上加载注销端点的URL。
+对于本机客户端，注销的处理方式类似于上述身份验证过程。 按照此模式，AccessEnabler打开Chrome自定义选项卡，并在后端服务器上加载注销端点的URL。
 
 
 
-**注意：** 从某个程序员/MVPD会话注销将清除该特定MVPD的基础存储，包括通过该设备上的SSO获得的所有其他程序员身份验证令牌。 不会删除为其他MVPD获取或未通过SSO获取的令牌。
+**注意：**从一名程序员/MVPD会话注销将会清除
+该特定MVPD的基础存储，包括所有
+通过SSO获取的其他程序员身份验证令牌
+那个装置。 为其他MVPD或未通过SSO获取的令牌将不会
+将被删除。
 
 
 ## 令牌 {#tokens}
@@ -89,8 +93,8 @@ Adobe Pass身份验证权利解决方案围绕Adobe Pass身份验证在成功完
 
 在授权工作流中颁发了三种类型的令牌：
 
-- **身份验证令牌**  — 用户身份验证工作流的最终结果将是一个身份验证GUID，AccessEnabler可以使用它代表用户进行授权查询。 此身份验证GUID将具有关联的生存时间(TTL)值，该值可能与用户的身份验证会话本身不同。 Adobe Pass身份验证通过将身份验证GUID绑定到启动身份验证请求的设备来生成身份验证令牌。
-- **授权令牌**  — 授予对由唯一标识的特定受保护资源的访问权限 `resourceID`. 它由授权方颁发的授权授权授权以及原始授权组成 `resourceID`. 此信息将绑定到发起请求的设备。
+- **身份验证令牌** — 用户身份验证工作流的最终结果将是一个身份验证GUID，AccessEnabler可以使用该GUID代表用户进行授权查询。 此身份验证GUID将具有关联的生存时间(TTL)值，该值可能与用户的身份验证会话本身不同。 Adobe Pass身份验证通过将身份验证GUID绑定到启动身份验证请求的设备来生成身份验证令牌。
+- **授权令牌** — 授予对由唯一`resourceID`标识的特定受保护资源的访问权限。 它由授权方与原始`resourceID`一起颁发的授权授权授权组成。 此信息将绑定到发起请求的设备。
 - **短期媒体令牌** - AccessEnabler通过返回短期媒体令牌来授予对给定资源的托管应用程序的访问权限。 此令牌基于之前为该特定资源获取的授权令牌生成。 此外，此令牌不会绑定到设备，并且关联的生命周期会显着缩短（默认值： 5分钟）。
 
 身份验证和授权成功后，Adobe Pass身份验证将颁发身份验证、授权和短期媒体令牌。 这些令牌应缓存在用户设备上，并在其相关生命周期内使用。
@@ -106,15 +110,15 @@ Adobe Pass身份验证权利解决方案围绕Adobe Pass身份验证在成功完
 
 #### 身份验证令牌
 
-- **AccessEnabler 1.6及更早版本**  — 身份验证令牌在设备上缓存的方式取决于&quot;**每个请求者的身份验证”** 与当前MVPD关联的标志：
+- **AccessEnabler 1.6及更早版本** — 身份验证令牌在设备上缓存的方式取决于与当前MVPD关联的“**每个请求者的身份验证”**&#x200B;标志：
 
 
-1. 如果“每个请求者的身份验证”功能为 *已禁用*，则单个身份验证令牌将本地存储在全局粘贴板中。 此令牌将在与当前MVPD集成的所有应用程序之间共享。
-1. 如果“每个请求者的身份验证”功能为 *已启用*，则令牌将显式关联到执行身份验证流的程序员（令牌不会存储在全局粘贴板中，而是存储在只能由该程序员的应用程序看到的私有文件中）。 更具体地说，将禁用不同应用程序之间的单点登录(SSO)；在切换到新应用程序时，用户将需要明确执行身份验证流程（前提是第二个应用程序的程序员与当前MVPD集成，并且本地缓存中没有该程序员的身份验证令牌）。
+1. 如果“每个请求者的身份验证”功能为&#x200B;*禁用*，则单个身份验证令牌将本地存储在全局粘贴板中。 此令牌将在与当前MVPD集成的所有应用程序之间共享。
+1. 如果“每个请求者的身份验证”功能是&#x200B;*已启用*，则令牌将与执行身份验证流的程序员显式关联（令牌不会存储在全局粘贴板中，而是存储在只能供该程序员应用程序查看的私有文件中）。 更具体地说，将禁用不同应用程序之间的单点登录(SSO)；在切换到新应用程序时，用户将需要明确执行身份验证流程（前提是第二个应用程序的程序员与当前MVPD集成，并且本地缓存中没有该程序员的身份验证令牌）。
 
-   **注意：** AE 1.6 Google GSON技术说明： [如何解析Gson依赖关系](https://tve.zendesk.com/entries/22902516-Android-AccessEnabler-1-6-How-to-resolve-Gson-dependencies)
+   **注意：** AE 1.6 Google GSON技术说明：[如何解析Gson依赖项](https://tve.zendesk.com/entries/22902516-Android-AccessEnabler-1-6-How-to-resolve-Gson-dependencies)
 
-- **AccessEnabler 1.7**  — 此SDK引入了一种新的令牌存储方法，可启用多个程序员 — MVPD存储桶，从而启用多个身份验证令牌。 从AE 1.7开始，相同的存储布局用于“每个请求者的身份验证”方案和正常的身份验证流程。 两者之间的唯一区别在于执行身份验证的方式：“每个请求者的身份验证”包含一项新的改进（被动身份验证），使AccessEnabler能够根据存储中是否存在身份验证令牌（对于不同的程序员）执行后端通道身份验证。 用户只需验证一次，此会话将用于获取后续应用程序中的身份验证令牌。 此后端渠道流发生于 [`setRequestor()`](#setRequestor) 调用，并且对于程序员基本上是透明的。 然而，这里有一个重要的要求：程序员必须调用 [`setRequestor()`](#setRequestor) 从主UI线程和活动中。
+- **AccessEnabler 1.7** — 此SDK引入了一种新的令牌存储方法，可启用多个Programmer-MVPD存储桶，从而启用多个身份验证令牌。 从AE 1.7开始，相同的存储布局用于“每个请求者的身份验证”方案和正常的身份验证流程。 两者之间的唯一区别在于执行身份验证的方式：“每个请求者的身份验证”包含一项新的改进（被动身份验证），使AccessEnabler能够根据存储中是否存在身份验证令牌（对于不同的程序员）执行后端通道身份验证。 用户只需验证一次，此会话将用于获取后续应用程序中的身份验证令牌。 此后端通道流在[`setRequestor()`](#setRequestor)调用期间发生，对程序员基本上是透明的。 但是，这里有一个重要要求：程序员必须从主UI线程和活动内调用[`setRequestor()`](#setRequestor)。
 
 
 #### 授权令牌
@@ -161,12 +165,12 @@ Adobe Pass身份验证权利解决方案围绕Adobe Pass身份验证在成功完
 在旧版AccessEnabler中，步骤6会将用户呈现为“未验证”，因为以前令牌存储仅支持一个身份验证令牌。
 
 
-**注意：** 从一个Programmer/MVPD会话注销将清除底层存储，包括具有SSO的设备上的所有其他Programmer身份验证令牌。 不会删除为其他MVPD获取或未通过SSO获取的令牌。 取消身份验证流程(调用 [`setSelectedProvider(null)`](#setSelectedProvider))不会清除底层存储，但只会影响当前的程序员/MVPD身份验证尝试（通过擦除当前程序员的MVPD）。
+**注意：**&#x200B;从一个Programmer/MVPD会话注销将清除基础存储，包括具有SSO的设备上的所有其他Programmer身份验证令牌。 不会删除为其他MVPD获取或未通过SSO获取的令牌。 取消身份验证流程（调用[`setSelectedProvider(null)`](#setSelectedProvider)）将不会清除基础存储，但只会影响当前的程序员/MVPD身份验证尝试（通过清除当前程序员的MVPD）。
 
 
 AccessEnabler 1.7中包含的另一个与存储相关的功能允许从旧存储区域导入身份验证令牌。 此“令牌导入器”有助于在连续的AccessEnabler版本之间实现兼容性，即使在存储版本升级时也能保持SSO状态。
 
-导入程序是在以下过程中执行的： [`setRequestor()`](#setRequestor) 流，并在以下两种情况下运行（假定当前存储中不存在当前程序员的有效身份验证令牌）：
+导入程序在[`setRequestor()`](#setRequestor)流中执行，并在以下两种情况下运行（假定当前存储中不存在当前程序员的有效身份验证令牌）：
 
 - 由特定程序员开发的1.7应用程序的第一次安装
 - 升级至使用新存储的未来AccessEnabler的路径
@@ -243,7 +247,7 @@ AccessEnabler 1.7中包含的另一个与存储相关的功能允许从旧存储
 
 #### 设备绑定 {#device_binding}
 
-在上面的XML列表中，请注意标题为 `simpleTokenFingerprint`. 此标记用于保存本机设备ID个性化信息。 AccessEnabler库能够获得此类个性化信息，并在授权调用期间将其提供给Adobe Pass身份验证服务。 该服务将使用此信息并将其嵌入到实际令牌中，从而有效地将令牌绑定到特定设备。 这样做的最终目标是使令牌无法跨设备传输。
+在上面的XML列表中，记下标题为`simpleTokenFingerprint`的标记。 此标记用于保存本机设备ID个性化信息。 AccessEnabler库能够获得此类个性化信息，并在授权调用期间将其提供给Adobe Pass身份验证服务。 该服务将使用此信息并将其嵌入到实际令牌中，从而有效地将令牌绑定到特定设备。 这样做的最终目标是使令牌无法跨设备传输。
 
 
 

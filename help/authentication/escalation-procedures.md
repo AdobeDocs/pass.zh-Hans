@@ -4,7 +4,7 @@ description: 上报程序
 exl-id: 1d754e5a-d5fa-4411-8932-2a36294da6eb
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '854'
+source-wordcount: '879'
 ht-degree: 0%
 
 ---
@@ -17,21 +17,21 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 > 
->拨打热线： **+1-205-693-9813** 并发送电子邮件至 **tve-support@adobe.com** 包括 **紧急 — 事件** 在主题行中。
+>致电热线：**+1-205-693-9813**，并发送电子邮件至&#x200B;**tve-support@adobe.com**（主题行中包含&#x200B;**URGENT - INCIDENT**）。
 
-## 介绍 {#introduction}
+## 简介 {#introduction}
 
-本文档介绍了重大事件的支持流程(**严重程度1** 级别)影响Adobe Pass身份验证、Adobe Pass并发监控及其合作伙伴。
+本文档介绍了对影响Adobe Pass身份验证、Adobe Pass并发监控及其合作伙伴的重大事件（**严重级别1**&#x200B;级别）的支持过程。
 
 
 ## 严重级别1事件的定义 {#definition-of-a-severity-1-level-incident}
 
-A **严重程度1** 级别事件是 **实时** 状况， **在生产环境中发生**，不允许完成一个通道和一个MVPD的身份验证和/或授权流，这将影响执行该流的MVPD的大量订阅者。
+**严重性1**&#x200B;级别事件是&#x200B;**实时**&#x200B;情况，即&#x200B;**在生产环境中发生**，该情况不允许完成一个渠道和一个MVPD的身份验证和/或授权流，这会影响执行该流的MVPD的大量订阅者。
 
 
 ## 严重级别1事件的示例 {#examples-of-severity-1-incidentcs}
 
-* 生产访问启用程序托管在  `https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js` (或 `https://entitlement.auth.adobe.com/entitlement/js/AccessEnabler.js`)不可用。
+* 在`https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js`（或`https://entitlement.auth.adobe.com/entitlement/js/AccessEnabler.js`）托管的生产访问启用程序不可用。
 
 * 对于特定的MVPD，在Adobe选择MVPD（在任何支持的浏览器中）后，用户不再重定向/显示登录页面。
 
@@ -40,7 +40,7 @@ A **严重程度1** 级别事件是 **实时** 状况， **在生产环境中发
 * 在身份验证过程中，用户卡在Adobe错误页面上，无法重新启动身份验证/授权流程。
 
 
-| 的示例 **NOT** 严重级别1事件 |
+| **NOT**&#x200B;严重级别为1的事件的示例 |
 |---|
 | 对于这些类型的问题，Adobe将为调查提供支持，但它们不是严重级别为1的事件：<ul><li>由于Flash版本问题(缺少Flash、Flash拦截器、Flash版本错误)，一个或几个订阅者无法执行流。</li><li>一个或多个订阅者无法进行身份验证并停留在MVPD登录页面上。</li><li>一个或几个订阅者已经过身份验证，但无法播放视频。</li><li>一个/少数/所有订阅者在程序员网站上遇到JavaScript错误</li></ul> |
 
@@ -51,7 +51,7 @@ A **严重程度1** 级别事件是 **实时** 状况， **在生产环境中发
 ### 合作伙伴启动的流程 {#partner-initiated-flow}
 
 1. 合作伙伴发现严重级别为1的事件（如上所述），需要Adobe立即关注。
-1. 合作伙伴发送电子邮件至 **tve-support@adobe.com** 包括 **紧急 — 事件** 在主题行中添加以下信息：
+1. 合作伙伴向&#x200B;**tve-support@adobe.com**&#x200B;发送一封电子邮件，主题行中包含&#x200B;**URGENT - INCIDENT**，并添加了以下信息：
    * 标题
    * 描述和重现步骤
    * 操作系统/浏览器
@@ -79,9 +79,9 @@ A **严重程度1** 级别事件是 **实时** 状况， **在生产环境中发
 
 1. Adobe标识的问题与与MVPD的集成或程序员网站上的集成相关。
 
-1. Adobe通知受影响的合作伙伴 <u>遵循与该合作伙伴一起制定的支持流程</u> 并打开合作伙伴支持组织的票证。
+1. Adobe将按照与该合作伙伴</u>一起提供的支持过程通知受影响的合作伙伴<u>，并向该合作伙伴的支持组织打开一个票证。
 
-1. 在影响分析过程中，如果Adobe确定问题属于预先商定的事件方案之一，请参阅 **关于事件情景的预先商定决策**，它将相应地执行操作，而无需等待合作伙伴的输入。
+1. 在影响分析过程中，如果Adobe确定问题属于预先商定的事件方案决策之一，请参阅&#x200B;**预先商定的事件方案决策**，它将采取相应的措施，而无需等待合作伙伴的输入。
 
 1. 当服务恢复后，Adobe将等待合作伙伴的更新和合作伙伴的通知。
 
@@ -91,9 +91,9 @@ A **严重程度1** 级别事件是 **实时** 状况， **在生产环境中发
 
 |   | 方案 | 描述 | 操作 |
 |---|---|---|---|
-| S1 | Adobe标识正常生产操作期间MVPD集成出现的问题。 | 在正常生产操作期间，Adobe识别一个MVPD的问题，该问题使得无法执行身份验证/授权流（例如，过期的证书、过期的SAML响应、端口关闭、改变的参数等） | -Adobe将通知受影响的MVPD和程序员。  </br> </br> -Adobe将为所有受影响的程序员取消激活此MVPD。 </br> </br> -Adobe将按照与该MVPD商定的支持过程通过MVPD开立票证 |
-| S2 | Adobe为程序员激活新的MVPD，而程序员在启动日期之前允许MVPD。 | Adobe正在为程序员站点激活新的MVPD，并且该站点已在选取器中显示新的MVPD，即使不应显示它。 | -Adobe将在预定日期之前通知程序员在选取器中出现新的MVPD。 </br> </br>   — 如有必要，程序员将采取措施将其从选取器中删除。 |
-| S3 | Adobe为程序员激活新的MVPD，即使MVPD未准备好投入生产 | Adobe正在为程序员激活新的MVPD，但MVPD尚未部署对集成的支持，因此无法执行身份验证/授权流 |  — 仅当程序员询问时，Adobe才会进行部署 </br> </br>  — 程序员将负责确保所有测试都执行后，确保MVPD的许可。 |
+| S1 | Adobe标识正常生产操作期间MVPD集成出现的问题。 | 在正常生产操作期间，Adobe识别一个MVPD的问题，该问题使得无法执行身份验证/授权流（例如，过期的证书、过期的SAML响应、端口关闭、改变的参数等） | -Adobe将通知受影响的MVPD和程序员。 </br> </br> -Adobe将为所有受影响的程序员停用此MVPD。</br> </br> -Adobe将使用MVPD按照与该MVPD商定的支持过程打开票证 |
+| S2 | Adobe为程序员激活新的MVPD，而程序员在启动日期之前允许MVPD。 | Adobe正在为程序员站点激活新的MVPD，并且该站点已在选取器中显示新的MVPD，即使不应显示它。 | -Adobe将在预定日期之前通知程序员在选取器中出现新的MVPD。</br> </br> — 如有必要，程序员将采取措施将其从选取器中移除。 |
+| S3 | Adobe为程序员激活新的MVPD，即使MVPD未准备好投入生产 | Adobe正在为程序员激活新的MVPD，但MVPD尚未部署对集成的支持，因此无法执行身份验证/授权流 |  — 仅当程序员</br>询问时，Adobe才会进行部署 </br> — 一旦执行了所有测试，程序员将负责确保MVPD的许可。 |
 
 ## 严重级别1事件的响应预期 {#response-expectations-for-severity-one-incidents}
 

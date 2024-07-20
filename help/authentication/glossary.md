@@ -34,7 +34,7 @@ Adobe Pass身份验证的客户端组件。 Adobe Pass身份验证为每个支�
 
 ## AuthZ令牌 {#authz-token}
 
-授权令牌，在用户获得查看受保护内容的授权后，由Adobe Pass身份验证生成。 AuthZ令牌存储在Adobe Pass身份验证服务器上，用于生成 [短期媒体令牌](#short-lived-token).
+授权令牌，在用户获得查看受保护内容的授权后，由Adobe Pass身份验证生成。 AuthZ令牌存储在Adobe Pass身份验证服务器上，用于生成[短期媒体令牌](#short-lived-token)。
 
 ## 渠道ID（已弃用） {#channel_id}
 
@@ -56,7 +56,7 @@ Adobe Pass身份验证文档中使用的术语是指使用Adobe Pass身份验证
 
 ## GUID {#guid}
 
-请参阅 [用户标识](#user-id).
+查看[用户ID](#user-id)。
 
 ## IdP {#idp}
 
@@ -72,15 +72,15 @@ Adobe提供的库，程序员可使用它来验证Adobe Pass身份验证在成�
 
 ## MVPD ID {#mvpd-id}
 
-请参阅 [用户标识](#user-id).
+查看[用户ID](#user-id)。
 
-## 合作伙伴ID {#partner-id}
+## 合作伙伴 ID {#partner-id}
 
 Adobe传递给MVPD的标识符，MVPD使用它来标识Adobe Pass身份验证请求身份验证的对象。 有时，它用于为特定程序员配置其UI，有时，它对于所有程序员都是相同的，这取决于MVPD的需求。
 
 ## 付费电视提供商 {#pay-tv-provider}
 
-同义词 [MVPD](#mvpd).
+与[MVPD](#mvpd)同义。
 
 ## 程序员 {#programmer}
 
@@ -96,15 +96,15 @@ Adobe传递给MVPD的标识符，MVPD使用它来标识Adobe Pass身份验证请
 
 ## 请求者ID {#requestor-id}
 
-唯一标识 [程序员](#programmer) （帐户、品牌、渠道或资产）在Adobe Pass身份验证中。 此ID是在帐户初始设置期间在程序员和Adobe之间确定的。 在Web上，请求者ID与一组已列入白名单的域相关联；任何使用来自外部域的ID的调用都将被拒绝。 程序员还使用请求者ID进行分析。 通常每个程序员只有一个请求者ID。 与请求者ID相关的另一项功能是，程序员必须向Adobe提供公共证书，因为setRequestor API调用需要发送加密数据，用于在Adobe Pass身份验证系统中验证程序员。
+在Adobe Pass身份验证中唯一标识[程序员](#programmer)（帐户、品牌、渠道或属性）。 此ID是在帐户初始设置期间在程序员和Adobe之间确定的。 在Web上，请求者ID与一组已列入白名单的域相关联；任何使用来自外部域的ID的调用都将被拒绝。 程序员还使用请求者ID进行分析。 通常每个程序员只有一个请求者ID。 与请求者ID相关的另一项功能是，程序员必须向Adobe提供公共证书，因为setRequestor API调用需要发送加密数据，用于在Adobe Pass身份验证系统中验证程序员。
 
 ## 资源ID {#resource-id}
 
-用于标识IP地址的 [程序员](#programmer) 到MVPD。 它是在程序员和MVPD之间达成一致的；Adobe Pass身份验证传递未经接触的资源ID，因此对于所有MVPD，它必须是相同的。 只要MVPD知道每个ID代表的含义，程序员就可以使用多个资源ID。
+向MVPD标识[程序员](#programmer)的字符串或mRSS资源。 它是在程序员和MVPD之间达成一致的；Adobe Pass身份验证传递未经接触的资源ID，因此对于所有MVPD，它必须是相同的。 只要MVPD知道每个ID代表的含义，程序员就可以使用多个资源ID。
 
 ## 会话GUID {#sessionGUID}
 
-请参阅 [用户标识](#user-id).
+查看[用户ID](#user-id)。
 
 ## 短期媒体令牌 {#short-lived-token}
 
@@ -116,7 +116,7 @@ Adobe传递给MVPD的标识符，MVPD使用它来标识Adobe Pass身份验证请
 
 ## SP{#sp}
 
-服务提供商；这通常指 *角色* SP，由Adobe Pass身份验证播放，代表程序员与集成 [MVPD](#mvpd).
+服务提供商；这通常指的是SP的&#x200B;*角色*，它由Adobe Pass身份验证扮演，代表与[MVPD](#mvpd)集成中的程序员。
 
 ## 临时传递 {#temp-pass}
 
@@ -132,7 +132,7 @@ Adobe传递给MVPD的标识符，MVPD使用它来标识Adobe Pass身份验证请
 
 ## 用户标识 {#user-id}
 
-唯一标识程序员应用程序的用户，但源自MVPD。 对于不同的用例，以不同的形式提供。 请参阅 [了解程序员概述中的用户ID](/help/authentication/programmer-overview.md#user-ids).
+唯一标识程序员应用程序的用户，但源自MVPD。 对于不同的用例，以不同的形式提供。 请参阅程序员概述中的[了解用户ID](/help/authentication/programmer-overview.md#user-ids)。
 
 ## 允许列表 {#whitelist}
 

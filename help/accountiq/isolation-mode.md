@@ -1,13 +1,13 @@
 ---
 title: 隔离模式MVPD
 description: 了解适用于TV Everywhere程序员的隔离模式MVPD
-source-git-commit: 5639319ce8915f0c33d927ca9554c405b3b2e87d
+exl-id: 7ffe4ce3-e9cb-4382-a421-bb57d1927b53
+source-git-commit: 2bb570ab14a3295d46ee6dc0d38485697d63809c
 workflow-type: tm+mt
 source-wordcount: '502'
 ht-degree: 0%
 
 ---
-
 
 # 用于TV Everywhere程序员的隔离模式MVPD {#isolation-mode-tve}
 
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ![](assets/isolation-diff-new.png)
 
-*隔离模式MVPD标识四个不同的订户，而不是两个*
+*隔离模式MVPD标识四个不同的订阅者，而不是两个*
 
 * 如果隔离模式MVPD的用户B（例如Xfinity）使用同一设备访问由两个不同程序员提供的内容，则MVPD将不同的标识符与两个不同的访问尝试相关联。 似乎有两个不同的订阅者为程序员访问内容（图中的L和M）。
 
@@ -45,7 +45,7 @@ ht-degree: 0%
 >
 > 隔离模式下的行为与标准模式不兼容，隔离模式MVPD不能与其他MVPD混合，反之亦然。
 
-要创建在隔离模式下分析的区段，请拖动隔离模式MVPD，如 **Xfinity**，复制到区段定义的MVPDs部分。
+要创建在隔离模式下分析的区段，请将隔离模式MVPD（如&#x200B;**Xfinity**）拖到区段定义的MVPD部分。
 
 >[!NOTE]
 >
@@ -53,14 +53,14 @@ ht-degree: 0%
 
 ![](assets/xfinity-in-segment.png)
 
-*隔离模式中的Xfinity选择*
+隔离模式中的&#x200B;*Xfinity选择*
 
 >[!IMPORTANT]
 >
-> 在测量所有程序员应用程序上的流时，帐户共享更相关。 期望值较低 **共享得分** 以及处于隔离模式时量度的一些变化。
+> 在测量所有程序员应用程序上的流时，帐户共享更相关。 隔离模式下的&#x200B;**共享分数应为**，量度中应存在某些变量。
 
 ![](assets/aggregate-sharing-isolation.png)
 
-*隔离模式下的共享概率表*
+*在隔离模式下共享概率表*
 
 上述标尺显示，只有9%的帐户被共享，而在这些帐户中，只有11%的内容被使用。 由于得分自然较低，因此隔离模式下的结果应与标准模式下的结果解释不同。

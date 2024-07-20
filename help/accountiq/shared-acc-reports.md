@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # 共享帐户报表 {#shared-accounts-reports}
 
-共享帐户报表提供另一组图表和图表，它们反映当前区段的共享行为和消耗量。 例如， **[!UICONTROL Over Moderate Probability]** 和 **[!UICONTROL Over Low Probability]** 用于当前区段。
+共享帐户报表提供另一组图表和图表，它们反映当前区段的共享行为和消耗量。 例如，当前区段的&#x200B;**[!UICONTROL Over Moderate Probability]**&#x200B;和&#x200B;**[!UICONTROL Over Low Probability]**。
 
 ## 帐户共享概率 {#accounts-sharing-probability}
 
@@ -23,7 +23,7 @@ ht-degree: 0%
 * 低(20%-40%)
 * 非常低(0%-20%)
 
-红线标记在 [当前区段中的帐户超过阈值](#threshold-selector) 面板和浅红色区域包含超过阈值的所有帐户的总数。
+红线标记当前区段](#threshold-selector)面板中[帐户超过阈值中选定的阈值范围，浅红色区域包含超过该阈值的所有帐户的总数。
 
 ![](assets/accounts-sharing-probability-pie.png)
 
@@ -41,13 +41,13 @@ ht-degree: 0%
 
 此面板允许您为上面的圆环图和条形图选择阈值范围。 四个选项包括：
 
-* 帐户 **过低** 共享 **概率**
+* 帐户&#x200B;**超低**&#x200B;共享&#x200B;**概率**
 
-* 帐户 **过低** 共享 **概率**
+* 帐户&#x200B;**超出低**&#x200B;共享&#x200B;**概率**
 
-* 帐户 **过度** 共享 **概率**
+* 帐户&#x200B;**超过审核**&#x200B;共享&#x200B;**概率**
 
-* 帐户 **过高的** 共享 **概率**
+* 帐户&#x200B;**超出高**&#x200B;共享&#x200B;**概率**
 
 ![](assets/threshold-selector-shared-accounts.png)
 
@@ -77,7 +77,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->您可以放大表示一组以上邮政编码的条形，使用 **+** （加）号（例如，10+），方法是双击它们。
+>您可以通过双击这些条来放大代表一组以上邮政编码(以&#x200B;**+** （加号）（例如，10+）表示)的条。
 
 
 ## 每个帐户的每个期间的区段 — 地理跨度 {#geo-span-period-account}
@@ -88,8 +88,8 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> 您可以放大表示一组以上地理距离的条形，用 **+** （加）号（例如，1000+），方法是双击它们。
+> 您可以通过双击这些栏来放大代表一组以上地理距离(以&#x200B;**+** （加号）（例如，1000+）表示)的栏。
 
 >[!MORELIKETHIS]
 >
->* 了解如何使用导出所选区段中排名前1000的订阅者的报表，并使用共享帐户报表中的筛选器 [导出前1000个帐户](/help/accountiq/export-acc-information.md) 选项。
+>* 了解如何使用[导出前1000个帐户](/help/accountiq/export-acc-information.md)选项，通过共享帐户报表中的筛选器，导出所选区段中前1000个订阅者的报表。

@@ -13,10 +13,10 @@ ht-degree: 28%
 # Account IQ帮助 {#aiq-help}
 
 + [Account IQ概述](/help/accountiq/home.md)
-+ [帐户IQ的版本](/help/accountiq/versions-aiq.md)
-+ [帐户IQ入门](/help/accountiq/get-started.md)
++ [Account IQ的版本](/help/accountiq/versions-aiq.md)
++ [Account IQ入门](/help/accountiq/get-started.md)
 + [使用区段](/help/accountiq/work-with-segments.md)
-+ 仪表板 {#dashboard}
++ 仪表板{#dashboard}
    + [仪表板简介](/help/accountiq/introduction-dashboard.md)
    + [区段和时间间隔](/help/accountiq/segments-timeinterval.md)
    + [数据面板](/help/accountiq/data-panels.md)

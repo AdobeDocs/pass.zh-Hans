@@ -18,14 +18,14 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-本文档为程序员的工程团队提供了集成“智能设备”（游戏机、智能电视应用程序、机顶盒等）的分步说明 使用REST API服务进行Adobe Pass身份验证。 这种客户端到服务器方法使用REST API而不是客户端SDK，允许更广泛地支持不同的平台，对于这些平台，开发大量独特SDK将不可行。 有关无客户端解决方案的工作原理的广泛技术概述，请参阅 [无客户端技术概述](/help/authentication/rest-api-overview.md).
+本文档为程序员的工程团队提供了集成“智能设备”（游戏机、智能电视应用程序、机顶盒等）的分步说明 使用REST API服务进行Adobe Pass身份验证。 这种客户端到服务器方法使用REST API而不是客户端SDK，允许更广泛地支持不同的平台，对于这些平台，开发大量独特SDK将不可行。 有关无客户端解决方案工作方式的广泛技术概述，请参阅[无客户端技术概述](/help/authentication/rest-api-overview.md)。
 
 
 此方法需要两个组件（流应用程序和AuthN应用程序）来完成所需的流程：流应用程序中的启动、注册、授权和查看媒体流，以及AuthN应用程序中的身份验证流。
 
 ### 节流机构
 
-Adobe Pass身份验证REST API受 [节流机构](/help/authentication/throttling-mechanism.md).
+Adobe Pass身份验证REST API受[限制机制](/help/authentication/throttling-mechanism.md)控制。
 
 ## 组件 {#components}
 
@@ -44,13 +44,13 @@ Adobe Pass身份验证REST API受 [节流机构](/help/authentication/throttling
 
 
 
-流中使用的其他术语定义于 [术语表](/help/authentication/glossary.md).
+流中使用的其他术语在[术语表](/help/authentication/glossary.md)中定义。
 
 ## 流{#flows}
 
 ### 动态客户端注册(DCR)
 
-Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务之间的客户端通信。 DCR流程是独立的、从属的和先决条件流程，可以在 [动态客户端注册](/help/authentication/dynamic-client-registration.md)
+Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务之间的客户端通信。 DCR流是独立的、依赖的以及先决条件流，可以在[动态客户端注册](/help/authentication/dynamic-client-registration.md)中找到
 
 
 ### 流（智能设备）应用程序流量
@@ -65,7 +65,7 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
 
 3. 发出Check-authentication调用以查看设备是否已通过身份验证。  例如： [`<SP_FQDN>/api/v1/checkauthn [device ID]`](/help/authentication/check-authentication-token.md)
 
-4. 如果 `checkauthn` 调用成功，从步骤2开始进入授权流程。  如果失败，则启动注册流。
+4. 如果`checkauthn`调用成功，则继续从步骤2开始执行授权流程。  如果失败，则启动注册流。
 
 
 
@@ -83,7 +83,7 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
 
 #### 授权流程
 
-1. 用户从第二屏应用程序返回并按设备上的“继续”按钮。 或者，您可以实施轮询机制来检查身份验证状态，但Adobe Pass身份验证建议使用继续按钮方法而不是轮询。 <!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)--> 例如： [\&lt;sp _fqdn=&quot;&quot;>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md)
+1. 用户从第二屏应用程序返回并按设备上的“继续”按钮。 或者，您可以实施轮询机制来检查身份验证状态，但Adobe Pass身份验证建议使用继续按钮方法而不是轮询。 <!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)-->例如： [\&lt;SP\_FQDN\>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md)
 
 2. 向Adobe Pass Authentication Authorization Service发送GET请求以启动授权。 例如： `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
 
@@ -109,9 +109,11 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
 
    a.您的应用程序检查媒体是否受保护。
 
-   b.如果媒体受到保护，您的应用程序将启动上面的授权(AuthZ)流程。
+   b.如果媒体受到保护，您的应用程序将启动授权
+(AuthZ)以上流量。
 
-   c.如果媒体未受保护，则为用户播放媒体。
+   c.如果媒体未受保护，则播放
+用户。
 
 3. 播放媒体。
 
@@ -139,7 +141,7 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
 
 对于不需要用户输入凭据的TempPass和促销性TempPass实施，可以直接在流应用程序中实施身份验证。
 
-**要使用此API，流应用程序需要确保设备ID的唯一性，因为此ID用于标识令牌以及可选的额外数据。**
+**要使用此API，流应用程序需要确保设备ID的唯一性，因为此设备ID正用于标识令牌以及可选的额外数据。**
 
 
 ![](assets/temp-pass-promo-temppass.png)

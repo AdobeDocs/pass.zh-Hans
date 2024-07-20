@@ -1,7 +1,8 @@
 ---
 title: CMU API访问
 description: CMU API访问
-source-git-commit: 598eb878168f6e352a8eae369cbc8cb833033328
+exl-id: 8d216703-aabc-489e-93fe-d4d105616b1d
+source-git-commit: 52c0ffe75f6ac9fda3da39ff08b0dc4c5d5ca428
 workflow-type: tm+mt
 source-wordcount: '407'
 ht-degree: 0%
@@ -20,14 +21,14 @@ ht-degree: 0%
 为了使客户端应用程序能够利用OAuth 2.0授权，服务器必须动态注册以获取特定信息（客户端凭据）以便能够与其交互。 在注册过程中，客户端必须向客户端注册端点提供一组内置元数据。
 此元数据作为软件语句传送，其中包含“software_id”，以允许我们的授权服务器使用相同的软件语句关联应用程序的不同实例。
 软件语句是一个JSON Web令牌(JWT)，它以捆绑包的形式声明有关客户端软件的元数据值。 作为客户端注册请求的一部分向授权服务器呈现时，必须使用JSON Web签名(JWS)对软件语句进行数字签名或MAC编辑。 \
-您可以在官方文档中找到有关什么是软件语句及其工作方式的更详细说明  <a href="https://datatracker.ietf.org/doc/html/rfc7591" target="_blank">[RFC7591]</a>.
+您可以在官方文档<a href="https://datatracker.ietf.org/doc/html/rfc7591" target="_blank">[RFC7591]</a>中找到有关软件语句及其工作方式的更详细说明。
 请按照以下部分中的步骤获取访问权限。
 
 ## 访问过程步骤 {#access-procedure-steps}
 
-1. 在Adobe Pass DCR服务器中注册了应用程序。 对于此步骤，请联系 [支持团队](mailto:tve-support@adobe.com).
+1. 在Adobe Pass DCR服务器中注册了应用程序。 对于此步骤，请联系我们的[支持团队](mailto:tve-support@adobe.com)。
 2. 获取软件声明
-   1. 转到TVE仪表板 <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> 预生产 </a>  或 <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
+   1. 转到TVE仪表板<a href="https://console-preprod.auth.adobe.com/#!/" target="_blank">生产前</a>或<a href="https://console.auth.adobe.com/" target="_blank">生产</a>
    2. 选择程序员
    3. 转到“应用程序”选项卡
    4. 选择应用程序

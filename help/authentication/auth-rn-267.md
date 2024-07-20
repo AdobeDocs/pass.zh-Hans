@@ -1,9 +1,10 @@
 ---
 title: Adobe Pass Authentication 2.67发行说明
 description: Adobe Pass Authentication 2.67发行说明
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: d899fe96-a273-4681-90a5-bde54cc2f3b3
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '125'
+source-wordcount: '131'
 ht-degree: 0%
 
 ---
@@ -26,7 +27,7 @@ ht-degree: 0%
 ### 内部版本号 {#build-number-267}
 
 Adobe Pass身份验证： adobe-pass-**2.67.0.1**
-发行日期： **09/12/2023 - 09/14/2023**
+发行日期： **2023年9月12日 — 2023年9月14日**
 
 ### 新增功能 {#new-features-267}
 
@@ -35,7 +36,7 @@ Adobe Pass身份验证： adobe-pass-**2.67.0.1**
 
 ### MVPD更新 {#mvpd-updates-267}
 
-* 更新 **DirecTV波多黎各** 与Adobe集成。 请联系您的TAM以了解更多详细信息。
+* **DirecTV Puerto Rico**&#x200B;与Adobe集成的更新。 请联系您的TAM以了解更多详细信息。
 
 #### 错误修复 {#bug-fixes-267}
 

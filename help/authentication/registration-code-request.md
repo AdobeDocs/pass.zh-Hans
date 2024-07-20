@@ -19,17 +19,17 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> REST API实施受限制 [节流机构](/help/authentication/throttling-mechanism.md)
+> REST API实现受[限制机制](/help/authentication/throttling-mechanism.md)限制
 
-&lt;reggie_fqdn>：
+&lt;REGGIE_FQDN>：
 
-* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 — [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>：
+&lt;SP_FQDN>：
 
-* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 — [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -37,9 +37,9 @@ ht-degree: 0%
 
 返回随机生成的注册代码和登录页面URI。
 
-| 端点 | 已调用  </br>按 | 输入   </br>参数 | HTTP  </br>方法 | 响应 | HTTP  </br>响应 |
+| 端点 | </br>调用者 | 输入   </br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;reggie_fqdn>/reggie/v1/{requestor}/regcode</br>例如：</br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | 流应用程序</br>或</br>程序员服务 | 1.请求人  </br>    （路径组件）</br>2.  deviceId (Hashed)   </br>    （必需）</br>3.  device_info/X-Device-Info（必需）</br>4.  mvpd（可选）</br>5.  ttl（可选）</br>6.  _设备类型_</br> 7.  _设备用户_ （已弃用）</br>8.  _appId_ （已弃用） | POST | 包含注册码和信息的XML或JSON，如果失败，则显示错误详细信息。 请参阅下面的架构和示例。 | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode</br>例如：</br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | 流式处理应用程序</br>或</br>程序员服务 | 1.请求者</br>    （路径组件）</br>2。  deviceId (Hashed)   </br>    （必需）</br>3。  device_info/X-Device-Info （必需）</br>4。  mvpd （可选）</br>5。  ttl （可选）</br>6。  _deviceType_</br> 7。  _deviceUser_ （已弃用）</br>8。  _appId_（已弃用） | POST | 包含注册码和信息的XML或JSON，如果失败，则显示错误详细信息。 请参阅下面的架构和示例。 | 201 |
 
 {style="table-layout:auto"}
 
@@ -47,12 +47,12 @@ ht-degree: 0%
 | --- | --- |
 | 请求者 | 此操作有效的程序员requestorId。 |
 | deviceId | 设备ID字节。 |
-| device_info/</br>X-Device-Info | 流设备信息。</br>**注意**：可以将此device_info作为URL参数进行传递，但由于此参数的潜在大小以及GETURL长度的限制，它应当作为X-Device-Info在http标头中传递。 </br>欲知详情，请参阅 [传递设备和连接信息](/help/authentication/passing-client-information-device-connection-and-application.md). |
+| 设备信息/</br>X — 设备信息 | 流设备信息。</br>**注意**：可以将此device_info作为URL参数传递，但由于此参数的潜在大小以及GETURL的长度限制，它应作为X-Device-Info传递到http标头。 </br>在[传递设备和连接信息](/help/authentication/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
 | mvpd | 此操作有效的MVPD ID。 |
-| ttl | 此正则码应在秒内保持多长时间。</br>**注意**：允许用于ttl的最大值为36000秒（10小时）。 较高的值会导致400 HTTP响应（错误请求）。 如果 `ttl` 留空，则Adobe Pass身份验证将默认值为30分钟。 |
-| _设备类型_ | 设备类型（例如Roku、PC）。</br>如果此参数设置正确，则ESM提供的量度 [按设备类型细分](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) 使用无客户端时，以便可以执行不同类型的分析，例如Roku、AppleTV和Xbox。</br>看， [在通过的量度中使用无客户端设备类型参数的好处&#x200B;](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**注意**：device_info将替换此参数。 |
+| ttl | 此正则码应在秒内保持多长时间。</br>**注意**： ttl允许的最大值为36000秒（10小时）。 较高的值会导致400 HTTP响应（错误请求）。 如果`ttl`留空，则Adobe Pass身份验证将默认值设置为30分钟。 |
+| _deviceType_ | 设备类型（例如Roku、PC）。</br>如果该参数设置正确，ESM提供的量度在使用无客户端程序时按设备类型](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type)进行[划分，以便可以执行不同类型的分析，例如Roku、AppleTV和Xbox。</br>查看，[在传递量度中使用无客户端设备类型参数的好处&#x200B;](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**注意**： device_info将替换此参数。 |
 | _设备用户_ | 设备用户标识符。 |
-| _appId_ | 应用程序id/名称。 </br>**注意**：device_info将替换此参数。 |
+| _appId_ | 应用程序id/名称。 </br>**注意**： device_info将替换此参数。 |
 
 {style="table-layout:auto"}
 
@@ -61,14 +61,14 @@ ht-degree: 0%
 >
 >**流设备IP地址**
 ></br>
->对于客户端到服务器实施，流设备IP地址将随此调用隐式发送。  对于服务器到服务器实施，其中 **regcode** 调用是程序员服务而不是流设备，以下标头需要传递流设备IP地址：
+>对于客户端到服务器实施，流设备IP地址将随此调用隐式发送。  对于服务器到服务器实施，如果将&#x200B;**regcode**&#x200B;调用设置为程序员服务而不是流设备，则需要以下标头来传递流设备IP地址：
 >
 >
 >```
 >X-Forwarded-For : <streaming_device_ip> 
 >```
 >
->位置 `<streaming\_device\_ip>` 是流设备公共IP地址。
+>其中`<streaming\_device\_ip>`是流设备公共IP地址。
 ></br></br>
 >示例：</br>
 >

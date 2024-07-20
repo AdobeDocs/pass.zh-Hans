@@ -1,7 +1,8 @@
 ---
 title: Adobe Pass Authentication JavaScript 4.7.0发行说明
 description: Adobe Pass Authentication JavaScript 4.7.0发行说明
-source-git-commit: 9c491478a5560d1f9208e786de285733997bb24b
+exl-id: 07f90270-e64a-4c6b-a072-183af0f53352
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '121'
 ht-degree: 0%
@@ -20,7 +21,7 @@ ht-degree: 0%
 
 Adobe Pass身份验证： JavaScript 4.7.0
 
-发行日期： **02/27/2024 - 02/29/2024**
+发行日期：**02/27/2024 - 02/29/2024**
 
 ## 发行版概述 {#overview-javascript-sdk-470}
 

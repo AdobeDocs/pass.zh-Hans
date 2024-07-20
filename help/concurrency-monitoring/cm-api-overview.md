@@ -11,18 +11,18 @@ ht-degree: 0%
 
 # API概述 {#api-overview}
 
-查看 [在线API文档](http://docs.adobeptime.io/cm-api-v2/) 以了解更多详细信息。
+查看[联机API文档](http://docs.adobeptime.io/cm-api-v2/)以了解更多详细信息。
 
 ## 目的和先决条件 {#purpose-prerequisites}
 
-当实施与并发监控的集成时，本文档可帮助应用程序开发人员使用我们的Swagger API规范。 强烈建议读者先了解服务定义的概念，然后再遵循本准则。 要理解这一点，有必要概述 [产品文档](/help/concurrency-monitoring/cm-home.md) 和 [Swagger API规范](http://docs.adobeptime.io/cm-api-v2/).
+当实施与并发监控的集成时，本文档可帮助应用程序开发人员使用我们的Swagger API规范。 强烈建议读者先了解服务定义的概念，然后再遵循本准则。 为了理解这一点，需要概述[产品文档](/help/concurrency-monitoring/cm-home.md)和[Swagger API规范](http://docs.adobeptime.io/cm-api-v2/)。
 
 
 ## 简介 {#api-overview-intro}
 
 在开发过程中，Swagger公共文档体现了了解和测试API流的参考准则。 这是一个绝佳的起点，以便能够有一个实际操作方法，并熟悉现实世界应用程序在不同用户交互场景中的行为方式。
 
-在中提交票证 [Zendesk](mailto:tve-support@adobe.com) 在并发监控中注册贵公司和应用程序。 Adobe将为每个实体分配一个应用程序ID。 在本指南中，我们将使用两个带有ID的参考应用程序 **demo-app** 和 **demo-app-2** 将位于租户Adobe下。
+在[Zendesk](mailto:tve-support@adobe.com)中提交票证，以便在并发监控中注册您的公司和应用程序。 Adobe将为每个实体分配一个应用程序ID。 在本指南中，我们将使用租户Adobe下具有ID **demo-app**&#x200B;和&#x200B;**demo-app-2**&#x200B;的两个参考应用程序。
 
 
 ## 用例 {#api-use-case}
@@ -31,12 +31,12 @@ ht-degree: 0%
 
 ![](assets/setting-app-id.png)
 
-之后，我们按 **浏览** ，以便为对REST API进行的所有调用设置将在授权标头中使用的ID。  每个API调用都需要通过HTTP基本身份验证传入应用程序ID。 用户名是应用程序ID，密码为空。
+之后，我们按&#x200B;**浏览**&#x200B;设置将在对REST API的所有调用的Authorization标头中使用的ID。  每个API调用都需要通过HTTP基本身份验证传入应用程序ID。 用户名是应用程序ID，密码为空。
 
 
 ### 第一个应用程序 {#first-app-use-cases}
 
-具有ID的应用程序 **demo-app** 已由Adobe团队分配一项策略，其中一项规则将并发流数量限制为3。 策略会根据在Zendesk中提交的请求分配给特定应用程序。
+ID为&#x200B;**demo-app**&#x200B;的应用程序已由Adobe团队分配策略，该策略有一个规则将并发流数量限制为3。 策略会根据在Zendesk中提交的请求分配给特定应用程序。
 
 
 #### 正在检索元数据 {#retrieve-metadata-use-case}
@@ -45,11 +45,11 @@ ht-degree: 0%
 
 ![](assets/retrieving-metadata.png)
 
-按“Try it out”后，对于具有ID的应用程序 **demo-app** 我们会得到以下结果：
+按“试用”后，对于ID为&#x200B;**demo-app**&#x200B;的应用程序，我们将获得以下结果：
 
 ![](assets/empty-metadata-call.png)
 
-正如我们从响应正文字段中看到的那样，元数据属性列表为空。 这意味着设计所需的属性足以评估分配给此应用程序的3个流策略。 另请参阅 [标准元数据字段文档](/help/concurrency-monitoring/standard-metadata-attributes.md). 调用后，我们可以继续并在Sessions REST资源上创建新会话。
+正如我们从响应正文字段中看到的那样，元数据属性列表为空。 这意味着设计所需的属性足以评估分配给此应用程序的3个流策略。 另请参阅[标准元数据字段文档](/help/concurrency-monitoring/standard-metadata-attributes.md)。 调用后，我们可以继续并在Sessions REST资源上创建新会话。
 
 
 #### 会话初始化 {#session-initial}
@@ -60,7 +60,7 @@ ht-degree: 0%
 
 无需在首次调用时提供任何终止代码，因为我们没有任何其他活动的流。 没有元数据属性，因为检索元数据调用未返回任何属性。
 
-此 **主题** 和 **idp** 参数是必需的，它们将指定为URI路径变量。 您可以获取 **主题** 和 **idp** 参数，方法是调用 **mvpd** 和 **上游用户ID** Adobe Pass身份验证中的元数据字段。 另请参阅 [元数据API](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=en#). 在本例中，我们将提供值“12345”作为主题，“adobe”作为idp。
+**subject**&#x200B;和&#x200B;**idp**&#x200B;参数是必需的，它们将被指定为URI路径变量。 通过从Adobe Pass身份验证中调用&#x200B;**mvpd**&#x200B;和&#x200B;**upstreamUserID**&#x200B;元数据字段，可获取&#x200B;**subject**&#x200B;和&#x200B;**idp**&#x200B;参数。 另请参阅元数据API的[概述](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=en#)。 在本例中，我们将提供值“12345”作为主题，“adobe”作为idp。
 
 
 ![](assets/session-init-params-frstapp.png)
@@ -71,11 +71,11 @@ ht-degree: 0%
 ![](assets/session-init-result-first-app.png)
 
 
-我们需要的所有数据都包含在响应标头中。 此 **位置** 标头表示新创建的会话的id，以及 **日期** 和 **过期** 标头表示用于安排应用程序进行下一个心跳以保持会话活动的值。
+我们需要的所有数据都包含在响应标头中。 **Location**&#x200B;标头表示新创建的会话的ID，**Date**&#x200B;和&#x200B;**Expires**&#x200B;标头表示用于安排应用程序发出下一个检测信号以保持会话活动的值。
 
 #### 心率 {#heartbeat}
 
-进行心跳调用。 提供 **session id** 获取自会话初始化调用以及 **主题** 和 **idp** 使用的参数。
+进行心跳调用。 提供在会话初始化调用中获取的&#x200B;**会话ID**，以及使用的&#x200B;**主题**&#x200B;和&#x200B;**idp**&#x200B;参数。
 
 ![](assets/heartbeat.png)
 
@@ -84,7 +84,7 @@ ht-degree: 0%
 
 ![](assets/heartbeat-succesfull-result.png)
 
-与第一种情况一样，我们将使用 **日期** 和 **过期** 标头，用于为此特定会话安排另一个心率。 如果会话不再有效，此调用将失败，并显示410 GONE HTTP状态代码。
+与第一种情况一样，我们将使用&#x200B;**Date**&#x200B;和&#x200B;**Expires**&#x200B;标头为此特定会话计划另一个心率。 如果会话不再有效，此调用将失败，并显示410 GONE HTTP状态代码。
 
 您可以使用Swagger UI中的“保持流有效”选项在特定会话上执行自动心率，这可以帮助您测试规则，而无需担心执行及时会话心率所需的模板。 此按钮放置在Swagger心率选项卡中的“试用”按钮旁边。 要为创建的所有会话设置自动心率，您需要让这些会话在Web浏览器选项卡中打开的独立Swagger UI中计划每个会话。
 
@@ -103,7 +103,7 @@ ht-degree: 0%
 
 #### 获取所有正在运行的流 {#get-all-running-streams}
 
-此端点为其所有应用程序上的特定租户提供当前运行的所有会话。 使用 **主题** 和 **idp** 调用的参数：
+此端点为其所有应用程序上的特定租户提供当前运行的所有会话。 为调用使用&#x200B;**subject**&#x200B;和&#x200B;**idp**&#x200B;参数：
 
 ![](assets/get-all-running-streams-parameters.png)
 
@@ -111,13 +111,13 @@ ht-degree: 0%
 
 ![](assets/get-all-running-streams-success.png)
 
-请注意 **过期** 标题。 这是第一个会话在发送心跳之前应过期的时间。 OtherStreams具有值0，因为没有针对此用户在其他租户的应用程序上运行的其他流。
+请注意&#x200B;**过期**标头。 这是第一个会话在发送心跳之前应过期的时间。 OtherStreams具有值0，因为没有针对此用户在其他租户的应用程序上运行的其他流。
 元数据字段将填充会话启动时发送的所有元数据。 我们不筛选它，你将收到你发送的所有内容。
 如果调用时没有针对特定用户的运行会话，您将收到此响应：
 
 ![](assets/get-all-running-streams-empty.png)
 
-另请注意，在本例中， **过期** 标头不存在。
+另请注意，在这种情况下，**Expires**&#x200B;标头不存在。
 
 #### 破坏策略 {#breaking-policy-app-first}
 
@@ -127,9 +127,9 @@ ht-degree: 0%
 ![](assets/breaking-policy-frstapp.png)
 
 
-我们在有效负荷中获取一个409 CONFLICT响应以及一个求值结果对象。 有关评估结果的完整说明，请参阅 [Swagger API规范](http://docs.adobeptime.io/cm-api-v2/#evaluation-result).
+我们在有效负荷中获取一个409 CONFLICT响应以及一个求值结果对象。 阅读[Swagger API规范](http://docs.adobeptime.io/cm-api-v2/#evaluation-result)中评估结果的完整说明。
 
-应用程序可以使用评估结果中的信息在停止视频时向用户显示特定消息，并在需要时采取进一步的操作。 一个用例可以是停止其他现有流以启动新流。 这是通过使用 **终止代码** 值存在于 **冲突** 特定冲突属性的字段。 该值将作为新会话初始化调用中的X-Terminate HTTP标头提供。
+应用程序可以使用评估结果中的信息在停止视频时向用户显示特定消息，并在需要时采取进一步的操作。 一个用例可以是停止其他现有流以启动新流。 这是通过使用特定冲突属性的&#x200B;**冲突**&#x200B;字段中存在的&#x200B;**terminationCode**&#x200B;值完成的。 该值将作为新会话初始化调用中的X-Terminate HTTP标头提供。
 
 ![](assets/session-init-termination-code.png)
 
@@ -139,7 +139,7 @@ ht-degree: 0%
 
 ### 第二个应用程序 {#second-application}
 
-我们将使用的另一个示例应用程序是id应用程序 **demo-app-2**. 已为此策略分配了一个规则，该规则将通道可用的流数量限制为最多2个。   必须提供渠道变量才能对此策略进行评估。
+我们将使用的另一个示例应用程序是ID为&#x200B;**demo-app-2**&#x200B;的应用程序。 已为此策略分配了一个规则，该规则将通道可用的流数量限制为最多2个。   必须提供渠道变量才能对此策略进行评估。
 
 #### 正在检索元数据 {#retrieving-metadata}
 
@@ -147,12 +147,12 @@ ht-degree: 0%
 
 ![](assets/non-empty-metadata-secndapp.png)
 
-此时，响应正文不再是一个空列表，如第一个应用程序的示例中所示。 现在，并发监控服务在响应机构中声明 **渠道** 会话初始化时需要元数据才能评估策略。
+此时，响应正文不再是一个空列表，如第一个应用程序的示例中所示。 现在，并发监视服务在响应正文中声明，会话初始化时需要&#x200B;**渠道**&#x200B;元数据才能评估策略。
 
-如果您没有为 **渠道** 参数，您将获得：
+如果您在不为&#x200B;**channel**&#x200B;参数提供值的情况下进行调用，您将获得：
 
 * 响应代码 — 400错误请求
-* 响应正文 — 在中描述的评估结果有效负荷 **义务** 字段为会话初始化请求中期望的操作成功执行的操作。
+* 响应正文 — 一个评估结果有效负载，它在&#x200B;**义务**&#x200B;字段中描述会话初始化请求中应包含什么以便操作成功。
 
 ![](assets/metadata-request-secndapp.png)
 

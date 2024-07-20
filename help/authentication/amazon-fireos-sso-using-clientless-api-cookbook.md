@@ -4,7 +4,7 @@ description: 使用无客户端API指南的Amazon FireOS SSO
 exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '762'
+source-wordcount: '755'
 ht-degree: 0%
 
 ---
@@ -17,13 +17,13 @@ ht-degree: 0%
 
 </br>
 
-## 介绍 {#Introduction}
+## 简介 {#Introduction}
 
 本文档提供了使用无客户端API实施Amazon SSO版本的Adobe Pass身份验证流的说明。 本文档的第一部分侧重于架构的Amazon版本的特性，适用于许多已经熟悉并熟悉其实施的合作伙伴。
 
 本文档的第二部分介绍了实施Adobe Pass身份验证无客户端API的主要步骤。
 
-有关无客户端解决方案的工作原理的广泛技术概述，请参阅 [REST API概述](/help/authentication/rest-api-overview.md). Adobe是获取有关整体架构和第一个实施支持的首选联系人。
+有关无客户端解决方案工作方式的广泛技术概述，请参阅[REST API概述](/help/authentication/rest-api-overview.md)。 Adobe是获取有关整体架构和第一个实施支持的首选联系人。
 
 ## Amazon无客户端SSO {#AMZ-Clientless-SSO}
 
@@ -37,7 +37,7 @@ Amazon无客户端SSO实施非常简单，并且大体上与常规的Adobe Prime
 
 ### 如何构建应用程序以使用Amazon SDK {#Build-entries}
 
-* 下载并复制最新版本 [Amazon桩模块SDK](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar) 移入/SSOEnabler文件夹，与app目录平行
+* 将最新的[Amazon存根SDK](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar)下载并复制到与应用程序目录平行的/SSOEnabler文件夹中
 * 更新manifest/gradle文件以使用库：
 
   **将以下行添加到清单文件：**
@@ -65,7 +65,7 @@ Amazon无客户端SSO实施非常简单，并且大体上与常规的Adobe Prime
 
 * 处理Amazon配套应用程序缺失的问题：
 
-  虽然不太可能，但如果您的应用程序正在运行的Amazon设备上不存在该伴侣，则您在运行时应该遇到以下类的ClassNotFoundException： `com.amazon.ottssotokenlib.SSOEnabler`.
+  虽然不太可能，但如果在您的应用程序正在运行的Amazon设备上不存在该伴随，则您应在运行时在以下类上遇到ClassNotFoundException： `com.amazon.ottssotokenlib.SSOEnabler`。
 
   如果发生这种情况，您只需跳过有效负载步骤并回退到常规PrimeTime流。 将不会启用SSO，但常规身份验证流程将正常进行。
 
@@ -113,7 +113,7 @@ Amazon无客户端SSO实施非常简单，并且大体上与常规的Adobe Prime
 
 * 此API将通过初始化期间设置的回调提供响应。
 
-  **例如**. 使用在初始化期间创建的单个实例调用：
+  **例如**。 使用在初始化期间创建的单个实例调用：
 
   ```JAVA
   ssoEnabler.getSSOTokenAsync().
@@ -145,13 +145,13 @@ Amazon无客户端SSO实施非常简单，并且大体上与常规的Adobe Prime
 
 ### 更新了Adobe Pass无客户端API以使用动态客户端注册 {#clientlessdcr}
 
-如果这是您的第一个实施，请参阅 **无客户端技术概述** 并在您需要支持时联系Adobe。
+如果这是您的第一个实施，请参阅&#x200B;**无客户端技术概述**，并联系Adobe以防您需要支持。
 
 Adobe无客户端API要求应用程序使用动态客户端注册来调用Adobe服务器。
 
-* 要在应用程序中使用Dynamic Client Registration，请按照 [用于注册应用程序的动态客户端注册管理](/help/authentication/dynamic-client-registration-management.md).
+* 要在应用程序中使用动态客户端注册，请按照[动态客户端注册管理中的说明注册应用程序](/help/authentication/dynamic-client-registration-management.md)。
 
-* 要实施动态客户端注册API以对Adobe Pass服务器执行身份验证和授权请求，请按照 [动态客户端注册API](/help/authentication/dynamic-client-registration-api.md) .
+* 要实施Dynamic Client Registration API以对Adobe Pass服务器执行身份验证和授权请求，请按照[Dynamic Client Registration API](/help/authentication/dynamic-client-registration-api.md)中的说明操作。
 
 ### 更新了Adobe Pass无客户端API以使用Amazon SSO {#clientlesssso}
 

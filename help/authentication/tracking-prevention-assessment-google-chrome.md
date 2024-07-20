@@ -1,14 +1,15 @@
 ---
-title: 防跟踪评估Google Chrome
-description: 防跟踪评估Google Chrome
-source-git-commit: 579ce868b6ee94e1854bbc51145fc7840268db26
+title: 跟踪预防评估Google Chrome
+description: 跟踪预防评估Google Chrome
+exl-id: f3d552da-2fd7-4ac8-9f82-876625af5d47
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '650'
 ht-degree: 0%
 
 ---
 
-# 防跟踪评估 — Google Chrome {#tracking-prevention-assessment-google-chrome}
+# 跟踪预防评估 — Google Chrome {#tracking-prevention-assessment-google-chrome}
 
 >[!NOTE]
 >
@@ -18,22 +19,22 @@ ht-degree: 0%
 
 本文档汇总了有用的资源，并对Google Chrome作为其逐步淘汰第三方Cookie计划的一部分而计划的即将进行的更改进行评估。
 
-评估针对运行在Google Chrome浏览器上、且使用Adobe Pass Access Enabler JavaScript SDK v4与Adobe Pass身份验证后端服务集成的TV Everywhere (TVE)应用程序。
+评估针对运行在Google Chrome浏览器上、且使用Adobe Pass Access Enabler JavaScript SDK v4与Adobe Pass Authentication后端服务集成的TV Everywhere (TVE)应用程序。
 
 ## 公共资源
 
 请参阅下面的Google开发人员网站及其官方博客汇总的资源列表，我们建议我们的客户参考这些资源：
 
-* [在Chrome中逐步停用第三方Cookie的下一步](https://blog.google/products/chrome/privacy-sandbox-tracking-protection/)
+* [在Chrome中逐步停用第三方Cookie的下一步骤](https://blog.google/products/chrome/privacy-sandbox-tracking-protection/)
 * [隐私沙盒开发人员文档](https://developers.google.com/privacy-sandbox)
 * [为第三方Cookie限制做准备](https://developers.google.com/privacy-sandbox/3pcd)
-* [为第三方Cookie逐步淘汰做准备](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout)
-* [为第三方Cookie的结束做准备](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2023oct)
-* [默认情况下，第三方Cookie仅受1%的Chrome用户的限制](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2024jan)
+* [准备第三方Cookie逐步淘汰](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout)
+* [准备结束第三方Cookie](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2023oct)
+* [默认情况下限制了1%的Chrome用户的第三方Cookie](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2024jan)
 
 ## 时间线
 
-简要概述一下Google Chrome开始测试的情况 [跟踪保护](https://privacysandbox.com/)，这是一项新功能，限制影响所有第三方Cookie的跨站点跟踪。
+简单地说，Google Chrome已开始测试[跟踪保护](https://privacysandbox.com/)，这是一项新功能，可限制影响所有第三方Cookie的跨站点跟踪。
 
 最初，这是从2024年初开始的，影响到大约1%的用户，其（暂定）计划从2024年第三季度开始，将这一影响扩展到最多100%的用户。
 
@@ -41,11 +42,11 @@ ht-degree: 0%
 
 Google通过以下链接发布了一份文档，汇总了其推荐的行动手册，为第三方Cookie逐步淘汰做准备： https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout。
 
-我们遵守了本行动手册，评估在Google Chrome浏览器上运行的TV Everywhere (TVE)应用程序，这些应用程序使用Adobe Pass Access Enabler JavaScript SDK v4与Adobe Pass身份验证后端服务集成。
+我们遵守了本行动手册，以评估在Google Chrome浏览器上运行的、使用Adobe Pass Access Enabler JavaScript SDK v4与Adobe Pass Authentication后端服务集成的TV Everywhere (TVE)应用程序。
 
 ### 结论
 
-根据我们的测试，模拟即将发布的Google Chrome（主要TVE业务流程）更新 **将继续按预期运行**.
+根据我们的测试，模拟Google Chrome即将进行的更新，主要TVE业务流程&#x200B;**将继续按预期运行**。
 
 但是，必须认识到Google更广泛的战略，该战略不仅涉及停止使用第三方Cookie，还涉及对第三方存储进行分区。
 
@@ -63,15 +64,15 @@ Google通过以下链接发布了一份文档，汇总了其推荐的行动手�
 
 ### 审核Cookie的使用
 
-从Chrome 118开始， [DevTools问题](https://developer.chrome.com/docs/devtools/issues/) 选项卡通过以下消息突出显示可能受影响的Cookie： `Cookie sent in cross-site context will be blocked in future Chrome versions`.
+从Chrome 118开始，[DevTools Issues](https://developer.chrome.com/docs/devtools/issues/)选项卡通过以下消息突出显示可能受影响的Cookie：`Cookie sent in cross-site context will be blocked in future Chrome versions`。
 
-标记用于第三方使用的Cookie可以通过其 `SameSite=None` 属性值。
+标记为第三方使用的Cookie可以通过其`SameSite=None`属性值进行标识。
 
 请访问以下链接以了解更多信息： https://developers.google.com/privacy-sandbox/3pcd/prepare/audit-cookies
 
 ### 测试损坏
 
-为了测试损坏，请使用 `--test-third-party-cookie-phaseout` 命令行标志或从Chrome 118启用 `#test-third-party-cookie-phaseout` 在 `chrome://flags/`.
+为了测试是否损坏，请使用`--test-third-party-cookie-phaseout`命令行标志启动Chrome，或者从Chrome 118中启用`chrome://flags/`中的`#test-third-party-cookie-phaseout`。
 
 这将设置Google Chrome以阻止第三方Cookie并确保未来功能处于活动状态，以便最好地模拟逐步停用后的状态。
 
@@ -86,7 +87,7 @@ Google通过以下链接发布了一份文档，汇总了其推荐的行动手�
 
 ### Firefox
 
-Firefox推出了一项名为： `Enhanced Tracking Protection` 几年前。
+Firefox几年前推出了名为`Enhanced Tracking Protection`的机制。
 
 请参阅下面来自Firefox的一些有用资源：
 
@@ -95,7 +96,7 @@ Firefox推出了一项名为： `Enhanced Tracking Protection` 几年前。
 
 ### Safari
 
-Safari推出了一项名为： `Intelligent Tracking Prevention` 几年前。
+几年前，Safari推出其名为`Intelligent Tracking Prevention`的机制。
 
 请参阅下面来自Safari的一些有用资源：
 

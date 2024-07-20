@@ -1,14 +1,13 @@
 ---
 title: 自定义元数据
 description: 自定义元数据
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 0cfd1158-8c6c-47c2-b838-5490ff4bf0ce
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '367'
 ht-degree: 0%
 
 ---
-
-
 
 # 自定义元数据 {#cm}
 
@@ -40,10 +39,9 @@ ht-degree: 0%
 
 1. 客户决定要发送参数组，该参数组的值将为“SPORTS”和“KIDS”。
 1. 然后，应用程序需要执行此操作：
-   * 对于体育频道，在流初始化时，应用程序将发送 ***type=SPORTS*** 作为查询参数
-   * 对于具有儿童相关内容的渠道，在流初始化时，应用程序将发送 ***type=KIDS*** 作为查询参数
+   * 对于体育频道，在流初始化时，应用程序将发送&#x200B;***type=SPORTS***&#x200B;作为查询参数
+   * 对于具有子级相关内容的渠道，在流初始化时，应用程序将发送&#x200B;***type=KIDS***&#x200B;作为查询参数
 1. 然后可以定义这样的策略：
    * `GROUP by type HAVING COUNT(streamID) < 4) IF type=KIDS`
    * `GROUP by type HAVING COUNT(streamID) < 2) IF type=SPORTS`
 1. 这基本上意味着当用户观看体育时，他/她无法在超过1台设备上执行此操作，但是，当用户观看儿童内容时，最多允许在3台设备上查看。
-

@@ -4,7 +4,7 @@ description: JavaScript SDK概述
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '510'
 ht-degree: 0%
 
 ---
@@ -15,29 +15,29 @@ ht-degree: 0%
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-## 介绍
+## 简介
 
 Adobe强烈建议您迁移到AccessEnabler库的最新JS v4.x。
 
-Adobe Pass身份验证JavaScript集成在熟悉的JS Web应用程序开发环境中，为程序员提供一个TV-Everywhere解决方案。 该集成的主要组件是您的“高级”应用程序（用户交互、视频演示）和Adobe提供的“低级”AccessEnabler库，该库提供权限流的条目并处理与Adobe Pass身份验证服务器的通信。
+Adobe Pass Authentication JavaScript集成在熟悉的JS Web应用程序开发环境中，为程序员提供一个TV-Everywhere解决方案。 该集成的主要组件是您的“高级”应用程序（用户交互、视频演示）和Adobe提供的“低级”AccessEnabler库，该库提供权限流的条目并处理与Adobe Pass身份验证服务器的通信。
 
-中涵盖了常规的Adobe Pass身份验证权利流程 [程序员权利流](/help/authentication/entitlement-flow.md)，并且JavaScript集成指南将指导您完成实施。 以下部分提供特定于JavaScript AccessEnabler集成的说明和示例。
+一般Adobe Pass身份验证权利流包含在[程序员权利流](/help/authentication/entitlement-flow.md)中，JavaScript集成指南将指导您完成实施。 以下部分提供特定于JavaScript AccessEnabler集成的说明和示例。
 
 >[!IMPORTANT]
 >
->本文档介绍了桌面Web解决方案的实施。 移动平台(例如，iOS上的Safari、Android上的Chrome)不支持JavaScript库。 如果您希望定位移动平台(iOS、Android、Windows)，请使用我们的本机SDK。
+>本文档介绍了桌面Web解决方案的实施。 移动平台(例如，iOS上的Safari、Android上的Chrome)上不支持JavaScript库。 如果您希望定位移动平台(iOS、Android、Windows)，请使用我们的本机SDK。
 
 ## 创建“MVPD选择”对话框 {#creating-the-mvpd-selection-dialog}
 
 要使用户登录到其MVPD并获得身份验证，您的页面或播放器必须为用户提供一种标识其MVPD的方法。 为开发提供了MVPD选择对话框的默认版本。 对于生产使用，您必须实施自己的MVPD选择器。
 
-如果您已经知道客户的提供商是谁，则可以 [以编程方式设置MVPD](/help/authentication/home.md)，无需用户交互。 此技术相同，但会跳过调用“提供程序选择器”对话框并要求客户选择其MVPD的步骤。
+如果您已经知道客户的提供商是谁，则可以[以编程方式设置MVPD](/help/authentication/home.md)，而无需用户交互。 此技术相同，但会跳过调用“提供程序选择器”对话框并要求客户选择其MVPD的步骤。
 
 ## 显示服务提供商 {#displaying-the-service-provider}
 
 以下代码示例演示了如何发现和显示当前客户的服务提供商：
 
-**HTML**  — 此页在显示客户选择的提供方（如果已登录）的页中添加了一个部分：
+**HTML** — 此页面向显示客户选择的提供商的页面添加了一个部分（如果客户已登录）：
 
 ```HTML
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
@@ -76,7 +76,7 @@ Adobe Pass身份验证JavaScript集成在熟悉的JS Web应用程序开发环境
 ```
 
 
-**JavaScript** 如果用户已登录，此JavaScript文件将查询当前提供程序的Access Enabler，并在为其保留的页面部分中显示结果。 它还实施了MVPD选择器对话框：
+**JavaScript**&#x200B;如果用户已登录，此JavaScript文件将查询当前提供商的Access Enabler，并在为其保留的页面部分中显示结果。 它还实施了MVPD选择器对话框：
 
 ```JS
     $(function() {
@@ -197,13 +197,13 @@ Adobe Pass身份验证JavaScript集成在熟悉的JS Web应用程序开发环境
 
 ## 注销 {#logout}
 
-调用 `logout()` 以启动注销流程。 此方法不使用参数。 它会注销当前用户，清除该用户的所有身份验证和授权信息，并从本地系统中删除所有AuthN和AuthZ令牌。
+调用`logout()`以启动注销过程。 此方法不使用参数。 它会注销当前用户，清除该用户的所有身份验证和授权信息，并从本地系统中删除所有AuthN和AuthZ令牌。
 
 在某些情况下，您的播放器不负责处理用户注销：
 
 
 
-- **从未与Adobe Pass身份验证集成的站点启动注销时。** 在这种情况下，MVPD可以通过浏览器重定向调用Adobe Pass身份验证单一注销服务。 （当前不支持通过回通道调用调用SLO。）
+- **从未与Adobe Pass身份验证集成的站点启动注销时。**&#x200B;在这种情况下，MVPD可以通过浏览器重定向调用Adobe Pass身份验证单一注销服务。 （当前不支持通过回通道调用调用SLO。）
 
 >[!NOTE]
 >

@@ -4,7 +4,7 @@ description: AccessEnabler iOS/tvOS 3.7.0升级路径
 exl-id: f15c7414-ec9b-4e21-b457-1ecf59f47441
 source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '320'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 0%
 
 </br>
 
-密钥链存储更改 [新的AccessEnabler版本3.7.0](/help/authentication/authn-rn-ios-tvos-370.md) 与AccessEnabler版本3.7.0以下的密钥链存储实施不兼容。
+来自[新AccessEnabler版本3.7.0](/help/authentication/authn-rn-ios-tvos-370.md)的密钥链存储更改与AccessEnabler版本3.7.0以下的密钥链存储实施不兼容。
 
-一个采用新AccessEnabler版本3.7.0的应用程序的升级路径将从密钥链存储的先前版本迁移所有令牌。 因此，最终用户 **不会丢失身份验证/授权会话** 在AccessEnabler框架更新过程中。
+一个采用新AccessEnabler版本3.7.0的应用程序的升级路径将从密钥链存储的先前版本迁移所有令牌。 因此，在AccessEnabler框架更新过程中，最终用户&#x200B;**不应丢失身份验证/授权会话**。
 
 ## 已知限制
 

@@ -4,7 +4,7 @@ description: 如何提出隐私请求
 exl-id: abb21306-98d6-4899-914a-bdfa85cbd204
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '590'
+source-wordcount: '558'
 ht-degree: 0%
 
 ---
@@ -20,8 +20,8 @@ ht-degree: 0%
 在发送访问或删除隐私请求时，客户应用程序需要包含以下标识符：
 
 * **mvpdID** - MVPD的唯一标识符。
-* **userID**  — 唯一标识程序员应用程序的用户，但源自MVPD。 请参阅程序员概述中的了解用户ID 。
-* **Imsrogid** - Adobe Experience Cloud Identity Management服务组织ID，用于在Adobe Experience Cloud中唯一标识客户
+* **userID** — 唯一标识程序员应用程序的用户，但源自MVPD。 请参阅程序员概述中的了解用户ID 。
+* **IMSOrgID** - Adobe Experience Cloud Identity Management服务组织ID，用于在Adobe Experience Cloud中唯一标识客户
 
 
 请检查下面的示例：
@@ -221,12 +221,12 @@ Adobe Pass身份验证支持访问和删除请求。
 
 客户可以使用2个选项将隐私请求发送到Adobe：
 
-* **手动**  — 通过使用 [Privacy Service用户界面](#privacy-service-ui)
-* **自动**  — 通过使用 [PRIVACY SERVICEAPI](#privacy-service-api)
+* **手动** — 使用[Privacy Service用户界面](#privacy-service-ui)
+* **自动** — 通过使用[Privacy ServiceAPI](#privacy-service-api)
 
 ### 通过使用Privacy ServiceUI {#privacy-service-ui}
 
-A [完成教程](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) 有关如何访问和使用Privacy Service用户界面的信息，可通过Adobe I/O服务在线获取。 此外，客户可以使用此链接访问有关隐私法规的视频和文章库。 单击Adobe Experience Cloud和GDPR菜单。 该操作将打开多个视频 — “GDPR UI操作说明”将介绍其使用方法。
+有关如何访问和使用Privacy Service用户界面的[完整教程](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)可通过Adobe I/O服务在线获取。 此外，客户可以使用此链接访问有关隐私法规的视频和文章库。 单击Adobe Experience Cloud和GDPR菜单。 该操作将打开多个视频 — “GDPR UI操作说明”将介绍其使用方法。
 
 在UI中，客户需要加载他们自己的IMSOrgID和包含每个产品的GDPR请求详细信息的JSON。
 
@@ -234,12 +234,12 @@ A [完成教程](https://experienceleague.adobe.com/docs/experience-platform/pri
 
 Adobe Experience Platform Privacy Service为访问/删除请求和私人数据的选择退出销售请求提供了通用的、集中的简化操作。
 
-此 **Privacy ServiceAPI文档** 深入介绍了Adobe客户如何与AdobeAPI集成。
+**Privacy ServiceAPI文档**&#x200B;深入介绍了Adobe客户如何与AdobeAPI集成。
 
 **使用Postman（免费的第三方软件）可视化API调用：**
 
-* [GitHub上的Privacy ServiceAPI Postman收藏集](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
-* [有关创建Postman环境的视频指南](https://video.tv.adobe.com/v/28832)
+* 在GitHub上[Privacy ServiceAPI Postman收藏集](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
+* [用于创建Postman环境的视频指南](https://video.tv.adobe.com/v/28832)
 * [在Postman中导入环境和收藏集的步骤](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
 
@@ -252,8 +252,8 @@ Adobe Experience Platform Privacy Service为访问/删除请求和私人数据�
 
 **必需的标头：**
 
-* 所有调用都需要标头 `Authorization`， `x-gw-ims-org-id`、和 `x-api-key`. 有关如何获取这些值的更多信息，请参见 **身份验证教程**.
-* 所有在请求正文中具有有效负载的请求(例如POST、PUT和PATCH调用)都必须包含标头 `Content-Type` 值为 `application/json`.
+* 所有调用都需要标头`Authorization`、`x-gw-ims-org-id`和`x-api-key`。 有关如何获取这些值的详细信息，请参阅&#x200B;**身份验证教程**。
+* 所有在请求正文中具有有效负载的请求(如POST、PUT和PATCH调用)都必须包含标头`Content-Type`，其值为`application/json`。
 
 <!--
 

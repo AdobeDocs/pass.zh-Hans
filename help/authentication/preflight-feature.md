@@ -4,7 +4,7 @@ description: 印前检查功能，如何启用、诊断或确定问题
 exl-id: 9e4ec343-371f-4116-915f-191e5f42cb47
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '498'
 ht-degree: 0%
 
 ---
@@ -20,8 +20,8 @@ PreAuthorization API的外部接口保持不变，程序员的应用程序不需
 
 有三种方式计算Preflight资源：
 
-* **MVPD的分叉连接方法**：这涉及Adobe向MVPD发出多个授权调用（客户端仍必须发出一个预检调用）。
-* **渠道排列**：MVPD在SAML身份验证响应中公开登录用户的渠道行，并且Adobe根据该行返回授权的资源。 SAML跟踪器中的SAML authN响应应公开该列表。
+* **向MVPD创建分支并加入方法**：这涉及Adobe向MVPD发起多个授权调用（客户端仍需发起一个预检调用）。
+* **频道行**： MVPD在SAML身份验证响应中公开登录用户的频道行，并且Adobe根据该频道行返回授权资源。 SAML跟踪器中的SAML authN响应应公开该列表。
 * **多渠道授权**：客户端和Adobe身份验证均对一组资源的MVPD进行单个调用。
 
 不论MVPD如何，客户端应用程序都将对Preflight端点(checkPreauthorizedResources API)进行单个调用，从而传递一组资源ID。 根据MVPD支持的上述方法之一，Adobe将返回预授权的资源ID。

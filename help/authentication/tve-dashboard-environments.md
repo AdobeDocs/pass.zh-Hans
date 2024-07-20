@@ -1,7 +1,8 @@
 ---
 title: TVE仪表板环境
 description: 了解TVE仪表板中不同环境的使用和工作。
-source-git-commit: 06c2e1e54515a2ec47722ba1f360467dadd1f73b
+exl-id: 591becb8-2f6c-46e0-b108-c64e6df69f89
+source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
 workflow-type: tm+mt
 source-wordcount: '346'
 ht-degree: 0%
@@ -18,13 +19,13 @@ TVE功能板提供了各种自定义环境，以便在Adobe Pass身份验证中�
 
 * **先决条件**：资格预审环境用作测试场，用于在部署到生产环境之前准备和测试新内部版本。
 
-* **版本**：发行版环境托管用于生产的已完成和已测试的内部版本。
+* **版本**：版本环境承载已完成的和已测试的内部版本以用于生产。
 
 在每个环境中，有两个不同的配置文件：
 
-* **暂存**：暂存配置文件连接到MVPD的暂存服务器，以在集成上线之前进行测试和验证。
+* **暂存**：暂存配置文件连接到MVPD的暂存服务器，以便在集成上线之前进行测试和验证。
 
-* **生产**：生产配置文件连接到MVPD的生产配置文件以进行实际生产活动。
+* **生产**：生产配置文件连接到MVPD的实际生产活动的生产配置文件。
 
 ## 用例
 
@@ -56,13 +57,12 @@ TVE Dashboard中的环境可在整个应用程序生命周期中提供各种用�
 按照以下步骤在Adobe Pass身份验证TVE功能板环境之间进行切换。
 
 1. 使用程序员凭据登录。
-1. 从中选择所需的暂存或生产环境 **环境** 左侧面板顶部的下拉菜单
+1. 从左侧面板顶部的&#x200B;**环境**&#x200B;下拉菜单中选择所需的暂存或生产环境。
 
-   ![TVE功能板环境下拉列表](assets/tve-dashboard-env.png)
+   ![TVE仪表板环境下拉列表](assets/tve-dashboard-env.png)
 
-   *Adobe Pass Authentication TVE Dashboard environment下拉菜单*
+   *Adobe Pass身份验证TVE仪表板环境下拉菜单*
 
 >[!NOTE]
 >
 > 根据您的设置，每个环境中的配置可能有所不同。
-

@@ -17,19 +17,19 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> REST API实施受限制 [节流机构](/help/authentication/throttling-mechanism.md)
+> REST API实现受[限制机制](/help/authentication/throttling-mechanism.md)限制
 
 ## REST API端点 {#clientless-endpoints}
 
-&lt;reggie_fqdn>：
+&lt;REGGIE_FQDN>：
 
-* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 — [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>：
+&lt;SP_FQDN>：
 
-* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 — [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -40,9 +40,9 @@ ht-degree: 0%
 有两组API：一组用于流应用程序或程序员服务，另一组用于第二屏幕Web应用程序。 本页介绍身份验证应用程序的API。
 
 
-| 端点 | 已调用  </br>按 | 输入   </br>参数 | HTTP  </br>方法 | 响应 | HTTP  </br>响应 |
+| 端点 | </br>调用者 | 输入   </br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/preauthorize/{注册码} | AuthN模块 | 1.注册码  </br>    （路径组件）</br>2.  请求者（必填）</br>3.  资源列表（必需） | GET | 包含各个预授权决策或错误详细信息的XML或JSON。 请参阅下面的示例。 | 200 — 成功</br></br>400 — 错误请求</br></br>401 — 未授权</br></br>405 — 不允许使用该方法  </br></br>412 — 先决条件失败</br></br>500 — 内部服务器错误 |
+| &lt;SP_FQDN>/api/v1/preauthorize/{注册码} | AuthN模块 | 1.注册码</br>    （路径组件）</br>2。  请求者（必需）</br>3。  资源列表（必需） | GET | 包含各个预授权决策或错误详细信息的XML或JSON。 请参阅下面的示例。 | 200 — 成功</br></br>400 — 错误请求</br></br>401 — 未授权</br></br>405 — 不允许的方法</br></br>412 — 前提条件失败</br></br>500 — 内部服务器错误 |
 
 
 

@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## D2C和电视上的通用术语
 
-以下产品术语及其定义对所有人都是通用的 [帐户IQ的版本](versions-aiq.md).
+以下产品术语及其定义对于Account IQ](versions-aiq.md)的所有[版本都是通用的。
 
 ### [!UICONTROL Accounts Sharing Probability] {#account-sharing-probability-def}
 
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ### [!UICONTROL Action] {#action-def}
 
-与相关的直接或间接事件 [操作](#operation-def) 影响相关操作区段特征（例如，共享得分或正在使用的设备数量）的区段。
+与[操作](#operation-def)关联的直接或间接事件，它会影响相关操作区段的特性（例如，共享得分或正在使用的设备数）。
 
 ### [!UICONTROL Aggregated sharing score] {#sharing-probability-level-def}
 
@@ -90,7 +90,7 @@ Media Company是一家拥有一组媒体网络的公司。
 
 ### 操作 {#operation-def}
 
-操作是为跟踪特定操作效果而创建的记录 [操作](#action-def) 关联的区段上删除。 例如，可以对段标识的帐户允许的并发流数量进行限制。
+操作是为跟踪特定[操作](#action-def)对关联区段的影响而创建的记录。 例如，可以对段标识的帐户允许的并发流数量进行限制。
 
 ### [!UICONTROL Overall sharing score] {#overall-sharing-score}
 
