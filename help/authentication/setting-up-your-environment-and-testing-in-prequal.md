@@ -2,7 +2,7 @@
 title: 在资格预审中设置环境和测试
 description: 在资格预审中设置环境和测试
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 3a6a5633c728398a3847ee3e341e82aba915f0d9
 workflow-type: tm+mt
 source-wordcount: '477'
 ht-degree: 0%
@@ -68,7 +68,7 @@ ht-degree: 0%
 * *编辑 c：\\windows\\System32\\drivers\\etc\\hosts* 文件（在 Windows 中）或 */etc/hosts* 文件（在 Macintosh/Linux/Android 上），然后添加以下内容：
 
 * 恶搞制作配置文件
-   * 52.13.71.11 http://entitlement.auth.adobe.com、http://sp.auth.adobe.com http://api.auth.adobe.com
+   * 52.13.71.11 entitlement.auth.adobe.com sp.auth.adobe.com api.auth.adobe.com
 
 **在Android上欺骗：**&#x200B;为了欺骗Android，您必须使用Android模拟器。
 
