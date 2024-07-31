@@ -2,7 +2,7 @@
 title: MVPD集成功能
 description: MVPD集成功能
 exl-id: fcd65940-9a86-49b2-9d52-9031fb763338
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: e4567dd870790d11b9c5904d635fc00bdd1a23d2
 workflow-type: tm+mt
 source-wordcount: '1733'
 ht-degree: 2%
@@ -84,8 +84,8 @@ Adobe Pass身份验证支持世界各地电视的新兴标准。 它符合&#x200
 | 3.3 | 内联帐户注册 | MVPD提供了一种创建与联合AuthN流内联的新帐户的方法。 | A |                                                                                                                                                           |
 | 3.4 | 内联帮助/支持 | MVPD提供了一种在联合AuthN流期间提供帮助的方法。 | A |                                                                                                                                                           |
 | 3.5 | 基于调制解调器的家庭身份验证 | 当设备位于已注册型号的本地网络时，MVPD会自动对设备进行身份验证（仅限ISP MVPD）。 | B | 此优化优先顺序较低，因为这是许多人尚无法支持的优化过程，而且会给降低欺诈和家长控制带来一些挑战 |
-您现在可以使用“文件/粘贴表数据……”对话框直接导入Markdown表代码。
 
+您现在可以使用“文件/粘贴表数据……”对话框直接导入Markdown表代码。
 
 
 ## 4. Analytics功能 {#analytics-features}
