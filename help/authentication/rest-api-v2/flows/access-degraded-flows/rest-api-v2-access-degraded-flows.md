@@ -1,15 +1,19 @@
 ---
 title: 降级访问流
 description: REST API V2 — 降级访问流
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '1568'
+source-wordcount: '1594'
 ht-degree: 0%
 
 ---
 
 
 # 降级访问流 {#degraded-access-flows}
+
+>[!NOTE]
+>
+> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 降级提供临时绕过特定MVPD身份验证和授权端点。 通常，程序员会启动此操作，但无论谁触发了降级事件，该操作都取决于与受影响的MVPD所做的预先安排。
 

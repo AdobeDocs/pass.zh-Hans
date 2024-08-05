@@ -1,15 +1,19 @@
 ---
 title: 基本配置文件 — 辅助应用程序 — 流量
 description: REST API V2 — 基本配置文件 — 辅助应用程序 — 流量
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '371'
+source-wordcount: '397'
 ht-degree: 0%
 
 ---
 
 
 # 基本配置文件在辅助应用程序中执行 {#basic-profiles-flow-secondary-application}
+
+>[!NOTE]
+>
+> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 Adobe Pass身份验证权利中的&#x200B;**配置文件流**&#x200B;允许辅助应用程序访问有关活动用户登录的信息。
 

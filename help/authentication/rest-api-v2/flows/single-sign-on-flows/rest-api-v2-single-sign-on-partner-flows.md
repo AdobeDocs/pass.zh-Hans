@@ -1,15 +1,19 @@
 ---
 title: 单点登录 — 合作伙伴 — 流程
 description: REST API V2 — 单点登录 — 合作伙伴 — 流程
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '1280'
+source-wordcount: '1306'
 ht-degree: 0%
 
 ---
 
 
 # 使用合作伙伴流程进行单点登录 {#single-sign-on-partner-flows}
+
+>[!NOTE]
+>
+> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 ## 检索合作伙伴身份验证请求 {#retrieve-partner-authentication-request}
 

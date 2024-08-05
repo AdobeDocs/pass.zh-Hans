@@ -1,15 +1,19 @@
 ---
 title: 基本预授权 — 主要应用程序 — 流程
 description: REST API V2 — 基本预授权 — 主要应用程序 — 流程
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '459'
+source-wordcount: '485'
 ht-degree: 0%
 
 ---
 
 
 # 在主应用程序中执行的基本预授权流程 {#basic-preauthorization-flow-performed-within-primary-application}
+
+>[!NOTE]
+>
+> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 Adobe Pass身份验证权利文件中的&#x200B;**预授权流**&#x200B;允许流式应用程序确定MVPD是否允许或拒绝用户访问资源列表。 此验证可确保应用程序可以向用户展示有关他们可能有资格查看的内容的准确信息。
 

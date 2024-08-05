@@ -1,15 +1,19 @@
 ---
 title: 单点登录 — 服务令牌 — 流程
 description: REST API V2 — 单点登录 — 服务令牌 — 流程
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '1811'
+source-wordcount: '1837'
 ht-degree: 0%
 
 ---
 
 
 # 使用服务令牌流进行单点登录{#single-sign-on-service-token-full-flows}
+
+>[!NOTE]
+>
+> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 使用Adobe Pass服务时，服务令牌方法使多个应用程序能够使用唯一的用户标识符跨多个设备和平台实现单点登录(SSO)。
 

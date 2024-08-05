@@ -1,15 +1,19 @@
 ---
 title: 基本授权 — 主要应用程序 — 流程
 description: REST API V2 — 基本授权 — 主应用程序 — 流程
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '566'
+source-wordcount: '592'
 ht-degree: 0%
 
 ---
 
 
 # 在主应用程序中执行的基本授权流程 {#basic-authorization-flow-performed-within-primary-application}
+
+>[!NOTE]
+>
+> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 Adobe Pass身份验证权利中的&#x200B;**授权流**&#x200B;允许流式应用程序确定MVPD是允许还是拒绝用户流式传输内容的请求。 如果决策为`Permit`，则响应包含媒体令牌。 Adobe Pass服务器对媒体令牌进行签名，并允许流应用程序使用媒体令牌验证器库在释放流之前检查其真实性。
 

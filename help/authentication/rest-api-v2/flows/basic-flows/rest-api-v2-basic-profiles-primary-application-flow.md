@@ -1,15 +1,19 @@
 ---
 title: 基本配置文件 — 主要应用程序 — 流量
 description: REST API V2 — 基本配置文件 — 主应用程序 — 流量
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '927'
+source-wordcount: '953'
 ht-degree: 0%
 
 ---
 
 
 # 基本配置文件在主要应用程序中执行 {#basic-profiles-flow-primary-application}
+
+>[!NOTE]
+>
+> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 Adobe Pass身份验证权利文件中的&#x200B;**配置文件流**&#x200B;允许流式应用程序访问有关活动用户登录的信息。
 
