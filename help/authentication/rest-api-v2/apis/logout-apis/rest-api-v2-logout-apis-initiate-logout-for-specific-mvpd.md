@@ -1,9 +1,9 @@
 ---
 title: 启动特定mvpd的注销
 description: REST API V2 — 启动特定mvpd的注销
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
 workflow-type: tm+mt
-source-wordcount: '900'
+source-wordcount: '911'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,11 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+
+>[!IMPORTANT]
+>
+> REST API V2实施受[限制机制](/help/authentication/throttling-mechanism.md)文档限制。
 
 ## 请求 {#request}
 
