@@ -1,7 +1,7 @@
 ---
 title: 标头 — Adobe-Subject-Token
 description: REST API V2 — 标头 — Adobe主题令牌
-source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '156'
 ht-degree: 1%
@@ -21,7 +21,7 @@ ht-degree: 1%
 
 此标头旨在用于利用Platform Identity方法启用单点登录(SSO)的流。
 
-有关利用平台标识方法启用单点登录(SSO)流程的更多详细信息，请参阅[使用平台标识流程的单点登录](../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)文档。
+有关利用平台标识方法启用单点登录(SSO)流程的更多详细信息，请参阅[使用平台标识流程的单点登录](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)文档。
 
 ## 语法 {#syntax}
 

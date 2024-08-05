@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
 user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
-source-wordcount: '1125'
+source-wordcount: '1137'
 ht-degree: 2%
 
 ---
@@ -54,6 +54,7 @@ ht-degree: 2%
          + [临时通行证和促销临时通行证的免费预览](free-preview-for-temp-pass-and-promotional-temp-pass.md)
    + REST API V2 {#rest-api-v2}
       + API {#rest-api-v2-apis}
+         + [REST API V2 - API — 概述](./rest-api-v2/apis/rest-api-v2-apis-overview.md)
          + 配置{#rest-api-v2-configuration-apis}
             + [检索特定服务提供商的配置](./rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
          + 会话{#rest-api-v2-sessions-apis}
@@ -62,8 +63,8 @@ ht-degree: 2%
             + [检索身份验证会话](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
          + 配置文件{#rest-api-v2-profiles-apis}
             + [检索用户档案](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
-            + [检索特定mvpd的配置文件](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles-for-specific-mvpd.md)
-            + [检索特定代码的配置文件](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles-for-specific-code.md)
+            + [检索特定mvpd的配置文件](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
+            + [检索特定代码的配置文件](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
          + 决策{#rest-api-v2-decisions-apis}
             + [使用特定的mvpd检索授权决策](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
             + [使用特定的mvpd检索预授权决策](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
@@ -73,23 +74,24 @@ ht-degree: 2%
             + [检索合作伙伴身份验证请求](rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
             + [使用合作伙伴身份验证响应检索配置文件](rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
       + 流{#rest-api-v2-flows}
-         + 基本流{#rest-api-v2-basic-flows}
-            + [基本配置文件在主要应用程序中执行](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
-            + [基本配置文件在辅助应用程序中执行](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
-            + [在主应用程序中执行的基本身份验证流程](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
-            + [在辅助应用程序中执行的基本身份验证流程](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
-            + [在主应用程序中执行的基本授权流程](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
-            + [在主应用程序中执行的基本预授权流程](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
-            + [在主应用程序中执行的基本注销流程](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-logout-primary-application-flow.md)
+         + [REST API V2 — 流 — 概述](./rest-api-v2/flows/rest-api-v2-flows-overview.md)
+         + 基本访问流{#rest-api-v2-basic-access-flows}
+            + [基本配置文件在主要应用程序中执行](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
+            + [基本配置文件在辅助应用程序中执行](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+            + [在主应用程序中执行的基本身份验证流程](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
+            + [在辅助应用程序中执行的基本身份验证流程](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
+            + [在主应用程序中执行的基本授权流程](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
+            + [在主应用程序中执行的基本预授权流程](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
+            + [在主应用程序中执行的基本注销流程](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-logout-primary-application-flow.md)
          + 已降级的访问流{#rest-api-v2-degraded-access-flows}
-            + [降级访问流](rest-api-v2/flows/access-degraded-flows/rest-api-v2-access-degraded-flows.md)
+            + [降级访问流](rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md)
          + 临时访问流{#rest-api-v2-temporary-access-flows}
-            + [临时访问流](rest-api-v2/flows/access-temporary-flows/rest-api-v2-access-temporary-flows.md)
-         + 单点登录流程{#rest-api-v2-single-sign-on-flows}
-            + [使用合作伙伴流程进行单点登录](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-partner-flows.md)
-            + [使用平台身份流进行单点登录](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)
-            + [使用服务令牌流进行单点登录](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-service-token-flows.md)
-            + [单个注销流程](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-logout-flow.md)
+            + [临时访问流](rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)
+         + 单点登录访问流程{#rest-api-v2-single-sign-on-access-flows}
+            + [使用合作伙伴流程进行单点登录](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)
+            + [使用平台身份流进行单点登录](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)
+            + [使用服务令牌流进行单点登录](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md)
+            + [单个注销流程](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-logout-flow.md)
       + 附录{#rest-api-v2-appendix}
          + 标头{#rest-api-v2-appendix-headers}
             + [标头 — AD-Service-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)

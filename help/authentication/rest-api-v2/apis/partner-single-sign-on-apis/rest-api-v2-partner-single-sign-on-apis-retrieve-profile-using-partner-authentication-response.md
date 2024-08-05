@@ -1,7 +1,7 @@
 ---
 title: 使用合作伙伴身份验证响应检索配置文件
 description: REST API V2 — 使用合作伙伴身份验证响应检索配置文件
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '729'
 ht-degree: 1%
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # 使用合作伙伴身份验证响应检索配置文件 {#retrieve-profile-using-partner-authentication-response}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
@@ -108,7 +108,7 @@ ht-degree: 1%
       <td>
         <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>文档中介绍了为Partner方法生成单一登录有效负载的过程。
         <br/><br/>
-        有关使用合作伙伴启用单点登录流程的更多详细信息，请参阅<a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-partner-flows.md">使用合作伙伴流程进行单点登录</a>文档。</td>
+        有关使用合作伙伴启用单点登录流程的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">使用合作伙伴流程进行单点登录</a>文档。</td>
       <td>可选</td>
    </tr>
    <tr>

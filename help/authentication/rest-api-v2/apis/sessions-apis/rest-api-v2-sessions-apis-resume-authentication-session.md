@@ -1,7 +1,7 @@
 ---
 title: 恢复身份验证会话
 description: REST API V2 — 恢复身份验证会话
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '755'
 ht-degree: 1%
@@ -110,14 +110,14 @@ ht-degree: 1%
       <td>
          流设备的IP地址。
          <br/><br/>
-         强烈建议始终将其用于服务器到服务器的实施，尤其是在由程序员服务而不是流设备进行调用时。
+         强烈建议始终将其用于服务器到服务器的实现，特别是在调用由程序员服务而不是流设备进行时。
          <br/><br/>
-         对于客户端到服务器实施，流设备的IP地址将隐式发送。
+         对于客户端到服务器的实现，流设备的IP地址被隐式发送。
       </td>
       <td>可选</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Accept</td>
+      <td style="background-color: #DEEBFF;">接受</td>
       <td>
          客户端应用程序接受的媒体类型。
          <br/><br/>
@@ -151,7 +151,7 @@ ht-degree: 1%
       <td>400</td>
       <td>错误请求</td>
       <td>
-        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="../../../enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。
+        请求无效，客户端需要更正请求，然后重试。 响应正文可能包含遵循<a href="../../../enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。
       </td>
    </tr>
    <tr>
@@ -222,7 +222,7 @@ ht-degree: 1%
                      </tr>
                      <tr>
                         <td style="background-color: #DEEBFF;">重试</td>
-                        <td>流设备或其他设备需要提供缺少的参数，并使用代码重试恢复身份验证会话。</td>
+                        <td>流设备或其他设备需要提供缺少的参数并重试使用该代码恢复身份验证会话。</td>
                      </tr>
                      <tr>
                         <td style="background-color: #DEEBFF;">授权</td>
@@ -255,7 +255,7 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">missingParameters</td>
-               <td>需要提供以完成基本身份验证流程的缺失参数。</td>
+               <td>缺少完成基本身份验证流程所需的参数。</td>
                <td>可选</td>
             </tr>
             <tr>

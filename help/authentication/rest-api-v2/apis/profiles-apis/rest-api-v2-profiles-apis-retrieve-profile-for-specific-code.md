@@ -1,15 +1,15 @@
 ---
-title: 检索用户档案
-description: REST API V2 — 检索配置文件
+title: 检索特定代码的配置文件
+description: REST API V2 — 检索特定代码的配置文件
 source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '570'
 ht-degree: 1%
 
 ---
 
 
-# 检索用户档案 {#retrieve-profiles}
+# 检索特定代码的配置文件 {#retrieve-profile-for-specific-code}
 
 >[!IMPORTANT]
 >
@@ -29,7 +29,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">路径</td>
-      <td>/api/v2/{serviceProvider}/profiles</td>
+      <td>/api/v2/{serviceProvider}/profiles/{code}</td>
       <td></td>
    </tr>
    <tr>
@@ -48,6 +48,11 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
+      <td style="background-color: #DEEBFF;">代码</td>
+      <td>在流设备上创建身份验证会话后获得的身份验证代码。</td>
+      <td><i>必填</i></td>
+   </tr>
+   <tr>
       <th style="background-color: #EFF2F7; width: 15%;">标头</th>
       <th style="background-color: #EFF2F7;"></th>
       <th style="background-color: #EFF2F7; width: 10%;"></th>
@@ -55,24 +60,6 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">授权</td>
       <td><a href="../../../dynamic-client-registration-api.md">动态客户端注册</a>文档中描述了持有者令牌有效负载的生成。</td>
-      <td><i>必填</i></td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">AP设备标识符</td>
-      <td><a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>文档中介绍了设备标识符有效负载的生成。</td>
-      <td><i>必填</i></td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">X-Device-Info</td>
-      <td>
-         <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>文档中介绍了设备信息有效负载的生成。
-         <br/><br/>
-         强烈建议在应用程序的设备平台允许显式提供有效值时始终使用它。
-         <br/><br/>
-         提供该属性后，Adobe Pass身份验证后端将隐式地将显式设置的值与提取的值合并（默认情况下）。
-         <br/><br/>
-         如果未提供，Adobe Pass身份验证后端将隐式使用提取的值（默认情况下）。
-      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -84,32 +71,6 @@ ht-degree: 1%
          <br/><br/>
          对于客户端到服务器实施，流设备的IP地址将隐式发送。
       </td>
-      <td>可选</td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
-      <td>
-        <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Platform-Subject-Token</a>文档中介绍了为Platform Identity方法生成单点登录有效负载的过程。Adobe
-        <br/><br/>
-        有关使用平台标识启用单点登录的流的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台标识流的单点登录</a>文档。
-      </td>
-      <td>可选</td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">AD-Service-Token</td>
-      <td>
-        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>文档中介绍了服务令牌方法单点登录有效负载的生成。
-        <br/><br/>
-        有关使用服务令牌启用单点登录的流的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">使用服务令牌流的单点登录</a>文档。
-      </td>
-      <td>可选</td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">AP — 合作伙伴 — 框架 — 状态</td>
-      <td>
-        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>文档中介绍了为Partner方法生成单一登录有效负载的过程。
-        <br/><br/>
-        有关使用合作伙伴启用单点登录流程的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">使用合作伙伴流程进行单点登录</a>文档。</td>
       <td>可选</td>
    </tr>
    <tr>
@@ -248,17 +209,16 @@ ht-degree: 1%
                             创建该用户档案的原因是：
                             <ul>
                                 <li>基本身份验证</li>
-                                <li>使用平台标识进行单点登录</li>
-                                <li>使用服务令牌进行单点登录</li>
                             </ul>
                         </td>
                      </tr>
                      <tr>
-                        <td style="background-color: #DEEBFF;">Apple</td>
+                        <td style="background-color: #DEEBFF;">Adobe</td>
                         <td>
                             创建该用户档案的原因是：
                             <ul>
-                                <li>使用合作伙伴Apple进行单点登录</li>
+                                <li>访问已降级</li>
+                                <li>临时访问</li>
                             </ul>
                         </td>
                      </tr>
@@ -286,29 +246,20 @@ ht-degree: 1%
                         </td>
                      </tr>
                      <tr>
-                        <td style="background-color: #DEEBFF;">appleSSO</td>
+                        <td style="background-color: #DEEBFF;">已降级</td>
                         <td>
                             创建该用户档案的原因是：
                             <ul>
-                                <li>使用合作伙伴Apple进行单点登录</li>
+                                <li>访问已降级</li>
                             </ul>
                         </td>
                      </tr>
                      <tr>
-                        <td style="background-color: #DEEBFF;">platformSSO</td>
+                        <td style="background-color: #DEEBFF;">临时</td>
                         <td>
                             创建该用户档案的原因是：
                             <ul>
-                                <li>使用平台标识进行单点登录</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">serviceTokenSSO</td>
-                        <td>
-                            创建该用户档案的原因是：
-                            <ul>
-                                <li>使用服务令牌进行单点登录</li>
+                                <li>临时访问</li>
                             </ul>
                         </td>
                      </tr>
@@ -371,20 +322,19 @@ ht-degree: 1%
 
 ## 示例 {#samples}
 
-### 1.检索通过基本身份验证获得的所有现有和有效的已验证配置文件
+### 1.执行基本身份验证后，在辅助设备上检索现有的和有效的已验证配置文件
 
 >[!BEGINTABS]
 
 >[!TAB 请求]
 
 ```JSON
-GET /api/v2/REF30/profiles
+GET /api/v2/REF30/profiles/Cablevision/XTC98W
  
 Authorization: Bearer ....
 AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
 X-Device-Info ....
 Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
 ```
 
 >[!TAB 响应]
@@ -416,148 +366,10 @@ Content-Type: application/json; charset=utf-8
                 "parental-controls" : {
                     "value" : BASE64_value_parental-controls,
                     "state" : "plain"
-                }          
-            }
-        },
-        "Spectrum" : {
-            "notBefore" : 1623943955,
-            "notAfter" : 1623951155,
-            "issuer" : "Spectrum",
-            "type" : "regular",
-            "attributes" : {
-                "userId" : {
-                    "value" : "BASE64_value_userId",
-                    "state" : "plain"
                 }
             }
         }
      }
-}
-```
-
->[!ENDTABS]
-
-### 2.检索所有现有的和有效的已验证配置文件，包括使用服务令牌方法通过单点登录身份验证获得的配置文件
-
->[!BEGINTABS]
-
->[!TAB 请求]
-
-```JSON
-GET /api/v2/REF30/profiles
- 
-Authorization: Bearer ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
-X-Device-Info ....
-AD-Service-Token : eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkZDNmYWIyN2NmMjg0ZmU2ZWU0ZDY3ZmExZjY4MzE3YyIsImlzcyI6IkFkb2JlIiw.....
-Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
-```
-
->[!TAB 响应]
-
-```JSON
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8
-
-{
-   "profiles": {
-      "AdobeShibboleth": {
-         "notBefore": 1748073636999,
-         "notAfter": 1748105173000,
-         "issuer": "AdobeShibboleth",
-         "type": "serviceTokenSSO",
-         "attributes": {
-            "upstreamUserID": {
-               "value": "AAdzZWNyZXQxydCkywfPBl0KExk8OWhdbUBVDDJBttfKD7RAcRlc32Pbuwd1...",
-               "state": "plain"
-            },
-            "userID": {
-               "value": "AAdzZWNyZXQxydCkywfPBl0KExk8OWhdbUBVDDJBttfKD7RAcRlc32Pbuwd14aTV....",
-               "state": "plain"
-            },
-            "mvpd": {
-               "value": "AdobeShibboleth",
-               "state": "plain"
-            }
-         }
-      },
-      "Spectrum": {
-         "notBefore": 1623943955,
-         "notAfter": 1623951155,
-         "issuer": "Spectrum",
-         "type": "regular",
-         "attributes": {
-            "userId": {
-               "value": "BASE64_value_userId",
-               "state": "plain"
-            }
-         }
-      }
-   }
-}
-```
-
->[!ENDTABS]
-
-### 3.检索所有现有的和有效的已验证用户档案，包括使用平台身份方法通过单点登录验证获得的用户档案
-
->[!BEGINTABS]
-
->[!TAB 请求]
-
-```JSON
-GET /api/v2/REF30/profiles
- 
-Authorization: Bearer ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
-X-Device-Info ....
-Adobe-Subject-Token : eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyMmM4MDU1MjEzMDIwYzhmZGYzOGZkMTI1YWViMzUzYSIsImlzcyI6....
-Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
-```
-
->[!TAB 响应]
-
-```JSON
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8    
- 
-{
-   "profiles": {
-      "AdobePass_SMI": {
-         "notBefore": 1724337476000,
-         "notAfter": 1724345252000,
-         "issuer": "AdobePass_SMI",
-         "type": "platformSSO",
-         "attributes": {
-            "upstreamUserID": {
-               "value": "38524bdc3d1caac0b3e139003ea0954e15ad9648",
-               "state": "plain"
-            },
-            "userID": {
-               "value": "38524bdc3d1caac0b3e139003ea0954e15ad9648",
-               "state": "plain"
-            },
-            "mvpd": {
-               "value": "AdobePass_SMI",
-               "state": "plain"
-            }
-         }
-      },
-      "Cablevision": {
-         "notBefore": 1623943955,
-         "notAfter": 1623951155,
-         "issuer": "Spectrum",
-         "type": "regular",
-         "attributes": {
-            "userId": {
-               "value": "BASE64_value_userId",
-               "state": "plain"
-            }
-         }
-      }
-   }
 }
 ```
 

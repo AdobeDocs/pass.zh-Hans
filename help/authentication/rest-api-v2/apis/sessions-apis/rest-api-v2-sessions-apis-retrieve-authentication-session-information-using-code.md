@@ -1,7 +1,7 @@
 ---
 title: 使用代码检索身份验证会话
 description: REST API V2 — 使用代码检索身份验证会话
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '409'
 ht-degree: 2%
@@ -11,7 +11,7 @@ ht-degree: 2%
 
 # 使用代码检索身份验证会话 {#retrieve-authentication-session-using-code}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
