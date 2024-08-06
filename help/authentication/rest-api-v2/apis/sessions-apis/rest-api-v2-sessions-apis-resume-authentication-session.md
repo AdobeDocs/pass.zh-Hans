@@ -1,9 +1,9 @@
 ---
 title: 恢复身份验证会话
 description: REST API V2 — 恢复身份验证会话
-source-git-commit: 4afd8492c77fdceae3c2504ba392fbcfc0979b22
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '753'
 ht-degree: 1%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 1%
 
 ## 请求 {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">路径</td>
@@ -38,9 +38,9 @@ ht-degree: 1%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">路径参数</th>
+      <th style="background-color: #EFF2F7;">路径参数</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">正文参数</th>
+      <th style="background-color: #EFF2F7;">正文参数</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">mvpd</td>
@@ -87,9 +87,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">标头</th>
+      <th style="background-color: #EFF2F7;">标头</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">授权</td>
@@ -134,10 +134,10 @@ ht-degree: 1%
 
 ## 响应 {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">代码</th>
-      <th style="background-color: #EFF2F7; width: 20%;">文本</th>
+      <th style="background-color: #EFF2F7;">代码</th>
+      <th style="background-color: #EFF2F7;">文本</th>
       <th style="background-color: #EFF2F7;">描述</th>
    </tr>
    <tr>
@@ -179,11 +179,11 @@ ht-degree: 1%
 
 ### 成功 {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">标头</th>
+      <th style="background-color: #EFF2F7;">标头</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">状态</td>
@@ -191,19 +191,19 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">正文</th>
+      <th style="background-color: #EFF2F7;">正文</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
          具有以下属性的JSON对象：
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">属性</th>
+               <th style="background-color: #EFF2F7;">属性</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
@@ -211,24 +211,11 @@ ht-degree: 1%
                   流设备完成身份验证流程所需执行的操作。
                   <br/><br/>
                   可能的值包括：
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">值</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">身份验证</td>
-                        <td>流设备或其他设备需要在用户代理中打开提供的URL。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">重试</td>
-                        <td>流设备或其他设备需要提供缺少的参数，并使用代码重试恢复身份验证会话。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">授权</td>
-                        <td>流设备可以直接进行决策流。</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>身份验证</b><br/>流设备或其他设备需要在用户代理中打开提供的URL。</li>
+                    <li><b>重试</b><br/>流设备或其他设备需要提供缺少的参数，然后使用该代码重试恢复身份验证会话。</li>
+                    <li><b>授权</b><br/>流式设备可以直接继续决策流程。</li>
+                  </ul> 
                <td><i>必填</i></td>
             </tr>
             <tr>
@@ -237,20 +224,10 @@ ht-degree: 1%
                   流设备必须执行的交互类型，以便通过“actionName”属性指定的操作继续流程。
                   <br/><br/>
                   可能的值包括：
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">值</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">直接</td>
-                        <td>该流继续进行，会使用可用于客户端实施的HTTP客户端直接调用提供的URL。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">交互式</td>
-                        <td>该流程会使用用户代理继续导航到提供的URL。</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>交互式</b><br/>流继续使用用户代理导航到提供的URL。</li>
+                    <li><b>direct</b><br/>流继续使用可用于客户端实施的HTTP客户端直接调用提供的URL。</li>
+                  </ul>
                <td><i>必填</i></td>
             </tr>
             <tr>
@@ -290,11 +267,11 @@ ht-degree: 1%
 
 ### 错误 {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">标头</th>
+      <th style="background-color: #EFF2F7;">标头</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">状态</td>
@@ -307,9 +284,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">正文</th>
+      <th style="background-color: #EFF2F7;">正文</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">错误</td>

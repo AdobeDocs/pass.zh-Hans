@@ -1,7 +1,7 @@
 ---
 title: 基本身份验证 — 主要应用程序 — 流量
 description: REST API V2 — 基本身份验证 — 主应用程序 — 流程
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
 source-wordcount: '894'
 ht-degree: 0%
@@ -91,6 +91,8 @@ Adobe Pass身份验证权利内的&#x200B;**身份验证流**&#x200B;允许流�
    >
    > * _必需_&#x200B;参数和标头必须有效。
    > * 提供的`serviceProvider`和`mvpd`之间的集成必须处于活动状态。
+   > 
+   > <br/>
    > 
    > 如果验证失败，将生成错误响应，提供附加信息以遵守[增强型错误代码](../../../enhanced-error-codes.md)文档。
 

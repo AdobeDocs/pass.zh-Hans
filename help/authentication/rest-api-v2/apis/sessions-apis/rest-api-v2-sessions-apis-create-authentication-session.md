@@ -1,23 +1,23 @@
 ---
 title: 创建身份验证会话
 description: REST API V2 — 创建身份验证会话
-source-git-commit: cf479236cbd43d5e4585bf0eac18a12dbe4bc6c4
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '965'
+source-wordcount: '964'
 ht-degree: 1%
 
 ---
 
 
-# 创建身份验证会话 — 测试 {#create-authentication-session}
+# 创建身份验证会话 {#create-authentication-session}
 
 >[!IMPORTANT]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 >[!IMPORTANT]
 >
->REST API V2实施受[限制机制](/help/authentication/throttling-mechanism.md)文档限制。
+> REST API V2实施受[限制机制](/help/authentication/throttling-mechanism.md)文档限制。
 
 ## 请求 {#request}
 
@@ -247,18 +247,9 @@ ht-degree: 1%
                   <br/><br/>
                   可能的值包括：
                   <ul>
-                    <li><b>身份验证</b></li>
-                    <ul>
-                        <li>流设备或其他设备需要在用户代理中打开提供的URL。</li>
-                    </ul>
-                    <li><b>继续</b></li>
-                    <ul>
-                        <li>流设备或其他设备需要提供缺少的参数并使用代码恢复身份验证会话。</li>
-                    </ul>
-                    <li><b>授权</b></li>
-                    <ul>
-                        <li>流设备可以直接进行决策流。</li>
-                    </ul>
+                    <li><b>身份验证</b><br/>流设备或其他设备需要在用户代理中打开提供的URL。</li>
+                    <li><b>resume</b><br/>流设备或其他设备需要提供缺少的参数并使用代码恢复身份验证会话。</li>
+                    <li><b>授权</b><br/>流式设备可以直接继续决策流程。</li>
                   </ul>
                <td><i>必填</i></td>
             </tr>
@@ -269,14 +260,8 @@ ht-degree: 1%
                   <br/><br/>
                   可能的值包括：
                   <ul>
-                    <li><b>交互式</b></li>
-                    <ul>
-                        <li>该流程会使用用户代理继续导航到提供的URL。</li>
-                    </ul>
-                    <li><b>直接</b></li>
-                    <ul>
-                        <li>该流继续进行，会使用可用于客户端实施的HTTP客户端直接调用提供的URL。</li>
-                    </ul>
+                    <li><b>交互式</b><br/>流继续使用用户代理导航到提供的URL。</li>
+                    <li><b>direct</b><br/>流继续使用可用于客户端实施的HTTP客户端直接调用提供的URL。</li>
                   </ul>
                <td><i>必填</i></td>
             </tr>

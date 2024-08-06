@@ -1,7 +1,7 @@
 ---
 title: 使用合作伙伴身份验证响应检索配置文件
 description: REST API V2 — 使用合作伙伴身份验证响应检索配置文件
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
 source-wordcount: '729'
 ht-degree: 1%
@@ -21,11 +21,11 @@ ht-degree: 1%
 
 ## 请求 {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">路径</td>
@@ -38,9 +38,9 @@ ht-degree: 1%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">路径参数</th>
+      <th style="background-color: #EFF2F7;">路径参数</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">正文参数</th>
+      <th style="background-color: #EFF2F7;">正文参数</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">SAMLResponse</td>
@@ -67,9 +67,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">标头</th>
+      <th style="background-color: #EFF2F7;">标头</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">授权</td>
@@ -140,10 +140,10 @@ ht-degree: 1%
 
 ## 响应 {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">代码</th>
-      <th style="background-color: #EFF2F7; width: 20%;">文本</th>
+      <th style="background-color: #EFF2F7;">代码</th>
+      <th style="background-color: #EFF2F7;">文本</th>
       <th style="background-color: #EFF2F7;">描述</th>
    </tr>
    <tr>
@@ -185,11 +185,11 @@ ht-degree: 1%
 
 ### 成功 {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">标头</th>
+      <th style="background-color: #EFF2F7;">标头</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">状态</td>
@@ -202,9 +202,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">正文</th>
+      <th style="background-color: #EFF2F7;">正文</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">用户档案</td>
@@ -212,11 +212,11 @@ ht-degree: 1%
          JSON包含键、值对的映射。
          <br/><br/>
          键元素由以下值定义：
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">值</th>
+               <th style="background-color: #EFF2F7;">值</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">mvpd</td>
@@ -225,11 +225,11 @@ ht-degree: 1%
             </tr>
          </table>
          值元素由以下属性定义：
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">属性</th>
+               <th style="background-color: #EFF2F7;">属性</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
@@ -247,21 +247,9 @@ ht-degree: 1%
                   拥有该配置文件的实体。
                   <br/><br/>
                   可能的值包括：
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">值</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">Apple</td>
-                        <td>
-                            创建该用户档案的原因是：
-                            <ul>
-                                <li>使用合作伙伴Apple进行单点登录</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>Apple</b><br/>创建配置文件的原因是：使用合作伙伴Apple进行单点登录。</li>
+                  </ul>
                </td>
                <td><i>必填</i></td>
             </tr>
@@ -271,21 +259,9 @@ ht-degree: 1%
                   配置文件的类型。
                   <br/><br/>
                   可能的值包括：
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">值</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">appleSSO</td>
-                        <td>
-                            创建该用户档案的原因是：
-                            <ul>
-                                <li>使用合作伙伴Apple进行单点登录</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>appleSSO</b><br/>创建配置文件的原因是：使用合作伙伴Apple进行单点登录。</li>
+                  </ul>
                </td>
                <td><i>必填</i></td>
             </tr>
@@ -315,11 +291,11 @@ ht-degree: 1%
 
 ### 错误 {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">标头</th>
+      <th style="background-color: #EFF2F7;">标头</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">状态</td>
@@ -332,9 +308,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">正文</th>
+      <th style="background-color: #EFF2F7;">正文</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">错误</td>

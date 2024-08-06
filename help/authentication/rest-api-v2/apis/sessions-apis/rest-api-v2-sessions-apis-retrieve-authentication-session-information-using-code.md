@@ -1,9 +1,9 @@
 ---
 title: 使用代码检索身份验证会话
 description: REST API V2 — 使用代码检索身份验证会话
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '409'
+source-wordcount: '406'
 ht-degree: 2%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 2%
 
 ## 请求 {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">路径</td>
@@ -38,9 +38,9 @@ ht-degree: 2%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">路径参数</th>
+      <th style="background-color: #EFF2F7;">路径参数</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 2%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">标头</th>
+      <th style="background-color: #EFF2F7;">标头</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">授权</td>
@@ -91,10 +91,10 @@ ht-degree: 2%
 
 ## 响应 {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">代码</th>
-      <th style="background-color: #EFF2F7; width: 20%;">文本</th>
+      <th style="background-color: #EFF2F7;">代码</th>
+      <th style="background-color: #EFF2F7;">文本</th>
       <th style="background-color: #EFF2F7;">描述</th>
    </tr>
    <tr>
@@ -136,11 +136,11 @@ ht-degree: 2%
 
 ### 成功 {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">标头</th>
+      <th style="background-color: #EFF2F7;">标头</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">状态</td>
@@ -148,42 +148,29 @@ ht-degree: 2%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">正文</th>
+      <th style="background-color: #EFF2F7;">正文</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">参数</td>
       <td>
          具有以下属性的JSON对象：
-         <table>
-            <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">属性</th>
-               <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
-            </tr>
-            <tr>
-               <td style="background-color: #DEEBFF;">现有</td>
-               <td>已提供的现有参数。</td>
-               <td><i>必填</i></td>
-            </tr>
-            <tr>
-               <td style="background-color: #DEEBFF;">缺失</td>
-               <td>需要提供以便完成身份验证流程的缺失参数。</td>
-               <td><i>必填</i></td>
-            </tr>
-         </table>
+         <ul>
+            <li><b>existing</b><br/>已提供的现有参数。</li>
+            <li><b>缺失</b><br/>缺少完成身份验证流程所需的参数。</li>
+         </ul>
       </td>
       <td><i>必填</i></td>
 </table>
 
 ### 错误 {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">标头</th>
+      <th style="background-color: #EFF2F7;">标头</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">状态</td>
@@ -196,9 +183,9 @@ ht-degree: 2%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">正文</th>
+      <th style="background-color: #EFF2F7;">正文</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">错误</td>

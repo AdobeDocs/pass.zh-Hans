@@ -1,9 +1,9 @@
 ---
 title: 使用特定的mvpd检索授权决策
 description: REST API V2 — 使用特定mvpd检索授权决策
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '921'
+source-wordcount: '929'
 ht-degree: 1%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 1%
 
 ## 请求 {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">路径</td>
@@ -38,9 +38,9 @@ ht-degree: 1%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">路径参数</th>
+      <th style="background-color: #EFF2F7;">路径参数</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">正文参数</th>
+      <th style="background-color: #EFF2F7;">正文参数</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">资源</td>
@@ -63,9 +63,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">标头</th>
+      <th style="background-color: #EFF2F7;">标头</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">授权</td>
@@ -159,10 +159,10 @@ ht-degree: 1%
 
 ## 响应 {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">代码</th>
-      <th style="background-color: #EFF2F7; width: 20%;">文本</th>
+      <th style="background-color: #EFF2F7;">代码</th>
+      <th style="background-color: #EFF2F7;">文本</th>
       <th style="background-color: #EFF2F7;">描述</th>
    </tr>
    <tr>
@@ -204,11 +204,11 @@ ht-degree: 1%
 
 ### 成功 {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">标头</th>
+      <th style="background-color: #EFF2F7;">标头</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">状态</td>
@@ -221,19 +221,19 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">正文</th>
+      <th style="background-color: #EFF2F7;">正文</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">决策</td>
       <td>
          JSON包含元素列表，每个元素均具有以下属性：
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">属性</th>
+               <th style="background-color: #EFF2F7;">属性</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                 <td style="background-color: #DEEBFF;">资源</td>
@@ -258,53 +258,28 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">源</td>
                <td>
-                  有关决策源的信息：
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">值</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">mvpd</td>
-                        <td>决策由MVPD授权端点发出。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">降解</td>
-                        <td>由于访问降级而发布决策。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">临时传递</td>
-                        <td>决策因临时访问而发布。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">虚拟</td>
-                        <td>作为虚拟授权功能的结果而发布决策。</td>
-                     </tr>
-                  </table>
+                  有关决策源的信息。
+                  <br/><br/>
+                  可能的值包括：
+                  <ul>
+                    <li><b>mvpd</b><br/>决策由MVPD授权终结点发出。</li>
+                    <li><b>降级</b><br/>决策因访问降级而发出。</li>
+                    <li><b>temppass</b><br/>决策作为临时访问的结果发布。</li>
+                    <li><b>dummy</b><br/>决策是由虚拟授权功能发出的。</li>
+                  </ul>
                <td><i>必填</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">令牌</td>
                <td>
-                  有关媒体令牌的信息：
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">属性</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">notBefore</td>
-                        <td>媒体令牌失效之前的时间戳。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">notAfter</td>
-                        <td>媒体令牌失效之前的时间戳。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">serializedToken</td>
-                        <td>Base64编码的媒体令牌。</td>
-                     </tr>
-                  </table>
+                  有关媒体令牌的信息。
+                  <br/><br/>
+                  具有以下属性的JSON对象：
+                  <ul>
+                    <li><b>notBefore</b><br/>媒体令牌失效之前的时间戳。</li>
+                    <li><b>notAfter</b><br/>时间戳，在此时间戳之后媒体令牌无效。</li>
+                    <li><b>serializedToken</b><br/>Base64编码的媒体令牌。</li>
+                  </ul>
                <td>可选</td>
             </tr>
             <tr>
@@ -329,11 +304,11 @@ ht-degree: 1%
 
 ### 错误 {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">标头</th>
+      <th style="background-color: #EFF2F7;">标头</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">状态</td>
@@ -346,9 +321,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">正文</th>
+      <th style="background-color: #EFF2F7;">正文</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">错误</td>
