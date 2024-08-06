@@ -1,9 +1,9 @@
 ---
 title: 创建身份验证会话
 description: REST API V2 — 创建身份验证会话
-source-git-commit: 9c04ec17c848d6734dc2ca2d6357ed5fb49341ec
+source-git-commit: cf479236cbd43d5e4585bf0eac18a12dbe4bc6c4
 workflow-type: tm+mt
-source-wordcount: '967'
+source-wordcount: '965'
 ht-degree: 1%
 
 ---
@@ -246,24 +246,20 @@ ht-degree: 1%
                   流设备完成身份验证流程所需执行的操作。
                   <br/><br/>
                   可能的值包括：
-                  <table style="table-layout:auto">
-                     <tr>
-                        <th style="background-color: #EFF2F7;">值</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">身份验证</td>
-                        <td>流设备或其他设备需要在用户代理中打开提供的URL。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">继续</td>
-                        <td>流设备或其他设备需要提供缺少的参数并使用代码恢复身份验证会话。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">授权</td>
-                        <td>流设备可以直接进行决策流。</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>身份验证</b></li>
+                    <ul>
+                        <li>流设备或其他设备需要在用户代理中打开提供的URL。</li>
+                    </ul>
+                    <li><b>继续</b></li>
+                    <ul>
+                        <li>流设备或其他设备需要提供缺少的参数并使用代码恢复身份验证会话。</li>
+                    </ul>
+                    <li><b>授权</b></li>
+                    <ul>
+                        <li>流设备可以直接进行决策流。</li>
+                    </ul>
+                  </ul>
                <td><i>必填</i></td>
             </tr>
             <tr>
@@ -272,20 +268,16 @@ ht-degree: 1%
                   流设备必须执行的交互类型，以便通过“actionName”属性指定的操作继续流程。
                   <br/><br/>
                   可能的值包括：
-                  <table style="table-layout:auto">
-                     <tr>
-                        <th style="background-color: #EFF2F7;">值</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">直接</td>
-                        <td>该流继续进行，会使用可用于客户端实施的HTTP客户端直接调用提供的URL。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">交互式</td>
-                        <td>该流程会使用用户代理继续导航到提供的URL。</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>交互式</b></li>
+                    <ul>
+                        <li>该流程会使用用户代理继续导航到提供的URL。</li>
+                    </ul>
+                    <li><b>直接</b></li>
+                    <ul>
+                        <li>该流继续进行，会使用可用于客户端实施的HTTP客户端直接调用提供的URL。</li>
+                    </ul>
+                  </ul>
                <td><i>必填</i></td>
             </tr>
             <tr>
