@@ -1,15 +1,15 @@
 ---
 title: 创建身份验证会话
 description: REST API V2 — 创建身份验证会话
-source-git-commit: 4afd8492c77fdceae3c2504ba392fbcfc0979b22
+source-git-commit: 9c04ec17c848d6734dc2ca2d6357ed5fb49341ec
 workflow-type: tm+mt
-source-wordcount: '966'
+source-wordcount: '967'
 ht-degree: 1%
 
 ---
 
 
-# 创建身份验证会话 {#create-authentication-session}
+# 创建身份验证会话 — 测试 {#create-authentication-session}
 
 >[!IMPORTANT]
 >
