@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
 user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: c849882286c88d16a5652717d381700287c53277
 workflow-type: tm+mt
-source-wordcount: '1137'
+source-wordcount: '1142'
 ht-degree: 2%
 
 ---
@@ -61,6 +61,7 @@ ht-degree: 2%
             + [创建身份验证会话](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
             + [恢复身份验证会话](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
             + [检索身份验证会话](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
+            + [在用户代理中执行身份验证](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)
          + 配置文件{#rest-api-v2-profiles-apis}
             + [检索用户档案](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
             + [检索特定mvpd的配置文件](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)

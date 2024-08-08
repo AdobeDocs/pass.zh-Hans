@@ -1,7 +1,7 @@
 ---
 title: 恢复身份验证会话
 description: REST API V2 — 恢复身份验证会话
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: c849882286c88d16a5652717d381700287c53277
 workflow-type: tm+mt
 source-wordcount: '753'
 ht-degree: 1%
@@ -47,7 +47,7 @@ ht-degree: 1%
       <td>在载入过程中与服务提供商关联的内部唯一标识符。</td>
       <td><i>必填</i></td>
    </tr>
-    <tr>
+   <tr>
       <td style="background-color: #DEEBFF;">代码</td>
       <td>在流设备上创建身份验证会话后获得的身份验证代码。</td>
       <td><i>必填</i></td>
