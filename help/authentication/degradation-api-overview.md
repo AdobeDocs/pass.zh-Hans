@@ -2,29 +2,28 @@
 title: 降级API概述
 description: 降级API概述
 exl-id: c7d6685b-a235-42eb-9c9c-0ffa1747f614
-source-git-commit: f918d7f9f7b2af5b4364421f6703211e413eafb4
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '427'
 ht-degree: 0%
 
 ---
 
+
 # 降级API概述 {#degradation-api-overview}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
->要使用降级API，您需要：
->- 请向支持团队索取注册应用程序的软件声明
->- 根据[动态客户端注册](dynamic-client-registration.md)获取访问令牌
-> 
+> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
->[!NOTE]
+>[!IMPORTANT]
 >
->要使用降级API，您需要：
->- 请向支持团队索取注册应用程序的软件声明
->- 根据[动态客户端注册](dynamic-client-registration.md)获取访问令牌
-> 
+> 在使用降级API之前，请确保满足以下先决条件：
+>
+> * 按照[检索客户端凭据](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) API文档中的说明获取客户端凭据。
+> * 按照[检索访问令牌](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) API文档中的说明获取访问令牌。
+>
+> 有关如何创建已注册的应用程序和下载软件语句的详细信息，请参阅[动态客户端注册概述](./dcr-api/dynamic-client-registration-overview.md)文档。
 
 ## 一般信息 {#general_info}
 
@@ -42,7 +41,7 @@ ht-degree: 0%
 
  — 此功能旨在与使用监控API结合使用，后者提供有关每个MVPD的身份验证和授权数、平均授权延迟以及完整服务概述所需的其他量度的实时信息。
  — 此功能不允许绕过AdobePrimetim身份验证服务。 如果Adobe Pass身份验证处于关闭状态，则该服务中没有机制可用于允许用户查看内容。 但是，这些网站或应用程序可以自行绕过Adobe Pass身份验证。
--Adobe目前不会直接触发性能降级 — 决策必须始终由已与MVPD同意此类条件的特定程序员作出。 将来，如果能够与MVPD达成协议（SLA保护），Adobe Pass身份验证可能会主动触发降级规则。
+-Adobe目前不会直接触发性能降级 — 决策必须始终由已与MVPD同意此类条件的特定程序员作出。 将来，如果可以使用MVPD达成协议(SLA保护)，Adobe Pass身份验证可能会主动触发降级规则。
 
 <!--
 ## Related Information {#related}

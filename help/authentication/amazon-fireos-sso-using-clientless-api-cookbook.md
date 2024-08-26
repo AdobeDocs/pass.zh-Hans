@@ -2,9 +2,9 @@
 title: 使用无客户端API指南的Amazon FireOS SSO
 description: 使用无客户端API指南的Amazon FireOS SSO
 exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '761'
 ht-degree: 0%
 
 ---
@@ -149,9 +149,9 @@ Amazon无客户端SSO实施非常简单，并且大体上与常规的Adobe Prime
 
 Adobe无客户端API要求应用程序使用动态客户端注册来调用Adobe服务器。
 
-* 要在应用程序中使用动态客户端注册，请按照[动态客户端注册管理中的说明注册应用程序](/help/authentication/dynamic-client-registration-management.md)。
+* 要在应用程序中使用动态客户端注册，请按照[动态客户端注册管理](./dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management)中的说明创建已注册的应用程序并下载软件语句。
 
-* 要实施Dynamic Client Registration API以对Adobe Pass服务器执行身份验证和授权请求，请按照[Dynamic Client Registration API](/help/authentication/dynamic-client-registration-api.md)中的说明操作。
+* 要实施Dynamic Client Registration API以对Adobe Pass服务器执行身份验证和授权请求，请按照[Dynamic Client Registration Flow](./dcr-api/flows/dynamic-client-registration-flow.md)中的说明操作。
 
 ### 更新了Adobe Pass无客户端API以使用Amazon SSO {#clientlesssso}
 

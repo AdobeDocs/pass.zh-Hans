@@ -2,9 +2,9 @@
 title: Primetime TVE仪表板用户指南
 description: Primetime TVE仪表板用户指南
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: c6afb9b080ffe36344d7a3d658450e9be767be61
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '4377'
+source-wordcount: '5504'
 ht-degree: 0%
 
 ---
@@ -112,12 +112,11 @@ TVE Dashboard提供两个名为Prequal (Prequalification)和Release的环境，�
   包含与可用MVPD的集成的列表，以及每个可能启用的或未启用的集成的状态。 单击特定条目即可导航到集成页面。
 * **已注册的应用程序**
 
-  包含应用程序注册列表。 有关详细信息，请查看文档[动态客户端注册管理](/help/authentication/dynamic-client-registration-management.md)。
+  包含应用程序注册列表。 有关更多详细信息，请查看文档[动态客户端注册管理](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management)。
 
 * **自定义架构**
 
-  包含自定义方案的列表。 有关更多详细信息，请参阅[iOS/tvOS应用程序注册](/help/authentication/iostvos-application-registration.md)和[动态客户端注册管理](/help/authentication/dynamic-client-registration-management.md)
-
+  包含自定义方案的列表。 有关更多详细信息，请参阅[iOS/tvOS应用程序注册](/help/authentication/iostvos-application-registration.md)和[动态客户端注册管理](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management)
 
 #### 添加/删除域 {#add-delete-domains}
 
@@ -126,6 +125,50 @@ TVE Dashboard提供两个名为Prequal (Prequalification)和Release的环境，�
 ![向所选渠道部分添加新域](assets/add-domain-to-channel-sec.png)
 
 *图：渠道中的“域”选项卡*
+
+#### 在渠道级别创建注册的应用程序 {#create-registered-application-channel-level}
+
+要在渠道级别创建注册的应用程序，请导航到“渠道”菜单，然后选择要为其创建应用程序的渠道。 然后，在导航到“注册的应用程序”选项卡后，单击“添加新应用程序”按钮。
+
+![](./assets/reg-new-app-channel-level.png)
+
+如下图所示，您应填写的字段包括：
+
+* **应用程序名称** — 应用程序的名称
+
+* **分配给渠道** — 如下所示，与程序员级别执行的相同操作相比，此处稍有不同的是“已分配渠道”下拉列表，该下拉列表未启用，因此没有选项将注册的应用程序绑定到当前渠道以外的其他渠道。
+
+* **应用程序版本** — 默认情况下，该版本设置为“1.0.0”，但我们强烈建议您使用自己的应用程序版本对其进行修改。 作为最佳实践，如果您决定更改应用程序的版本，请通过为其创建新的已注册应用程序来反映该版本。
+
+* **应用程序平台** — 要链接的应用程序平台。 您可以选择选择所有值或多个值。
+
+* **域名** — 要链接的应用程序所属的域。 下拉列表中的域是从所有渠道中统一选择的所有域。 您可以选择从列表中选择多个域。 域的含义是重定向URL [RFC6749](https://tools.ietf.org/html/rfc6749)。 在客户端注册过程中，客户端应用程序可请求允许使用重定向URL来最终确定身份验证流。 当客户端应用程序请求特定的重定向URL时，将针对与软件语句关联的此注册应用程序中列出的白名单域验证该URL。
+
+![](./assets/new-reg-app-channel.png)
+
+在用适当的值填写字段后，您必须单击“完成”才能将应用程序保存在配置中。
+
+请注意，**没有用于修改已创建的应用程序的选项**。 如果发现创建的某个内容不再满足要求，则需要创建一个新的已注册应用程序，并将其与满足其要求的客户端应用程序一起使用。
+
+##### 下载软件声明 {#download-software-statement-channel-level}
+
+![](./assets/reg-app-list.png)
+
+单击需要软件语句的列表项上的“下载”按钮将生成文本文件。 此文件将包含类似于以下示例输出的内容。
+
+![](./assets/download-software-statement.png)
+
+文件的名称通过以“software_statement”为前缀并添加当前时间戳进行唯一标识。
+
+请注意，对于同一已注册应用程序，每次单击下载按钮时都会收到不同的软件语句，但这不会使先前为此应用程序获得的软件语句失效。 之所以发生这种情况，是因为它们是根据操作请求即时生成的。
+
+下载操作存在一个&#x200B;**限制**。 如果在创建注册的应用程序后不久通过单击“下载”按钮请求软件语句，但尚未保存该语句并且配置json未同步，则页面底部将显示以下错误消息。
+
+![](./assets/error-sw-statement-notready.png)
+
+这会包装从核心收到的HTTP 404 Not Found错误代码，因为已注册应用程序的ID尚未传播，并且核心不知道它。
+
+解决方案是在创建注册的应用程序后，最多等待2分钟以使配置同步。 发生这种情况后，将不再收到错误消息，并且包含软件语句的文本文件将可供下载。
 
 ### 程序员 {#tve-db-programmers-section}
 
@@ -147,12 +190,57 @@ TVE Dashboard提供两个名为Prequal (Prequalification)和Release的环境，�
 
 * **已注册的应用程序**
 
-  包含应用程序注册列表。 有关详细信息，请参阅[动态客户端注册管理](/help/authentication/dynamic-client-registration-management.md)。
+  包含应用程序注册列表。 有关详细信息，请参阅[动态客户端注册管理](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management)。
 
 * **自定义架构**
 
-  包含自定义方案的列表。 有关更多详细信息，请参阅[iOS/tvOS应用程序注册](/help/authentication/iostvos-application-registration.md)和[动态客户端注册管理](/help/authentication/dynamic-client-registration-management.md)。
+  包含自定义方案的列表。 有关详细信息，请参阅[iOS/tvOS应用程序注册](/help/authentication/iostvos-application-registration.md)。
 
+#### 在程序员级别创建注册的应用程序 {#create-registered-application-programmer-level}
+
+转到&#x200B;**程序员** > **已注册的应用程序**&#x200B;选项卡。
+
+![](./assets/reg-app-progr-level.png)
+
+在“已注册的应用程序”选项卡中，单击&#x200B;**添加新应用程序**。 在新窗口中填写必填字段。
+
+如下图所示，您应填写的字段包括：
+
+* **应用程序名称** — 应用程序的名称
+
+* **分配给渠道** — 您的渠道的名称，此应用程序链接的t</span>o。 下拉掩码中的默认设置为&#x200B;**所有通道。**&#x200B;该界面允许您选择一个通道或选择所有通道。
+
+* **应用程序版本** — 默认情况下，该版本设置为“1.0.0”，但我们强烈建议您使用自己的应用程序版本对其进行修改。 作为最佳实践，如果您决定更改应用程序的版本，请通过为其创建新的已注册应用程序来反映该版本。
+
+* **应用程序平台** — 要链接的应用程序平台。 您可以选择选择所有值或多个值。
+
+* **域名** — 要链接的应用程序所属的域。 下拉列表中的域是从所有渠道中统一选择的所有域。 您可以选择从列表中选择多个域。 域的含义是重定向URL [RFC6749](https://tools.ietf.org/html/rfc6749)。 在客户端注册过程中，客户端应用程序可请求允许使用重定向URL来最终确定身份验证流。 当客户端应用程序请求特定的重定向URL时，将针对与软件语句关联的此注册应用程序中列出的白名单域验证该URL。
+
+![](./assets/new-reg-app.png)
+
+在用适当的值填写字段后，您必须单击“完成”才能将应用程序保存在配置中。
+
+请注意，**没有用于修改已创建的应用程序的选项**。 如果发现创建的某个内容不再满足要求，则需要创建一个新的已注册应用程序，并将其与满足其要求的客户端应用程序一起使用。
+
+##### 下载软件声明 {#download-software-statement-programmer-level}
+
+![](./assets/reg-app-list.png)
+
+单击需要软件语句的列表项上的“下载”按钮将生成文本文件。 此文件将包含类似于以下示例输出的内容。
+
+![](./assets/download-software-statement.png)
+
+文件的名称通过以“software_statement”为前缀并添加当前时间戳进行唯一标识。
+
+请注意，对于同一已注册应用程序，每次单击下载按钮时都会收到不同的软件语句，但这不会使先前为此应用程序获得的软件语句失效。 之所以发生这种情况，是因为它们是根据操作请求即时生成的。
+
+下载操作存在一个&#x200B;**限制**。 如果在创建注册的应用程序后不久通过单击“下载”按钮请求软件语句，但尚未保存该语句并且配置json未同步，则页面底部将显示以下错误消息。
+
+![](./assets/error-sw-statement-notready.png)
+
+这会包装从核心收到的HTTP 404 Not Found错误代码，因为已注册应用程序的ID尚未传播，并且核心不知道它。
+
+解决方案是在创建注册的应用程序后，最多等待2分钟以使配置同步。 发生这种情况后，将不再收到错误消息，并且包含软件语句的文本文件将可供下载。
 
 ### 集成 {#tve-db-integrations-sec}
 

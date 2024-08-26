@@ -1,9 +1,9 @@
 ---
 title: 检索特定服务提供商的配置
 description: REST API V2 — 检索特定服务提供商的配置
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '521'
+source-wordcount: '523'
 ht-degree: 2%
 
 ---
@@ -64,18 +64,18 @@ ht-degree: 2%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">授权</td>
-      <td><a href="../../../dynamic-client-registration-api.md">动态客户端注册</a>文档中描述了持有者令牌有效负载的生成。</td>
+      <td><a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">授权</a>标头文档中描述了持有者令牌有效负载的生成。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP设备标识符</td>
-      <td><a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>文档中介绍了设备标识符有效负载的生成。</td>
+      <td><a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>标头文档中描述了设备标识符有效负载的生成。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>文档中介绍了设备信息有效负载的生成。
+         <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>标头文档中介绍了设备信息有效负载的生成。
          <br/><br/>
          强烈建议在应用程序的设备平台允许显式提供有效值时始终使用它。
          <br/><br/>
@@ -138,7 +138,7 @@ ht-degree: 2%
       <td>401</td>
       <td>未授权</td>
       <td>
-        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="../../../dynamic-client-registration-api.md">动态客户端注册</a>文档。
+        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="../../../dcr-api/dynamic-client-registration-overview.md">动态客户端注册概述</a>文档。
       </td>
    </tr>
    <tr>

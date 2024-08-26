@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
 user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1142'
+source-wordcount: '1149'
 ht-degree: 2%
 
 ---
@@ -95,12 +95,13 @@ ht-degree: 2%
             + [单个注销流程](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-logout-flow.md)
       + 附录{#rest-api-v2-appendix}
          + 标头{#rest-api-v2-appendix-headers}
+            + [标头 — 授权](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)
+            + [标头 — AP-Device-Identifier](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
+            + [标头 — X-Device-Info](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
             + [标头 — AD-Service-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
             + [标头 — Adobe-Subject-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
-            + [标头 — AP-Device-Identifier](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
             + [标头 — AP-Partner-Framework-Status](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
             + [标头 — AP-TempPass-Identity](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
-            + [标头 — X-Device-Info](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
    + AccessEnabler SDK {#accessenabler-sdk}
       + JavaScript SDK {#javascriptsdk}
          + [JavaScript SDK概述](javascript-sdk-overview.md)
@@ -175,7 +176,7 @@ ht-degree: 2%
    + 临时传递{#temp-pass}
       + [临时传递](temp-pass.md)
       + [促销临时通票](promotional-temp-pass.md)
-      + [重置临时密码](reset-temp-pass.md)
+      + [重置临时传递](reset-temp-pass.md)
    + 单点登录{#sso}
       + [单点登录支持](sso-support.md)
       + [通过被动身份验证的SSO](sso-passive-authn.md)
@@ -188,10 +189,13 @@ ht-degree: 2%
    + 报告{#error-reportn}时出错
       + [错误报告](error-reporting.md)
       + [增强的错误代码](enhanced-error-codes.md)
-   + 客户端注册{#client-regn}
-      + [动态客户端注册](dynamic-client-registration.md)
-      + [动态客户端注册API](dynamic-client-registration-api.md)
-      + [动态客户端注册管理](dynamic-client-registration-management.md)
+   + 客户端注册{#dcr-api}
+      + [动态客户端注册概述](./dcr-api/dynamic-client-registration-overview.md)
+      + API {#dcr-api-apis}
+         + [检索客户端凭据](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)
+         + [检索访问令牌](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+      + 流{#dcr-api-flows}
+         + [动态客户端注册流程](./dcr-api/flows/dynamic-client-registration-flow.md)
    + 降级服务{#degrn-service}
       + [降级API概述](degradation-api-overview.md)
    + 隐私就绪{#privacy-readiness}
@@ -282,4 +286,3 @@ ht-degree: 2%
    + [报告](/help/authentication/tve-dashboard-reports.md)
    + [更改日志](/help/authentication/tve-dashboard-changes-log.md)
 + [术语表](glossary.md)
-

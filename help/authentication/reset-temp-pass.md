@@ -2,38 +2,43 @@
 title: 重置临时传递
 description: 重置临时传递
 exl-id: ab39e444-eab2-4338-8d09-352a1d5135b6
-source-git-commit: 28d432891b7d7855e83830f775164973e81241fc
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '439'
+source-wordcount: '478'
 ht-degree: 0%
 
 ---
 
+
 # 重置临时传递 {#reset-temp-pass}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+
+>[!IMPORTANT]
 >
->要使用Reset Temp Pass API，您需要：
->- 请向支持团队索取注册应用程序的软件声明
->- 根据[动态客户端注册](dynamic-client-registration.md)获取访问令牌
-> 
+> 在使用Reset Temp Pass API之前，请确保满足以下先决条件：
+>
+> * 按照[检索客户端凭据](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) API文档中的说明获取客户端凭据。
+> * 按照[检索访问令牌](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) API文档中的说明获取访问令牌。
+>
+> 有关如何创建已注册的应用程序和下载软件语句的详细信息，请参阅[动态客户端注册概述](./dcr-api/dynamic-client-registration-overview.md)文档。
 
 为了&#x200B;**重置特定临时密码**，Adobe Pass身份验证为程序员提供了&#x200B;*公共* Web API：
 
-- **环境：**&#x200B;指定将接收重置临时传递网络调用的Adobe付费电视传递服务器终结点。 可能的值： **Prequal** (*mgmt-prequal.auth.adobe.com*)、**Release** (*mgmt.auth.adobe.com*)或&#x200B;**Custom** (保留用于Adobe内部测试)。
-- **OAuth2访问令牌：** OAuth2令牌是授权Adobe付费电视身份验证的程序员所必需的。 此类令牌可从[动态客户端注册](dynamic-client-registration.md)中获取。
-- **临时传递ID：**&#x200B;要重置的临时传递MVPD的唯一标识。（一个程序员可以使用多个Temp Pass MVPD并要重置一个特定的MVPD）
-- **通用键：**&#x200B;一些临时传递MVPD（即[提升临时传递](promotional-temp-pass.md)）。
+* **环境：**&#x200B;指定将接收重置临时传递网络调用的Adobe付费电视传递服务器终结点。 可能的值： **Prequal** (*mgmt* prequal.auth.adobe.com*)、**Release** (*mgmt.auth.adobe.com*)或&#x200B;**Custom** (保留用于Adobe内部测试)。
+* **OAuth2访问令牌：** OAuth2令牌是授权Adobe付费电视身份验证的程序员所必需的。 如[检索访问令牌](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) API文档中所述，可以获得此类令牌。
+* **临时传递ID：**&#x200B;要重置的临时传递MVPD的唯一标识。（一个程序员可以使用多个Temp Pass MVPD并要重置一个特定的MVPD）
+* **通用键：**&#x200B;一些临时传递MVPD（即[提升临时传递](promotional-temp-pass.md)）。
 
 上述所有参数（除&#x200B;*泛型键*&#x200B;之外）都是必需的。 以下是参数和关联网络调用的示例（示例采用*curl *命令的形式）：
 
-- **环境：**&#x200B;版本(*mgmt.auth.adobe.com*)
-- **OAuth2访问令牌：** &lt;access_token>来自[动态客户端注册](dynamic-client-registration.md)
-- **程序员ID：**&#x200B;引用
-- **临时传递ID：**&#x200B;临时传递引用
-- **泛型键：** null （未提供值）
+* **环境：**&#x200B;版本(*mgmt.auth.adobe.com*)
+* **OAuth2访问令牌：** &lt;access_token>，如[检索访问令牌](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) API文档中所述
+* **程序员ID：**&#x200B;引用
+* **临时传递ID：**&#x200B;临时传递引用
+* **泛型键：** null （未提供值）
 
 ```curl
 curl -X DELETE -H "Authorization:Bearer <access_token_here>" "https://mgmt.auth.adobe.com/reset-tempass/v3/reset?device_id=f23804a37802993fdc8e28a7f244dfe088b6a9ea21457670728e6731fa639991&requestor_id=REF&mvpd_id=TempPassREF"
@@ -63,19 +68,19 @@ DELETE https://mgmt.auth.adobe.com/reset-tempass/v3/reset
 >[!NOTE]
 >上述URL取代了以前的重置API。 旧重置API (v1)不再受支持。
 
-- **协议：** HTTPS
-- **主机：**
-   - 发行版 — mgmt.auth.adobe.com
-   - 先决条件 — mgmt-prequal.auth.adobe.com
-- **路径：** /reset-tempass/v3/reset
-- **查询参数：** `device_id=all&requestor_id=REQUESTOR_ID&mvpd_id=TEMPPASS_MVPD_ID`
-- **标头：**&#x200B;授权：持有者&lt;access_token_here>
-- **响应：**
-   - 成功 — HTTP 204
-   - 失败：
-      - 错误请求的HTTP 400
-      - 如果访问被拒绝，则返回HTTP 401。 客户端必须请求新的access_token。
-      - 如果不再允许客户端ID执行请求，则使用HTTP 403。 应生成新的客户端凭据。
+* **协议：** HTTPS
+* **主机：**
+   * 发行版 — mgmt.auth.adobe.com
+   * 先决条件 — mgmt-prequal.auth.adobe.com
+* **路径：** /reset-tempass/v3/reset
+* **查询参数：** `device_id=all&requestor_id=REQUESTOR_ID&mvpd_id=TEMPPASS_MVPD_ID`
+* **标头：**&#x200B;授权：持有者&lt;access_token_here>
+* **响应：**
+   * 成功 — HTTP 204
+   * 失败：
+      * 错误请求的HTTP 400
+      * 如果访问被拒绝，则返回HTTP 401。 客户端必须请求新的access_token。
+      * 如果不再允许客户端ID执行请求，则使用HTTP 403。 应生成新的客户端凭据。
 
 
 例如：

@@ -2,9 +2,9 @@
 title: 程序员
 description: 了解TVE仪表板中的程序员及其配置。
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '717'
+source-wordcount: '701'
 ht-degree: 0%
 
 ---
@@ -120,11 +120,11 @@ TVE仪表板的&#x200B;**程序员**&#x200B;部分允许您查看和管理链接
 
 ### 已注册的应用程序 {#registered-applications}
 
-此选项卡提供应用程序注册的列表。 查看[动态客户端注册管理](/help/authentication/dynamic-client-registration-management.md)，以了解详细信息。
+此选项卡提供应用程序注册的列表。
 
 ### 自定义架构 {#custom-schemes}
 
-此选项卡显示自定义方案列表。 查看[iOS/tvOS应用程序注册](/help/authentication/iostvos-application-registration.md)和[动态客户端注册管理](/help/authentication/dynamic-client-registration-management.md)，以了解详细信息。
+此选项卡显示自定义方案列表。 查看[iOS/tvOS应用程序注册](/help/authentication/iostvos-application-registration.md)。
 
 ## 添加新程序员 {#add-new-programmer}
 

@@ -2,9 +2,9 @@
 title: REST API指南（服务器到服务器）
 description: Rest API指南服务器到服务器。
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1847'
+source-wordcount: '1844'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ Adobe Pass身份验证REST API受[限制机制](/help/authentication/throttling-
 ### 动态客户端注册(DCR)
 
 
-Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务之间的客户端通信。 DCR流是独立的、依赖的以及先决条件流，可以在[动态客户端注册](/help/authentication/dynamic-client-registration.md)中找到。
+Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务之间的客户端通信。 DCR流程是独立的，在[Dynamic Client Registration Overview](./dcr-api/dynamic-client-registration-overview.md)文档中进行了说明。
 
 
 ### 身份验证(authN)

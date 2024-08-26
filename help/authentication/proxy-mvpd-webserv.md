@@ -2,29 +2,28 @@
 title: 代理MVPD Web服务
 description: 代理MVPD Web服务
 exl-id: f75cbc4d-4132-4ce8-a81c-1561a69d1d3a
-source-git-commit: f8cef3c41fb7132204c4fa499301c3010f62ca14
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
 source-wordcount: '1003'
 ht-degree: 0%
 
 ---
 
+
 # 代理MVPD Web服务 {#proxy-mvpd-wbservice}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
->要使用Proxy MVPD Web服务，您需要：
->- 请向支持团队索取注册应用程序的软件声明
->- 根据[动态客户端注册](dynamic-client-registration.md)获取访问令牌
-> 
+> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
->[!NOTE]
+>[!IMPORTANT]
 >
->要使用Proxy MVPD Web服务，您需要：
->- 请向支持团队索取注册应用程序的软件声明
->- 根据[动态客户端注册](dynamic-client-registration.md)获取访问令牌
-> 
+> 在使用代理MVPD Web服务之前，请确保满足以下先决条件：
+>
+> * 按照[检索客户端凭据](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) API文档中的说明获取客户端凭据。
+> * 按照[检索访问令牌](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) API文档中的说明获取访问令牌。
+>
+> 有关如何创建已注册的应用程序和下载软件语句的详细信息，请参阅[动态客户端注册概述](./dcr-api/dynamic-client-registration-overview.md)文档。
 
 ## 概述 {#overview-proxy-mvpd-webserv}
 
@@ -232,7 +231,7 @@ Adobe定义了以下可接受的格式，用于向我们的公共Web服务发布
 
 请求必须遵循以下规则才能被视为有效：
 
- — 请求标头必须包含来自[动态客户端注册](dynamic-client-registration.md)的安全Oauth2访问令牌。
+ — 请求标头必须包含按照[检索访问令牌](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) API文档中所述获取的安全性Oauth2访问令牌。
  — 请求必须来自允许的特定IP地址。
  — 必须通过SSL协议发送请求。
 

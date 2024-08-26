@@ -2,9 +2,9 @@
 title: REST API参考
 description: Rest api引用
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '641'
+source-wordcount: '646'
 ht-degree: 2%
 
 ---
@@ -77,4 +77,4 @@ Adobe Pass身份验证REST API受[限制机制](/help/authentication/throttling-
 
 ## REST API安全性 {#security}
 
-必须使用HTTPS协议调用所有Adobe Pass身份验证无客户端API，才能进行安全通信。 此外，调用的大多数API应包含由[动态客户端注册](/help/authentication/dynamic-client-registration.md)提供的访问令牌。
+必须使用HTTPS协议调用所有Adobe Pass身份验证REST API，以便进行安全通信。 此外，调用的大多数API应包含按照[检索访问令牌](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) API文档中所述获得的访问令牌。

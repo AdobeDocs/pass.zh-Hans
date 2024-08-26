@@ -2,12 +2,13 @@
 title: 带有动态客户端注册功能的Amazon FireOS SDK
 description: 带有动态客户端注册功能的Amazon FireOS SDK
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1145'
+source-wordcount: '1146'
 ht-degree: 0%
 
 ---
+
 
 # 带有动态客户端注册功能的Amazon FireOS SDK {#amazon-fireos-sdk-with-dynamic-client-registration}
 
@@ -21,7 +22,7 @@ ht-degree: 0%
 
 已修改适用于FireTV的FireOS AccessEnabler SDK，以便在不使用会话Cookie的情况下启用身份验证。 随着越来越多的浏览器限制对Cookie的访问，需要另一种方法来允许身份验证。
 
-**FireOS SDK 3.0.4**&#x200B;将基于已签名请求者ID和会话Cookie身份验证的当前应用程序注册机制替换为[动态客户端注册](/help/authentication/dynamic-client-registration.md)。
+**FireOS SDK 3.0.4**&#x200B;将基于已签名请求者ID和会话Cookie身份验证的当前应用程序注册机制替换为[动态客户端注册概述](./dcr-api/dynamic-client-registration-overview.md)。
 
 
 ## API更改 {#API}
