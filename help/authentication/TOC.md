@@ -4,7 +4,7 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
 user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: 82fd63a0e208a90753235b81fa52757283c9d314
+source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
 workflow-type: tm+mt
 source-wordcount: '1155'
 ht-degree: 2%
@@ -274,16 +274,16 @@ ht-degree: 2%
       + [使用Charles代理](using-charles-proxy.md)
    + 概念{#concepts}
       + [了解用户ID](understanding-user-ids.md)
-+ [TVE仪表板用户指南](tve-dashboard-user-guide.md)
++ [TVE仪表板用户指南](tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)
 + 新TVE仪表板用户指南{#user-guide}
-   + [TVE仪表板概述](/help/authentication/tve-dashboard-overview.md)
-   + [环境](/help/authentication/tve-dashboard-environments.md)
-   + [审核和推送更改](/help/authentication/tve-dashboard-review-push-changes.md)
-   + [仪表板](/help/authentication/tve-dashboard-home.md)
-   + [渠道](/help/authentication/tve-dashboard-channels.md)
-   + [程序员](/help/authentication/tve-dashboard-programmers.md)
-   + [MVPDs](/help/authentication/tve-dashboard-mvpds.md)
-   + [集成](/help/authentication/tve-dashboard-integrations.md)
-   + [报告](/help/authentication/tve-dashboard-reports.md)
-   + [更改日志](/help/authentication/tve-dashboard-changes-log.md)
+   + [TVE仪表板概述](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)
+   + [环境](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-environments.md)
+   + [审核和推送更改](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-review-push-changes.md)
+   + [仪表板](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-home.md)
+   + [渠道](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-channels.md)
+   + [程序员](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-programmers.md)
+   + [MVPDs](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-mvpds.md)
+   + [集成](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-integrations.md)
+   + [报告](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-reports.md)
+   + [更改日志](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-changes-log.md)
 + [术语表](glossary.md)
