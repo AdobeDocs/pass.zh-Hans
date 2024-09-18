@@ -1,7 +1,7 @@
 ---
 title: REST API V2 — 指南 — 客户端/服务器实施步骤
 description: REST API V2 — 指南 — 客户端/服务器实施步骤
-source-git-commit: 5ba888b35731ef64b3dd1878f2fa55083989f857
+source-git-commit: 5ba538bdb13d121ba27005df82d4ae604f912241
 workflow-type: tm+mt
 source-wordcount: '698'
 ht-degree: 0%
@@ -26,6 +26,7 @@ ht-degree: 0%
 ## A.登记阶段 {#registration-phase}
 
 ### 步骤1：注册应用程序 {#step-1-register-your-application}
+
 应用程序要能够调用Adobe Pass REST API V2，它需要API安全层所需的访问令牌。
 要获取访问令牌，应用程序需要执行如下所述的步骤：
 [动态客户端注册](./dynamic-client-registration.md)
@@ -33,6 +34,7 @@ ht-degree: 0%
 ## B.认证阶段 {#authentication-phase}
 
 ### 步骤2：检查现有的已验证用户档案 {#step-2-check-for-existing-authenticated-profiles}
+
 流式处理应用程序检查现有的已验证配置文件： <b>/api/v2/{serviceProvider}/配置文件</b><br>
 （[检索已验证的配置文件](./apis/profiles-apis/rest-api-v2-retrieve-authenticated-profiles.md)）
 
@@ -49,6 +51,7 @@ ht-degree: 0%
       * 如果找到配置文件，则流应用程序可能会继续到<a href="#preauthorization-phase">C。预授权阶段</a>或<a href="#authorization-phase">D。授权阶段</a>
 
 ### 步骤3：对用户进行身份验证 {#step-3-authenticate-the-user}
+
 使用浏览器或基于Web的第二个屏幕的应用程序：
 
 * 选项1. 流式应用程序可以打开浏览器或Web视图，加载URL以进行身份验证，并且用户登陆需要提交凭据的MVPD登录页面
@@ -57,6 +60,7 @@ ht-degree: 0%
    * 用户输入登录/密码，最终重定向显示成功页面
 
 ### 步骤4：检查已验证的用户档案 {#step-4-check-for-authenticated-profiles}
+
 流式应用程序检查是否使用MVPD进行身份验证，以便在浏览器或第二个屏幕中完成
 
 * 建议在<b>/api/v2/{serviceProvider}/profiles/{mvpd}</b><br>上每15秒轮询一次
@@ -70,8 +74,10 @@ ht-degree: 0%
 ## C.预先授权阶段 {#preauthorization-phase}
 
 ### 步骤5：检查预授权的资源 {#step-5-check-for-preauthorized-resources}
+
 流式应用程序准备显示可供经过身份验证的用户使用的视频，并且可以检查
 对这些资源的访问权限。
+
 * 步骤是可选的，如果应用程序希望过滤在经过身份验证的用户包中不可用的资源，请执行此步骤
 * 调用<b>/api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}</b><br>
 （[使用特定的MVPD检索预授权决策](.apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)）
@@ -80,6 +86,7 @@ ht-degree: 0%
 ## D.授权阶段 {#authorization-phase}
 
 ### 步骤6：检查授权资源 {#step-6-check-for-authorized-resources}
+
 流应用程序准备播放用户选择的视频/资产/资源。
 
 * 每个播放开始都需要执行步骤
@@ -91,6 +98,7 @@ ht-degree: 0%
 ## E.注销阶段 {#logout-phase}
 
 ### 步骤7：注销 {#step-7-logout}
+
 流设备：用户希望从MVPD注销
 
 * 调用<b>/api/v2/{serviceProvider}/logout/{mvpd}</b><br>
