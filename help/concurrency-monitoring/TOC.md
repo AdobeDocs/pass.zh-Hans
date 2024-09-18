@@ -4,9 +4,9 @@ feature: Concurrency Monitoring
 audience: end-user
 user-guide-title: Adobe Pass 并发监控
 user-guide-description: 了解如何定义并在多个应用程序上施加并发使用限制。
-source-git-commit: 37ad9151d404d58b7d4df2c959f3f8fcaa5c011f
+source-git-commit: 452ac2ebe140497464869f7cf9d579ecaf4018af
 workflow-type: tm+mt
-source-wordcount: '166'
+source-wordcount: '171'
 ht-degree: 9%
 
 ---
@@ -25,6 +25,7 @@ ht-degree: 9%
 + [上报程序](cm-escalation-procedures.md)
 + 并发监视使用情况{#cmu}
    + [并发监控使用情况报表](cm-usage-reports.md)
+   + [并发监控使用情况报表示例](cm-usage-reports-examples.md)
    + [并发监控使用情况API](cmu-api.md)
    + [并发监控使用情况API访问](cmu-api-access.md)
 + 版本1 API{#v1-api}

@@ -2,9 +2,9 @@
 title: 并发监控使用情况报表
 description: 并发监控使用情况报表
 exl-id: 20220436-e748-4b22-8e7c-e074e0bfe242
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: 36da78fd66cfbc86e7bea7575c757fef536c0755
 workflow-type: tm+mt
-source-wordcount: '757'
+source-wordcount: '799'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## 先决条件 {#usage-rep-prerequisites}
 
-要访问并发监控使用报告产品，客户必须首先联系并发监控[支持团队](mailto:tve-support@adobe.com)，他们将执行必要的步骤以允许您访问API产品。
+要访问并发监控使用报告产品，客户必须首先联系并发监控[支持团队](mailto:tve-support@adobe.com)，他们将执行必要的步骤以允许您访问API产品。 有关[CMU API访问](/help/concurrency-monitoring/cmu-api-access.md)的详细信息。
 
 ## 常规报表量度和划分 {#general-rep-metrics-breakdown}
 
@@ -54,12 +54,12 @@ ht-degree: 0%
 ### 使用情况报表用户可以按以下维度筛选上面列出的量度： {#dimensions-2-filter-metrics}
 
 | Dimension名称 | 描述 |
-|:---|:---|
+|:---------------|:------------------------------------------------------------------------------------------------------------------|
 | 年 | 4位数年份 |
 | 月 | 月份(1-12) |
 | 天 | 日期(1-31) |
 | 小时 | 一天中的第几个小时 |
-| 分钟 | 该小时中的第几分钟 |
+| 分钟 | 一小时中的第几分钟[^1] |
 | 应用程序 | 在用于管理会话的并发监视中注册的应用程序名称 |
 | application-id | 在并发监控中注册的用于管理会话的应用程序ID |
 | 渠道 | 在会话初始化期间发送的渠道元数据（如果未发送元数据，则标记为未知） |
@@ -88,3 +88,9 @@ ht-degree: 0%
 | 并发级别 | 表示在会话初始化阶段&#x200B;**为用户批准的任何非重复**&#x200B;流活动，以便能够观察用户打开了多少并发流&#x200B;****，并了解应用特定并发限制的影响 |
 | 活动级别 | 表示用户的任何不同的&#x200B;**流活动（无论其状态如何：已启动、活动、已停止、已拒绝）**，以便能够观察用户尝试打开的并发流数量并了解应用特定并发限制的影响 |
 | mvpd | 会话管理中提供的MVPD |
+
+### 报表示例
+
+为获得最佳数据准确性，我们建议在此页面上显示的报告[CMU报告示例](/help/concurrency-monitoring/cm-usage-reports-examples.md)
+
+[^1]：默认情况下，分钟报表不可用。 请联系并发监控[支持团队](mailto:tve-support@adobe.com)来请求这些请求。

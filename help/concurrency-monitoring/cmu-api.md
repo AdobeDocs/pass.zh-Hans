@@ -2,7 +2,7 @@
 title: API概述
 description: API概述
 exl-id: 3fe6f6d8-5b2f-47e5-a8da-06fb18a5d46b
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: 301825253b21746684df9b6372a239b03305d50e
 workflow-type: tm+mt
 source-wordcount: '2043'
 ht-degree: 0%
@@ -24,7 +24,7 @@ ht-degree: 0%
 >
 >CMU API并非一般可用。 有关可用性问题，请联系您的Adobe代表。
 
-CMU API提供了基础OLAP多维数据集的分层视图。 维度层次结构中的每个资源（[维度](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics)，映射为URL路径区段）生成包含（聚合）当前选择的[个量度](/help/authentication/entitlement-service-monitoring-overview.md#programmers-can-monitor-the-following-metrics)的报表。 每个资源都指向其父资源（用于累计）及其子资源（用于向下钻取）。 切片和切片是通过将维度固定到特定值或范围的查询字符串参数实现的。
+CMU API提供了基础OLAP多维数据集的分层视图。 维度层次结构中的每个资源（[维度](/help/concurrency-monitoring/cm-usage-reports.md#dimensions-2-filter-metrics)，映射为URL路径区段）生成包含（聚合）当前选择的[个量度](/help/concurrency-monitoring/cm-usage-reports.md#monitor-metrics)的报表。 每个资源都指向其父资源（用于累计）及其子资源（用于向下钻取）。 切片和切片是通过将维度固定到特定值或范围的查询字符串参数实现的。
 
 REST API根据维度路径、提供的过滤器和所选的量度，在请求中指定的时间间隔（如果未提供，则回退到默认值）内提供可用数据。 时间范围不适用于不包含时间维度（年、月、日、小时、分钟、秒）的报表。
 
