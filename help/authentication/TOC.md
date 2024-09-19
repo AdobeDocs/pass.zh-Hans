@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
 user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: 94fcb4e8c94330561596cd4006738c4f4d75e371
+source-git-commit: 837276ce85445da5c3877592b194e37adf35fa32
 workflow-type: tm+mt
-source-wordcount: '1159'
+source-wordcount: '1165'
 ht-degree: 2%
 
 ---
@@ -94,6 +94,8 @@ ht-degree: 2%
             + [使用平台身份流进行单点登录](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)
             + [使用服务令牌流进行单点登录](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md)
             + [单个注销流程](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-logout-flow.md)
+      + 指南{#rest-api-v2-cookbooks}
+         + [REST API V2指南（客户端到服务器）](rest-api-v2/cookbooks/rest-api-v2-cookbooks-client-server.md)
       + 附录{#rest-api-v2-appendix}
          + 标头{#rest-api-v2-appendix-headers}
             + [标头 — 授权](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)
