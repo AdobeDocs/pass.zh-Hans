@@ -1,7 +1,7 @@
 ---
 title: REST API V2指南（客户端到服务器）
 description: REST API V2指南（客户端到服务器）
-source-git-commit: 837276ce85445da5c3877592b194e37adf35fa32
+source-git-commit: 709835276710ec4b92abec3e39aaecae99872e77
 workflow-type: tm+mt
 source-wordcount: '689'
 ht-degree: 0%
@@ -29,24 +29,24 @@ ht-degree: 0%
 
 应用程序要能够调用Adobe Pass REST API V2，它需要API安全层所需的访问令牌。
 
-要获取访问令牌，应用程序需要执行如下所述的步骤： [动态客户端注册](./dynamic-client-registration.md)
+要获取访问令牌，应用程序需要执行如下所述的步骤： [动态客户端注册](../../dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md)
 
 ## B.认证阶段 {#authentication-phase}
 
 ### 步骤2：检查现有的已验证用户档案 {#step-2-check-for-existing-authenticated-profiles}
 
 流式应用程序检查现有的已验证配置文件： <b>/api/v2/{serviceProvider}/配置文件</b><br>
-（[检索已验证的配置文件](./apis/profiles-apis/rest-api-v2-retrieve-authenticated-profiles.md)）
+（[检索已验证的配置文件](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)）
 
 * 如果未找到配置文件，则流应用程序将实施TempPass流
    * 按照有关如何实施[临时访问流](../flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)的文档操作
 * 如果未找到配置文件，则流应用程序将实施身份验证流程
    * 流式应用程序检索可用于serviceProvider的MVPD列表： <b>/api/v2/{serviceProvider}/configuration</b><br>
-（[检索可用MVPD的列表](./apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)）
+（[检索可用MVPD的列表](../apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)）
    * 流式应用程序可以对MVPD列表进行过滤，并且只显示预期的MVPD，同时隐藏其他MVPD（TempPass、测试MVPD、正在开发的MVPD等）
    * 流应用程序显示选择器，用户选择MVPD
    * 流式应用程序创建会话： <b>/api/v2/{serviceProvider}/sessions</b><br>
-（[创建身份验证会话](./apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)）<br>
+（[创建身份验证会话](../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)）<br>
       * 返回用于身份验证的代码和URL
       * 如果找到配置文件，则流应用程序可能会继续到<a href="#preauthorization-phase">C。预授权阶段</a>或<a href="#authorization-phase">D。授权阶段</a>
 
@@ -64,9 +64,9 @@ ht-degree: 0%
 流式应用程序检查是否使用MVPD进行身份验证，以便在浏览器或第二个屏幕中完成
 
 * 建议在<b>/api/v2/{serviceProvider}/profiles/{mvpd}</b><br>上每15秒轮询一次
-（[检索特定MVPD的已验证配置文件](.apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)）
+（[检索特定MVPD的已验证配置文件](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)）
    * 如果流应用程序中未选择MVPD，因为第二个屏幕应用程序中存在MVPD选取器，则应该使用代码<b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br>进行轮询
-（[检索特定代码的已验证配置文件](./apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)）
+（[检索特定代码的已验证配置文件](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)）
 * 如果轮询时间达到30分钟，并且流应用程序仍处于活动状态，则需要启动新会话，并且会返回新的代码和URL，则轮询时间不应超过30分钟
 * 身份验证完成后，返回值为200，配置文件已验证
 * 流应用程序可以继续到<a href="#preauthorization-phase">C。预授权阶段</a>或<a href="#authorization-phase">D。授权阶段</a>
@@ -80,7 +80,7 @@ ht-degree: 0%
 
 * 如果应用程序希望过滤在经过身份验证的用户包中不可用的资源，则可以选择执行此步骤
 * 调用<b>/api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}</b><br>
-（[使用特定的MVPD检索预授权决策](.apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)）
+（[使用特定的MVPD检索预授权决策](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)）
 
 ## D.授权阶段 {#authorization-phase}
 
@@ -90,7 +90,7 @@ ht-degree: 0%
 
 * 每个播放开始都需要执行步骤
 * 调用<b>/api/v2/{serviceProvider}/decision/authorize/{mvpd}</b><br>
-（[使用特定MVPD检索授权决策](.apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)）
+（[使用特定MVPD检索授权决策](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)）
    * decision = &#39;允许&#39; ，流设备开始流
    * decision = &#39;Deny&#39;，流设备会通知用户它无权访问该视频
 
@@ -101,5 +101,5 @@ ht-degree: 0%
 流设备：用户希望从MVPD注销
 
 * 调用<b>/api/v2/{serviceProvider}/logout/{mvpd}</b><br>
-（[启动特定MVPD的注销](.apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)）
+（[启动特定MVPD的注销](../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)）
 * 如果存在response actionType=&#39;interactive&#39;和url，请在浏览器/秒屏幕中打开url以完成通过MVPD的注销
