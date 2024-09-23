@@ -1,9 +1,9 @@
 ---
 title: 并发监控使用报告示例
 description: 并发监控使用报告示例
-source-git-commit: 7adfa5c803d27ac63f4fde64cf86edfb6bfca9cd
+source-git-commit: ca9bfb964ad7e7437bbea4704bca4ac5105874f1
 workflow-type: tm+mt
-source-wordcount: '2387'
+source-wordcount: '2374'
 ht-degree: 0%
 
 ---
@@ -67,8 +67,6 @@ ht-degree: 0%
 | 活动级别的每日报告 | &quot;year&quot;、&quot;month&quot;、&quot;day&quot;、&quot;activity-level&quot; | cmu/v2/年/月/日/活动级别 | &quot;activity-level&quot;， &quot;users&quot; |
 | 每个租户的活动级别每日报告 | &quot;year&quot;、&quot;month&quot;、&quot;day&quot;、&quot;activity-level&quot;、&quot;tenant&quot; | cmu/v2/year/month/day/activity-level/tenant | &quot;activity-level&quot;、&quot;tenant&quot;、&quot;users&quot; |
 | 每个租户mvpd的活动级别每日报告 | &quot;year&quot;、&quot;month&quot;、&quot;day&quot;、&quot;activity-level&quot;、&quot;tenant&quot;、&quot;mvpd&quot; | cmu/v2/year/month/day/activity-level/tenant/mvpd | &quot;activity-level&quot;、&quot;tenant&quot;、&quot;mvpd&quot;、&quot;users&quot; |
-
-*TODO：如果并发和活动级别报表正确，请与BG核实*
 
 ## 每小时报表示例 {#hourly-reports-examples}
 
