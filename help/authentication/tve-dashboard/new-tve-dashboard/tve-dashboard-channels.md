@@ -2,9 +2,9 @@
 title: 渠道
 description: 了解TVE仪表板中的渠道及其各种配置。
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: c29af84963b010ef9d2a2d318486aae8fffccecc
 workflow-type: tm+mt
-source-wordcount: '1115'
+source-wordcount: '1556'
 ht-degree: 0%
 
 ---
@@ -211,7 +211,88 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 
 ### 已注册的应用程序 {#registered-applications}
 
-此选项卡显示自定义方案列表。 查看[iOS/tvOS应用程序注册](/help/authentication/iostvos-application-registration.md)。
+此选项卡显示已注册应用程序的列表。 有关已注册应用程序使用的更多详细信息，请参阅[动态客户端注册概述](../../dcr-api/dynamic-client-registration-overview.md)文档。
+
+您可以对已注册的应用程序执行以下操作：
+
+* [添加新注册的应用程序](#add-registered-applications)
+* [下载软件声明](#download-software-statement)
+
+#### 添加新的已注册应用程序 {#add-registered-applications}
+
+按照以下步骤添加新注册的应用程序。
+
+1. 在&#x200B;**已注册的应用程序**&#x200B;部分的右上角选择&#x200B;**添加新应用程序**。
+
+   ![添加新应用程序](../../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-application-button.png)
+
+   *添加新应用程序*
+
+1. 从&#x200B;**新建应用程序**&#x200B;对话框的下拉菜单中选择&#x200B;**平台**。
+
+   >[!IMPORTANT]
+   >
+   > 建议创建具有更具体且更有限权限的已注册应用程序，以增强安全性并防止未经授权的访问。 因此，在创建已注册的应用程序时，请考虑对分配的`platforms`使用更窄的选项。
+
+1. 从下拉菜单中选择&#x200B;**域**。
+
+   >[!IMPORTANT]
+   >
+   > 在客户端注册过程中，客户端应用程序可请求允许使用重定向URL来最终确定身份验证流。 当客户端应用程序使用特定的重定向URL时，将针对在此选择中选择的`domains`验证该URL。
+
+1. 键入应用程序的&#x200B;**名称**。
+
+1. 键入应用程序的&#x200B;**版本**。
+
+   >[!IMPORTANT]
+   >
+   > 建议为客户端应用程序的每次重大更新创建新的注册应用程序，以管理其生命周期和使用情况。 如有必要，请通过我们的[Zendesk](https://adobeprimetime.zendesk.com)创建一个票证，然后要求您的技术客户经理(TAM)撤销已注册的应用程序，以阻止特定客户端应用程序版本的功能。
+
+1. 从下拉菜单中选择&#x200B;**Type**&#x200B;值“直接”。
+
+1. 选择&#x200B;**添加应用程序**。
+
+已创建新的配置更改，可以随时更新服务器。 若要使用&#x200B;**已注册应用程序**&#x200B;部分中列出的新已注册应用程序，请继续[审阅和推送更改](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-review-push-changes.md)流程。
+
+#### Download软件声明 {#download-software-statement}
+
+按照以下步骤下载软件语句。
+
+1. 将鼠标悬停在要从&#x200B;**注册应用程序**&#x200B;列表中下载软件语句的注册应用程序上。
+
+1. 选择&#x200B;**下载**。
+
+   ![下载软件语句](../../assets/tve-dashboard/new-tve-dashboard/channels/channel-download-software-statement-button.png)
+
+   *下载软件语句*
+
+### 自定义架构 {#custom-schemes}
+
+此选项卡显示自定义方案列表。 有关自定义方案使用的更多详细信息，请参阅[iOS/tvOS应用程序注册](/help/authentication/iostvos-application-registration.md)。
+
+您可以对自定义方案进行以下更改：
+
+* [生成新的自定义方案](#generate-custom-schemes)
+
+#### 生成新的自定义方案 {#generate-custom-schemes}
+
+按照以下步骤生成新的自定义方案。
+
+1. 选择&#x200B;**生成新的自定义方案**。
+
+   ![生成新的自定义方案](../../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-custom-scheme-button.png)
+
+   *生成新的自定义方案*
+
+已创建新的配置更改，可以随时更新服务器。 若要使用&#x200B;**自定义方案**&#x200B;部分中列出的新自定义方案，请继续[审核并推送更改](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-review-push-changes.md)流程。
+
+#### 继承的自定义架构 {#inherited-custom-schemes}
+
+媒体公司根据自己的级别定义这些自定义方案。 与同一媒体公司关联的所有渠道都可以使用这些自定义方案。
+
+![继承的自定义方案](../../assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-custom-schemes-panel-view.png)
+
+*继承的自定义方案*
 
 ## 添加新渠道 {#add-new-channel}
 
