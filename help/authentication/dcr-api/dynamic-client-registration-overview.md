@@ -2,9 +2,9 @@
 title: Dynamic Client注册概述
 description: Dynamic Client注册概述
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '840'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -51,11 +51,11 @@ Adobe Pass提供动态客户端注册服务，允许访问以下受保护的API�
 
 ## 动态客户端注册管理 {#dynamic-client-registration-management}
 
-动态客户端注册管理流程允许在特定平台上运行且需要访问特定Adobe Pass身份验证API的客户端应用程序通过[Adobe Pass TVE仪表板](https://console.auth.adobe.com/)进行注册。
+动态客户端注册管理流程允许在特定平台上运行且需要访问特定Adobe Pass身份验证API的客户端应用程序通过[Adobe Pass TVE仪表板](https://experience.adobe.com/#/pass/authentication)进行注册。
 
-Adobe Pass TVE Dashboard是一款用于Adobe Pass身份验证客户（程序员）管理其配置和数据的工具。 此自助仪表板启用了[Adobe Pass TVE仪表板用户指南](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)文档中描述的一系列功能。
+Adobe Pass TVE Dashboard是一款用于Adobe Pass身份验证客户（程序员）管理其配置和数据的工具。 此自助仪表板启用了[Adobe Pass TVE仪表板用户指南](../tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)文档中描述的一系列功能。
 
-如果您有权访问[Adobe Pass TVE仪表板](https://console.auth.adobe.com/)，请按照以下部分中的步骤创建注册的应用程序并下载软件语句。
+如果您有权访问[Adobe Pass TVE仪表板](https://experience.adobe.com/#/pass/authentication)，请按照以下部分中的步骤创建注册的应用程序并下载软件语句。
 
 ### 管理注册的应用程序 {#manage-registered-applications}
 
@@ -67,18 +67,18 @@ Adobe Pass TVE Dashboard是一款用于Adobe Pass身份验证客户（程序员�
 
 * **程序员级别**
 
-  程序员级别的注册过程允许您创建链接到所有可用渠道或所选渠道子集的已注册应用程序。 有关更多详细信息，请参阅[TVE仪表板用户指南](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)文档中的[在程序员级别](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#create-registered-application-programmer-level)创建注册的应用程序。
+  程序员级别的注册过程允许您创建链接到所有可用渠道或所选渠道子集的已注册应用程序。 有关更多详细信息，请参阅[面向程序员的TVE仪表板用户指南](../tve-dashboard/new-tve-dashboard/tve-dashboard-programmers.md)文档。
 
 
 * **渠道级别**
 
-  渠道级别的注册流程允许您创建仅链接到当前选定渠道的已注册应用程序。 有关更多详细信息，请参阅[TVE仪表板用户指南](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)文档中的[在渠道级别](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#create-registered-application-channel-level)创建注册的应用程序部分。
+  渠道级别的注册流程允许您创建仅链接到当前选定渠道的已注册应用程序。 有关更多详细信息，请参阅[TVE仪表板用户指南](../tve-dashboard/new-tve-dashboard/tve-dashboard-channels.md)文档。
 
 >[!IMPORTANT]
 >
 > 建议创建具有更具体且更有限权限的已注册应用程序，以增强安全性并防止未经授权的访问。 因此，在创建已注册的应用程序时，请考虑对分配的`channels`、`platforms`和`scopes`使用更窄的选项。
 >
-> 建议为客户端应用程序的每次重大更新创建新的注册应用程序，以管理其生命周期和使用情况。 如有必要，请通过我们的[Zendesk](https://adobeprimetime.zendesk.com)创建票证，然后要求您的技术客户经理(TAM)撤销已注册的应用程序，以阻止特定客户端应用程序版本的功能。
+> 建议为客户端应用程序的每次重大更新创建新的注册应用程序，以管理其生命周期和使用情况。 如有必要，请通过我们的[Zendesk](https://adobeprimetime.zendesk.com)创建一个票证，然后要求您的技术客户经理(TAM)撤销已注册的应用程序，以阻止特定客户端应用程序版本的功能。
 
 ### 管理软件语句 {#manage-software-statements}
 
@@ -92,11 +92,11 @@ Adobe Pass TVE Dashboard是一款用于Adobe Pass身份验证客户（程序员�
 
 * **程序员级别**
 
-  有关更多详细信息，请参阅[TVE仪表板用户指南](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)文档中的[Download a software statement at programmer level](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#download-software-statement-programmer-level)。
+  有关更多详细信息，请参阅[面向程序员的TVE仪表板用户指南](../tve-dashboard/new-tve-dashboard/tve-dashboard-programmers.md)文档。
 
 * **渠道级别**
 
-  有关更多详细信息，请参阅[TVE仪表板用户指南](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)文档中的[在渠道级别](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#download-software-statement-channel-level)下载软件语句。
+  有关更多详细信息，请参阅[TVE仪表板用户指南](../tve-dashboard/new-tve-dashboard/tve-dashboard-channels.md)文档。
 
 软件语句是一个JSON Web令牌(`JWT`)，其中包含有关客户端应用程序软件作为捆绑包的信息。 向[检索客户端凭据](./apis/dynamic-client-registration-apis-retrieve-client-credentials.md) API显示时，使用JSON Web签名(`JWS`)对软件语句进行数字签名。
 

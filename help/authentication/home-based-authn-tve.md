@@ -2,9 +2,9 @@
 title: 适用于所有地区的电视的基于家庭的身份验证
 description: 适用于所有地区的电视的基于家庭的身份验证
 exl-id: abdc7724-4290-404a-8f93-953662cdc2bc
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '1638'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -115,7 +115,7 @@ SAML身份验证协议的HBA身份验证流的说明
 ## 如何激活HBA {#how-to-activate-hba}
 
 * **OAuth协议：**
-   * 有关启用HBA的信息，请参阅[Adobe Pass TVE仪表板用户指南](/help/authentication/tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)
+   * 有关启用HBA的信息，请参阅[Adobe Pass TVE仪表板用户指南](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)
 * **SAML协议：**基于Home的身份验证已在MVPD端激活。 程序员或Adobe无需执行任何操作。
 有关支持基于家庭身份验证的MVPD的详细信息，请参阅MVPD的[HBA状态](/help/authentication/hba-status-mvpds.md)。
 
@@ -156,5 +156,5 @@ SAML身份验证协议的HBA身份验证流的说明
 * [基于主目录的身份验证信息图](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf?dc=201604260953-2640){target=_blank} — 按Adobe
 * [使用OAuth 2.0协议进行身份验证](/help/authentication/authn-oauth2-protocol.md)
 * [使用SAML MVPD进行身份验证](/help/authentication/authn-usecase.md)
-* [Adobe Pass TVE功能板用户指南](/help/authentication/tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)
+* [Adobe Pass TVE功能板用户指南](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)
 * [hba_status用户元数据](/help/authentication/user-metadata-feature.md#obtaining)

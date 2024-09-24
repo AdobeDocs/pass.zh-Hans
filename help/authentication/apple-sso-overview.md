@@ -2,9 +2,9 @@
 title: Apple SSO概述
 description: Apple SSO概述
 exl-id: 7cf47d01-a35a-4c85-b562-e5ebb6945693
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '1417'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ Apple提供了一个API，允许用户在设备系统级别登录其电视提供
 
 1. 将[视频订阅者单点登录权利](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_video-subscriber-single-sign-on)配置为其Apple开发人员帐户。 请联系Apple为您的Apple团队ID启用[视频订阅者帐户框架](https://developer.apple.com/documentation/videosubscriberaccount)。
 
-1. 通过[Adobe Primetime TVE Dashboard](https://console.auth.adobe.com/)，为每个所需的集成(Channel x MVPD)和所需的平台(iOS / tvOS)启用单点登录（是）。
+1. 通过[Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication)，为每个所需的集成(Channel x MVPD)和所需的平台(iOS / tvOS)启用单点登录（是）。
 
 1. 使用Apple身份验证团队提供的以下两个解决方案之一集成Adobe Pass SSO工作流：
 
@@ -90,7 +90,7 @@ MVPD必须：
 ## 常见问题解答 {#FAQ}
 
 1. 如果Apple SSO工作流出现问题，使用AccessEnabler iOS/tvOS SDK的应用程序能否回退到常规身份验证流程？
-   - 这是可能的，但需要对[Adobe Primetime TVE仪表板](https://console.auth.adobe.com/)执行配置更改。 对于所需的集成(Channel x MVPD)和所需的平台(iOS/tvOS)，必须在&#x200B;*NO*&#x200B;上设置&#x200B;*启用单点登录*。
+   - 这是可能的，但需要对[Adobe Pass TVE仪表板](https://experience.adobe.com/#/pass/authentication)执行配置更改。 对于所需的集成(Channel x MVPD)和所需的平台(iOS/tvOS)，必须在&#x200B;*NO*&#x200B;上设置&#x200B;*启用单点登录*。
    - 如果应用程序使用AccessEnabler iOS/tvOS SDK，则只有在调用[setRequestor](/help/authentication/iostvos-sdk-api-reference.md#setReqV3) API后，它才会确认配置更改。
 1. 当通过其他设备或其他应用程序上的平台SSO登录后，应用程序是否知道发生了身份验证？
    - 此信息将不可用。
@@ -98,13 +98,13 @@ MVPD必须：
    - 此信息作为用户元数据密钥&#x200B;*tokenSource*&#x200B;的一部分提供，在本例中，该密钥应返回字符串值“Apple”。
 1. 如果用户通过使用未与应用程序集成的MVPD登录到iOS/iPadOS上的&#x200B;*`Settings -> TV Provider`*&#x200B;或tvOS上的&#x200B;*`Settings -> Accounts -> TV Provider`*&#x200B;分区，会发生什么情况？
    - 当用户启动应用程序时，将无法通过Apple SSO工作流对用户进行身份验证。 因此，应用程序必须回退到常规身份验证流程，并显示自己的MVPD选取器。
-1. 如果用户通过使用在iOS/tvOS平台的[iOS TVE功能板](https://console.auth.adobe.com/)上的&#x200B;*NO*&#x200B;上设置的&#x200B;*启用单点登录*&#x200B;的MVPD登录到Adobe Primetime/iPadOS上的&#x200B;*`Settings -> TV Provider`*&#x200B;或tvOS上的&#x200B;*`Settings -> Accounts -> TV Provider`*，则会发生什么情况？
+1. 如果用户通过使用在iOS/tvOS平台的[iOS TVE功能板](https://experience.adobe.com/#/pass/authentication)上的&#x200B;*NO*&#x200B;上设置的&#x200B;*启用单点登录*&#x200B;的MVPD登录到Adobe Pass/iPadOS上的&#x200B;*`Settings -> TV Provider`*&#x200B;或tvOS上的&#x200B;*`Settings -> Accounts -> TV Provider`*，则会发生什么情况？
    - 当用户启动应用程序时，将无法通过Apple SSO工作流对用户进行身份验证。 因此，应用程序必须回退到常规身份验证流程，并显示自己的MVPD选取器。
 1. 如果用户具有不受Apple载入（不支持）但存在于Apple选取器中的MVPD，会发生什么情况？
    - 当用户启动应用程序时，用户将仅通过Apple SSO工作流选择MVPD，而不完成身份验证流程。 因此，应用程序必须回退到常规身份验证流程，但可以使用已选择的MVPD。
 1. 如果用户具有Apple未载入（不支持）的MVPD，会发生什么情况？
    - 当用户启动应用程序时，将通过Apple SSO工作流选择“其他电视提供商”选取器选项。 因此，应用程序必须回退到常规身份验证流程，并显示自己的MVPD选取器。
-1. 如果用户的MVPD通过[Adobe Primetime TVE Dashboard](https://console.auth.adobe.com/)介质降级，会发生什么情况？
+1. 如果用户的MVPD通过[Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication)介质降级，会发生什么情况？
    - 当用户启动应用程序时，将通过降级机制而不是通过Apple SSO工作流对用户进行身份验证。
    - 该体验应该对用户来说是无缝的，但如果应用程序使用AccessEnabler iOS/tvOS SDK，则会通过&#x200B;*N010*&#x200B;警告代码通知应用程序。
 1. Apple SSO和非Apple SSO身份验证流程之间的MVPD用户ID是否会更改？

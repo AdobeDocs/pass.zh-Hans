@@ -2,9 +2,9 @@
 title: CMU API访问
 description: CMU API访问
 exl-id: 8d216703-aabc-489e-93fe-d4d105616b1d
-source-git-commit: 52c0ffe75f6ac9fda3da39ff08b0dc4c5d5ca428
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '407'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -27,20 +27,22 @@ ht-degree: 0%
 ## 访问过程步骤 {#access-procedure-steps}
 
 1. 在Adobe Pass DCR服务器中注册了应用程序。 对于此步骤，请联系我们的[支持团队](mailto:tve-support@adobe.com)。
+
 2. 获取软件声明
-   1. 转到TVE仪表板<a href="https://console-preprod.auth.adobe.com/#!/" target="_blank">生产前</a>或<a href="https://console.auth.adobe.com/" target="_blank">生产</a>
+   1. 转到[Adobe Pass TVE仪表板](https://experience.adobe.com/#/pass/authentication)
    2. 选择程序员
-   3. 转到“应用程序”选项卡
+   3. 转到&#x200B;*已注册的应用程序*&#x200B;选项卡
    4. 选择应用程序
-   5. 单击DownLoad Software Statement获取与下面的捕获类似的文件
+   5. 在要获取软件语句的已注册应用程序行上单击下载，并将其另存为本地计算机上的文件
       <figure>
-          <img src="assets/software_statement_1_download.png"
+          <img src="assets/programmer-download-software-statement-button.png"
                alt="下载软件声明">
-       </figure>
+      </figure>
+
       <figure>
           <img src="assets/software_statement_2.png"
                alt="软件语句示例">
-       </figure>
+      </figure>
 
 3. 获取访问令牌
    1. 使用以上获得的软件语句并执行下面的调用以获取客户端凭据。 这样将获得client_id - client_secret对，该对可用于获取访问令牌。

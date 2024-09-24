@@ -2,9 +2,9 @@
 title: iOS/tvOS应用程序注册
 description: iOS/tvOS应用程序注册
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '609'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ ht-degree: 0%
 
 ### 如果您有权访问Adobe的TVE仪表板：
 
-- 打开浏览器并导航到<https://console.auth.adobe.com>
+- 打开浏览器并导航到<https://experience.adobe.com/#/pass/authentication>
 - 导航到`Channels`部分并选择您的渠道。
 - 导航到`Registered Applications`选项卡。
 - 单击`Add new application`。
@@ -55,7 +55,7 @@ ht-degree: 0%
 
 ### 如果您有权访问Adobe的TVE仪表板：
 
-- 打开浏览器并导航到<https://console.auth.adobe.com>
+- 打开浏览器并导航到<https://experience.adobe.com/#/pass/authentication>
 - 导航到`Channels`部分并选择您的渠道。
 - 导航到`Custom Schemes`选项卡。
 - 单击`Generate a new custom scheme`。

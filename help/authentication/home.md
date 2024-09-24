@@ -2,9 +2,9 @@
 title: 欢迎使用Adobe&amp；reg；通过身份验证！
 description: 欢迎使用Adobe&amp；reg；通过身份验证概述
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '331'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -26,8 +26,8 @@ Adobe Pass身份验证是TV Everywhere的权利解决方案，提供了一个模
 ## 常见帮助和常见问题解答 {#help-faqs}
 
 | **特色项目** |
-|-|
-| <ul><li>iOS的[单点登录](/help/authentication/apple-sso-overview.md)</li><li>[促销临时传递](/help/authentication/promotional-temp-pass.md)</li><li>[基于主目录的身份验证(HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[HBA信息图](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Adobe Pass TVE仪表板用户指南](/help/authentication/tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)</li></ul> |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <ul><li>iOS的[单点登录](/help/authentication/apple-sso-overview.md)</li><li>[促销临时传递](/help/authentication/promotional-temp-pass.md)</li><li>[基于主目录的身份验证(HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[HBA信息图](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Adobe Pass TVE仪表板用户指南](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)</li></ul> |
 
 | 程序员&#x200B;**** | MVPD的&#x200B;**** |
 |------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|

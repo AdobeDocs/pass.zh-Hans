@@ -1,13 +1,13 @@
 ---
 title: 检索客户端凭据
 description: 动态客户端注册API — 检索客户端凭据
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: 0b39768b-25b8-47b9-8080-59c56fb829fb
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '431'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
-
 
 # 检索客户端凭据 {#retrieve-client-credentials}
 
@@ -45,7 +45,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">software_statement</td>
       <td>
-            与从<a href="https://console.auth.adobe.com/">Adobe Pass TVE Dashboard</a>创建和下载的注册应用程序关联的软件语句。
+            与从<a href="https://experience.adobe.com/#/pass/authentication">Adobe Pass TVE Dashboard</a>创建和下载的注册应用程序关联的软件语句。
             <br/><br/>
             已注册应用程序的管理在<a href="../dynamic-client-registration-overview.md">Dynamic Client注册概述</a>文档中进行了说明。
       </td>

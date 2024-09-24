@@ -2,9 +2,9 @@
 title: Android应用程序注册
 description: Android应用程序注册
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '586'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 ### 如果您有权访问Adobe的TVE仪表板
 
-1. 打开浏览器并导航到[Adobe Pass TVE仪表板](https://console.auth.adobe.com)。
+1. 打开浏览器并导航到[Adobe Pass TVE仪表板](https://experience.adobe.com/#/pass/authentication)。
 
 1. 导航到&#x200B;**[!UICONTROL Channels]**&#x200B;部分，然后选择您的渠道。
 
