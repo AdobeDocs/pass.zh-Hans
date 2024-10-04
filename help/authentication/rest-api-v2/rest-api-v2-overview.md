@@ -1,14 +1,14 @@
 ---
-title: REST API V2 — 概述
-description: REST API V2 — 概述
-source-git-commit: 94fcb4e8c94330561596cd4006738c4f4d75e371
+title: REST API V2概述
+description: REST API V2概述
+source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
 workflow-type: tm+mt
-source-wordcount: '494'
+source-wordcount: '490'
 ht-degree: 0%
 
 ---
 
-# REST API V2 — 概述 {#rest-api-v2-overview}
+# REST API V2概述 {#rest-api-v2-overview}
 
 >[!IMPORTANT]
 >
@@ -70,7 +70,11 @@ REST API V2允许在不同的设备之间安全地传递身份验证会话。 �
 
 ## 想要了解更多信息？
 
-若要开始，请访问我们的公共文档以访问[流描述](./flows/rest-api-v2-flows-overview.md)和[API引用](./apis/rest-api-v2-apis-overview.md)。
+要开始配置，请访问我们的公共文档：
+
+- [术语表](rest-api-v2-glossary.md)
+- [API](./apis/rest-api-v2-apis-overview.md)
+- [流](./flows/rest-api-v2-flows-overview.md)
 
 我们专门的支持团队还可以帮助您解答任何可能需要的疑问或技术帮助。
 

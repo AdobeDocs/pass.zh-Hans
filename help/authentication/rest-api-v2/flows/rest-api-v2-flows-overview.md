@@ -1,21 +1,21 @@
 ---
-title: REST API V2 — 流 — 概述
-description: REST API V2 — 流 — 概述
+title: REST API V2流概述
+description: REST API V2流概述
 exl-id: 84a9ac0f-c26a-4159-82a8-3a31bb31f529
-source-git-commit: 94fcb4e8c94330561596cd4006738c4f4d75e371
+source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
 workflow-type: tm+mt
-source-wordcount: '167'
+source-wordcount: '170'
 ht-degree: 0%
 
 ---
 
-# REST API V2 — 流 — 概述 {#rest-api-v2-flows-overview}
+# REST API V2流概述 {#rest-api-v2-flows-overview}
 
 >[!IMPORTANT]
 >
 > 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-要开始配置，请访问以下列表中每个条目的公共文档。
+要开始配置，请访问下面列表中您感兴趣的流的公共文档。
 
 ## 基本访问流 {#rest-api-v2-flows-access-basic}
 

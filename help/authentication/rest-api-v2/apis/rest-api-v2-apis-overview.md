@@ -1,21 +1,21 @@
 ---
-title: REST API V2 - API — 概述
-description: REST API V2 - API — 概述
+title: REST API V2 API概述
+description: REST API V2 API概述
 exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
-source-git-commit: 94fcb4e8c94330561596cd4006738c4f4d75e371
+source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
 workflow-type: tm+mt
-source-wordcount: '141'
+source-wordcount: '144'
 ht-degree: 1%
 
 ---
 
-# REST API V2 - API — 概述 {#rest-api-v2-apis-overview}
+# REST API V2 API概述 {#rest-api-v2-apis-overview}
 
 >[!IMPORTANT]
 >
 > 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-要开始配置，请访问以下列表中每个条目的公共文档。
+要开始配置，请访问以下列表中您感兴趣的API的公共文档。
 
 ## 配置 {#rest-api-v2-apis-configuration}
 
@@ -27,7 +27,7 @@ ht-degree: 1%
 * [恢复身份验证会话](sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
 * [检索身份验证会话](sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
 
-## 配置文件 {#rest-api-v2-apis-profiles}
+## 轮廓 {#rest-api-v2-apis-profiles}
 
 * [检索用户档案](profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
 * [检索特定mvpd的配置文件](profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
