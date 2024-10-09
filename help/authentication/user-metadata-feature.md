@@ -2,9 +2,9 @@
 title: 用户元数据功能
 description: 用户元数据功能
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 8c5203aa4a897a5e119a9886afc64a1b1556ee4f
 workflow-type: tm+mt
-source-wordcount: '1644'
+source-wordcount: '1654'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
 - 在身份验证和授权流期间传递到程序员应用程序
 - 值将保存在令牌中
 - 如果不同的MVPD以不同的格式提供数据，则可以规范化值
-- 可以使用程序员的密钥（如邮政编码）对某些参数进行加密
+- 可以使用程序员的密钥（例如，邮政编码）对某些参数进行加密，请参阅[用户元数据证书以进行加密](./user-metadata-certificate.md)以生成加密证书
 - 通过配置更改，可按Adobe提供特定值
 
 ## 获取用户元数据 {#obtaining}
