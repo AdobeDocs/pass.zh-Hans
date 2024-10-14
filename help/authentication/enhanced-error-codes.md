@@ -2,193 +2,369 @@
 title: 增强的错误代码
 description: 增强的错误代码
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 87639ad93d8749ae7b1751cd13a099ccfc2636ac
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
-source-wordcount: '2207'
+source-wordcount: '2593'
 ht-degree: 2%
 
 ---
 
 # 增强的错误代码 {#enhanced-error-codes}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-## 概述 {#overview}
+增强的错误代码表示Adobe Pass身份验证功能，该功能向与集成的客户端应用程序提供其他错误信息：
 
-本文档介绍了API错误代码列表以及返回给应用程序的其他错误信息。
+* Adobe Pass身份验证REST API：
+   * [REST API v1](./rest-api-overview.md)
+   * [REST API v2](./rest-api-v2/apis/rest-api-v2-apis-overview.md)
+* Adobe Pass身份验证SDK预授权API：
+   * [JavaScript SDK （预授权API）](./preauthorize-api-javascript-sdk.md)
+   * [iOS/tvOS SDK （预授权API）](./preauthorize-api-ios-tvos-sdk.md)
+   * [Android SDK （预授权API）](./preauthorize-api-android-sdk.md)
 
-要在程序员应用程序中使用增强型错误代码，需要向支持团队发出请求，以便在更改配置的情况下启用支持团队。
+  _(*) Preauthorize API是唯一支持增强错误代码的Adobe Pass身份验证SDK API。_
 
-## 响应错误处理 {#response-error-handling}
+>[!IMPORTANT]
+>
+> 集成Adobe Pass身份验证REST API v2的应用程序将默认受益于增强错误代码，而无需其他配置。
+>
+> <br/>
+>
+> 集成Adobe Pass身份验证REST API v1或SDK预授权API的应用程序只有在明确启用该功能的情况下才能受益于增强错误代码。
+>
+> <br/>
+>
+> 要明确启用此功能，请通过我们的[Zendesk](https://adobeprimetime.zendesk.com)创建票证，并咨询您的技术客户经理(TAM)以获得帮助。
 
-在大多数情况下，Adobe Pass身份验证API在响应正文中包含其他错误信息，以便提供&#x200B;**有意义的上下文**&#x200B;来说明发生特定错误的原因和/或自动修复问题的可能解决方案。  *但是，在某些涉及身份验证或注销流的特定情况下，Adobe Pass身份验证服务可能会返回HTML响应或空正文 — 有关详细信息，请查看API文档。*
+## 呈现 {#enhanced-error-codes-representation}
 
-虽然某些类型的错误可以自动处理（例如，在网络超时的情况下重试授权请求，或者在会话过期时要求用户重新进行身份验证），但其他类型可能需要配置更改或客户关怀团队交互。 在这种情况下，程序员必须收集并提供完整的错误信息。
+增强的错误代码可以采用`JSON`或`XML`格式表示，具体取决于集成的Adobe Pass身份验证API和使用的“接受”标头值（即`application/json`或`application/xml`）：
 
-Adobe Pass身份验证API返回400-500范围内的HTTP状态代码，以指示故障或错误。 每个HTTP状态代码都具有特定含义：
+| Adobe Pass身份验证API | JSON | XML |
+|-------------------------------|---------|---------|
+| REST API v1 | &amp;amp；检查； | &amp;amp；检查； |
+| REST API v2 | &amp;amp；检查； |         |
+| SDK预授权API | &amp;amp；检查； |         |
 
-- 4xx错误代码暗示错误是由客户端生成的，客户端需要执行额外的操作来修复它（例如，在调用受保护的API或提供任何所需的参数之前获取访问令牌）
+>[!IMPORTANT]
+>
+> Adobe Pass身份验证可以通过两种形式将增强的错误代码传达给客户端应用程序：
+>
+> <br/>
+>
+> * **顶级错误信息**：在这种情况下，***&quot;error&quot;***&#x200B;对象位于顶级，因此响应正文只能包含&#x200B;***&quot;error&quot;***&#x200B;对象。
+> * **项级别错误信息**：在这种情况下，***&quot;error&quot;***&#x200B;对象位于项级别，因此对于在服务时遇到错误的所有项，响应正文可以包含&#x200B;***&quot;error&quot;***&#x200B;对象。
+>
+> <br/>
+>
+> 查看每个集成Adobe Pass身份验证API的公共文档，确定增强的错误代码表示细节。
 
-- 5xx错误代码表示该错误是由服务器生成的，服务器需要执行额外的操作来修复它。
+请参阅以下HTTP响应，其中包含表示为`JSON`或`XML`的增强错误代码示例。
 
-其他错误信息包含在响应正文的“error”字段中。
+>[!BEGINTABS]
 
-<table>
-<thead>
-  <tr>
-    <th>名称</th>
-    <th>类型</th>
-    <th>示例</th>
-    <th>描述</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>错误</td>
-    <td><i>对象</i></td>
-    <td><strong>JSON</strong>
-    <br>
-    <code>{<br>&nbsp;&nbsp;&nbsp;&nbsp;"status" : 403,<br>&nbsp;&nbsp;&nbsp;&nbsp;"code" : "network_connection_failure",<br>&nbsp;&nbsp;&nbsp;&nbsp;"message" : "Unable to contact your TV provider<br>&nbsp;&nbsp;&nbsp;&nbsp;services",<br>&nbsp;&nbsp;&nbsp;&nbsp;"helpUrl" : "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",<br>&nbsp;&nbsp;&nbsp;&nbsp;"trace" : "12f6fef9-d2e0-422b-a9d7-60d799abe353",<br>&nbsp;&nbsp;&nbsp;&nbsp;"action" : "retry"<br>}
-    </code>
-    <p>
-    <p>
-    <strong>XML</strong>
-    <br>
-    <code>&lt;error&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;status&gt;403&lt;/status&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;code&gt;network_connection_failure&lt;/code&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;message&gt;Unable to contact your TV provider services&lt;/message&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;helpUrl&gt;https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html&lt;/helpUrl&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;trace>12f6fef9-d2e0-422b-a9d7-60d799abe353&lt;/trace&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;action>retry&lt;/action&gt;<br>&lt;/error&gt;
-    </code>
-    </td>
-    <td>是指在尝试完成请求时收集的集合或错误对象。</td>
-  </tr>
-</tbody>
-</table>
+>[!TAB REST API v1 — 顶级错误信息(JSON)]
 
-</br>
-
-处理多个项目的Adobe Pass API（预授权API等）可能会指示处理特定项目是否失败，并使用项目级别错误信息处理其他项目是否成功。 在这种情况下，***&quot;error&quot;***&#x200B;对象位于项级别，并且响应正文可能包含多个&#x200B;***&quot;error&quot;***&#x200B;对象 — 请查阅API文档。
-
-</br>
-
-**部分成功且项目级错误的示例**
-
-```json
+```JSON
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+        
 {
-   "resources" : [
-        {
-            "id" : "TestStream1",
-            "authorized" : true
-        },
-        {
-            "id" : "TestStream2",
-            "authorized" : false,
-            "error" : {
- 
-               "status" : 403,
-               "code" : "network_connection_failure",
-               "message" : "Unable to contact your TV provider services",
-               "details" : "",
-               "helpUrl" : "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
-               "trace" : "8bcb17f9-b172-47d2-86d9-3eb146eba85e",
-               "action" : "retry"
-            }
- 
-        }
-    ]
+  "action": "none",
+  "status": 400,
+  "code": "invalid_requestor",
+  "message": "The requestor parameter is missing or invalid.",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+  "trace": "8bcb17f9-b172-47d2-86d9-3eb146eba85e"
 }
 ```
 
-</br>
+>[!TAB REST API v1 — 顶级错误信息(XML)]
 
-每个错误对象都有以下参数：
+```XML
+HTTP/1.1 400 Bad Request
+Content-Type: application/xml
+
+<error>
+  <action>none</action>
+  <status>400</status>
+  <code>invalid_requestor</code>
+  <message>The requestor parameter is missing or invalid.</message>
+  <helpUrl>https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html</helpUrl>
+  <trace>8bcb17f9-b172-47d2-86d9-3eb146eba85e</trace>
+</error>
+```
+
+>[!TAB REST API v1 — 项目级错误信息(JSON)]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "resources": [
+    {
+      "id": "TestStream1",
+      "authorized": true
+    },
+    {
+      "id": "TestStream2",
+      "authorized": false,
+      "error": {
+        "action": "retry",
+        "status": 403,
+        "code": "network_connection_failure",
+        "message": "Unable to contact your TV provider services",
+        "details": "Your subscription package does not include the \"Live\" channel",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+        "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
+      }
+    }
+  ]
+}
+```
+
+>[!TAB REST API v2 — 顶级错误信息(JSON)]
+
+```JSON
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "action": "none",
+  "status": 400,
+  "code": "invalid_parameter_service_provider",
+  "message": "The service provider parameter value is missing or invalid.",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+  "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
+}
+```
+
+>[!TAB REST API v2 — 项目级错误信息(JSON)]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "decisions": [
+    {
+      "resource": "REF30",
+      "serviceProvider": "REF30",
+      "mvpd": "Cablevision",
+      "source": "mvpd",
+      "authorized": true,
+      "token": {
+        "issuedAt": 1697094207324,
+        "notBefore": 1697094207324,
+        "notAfter": 1697094802367,
+        "serializedToken": "PHNpZ25hdHVyZUluZm8..."
+      }
+    },
+    {
+      "resource": "REF40",
+      "serviceProvider": "REF40",
+      "mvpd": "Cablevision",
+      "source": "mvpd",
+      "authorized": false,
+      "error" : {
+        "action": "retry",
+        "status": 403,
+        "code": "network_connection_failure",
+        "message": "Unable to contact your TV provider services",
+        "details": "Your subscription package does not include the \"Live\" channel",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+        "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
+      }
+    }
+  ]
+}
+```
+
+>[!ENDTABS]
+
+增强的错误代码包括以下`JSON`字段或`XML`属性：
 
 | 名称 | 类型 | 示例 | 受限 | 描述 |
-|---|---|----|:---:|---|
-| *状态* | *整数* | *403* | &amp;amp；检查； | RFC 7231中记录的响应HTTP状态代码(<https://tools.ietf.org/html/rfc7231#section-6>) <ul><li>400错误请求</li><li>401未授权</li><li>403禁止访问</li><li>404未找到</li><li>405不允许使用该方法</li><li>409冲突</li><li>410不存在</li><li>412先决条件失败</li><li>429请求过多</li><li>500间隔服务器错误</li><li>503服务不可用</li></ul> |
-| *代码* | *字符串* | *网络连接失败* | &amp;amp；检查； | 标准Adobe Pass身份验证错误代码。 下面包含完整的错误代码列表。 |
-| *消息* | *字符串* | *无法联系您的电视提供商服务* | | 易于用户识别的消息，可向最终用户显示。 |
-| *详细信息* | *字符串* | *您的订阅包不包含“实时”频道* | | 在某些情况下，MVPD授权端点或程序员通过降级规则提供了详细消息。 <p> 请注意，如果未从合作伙伴服务收到自定义消息，则错误字段中可能不存在此字段。 |
-| *helpUrl* | *url* | &quot;`http://`&quot; | | 一个URL，可链接到有关此错误发生原因和可能解决方案的更多信息。 <p>URI表示绝对URL，不应从错误代码推断。 根据错误上下文，可以提供不同的URL。 例如，相同的bad_request错误代码将为身份验证和授权服务生成不同的url。 |
-| *跟踪* | *字符串* | *12f6fef9-d2e0-422b-a9d7-60d799abe353* | | 此响应的唯一标识符，在联系支持人员以识别更复杂场景中的特定问题时，可以使用该标识符。 |
-| *操作* | *字符串* | *重试* | &amp;amp；检查； | 建议采取的补救措施： <ul><li> *无* — 很遗憾，没有预定义操作可修复此问题。 这可能表明对公共API的调用不正确</li><li>*配置* — 需要通过TVE仪表板或联系支持部门更改配置。 </li><li>*application-registration* — 应用程序必须重新注册。 </li><li>*身份验证* — 用户必须验证或重新验证。 </li><li>*授权* — 用户必须获得特定资源的授权。 </li><li>*降级* — 应应用某种形式的降级。 </li><li>*重试* — 重试请求可能会解决此问题</li><li>*在指定时间段后重试* — 在指定时间段后重试请求可能会解决此问题。</li></ul> |
+|-----------|-----------|---------------------------------------------------------------------------------------------------------------------|:----------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *操作* | *字符串* | *重试* | &amp;amp；检查； | Adobe Pass身份验证推荐的操作，该操作可能会修正本文档中定义的情况。 <br/><br/>有关更多详细信息，请参阅[操作](#enhanced-error-codes-action)部分。 |
+| *状态* | *整数* | *403* | &amp;amp；检查； | [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6)文档中定义的HTTP响应状态代码。 <br/><br/>有关更多详细信息，请参阅[状态](#enhanced-error-codes-status)部分。 |
+| *代码* | *字符串* | *网络连接失败* | &amp;amp；检查； | 与本文档中定义的错误关联的Adobe Pass身份验证唯一标识符代码。 <br/><br/>有关更多详细信息，请参阅[代码](#enhanced-error-codes-code)部分。 |
+| *消息* | *字符串* | *无法联系您的电视提供商服务* |            | 在某些情况下，可以向最终用户显示的可读消息。 <br/><br/>有关更多详细信息，请参阅[响应处理](#enhanced-error-codes-response-handling)部分。 |
+| *详细信息* | *字符串* | *您的订阅包不包含“实时”频道* |            | 在某些情况下，服务合作伙伴可以提供的详细消息，<br/><br/>如果服务合作伙伴不提供任何自定义消息，则此字段可能不存在。 |
+| *helpUrl* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html* |            | Adobe Pass身份验证公共文档URL，该URL链接到有关出现此错误的原因和可能解决方案的更多信息。 <br/><br/>此字段包含绝对URL，不应从错误代码推断，根据错误上下文，可以提供不同的URL。 |
+| *跟踪* | *字符串* | *12f6fef9-d2e0-422b-a9d7-60d799abe353* |            | 响应的唯一标识符，在联系Adobe Pass身份验证支持团队以解决特定问题时可以使用该标识符。 |
 
-</br>
+>[!IMPORTANT]
+>
+> **Restricted**&#x200B;列指示相应字段是否包含有限集中的值，而无限制字段可以包含任何数据。
+>
+> <br/>
+>
+> 将来对此文档的更新可以将值添加到有限集，但不会移除或更改现有值。
 
-**注释：**
+### 操作 {#enhanced-error-codes-representation-action}
 
-- ***受限制的***&#x200B;列&#x200B;*指示相应的字段值是否表示有限集*（例如，“*状态*”字段的现有HTTP状态代码）。 此规范的未来更新可能会向受限列表添加值，但不会移除或更改现有值。 无限制字段通常可以包含任何数据，但为确保合理的大小，可能存在限制。
+增强的错误代码包括一个“action”字段，该字段提供了可能纠正此情况的推荐操作。
 
-- 每个Adobe响应将包含一个“Adobe请求ID”，用于标识整个HTTP服务中的客户端请求。 “**trace**”字段补充了这些内容，应一起报告。
+“action”字段的可能值包括：
 
-## HTTP状态代码和错误代码 {#http-status-codes-and-error-codes}
+| 操作 | 描述 | 类别 |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|
+| 无 | 没有预定义的操作可修复此问题，但在某些情况下，这可能指示对API的调用不正确。 | 修复请求上下文。 |
+| 配置 | 客户端应用程序要求进行配置更改，大部分时间都是通过Adobe Pass TVE Dashboard执行的。 | 修复集成配置上下文。 |
+| application-register | 客户端应用程序需要再次注册自身。 | 修复客户端应用程序上下文。 |
+| 身份验证 | 客户端应用程序要求验证或重新验证用户。 | 修复客户端应用程序上下文。 |
+| 授权 | 客户端应用程序要求获取指定资源的授权。 | 修复客户端应用程序上下文。 |
+| 重试 | 客户端应用程序要求重试该请求。 | 修复请求上下文。 |
 
-由于与旧版sdk和应用程序(
-示例*unknown\_application*&#x200B;生成400个错误请求，而&#x200B;*unknown\_software\_statement*&#x200B;生成401个未授权)。 解决这些不一致将在以后的迭代中定向。
+_(*)对于某些错误，多个操作可能是可能的解决方案，但“action”字段指示修复错误的概率最高的操作。_
 
-## 操作和错误代码 {#actions-and-error-codes}
+### 状态 {#enhanced-error-codes-representation-status}
 
-对于大多数错误代码，多个操作可以作为修复手头问题的途径，甚至可能需要多个操作才能自动修复它们。 我们选择指示修复错误概率最高的那一个。 **操作**&#x200B;可以拆分为三个类别：
+增强的错误代码包含一个“状态”字段，该字段指示与错误关联的HTTP状态代码。
 
-1. 尝试修复请求上下文（重试、后重试）的服务器
-1. 尝试修复应用程序中的用户上下文的用户
-（申请注册、认证、授权）
-1. 尝试修复应用程序之间集成上下文的用户
-和身份提供者（配置、降级）
+“status”字段的可能值包括：
 
-对于第一个类别（重试和在此之后重试），仅重试同一请求可能足以解决此问题。 如果API处理多个项目，则应用程序应重复请求并仅包含那些具有“重试”或“在此之后重试”操作的项目。 对于“*在*&#x200B;后重试”操作，“<u>在</u>后重试”标头将指示应用程序在重复请求之前应等待的秒数。
+| 代码 | 原因短语 |
+|------|-----------------------|
+| 400 | 错误请求 |
+| 401 | 未授权 |
+| 403 | 禁止 |
+| 404 | 未找到 |
+| 405 | 不允许使用该方法 |
+| 410 | 不存在 |
+| 412 | 先决条件失败 |
+| 500 | 内部服务器错误 |
 
-对于第2类和第3类，实际操作实施在很大程度上取决于应用程序功能。 例如，“*降级*”可以作为“切换到15分钟临时播放以允许用户播放内容”实施，也可以作为“自动工具应用AUTHN-ALL或AUTHZ-ALL降级，以便与指定的MVPD集成”实施。 类似于“*身份验证*”操作可以在平板电脑上触发被动身份验证（后通道身份验证），并在连接的电视上触发完整的第二屏身份验证流程。 因此，我们的确选择提供包含架构和所有参数的完全成熟的URL。
+当客户端生成错误并且大多数时间这意味着客户端需要额外的操作来修复它时，通常会显示带有4xx“状态”的增强错误代码。
 
-## 错误代码 {#error-codes}
+具有5xx“状态”的增强型错误代码通常在服务器生成错误时出现，大多数情况下，这意味着服务器需要额外的工作来修复错误。
 
-下面的错误表列出了可能的错误代码、相关消息和可能的操作。
+>[!IMPORTANT]
+>
+> 有时，HTTP响应状态代码与增强型错误代码“状态”字段不同，特别是当与将增强型错误代码作为项目级错误信息传达的Adobe Pass身份验证API交互时。
 
-| 操作 | 错误代码 | HTTP状态代码 | 描述 |
-|---|---|---|---|
-| **无** | *authorization_denied_by_mvpd* | 403 | MVPD在请求指定资源的授权时返回了“拒绝”决定。 |
-|  | *authorization_denied_by_parental_controls* | 403 | 由于指定资源的家长控制设置，MVPD返回了“拒绝”决定。 |
-|  | *authorization_denied_by_programmer* | 403 | 程序员应用的降级规则强制当前用户作出“拒绝”决定。 |
-|  | *bad_request* | 400 | API请求无效或格式不正确。 查看API文档以确定请求要求。 |
-|  | *个性化服务不可用* | 503 | 由于个性化服务不可用，请求失败。 |
-|  | *内部错误* | 500 | 由于内部服务器错误，请求失败。 |
-|  | *invalid_client_time* | 400 | 客户端计算机日期/时间/时区设置不正确。 这可能会导致身份验证/授权错误。 |
-|  | *invalid_custom_scheme* | 400 | 无法识别应用程序注册中使用的指定自定义方案。 请检查TVE仪表板配置以了解正确的自定义方案值。 |
-|  | *invalid_domain* | 400 | 请求者正在使用无效域。 特定请求者ID使用的所有域需要按Adobe列入白名单。 |
-|  | *invalid_header* | 400 | 请求失败，因为它包含无效标头。 查看API文档，确定哪些标头对您的请求有效，以及它们的值是否存在任何限制。 |
-|  | *invalid_http_method* | 405 | 不支持与请求关联的HTTP方法。 查看API文档，确定请求支持的HTTP方法。 |
-|  | *invalid_parameter_value* | 400 | 请求失败，因为它包含无效参数或参数值。 查看API文档，确定哪些参数对于您的请求有效，以及它们的值是否存在任何限制。 |
-|  | *invalid_resource_value* | 400 | 由于使用了无效或格式错误的资源，请求失败。 查看API文档，确定必须如何针对请求对复杂资源进行编码，以及它们的值和/或大小是否存在任何限制。 |
-|  | *invalid_registration_code* | 404 | 指定的注册码不再有效或已过期。 |
-|  | *无效的service_configuration* | 500 | 由于服务配置不正确，请求失败。 |
-|  | *missing_authentication_header* | 400 | 请求失败，因为它不包含特定API所需的身份验证标头。 |
-|  | *missing_resource_mapping* | 400 | 指定的资源没有相应的映射。 联系支持人员以修复所需的映射。 |
-|  | *preauthorization_denied_by_mvpd* | 403 | MVPD在请求指定资源的预授权时返回了“拒绝”决定。 |
-|  | *preauthorization_denied_by_programmer* | 403 | 程序员应用的降级规则可为当前用户强制执行“拒绝”决定。 |
-|  | *registration_code_service_available* | 503 | 请求失败，因为注册码服务不可用。 |
-|  | *service_unavailable* | 503 | 由于身份验证或授权服务不可用，请求失败。 |
-|  | *access_token_unavailable* | 400 | 由于检索访问令牌时出现意外错误，请求失败。 请检查TVE仪表板配置，了解可用的软件语句和注册的自定义方案。 |
-|  | *不支持的client_version* | 400 | 此版本的Adobe Pass Authentication SDK太旧，不再受支持。 请查看API文档，了解升级到最新版本所需的步骤。 |
-| **配置** | *network_required_ssl* | 403 | 目标合作伙伴服务存在SSL连接问题。 请联系支持团队。 |
-|  | *太多资源* | 403 | 授权或预授权请求失败，因为查询的资源过多。 请联系支持团队以正确配置授权和预授权限制。 |
-|  | *未知的程序员* | 400 | 无法识别程序员或服务提供商。 使用TVE仪表板注册指定的程序员。 |
-|  | *未知应用程序* | 400 | 无法识别应用程序。 使用TVE仪表板注册指定的应用程序。 |
-|  | *未知集成* | 400 | 指定的程序员和标识提供程序之间的集成不存在。 使用TVE功能板创建所需的集成。 |
-|  | *unknown_software_statement* | 401 | 无法识别与访问令牌关联的软件语句。 请与支持团队联系，以澄清软件声明的状态。 |
-| **应用程序注册** | *access_token_expired* | 401 | 访问令牌已过期。 应用程序应刷新API文档中所述的访问令牌。 |
-|  | *invalid_access_token_signature* | 401 | 访问令牌签名不再有效。 应用程序应刷新API文档中所述的访问令牌。 |
-|  | *invalid_client_id* | 401 | 无法识别关联的客户端标识符。 应用程序应遵循API文档中所述的应用程序注册流程。 |
-| **身份验证** | *authentication_session_expired* | 410 | 当前的身份验证会话已过期。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
-|  | *authentication_session_missing* | 401 | 无法检索与此请求关联的身份验证会话。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
-|  | *authentication_session_invalidated* | 401 | 身份验证会话被身份提供程序失效。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
-|  | *authentication_session_issuer_mismatch* | 400 | 由于为授权流指定的MVPD与发出身份验证会话的MVPD不同，授权请求失败。 用户必须使用所需的MVPD重新进行身份验证才能继续。 |
-|  | *authorization_denied_by_hba_policies* | 403 | 由于基于主的身份验证策略，MVPD已返回“拒绝”决策。 当前身份验证是使用基于主目录的身份验证流程(HBA)获得的，但在请求指定资源的授权时，设备不再位于主目录。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
-|  | *identity_not_recovered_by_mvpd* | 403 | 由于MVPD无法识别用户身份，授权请求失败。 |
-| **授权** | *authorization_expired* | 410 | 指定资源的先前授权已过期。 用户必须获得新授权才能继续。 |
-|  | *authorization_not_found* | 404 | 未找到指定资源的授权。 用户必须获得新授权才能继续。 |
-|  | *device_identifier_mismatch* | 403 | 指定的设备标识符与授权设备标识不匹配。 用户必须获得新授权才能继续。 |
-| **重试** | *网络连接失败* | 403 | 与关联的合作伙伴服务连接失败。 重试请求可能会解决此问题。 |
-|  | *network_connection_timeout* | 403 | 与关联的合作伙伴服务的连接超时。 重试请求可能会解决此问题。 |
-|  | *network_received_error* | 403 | 从关联的合作伙伴服务检索响应时出现读取错误。 重试请求可能会解决此问题。 |
-|  | *maximum_execution_time_exceeded* | 403 | 请求未在允许的最长时间内完成。 重试请求可能会解决此问题。 |
-| **在**&#x200B;后重试 | *太多请求* | 429 | 在给定时间间隔内发送的请求过多。 应用程序可以在建议的时间段后重试请求。 |
-|  | *user_rate_limit_exceeded* | 429 | 特定用户在指定时间间隔内发出的请求过多。 应用程序可以在建议的时间段后重试请求。 |
+### 代码 {#enhanced-error-codes-representation-code}
+
+增强的“错误代码”包含一个“代码”字段，该字段提供与错误关联的Adobe Pass身份验证唯一标识符。
+
+基于集成的Adobe Pass身份验证API，“代码”字段的可能值汇总在两个列表中[低于](#enhanced-error-codes-list)。
+
+## 列表 {#enhanced-error-codes-lists}
+
+### REST API v1 {#enhanced-error-codes-lists-rest-api-v1}
+
+下表列出了客户端应用程序在与Adobe Pass身份验证REST API v1集成时可能遇到的增强错误代码。
+
+| 操作 | 代码 | 状态 | 消息 |
+|--------------------|---------------------------------------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **无** | *invalid_requestor* | 400 | 请求者参数缺失或无效。 |
+|                    | *invalid_device_info* | 400 | 设备信息缺失或无效。 |
+|                    | *invalid_device_id* | 400 | 设备标识符缺失或无效。 |
+|                    | *missing_resource* | 400， 412 | 缺少资源参数。 |
+|                    | *格式错误的authz_request* | 400， 412 | 授权请求为null或无效。 |
+|                    | *preauthorization_denied_by_mvpd* | 403 | MVPD在请求指定资源的预授权时返回了“拒绝”决定。 |
+|                    | *authorization_denied_by_mvpd* | 403 | MVPD在请求指定资源的授权时返回了“拒绝”决定。 |
+|                    | *authorization_denied_by_parental_controls* | 403 | 由于指定资源的家长控制设置，MVPD返回了“拒绝”决定。 |
+|                    | *内部错误* | 400， 405， 500 | 由于内部服务器错误，请求失败。 |
+| **配置** | *未知集成* | 400， 412 | 指定的程序员和标识提供程序之间的集成不存在。 使用TVE功能板创建所需的集成。 |
+|                    | *太多资源* | 403 | 授权或预授权请求失败，因为查询的资源过多。 请联系支持团队以正确配置授权和预授权限制。 |
+| **身份验证** | *authentication_session_issuer_mismatch* | 400 | 由于为授权流指定的MVPD与发出身份验证会话的MVPD不同，授权请求失败。 用户必须使用所需的MVPD重新进行身份验证才能继续。 |
+|                    | *authorization_denied_by_hba_policies* | 403 | 由于基于主的身份验证策略，MVPD已返回“拒绝”决策。 当前身份验证是使用基于主目录的身份验证流程(HBA)获得的，但在请求指定资源的授权时，设备不再位于主目录。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
+|                    | *authorization_denied_by_session_invalidated* | 403 | 身份验证会话被身份提供程序失效。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
+|                    | *identity_not_recovered_by_mvpd* | 403 | 由于MVPD无法识别用户身份，授权请求失败。 |
+|                    | *authentication_session_invalidated* | 403 | 身份验证会话被身份提供程序失效。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
+|                    | *authentication_session_missing* | 403， 412 | 无法检索与此请求关联的身份验证会话。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
+|                    | *authentication_session_expired* | 403， 412 | 当前的身份验证会话已过期。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
+|                    | *preauthorization_authentication_session_missing* | 412 | 无法检索与此请求关联的身份验证会话。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
+|                    | *preauthorization_authentication_session_expired* | 412 | 当前的身份验证会话已过期。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
+| **授权** | *authorization_not_found* | 403， 404 | 未找到指定资源的授权。 用户必须获得新授权才能继续。 |
+|                    | *authorization_expired* | 410 | 指定资源的先前授权已过期。 用户必须获得新授权才能继续。 |
+| **重试** | *network_received_error* | 403 | 从关联的合作伙伴服务检索响应时出现读取错误。 重试请求可能会解决此问题。 |
+|                    | *network_connection_timeout* | 403 | 与关联的合作伙伴服务的连接超时。 重试请求可能会解决此问题。 |
+|                    | *maximum_execution_time_exceeded* | 403 | 请求未在允许的最长时间内完成。 重试请求可能会解决此问题。 |
+
+### SDK预授权API {#enhanced-error-codes-lists-sdks-preauthorize-api}
+
+有关客户端应用程序在与Adobe Pass Authentication SDK预授权API集成时可能遇到的增强错误代码，请参阅上一个[部分](#enhanced-error-codes-list-rest-api-v1)。
+
+### REST API v2 {#enhanced-error-codes-lists-rest-api-v2}
+
+下表列出了客户端应用程序在与Adobe Pass身份验证REST API v2集成时可能遇到的增强错误代码。
+
+| 操作 | 代码 | 状态 | 消息 |
+|------------------------------|--------------------------------------------------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **无** | *invalid_parameter_service_provider* | 400 | 服务提供商参数值缺失或无效。 |
+|                              | *invalid_parameter_mvpd* | 400 | mvpd参数值缺失或无效。 |
+|                              | *invalid_parameter_code* | 400 | 代码参数值缺失或无效。 |
+|                              | *invalid_parameter_resources* | 400 | 重定向URL参数值缺失或无效。 |
+|                              | *invalid_parameter_redirect_url* | 400 | 资源参数值缺失或无效。 |
+|                              | *invalid_parameter_partner* | 400 | 缺少伙伴参数值或伙伴参数值无效。 |
+|                              | *invalid_parameter_saml_response* | 400 | SAML响应参数值缺失或无效。 |
+|                              | *invalid_header_device_info* | 400 | 设备信息标头值缺失或无效。 |
+|                              | *invalid_header_device_identifier* | 400 | 设备标识符标头值缺失或无效。 |
+|                              | *invalid_header_identity_for_temporary_access* | 400 | 临时访问标头值的标识缺失或无效。 |
+|                              | *invalid_header_pfs_permission_access_not_present* | 400 | 合作伙伴框架状态标头中的权限访问状态值不存在。 |
+|                              | *invalid_header_pfs_permission_access_not_determined* | 400 | 合作伙伴框架状态标头中的权限访问状态值不确定。 |
+|                              | *invalid_header_pfs_permission_access_not_granted* | 400 | 未授予来自合作伙伴框架状态标头的权限访问状态值。 |
+|                              | *invalid_header_pfs_provider_id_not_determined* | 400 | 合作伙伴框架状态标头中的提供程序ID值未与已知的mvpd关联。 |
+|                              | *invalid_header_pfs_provider_id_mismatch* | 400 | 合作伙伴框架状态标头中的提供程序ID值与作为参数发送的mvpd不匹配。 |
+|                              | *无效集成* | 400 | 指定的服务提供程序与mvpd之间的集成不存在或已禁用。 |
+|                              | *invalid_authentication_session* | 400 | 与此请求关联的身份验证会话缺失或无效。 |
+|                              | *preauthorization_denied_by_mvpd* | 403 | MVPD在请求指定资源的预授权时返回了“拒绝”决定。 |
+|                              | *authorization_denied_by_mvpd* | 403 | MVPD在请求指定资源的授权时返回了“拒绝”决定。 |
+|                              | *authorization_denied_by_parental_controls* | 403 | 由于指定资源的家长控制设置，MVPD返回了“拒绝”决定。 |
+|                              | *authorization_denied_by_degradation_rule* | 403 | 指定的服务提供商与mvpd之间的集成应用了拒绝授权所请求的资源的降级规则。 |
+|                              | *内部服务器错误* | 500 | 由于内部服务器错误，请求失败。 |
+| **配置** | *太多资源* | 403 | 授权或预授权请求失败，因为查询的资源过多。 请联系支持团队以正确配置授权和预授权限制。 |
+|                              | *invalid_configuration_user_metadata_certificate* | 500 | 用户元数据证书配置缺失或无效。 |
+|                              | *invalid_configuration_temporary_access* | 500 | 临时访问配置无效。 |
+|                              | *invalid_configuration_platform* | 500 | 集成缺少平台配置或平台配置无效。 |
+|                              | *invalid_configuration_platform_id* | 500 | 平台ID配置缺失或无效。 |
+|                              | *invalid_configuration_platform_trait* | 500 | 平台特征配置缺失或无效。 |
+|                              | *invalid_configuration_platform_category_trait* | 500 | 平台类别特征配置缺失或无效。 |
+|                              | *invalid_configuration_platform_services* | 500 | 缺少平台服务配置或集成无效。 |
+|                              | *invalid_configuration_mvpd_platform* | 500 | mvpd平台配置缺失或对于mvpd和平台无效。 |
+|                              | *invalid_configuration_mvpd_platform_boarding_status* | 500 | mvpd平台载入状态配置缺失或对于mvpd和平台无效。 |
+|                              | *invalid_configuration_mvpd_platform_profile_exchange* | 500 | mvpd平台配置文件交换配置缺失或对于mvpd和平台无效。 |
+| **应用程序注册** | *invalid_access_token_service_provider* | 401 | 由于服务提供商无效，访问令牌无效。 |
+|                              | *invalid_access_token_client_application* | 401 | 由于客户端应用程序无效，访问令牌无效。 |
+| **身份验证** | *authenticated_profile_missing* | 403 | 缺少与此请求关联的已验证配置文件。 |
+|                              | *authenticated_profile_expires* | 403 | 与此请求关联的已验证配置文件已过期。 |
+|                              | *authenticated_profile_invalid* | 403 | 与此请求关联的已验证配置文件已失效。 |
+|                              | *temporary_access_duration_limit_exceeded* | 403 | 已超过临时访问持续时间限制。 |
+|                              | *temporary_access_resources_limit_exceeded* | 403 | 已超出临时访问资源限制。 |
+|                              | *authorization_denied_by_hba_policies* | 403 | 由于基于主的身份验证策略，MVPD已返回“拒绝”决策。 当前身份验证是通过基于家乡的身份验证流程获得的，但在请求指定资源的授权时，设备不再位于家乡中。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
+|                              | *authorization_denied_by_session_invalidated* | 403 | 身份验证会话被身份提供程序失效。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
+|                              | *identity_not_recovered_by_mvpd* | 403 | 由于MVPD无法识别用户身份，授权请求失败。 |
+| **重试** | *network_received_error* | 403 | 从关联的合作伙伴服务检索响应时出现读取错误。 重试请求可能会解决此问题。 |
+|                              | *network_connection_timeout* | 403 | 与关联的合作伙伴服务的连接超时。 重试请求可能会解决此问题。 |
+|                              | *maximum_execution_time_exceeded* | 403 | 请求未在允许的最长时间内完成。 重试请求可能会解决此问题。 |
+
+## 响应处理 {#enhanced-error-codes-response-handling}
+
+>[!IMPORTANT]
+>
+> 增强型错误代码可以在客户端应用程序代码中自动处理，例如，在网络超时的情况下重试授权请求，或者在会话过期时要求用户重新进行身份验证，但其他类型可能需要配置更改或Adobe Pass身份验证客户关怀团队交互。
+>
+> <br/>
+>
+> 因此，在通过我们的[Zendesk](https://adobeprimetime.zendesk.com)创建票证时，务必收集并提供完整的错误信息，以确保在启动新应用程序或新功能之前进行必要的更改。
+
+总之，在处理包含增强型错误代码的响应时，应考虑以下事项：
+
+1. **检查两个状态值**：始终检查HTTP响应状态代码和增强型错误代码“状态”字段。 它们可能有所不同，并且都提供了宝贵的信息。
+
+1. **与顶级和项级错误信息无关**：处理与传递方式无关的顶级和项级错误信息，确保可以处理两种形式的传输增强型错误代码。
+
+1. **重试逻辑**：对于需要重试的错误，请确保通过指数回退完成重试，以避免使服务器不堪重负。 此外，如果是Adobe Pass身份验证API同时处理多个项目（例如，预授权API），您应在重复请求中仅包含标记为“重试”的项目，而不包含整个列表。
+
+1. **配置更改**：对于需要配置更改的错误，请确保在启动新应用程序或新功能之前进行必要的更改。
+
+1. **身份验证和授权**：对于与身份验证和授权相关的错误，必须提示用户根据需要重新身份验证或获取新授权。
+
+1. **用户反馈**：可选，使用人类可读的“消息”和（可能的）“详细信息”字段通知用户该问题。 “详细信息”文本消息可能会从MVPD预授权或授权端点传递，或在应用降级规则时从程序员传递。

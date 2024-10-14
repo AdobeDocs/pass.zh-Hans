@@ -1,13 +1,13 @@
 ---
 title: 检索特定服务提供商的配置
 description: REST API V2 — 检索特定服务提供商的配置
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
-source-wordcount: '523'
+source-wordcount: '525'
 ht-degree: 2%
 
 ---
-
 
 # 检索特定服务提供商的配置 {#retrieve-configuration-for-specific-service-provider}
 
@@ -270,8 +270,8 @@ ht-degree: 2%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">错误</td>
-      <td>该错误提供了附加信息，这些信息将遵守<a href="../../../enhanced-error-codes.md">增强型错误代码</a>文档。</td>
+      <td style="background-color: #DEEBFF;"></td>
+      <td>响应正文可能提供附加的错误信息，这些信息将遵循<a href="../../../enhanced-error-codes.md">增强型错误代码</a>文档。</td>
       <td><i>必填</i></td>
    </tr>
 </table>

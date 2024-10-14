@@ -4,7 +4,7 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
 user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: 8c5203aa4a897a5e119a9886afc64a1b1556ee4f
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
 source-wordcount: '1174'
 ht-degree: 2%
@@ -113,8 +113,8 @@ ht-degree: 2%
          + [JavaScript SDK API参考](javascript-sdk-api-reference.md)
          + 准则{#js-sdk-guidelines}
             + [无刷新登录和注销](refreshless-login-and-logout.md)
-         + JavaScript API {#js-api}
-            + [预授权](js-preauthorize.md)
+         + JavaScript API {#javascript-sdk-api}
+            + [预授权](preauthorize-api-javascript-sdk.md)
       + iOS/tvOS SDK {#ios-sdk}
          + [iOS/tvOS SDK概述](iostvos-sdk-overview.md)
          + [iOS/tvOS SDK指南](iostvos-sdk-cookbook.md)
@@ -124,8 +124,8 @@ ht-degree: 2%
             + 迁移准则{#migration-guidelines}
                + [iOS/tvOS v3.x迁移指南](iostvos-v3x-migration-guide.md)
             + [iOS/tvOS存储完整性检查](iostvos-sdk-storage-integrity-checks.md)
-         + iOS/tvOS API {#ios-tvos-api}
-            + [预授权](preauthorize.md)
+         + iOS/tvOS API {#ios-tvos-sdk-api}
+            + [预授权](preauthorize-api-ios-tvos-sdk.md)
       + Android SDK {#androidsdk}
          + [Android SDK概述](android-sdk-overview.md)
          + [Android SDK指南](android-sdk-cookbook.md)
@@ -133,8 +133,8 @@ ht-degree: 2%
          + 准则{#androidguidelines}
             + [Android应用程序注册](android-application-registration.md)
             + [带有动态客户端注册功能的Android SDK](android-sdk-with-dynamic-client-registration.md)
-         + Android API{#androidapi}
-            + [预授权](preauthorize-android.md)
+         + Android API{#android-sdk-api}
+            + [预授权](preauthorize-api-android-sdk.md)
       + Amazon FireOS SDK {#fireossdk}
          + [Amazon FireOS SSO — 程序员启动指南](amazon-firetv-sso-programmer-kickoff-guide.md)
          + [使用无客户端API指南的Amazon FireOS SSO](amazon-fireos-sso-using-clientless-api-cookbook.md)
