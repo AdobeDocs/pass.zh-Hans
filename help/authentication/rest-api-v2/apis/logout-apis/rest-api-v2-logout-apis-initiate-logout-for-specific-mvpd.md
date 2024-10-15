@@ -2,9 +2,9 @@
 title: 启动特定mvpd的注销
 description: REST API V2 — 启动特定mvpd的注销
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
+source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
 workflow-type: tm+mt
-source-wordcount: '915'
+source-wordcount: '941'
 ht-degree: 1%
 
 ---
@@ -311,34 +311,35 @@ ht-degree: 1%
 
 ## 示例 {#samples}
 
-### 1.启动支持注销流的mvpd的基本注销
+### 1.为具有注销终结点的特定mvpd启动注销
 
 >[!BEGINTABS]
 
 >[!TAB 请求]
 
-```JSON
-GET /api/v2/logout/REF30/Cablevision?redirectUrl=https%3A%2F%2Fadobe.com
- 
-Authorization: Bearer: ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01....
-X-Device-Info: .....
-Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)  
+```HTTPS
+GET /api/v2/REF30/logout/Cablevision?redirectUrl=https%3A%2F%2Fadobe.com HTTP/1.1
+
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+    X-Device-Info: ewoJInByaW1hcnlIYXJkd2FyZVR5cGUiOiAiU2V0VG9wQm94IiwKCSJtb2RlbCI6ICJUViA1dGggR2VuIiwKCSJtYW51ZmFjdHVyZXIiOiAiQXBwbGUiLAoJIm9zTmFtZSI6ICJ0dk9TIgoJIm9zVmVuZG9yIjogIkFwcGxlIiwKCSJvc1ZlcnNpb24iOiAiMTEuMCIKfQ==
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)  
 ```
 
 >[!TAB 响应]
 
-```JSON
+```HTTPS
 HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8
- 
+
+Content-Type: application/json;charset=UTF-8
+
 {
-    "logouts" : {
-        "Cablevision" : {
-            "actionName" : "logout",
-            "actionType" : "interactive",
-            "mvpd" : "Cablevision",
+    "logouts": {
+        "Cablevision": {
+            "actionName": "logout",
+            "actionType": "interactive",
+            "mvpd": "Cablevision",
             "url": "https://sp.auth.adobe.com/adobe-services/logout?noflash=true&mso_id=Cablevision&requestor_id=REF30&redirect_url=http%3A%2F%2Fadobe.com"
         }
     }
@@ -347,34 +348,35 @@ Content-Type: application/json; charset=utf-8
 
 >[!ENDTABS]
 
-### 2.启动不支持注销流的mvpd的基本注销
+### 2.启动特定mvpd的注销，但不注销端点
 
 >[!BEGINTABS]
 
 >[!TAB 请求]
 
-```JSON
-GET /api/v2/logout/REF30/Dish?redirectUrl=https%3A%2F%2Fadobe.com
- 
-Authorization: Bearer: ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01....
-X-Device-Info: .....
-Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
+```HTTPS
+GET /api/v2/REF30/logout/Dish?redirectUrl=https%3A%2F%2Fadobe.com HTTP/1.1
+
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+    X-Device-Info: ewoJInByaW1hcnlIYXJkd2FyZVR5cGUiOiAiU2V0VG9wQm94IiwKCSJtb2RlbCI6ICJUViA1dGggR2VuIiwKCSJtYW51ZmFjdHVyZXIiOiAiQXBwbGUiLAoJIm9zTmFtZSI6ICJ0dk9TIgoJIm9zVmVuZG9yIjogIkFwcGxlIiwKCSJvc1ZlcnNpb24iOiAiMTEuMCIKfQ==
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
 ```
 
 >[!TAB 响应]
 
-```JSON
+```HTTPS
 HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8
- 
+
+Content-Type: application/json;charset=UTF-8
+
 {
-    "logouts" : {
-        "Dish" : {
-            "actionName" : "complete",
-            "actionType" : "none",
-            "mvpd" : "Dish"
+    "logouts": {
+        "Dish": {
+            "actionName": "complete",
+            "actionType": "none",
+            "mvpd": "Dish"
        }
     }
 }
@@ -382,66 +384,38 @@ Content-Type: application/json; charset=utf-8
 
 >[!ENDTABS]
 
-### 3.启动注销，包括使用Platform Identity方法通过单点登录获得的已验证用户档案
+### 3.启动特定mvpd的单一注销，包括使用服务令牌方法通过单一登录获得的配置文件
+
+>[!IMPORTANT]
+>
+> 假设
+>
+> <br/>
+>
+> * MVPD具有注销端点。
 
 >[!BEGINTABS]
 
 >[!TAB 请求]
 
-```JSON
-GET /api/v2/logout/REF30/Comcast_SSO?redirectUrl=https%3A%2F%2Fadobe.com
- 
-Authorization: Bearer: ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01....
-X-Device-Info .....
-Adobe-Subject-Token: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJObUZtWmpjek5XVXROVFJoWWkwME5ERmlMV0V6Wm .....
-Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
+```HTTPS
+GET /api/v2/REF30/logout/Spectrum?redirectUrl=https%3A%2F%2Fadobe.com HTTP/1.1
+
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+    X-Device-Info: ewoJInByaW1hcnlIYXJkd2FyZVR5cGUiOiAiU2V0VG9wQm94IiwKCSJtb2RlbCI6ICJUViA1dGggR2VuIiwKCSJtYW51ZmFjdHVyZXIiOiAiQXBwbGUiLAoJIm9zTmFtZSI6ICJ0dk9TIgoJIm9zVmVuZG9yIjogIkFwcGxlIiwKCSJvc1ZlcnNpb24iOiAiMTEuMCIKfQ==
+    AD-Service-Token: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJZemsxTXpNMk4yWXRZMk0wTWkwME1X .....
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
 ```
 
 >[!TAB 响应]
 
-```JSON
+```HTTPS
 HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8
- 
-{
-   "logouts": {
-      "Comcast_SSO": {
-         "actionName": "logout",
-         "actionType": "interactive",
-         "mvpd": "Comcast_SSO",
-         "url": "/adobe-services/logout?requestor_id=REF30&mso_id=Comcast_SSO&pt_device_id=c54fa2c80652b10abea58c...."
-      }
-   }
-}
-```
 
->[!ENDTABS]
+Content-Type: application/json;charset=UTF-8
 
-### 4.启动注销，包括使用服务令牌方法通过单点登录获得的已验证用户档案
-
->[!BEGINTABS]
-
->[!TAB 请求]
-
-```JSON
-GET /api/v2/logout/REF30/Spectrum?redirectUrl=https%3A%2F%2Fadobe.com
- 
-Authorization: Bearer: ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01....
-X-Device-Info: .....
-AD-Service-Token: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJZemsxTXpNMk4yWXRZMk0wTWkwME1X .....
-Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
-```
-
->[!TAB 响应]
-
-```JSON
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8  
- 
 {
    "logouts": {
       "Spectrum": {
@@ -456,34 +430,81 @@ Content-Type: application/json; charset=utf-8
 
 >[!ENDTABS]
 
-### 5.开始注销（促销）临时通行证
+### 4.启动特定mvpd的单一注销，包括使用平台标识方法通过单一登录获得的配置文件
+
+>[!IMPORTANT]
+>
+> 假设
+>
+> <br/>
+>
+> * MVPD具有注销端点。
 
 >[!BEGINTABS]
 
 >[!TAB 请求]
 
-```JSON
-GET /api/v2/logout/REF30/TempPass_5mins?redirectUrl=https%3A%2F%2Fadobe.com
- 
-Authorization: Bearer: ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01....
-X-Device-Info .....
-Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
+```HTTPS
+GET /api/v2/REF30/logout/Comcast_SSO?redirectUrl=https%3A%2F%2Fadobe.com HTTP/1.1
+
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+    X-Device-Info: ewoJInByaW1hcnlIYXJkd2FyZVR5cGUiOiAiU2V0VG9wQm94IiwKCSJtb2RlbCI6ICJUViA1dGggR2VuIiwKCSJtYW51ZmFjdHVyZXIiOiAiQXBwbGUiLAoJIm9zTmFtZSI6ICJ0dk9TIgoJIm9zVmVuZG9yIjogIkFwcGxlIiwKCSJvc1ZlcnNpb24iOiAiMTEuMCIKfQ==
+    Adobe-Subject-Token: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJObUZtWmpjek5XVXROVFJoWWkwME5ERmlMV0V6Wm .....
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
 ```
 
 >[!TAB 响应]
 
-```JSON
+```HTTPS
 HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8
- 
+
+Content-Type: application/json;charset=UTF-8
+
 {
-    "logouts" : {
-        "TempPass_5mins" : {
-            "actionName" : "invalid",
-            "actionType" : "none",
-            "mvpd" : "TempPass_5mins"
+   "logouts": {
+      "Comcast_SSO": {
+         "actionName": "logout",
+         "actionType": "interactive",
+         "mvpd": "Comcast_SSO",
+         "url": "/adobe-services/logout?requestor_id=REF30&mso_id=Comcast_SSO&pt_device_id=c54fa2c80652b10abea58c...."
+      }
+   }
+}
+```
+
+>[!ENDTABS]
+
+### 5.在应用降级时启动特定mvpd的注销
+
+>[!BEGINTABS]
+
+>[!TAB 请求]
+
+```HTTPS
+GET /api/v2/REF30/logout/${degradedMvpd}?redirectUrl=https%3A%2F%2Fadobe.com HTTP/1.1
+
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+    X-Device-Info: ewoJInByaW1hcnlIYXJkd2FyZVR5cGUiOiAiU2V0VG9wQm94IiwKCSJtb2RlbCI6ICJUViA1dGggR2VuIiwKCSJtYW51ZmFjdHVyZXIiOiAiQXBwbGUiLAoJIm9zTmFtZSI6ICJ0dk9TIgoJIm9zVmVuZG9yIjogIkFwcGxlIiwKCSJvc1ZlcnNpb24iOiAiMTEuMCIKfQ==
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
+```
+
+>[!TAB 响应]
+
+```HTTPS
+HTTP/1.1 200 OK
+
+Content-Type: application/json;charset=UTF-8
+
+{
+    "logouts": {
+        "ATTOTT": {
+            "actionName": "complete",
+            "actionType": "none",
+            "mvpd": "${degradedMvpd}",
         }
     }
 }
@@ -491,34 +512,35 @@ Content-Type: application/json; charset=utf-8
 
 >[!ENDTABS]
 
-### 6.启动降级的mvpd的注销
+### 6.启动基本或促销TempPass的注销（不需要）
 
 >[!BEGINTABS]
 
 >[!TAB 请求]
 
-```JSON
-GET /api/v2/logout/REF30/ATTOTT?redirectUrl=https%3A%2F%2Fadobe.com
- 
-Authorization: Bearer: ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01....
-X-Device-Info .....
-Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
+```HTTPS
+GET /api/v2/logout/REF30/TempPass_5mins?redirectUrl=https%3A%2F%2Fadobe.com HTTP/1.1
+
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+    X-Device-Info: ewoJInByaW1hcnlIYXJkd2FyZVR5cGUiOiAiU2V0VG9wQm94IiwKCSJtb2RlbCI6ICJUViA1dGggR2VuIiwKCSJtYW51ZmFjdHVyZXIiOiAiQXBwbGUiLAoJIm9zTmFtZSI6ICJ0dk9TIgoJIm9zVmVuZG9yIjogIkFwcGxlIiwKCSJvc1ZlcnNpb24iOiAiMTEuMCIKfQ==
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
 ```
 
 >[!TAB 响应]
 
-```JSON
+```HTTPS
 HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8
- 
+
+Content-Type: application/json;charset=UTF-8
+
 {
-    "logouts" : {
-        "ATTOTT" : {
-            "actionName" : "invalid",
-            "actionType" : "none",
-            "mvpd" : "ATTOTT",
+    "logouts": {
+        "TempPass_5mins": {
+            "actionName": "complete",
+            "actionType": "none",
+            "mvpd": "TempPass_5mins"
         }
     }
 }

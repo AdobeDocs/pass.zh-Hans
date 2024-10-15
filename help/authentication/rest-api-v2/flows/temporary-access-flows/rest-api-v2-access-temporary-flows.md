@@ -1,13 +1,13 @@
 ---
 title: 临时访问流
 description: REST API V2 — 临时访问流
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
+source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
 workflow-type: tm+mt
-source-wordcount: '3210'
+source-wordcount: '3215'
 ht-degree: 0%
 
 ---
-
 
 # 临时访问流 {#temporary-access-flows}
 
@@ -369,7 +369,7 @@ TempPass允许程序员提供对其受保护内容的临时访问，而无需要
 > <br/>
 > 
 > * 必须有一个基本或提升TempPass的有效配置设置应用于提供的`serviceProvider`和`mvpd`之间的集成。
-> * 为基本或提升TempPass配置的生存时间(TTL)已过期。
+> * 为基本或促销配置的生存时间(TTL)已超过临时访问持续时间限制。
 
 ### 工作流 {#workflow-retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
 

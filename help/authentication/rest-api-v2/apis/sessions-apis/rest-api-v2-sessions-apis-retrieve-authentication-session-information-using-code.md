@@ -2,9 +2,9 @@
 title: 使用代码检索身份验证会话
 description: REST API V2 — 使用代码检索身份验证会话
 exl-id: 5cc209eb-ee6b-4bb9-9c04-3444408844b7
-source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
+source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
 workflow-type: tm+mt
-source-wordcount: '408'
+source-wordcount: '415'
 ht-degree: 2%
 
 ---
@@ -196,34 +196,67 @@ ht-degree: 2%
 
 ## 示例 {#samples}
 
-### 1.使用代码检索现有身份验证会话的信息
+### 1.检索身份验证会话，但不缺少参数
 
 >[!BEGINTABS]
 
 >[!TAB 请求]
 
-```JSON
-GET /api/v2/sessions/REF30/8BLW4RW
+```HTTPS
+GET /api/v2/sessions/REF30/8BLW4RW HTTP/1.1
  
-Authorization: Bearer ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
-X-Device-Info ....
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
 ```
 
 >[!TAB 响应]
 
-```JSON
+```HTTPS
 HTTP/1.1 200 OK
+
+Content-Type: application/json;charset=UTF-8
+
+{        
+    "parameters": {
+        "existing": {
+            "mvpd": "Cablevision",
+            "domain": "adobe.com"
+            "redirectUrl": "https://www.adobe.com"        
+        }
+}
+```
+
+>[!ENDTABS]
+
+### 1.检索缺少参数的身份验证会话
+
+>[!BEGINTABS]
+
+>[!TAB 请求]
+
+```HTTPS
+GET /api/v2/sessions/REF30/8BLW4RW HTTP/1.1
  
-"parameters" : {
-    "existing" : {           
-         "mvpd" : "Cablevision",
-         "domain" : "adobe.com"
-    },
-    "missing" : ["redirectUrl"]
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
+```
+
+>[!TAB 响应]
+
+```HTTPS
+HTTP/1.1 200 OK
+
+Content-Type: application/json;charset=UTF-8
+
+{        
+    "parameters": {
+        "existing": {
+            "mvpd": "Cablevision",
+            "domain": "adobe.com"
+        },
+        "missing": ["redirectUrl"]
 }
 ```
 

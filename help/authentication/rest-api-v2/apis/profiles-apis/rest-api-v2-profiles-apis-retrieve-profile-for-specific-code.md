@@ -2,10 +2,10 @@
 title: 检索特定代码的配置文件
 description: REST API V2 — 检索特定代码的配置文件
 exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
-source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
+source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
 workflow-type: tm+mt
-source-wordcount: '573'
-ht-degree: 2%
+source-wordcount: '701'
+ht-degree: 1%
 
 ---
 
@@ -74,6 +74,11 @@ ht-degree: 2%
       <td>可选</td>
    </tr>
    <tr>
+      <td style="background-color: #DEEBFF;">AP-TempPass-Identity</td>
+      <td><a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md">AP-TempPass-Identity</a>标头文档中描述了用户唯一标识符有效负载的生成。</td>
+      <td>可选</td>
+   </tr>
+   <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
          客户端应用程序接受的媒体类型。
@@ -118,6 +123,13 @@ ht-degree: 2%
         访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="../../../dcr-api/dynamic-client-registration-overview.md">动态客户端注册概述</a>文档。
       </td>
    </tr>
+   <tr>
+      <td>403</td>
+      <td>禁止</td>
+      <td>
+        临时访问生存时间(TTL)已过期或超出最大资源数，客户端需要指示用户使用常规MVPD启动基本验证流程。 响应正文可能包含遵守<a href="../../../enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。
+      </td>
+   </tr> 
    <tr>
       <td>405</td>
       <td>不允许使用该方法</td>
@@ -251,7 +263,7 @@ ht-degree: 2%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">状态</td>
-      <td>400， 401， 405， 500</td>
+      <td>400， 401， 403， 405， 500</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -273,55 +285,300 @@ ht-degree: 2%
 
 ## 示例 {#samples}
 
-### 1.执行基本身份验证后，在辅助设备上检索现有的和有效的已验证配置文件
+### 1.检索通过基本身份验证获得的特定代码的配置文件
 
 >[!BEGINTABS]
 
 >[!TAB 请求]
 
-```JSON
-GET /api/v2/REF30/profiles/Cablevision/XTC98W
- 
-Authorization: Bearer ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
-X-Device-Info ....
-Accept: application/json
+```HTTPS
+GET /api/v2/REF30/profiles/code/XTC98W HTTP/1.1
+
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
 ```
 
 >[!TAB 响应]
 
-```JSON
+```HTTPS
 HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8
- 
+
+Content-Type: application/json;charset=UTF-8
+
 {
-    "profiles" : {
-        "Cablevision" : {
-            "notBefore" : 1623943955,
-            "notAfter" : 1623951155,
-            "issuer" : "Cablevision",
-            "type" : "regular",
-            "attributes" : {
-                "userId" : {
-                    "value" : "BASE64_value_userId",
-                    "state" : "plain"
+    "profiles": {
+        "Cablevision": {
+            "notBefore": 1623943955,
+            "notAfter": 1623951155,
+            "issuer": "Cablevision",
+            "type": "regular",
+            "attributes": {
+                "userId": {
+                    "value": "BASE64_value_userId",
+                    "state": "plain"
                 },
                 "householdId" : {
-                    "value" : "BASE64_value_householdId",
-                    "state" : "plain"
+                    "value": "BASE64_value_householdId",
+                    "state": "plain"
                 },
                 "zip" : {
-                    "value" : "BASE64_value_zip",
-                    "state" : "enc"
+                    "value": "BASE64_value_zip",
+                    "state": "enc"
                 },
                 "parental-controls" : {
-                    "value" : BASE64_value_parental-controls,
-                    "state" : "plain"
+                    "value": BASE64_value_parental-controls,
+                    "state": "plain"
                 }
             }
         }
      }
 }
 ```
+
+>[!ENDTABS]
+
+### 2.在选择基本TempPass时检索特定代码的配置文件
+
+>[!BEGINTABS]
+
+>[!TAB 请求]
+
+```HTTPS
+GET /api/v2/REF30/profiles/code/XTC98W HTTP/1.1
+
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
+```
+
+>[!TAB 响应 — 可用]
+
+```HTTPS
+HTTP/1.1 200 OK
+
+Content-Type: application/json;charset=UTF-8
+
+{
+    "profiles": {
+        "TempPass_TEST40": {
+            "notBefore": 1697718650206,
+            "notAfter": 1697718710206,
+            "issuer": "Adobe",
+            "type": "temporary",
+            "attributes": {
+                "expiration_date": {
+                    "value": 1697718710206,
+                    "state": "plain"
+                },
+                "userID": {
+                    "value": "temppass_0bdf451aa9c8fa60e80f6b99ab48310c73b480f1",
+                    "state": "plain"
+                }
+            }
+        }
+    }
+}
+```
+
+>[!TAB 响应 — 超出持续时间限制]
+
+```HTTPS
+HTTP/1.1 403 Forbidden
+
+Content-Type: application/json;charset=UTF-8
+
+{
+    "status": 403,
+    "code": "temporary_access_duration_limit_exceeded",
+    "message": "The temporary access duration limit has been exceeded.",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+    "action": "authentication"
+}
+```
+
+>[!TAB 响应 — 配置无效]
+
+```HTTPS
+HTTP/1.1 500 Internal Server Error
+
+Content-Type: application/json;charset=UTF-8
+
+{
+    "status": 500,
+    "code": "invalid_configuration_temporary_access",
+    "message": "The temporary access configuration is invalid.",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+    "action": "configuration"
+}
+```
+
+>[!ENDTABS]
+
+### 3.在选择了“促销临时传递”时，检索特定代码的配置文件
+
+>[!BEGINTABS]
+
+>[!TAB 请求]
+
+```HTTPS
+GET /api/v2/REF30/profiles/code/XTC98W HTTP/1.1
+
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    AP-TempPass-Identity: eyJlbWFpbCI6ImZvb0BiYXIuY29tIn0=
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
+```
+
+>[!TAB 响应 — 可用]
+
+```HTTPS
+HTTP/1.1 200 OK
+
+Content-Type: application/json;charset=UTF-8
+
+{
+    "profiles": {
+        "flexibleTempPass": {
+            "notBefore": 1697720528524,
+            "notAfter": 1697720588524,
+            "issuer": "Adobe",
+            "type": "temporary",
+            "attributes": {
+                "remaining_resources": {
+                    "value": 1,
+                    "state": "plain"
+                },
+                "used_assets": {
+                    "value": [
+                        "res04",
+                        "res02",
+                        "res03",
+                        "res01"
+                    ],
+                    "state": "plain"
+                },
+                "expiration_date": {
+                    "value": 1697720528524,
+                    "state": "plain"
+                },
+                "userID": {
+                    "value": "temppass_0bdf451aa9c8fa60e80f6b99ab48310c73b480f1",
+                    "state": "plain"
+                }
+            }
+        }
+    }
+}
+```
+
+>[!TAB 响应 — 超出持续时间限制]
+
+```HTTPS
+HTTP/1.1 403 Forbidden
+
+Content-Type: application/json;charset=UTF-8
+
+{
+    "status": 403,
+    "code": "temporary_access_duration_limit_exceeded",
+    "message": "The temporary access duration limit has been exceeded.",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+    "action": "authentication"
+}
+```
+
+>[!TAB 响应 — 超出资源限制]
+
+```HTTPS
+HTTP/1.1 403 Forbidden
+
+Content-Type: application/json;charset=UTF-8
+
+{
+    "status": 403,
+    "code": "temporary_access_resources_limit_exceeded",
+    "message": "The temporary access resources limit has been exceeded.",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+    "action": "authentication"
+}
+```
+
+>[!TAB 响应 — 配置无效]
+
+```HTTPS
+HTTP/1.1 500 Internal Server Error
+
+Content-Type: application/json;charset=UTF-8
+
+{
+    "status": 500,
+    "code": "invalid_configuration_temporary_access",
+    "message": "The temporary access configuration is invalid.",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+    "action": "configuration"
+}
+```
+
+>[!TAB 响应 — 标识无效]
+
+```HTTPS
+HTTP/1.1 400 Bad Request
+
+Content-Type: application/json;charset=UTF-8
+
+{
+    "status": 400,
+    "code": "invalid_header_identity_for_temporary_access",
+    "message": "The identity for temporary access header value is missing or invalid.",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+    "action": "none"
+}
+```
+
+>[!ENDTABS]
+
+### 4.在应用降级时检索特定代码的配置文件
+
+>[!BEGINTABS]
+
+>[!TAB 请求]
+
+```HTTPS
+GET /api/v2/REF30/profiles/code/XTC98W HTTP/1.1
+
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
+```
+
+>[!TAB 响应 — AuthNAll降级]
+
+```HTTPS
+HTTP/1.1 200 OK
+
+Content-Type: application/json;charset=UTF-8
+
+{
+    "profiles": {
+        "${degradedMvpd}": {
+            "notBefore": 1697719042666,
+            "notAfter": 1697719102666,
+            "issuer": "Adobe",
+            "type": "degraded",
+            "attributes":
+                "userID": {
+                    "value": "95cf93bcd183214a0bdf451aa9c8fa60e80f6b99ab48310c73b480f1",
+                    "state": "plain"
+                }
+            }
+        }
+    }
+}
+```
+
+>[!IMPORTANT]
+>
+> `95cf93bcd183214a`是降级特定的前缀。
 
 >[!ENDTABS]
