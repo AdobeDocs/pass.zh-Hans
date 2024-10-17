@@ -1,9 +1,9 @@
 ---
 title: REST API V2指南（客户端到服务器）
 description: REST API V2指南（客户端到服务器）
-source-git-commit: 709835276710ec4b92abec3e39aaecae99872e77
+source-git-commit: 0d6693d51887c9e794401e984f3a4075be091ee5
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '695'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## 在客户端应用程序中实施REST API V2的步骤 {#steps-to-implement-the-rest-api-v2-in-client-side-applications}
 
-要实施Adobe Pass REST API V2，您需要遵循以下分阶段的步骤。
+要实施Adobe Pass REST API V2，您需要执行以下步骤，并分几个阶段进行。
 
 ## A.登记阶段 {#registration-phase}
 
