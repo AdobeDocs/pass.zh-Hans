@@ -2,7 +2,7 @@
 title: 增强的错误代码
 description: 增强的错误代码
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '2593'
 ht-degree: 2%
@@ -301,8 +301,8 @@ _(*)对于某些错误，多个操作可能是可能的解决方案，但“acti
 | **无** | *invalid_parameter_service_provider* | 400 | 服务提供商参数值缺失或无效。 |
 |                              | *invalid_parameter_mvpd* | 400 | mvpd参数值缺失或无效。 |
 |                              | *invalid_parameter_code* | 400 | 代码参数值缺失或无效。 |
-|                              | *invalid_parameter_resources* | 400 | 重定向URL参数值缺失或无效。 |
-|                              | *invalid_parameter_redirect_url* | 400 | 资源参数值缺失或无效。 |
+|                              | *invalid_parameter_resources* | 400 | 资源参数值缺失或无效。 |
+|                              | *invalid_parameter_redirect_url* | 400 | 重定向URL参数值缺失或无效。 |
 |                              | *invalid_parameter_partner* | 400 | 缺少伙伴参数值或伙伴参数值无效。 |
 |                              | *invalid_parameter_saml_response* | 400 | SAML响应参数值缺失或无效。 |
 |                              | *invalid_header_device_info* | 400 | 设备信息标头值缺失或无效。 |

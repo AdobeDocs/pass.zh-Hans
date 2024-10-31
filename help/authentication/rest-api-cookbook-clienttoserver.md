@@ -2,9 +2,9 @@
 title: REST API指南（客户端到服务器）
 description: Rest API指南客户端到服务器。
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '876'
 ht-degree: 0%
 
 ---
@@ -130,16 +130,22 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
 
 1. 将用户发送回您的智能设备应用程序以完成授权流程。
 
-## 平台SSO {#platform-sso}
+## 合作伙伴单点登录 {#partner-sso}
 
-某些平台提供单点登录(SSO)的专用支持。 您可以找到各个平台的实施详细信息：
+某些设备为合作伙伴单点登录(SSO)提供专用支持：
 
-* [APPLE SSO](/help/authentication/apple-sso-cookbook-rest-api.md)
-* AMAZON SSO
+* [APPLE SSO](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-rest-api-v1.md)
+
+## Platform单点登录 {#platform-sso}
+
+某些设备提供对Platform单点登录(SSO)的专用支持：
+
+* [AMAZON SSO](./single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
+* [Roku SSO](./single-sign-on/platform-single-sign-on/roku-single-sign-on/roku-sso-overview.md)
 
 ## REST API的TempPass和提升TempPass {#temppass}
 
-对于不需要用户输入凭据的TempPass和促销性TempPass实施，可以直接在流应用程序中实施身份验证。
+对于不需要用户输入凭据的TempPass和Promotional TempPass实施，可以直接在流应用程序中实施身份验证。
 
 **要使用此API，流应用程序需要确保设备ID的唯一性，因为此设备ID正用于标识令牌以及可选的额外数据。**
 

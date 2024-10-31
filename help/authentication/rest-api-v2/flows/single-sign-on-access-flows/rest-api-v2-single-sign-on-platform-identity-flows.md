@@ -1,13 +1,13 @@
 ---
 title: 单点登录 — 平台标识 — 流程
 description: REST API V2 — 单点登录 — 平台标识 — 流程
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '1830'
 ht-degree: 0%
 
 ---
-
 
 # 使用平台身份流进行单点登录 {#single-sign-on-platform-identity-full-flows}
 
@@ -117,7 +117,7 @@ ht-degree: 0%
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`
    > * 所有&#x200B;_可选_&#x200B;参数和标头
 
-   >[!NOTE]
+   >[!TIP]
    >
    > 建议：流应用程序可以等待用户代理到达提供的`redirectUrl`，以检查是否已成功生成并保存常规配置文件。
 

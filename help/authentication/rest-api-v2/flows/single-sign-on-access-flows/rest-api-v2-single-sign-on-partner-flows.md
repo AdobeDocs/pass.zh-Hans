@@ -1,13 +1,13 @@
 ---
 title: 单点登录 — 合作伙伴 — 流程
 description: REST API V2 — 单点登录 — 合作伙伴 — 流程
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '1317'
+source-wordcount: '1444'
 ht-degree: 0%
 
 ---
-
 
 # 使用合作伙伴流程进行单点登录 {#single-sign-on-partner-flows}
 
@@ -18,6 +18,18 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > REST API V2实施受[限制机制](/help/authentication/throttling-mechanism.md)文档限制。
+
+使用Adobe Pass服务时，Partner方法可让多个应用程序使用合作伙伴框架状态有效负载在设备级别实现单点登录(SSO)。
+
+这些应用程序负责使用Adobe Pass系统之外的合作伙伴特定框架或库检索合作伙伴框架状态有效负载。
+
+应用程序负责将此合作伙伴框架状态有效负载包含到所有指定它的`AP-Partner-Framework-Status`标头中。
+
+有关`AP-Partner-Framework-Status`标头的更多详细信息，请参阅[AP-Partner-Framework-Status](../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)文档。
+
+Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户端应用程序的最终用户的合作伙伴单点登录(SSO)。
+
+有关Apple平台单点登录(SSO)的更多详细信息，请参阅[Apple SSO指南(REST API V2)](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-rest-api-v2.md)文档。
 
 ## 检索合作伙伴身份验证请求 {#retrieve-partner-authentication-request}
 
@@ -61,7 +73,7 @@ ht-degree: 0%
    > 有关以下内容的详细信息，请参阅[检索合作伙伴身份验证请求](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md) API文档：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`和`partner`
-   > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`和`AP-Partner-Framework-Status`
+   > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`、`Content-Type`、`X-Device-Info`和`AP-Partner-Framework-Status`
    > * 所有&#x200B;_可选_&#x200B;标头和参数
    >
    > <br/>
@@ -175,7 +187,7 @@ ht-degree: 0%
    > 有关以下内容的详细信息，请参阅[使用合作伙伴身份验证响应检索配置文件](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) API文档：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`partner`和`SAMLResponse`
-   > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`和`AP-Partner-Framework-Status`
+   > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`、`Content-Type`、`X-Device-Info`和`AP-Partner-Framework-Status`
    > * 所有&#x200B;_可选_&#x200B;标头和参数
    >
    > <br/>

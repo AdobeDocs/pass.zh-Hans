@@ -1,13 +1,13 @@
 ---
 title: 基本身份验证 — 主要应用程序 — 流量
 description: REST API V2 — 基本身份验证 — 主应用程序 — 流程
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+exl-id: 8122108d-e9da-43c5-9abb-ab177cb21eb6
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '894'
 ht-degree: 0%
 
 ---
-
 
 # 在主应用程序中执行的基本身份验证流程 {#basic-authentication-flow-performed-within-primary-application}
 
@@ -121,7 +121,7 @@ Adobe Pass身份验证权利内的&#x200B;**身份验证流**&#x200B;允许流�
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`
    > * 所有&#x200B;_可选_&#x200B;参数和标头
 
-   >[!NOTE]
+   >[!TIP]
    >
    > 建议：流应用程序可以等待用户代理到达提供的`redirectUrl`，以检查是否已成功生成并保存常规配置文件。
 

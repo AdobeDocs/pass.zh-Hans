@@ -1,13 +1,13 @@
 ---
 title: 基本身份验证 — 辅助应用程序 — 流程
 description: REST API V2 — 基本身份验证 — 辅助应用程序 — 流程
-source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
+exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '2000'
 ht-degree: 0%
 
 ---
-
 
 # 在辅助应用程序中执行的基本身份验证流程 {#basic-authentication-flow-performed-within-secondary-application}
 
@@ -137,7 +137,7 @@ Adobe Pass身份验证权利内的&#x200B;**身份验证流**&#x200B;允许流�
    >
    > 如果验证失败，将生成错误响应，提供附加信息以遵守[增强型错误代码](../../../enhanced-error-codes.md)文档。
 
-   >[!NOTE]
+   >[!TIP]
    >
    > 建议：辅助应用程序可以通知用户在错误响应指示缺少身份验证会话的情况下使用的`code`无效，并建议他们使用新的身份验证会话重试。
 
@@ -162,7 +162,7 @@ Adobe Pass身份验证权利内的&#x200B;**身份验证流**&#x200B;允许流�
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`
    > * 所有&#x200B;_可选_&#x200B;参数和标头
 
-   >[!NOTE]
+   >[!TIP]
    >
    > 建议：流式应用程序可以使用`code`实施轮询机制，以检查是否成功生成并保存了常规配置文件。
 
@@ -271,7 +271,7 @@ Adobe Pass身份验证权利内的&#x200B;**身份验证流**&#x200B;允许流�
    > 
    > 如果验证失败，将生成错误响应，提供附加信息以遵守[增强型错误代码](../../../enhanced-error-codes.md)文档。
 
-   >[!NOTE]
+   >[!TIP]
    >
    > 建议：辅助应用程序可以通知用户在错误响应指示缺少身份验证会话的情况下使用的`code`无效，并建议他们使用新的身份验证会话重试。
 
@@ -300,7 +300,7 @@ Adobe Pass身份验证权利内的&#x200B;**身份验证流**&#x200B;允许流�
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`
    > * 所有&#x200B;_可选_&#x200B;参数和标头
 
-   >[!NOTE]
+   >[!TIP]
    >
    > 建议：流式应用程序可以使用`code`实施轮询机制，以检查是否成功生成并保存了常规配置文件。
 

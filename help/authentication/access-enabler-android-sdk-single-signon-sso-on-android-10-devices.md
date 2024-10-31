@@ -2,9 +2,9 @@
 title: Android 10应用程序上的Access Enabler Android SDK单点登录(SSO)
 description: Android 10应用程序上的Access Enabler Android SDK单点登录(SSO)
 exl-id: dedade15-c451-4757-b684-d3728e11dd87
-source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '383'
+source-wordcount: '379'
 ht-degree: 0%
 
 ---
@@ -23,8 +23,6 @@ ht-degree: 0%
 
 由于这些更改，Access Enabler Android版本&#x200B;**3.2.1 SDK（最新）**&#x200B;和先前版本提供的单点登录(SSO)可能会在Android 10设备上受到影响，具体如下节所述。
 
-请参阅[Roku SSO概述](/help/authentication/roku-sso-overview.md)。
-
 ## 行为
 
 根据您应用程序的&#x200B;**[!UICONTROL target SDK level]**&#x200B;或&#x200B;**android：requestLegacyExternalStorage**&#x200B;清单属性的使用情况，Access Enabler Android版本3.2.1 SDK（最新）和先前版本提供的单点登录(SSO)当前将按如下方式运行：
@@ -32,7 +30,6 @@ ht-degree: 0%
 - 您的应用程序目标&#x200B;**Android 9 （API级别28）**&#x200B;或更低的&#x200B;**-\>**&#x200B;单点登录(SSO) **将工作**
 - 应用程序以&#x200B;**Android 10** **（API级别29）**&#x200B;为目标，并&#x200B;**将**&#x200B;应用程序清单文件&#x200B;**-\>**&#x200B;单点登录(SSO) **中的** requestLegacyExternalStorage的值设置为true ****&#x200B;将起作用
 - 应用程序以&#x200B;**Android 10** **（API级别29）**&#x200B;为目标，并且&#x200B;**未将**&#x200B;应用程序清单文件&#x200B;**-\>**&#x200B;单点登录(SSO) **中的** requestLegacyExternalStorage的值设置为true ****&#x200B;将无法工作
-
 
 >[!TIP]
 >
