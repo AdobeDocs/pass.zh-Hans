@@ -1,7 +1,7 @@
 ---
 title: REST API V2指南（服务器到服务器）
 description: REST API V2指南（服务器到服务器）
-source-git-commit: e1e1835d0d523377c48b39170919f7120cc3ef90
+source-git-commit: c17e52dd52fa14c50d59945598d1913f02be2468
 workflow-type: tm+mt
 source-wordcount: '1566'
 ht-degree: 0%
@@ -186,4 +186,4 @@ Adobe Pass服务运行于分布在美国各地的多个数据中心上。  为�
 
 ## 相关信息 {#related}
 
-* [REST API V2参考](/help/authentication/rest-api-v2/rest-api-v2-flows-overview.md)
+* [REST API V2参考](/help/authentication/rest-api-v2/rest-api-v2-overview.md)
