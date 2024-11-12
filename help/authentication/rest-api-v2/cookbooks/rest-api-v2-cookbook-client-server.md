@@ -1,13 +1,13 @@
 ---
 title: REST API V2指南（客户端到服务器）
 description: REST API V2指南（客户端到服务器）
-source-git-commit: e1e1835d0d523377c48b39170919f7120cc3ef90
+exl-id: 6a5a89d2-ea54-4f9c-9505-e575ced4301c
+source-git-commit: 563e0b17de3be9290a661242355b4835b8c386e1
 workflow-type: tm+mt
-source-wordcount: '695'
+source-wordcount: '699'
 ht-degree: 0%
 
 ---
-
 
 # REST API V2指南（客户端到服务器） {#rest-api-v2-cookbook-clientserver}
 
@@ -29,7 +29,7 @@ ht-degree: 0%
 
 应用程序要能够调用Adobe Pass REST API V2，它需要API安全层所需的访问令牌。
 
-要获取访问令牌，应用程序需要执行如下所述的步骤： [动态客户端注册](../../dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+要获取访问令牌，应用程序需要按照[动态客户端注册](../../dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md)文档中所述的步骤操作。
 
 ## B.认证阶段 {#authentication-phase}
 
@@ -67,7 +67,7 @@ ht-degree: 0%
 （[检索特定MVPD的已验证配置文件](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)）
    * 如果流应用程序中未选择MVPD，因为第二个屏幕应用程序中存在MVPD选取器，则应该使用代码<b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br>进行轮询
 （[检索特定代码的已验证配置文件](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)）
-* 如果轮询时间达到30分钟，并且流应用程序仍处于活动状态，则需要启动新会话，并且会返回新的代码和URL，则轮询时间不应超过30分钟
+* 如果轮询时间达到30分钟，并且流应用程序仍处于活动状态，则轮询不应超过30分钟，此时需要启动新会话，并会返回新的代码和URL
 * 身份验证完成后，返回值为200，配置文件已验证
 * 流应用程序可以继续到<a href="#preauthorization-phase">C。预授权阶段</a>或<a href="#authorization-phase">D。授权阶段</a>
 
@@ -78,7 +78,7 @@ ht-degree: 0%
 流式应用程序准备显示可供经过身份验证的用户使用的视频，并且可以检查
 对这些资源的访问权限。
 
-* 如果应用程序希望过滤在经过身份验证的用户包中不可用的资源，则可以选择执行此步骤
+* 步骤是可选的，如果应用程序要过滤掉在经过身份验证的用户包中不可用的资源，则执行此步骤
 * 调用<b>/api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}</b><br>
 （[使用特定的MVPD检索预授权决策](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)）
 
@@ -91,7 +91,7 @@ ht-degree: 0%
 * 每个播放开始都需要执行步骤
 * 调用<b>/api/v2/{serviceProvider}/decision/authorize/{mvpd}</b><br>
 （[使用特定MVPD检索授权决策](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)）
-   * decision = &#39;允许&#39; ，流设备开始流
+   * decision = &#39;允许&#39;，流设备开始流式传输
    * decision = &#39;Deny&#39;，流设备会通知用户它无权访问该视频
 
 ## E.注销阶段 {#logout-phase}
