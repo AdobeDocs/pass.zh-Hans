@@ -2,9 +2,9 @@
 title: 增强的错误代码
 description: 增强的错误代码
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
+source-git-commit: ce9659074bfa3fac3ea62a70a6da470f15bad3fe
 workflow-type: tm+mt
-source-wordcount: '2593'
+source-wordcount: '2606'
 ht-degree: 2%
 
 ---
@@ -313,6 +313,7 @@ _(*)对于某些错误，多个操作可能是可能的解决方案，但“acti
 |                              | *invalid_header_pfs_permission_access_not_granted* | 400 | 未授予来自合作伙伴框架状态标头的权限访问状态值。 |
 |                              | *invalid_header_pfs_provider_id_not_determined* | 400 | 合作伙伴框架状态标头中的提供程序ID值未与已知的mvpd关联。 |
 |                              | *invalid_header_pfs_provider_id_mismatch* | 400 | 合作伙伴框架状态标头中的提供程序ID值与作为参数发送的mvpd不匹配。 |
+|                              | *invalid_header_pfs_provider_info_expired* | 400 | 合作伙伴框架状态标头中的提供程序信息已过期。 |
 |                              | *无效集成* | 400 | 指定的服务提供程序与mvpd之间的集成不存在或已禁用。 |
 |                              | *invalid_authentication_session* | 400 | 与此请求关联的身份验证会话缺失或无效。 |
 |                              | *preauthorization_denied_by_mvpd* | 403 | MVPD在请求指定资源的预授权时返回了“拒绝”决定。 |
