@@ -1,23 +1,22 @@
 ---
-title: Amazon SSO指南(REST API V1)
-description: Amazon SSO指南(REST API V1)
-exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
+title: Amazon SSO指南(REST API V2)
+description: Amazon SSO指南(REST API V2)
 source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
 workflow-type: tm+mt
-source-wordcount: '590'
+source-wordcount: '542'
 ht-degree: 0%
 
 ---
 
-# Amazon SSO指南(REST API V1) {#amazon-sso-cookbook-rest-api-v1}
+# Amazon SSO指南(REST API V2) {#amazon-sso-cookbook-rest-api-v2}
 
 >[!IMPORTANT]
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-Adobe Pass身份验证REST API V1支持在FireOS上运行的客户端应用程序的最终用户的平台单点登录(SSO)。
+Adobe Pass身份验证REST API V2支持在FireOS上运行的客户端应用程序的最终用户的平台单点登录(SSO)。
 
-此文档用作现有[REST API V1概述](/help/authentication/rest-api-overview.md)的扩展，该视图提供了高级视图。
+此文档用作现有[REST API V2概述](/help/authentication/rest-api-v2/rest-api-v2-overview.md)的扩展，该视图提供了高级视图以及描述如何使用平台标识流](/help/authentication/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)实施[单点登录的文档。
 
 ## 使用平台标识流的Amazon单点登录 {#cookbook}
 
@@ -139,56 +138,31 @@ Amazon SSO SDK提供同步和异步API来获取SSO令牌（平台身份）有效
 
 ### 工作流 {#workflow}
 
-需要在Amazon身份验证端点发起的所有HTTP请求上都存在Adobe Pass SSO令牌（平台身份）有效负载：
+针对Amazon身份验证REST API V2端点发出的所有HTTP请求上都需要有Adobe Pass SSO令牌（平台身份）有效负载：
 
 ```
-/adobe-services/*
-/reggie/*
-/api/*
+/api/v2/*
 ```
+
+Adobe Pass身份验证REST API V2支持以下方法接收SSO令牌（平台身份）有效负载，该有效负载是设备范围或平台范围的标识符：
+
+* 作为名为`Adobe-Subject-Token`的标头
 
 >[!IMPORTANT]
 > 
-> 流应用程序可能会在`/authenticate`调用中跳过发送Amazon SSO令牌（平台身份）有效负载，因为它是在`/regcode`调用中提供的。
-
-Adobe Pass身份验证支持以下方法接收SSO令牌（平台身份）有效负载，该有效负载是设备范围或平台范围的标识符：
-
-* 作为名为`Adobe-Subject-Token`的标头
-* 作为查询参数，名为： `ast`
-* 作为名为`ast`的post参数
-
->[!IMPORTANT]
->
-> 如果作为查询参数发送，则整个URL可能会变得非常长并被拒绝。
->
-> 如果作为查询/发布参数发送，则在生成请求签名时必须包含该参数。
+> 有关`Adobe-Subject-Token`标头的更多详细信息，请参阅[Adobe主题令牌](/help/authentication/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)文档。
 
 #### 示例
 
 **作为标头发送**
 
 ```HTTPS
-GET /api/v1/config/{requestorId} HTTP/1.1 
+GET /api/v2/{serviceProvider}/sessions HTTP/1.1 
 Host: sp-preprod.auth.adobe.com
 
 Adobe-Subject-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyb2t1IiwiaWF0IjoxNTExMzY4ODAyLCJleHAiOjE1NDI5MDQ4MDIsImF1ZCI6ImFkb2JlIiwic3ViIjoiNWZjYzMwODctYWJmZi00OGU4LWJhZTgtODQzODViZTFkMzQwIiwiZGlkIjoiY2FmZjQ1ZDAtM2NhMy00MDg3LWI2MjMtNjFkZjNhMmNlOWM4In0.JlBFhNhNCJCDXLwBjy5tt3PtPcqbMKEIGZ6sr2NA
 ```
 
-**作为查询参数发送**
-
-```HTTPS
-GET /api/v1/config/{requestorId}?ast=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyb2t1IiwiaWF0IjoxNTExMzY4ODAyLCJleHAiOjE1NDI5MDQ4MDIsImF1ZCI6ImFkb2JlIiwic3ViIjoiNWZjYzMwODctYWJmZi00OGU4LWJhZTgtODQzODViZTFkMzQwIiwiZGlkIjoiY2FmZjQ1ZDAtM2NhMy00MDg3LWI2MjMtNjFkZjNhMmNlOWM4In0.JlBFhNhNCJCDXLwBjy5tt3PtPcqbMKEIGZ6sr2NA HTTP/1.1
-Host: sp.auth.adobe.com
-```
-
-**作为post参数发送**
-
-```HTTPS
-POST /api/v1/config/{requestorId}?ast=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyb2t1IiwiaWF0IjoxNTExMzY4ODAyLCJleHAiOjE1NDI5MDQ4MDIsImF1ZCI6ImFkb2JlIiwic3ViIjoiNWZjYzMwODctYWJmZi00OGU4LWJhZTgtODQzODViZTFkMzQwIiwiZGlkIjoiY2FmZjQ1ZDAtM2NhMy00MDg3LWI2MjMtNjFkZjNhMmNlOWM4In0.Jl\_BFhN\_h\_NCJCDXLwBjy5tt3PtPcqbMKEIGZ6sr2NA HTTP/1.1
-Host: sp.auth.adobe.com 
-Content-Type: multipart/form-data;
-```
-
 >[!IMPORTANT]
 >
-> 如果`Adobe-Subject-Token`标头或`ast`参数值缺失或无效，则Adobe Pass身份验证将无需考虑单点登录即可为请求提供服务。
+> 如果`Adobe-Subject-Token`标头值缺失或无效，则Adobe Pass身份验证将无需考虑单点登录即可为请求提供服务。

@@ -1,9 +1,10 @@
 ---
 title: Apple SSO指南(REST API V2)
 description: Apple SSO指南(REST API V2)
-source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
+exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
+source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
 workflow-type: tm+mt
-source-wordcount: '3402'
+source-wordcount: '3410'
 ht-degree: 0%
 
 ---
@@ -16,11 +17,11 @@ ht-degree: 0%
 
 Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户端应用程序的最终用户的合作伙伴单点登录(SSO)。
 
-此文档可用作现有REST API V2文档的扩展，该文档介绍了如何使用合作伙伴流程](/help/authentication/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)实施[单点登录。
+此文档用作现有[REST API V2概述](/help/authentication/rest-api-v2/rest-api-v2-overview.md)的扩展，该视图提供了高级视图以及描述如何使用合作伙伴流程](/help/authentication/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)实施[单点登录的文档。
 
-## 使用合作伙伴流程进行Apple单点登录 {#apple-sso-cookbook-rest-api-v2-cookbook}
+## 使用合作伙伴流程进行Apple单点登录 {#cookbook}
 
-### 先决条件 {#apple-sso-cookbook-rest-api-v2-prerequisites}
+### 先决条件 {#prerequisites}
 
 在继续使用合作伙伴流程进行Apple单点登录之前，请确保满足以下先决条件：
 
@@ -40,7 +41,7 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
 >
 > * 流应用程序已完成适用于程序员的[入门先决条件](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-overview.md#apple-sso-prerequisites-programmer)，该先决条件是启用Apple单点登录用户体验所必需的。
 
-### 工作流 {#apple-sso-cookbook-rest-api-v2-workflow}
+### 工作流 {#workflow}
 
 执行给定步骤以使用合作伙伴流程实施Apple单点登录，如下图所示。
 
