@@ -2,7 +2,7 @@
 title: TVE功能板集成
 description: 了解您的渠道和MVPD之间的集成以及如何管理集成。
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: 1370554c66116a357970fb05c046608e261f0ed3
 workflow-type: tm+mt
 source-wordcount: '2093'
 ht-degree: 0%
@@ -328,7 +328,7 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 只有在[审核并推送更改](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-review-push-changes.md)之后才会创建新集成。
 
 
-## 禁用集成 {#disable-integratgion}
+## 禁用集成 {#disable-integration}
 
 要禁用集成，请执行以下步骤：
 

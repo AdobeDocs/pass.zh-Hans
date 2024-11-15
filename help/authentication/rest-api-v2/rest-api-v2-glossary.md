@@ -1,9 +1,10 @@
 ---
 title: REST API V2术语表
 description: REST API V2术语表
-source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
+exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
+source-git-commit: 1370554c66116a357970fb05c046608e261f0ed3
 workflow-type: tm+mt
-source-wordcount: '1872'
+source-wordcount: '1964'
 ht-degree: 0%
 
 ---
@@ -34,6 +35,8 @@ ht-degree: 0%
 
 身份验证代码可由[主要（程序员）应用程序](#primary-application)或[辅助（程序员）应用程序](#secondary-application)使用，以便完成[身份验证](#authentication)进程、检索有关[身份验证会话](#session)的信息，或访问用户[配置文件](#profile)。
 
+与以前术语使用的注册码同义。
+
 #### 身份验证会话 {#session}
 
 身份验证会话是一个Adobe Pass身份验证概念，用于存储有关从[程序员](#programmer)应用程序启动（或继续）的用户身份验证过程的信息，并且由[身份验证代码](#code)唯一标识。
@@ -45,6 +48,10 @@ ht-degree: 0%
 授权是一个进程，它允许用户在通过[MVPD](#mvpd)验证用户权限后，基于拥有的[MVPD](#mvpd)订阅，从[程序员](#programmer)目录访问受保护的内容（[资源](#resource)）。
 
 ### C {#c}
+
+#### 客户端凭据 {#client-credentials}
+
+客户端凭据是在[动态客户端注册(DCR)](#dcr)过程中生成的一组唯一值，旨在用于获取[访问令牌](#access-token)。
 
 #### 配置 {#configuration}
 
@@ -114,6 +121,8 @@ DCR作为Adobe Pass身份验证服务交付给[程序员](#programmer)，该服�
 
 媒体令牌已传递给[程序员](#programmer)，程序员随后验证该令牌以确保该[资源](#resource)的访问安全。
 
+与使用短授权令牌的前一术语同义。
+
 #### 媒体令牌验证器 {#media-token-verifier}
 
 媒体令牌验证器是由Adobe Pass身份验证分发的库，负责验证[媒体令牌](#media-token)的真实性。
@@ -138,7 +147,15 @@ MVPD由MVPD和Adobe之间的载入流程中定义的唯一值标识。
 
 #### 预授权 {#preauthorization}
 
-预授权是一个进程，该进程允许用户在使用[MVPD](#mvpd)验证用户权限后，预览其有权访问的[程序员](#programmer)目录中的[资源](#resource)列表。
+预授权是一个进程，允许用户在使用[MVPD](#mvpd)验证用户权限后，从[程序员](#programmer)目录预览他们有权访问的[资源](#resource)的子集。
+
+与[Preflight](#preflight)同义。
+
+#### Preflight {#preflight}
+
+预检是一个进程，允许用户在使用[MVPD](#mvpd)验证用户权限后，从[程序员](#programmer)目录预览他们有权访问的[资源](#resource)的子集。
+
+与[预授权](#preauthorization)同义。
 
 #### 主要（程序员）应用程序 {#primary-application}
 
@@ -147,6 +164,8 @@ MVPD由MVPD和Adobe之间的载入流程中定义的唯一值标识。
 #### 个人资料 {#profile}
 
 配置文件是一个Adobe Pass身份验证概念，用于存储有关用户身份验证开始日期和结束日期、[用户的元数据](#user-metadata)的信息以及指示获取身份验证方法的其他字段（例如，“常规”、“已降级”、“临时”、“单点登录”等）。
+
+与以前术语使用的身份验证令牌同义。
 
 #### 程序员 {#programmer}
 
@@ -270,7 +289,7 @@ TV Everywhere (TVE) Dashboard是提供给[程序员](#programmer)的Adobe Pass�
 
 #### 用户元数据 {#user-metadata}
 
-用户元数据是指用户特定的属性（例如，邮政编码、家长评级、用户ID等） 由[MVPD](#mvpd)维护并由Adobe Pass身份验证作为[配置文件](#profile)的一部分提供的服务。
+用户元数据是指由[MVPD](#mvpd)维护并由Adobe Pass身份验证作为[配置文件](#profile)的一部分提供的用户特定属性（例如，邮政编码、家长评级、用户ID等）。
 
 有关详细信息，请参阅[用户元数据](/help/authentication/user-metadata-feature.md)文档。
 
