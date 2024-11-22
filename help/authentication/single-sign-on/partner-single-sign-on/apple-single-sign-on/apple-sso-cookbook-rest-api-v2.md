@@ -2,9 +2,9 @@
 title: Apple SSO指南(REST API V2)
 description: Apple SSO指南(REST API V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
+source-git-commit: dbf68d75962e3e34f0c569c409f8c98ae6b9e036
 workflow-type: tm+mt
-source-wordcount: '3410'
+source-wordcount: '3442'
 ht-degree: 0%
 
 ---
@@ -508,7 +508,10 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`
    > * 所有&#x200B;_可选_&#x200B;参数和标头
 
-1. **指示下一个操作：** Adobe Pass注销终结点响应包含指导流应用程序执行下一个操作所需的数据。
+1. **指示下一个操作：** Adobe Pass注销终结点响应包含指导流应用程序执行下一个操作所需的数据：
+   * 缺少`url`属性，因为用户需要与合作伙伴（系统）级别交互以完成注销流程。
+   * `actionName`属性设置为“partner_logout”。
+   * `actionType`属性设置为“partner_interactive”。
 
    >[!IMPORTANT]
    >

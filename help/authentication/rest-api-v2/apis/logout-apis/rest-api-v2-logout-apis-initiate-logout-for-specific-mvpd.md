@@ -2,9 +2,9 @@
 title: 启动特定mvpd的注销
 description: REST API V2 — 启动特定mvpd的注销
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
+source-git-commit: dbf68d75962e3e34f0c569c409f8c98ae6b9e036
 workflow-type: tm+mt
-source-wordcount: '941'
+source-wordcount: '1006'
 ht-degree: 1%
 
 ---
@@ -239,6 +239,7 @@ ht-degree: 1%
                   可能的值包括：
                   <ul>
                     <li><b>注销</b><br/>流设备需要在用户代理中打开提供的URL。<br/>此操作适用于以下情况：使用注销端点注销MVPD。</li>
+                    <li><b>partner_logout</b><br/>流设备还需要通知用户从合作伙伴（系统）级别注销。<br/>此操作适用于以下情况：当配置文件类型为“appleSSO”时注销MVPD。</li>
                     <li><b>完成</b><br/>流设备不需要执行任何后续操作。<br/>此操作适用于以下情况：在没有注销终结点的情况下注销MVPD（虚拟注销功能）、在降级访问期间注销、在临时访问期间注销。</li>
                     <li><b>无效</b><br/>流设备不需要执行任何后续操作。<br/>此操作适用于以下情况：未找到有效配置文件时注销MVPD。</li>
                   </ul>  
@@ -252,6 +253,7 @@ ht-degree: 1%
                   可能的值包括：
                   <ul>
                     <li><b>interactive</b><br/>此类型适用于“actionName”属性的以下值： <b>注销</b>。</li>
+                    <li><b>partner_interactive</b><br/>此类型适用于“actionName”属性的以下值： <b>partner_logout</b>。</li>
                     <li><b>none</b><br/>此类型适用于“actionName”属性的以下值： <b>complete</b>，<b>invalid</b>。</li>
                   </ul>
                <td><i>必填</i></td>
@@ -476,7 +478,43 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5.在应用降级时启动特定mvpd的注销
+### 5.启动特定mvpd的注销，包括通过使用合作伙伴(Apple)进行单点登录而获取的用户档案
+
+>[!BEGINTABS]
+
+>[!TAB 请求]
+
+```HTTPS
+GET /api/v2/REF30/logout/Cablevision?redirectUrl=https%3A%2F%2Fadobe.com HTTP/1.1
+
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+    X-Device-Info: ewoJInByaW1hcnlIYXJkd2FyZVR5cGUiOiAiU2V0VG9wQm94IiwKCSJtb2RlbCI6ICJUViA1dGggR2VuIiwKCSJtYW51ZmFjdHVyZXIiOiAiQXBwbGUiLAoJIm9zTmFtZSI6ICJ0dk9TIgoJIm9zVmVuZG9yIjogIkFwcGxlIiwKCSJvc1ZlcnNpb24iOiAiMTEuMCIKfQ==
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
+```
+
+>[!TAB 响应]
+
+```HTTPS
+HTTP/1.1 200 OK
+
+Content-Type: application/json;charset=UTF-8
+
+{
+   "logouts": {
+      "Cablevision": {
+         "actionName": "partner_logout",
+         "actionType": "partner_interactive",
+         "mvpd": "Cablevision"
+      }
+   }
+}
+```
+
+>[!ENDTABS]
+
+### 6.应用降级时启动特定mvpd的注销
 
 >[!BEGINTABS]
 
@@ -512,7 +550,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 6.启动基本或促销TempPass的注销（不需要）
+### 7.启动基本或促销TempPass的注销（不需要）
 
 >[!BEGINTABS]
 
