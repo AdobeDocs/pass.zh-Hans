@@ -2,7 +2,7 @@
 title: 标准元数据属性
 description: 标准元数据属性
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '1053'
 ht-degree: 0%
@@ -24,7 +24,7 @@ ht-degree: 0%
 |-------------|---------------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | applicationId | 75b4-431b-adb2-eb6b9e546013 | 授权标头 | 集成中的Zendesk票证 |
 | mvpdName | Sample_MVPD | URI路径 | 当用户选择MVPD时，从配置端点进行Adobe Pass身份验证 |
-| accountId | 12345 | URI路径 | 用户登录[用户Metadata upstreamUserID - Adobe Pass身份验证](/help/authentication/user-metadata-feature.md)后的Adobe Pass身份验证upstreamUserID元数据 |
+| accountId | 12345 | URI路径 | 用户登录[用户Metadata upstreamUserID - Adobe Pass身份验证](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)后的Adobe Pass身份验证upstreamUserID元数据 |
 
 
 ## 元数据属性 {#metadata-attr}
