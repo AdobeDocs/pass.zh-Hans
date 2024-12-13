@@ -2,9 +2,9 @@
 title: 无客户端 API 实现 - 具有可能原因/原因的错误代码/消息
 description: 无客户端 API 实现 - 具有可能原因/原因的错误代码/消息
 exl-id: 616e35fc-9b72-422b-9a05-e6248bd52490
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '205'
+source-wordcount: '227'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >此页面上的内容仅供参考。 使用此 API 需要 Adobe 的最新许可证。 不允许未经授权使用。
+
+>[!IMPORTANT]
+>
+> 确保您随时了解“产品公告](/help/authentication/product-announcements.md)”页面中[汇总的最新 Adobe Pass 身份验证产品公告和停用时间表。
 
 </br>
 
@@ -33,7 +37,7 @@ ht-degree: 0%
 1. 您可能会遇到跨域脚本问题
 1. 应将正确的欺骗添加到 /etc/hosts 文件中
 
-## 错误：400 错误请求
+## 错误： 400错误请求
 
 ### 原因：
 
@@ -53,7 +57,7 @@ ht-degree: 0%
 
 1. 用户名和密码不匹配
 2. 登录可能已被禁用
-3. 检查登录是用于生产还是暂存
+3. 检查登录名是用于生产还是暂存
 
 
 <!--

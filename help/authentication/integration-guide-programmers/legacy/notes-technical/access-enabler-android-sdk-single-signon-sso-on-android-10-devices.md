@@ -2,9 +2,9 @@
 title: Android 10应用程序上的Access Enabler Android SDK单点登录(SSO)
 description: Android 10应用程序上的Access Enabler Android SDK单点登录(SSO)
 exl-id: dedade15-c451-4757-b684-d3728e11dd87
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '380'
+source-wordcount: '402'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+
+>[!IMPORTANT]
+>
+> 确保随时了解汇总在[产品公告](/help/authentication/product-announcements.md)页中的最新Adobe Pass身份验证产品公告和停用时间表。
 
 ## 概述
 

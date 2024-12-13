@@ -2,9 +2,9 @@
 title: 印前检查功能，如何启用、诊断或确定问题
 description: 印前检查功能，如何启用、诊断或确定问题
 exl-id: 9e4ec343-371f-4116-915f-191e5f42cb47
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '499'
+source-wordcount: '521'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+
+>[!IMPORTANT]
+>
+> 确保随时了解汇总在[产品公告](/help/authentication/product-announcements.md)页中的最新Adobe Pass身份验证产品公告和停用时间表。
 
 Adobe Pass身份验证计算preAuthorizeResources的方式已更改。 PreAuthorization API具有新实施。 此实施取代了仅包含进行多个授权调用的旧解决方案。
 PreAuthorization API的外部接口保持不变，程序员的应用程序不需要更新。

@@ -2,26 +2,20 @@
 title: 欢迎使用Adobe&amp；reg；通过身份验证！
 description: 欢迎使用Adobe&amp；reg；通过身份验证概述
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '331'
+source-wordcount: '296'
 ht-degree: 0%
 
 ---
 
 # 欢迎使用Adobe®通过身份验证 {#pt-auth-overview}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+> 确保随时了解汇总在[产品公告](/help/authentication/product-announcements.md)页中的最新Adobe Pass身份验证产品公告和停用时间表。
 
 Adobe Pass身份验证是TV Everywhere的权利解决方案，提供了一个模块化框架，用于确定请求访问资源的人是否有权使用它。 为了参与Adobe Pass身份验证权利解决方案，内容提供商（程序员）和付费电视提供商(MVPD)将其权利系统与Adobe Pass身份验证工作流集成。 此文档站点提供有关集成过程的详细信息，以及针对现有合作伙伴的提示。
-
-您的反馈始终受到赞赏！
-
->[!NOTE]
->
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 ## 常见帮助和常见问题解答 {#help-faqs}
 
@@ -39,13 +33,11 @@ Adobe Pass身份验证是TV Everywhere的权利解决方案，提供了一个模
 
 >[!IMPORTANT]
 >
->如果找不到答案，请&#x200B;[**发送电子邮件给我们**](mailto:tve-support@adobe.com)。
+> 如果找不到答案，请&#x200B;[**发送电子邮件给我们**](mailto:tve-support@adobe.com)。
 >
->[发送电子邮件给支持团队](mailto:tve-support@adobe.com)也是任何问题或事件报告的第一步。
+> [发送电子邮件给支持团队](mailto:tve-support@adobe.com)也是任何问题或事件报告的第一步。
 >
->如果您有[严重级别为1的实时](/help/authentication/kickstart/escalation-procedures.md)问题，并且您通过电子邮件向我们发送了，30分钟没有响应，请查看[上报程序](/help/authentication/kickstart/escalation-procedures.md)文档以了解要拨打的电话号码。
->
-
+> 如果您有[严重级别为1的实时](/help/authentication/kickstart/escalation-procedures.md)问题，并且您已通过电子邮件发送给我们，30分钟没有响应，请查看[上报程序](/help/authentication/kickstart/escalation-procedures.md)文档以了解要拨打的电话号码。
 
 ## 查找您需要的内容 {#how-to-search}
 

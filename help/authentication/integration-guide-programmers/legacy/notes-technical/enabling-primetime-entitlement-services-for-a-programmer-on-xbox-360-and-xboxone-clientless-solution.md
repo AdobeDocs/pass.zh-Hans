@@ -2,9 +2,9 @@
 title: 为Xbox 360和XboxOne无客户端程序员启用Adobe Pass授权服务
 description: 为Xbox 360和XboxOne无客户端程序员启用Adobe Pass授权服务
 exl-id: ff7254de-9ea4-4c27-a186-d1c2eea12222
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '454'
+source-wordcount: '476'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,9 @@ ht-degree: 0%
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-
+>[!IMPORTANT]
+>
+> 确保随时了解汇总在[产品公告](/help/authentication/product-announcements.md)页中的最新Adobe Pass身份验证产品公告和停用时间表。
 
 
 1. 该程序员通过提供以下信息创建Zendesk票证，以启用Xbox 360/One用于Adobe Pass身份验证无客户端解决方案：

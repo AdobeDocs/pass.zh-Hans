@@ -2,9 +2,9 @@
 title: 如何使用Adobe API测试站点测试身份验证和授权流
 description: 如何使用Adobe API测试站点测试身份验证和授权流
 exl-id: 04af4aed-35e4-44cb-98ce-7643165a8869
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '312'
+source-wordcount: '334'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+
+>[!IMPORTANT]
+>
+> 确保随时了解汇总在[产品公告](/help/authentication/product-announcements.md)页中的最新Adobe Pass身份验证产品公告和停用时间表。
 
 为了测试AuthN和AuthZ流，我们准备了一个&#x200B;**API测试站点**，可供您使用。 我们的支持团队将很乐意为您提供凭据。 您可以通过&#x200B;**support@tve.zendesk.com**&#x200B;联系我们。
 

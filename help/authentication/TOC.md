@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
 user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1258'
+source-wordcount: '1260'
 ht-degree: 2%
 
 ---
@@ -15,6 +15,35 @@ ht-degree: 2%
 # Adobe Pass身份验证帮助 {#authentication}
 
 + [Adobe Pass 身份验证](home.md)
++ [产品公告](product-announcements.md)
++ 产品版本{#product-releases}
+   + 2024 {#2024}
+      + [Adobe Pass Authentication 3.0.3发行说明](notes-releases/auth-rn-303.md)
+      + [Adobe Pass Authentication 3.0发行说明](notes-releases/auth-rn-300.md)
+      + [Adobe Pass Authentication 2.70发行说明](notes-releases/auth-rn-270.md)
+      + [Adobe Pass Authentication 2.69发行说明](notes-releases/auth-rn-269.md)
+      + [Adobe Pass Authentication JavaScript 4.7.0发行说明](notes-releases/authn-rn-javascript-470.md)
+      + [Adobe Pass Authentication iOS / tvOS 3.9.2发行说明](notes-releases/authn-rn-ios-tvos-392.md)
+      + [Adobe Pass Authentication iOS / tvOS 3.8.4发行说明](notes-releases/authn-rn-ios-tvos-384.md)
+   + 2023 {#2023}
+      + [Adobe Pass Authentication 2.68发行说明](notes-releases/auth-rn-268.md)
+      + [Adobe Pass Authentication 2.67发行说明](notes-releases/auth-rn-267.md)
+      + [Adobe Pass Authentication 2.66发行说明](notes-releases/auth-rn-266.md)
+      + [Adobe Pass Authentication 2.65.1发行说明](notes-releases/auth-rn-2651.md)
+      + [Adobe Pass Authentication 2.65发行说明](notes-releases/auth-rn-265.md)
+      + [Adobe Pass Authentication 2.64.1发行说明](notes-releases/auth-rn-2641.md)
+      + [Adobe Pass Authentication iOS / tvOS 3.8.3发行说明](notes-releases/authn-rn-ios-tvos-383.md)
+      + [Adobe Pass Authentication iOS / tvOS 3.8.2发行说明](notes-releases/authn-rn-ios-tvos-382.md)
+      + [Adobe Pass Authentication iOS / tvOS 3.8.1发行说明](notes-releases/authn-rn-ios-tvos-381.md)
+      + [Adobe Pass Authentication Android 3.7.3发行说明](notes-releases/authn-rn-android-373.md)
+   + 2022 {#2022}
+      + [Adobe Pass Authentication 2.64发行说明](notes-releases/auth-rn-264.md)
+      + [Adobe Pass Authentication 2.63发行说明](notes-releases/auth-rn-263.md)
+      + [Adobe Pass Authentication 2.62.1发行说明](notes-releases/auth-rn-2621.md)
+      + [Adobe Pass Authentication JavaScript 4.6.0发行说明](notes-releases/authn-rn-javascript-460.md)
+   + 2021 {#2021}
+      + [Adobe Pass Authentication JavaScript 4.4.0发行说明](notes-releases/authn-rn-javascript-440.md)
+      + [Adobe Pass Authentication iOS / tvOS 3.7.0发行说明](notes-releases/authn-rn-ios-tvos-370.md)
 + 启动{#kickstart}
    + [技术文件](kickstart/technical-paper.md)
    + [程序员概述](kickstart/programmer-overview.md)
@@ -261,34 +290,6 @@ ht-degree: 2%
    + [集成](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md)
    + [报告](/help/authentication/user-guide-tve-dashboard/tve-dashboard-reports.md)
    + [更改日志](/help/authentication/user-guide-tve-dashboard/tve-dashboard-changes-log.md)
-+ 发行说明{#release-notes}
-   + 2024 {#release-notes-2024}
-      + [Adobe Pass Authentication 3.0.3发行说明](notes-releases/auth-rn-303.md)
-      + [Adobe Pass Authentication 3.0发行说明](notes-releases/auth-rn-300.md)
-      + [Adobe Pass Authentication 2.70发行说明](notes-releases/auth-rn-270.md)
-      + [Adobe Pass Authentication 2.69发行说明](notes-releases/auth-rn-269.md)
-      + [Adobe Pass Authentication JavaScript 4.7.0发行说明](notes-releases/authn-rn-javascript-470.md)
-      + [Adobe Pass Authentication iOS / tvOS 3.9.2发行说明](notes-releases/authn-rn-ios-tvos-392.md)
-      + [Adobe Pass Authentication iOS / tvOS 3.8.4发行说明](notes-releases/authn-rn-ios-tvos-384.md)
-   + 2023 {#release-notes-2023}
-      + [Adobe Pass Authentication 2.68发行说明](notes-releases/auth-rn-268.md)
-      + [Adobe Pass Authentication 2.67发行说明](notes-releases/auth-rn-267.md)
-      + [Adobe Pass Authentication 2.66发行说明](notes-releases/auth-rn-266.md)
-      + [Adobe Pass Authentication 2.65.1发行说明](notes-releases/auth-rn-2651.md)
-      + [Adobe Pass Authentication 2.65发行说明](notes-releases/auth-rn-265.md)
-      + [Adobe Pass Authentication 2.64.1发行说明](notes-releases/auth-rn-2641.md)
-      + [Adobe Pass Authentication iOS / tvOS 3.8.3发行说明](notes-releases/authn-rn-ios-tvos-383.md)
-      + [Adobe Pass Authentication iOS / tvOS 3.8.2发行说明](notes-releases/authn-rn-ios-tvos-382.md)
-      + [Adobe Pass Authentication iOS / tvOS 3.8.1发行说明](notes-releases/authn-rn-ios-tvos-381.md)
-      + [Adobe Pass Authentication Android 3.7.3发行说明](notes-releases/authn-rn-android-373.md)
-   + 2022 {#release-notes-2022}
-      + [Adobe Pass Authentication 2.64发行说明](notes-releases/auth-rn-264.md)
-      + [Adobe Pass Authentication 2.63发行说明](notes-releases/auth-rn-263.md)
-      + [Adobe Pass Authentication 2.62.1发行说明](notes-releases/auth-rn-2621.md)
-      + [Adobe Pass Authentication JavaScript 4.6.0发行说明](notes-releases/authn-rn-javascript-460.md)
-   + 2021 {#release-notes-2021}
-      + [Adobe Pass Authentication JavaScript 4.4.0发行说明](notes-releases/authn-rn-javascript-440.md)
-      + [Adobe Pass Authentication iOS / tvOS 3.7.0发行说明](notes-releases/authn-rn-ios-tvos-370.md)
 + 技术说明{#tech-notes}
    + 环境{#environments}
       + [了解Adobe环境](notes-technical/environments/understanding-the-adobe-environments.md)
