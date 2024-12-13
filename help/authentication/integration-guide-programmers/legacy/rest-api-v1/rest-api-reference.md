@@ -2,9 +2,9 @@
 title: REST API参考
 description: Rest api引用
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3e69473bdb9818416e67b03e6c35d24dc3e0f991
 workflow-type: tm+mt
-source-wordcount: '654'
+source-wordcount: '647'
 ht-degree: 2%
 
 ---
@@ -66,7 +66,7 @@ Adobe Pass身份验证REST API受[限制机制](/help/authentication/integration
 | 10. | [&lt;SP_FQDN>/api/v1/checkauthn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md) | 指示设备是否具有未过期的身份验证令牌。 |                                                                                             | Adobe Pass </br>身份验证</br>服务 | 智能设备 |
 | 11. | [&lt;SP_FQDN>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) | 如果找到，则返回AuthN标记。 |                                                                                             | Adobe Pass </br>身份验证</br>服务 | 智能设备 |
 | 12. | [&lt;SP_FQDN>/api/v1/tokens/authz](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authorization-token.md) | 如果找到，则返回AuthZ令牌。 |                                                                                             | Adobe Pass </br>身份验证</br>服务 | 智能设备 |
-| 13. | [&lt;SP_FQDN>/api/v1/tokens/media](/help/authentication/integration-guide-programmer/rest-apis/rest-api-v1/apis/obtain-short-media-token.md | 如果找到，则返回短媒体令牌 — 与/api/v1/mediatoken相同 |                                                                                             | Adobe Pass </br>身份验证</br>服务 | 智能设备 |
+| 13. | [&lt;SP_FQDN>/api/v1/tokens/media](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md) | 如果找到，则返回短媒体令牌 — 与/api/v1/mediatoken相同 |                                                                                             | Adobe Pass </br>身份验证</br>服务 | 智能设备 |
 | 14. | [&lt;SP_FQDN>/api/v1/mediatoken](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md) | 获取短媒体令牌 |                                                                                             | Adobe Pass </br>身份验证</br>服务 | 智能设备 |
 | 15. | [&lt;SP_FQDN>/api/v1/preauthorize](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources.md) | 检索预授权资源的列表 |                                                                                             | Adobe Pass </br>身份验证</br>服务 | 智能设备 |
 | 16. | [&lt;SP_FQDN>/api/v1/preauthorize/{code}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md) | 检索预授权资源的列表 |                                                                                             | Adobe Pass </br>身份验证</br>服务 | 登录Web应用程序 |
