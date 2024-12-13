@@ -2,14 +2,14 @@
 title: Amazon FireOS技术概述
 description: Amazon FireOS技术概述
 exl-id: 939683ee-0dd9-42ab-9fde-8686d2dc0cd0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '2166'
+source-wordcount: '2167'
 ht-degree: 0%
 
 ---
 
-# Amazon FireOS技术概述 {#amazon-fireos-technical-overview}
+# （旧版）Amazon FireOS技术概述 {#amazon-fireos-technical-overview}
 
 >[!NOTE]
 >
@@ -46,11 +46,11 @@ AccessEnabler支持的所有授权工作流都假定您之前已调用[`setReque
 
 1. 您的页面或播放器通过调用[getAuthentication()](#getAuthN)来启动身份验证工作流，该调用会检查缓存的有效身份验证令牌。 此方法具有可选的`redirectURL`参数；如果不提供`redirectURL`的值，则在成功进行身份验证后，用户将返回到初始化身份验证的URL。
 1. AccessEnabler确定当前的身份验证状态。 如果用户当前已通过身份验证，则AccessEnabler将调用您的`setAuthenticationStatus()`回调函数，传递一个表示成功的身份验证状态（下面的步骤7）。
-1. 如果用户未经过身份验证，则AccessEnabler通过确定用户的最后一次身份验证尝试是否成功使用给定的MVPD来继续身份验证流程。 如果已缓存MVPD ID并且`canAuthenticate`标志为true或使用[`setSelectedProvider()`](#setSelectedProvider)选择了MVPD，则不会使用MVPD选择对话框提示用户。 身份验证流继续使用MVPD的缓存值（即在上次成功身份验证期间使用的MVPD值）。 对后端服务器进行网络调用，并将用户重定向到MVPD登录页面（下面的步骤6）。
-1. 如果未缓存MVPD ID，并且未使用[`setSelectedProvider()`](#setSelectedProvider)选择MVPD，或者`canAuthenticate`标志设置为false，则调用[`displayProviderDialog()`](#displayProviderDialog)回调。 此回调会指示您的页面或播放器创建UI，为用户显示可从中进行选择的MVPD列表。 提供了一个MVPD对象数组，其中包含构建MVPD选择器所需的信息。 每个MVPD对象描述一个MVPD实体，并包含MVPD的ID（例如XFINITY、AT\&amp;T等）以及可以找到MVPD徽标的URL等信息。
-1. 选择特定的MVPD后，您的页面或播放器必须通知AccessEnabler用户的选择。 对于非Flash客户端，一旦用户选择了所需的MVPD，您就会通过调用[`setSelectedProvider()`](#setSelectedProvider)方法向AccessEnabler通知用户选择的内容。 Flash客户端改为调度类型为“`mvpdSelection`”的共享`MVPDEvent`，传递选定的提供程序。
+1. 如果用户未经过身份验证，AccessEnabler将通过确定用户的最后一次身份验证尝试在给定MVPD中是否成功来继续身份验证流程。 如果缓存了MVPD ID并且`canAuthenticate`标志为true或使用[`setSelectedProvider()`](#setSelectedProvider)选择了MVPD，则不会通过MVPD选择对话框提示用户。 身份验证流程继续使用MVPD的缓存值(即，在上次成功身份验证期间使用的MVPD值)。 系统会向后端服务器发出网络调用，并将用户重定向到MVPD登录页面（下面的步骤6）。
+1. 如果未缓存MVPD ID，并且未使用[`setSelectedProvider()`](#setSelectedProvider)选择MVPD，或者`canAuthenticate`标志设置为false，则会调用[`displayProviderDialog()`](#displayProviderDialog)回调。 此回调会指示您的页面或播放器创建UI，为用户显示可从中进行选择的MVPD列表。 提供了一系列MVPD对象，其中包含构建MVPD选择器所需的信息。 每个MVPD对象都描述一个MVPD实体，并包含MVPD的ID（例如XFINITY、AT\&amp;T等）和可以找到MVPD徽标的URL等信息。
+1. 选择特定的MVPD后，您的页面或播放器必须通知AccessEnabler用户的选择。 对于非Flash客户端，一旦用户选择所需的MVPD，您就会通过调用[`setSelectedProvider()`](#setSelectedProvider)方法通知AccessEnabler用户选择的内容。 Flash客户端改为调度类型为“`mvpdSelection`”的共享`MVPDEvent`，传递选定的提供程序。
 1. 对于Amazon应用程序，[`navigateToUrl()`](#navigagteToUrl)回调将被忽略。 Access Enabler库便于访问公共WebView控件以验证用户。
-1. 通过`WebView`，用户到达MVPD的登录页并输入其凭据。 请注意，在此传输过程中会执行多个重定向操作。
+1. 通过`WebView`，用户访问MVPD的登录页面并输入其凭据。 请注意，在此传输过程中会执行多个重定向操作。
 1. 一旦WebView完成身份验证，它将关闭并通知AccessEnabler用户已成功登录，AccessEnabler将从后端服务器检索实际的身份验证令牌。 AccessEnabler使用状态代码1调用[`setAuthenticationStatus()`](#setAuthNStatus)回调，表示成功。 如果在执行这些步骤的过程中出现错误，则会触发[`setAuthenticationStatus()`](#setAuthNStatus)回调，状态代码为0，并且还会显示相应的错误代码，以指示用户未经过身份验证。
 
 ### 注销工作流 {#logout}
@@ -80,7 +80,7 @@ Adobe Pass身份验证权利解决方案围绕Adobe Pass身份验证在成功完
 
 #### 身份验证令牌
 
-- **适用于FireOS的AccessEnabler 1.10.1**&#x200B;基于Android 1.9.1的AccessEnabler — 此SDK引入了一种新的令牌存储方法，可启用多个程序员 — MVPD存储桶，因此可启用多个身份验证令牌。
+- **适用于FireOS的AccessEnabler 1.10.1**&#x200B;基于Android 1.9.1的AccessEnabler — 此SDK引入了一种新的令牌存储方法，可启用多个Programmer-MVPD存储桶，因此可启用多个身份验证令牌。
 
 #### 授权令牌
 
@@ -104,12 +104,12 @@ Adobe Pass身份验证权利解决方案围绕Adobe Pass身份验证在成功完
 - 令牌的TTL未过期
 - 令牌的颁发者包含在允许的身份提供程序列表中
 
-令牌存储可支持多个Programmer-MVPD组合，依赖于可保存多个身份验证令牌的多级嵌套映射结构。 此新存储不会以任何方式影响AccessEnabler公共API，并且不需要程序员进行更改。 以下是一个示例来说明此新功能：
+令牌存储可支持多个程序员 — MVPD组合，依赖于可保存多个身份验证令牌的多级嵌套映射结构。 此新存储不会以任何方式影响AccessEnabler公共API，并且不需要程序员进行更改。 以下是一个示例来说明此新功能：
 
 1. 打开应用程序1（由程序员1开发）。
 1. 使用MVPD1（与程序员1集成）进行身份验证。
 1. 暂停/关闭当前应用程序，然后打开App2（由Programmer2开发）。
-1. 我们假设Programmer2未与MVPD2集成；因此，用户不会在App2中进行身份验证。
+1. 我们假设Programmer2未与MVPD2集成；因此，用户在App2中将不会进行身份验证。
 1. 在App2中使用MVPD2（与程序员2集成）进行身份验证。
 1. 切换回App1；用户仍将通过Programmer1进行身份验证。
 

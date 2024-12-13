@@ -2,14 +2,14 @@
 title: REST API指南（客户端到服务器）
 description: Rest API指南客户端到服务器。
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '876'
+source-wordcount: '877'
 ht-degree: 0%
 
 ---
 
-# REST API指南（客户端到服务器） {#rest-api-cookbook-client-to-server}
+# （旧版）REST API指南（客户端到服务器） {#rest-api-cookbook-client-to-server}
 
 >[!NOTE]
 >
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-此文档为程序员的工程团队提供了分步说明，介绍如何使用REST API服务将“智能设备”（游戏机、智能电视应用程序、机顶盒等）与Adobe Pass身份验证集成。 这种客户端到服务器方法使用REST API而不是客户端SDK，允许更广泛地支持不同的平台，对于这些平台，开发大量独特SDK将不可行。 有关无客户端解决方案工作方式的广泛技术概述，请参阅[无客户端技术概述](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/rest-api-overview.md)。
+此文档为程序员的工程团队提供了分步说明，介绍如何使用REST API服务将“智能设备”（游戏机、智能电视应用程序、机顶盒等）与Adobe Pass身份验证集成。 这种客户端到服务器方法使用REST API而不是客户端SDK，允许更广泛地支持各种平台，对于这些平台，开发大量独特SDK将不可行。 有关无客户端解决方案工作方式的广泛技术概述，请参阅[无客户端技术概述](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)。
 
 
 此方法需要两个组件（流应用程序和AuthN应用程序）来完成所需的流程：流应用程序中的启动、注册、授权和查看媒体流，以及AuthN应用程序中的身份验证流。
@@ -36,10 +36,10 @@ Adobe Pass身份验证REST API受[限制机制](/help/authentication/integration
 | 类型 | 组件 | 描述 |
 | --- | --- | --- |
 | 流设备 | 流应用程序 | 驻留在用户流设备上并播放经过验证的视频的程序员应用程序。 |
-| | \[Optional\]身份验证模块 | 如果流设备具有用户代理（即Web浏览器），则AuthN模块负责在MVPD IdP上验证用户。 |
+| | \[Optional\]身份验证模块 | 如果流设备具有User Agent（即Web Browser），则AuthN模块负责在MVPD IdP上验证用户。 |
 | \[可选\]身份验证设备 | AuthN应用程序 | 如果流设备没有用户代理（即Web浏览器），则AuthN应用程序是程序员Web应用程序，可使用Web浏览器从单独的用户设备访问。 |
 | Adobe基础架构 | Adobe Pass服务 | 与MVPD IdP和AuthZ服务集成并提供身份验证和授权决策的服务。 |
-| MVPD基础架构 | MVPD IdP | MVPD端点，提供基于凭据的身份验证服务以验证其用户的身份。 |
+| MVPD基础架构 | MVPD IdP | MVPD端点，它提供基于凭据的身份验证服务以验证其用户的身份。 |
 | | MVPD AuthZ服务 | MVPD端点，根据用户的订阅、家长控制等提供授权决策。 |
 
 
@@ -134,13 +134,13 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
 
 某些设备为合作伙伴单点登录(SSO)提供专用支持：
 
-* [APPLE SSO](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v1.md)
+* [APPLE SSO](/help/authentication/integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-rest-api-v1.md)
 
 ## Platform单点登录 {#platform-sso}
 
 某些设备提供对Platform单点登录(SSO)的专用支持：
 
-* [AMAZON SSO](../../../features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
+* [AMAZON SSO](../../sso-access/amazon-sso-cookbook-rest-api-v1.md)
 * [Roku SSO](../../../features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
 
 ## REST API的TempPass和提升TempPass {#temppass}

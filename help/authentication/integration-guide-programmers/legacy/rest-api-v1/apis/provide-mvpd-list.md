@@ -2,14 +2,14 @@
 title: 提供MVPD列表
 description: 提供MVPD列表
 exl-id: db2d8f19-d0b9-4195-bf0b-f9de0d96062b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '233'
 ht-degree: 2%
 
 ---
 
-# 提供MVPD列表 {#provide-mvpd-list}
+# （旧版）提供MVPD列表 {#provide-mvpd-list}
 
 >[!NOTE]
 >
@@ -58,7 +58,7 @@ ht-degree: 2%
 注意：配置为使用Platform SSO的所有MVPD在其相应节点(JSON/XML)中将具有以下额外属性：
 
 * **enablePlatformServices （布尔值）：**&#x200B;指示此MVPD是否通过Platform SSO集成的标志
-* **boardingStatus (string)：**&#x200B;标志，指示MVPD是否完全支持Platform SSO (SUPPORTED)，或者MVPD是否仅出现在平台选取器(PICKER)中
+* **boardingStatus (string)：**&#x200B;标记，指示MVPD是否完全支持平台SSO （支持），或者MVPD是否仅显示在平台选取器（选取器）中
 * **displayInPlatformPicker （布尔值）：**&#x200B;如果此MVPD出现在平台选取器中
 * **platformMappingId （字符串）：**&#x200B;平台已知的此MVPD的标识符
 * **requiredMetadataFields （字符串数组）：**&#x200B;用户元数据字段应在成功登录时可用

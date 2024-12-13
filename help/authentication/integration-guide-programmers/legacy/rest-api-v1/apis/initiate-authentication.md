@@ -2,14 +2,14 @@
 title: 启动身份验证
 description: 启动身份验证
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '291'
+source-wordcount: '292'
 ht-degree: 0%
 
 ---
 
-# 启动身份验证 {#initiate-authentication}
+# （旧版）启动身份验证 {#initiate-authentication}
 
 >[!NOTE]
 >
@@ -36,7 +36,7 @@ ht-degree: 0%
 
 ## 描述 {#description}
 
-通过通知MVPD选择事件来启动验证过程。 在Adobe Pass身份验证数据库上创建记录，在从MVPD收到成功响应时进行协调。
+通过通知MVPD选择事件来启动身份验证过程。 在Adobe Pass身份验证数据库上创建记录，在从MVPD收到成功响应时进行协调。
 
 
 
@@ -50,7 +50,7 @@ ht-degree: 0%
 | 输入参数 | 描述 |
 | --- | --- |
 | requestor_id | 此操作有效的程序员请求者。 |
-| mso_id | 此操作有效的MVPD ID。 |
+| mso_id | 此操作对其有效的MVPD ID。 |
 | reg_code | Reggie服务生成的注册码。 |
 | 域名 | 原始域。 |
 | redirect_url | 身份验证完成后的登录Webapp重定向url。 |
@@ -93,7 +93,7 @@ ht-degree: 0%
 
 * `domain_name`参数的值必须设置为在Adobe Pass身份验证中注册的域名之一。 有关详细信息，请参阅[注册和初始化](/help/authentication/kickstart/programmer-overview.md)。
 
-* [避免在/authenticate请求中使用“&amp;”reg\_code（技术说明）](/help/authentication/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
+* [避免在/authenticate请求中使用“&amp;”reg\_code（技术说明）](/help/authentication/integration-guide-programmers/legacy/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
 
 * `redirect_url`参数必须是顺序中的最后一个参数
 

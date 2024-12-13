@@ -2,14 +2,14 @@
 title: iOS/tvOS指南
 description: iOS/tvOS指南
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '2402'
+source-wordcount: '2403'
 ht-degree: 0%
 
 ---
 
-# iOS/tvOS SDK指南 {#iostvos-sdk-cookbook}
+# （旧版）iOS/tvOS SDK指南 {#iostvos-sdk-cookbook}
 
 >[!NOTE]
 >
@@ -76,7 +76,7 @@ H. [不带Apple SSO的注销流程](#logout_flow_wo_AppleSSO) </br>
       * 返回的状态是成功或失败，错误代码描述失败的类型。
 
    * [`navigateToUrl(url)`](#$nav2url) </br>
-      * 在用户选择MVPD后由[`getAuthentication()`](#$getAuthN)触发。 `url`参数提供MVPD登录页的位置。
+      * 在用户选择MVPD后由[`getAuthentication()`](#$getAuthN)触发。 `url`参数提供MVPD登录页面的位置。
 
    * `sendTrackingData(event, data)` </br>
       * 由`checkAuthentication()`、[`getAuthentication()`](#$getAuthN)、`checkAuthorization()`、[`getAuthorization()`](#$getAuthZ)、`setSelectedProvider()`触发。
@@ -189,7 +189,7 @@ H. [不带Apple SSO的注销流程](#logout_flow_wo_AppleSSO) </br>
 1. 调用[`getAuthentication()`](#$getAuthN)以启动身份验证流程，或获取用户已进行身份验证的确认。
    **触发器：**
 
-   * [presentTvProviderDialog()](#presentTvDialog)回调（如果用户未经过身份验证，并且当前请求者至少具有支持SSO的MVPD）。 如果没有任何MVPD支持SSO，将使用经典身份验证流程。
+   * [presentTvProviderDialog()](#presentTvDialog)回调(如果用户未经过身份验证，并且当前请求者至少拥有支持SSO的MVPD)。 如果没有任何MVPD支持SSO，将使用经典身份验证流程。
 
 1. 用户选择提供商后，AccessEnabler库将获取包含Apple VSA框架所提供信息的身份验证令牌。
 
@@ -208,7 +208,7 @@ H. [不带Apple SSO的注销流程](#logout_flow_wo_AppleSSO) </br>
 身份验证流程，或获取用户已存在的确认
 已通过身份验证。
    **触发器：**
-   * [`presentTvProviderDialog()`](#presentTvDialog)回调（如果用户未经过身份验证，并且当前请求者至少具有支持SSO的MVPD）。 如果没有任何MVPD支持SSO，将使用经典身份验证流程。
+   * [`presentTvProviderDialog()`](#presentTvDialog)回调(如果用户未经身份验证，并且当前请求者至少拥有支持SSO的MVPD)。 如果没有任何MVPD支持SSO，将使用经典身份验证流程。
 
 1. 用户选择一个提供程序后，将调用[`status()`](#status_callback_implementation)回调。 将提供注册码，AccessEnabler库将开始轮询服务器以获得成功的第二屏身份验证。
 

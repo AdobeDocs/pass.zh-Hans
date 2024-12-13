@@ -2,14 +2,14 @@
 title: Amazon FireOS集成指南
 description: Amazon FireOS集成指南
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1424'
+source-wordcount: '1425'
 ht-degree: 0%
 
 ---
 
-# Amazon FireOS集成指南 {#amazon-fireos-integration-cookbook}
+# （旧版）Amazon FireOS集成指南 {#amazon-fireos-integration-cookbook}
 
 >[!NOTE]
 >
@@ -70,7 +70,7 @@ ht-degree: 0%
 
    - [navigateToUrl(url)](#$navigateToUrl)
 
-      - 在AmazonFireOS SDK中忽略，该方法在Android平台上使用，在此平台上由`getAuthentication()`在用户选择MVPD后触发。  `url`参数提供MVPD登录页的位置。
+      - 在AmazonFireOS SDK中忽略，该方法在Android平台上使用，在此平台上由`getAuthentication()`在用户选择MVPD后触发。  `url`参数提供MVPD登录页面的位置。
 
    - [&#39;sendTrackingData(event， data)&#39;](#$sendTrackingData)
 
@@ -164,7 +164,7 @@ ht-degree: 0%
 
 1. 调用[`getAuthorization()`](#$getAuthZ)以启动授权流。
 
-   依赖项：与MVPD商定的有效ResourceID。
+   依赖项：与MVPD约定的有效ResourceID。
 
    **注意：** ResourceID应该与任何其他设备或平台上使用的相同，并且在MVPD中应该相同。
 

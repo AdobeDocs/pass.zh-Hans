@@ -4,10 +4,10 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
 user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1154'
-ht-degree: 3%
+source-wordcount: '1258'
+ht-degree: 2%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 3%
    + [MVPD概述](kickstart/mvpd-overview.md)
    + [程序员kickstart指南](kickstart/programmer-kickstart-guide.md)
    + [MVPD快速入门指南](kickstart/mvpd-kickstart-guide.md)
-   + [上报程序](notes-technical/escalation-procedures.md)
+   + [上报程序](kickstart/escalation-procedures.md)
    + [术语表](kickstart/glossary.md)
 + 程序员集成指南{#integration-guide-programmers}
    + REST API {#rest-apis}
@@ -97,22 +97,16 @@ ht-degree: 3%
          + [用于加密的用户元数据证书](integration-guide-programmers/features-standard/entitlements/user-metadata-certificate.md)
       + 报告{#error-reporting}时出错
          + [增强的错误代码](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
-         + [错误报告](integration-guide-programmers/features-standard/error-reporting/error-reporting.md)
       + 单点登录访问{#sso-access}
          + 合作伙伴单点登录{#partner-sso}
             + Apple单点登录{#apple-sso}
                + [Apple SSO概述](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md)
                + [Apple SSO指南(REST API V2)](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)
-               + [Apple SSO指南(REST API V1)](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v1.md)
-               + [Apple SSO指南(iOS/tvOS SDK)](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-iostvos-sdk.md)
          + 平台单点登录{#platform-sso}
             + Amazon单点登录{#amazon-sso}
                + [Amazon SSO指南(REST API V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
-               + [Amazon SSO指南(REST API V1)](integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
             + Roku单点登录{#roku-sso}
                + [Roku SSO概述](integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
-         + [单点登录支持](integration-guide-programmers/features-standard/sso-access/sso-support.md)
-         + [通过被动身份验证的SSO](integration-guide-programmers/features-standard/sso-access/sso-passive-authn.md)
       + 基于主页的身份验证访问{#hba-access}
          + [适用于所有地区的电视的家庭身份验证](integration-guide-programmers/features-standard/hba-access/home-based-authn-tve.md)
          + [MVPD的HBA状态](integration-guide-programmers/features-standard/hba-access/hba-status-mvpds.md)
@@ -135,68 +129,114 @@ ht-degree: 3%
          + [在Adobe Pass身份验证中使用Experience CloudID](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
    + 旧版{#legacy}
       + （旧版） REST API V1 {#rest-api-v1}
-         + [REST API V1概述](integration-guide-programmers/legacy/rest-api-v1/apis/rest-api-overview.md)
-         + [REST API V1参考](integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
+         + [（旧版）REST API V1概述](integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
+         + [（旧版）REST API V1参考](integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
          + （旧版） API {#rest-api-v1-apis}
-            + [注册码请求](integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
-            + [返回注册记录](integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md)
-            + [删除注册记录](integration-guide-programmers/legacy/rest-api-v1/apis/delete-registration-record.md)
-            + [提供MVPD列表](integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)
-            + [启动身份验证](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md)
-            + [检查身份验证令牌](integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md)
-            + [检索身份验证令牌](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)
-            + [启动授权](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authorization.md)
-            + [检索授权令牌](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authorization-token.md)
-            + [获取短媒体令牌](integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md)
-            + [通过第二屏幕Web应用程序检查身份验证流程](integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md)
-            + [检索预授权资源的列表](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources.md)
-            + [按第二屏Web应用程序检索预授权资源列表](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md)
-            + [启动注销](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)
-            + [用户元数据](integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)
-            + [Retrieve profile-request](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-profilerequest.md)
-            + [令牌交换](integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md)
-            + [临时通行证和促销临时通行证的免费预览](integration-guide-programmers/legacy/rest-api-v1/apis/free-preview-for-temp-pass-and-promotional-temp-pass.md)
+            + [（旧版）注册码请求](integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
+            + [（旧版）退货注册记录](integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md)
+            + [（旧版）删除注册记录](integration-guide-programmers/legacy/rest-api-v1/apis/delete-registration-record.md)
+            + [（旧版）提供MVPD列表](integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)
+            + [（旧版）启动身份验证](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md)
+            + [（旧版）检查身份验证令牌](integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md)
+            + [（旧版）检索身份验证令牌](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)
+            + [（旧版）启动授权](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authorization.md)
+            + [（旧版）检索授权令牌](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authorization-token.md)
+            + [（旧版）获取短媒体令牌](integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md)
+            + [（旧版）按第二屏Web应用程序检查身份验证流程](integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md)
+            + [（旧版）检索预授权资源的列表](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources.md)
+            + [（旧版）按第二屏Web应用程序检索预授权资源列表](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md)
+            + [（旧版）启动注销](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)
+            + [（旧版）用户元数据](integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)
+            + [（旧版）Retrieve profile-request](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-profilerequest.md)
+            + [（旧版）令牌交换](integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md)
+            + [（旧版）临时通行证和促销临时通行证的免费预览](integration-guide-programmers/legacy/rest-api-v1/apis/free-preview-for-temp-pass-and-promotional-temp-pass.md)
          + （旧版）指南{#rest-api-v1-cookbooks}
-            + [REST API V1指南（客户端到服务器）](integration-guide-programmers/legacy/rest-api-v1/cookbooks/rest-api-cookbook-clienttoserver.md)
-            + [REST API V1指南（服务器到服务器）](integration-guide-programmers/legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md)
+            + [（旧版）REST API V1指南（客户端到服务器）](integration-guide-programmers/legacy/rest-api-v1/cookbooks/rest-api-cookbook-clienttoserver.md)
+            + [（旧版）REST API V1指南（服务器到服务器）](integration-guide-programmers/legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md)
       + （旧版） SDK {#sdks}
          + （旧版）JavaScript SDK {#javascript-sdk}
-            + [JavaScript SDK概述](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-overview.md)
-            + [JavaScript SDK指南](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-cookbook.md)
-            + [JavaScript SDK API参考](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
-            + [JavaScript SDK API预授权](integration-guide-programmers/legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
+            + [（旧版）JavaScript SDK概述](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-overview.md)
+            + [（旧版）JavaScript SDK指南](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-cookbook.md)
+            + [（旧版）JavaScript SDK API参考](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
+            + [（旧版）JavaScript SDK API预授权](integration-guide-programmers/legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
             + （旧版）准则{#javascript-sdk-guidelines}
-               + [无刷新登录和注销](integration-guide-programmers/legacy/sdks/javascript-sdk/refreshless-login-and-logout.md)
+               + [（旧版）无刷新登录和注销](integration-guide-programmers/legacy/sdks/javascript-sdk/refreshless-login-and-logout.md)
          + （旧版）iOS/tvOS SDK {#ios-tvos-sdk}
-            + [iOS/tvOS SDK概述](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)
-            + [iOS/tvOS SDK指南](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-cookbook.md)
-            + [iOS/tvOS SDK API参考](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
-            + [iOS/tvOS SDK API预授权](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
+            + [（旧版）iOS/tvOS SDK概述](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)
+            + [（旧版）iOS/tvOS SDK指南](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-cookbook.md)
+            + [（旧版）iOS/tvOS SDK API参考](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
+            + [（旧版）iOS/tvOS SDK API预授权](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
             + （旧版）准则{#ios-tvos-sdk-guidelines}
-               + [iOS/tvOS应用程序注册](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md)
-               + [iOS/tvOS v3.x迁移指南](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-v3x-migration-guide.md)
-               + [iOS/tvOS存储完整性检查](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-storage-integrity-checks.md)
+               + [（旧版）iOS/tvOS应用程序注册](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md)
+               + [（旧版） iOS/tvOS v3.x迁移指南](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-v3x-migration-guide.md)
+               + [（旧版）iOS/tvOS存储完整性检查](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-storage-integrity-checks.md)
          + （旧版）Android SDK {#android-sdk}
-            + [Android SDK概述](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)
-            + [Android SDK指南](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-cookbook.md)
-            + [Android SDK API参考](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md)
-            + [Android SDK API预授权](integration-guide-programmers/legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
+            + [（旧版）Android SDK概述](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)
+            + [（旧版）Android SDK指南](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-cookbook.md)
+            + [（旧版）Android SDK API参考](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md)
+            + [（旧版）Android SDK API预授权](integration-guide-programmers/legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
             + （旧版）准则{#android-sdk-guidelines}
-               + [Android应用程序注册](integration-guide-programmers/legacy/sdks/android-sdk/android-application-registration.md)
-               + [带有动态客户端注册功能的Android SDK](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-with-dynamic-client-registration.md)
+               + [（旧版）Android应用程序注册](integration-guide-programmers/legacy/sdks/android-sdk/android-application-registration.md)
+               + [（旧版）Android SDK，带有动态客户端注册功能](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-with-dynamic-client-registration.md)
          + （旧版）FireOS SDK {#fireos-sdk}
-            + [Amazon FireOS技术概述](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-technical-overview.md)
-            + [Amazon FireOS集成指南](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-integration-cookbook.md)
-            + [Amazon FireOS API参考](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
-            + [Amazon FireOS应用程序注册](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-application-registration.md)
-            + [带有动态客户端注册的FireOS SDK](integration-guide-programmers/legacy/sdks/fireos-sdk/fireos-sdk-with-dynamic-client-registration.md)
-            + [Amazon FireOS SSO — 程序员启动指南](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-firetv-sso-programmer-kickoff-guide.md)
+            + [（旧版）Amazon FireOS技术概述](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-technical-overview.md)
+            + [（旧版）Amazon FireOS集成指南](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-integration-cookbook.md)
+            + [（旧版）Amazon FireOS API参考](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
+            + [（旧版）Amazon FireOS应用程序注册](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-application-registration.md)
+            + [（旧版）带有Dynamic Client注册的FireOS SDK](integration-guide-programmers/legacy/sdks/fireos-sdk/fireos-sdk-with-dynamic-client-registration.md)
+            + [（旧版）Amazon FireOS SSO — 程序员启动指南](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-firetv-sso-programmer-kickoff-guide.md)
+      + （旧版）客户端信息{#client-information}
+         + [（旧版）传递客户端信息（设备、连接和应用程序）](integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)
+      + （旧版）错误报告{#error-reporting}
+         + [（旧版）错误报告](integration-guide-programmers/legacy/error-reporting/error-reporting.md)
+      + （旧版）单点登录访问{#sso-access}
+         + [（旧版）单点登录支持](integration-guide-programmers/legacy/sso-access/sso-support.md)
+         + [（旧版）通过被动身份验证的SSO](integration-guide-programmers/legacy/sso-access/sso-passive-authn.md)
+         + [（旧版）Amazon SSO指南(REST API V1)](integration-guide-programmers/legacy/sso-access/amazon-sso-cookbook-rest-api-v1.md)
+         + [（旧版）Apple SSO指南(REST API V1)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-rest-api-v1.md)
+         + [（旧版）Apple SSO指南(iOS/tvOS SDK)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)
+      + （旧版） TVE仪表板{#tve-dashboard}
+         + [（旧版）TVE功能板用户指南](integration-guide-programmers/legacy/tve-dashboard/tve-dashboard-user-guide.md)
+      + （旧版）技术说明{#tech-notes}
+         + （旧版） REST API V1 {#rest-api-v1}
+            + [（旧版）无客户端API实施 — 错误代码/包含可能原因/原因的消息](integration-guide-programmers/legacy/notes-technical/clientless-api-implementation-error-codes-messages-with-probable-reason-cause.md)
+            + [（旧版）缺少设备ID时的无客户端API流](integration-guide-programmers/legacy/notes-technical/clientless-api-flow-in-the-absence-of-device-id.md)
+            + [（旧版）无客户端：避免在/authenticate请求中使用&#39;&amp;&#39;reg_code](integration-guide-programmers/legacy/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
+            + [（旧版）在Xbox 360和XboxOne上为程序员启用Adobe Pass授权服务（无客户端）](integration-guide-programmers/legacy/notes-technical/enabling-primetime-entitlement-services-for-a-programmer-on-xbox-360-and-xboxone-clientless-solution.md)
+            + [（旧版）无客户端设备类型和量度](integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)
+         + （旧版） SDK {#sdks}
+            + [（旧版）证书常见问题解答](integration-guide-programmers/legacy/notes-technical/certificates-qa.md)
+            + [（旧版）了解用户ID](integration-guide-programmers/legacy/notes-technical/understanding-user-ids.md)
+            + （旧版）JavaScript SDK {#javascript-sdk}
+               + [（旧版）跟踪预防评估 — Apple Safari](integration-guide-programmers/legacy/notes-technical/tracking-prevention-assessment-apple-safari.md)
+               + [（旧版）跟踪预防评估 — Google Chrome](integration-guide-programmers/legacy/notes-technical/tracking-prevention-assessment-google-chrome.md)
+               + [（旧版）Cookie更新 — SameSite和Secure标记](integration-guide-programmers/legacy/notes-technical/cookies-updates-samesite-and-secure-flags.md)
+               + [（旧版）调试提示](integration-guide-programmers/legacy/notes-technical/appendix-b-debugging-tips.md)
+            + （旧版）Android SDK {#android-sdk}
+               + [（旧版）Android 10应用程序上的Access Enabler Android SDK单点登录(SSO)](integration-guide-programmers/legacy/notes-technical/access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
+               + [（旧版）Adobe Pass身份验证和Android 6“Marshmallow”新权限模型](integration-guide-programmers/legacy/notes-technical/adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model.md)
+            + （旧版）iOS/tvOS SDK {#ios-tvos-sdk}
+               + [（旧版）iOS SDK 3.1+上的WKWebView支持](integration-guide-programmers/legacy/notes-technical/wkwebview-support-on-ios-sdk-31.md)
+               + [（旧版）iOS SDK 3.2+上的SFSafariViewController支持](integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)
+               + [（旧版）使用iOS Authentication Access Enabler时Adobe Pass上的SSO](integration-guide-programmers/legacy/notes-technical/sso-on-ios-when-using-the-primetime-authentication-access-enabler.md)
+               + [（旧版）iOS身份验证错误 — 找不到adobepass.ios.app](integration-guide-programmers/legacy/notes-technical/ios-authentication-error-adobepassiosapp-cannot-be-found.md)
+               + [（旧版）在iOS上重置临时传递](integration-guide-programmers/legacy/notes-technical/reset-temp-pass-on-ios.md)
+               + [（旧版）使用控制台应用程序日志调试AccessEnabler iOS/tvOS SDK](integration-guide-programmers/legacy/notes-technical/debugging-the-accessenabler-iostvos-sdk-using-console-app-logs.md)
+               + [（旧版） AccessEnabler iOS/tvOS 3.7.0升级路径](integration-guide-programmers/legacy/notes-technical/accessenabler-iostvos-370-upgrade-path.md)
+         + （旧版）用户体验{#user-experience}
+            + [（旧版）如何将MVPD登录页面从iFrame迁移到弹出窗口](integration-guide-programmers/legacy/notes-technical/migr-mvpd-login-iframe-popup.md)
+            + [（旧版）印前检查功能：如何启用、排除或确定问题](integration-guide-programmers/legacy/notes-technical/preflight-feature.md)
+            + [（旧版）在选择对话框中允许MVPD](integration-guide-programmers/legacy/notes-technical/allow-mvpd-selectn-dialog.md)
+            + [（旧版）阻止MVPD显示选择对话框](integration-guide-programmers/legacy/notes-technical/prevent-mvpd-selectn-dialog.md)
+         + （旧版）疑难解答{#troubleshooting}
+            + [（旧版）使用Charles代理](integration-guide-programmers/legacy/notes-technical/using-charles-proxy.md)
+            + [（旧版）监控Adobe PassAdobePayTV密码](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
+            + [（旧版）如何使用AdobeAPI测试站点测试身份验证和授权流](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
    + [程序员集成指南概述](integration-guide-programmers/programmer-integration-guide-overview.md)
-   + [节流机构](integration-guide-programmers/throttling-mechanism.md)
-   + [最低系统要求](integration-guide-programmers/minimum-system-requirements.md)
    + [程序员权利流](integration-guide-programmers/entitlement-flow.md)
    + [程序员用例](integration-guide-programmers/programmer-use-cases.md)
-   + [传递客户端信息（设备、连接和应用程序）](integration-guide-programmers/passing-client-information-device-connection-and-application.md)
+   + [节流机构](integration-guide-programmers/throttling-mechanism.md)
+   + [最低系统要求](integration-guide-programmers/minimum-system-requirements.md)
 + MVPD的集成指南{#integration-guide-mvpds}
    + [集成功能](integration-guide-mvpds/mvpd-integr-features.md)
    + [身份验证](integration-guide-mvpds/authn-usecase.md)
@@ -221,7 +261,6 @@ ht-degree: 3%
    + [集成](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md)
    + [报告](/help/authentication/user-guide-tve-dashboard/tve-dashboard-reports.md)
    + [更改日志](/help/authentication/user-guide-tve-dashboard/tve-dashboard-changes-log.md)
-   + [TVE仪表板用户指南](user-guide-tve-dashboard/tve-dashboard-user-guide.md)
 + 发行说明{#release-notes}
    + 2024 {#release-notes-2024}
       + [Adobe Pass Authentication 3.0.3发行说明](notes-releases/auth-rn-303.md)
@@ -251,40 +290,6 @@ ht-degree: 3%
       + [Adobe Pass Authentication JavaScript 4.4.0发行说明](notes-releases/authn-rn-javascript-440.md)
       + [Adobe Pass Authentication iOS / tvOS 3.7.0发行说明](notes-releases/authn-rn-ios-tvos-370.md)
 + 技术说明{#tech-notes}
-   + 环境{#tech-notes-environments}
-      + [了解Adobe环境](notes-technical/understanding-the-adobe-environments.md)
-      + [在资格预审中设置环境和测试](notes-technical/setting-up-your-environment-and-testing-in-prequal.md)
-      + [如何使用AdobeAPI测试站点测试身份验证和授权流](notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
-   + 用户体验{#tech-notes-user-experience}
-      + [如何将MVPD登录页面从iFrame迁移到弹出窗口](notes-technical/migr-mvpd-login-iframe-popup.md)
-      + [印前检查功能：如何启用、排除故障或确定问题](notes-technical/preflight-feature.md)
-      + [在选择对话框中允许MVPD](notes-technical/allow-mvpd-selectn-dialog.md)
-      + [阻止MVPD显示“选择”对话框](notes-technical/prevent-mvpd-selectn-dialog.md)
-   + REST API V1 {#tech-notes-rest-api-v1}
-      + [无客户端API实施 — 错误代码/包含可能原因/原因的消息](notes-technical/clientless-api-implementation-error-codes-messages-with-probable-reason-cause.md)
-      + [缺少设备ID时的无客户端API流](notes-technical/clientless-api-flow-in-the-absence-of-device-id.md)
-      + [无客户端：避免在/authenticate请求中使用&#39;&amp;&#39;reg_code](notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
-      + [为Xbox 360和XboxOne无客户端程序员启用Adobe Pass授权服务](notes-technical/enabling-primetime-entitlement-services-for-a-programmer-on-xbox-360-and-xboxone-clientless-solution.md)
-      + [无客户端设备类型和量度](notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)
-   + SDK {#tech-notes-sdks}
-      + [证书常见问题解答](notes-technical/certificates-qa.md)
-      + [了解用户ID](notes-technical/understanding-user-ids.md)
-      + JavaScript SDK {#tech-notes-javascript-sdk}
-         + [跟踪预防评估 — Apple Safari](notes-technical/tracking-prevention-assessment-apple-safari.md)
-         + [跟踪预防评估 — Google Chrome](notes-technical/tracking-prevention-assessment-google-chrome.md)
-         + [Cookie更新 — SameSite和Secure标记](notes-technical/cookies-updates-samesite-and-secure-flags.md)
-         + [调试提示](notes-technical/appendix-b-debugging-tips.md)
-      + Android SDK {#tech-notes-android-sdk}
-         + [Android 10应用程序上的Access Enabler Android SDK单点登录(SSO)](notes-technical/access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
-         + [Adobe Pass身份验证和Android 6“Marshmallow”新权限模型](notes-technical/adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model.md)
-      + iOS/tvOS SDK {#tech-notes-ios-tvos-sdk}
-         + [iOS SDK 3.1+上的WKWebView支持](notes-technical/wkwebview-support-on-ios-sdk-31.md)
-         + [iOS SDK 3.2+上的SFSafariViewController支持](notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)
-         + [使用iOS Authentication Access Enabler时Adobe Pass上的SSO](notes-technical/sso-on-ios-when-using-the-primetime-authentication-access-enabler.md)
-         + [iOS身份验证错误 — 找不到adobepass.ios.app](notes-technical/ios-authentication-error-adobepassiosapp-cannot-be-found.md)
-         + [在iOS上重置临时传递](notes-technical/reset-temp-pass-on-ios.md)
-         + [使用控制台应用程序日志调试AccessEnabler iOS/tvOS SDK](notes-technical/debugging-the-accessenabler-iostvos-sdk-using-console-app-logs.md)
-         + [AccessEnabler iOS/tvOS 3.7.0升级路径](notes-technical/accessenabler-iostvos-370-upgrade-path.md)
-   + 疑难解答{#tech-notes-troubleshooting}
-      + [使用Charles代理](notes-technical/using-charles-proxy.md)
-      + [监控Adobe PassAdobePayTV Pass](notes-technical/monitoring-adobe-pay-tv-pass.md)
+   + 环境{#environments}
+      + [了解Adobe环境](notes-technical/environments/understanding-the-adobe-environments.md)
+      + [在资格预审中设置环境和测试](notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md)

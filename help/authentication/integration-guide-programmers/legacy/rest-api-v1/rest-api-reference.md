@@ -2,14 +2,14 @@
 title: REST API参考
 description: Rest api引用
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '653'
+source-wordcount: '654'
 ht-degree: 2%
 
 ---
 
-# REST API参考 {#rest-api-reference}
+# （旧版）REST API参考 {#rest-api-reference}
 
 >[!NOTE]
 >
@@ -52,12 +52,12 @@ Adobe Pass身份验证REST API受[限制机制](/help/authentication/integration
 下表列出了适用于无客户端方法的Web服务。 单击Web服务端点以了解更多信息（示例请求和响应、输入参数、HTTP方法等）
 
 
-| Sr | Web服务端点 | 描述 | <!--[Diag.  </br>Ref](http://tve.helpdocsonline.com/api-reference-v2-test#illustration)-->. | 托管位置 | 调用者 |
+| Sr | Web服务端点 | 描述 | <!--[Diag.  </br>Ref](http://tve.helpdocsonline.com/api-reference-v2-test#illustration)-->。 | 托管位置 | 调用者 |
 |-----|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------|
 | 1. | [&lt;REGGIE_FQDN>/reggie/v1/ </br> {requestorId}/regcode](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) | 返回随机生成的注册代码和登录页面URI | 2 | Adobe</br>注册代码服务 | 智能设备 |
 | 2. | [&lt;REGGIE_FQDN>/reggie/v1/ </br> {requestorId}/regcode/ </br> {registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md) | 返回包含注册码UUID、注册码和哈希设备ID的注册码记录 | 8 | Adobe</br>注册代码服务 | Adobe Pass 身份验证 |
 | 3. | [&lt;SP_FQDN>/api/v1/config/ </br> {requestorId}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md) | 返回请求者的已配置MVPD列表 | 5 | Adobe</br>Adobe Pass </br>身份验证</br>服务 | 登录</br>Web </br>应用程序 |
-| 4. | [&lt;SP_FQDN>/api/v1/authenticate](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) | 通过通知MVPD选择事件启动AuthN进程。 在验证数据库上创建记录，在从MVPD收到成功响应时进行协调（步骤13） | 7 | Adobe</br>Adobe Pass </br>身份验证</br>服务 | 登录</br>Web </br>应用程序 |
+| 4. | [&lt;SP_FQDN>/api/v1/authenticate](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) | 通过通知MVPD选择事件来启动AuthN流程。 在身份验证数据库上创建记录，在从MVPD收到成功响应时进行协调（步骤13） | 7 | Adobe</br>Adobe Pass </br>身份验证</br>服务 | 登录</br>Web </br>应用程序 |
 | 5. | SAML断言消费者 | Adobe Pass身份验证与MVPD之间的现有SAML工作流 | 13 | Adobe Pass </br>身份验证</br>服务 | Adobe Pass 身份验证 |
 | 6. | [&lt;SP_FQDN>/api/v1/checkauthn/ </br> {registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md) | 登录Web应用程序可以检查尝试的登录流程是否成功 |                                                                                             | Adobe Pass </br>身份验证   </br>服务 | 登录   </br>Web   </br>应用 |
 | 7. | [&lt;SP_FQDN>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) | 获取AuthN令牌相关的元数据 | 15 | Adobe Pass </br>身份验证</br>服务 | 智能设备 |

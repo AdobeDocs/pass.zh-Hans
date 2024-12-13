@@ -2,14 +2,14 @@
 title: Android SDK指南
 description: Android SDK指南
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1681'
+source-wordcount: '1682'
 ht-degree: 0%
 
 ---
 
-# Android SDK指南 {#android-sdk-cookbook}
+# （旧版）Android SDK指南 {#android-sdk-cookbook}
 
 >[!NOTE]
 >
@@ -76,7 +76,7 @@ AccessEnabler的网络活动发生在不同的线程中，因此从不阻止UI�
 
    - [navigateToUrl(url)](#$navigateToUrl)
 
-     在用户选择MVPD后由`getAuthentication()`触发。 `url`参数提供MVPD登录页的位置。
+     在用户选择MVPD后由`getAuthentication()`触发。 `url`参数提供MVPD登录页面的位置。
 
    - [&#39;sendTrackingData(event， data)&#39;](#$sendTrackingData)
 
@@ -171,7 +171,7 @@ Android Library (AccessEnabler)
 1. 调用[getAuthorization()](#$getAuthZ)以启动授权
 流量。
 
-   依赖项：与MVPD商定的有效ResourceID。
+   依赖项：与MVPD约定的有效ResourceID。
 
    **注意：** ResourceID应该与任何其他设备或平台上使用的相同，并且在MVPD中应该相同。
 

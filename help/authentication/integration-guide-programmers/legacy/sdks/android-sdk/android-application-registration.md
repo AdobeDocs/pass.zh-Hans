@@ -2,14 +2,14 @@
 title: Android应用程序注册
 description: Android应用程序注册
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '586'
+source-wordcount: '587'
 ht-degree: 0%
 
 ---
 
-# Android应用程序注册 {#android-application-registration}
+# （旧版）Android应用程序注册 {#android-application-registration}
 
 >[!NOTE]
 >
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## 简介 {#intro}
 
-从3.0版本的Android AccessEnabler SDK开始，我们正在更改Adobe服务器的身份验证机制。 我们引入了“软件语句”字符串的概念，而不是使用公钥和密码系统对requestorID进行签名，该字符串可用于获取访问令牌，该令牌稍后将用于SDK对我们的服务器进行的所有调用。 除了软件声明之外，您还需要为应用程序创建深层链接。
+从3.0版本的Android AccessEnabler SDK开始，我们正在更改Adobe服务器的身份验证机制。 我们引入了软件语句字符串的概念，这种字符串可用于获取访问令牌，该令牌稍后将用于SDK对我们的服务器进行的所有调用，而不是使用公钥和密码系统来对requestorID进行签名。 除了软件声明之外，您还需要为应用程序创建深层链接。
 
 有关详细信息，请参阅[动态客户端注册概述](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)。
 

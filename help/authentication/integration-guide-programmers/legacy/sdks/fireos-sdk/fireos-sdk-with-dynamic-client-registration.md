@@ -1,16 +1,16 @@
 ---
-title: 带有动态客户端注册功能的Amazon FireOS SDK
-description: 带有动态客户端注册功能的Amazon FireOS SDK
+title: Amazon FireOS SDK与Dynamic Client注册
+description: Amazon FireOS SDK与Dynamic Client注册
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1146'
+source-wordcount: '1147'
 ht-degree: 0%
 
 ---
 
 
-# 带有动态客户端注册功能的Amazon FireOS SDK {#amazon-fireos-sdk-with-dynamic-client-registration}
+# （旧版）Amazon FireOS SDK，带有动态客户端注册功能 {#amazon-fireos-sdk-with-dynamic-client-registration}
 
 >[!NOTE]
 >
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 ## <span id=""></span>简介 {#Intro}
 
-已修改适用于FireTV的FireOS AccessEnabler SDK，以便在不使用会话Cookie的情况下启用身份验证。 随着越来越多的浏览器限制对Cookie的访问，需要另一种方法来允许身份验证。
+修改了适用于FireTV的FireOS AccessEnabler SDK，以便在不使用会话Cookie的情况下启用身份验证。 随着越来越多的浏览器限制对Cookie的访问，需要另一种方法来允许身份验证。
 
 **FireOS SDK 3.0.4**&#x200B;将基于已签名请求者ID和会话Cookie身份验证的当前应用程序注册机制替换为[动态客户端注册概述](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)。
 
@@ -46,7 +46,7 @@ ht-degree: 0%
 **备注**
 
 - softwareStatement无效将导致应用程序无法初始化AccessEnabler或注册Adobe Pass身份验证和授权的应用程序
-- FireTV的redirectUrl参数由SDK设置为adobepass://android.app ，因为身份验证由唯一的AccessEnabler实例处理。
+- SDK将FireTV的redirectUrl参数设置为adobepass://android.app ，因为身份验证由唯一的AccessEnabler实例处理。
 
 ### setRequestor
 
@@ -56,7 +56,7 @@ ht-degree: 0%
 
 如果未使用&#x200B;*url*&#x200B;参数，则生成的网络调用将目标设置为默认服务提供程序URL：Adobe发布生产环境。
 
-如果为&#x200B;*url*&#x200B;参数提供了值，则生成的网络调用将针对&#x200B;*url*&#x200B;参数中提供的所有URL。 所有配置请求都在单独的线程中同时触发。 在编译MVPD列表时，优先使用第一个响应程序。 对于列表中的每个MVPD， Access Enabler记住关联服务提供商的URL。 所有后续权利请求都定向到与服务提供程序相关联的URL，该URL在配置阶段与目标MVPD配对。
+如果为&#x200B;*url*&#x200B;参数提供了值，则生成的网络调用将针对&#x200B;*url*&#x200B;参数中提供的所有URL。 所有配置请求都在单独的线程中同时触发。 在编译MVPD列表时，优先使用第一个响应程序。 对于列表中的每个MVPD， Access Enabler会记住关联服务提供商的URL。 所有后续权利请求都定向到与服务提供商关联的URL，该URL在配置阶段与目标MVPD配对。
 
 | API调用：请求者配置 |
 | --- |
@@ -73,7 +73,7 @@ ht-degree: 0%
 **参数：**
 
 - *requestorID*：与渠道关联的唯一ID。 首次注册Adobe Pass身份验证服务时，请将Adobe分配的唯一ID传递到您的网站。
-- *url*：可选参数；默认情况下，使用Adobe服务提供程序(http://sp.auth.adobe.com/)。 此阵列允许您为Adobe提供的身份验证和授权服务指定端点（其他实例可能用于调试目的）。 您可以使用此选项指定多个Adobe Pass身份验证服务提供程序实例。 这样做时，MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供程序相关联；即首先响应并支持该MVPD的服务提供程序。
+- *url*：可选参数；默认情况下，使用Adobe服务提供程序(http://sp.auth.adobe.com/)。 此阵列允许您为Adobe提供的身份验证和授权服务指定端点（其他实例可能用于调试目的）。 您可以使用此选项指定多个Adobe Pass身份验证服务提供程序实例。 在执行此操作时，MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商相关联；即首先响应并支持该MVPD的提供商。
 
 已弃用：
 
@@ -119,7 +119,7 @@ ht-degree: 0%
 
   SDK将执行以下操作：
 
-   - 注册应用程序：使用&#x200B;**software\_statement**，SDK将获得&#x200B;**client\_id、client\_secret、client\_id\_issued\_at、redirect\_uris、grant\_types**。 此信息将存储在应用程序的内部存储中。
+   - 注册应用程序：使用&#x200B;**software\_statement**，SDK将获得&#x200B;**client\_id， client\_secret， client\_id\_issued\_at， redirect\_uris， grant\_types**。 此信息将存储在应用程序的内部存储中。
    - 使用client\_id、client\_secret和grant\_type=&quot;client\_credentials&quot;获取&#x200B;**access\_token**。 此access\_token将用于SDK对Adobe Pass服务器进行的每次调用。
 
 | 令牌错误响应： |  |  |
@@ -128,12 +128,12 @@ ht-degree: 0%
 | HTTP 400（错误请求） | {&quot;error&quot;： &quot;invalid\_client&quot;} | 客户端身份验证失败，因为客户端未知。 SDK *必须*&#x200B;再次向授权服务器注册。 |
 | HTTP 400（错误请求） | {&quot;error&quot;： &quot;unauthorized\_client&quot;} | 经过身份验证的客户端无权使用此授权授予类型。 |
 
-- 如果MVPD需要被动身份验证，则WebView将打开以使用该MVPD执行被动身份验证，并在完成后关闭
+- 如果MVPD需要被动身份验证，则WebView将打开以使用该MVPD被动执行，并在完成后关闭
 
 - b. checkAuthentication()
 
    - *true* ：转至授权
-   - *false* ：转到“选择MVPD”
+   - *false* ：转到选择MVPD
 
 - c. getAuthentication ：SDK将在调用参数中包含&#x200B;**access_token**
 
@@ -148,7 +148,7 @@ ht-degree: 0%
    - 已取消登录：重置MVPD选择
    - URL方案将建立为“adobepass://android.app”，以便在身份验证完成时捕获
 
-- e. get/checkAuthorization ： SDK将在标头中包含**access\_token **作为授权：持有者&#x200B;**access\_token**
+- e. get/checkAuthorization ： SDK将在标头中包含**access\_token**作为授权：持有者&#x200B;**access\_token**
 
 - 如果授权成功，将调用以获取媒体令牌
 

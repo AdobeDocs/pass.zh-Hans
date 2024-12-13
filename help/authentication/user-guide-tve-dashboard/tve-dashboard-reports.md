@@ -2,7 +2,7 @@
 title: 报告
 description: 了解如何在TVE功能板报表中聚合数据。
 exl-id: d8ba48de-d743-4dc2-866c-7d6e3ff94773
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 0%
@@ -35,7 +35,7 @@ TVE仪表板的&#x200B;**报表**&#x200B;部分提供对AuthN TTL、AuthZ TTL和
 
 ### AuthN TTL报表 {#authn-ttl-reports}
 
-AuthN TTL报告(也称为身份验证生存时间(TTL))显示了在所有[平台](#platforms)上为您的渠道与各种MVPD的集成配置身份验证令牌的持续时间。 这些报告允许您检查用户在特定MVPD和平台中保持身份验证的时间。 持续时间值以用户友好的格式显示，如&#x200B;**天**、**小时**、**分钟**&#x200B;和&#x200B;**秒**。 AuthN TTL报告表具有水平滚动和垂直滚动功能，以适应不同的屏幕大小。
+AuthN TTL报告(也称为身份验证生存时间(TTL))显示了在所有[平台](#platforms)上为您的渠道与各种MVPD的集成配置身份验证令牌的持续时间。 这些报表允许您检查用户在特定MVPD和平台中保持身份验证状态的时间。 持续时间值以用户友好的格式显示，如&#x200B;**天**、**小时**、**分钟**&#x200B;和&#x200B;**秒**。 AuthN TTL报告表具有水平滚动和垂直滚动功能，以适应不同的屏幕大小。
 
 您还可以查看和下载[特定渠道或MVPD](#selecting-specific-channels-mvpds)的数据。
 
@@ -45,7 +45,7 @@ AuthN TTL报告(也称为身份验证生存时间(TTL))显示了在所有[平台
 
 >[!IMPORTANT]
 >
-> 当MVPD强制使用AuthN TTL值而非Adobe Pass身份验证配置时，将使用MVPD设置的&#x200B;**占位符**。
+> 当MVPD强制使用AuthN TTL值而不是MVPD身份验证配置时，将使用由Adobe Pass设置的&#x200B;**占位符**。
 
 选择&#x200B;**导出报表**&#x200B;以将数据另存为CSV文件保存到本地计算机上。
 
@@ -61,13 +61,13 @@ AuthZ TTL报告(也称为授权生存时间(TTL))显示为渠道与所有[平台
 
 >[!IMPORTANT]
 >
-> 当MVPD强制使用AuthZ TTL值而非Adobe Pass身份验证配置时，将使用MVPD设置的&#x200B;**占位符**。
+> 当MVPD强制使用AuthZ TTL值而不是MVPD身份验证配置时，将使用由Adobe Pass设置的&#x200B;**占位符**。
 
 选择&#x200B;**导出报表**&#x200B;以将数据另存为CSV文件保存到本地计算机上。
 
 ### SSO报告 {#sso-reports}
 
-SSO报告（也称为单点登录）显示为您的渠道与所有[平台](#platforms)上的各种MVPD的集成配置的单点登录状态。 这些报告允许您检查特定MVPD和平台的预期用户身份验证SSO体验。 这些值以用户友好的格式显示，如&#x200B;**SSO Disabled**、**SSO Enabled**&#x200B;和&#x200B;**SSO Unquantical**。 SSO报告表具有水平滚动和垂直滚动功能，以适应不同的屏幕大小。
+SSO报告（也称为单点登录）显示为您的渠道与所有[平台](#platforms)上的各种MVPD的集成配置的单点登录状态。 利用这些报告，可检查特定MVPD和平台的预期用户身份验证SSO体验。 这些值以用户友好的格式显示，如&#x200B;**SSO Disabled**、**SSO Enabled**&#x200B;和&#x200B;**SSO Unquantical**。 SSO报告表具有水平滚动和垂直滚动功能，以适应不同的屏幕大小。
 
 您还可以查看和下载[特定渠道或MVPD](#selecting-specific-channels-mvpds)的数据。
 
@@ -81,7 +81,7 @@ SSO报告（也称为单点登录）显示为您的渠道与所有[平台](#plat
 >
 > * 用户平台设置：阻止第三方Cookie的选项。
 > * 用户决策：用户拒绝平台访问其电视提供商订阅。
-> * MVPD设置： MVPD请求每个通道的身份验证。
+> * MVPD设置： MVPD请求对每个渠道进行身份验证。
 
 选择&#x200B;**导出报表**&#x200B;以将数据另存为CSV文件保存到本地计算机上。
 
@@ -89,7 +89,7 @@ SSO报告（也称为单点登录）显示为您的渠道与所有[平台](#plat
 
 [AuthN TTL报告](#authn-ttl-reports)、[AuthZ TTL报告](#authz-ttl-reports)和[SSO报告](#sso-reports)显示跨各种平台的数据，例如：
 
-* **桌面**：显示通过Adobe Pass Authentication JavaScript SDK应用于程序员实施的值。
+* **桌面**：显示通过Adobe Pass身份验证JavaScript SDK应用于程序员实施的值。
 
 * **移动设备**
 
@@ -111,7 +111,7 @@ SSO报告（也称为单点登录）显示为您的渠道与所有[平台](#plat
 
 * **平台未识别**：当Adobe Pass身份验证服务检测到未知设备类型时，显示应用于程序员实施的值。
 
-要了解有关如何与Adobe Pass身份验证REST API或SDK共享所需设备类型（如&#x200B;**Roku**）的更多信息，请查看[传递客户端信息](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md)的机制。
+要了解有关如何与Adobe Pass身份验证REST API或SDK共享所需设备类型（如&#x200B;**Roku**）的更多信息，请查看[传递客户端信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)的机制。
 
 >[!IMPORTANT]
 >

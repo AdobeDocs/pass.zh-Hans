@@ -2,14 +2,14 @@
 title: 检索Platform SSO配置文件请求
 description: 检索Platform SSO配置文件请求
 exl-id: 44fd4e26-4d9a-4607-ac2c-b85d848f5fc6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '189'
+source-wordcount: '190'
 ht-degree: 1%
 
 ---
 
-# 检索Platform SSO配置文件请求 {#retrieve-platform-sso-profile-request}
+# （旧版）检索平台SSO配置文件请求 {#retrieve-platform-sso-profile-request}
 
 >[!NOTE]
 >
@@ -46,5 +46,5 @@ ht-degree: 1%
 | 输入参数 | 描述 |
 | --------------- | -------------------------------------------------------------------------------------------------------- |
 | 请求者 | 此操作有效的程序员requestorId。 |
-| mvpd | 此操作有效的MVPD ID。 |
+| mvpd | 此操作对其有效的MVPD ID。 |
 | 设备类型 | 我们尝试为其获取配置文件请求的Apple平台。  **iOS**&#x200B;或&#x200B;**tvOS**。 |

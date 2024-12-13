@@ -2,14 +2,14 @@
 title: 预授权
 description: JavaScript预授权
 exl-id: b7493ca6-1862-4cea-a11e-a634c935c86e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1465'
+source-wordcount: '1466'
 ht-degree: 0%
 
 ---
 
-# 预授权 {#js-preauthorize}
+# （旧版）预授权 {#js-preauthorize}
 
 >[!NOTE]
 >
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 应用程序使用预授权API方法获取一个或多个资源的预授权决策。 应使用Preauthorize API请求进行UI提示和/或内容筛选。 在允许用户访问指定的资源之前，必须发出实际的授权API请求。
 
-如果在Adobe Pass身份验证服务处理预授权API请求时发生了意外错误（例如，网络问题和MVPD授权端点不可用），则受影响资源的一个或多个单独错误信息将作为预授权API响应结果的一部分包含在内。
+如果Adobe Pass身份验证服务处理预授权API请求时发生了意外错误(例如，网络问题和MVPD授权端点不可用)，则作为预授权API响应结果的一部分，将为受影响的资源包含一个或多个单独的错误信息。
 
 ### public preauthorize(request： PreauthorizeRequest， callback： AccessEnablerCallback&lt;any>)： void {#preauth-method}
 
@@ -39,7 +39,7 @@ ht-degree: 0%
 
 * 设置要获取预授权决策的资源的列表。
 * 必须为使用预授权API设置此变量。
-* 列表中的每个元素都必须是一个字符串，该字符串表示资源ID值或必须与MVPD协商的媒体RSS片段。
+* 列表中的每个元素都必须是一个字符串，表示资源ID值或必须与MVPD一致的媒体RSS片段。
 * 此方法仅在当前`PreauthorizeRequestBuilder`对象实例的上下文中设置信息，该实例是此方法调用的接收方。
 
 * 要构建实际的`PreauthorizeRequest`，您可以查看`PreauthorizeRequestBuilder`的方法：
@@ -290,19 +290,19 @@ accessEnablerApi.preauthorize(request, callback);
     `error&quot;： {
     `status&quot;： 403，
     `code&quot;： &quot;preauthorization_denied_by_mvpd&quot;，
-    `message&quot;： &quot;MVPD在请求时传回\`pre指定资源的授权。”，
-    “helpUrl”：“https://experienceleague.adobe.com/docs/primetime/authentication/home.html”，
-    “action”：“none”
+    `message&quot;： &quot;MVPD在请求预授权时返回了\&quot;拒绝决定指定的资源。”，
+    “helpUrl”： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
+    &quot;action&quot;： &quot;none&quot;
     }
     }，
     {
-    “id”：“RES03”，
-    “authorized”： true
+    &quot;id&quot;： &quot;RES03&quot;，
+    &quot;authorized&quot;： true
     }，
     ]
     }
     
-    ”&#39;
+    &quot;&#39;
 
 </td>
   </tr>
@@ -361,8 +361,8 @@ accessEnablerApi.preauthorize(request, callback);
     `error&quot;： {
     `status&quot;： 403，
     `code&quot;： &quot;preauthorization_denied_by_mvpd&quot;，
-    `message&quot;： &quot;MVPD在请求指定资源的预授权时返回了\&quot;Deny\&quot;决定。&quot;，
-    `helpUrl&quot;： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
+    `message&quot;： &quot;MVPD在请求对指定资源的预授权时返回了\&quot;Deny\&quot;决定。&quot;，
+    `helpUrl`： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
     `action&quot;： &quot;none&quot;
     }
     }，
@@ -374,7 +374,8 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;code&quot;： &quot;preauthorization_denied_by_mvpd&quot;，
     &quot;message&quot;： &quot;MVPD在请求指定资源的预授权时返回了\&quot;Deny\&quot;决定。&quot;，
     &quot;helpUrl&quot;： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
-    &quot;action&quot;： &quot;none&quot; 3}}
+    &quot;action&quot;： &quot;none&quot;
+    }
     }，
     {
     &quot;id&quot;： &quot;RES03&quot;，
@@ -382,8 +383,7 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;error&quot;： {
     &quot;status&quot;： 403，
     &quot;code&quot;： &quot;maximum_execution_time_exceeded&quot;，
-    &quot;message&quot;： &quot;请求未在允许的最长时间内完成。 
-    重试请求可能会解决此问题。”，
+    &quot;message&quot;： &quot;请求未在允许的最长时间内完成。 重试请求可能会解决此问题。”，
     “helpUrl”：“https://experienceleague.adobe.com/docs/primetime/authentication/home.html”，
     “action”：“retry”
     }

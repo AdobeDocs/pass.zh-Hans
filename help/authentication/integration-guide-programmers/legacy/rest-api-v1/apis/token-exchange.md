@@ -2,14 +2,14 @@
 title: 交换Adobe令牌的平台SSO令牌
 description: 交换Adobe令牌的平台SSO令牌
 exl-id: 5ab60268-8f97-4755-8281-be45e812ed7f
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '228'
+source-wordcount: '229'
 ht-degree: 0%
 
 ---
 
-# 交换Adobe令牌的平台SSO令牌 {#exchange-a-platform-sso-token-for-an-adobe-token}
+# （旧版）为Adobe令牌交换平台SSO令牌 {#exchange-a-platform-sso-token-for-an-adobe-token}
 
 >[!NOTE]
 >
@@ -46,7 +46,7 @@ ht-degree: 0%
 | --- | --- |
 | 请求者 | 此操作有效的程序员requestorId。 |
 | deviceId | 设备ID字节。 |
-| mvpd | 此操作有效的MVPD ID。 |
+| mvpd | 此操作对其有效的MVPD ID。 |
 | 设备类型 | 我们尝试为其获取配置文件请求的Apple平台。  **iOS**&#x200B;或&#x200B;**tvOS**。 |
 | SAMLResponse | Platform SSO返回的实际配置文件。 |
 | _设备用户_ | 设备用户标识符。 |

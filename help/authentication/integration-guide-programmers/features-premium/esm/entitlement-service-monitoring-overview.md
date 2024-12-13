@@ -2,7 +2,7 @@
 title: 授权服务监控概述
 description: 授权服务监控概述
 exl-id: ebd5d650-0a32-4583-9045-5156356494e2
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
 source-wordcount: '1303'
 ht-degree: 0%
@@ -62,8 +62,8 @@ ESM API不公开发布。  有关可用性问题，请联系您的Adobe代表。
 | 分钟 | 该小时中的第几分钟 |
 | media-company | 拥有发起用户权利流程的网站的媒体公司 |
 | dc | （数据中心）收到请求的主区域。 |
-| 代理 | 代理MVPD（对于直接集成，它为“直接”） |
-| mvpd | 负责向用户授予权利的MVPD |
+| 代理 | 代理MVPD（对于直接集成，它将是“直接”的） |
+| mvpd | 负责授予用户权利的MVPD |
 | 请求者ID | 用于执行授权请求的请求者ID |
 | 渠道 | 渠道网站，从资源字段提取（从MRSS有效负载中提取作为渠道/标题，如果提供，或映射到资源值，前提是它不是RSS格式）。 |
 | resource-id | 授权请求中涉及的实际资源标题（从MRSS有效负载提取为项目/标题，如果提供） |
@@ -71,11 +71,11 @@ ESM API不公开发布。  有关可用性问题，请联系您的Adobe代表。
 | eap | 通过外部系统执行身份验证流程时的外部身份验证提供程序。 </br>值可以是： </br> - N/A - Adobe Pass身份验证</br> - Apple — 提供身份验证的外部系统是Apple |
 | os系列 | 设备上运行的操作系统 |
 | browser-family | 用于访问Adobe Pass身份验证的用户代理 |
-| cdt | 当前用于无客户端的设备平台（替代）。 </br>值可以是： </br> - N/A — 事件不是源自无客户端SDK </br> - Unknown — 由于无客户端API中的deviceType参数是可选的，因此有些调用不包含任何值。 </br> — 通过无客户端API发送的任何其他值，例如xbox、appletv、roku等。</br> |
+| cdt | 当前用于无客户端的设备平台（替代）。 </br>值可以是： </br> - N/A — 事件不是源自无客户端SDK </br> — 未知 — 由于无客户端API中的deviceType参数是可选的，因此有些调用不包含任何值。 </br> — 通过无客户端API发送的任何其他值，例如xbox、appletv、roku等。</br> |
 | platform-version | 无客户端SDK的版本 |
 | 操作系统类型 | 设备上运行的操作系统，替代（当前未使用） |
 | browser-version | 用户代理版本 |
-| nsdk | 使用的客户端SDK(android、fireTV、js、iOS、tvOS、非sdk) |
+| nsdk | SDK使用的客户端(android、fireTV、js、iOS、tvOS、非sdk) |
 | nsdk-version | Adobe Pass身份验证客户端SDK的版本 |
 | 事件 | Adobe Pass身份验证事件名称 |
 | 原因 | 失败的原因，由Adobe Pass身份验证报告 |
@@ -83,7 +83,7 @@ ESM API不公开发布。  有关可用性问题，请联系您的Adobe代表。
 | 平台 | 设备已识别平台。 可能的值： </br> - Android </br> - FireTV </br> - Roku </br> - iOS </br> - tvOS </br> — 等 |
 | application-name | 在TVE仪表板中为配置为使用的DCR注册应用程序配置的应用程序名称。 |
 | application-version | 在TVE仪表板中为配置为使用的DCR注册应用程序配置的应用程序版本。 |
-| customer-app | 通过[设备信息](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md)传递的自定义应用程序ID。 |
+| customer-app | 通过[设备信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)传递的自定义应用程序ID。 |
 | 内容类别 | 您的应用程序请求的内容的类别。 |
 
 ## MVPD的ESM {#esm-for-mvpds}
@@ -114,10 +114,10 @@ ESM API不公开发布。  有关可用性问题，请联系您的Adobe代表。
 | mvpd | 用于执行授权请求的mvpd ID |
 | 请求者ID | 用于执行授权请求的请求者ID |
 | eap | 通过外部系统执行身份验证流程时的外部身份验证提供程序。 </br>值可以是： </br> - N/A - Adobe Pass身份验证</br> - Apple — 提供身份验证的外部系统是Apple |
-| cdt | 当前用于无客户端的设备平台（替代）。 </br>值可以是： </br> - N/A — 事件不是源自无客户端SDK </br> - Unknown — 由于无客户端API中的deviceType参数是可选的，因此有些调用不包含任何值。 </br> — 通过无客户端API发送的任何其他值，例如xbox、appletv、roku等。</br> |
-| sdk-type | 使用的客户端SDK(Flash、HTML5、Android本机、iOS、无客户端SDK等) |
+| cdt | 当前用于无客户端的设备平台（替代）。 </br>值可以是： </br> - N/A — 事件不是源自无客户端SDK </br> — 未知 — 由于无客户端API中的deviceType参数是可选的，因此有些调用不包含任何值。 </br> — 通过无客户端API发送的任何其他值，例如xbox、appletv、roku等。</br> |
+| sdk-type | SDK使用的客户端(Flash、HTML5、Android本机、iOS、无客户端等) |
 | 平台 | 设备已识别平台。 可能的值： </br> - Android </br> - FireTV </br> - Roku </br> - iOS </br> - tvOS </br> — 等 |
-| nsdk | 使用的客户端SDK(android、fireTV、js、iOS、tvOS、非sdk) |
+| nsdk | SDK使用的客户端(android、fireTV、js、iOS、tvOS、非sdk) |
 | nsdk-version | Adobe Pass身份验证客户端SDK的版本 |
 
 ## 用例 {#use-cases}

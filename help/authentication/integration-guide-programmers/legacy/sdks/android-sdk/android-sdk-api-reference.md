@@ -2,14 +2,14 @@
 title: Android SDK API参考
 description: Android SDK API参考
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '4537'
+source-wordcount: '4538'
 ht-degree: 0%
 
 ---
 
-# Android SDK API参考 {#android-sdk-api-reference}
+# （旧版）Android SDK API参考 {#android-sdk-api-reference}
 
 >[!NOTE]
 >
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 本文档详细介绍Android SDK为Adobe Pass身份验证公开的方法和回调，Adobe Pass身份验证版本1.7及更高版本支持这些方法和回调。 此处介绍的方法和回调函数在AccessEnabler.h和EntitlementDelegate.h头文件中定义。
 
-有关最新的Android AccessEnabler SDK，请参阅[https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library)。
+请参阅[https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library)，了解最新的Android AccessEnabler SDK。
 
 
 **注意：** Adobe Pass身份验证团队建议您仅使用Adobe Pass身份验证&#x200B;*公共* API：
@@ -84,7 +84,7 @@ ht-degree: 0%
 
 如果未使用&#x200B;*url*&#x200B;参数，则生成的网络调用将定向默认服务提供程序URL：Adobe版本/生产环境。
 
-如果为&#x200B;*url*&#x200B;参数提供了值，则生成的网络调用将针对&#x200B;*url*&#x200B;参数中提供的所有URL。 所有配置请求都在单独的线程中同时触发。 在编译MVPD列表时，优先使用第一个响应程序。 对于列表中的每个MVPD， Access Enabler记住关联服务提供商的URL。 所有后续权利请求都定向到与服务提供程序相关联的URL，该URL在配置阶段与目标MVPD配对。
+如果为&#x200B;*url*&#x200B;参数提供了值，则生成的网络调用将针对&#x200B;*url*&#x200B;参数中提供的所有URL。 所有配置请求都在单独的线程中同时触发。 在编译MVPD列表时，优先使用第一个响应程序。 对于列表中的每个MVPD， Access Enabler会记住关联服务提供商的URL。 所有后续权利请求都定向到与服务提供商关联的URL，该URL在配置阶段与目标MVPD配对。
 
 | API调用：请求者配置 |
 | --- |
@@ -105,7 +105,7 @@ ht-degree: 0%
 
 - *signedRequestorID*：用您的私钥进行数字签名的请求者ID的副本。<!--For more details. see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->。
 
-- *url*：可选参数；默认情况下，使用Adobe服务提供程序(http://sp.auth.adobe.com/)。 此阵列允许您为Adobe提供的身份验证和授权服务指定端点（其他实例可能用于调试目的）。 您可以使用此选项指定多个Adobe Pass身份验证服务提供程序实例。 这样做时，MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供程序相关联；即首先响应并支持该MVPD的服务提供程序。
+- *url*：可选参数；默认情况下，使用Adobe服务提供程序(http://sp.auth.adobe.com/)。 此阵列允许您为Adobe提供的身份验证和授权服务指定端点（其他实例可能用于调试目的）。 您可以使用此选项指定多个Adobe Pass身份验证服务提供程序实例。 在执行此操作时，MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商相关联；即首先响应并支持该MVPD的提供商。
 
 已触发&#x200B;**回调：** `setRequestorComplete()`
 
@@ -159,7 +159,7 @@ ht-degree: 0%
    - **applicationProfile** — 可用于根据此值生成服务器配置。
    - **ap_vi** -Experience CloudID (visitorID)。 此值以后可用于高级分析报表。
    - **ap_ai** - Advertising ID
-   - **device_info** — 客户端信息，如下所述： [传递客户端信息设备连接和应用程序](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md)。
+   - **device_info** — 客户端信息，如下所述： [传递客户端信息设备连接和应用程序](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)。
 
 [返回页首……](#apis)
 
@@ -168,7 +168,7 @@ ht-degree: 0%
 
 **描述：**&#x200B;检查身份验证状态。 它通过在本地令牌存储空间中搜索有效的身份验证令牌来完成此操作。 此方法不执行任何网络调用，我们建议在主线程上调用它。 应用程序使用它来查询用户的身份验证状态并相应地更新UI（即更新登录/注销UI）。 身份验证状态通过&#x200B;[*setAuthenticationStatus()*](#setAuthNStatus)&#x200B;回调与应用程序通信。
 
-如果MVPD支持“每个请求者的身份验证”功能，则可以在设备上存储多个身份验证令牌。  有关此功能的详细信息，请参阅Android技术概述中的[缓存准则](#$caching)部分。
+如果MVPD支持“每个请求者进行身份验证”功能，则可以在设备上存储多个身份验证令牌。  有关此功能的详细信息，请参阅Android技术概述中的[缓存准则](#$caching)部分。
 
 | API调用：检查身份验证状态 |
 | --- |
@@ -188,9 +188,9 @@ ht-degree: 0%
 **描述：**&#x200B;启动完整的身份验证工作流。 首先检查身份验证状态。 如果尚未经过身份验证，则身份验证流状态 — 计算机将启动：
 
 - 如果上次身份验证尝试成功，则会跳过MVPD选择阶段，并触发&#x200B;[*navigateToUrl()*](#navigagteToUrl)&#x200B;回调。 应用程序使用此回调实例化向用户显示MVPD登录页的WebView控件。
-- 如果上次身份验证尝试不成功，或者用户明确注销，则会触发&#x200B;[*displayProviderDialog()*](#displayProviderDialog)&#x200B;回调。 您的应用程序使用此回调来显示MVPD选择UI。 此外，需要您的应用程序通过[setSelectedProvider()](#setSelectedProvider)方法向Access Enabler库通知用户的MVPD选择，以恢复身份验证流程。
+- 如果上次身份验证尝试不成功，或者用户明确注销，则会触发&#x200B;[*displayProviderDialog()*](#displayProviderDialog)&#x200B;回调。 您的应用程序使用此回调来显示MVPD选择UI。 此外，还需要您的应用程序通过[setSelectedProvider()](#setSelectedProvider)方法将MVPD选择通知给Access Enabler库，以恢复身份验证流程。
 
-在MVPD登录页面上验证用户的凭据时，应用程序需要监视用户在MVPD登录页面上验证时发生的多个重定向操作。 输入正确的凭据后，WebView控件将被重定向到由&#x200B;*AccessEnabler.ADOBEPASS\_REDIRECT\_URL*&#x200B;常量定义的自定义URL。 此URL不打算由WebView加载。 应用程序必须拦截此URL，并将此事件解释为登录阶段已完成的信号。 然后，它应将控制权移交给访问启用程序，以便完成身份验证流程(通过调用&#x200B;*getAuthenticationToken()*&#x200B;方法)。
+在MVPD登录页面上验证用户的凭据时，您的应用程序需要监视在用户在MVPD的登录页面进行身份验证期间发生的多个重定向操作。 输入正确的凭据后，WebView控件将被重定向到由&#x200B;*AccessEnabler.ADOBEPASS\_REDIRECT\_URL*&#x200B;常量定义的自定义URL。 此URL不打算由WebView加载。 应用程序必须拦截此URL，并将此事件解释为登录阶段已完成的信号。 然后，它应将控制权移交给访问启用程序，以便完成身份验证流程(通过调用&#x200B;*getAuthenticationToken()*&#x200B;方法)。
 
 如果MVPD支持“每个请求者的身份验证”功能，则可以在设备上存储多个身份验证令牌（每个程序员一个）。  有关此功能的详细信息，请参阅Android技术概述中的[缓存准则](#$caching)部分。
 
@@ -222,9 +222,9 @@ ht-degree: 0%
 
 ### displayProviderDialog {#displayProviderDialog}
 
-**描述**&#x200B;回调由Access Enabler触发，用于通知应用程序需要实例化适当的UI元素以允许用户选择所需的MVPD。 回调会提供MVPD对象的列表以及其他有助于正确构建选择UI面板的信息（例如指向MVPD徽标的URL、友好显示名称等）
+**描述**&#x200B;回调由Access Enabler触发，用于通知应用程序需要实例化适当的UI元素以允许用户选择所需的MVPD。 回调提供了MVPD对象的列表以及其他有助于正确构建选择UI面板的信息(例如指向MVPD徽标的URL、友好的显示名称等)
 
-用户选择所需的MVPD后，需要上层应用程序通过调用&#x200B;*setSelectedProvider()*&#x200B;并向其传递与用户的选择对应的MVPD的ID来恢复身份验证流程。
+用户选择所需的MVPD后，需要上层应用程序通过调用&#x200B;*setSelectedProvider()*&#x200B;并向其传递与用户的选择相对应的MVPD ID来恢复身份验证流程。
 
 >[!NOTE]
 >
@@ -240,7 +240,7 @@ ht-degree: 0%
 
 **参数**：
 
-- *mvpds*：包含应用程序可用于构建MVPD选择UI元素的MVPD相关信息的MVPD对象列表。
+- *mvpds*：包含MVPD相关信息的MVPD对象列表，应用程序可将其用于构建MVPD选择UI元素。
 
 **触发者：** `getAuthentication(), getAuthorization()`
 
@@ -249,9 +249,9 @@ ht-degree: 0%
 
 ### setSelectedProvider {#setSelectedProvider}
 
-**描述：**&#x200B;您的应用程序调用此方法以告知访问启用程序用户的MVPD选择。 应用程序可以使用此方法选择或更改用于身份验证的服务提供程序。
+**描述：**&#x200B;您的应用程序调用此方法以告知访问启用程序有关用户的MVPD选择。 应用程序可以使用此方法选择或更改用于身份验证的服务提供程序。
 
-如果所选MVPD是TempPass MVPD，它随后将自动通过该MVPD进行身份验证，而无需调用getAuthentication()。
+如果选定的MVPD是TempPass MVPD，则它随后将自动通过该MVPD进行身份验证，而无需调用getAuthentication()。
 
 请注意，这不适用于提升临时传递，因为getAuthentication()方法提供了额外的参数。
 
@@ -274,13 +274,13 @@ ht-degree: 0%
 
 **已弃用：**&#x200B;从Android SDK 3.0开始，仅当设备上不存在Chrome自定义选项卡时才使用navigateToUrl
 
-**描述：**&#x200B;由Access Enabler触发的回调，它通知应用程序需要向用户显示MVPD登录页才能输入其凭据。 Access Enabler将MVPD登录页面的URL作为参数传递。 您的应用程序需要实例化WebView控件并将其指向此URL。 此外，应用程序还需要监视WebView控件加载的URL并截获针对由`AccessEnabler.ADOBEPASS_REDIRECT_URL (deprecated)`常量定义的自定义URL的重定向操作。 发生此事件时，应用程序需要关闭或隐藏WebView控件，并通过调用&#x200B;*getAuthenticationToken()*&#x200B;方法将控件交回Access Enabler库。 Access Enabler通过从后端服务器检索身份验证令牌并将其本地存储在令牌存储中来完成身份验证流程。
+**描述：**&#x200B;由Access Enabler触发的回调，该回调通知应用程序需要向用户显示MVPD登录页才能输入其凭据。 Access Enabler将MVPD登录页面的URL作为参数传递。 您的应用程序需要实例化WebView控件并将其指向此URL。 此外，应用程序还需要监视WebView控件加载的URL并截获针对由`AccessEnabler.ADOBEPASS_REDIRECT_URL (deprecated)`常量定义的自定义URL的重定向操作。 发生此事件时，应用程序需要关闭或隐藏WebView控件，并通过调用&#x200B;*getAuthenticationToken()*&#x200B;方法将控件交回Access Enabler库。 Access Enabler通过从后端服务器检索身份验证令牌并将其本地存储在令牌存储中来完成身份验证流程。
 
 >[!WARNING]
 >
 > **中止身份验证流** <br>请注意，这是用户能够按“返回”按钮的时刻，这相当于中止身份验证流。 在这种情况下，应用程序需要调用&#x200B;_setSelectedProvider()_&#x200B;方法，将&#x200B;_null_&#x200B;作为参数传递，并为Access Enabler提供重置其身份验证状态计算机的机会。
 
-| “回调：显示MVPD登录”页 |
+| 回调：显示MVPD登录页面 |
 | --- |
 | 公共void navigateToUrl（字符串url） |
 
@@ -309,7 +309,7 @@ ht-degree: 0%
 
 **参数：**
 
-- *Cookie*：在目标域中设置的Cookie（请参阅SDK中的演示应用程序以了解参考实施）。
+- *Cookie*：在Target域中设置的Cookie(请参阅SDK中的演示应用程序以了解参考实施)。
 
 已触发&#x200B;**回调：** `setAuthenticationStatus()`，`sendTrackingData()`
 
@@ -359,7 +359,7 @@ ht-degree: 0%
 
 **可用性：** v1.3+
 
-**参数：** `resources`参数是应检查其授权的资源数组。 列表中的每个元素都应该是一个表示资源ID的字符串。 资源ID的限制与`getAuthorization()`调用中的资源ID的限制相同，即，它应该是程序员与MVPD或媒体RSS片段之间建立的商定值。
+**参数：** `resources`参数是应检查其授权的资源数组。 列表中的每个元素都应该是一个表示资源ID的字符串。 资源ID与`getAuthorization()`调用中的资源ID受相同的限制，即，它应该是程序员和MVPD之间建立的商定值或媒体RSS片段。
 
 已触发&#x200B;**回调：** `preauthorizedResources()`
 
@@ -378,7 +378,7 @@ ht-degree: 0%
 
 **可用性：** v3.1+
 
-**参数：** `resources`参数是应检查其授权的资源数组。 列表中的每个元素都应该是一个表示资源ID的字符串。 资源ID的限制与`getAuthorization()`调用中的资源ID的限制相同，即，它应该是程序员与MVPD或媒体RSS片段之间建立的商定值。
+**参数：** `resources`参数是应检查其授权的资源数组。 列表中的每个元素都应该是一个表示资源ID的字符串。 资源ID与`getAuthorization()`调用中的资源ID受相同的限制，即，它应该是程序员和MVPD之间建立的商定值或媒体RSS片段。
 
 `cache`参数指定是否可以使用缓存的预授权响应。 默认情况下，缓存为true，SDK将返回之前缓存的响应（如果可用）。
 
@@ -500,7 +500,7 @@ ht-degree: 0%
    - `AccessEnablerConstants.USER_NOT_AUTHORIZED_ERROR` — 用户无法授权给定资源
 - *errorDescription*：有关失败情况的其他详细信息。 如果此描述性字符串由于任何原因不可用，则Adobe Pass身份验证发送空字符串&#x200B;**(&quot;)**。
 
-  MVPD可使用此字符串传递自定义错误消息或与销售相关的消息。 例如，如果订阅者被拒绝对资源的授权，则MVPD会发送消息，例如：“您当前在包中无法访问此渠道。 如果要升级包，请单击此处。” 消息由Adobe Pass身份验证通过此回调传递给程序员，程序员可以选择显示或忽略该消息。 Adobe Pass身份验证还可以使用此参数来提供可能导致错误的状况通知。 例如，“与提供商的授权服务通信时出现网络错误。”
+  MVPD可使用此字符串传递自定义错误消息或与销售相关的消息。 例如，如果订阅者被拒绝对资源的授权，MVPD会发送消息，例如：“您当前在包中无法访问此渠道。 如果要升级包，请单击此处。” 消息由Adobe Pass身份验证通过此回调传递给程序员，程序员可以选择显示或忽略该消息。 Adobe Pass身份验证还可以使用此参数来提供可能导致错误的状况通知。 例如，“与提供商的授权服务通信时出现网络错误。”
 
 **触发者：** `checkAuthorization(), getAuthorization()`
 
@@ -508,7 +508,7 @@ ht-degree: 0%
 
 ### 注销 {#logout}
 
-**描述：**&#x200B;使用此方法启动注销流程。 注销是一系列HTTP重定向操作的结果，这是因为用户既需要从Adobe Pass身份验证服务器注销，也需要从MVPD服务器注销。 因此，使用Access Enabler库发出的简单HTTP请求无法完成此流程。 Chrome自定义选项卡由SDK用于执行HTTP重定向操作。 此流程将对用户可见，并在完成后关闭
+**描述：**&#x200B;使用此方法启动注销流程。 注销是一系列HTTP重定向操作的结果，这是因为用户既需要从Adobe Pass身份验证服务器注销，也需要从MVPD服务器注销。 因此，使用Access Enabler库发出的简单HTTP请求无法完成此流程。 Chrome自定义选项卡由SDK用来执行HTTP重定向操作。 此流程将对用户可见，并在完成后关闭
 
 | API调用：启动注销流程 |
 | --- |
@@ -520,7 +520,7 @@ ht-degree: 0%
 
 已触发&#x200B;**回调：**
 
-- 适用于3.0之前版本的SDK的`navigateToUrl()`
+- 适用于SDK 3.0之前的版本的`navigateToUrl()`
 - 适用于SDK版本> 3.0的`setAuthenticationStatus()`
 
 
@@ -577,7 +577,7 @@ ht-degree: 0%
 有两种类型的元数据可供程序员使用：
 
 - 静态元数据（身份验证令牌TTL、授权令牌TTL和设备ID）
-- 用户元数据（用户特定的信息，例如用户ID和邮政编码；在身份验证和/或授权流期间，从MVPD传递到用户设备）
+- 用户元数据(特定于用户的信息，例如用户ID和邮政编码；在身份验证和/或授权流期间，从MVPD传递到用户设备)
 
 **参数：**
 
@@ -585,7 +585,7 @@ ht-degree: 0%
    - 如果键为`METADATA_KEY_USER_META`且参数包含名为`METADATA_ARG_USER_META`且值= `[metadata_name]`的SerializableNameValuePair对象，则将对用户元数据进行查询。 可用用户元数据类型的当前列表：
       - `zip` — 邮政编码
 
-      - `householdID` — 家庭标识符。 如果MVPD不支持子帐户，则它与`userID`相同。
+      - `householdID` — 家庭标识符。 如果MVPD不支持子帐户，则它将与`userID`相同。
 
       - `maxRating` — 用户的最大家长评级
 

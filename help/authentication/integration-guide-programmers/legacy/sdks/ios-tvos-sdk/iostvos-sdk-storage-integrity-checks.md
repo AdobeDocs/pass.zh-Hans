@@ -2,14 +2,14 @@
 title: iOS/tvOS存储完整性检查机制
 description: iOS/tvOS完整性检查机制
 exl-id: 5d7cdc46-3e51-4e14-9e30-d7f48bc87506
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '323'
+source-wordcount: '324'
 ht-degree: 0%
 
 ---
 
-# iOS/tvOS完整性检查机制 {#iostvos-sdk-storage-integrity-checks}
+# （旧版）iOS/tvOS完整性检查机制 {#iostvos-sdk-storage-integrity-checks}
 
 >[!NOTE]
 >

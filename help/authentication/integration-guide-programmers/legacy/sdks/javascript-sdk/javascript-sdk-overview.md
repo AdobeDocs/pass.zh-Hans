@@ -2,14 +2,14 @@
 title: JavaScript SDK概述
 description: JavaScript SDK概述
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '511'
 ht-degree: 0%
 
 ---
 
-# JavaScript SDK概述 {#javascript-sdk-overview}
+# （旧版）JavaScript SDK概述 {#javascript-sdk-overview}
 
 >[!NOTE]
 >
@@ -29,9 +29,9 @@ Adobe Pass Authentication JavaScript集成在熟悉的JS Web应用程序开发�
 
 ## 创建“MVPD选择”对话框 {#creating-the-mvpd-selection-dialog}
 
-要使用户登录到其MVPD并获得身份验证，您的页面或播放器必须为用户提供一种标识其MVPD的方法。 为开发提供了MVPD选择对话框的默认版本。 对于生产使用，您必须实施自己的MVPD选择器。
+要使用户登录到其MVPD并获得身份验证，您的页面或播放器必须提供一种方式以便用户识别其MVPD。 为开发提供了MVPD选择对话框的默认版本。 对于生产使用，您必须实施自己的MVPD选择器。
 
-如果您已经知道客户的提供商是谁，则可以[以编程方式设置MVPD](/help/authentication/home.md)，而无需用户交互。 此技术相同，但会跳过调用“提供程序选择器”对话框并要求客户选择其MVPD的步骤。
+如果您已经知道客户的提供商是谁，则可以[以编程方式设置MVPD](/help/authentication/home.md)，而无需用户交互。 技术相同，但会跳过调用“提供程序选择器”对话框并要求客户选择其MVPD的步骤。
 
 ## 显示服务提供商 {#displaying-the-service-provider}
 

@@ -2,14 +2,14 @@
 title: iOS/tvOS API预授权
 description: iOS/tvOS API预授权
 exl-id: 79c596a4-0e38-4b6c-bb85-f97c6af45ed8
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '391'
+source-wordcount: '392'
 ht-degree: 0%
 
 ---
 
-# 预授权 {#preauthorize}
+# （旧版）预授权 {#preauthorize}
 
 >[!NOTE]
 >
@@ -27,7 +27,7 @@ ht-degree: 0%
 >
 >增强的错误报告功能（为被拒绝的预授权决策添加其他错误信息）在请求时可用，因为它必须在Adobe Pass身份验证配置端启用。
 
-如果由于Adobe Pass Authentication SDK错误或Adobe Pass Authentication Services错误而无法服务预授权API请求，则其他错误信息（无论上述配置如何）和任何资源都不会作为预授权API响应结果的一部分包含在内。
+如果由于Adobe Pass身份验证SDK错误或发生Adobe Pass身份验证服务错误，导致预授权API请求无法提供服务，则无论上述配置如何，其他错误信息和任何资源都不会包含在预授权API响应结果中。
 
 </br>
 

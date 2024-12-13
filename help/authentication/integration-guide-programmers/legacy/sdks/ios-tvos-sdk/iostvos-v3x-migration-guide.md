@@ -2,14 +2,14 @@
 title: iOS/tvOS v3.x迁移指南
 description: iOS/tvOS v3.x迁移指南
 exl-id: 4c43013c-40af-48b7-af26-0bd7f8df2bdb
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '559'
+source-wordcount: '560'
 ht-degree: 0%
 
 ---
 
-# iOS/tvOS v3.x迁移指南 {#iostvos-v3x-migration-guide}
+# （旧版） iOS/tvOS v3.x迁移指南 {#iostvos-v3x-migration-guide}
 
 >[!NOTE]
 >
@@ -89,7 +89,7 @@ ht-degree: 0%
 
 ## 更新setRequestor方法签名 {#update-setreq}
 
-由于新SDK使用新的身份验证机制，因此不需要signedRequestId参数或公钥和密钥（对于tvOS）。 `setRequestor`方法已简化，它只需要请求者ID。
+由于新的SDK使用新的身份验证机制，因此不需要signedRequestId参数或公钥和密钥（对于tvOS）。 `setRequestor`方法已简化，它只需要请求者ID。
 
 ### iOS
 

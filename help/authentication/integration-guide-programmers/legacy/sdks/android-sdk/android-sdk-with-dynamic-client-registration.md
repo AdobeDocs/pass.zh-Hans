@@ -1,15 +1,15 @@
 ---
-title: 带有动态客户端注册功能的Android SDK
-description: 带有动态客户端注册功能的Android SDK
+title: Android SDK与Dynamic Client注册
+description: Android SDK与Dynamic Client注册
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1278'
+source-wordcount: '1279'
 ht-degree: 0%
 
 ---
 
-# 带有动态客户端注册功能的Android SDK {#android-sdk-with-dynamic-client-registration}
+# （旧版）Android SDK，带有动态客户端注册功能 {#android-sdk-with-dynamic-client-registration}
 
 >[!NOTE]
 >
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## 简介 {#Intro}
 
-修改了适用于Android的Android AccessEnabler SDK，以启用身份验证而不使用会话Cookie。 随着越来越多的浏览器限制对Cookie的访问，需要使用其他方法以允许身份验证。
+修改了适用于Android的Android AccessEnabler SDK ，以启用身份验证而不使用会话Cookie。 随着越来越多的浏览器限制对Cookie的访问，需要使用其他方法以允许身份验证。
 
 对于Android，使用Chrome自定义选项卡会限制从其他应用程序访问Cookie。
 
@@ -73,7 +73,7 @@ Android SDK v3.0+将使用[动态客户端注册概述](../../../rest-apis/rest-
 
 如果未使用&#x200B;*url*&#x200B;参数，则生成的网络调用将定向默认服务提供程序URL：Adobe版本/生产环境。
 
-如果为&#x200B;*url*&#x200B;参数提供了值，则生成的网络调用将针对&#x200B;*url*&#x200B;参数中提供的所有URL。 所有配置请求都在单独的线程中同时触发。 在编译MVPD列表时，优先使用第一个响应程序。 对于列表中的每个MVPD， Access Enabler记住关联服务提供商的URL。 所有后续权利请求都定向到与服务提供程序相关联的URL，该URL在配置阶段与目标MVPD配对。
+如果为&#x200B;*url*&#x200B;参数提供了值，则生成的网络调用将针对&#x200B;*url*&#x200B;参数中提供的所有URL。 所有配置请求都在单独的线程中同时触发。 在编译MVPD列表时，优先使用第一个响应程序。 对于列表中的每个MVPD， Access Enabler会记住关联服务提供商的URL。 所有后续权利请求都定向到与服务提供商关联的URL，该URL在配置阶段与目标MVPD配对。
 
 | API调用：请求者配置 |
 | --- |
@@ -90,7 +90,7 @@ Android SDK v3.0+将使用[动态客户端注册概述](../../../rest-apis/rest-
 **参数：**
 
 - *requestorID*：与渠道关联的唯一ID。 首次向Adobe Pass身份验证服务注册时，将Adobe分配的唯一ID传递到您的网站。
-- *url*：可选参数；默认情况下，使用Adobe服务提供程序[http://sp.auth.adobe.com/](http://sp.auth.adobe.com/)。 此阵列允许您为Adobe提供的身份验证和授权服务指定端点（其他实例可能用于调试目的）。 您可以使用此选项指定多个Adobe Pass身份验证服务提供程序实例。 这样做时，MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供程序相关联；即首先响应并支持该MVPD的服务提供程序。
+- *url*：可选参数；默认情况下，使用Adobe服务提供程序[http://sp.auth.adobe.com/](http://sp.auth.adobe.com/)。 此阵列允许您为Adobe提供的身份验证和授权服务指定端点（其他实例可能用于调试目的）。 您可以使用此选项指定多个Adobe Pass身份验证服务提供程序实例。 在执行此操作时，MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商相关联；即首先响应并支持该MVPD的提供商。
 
 已弃用：
 
@@ -150,14 +150,14 @@ SDK将执行以下操作：
 | HTTP 400（错误请求） | {&quot;error&quot;： &quot;invalid\_client&quot;} | 客户端身份验证失败，因为客户端未知。 SDK必须再次向授权服务器注册。 |
 | HTTP 400（错误请求） | {&quot;error&quot;： &quot;unauthorized\_client&quot;} | 经过身份验证的客户端无权使用此授权授予类型。 |
 
-- 如果MVPD需要被动身份验证，将打开一个Chrome自定义选项卡，以使用该MVPD被动执行，并在完成后关闭
+- 如果MVPD需要被动身份验证，Chrome自定义选项卡将打开以使用该MVPD被动执行，并在完成后关闭
 
 b. checkAuthentication()
 
 - true ：转至授权
 - false ：转到选择MVPD
 
-c. getAuthentication ： SDK将在调用参数中包含&#x200B;**access_token**
+c. getAuthentication ：SDK将在调用参数中包含&#x200B;**access_token**
 
 - 记住mvpd ：转到setSelectedProvider(mvpd_id)
 - 未选择mvpd ：displayProviderDialog
@@ -170,7 +170,7 @@ d. setSelectProvider
 - 已取消登录：重置MVPD选择
 - URL方案将建立为“adobepass://redirect_uri”，以便在身份验证完成时捕获
 
-e. get/checkAuthorization ： SDK将在标头中包含&#x200B;**access_token**，因为授权：持有者&#x200B;**access_token**
+e. get/checkAuthorization ： SDK将在标头中包含&#x200B;**access_token**，作为授权：持有者&#x200B;**access_token**
 
 - 如果授权成功，将调用以获取
 媒体令牌

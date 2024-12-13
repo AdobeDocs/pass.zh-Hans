@@ -2,9 +2,9 @@
 title: Dynamic Client注册概述
 description: Dynamic Client注册概述
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '808'
+source-wordcount: '813'
 ht-degree: 0%
 
 ---
@@ -25,13 +25,13 @@ Adobe Pass提供动态客户端注册服务，允许访问以下受保护的API�
    * [代理MVPD API](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
    * [授权服务监控API](../../features-premium/esm/entitlement-service-monitoring-api.md)
 * Adobe Pass身份验证REST API：
-   * [REST API V1](../../legacy/rest-api-v1/rest-api-reference.md)
    * [REST API V2](../rest-api-v2/apis/rest-api-v2-apis-overview.md)
+   * [（旧版）REST API V1](../../legacy/rest-api-v1/rest-api-reference.md)
 * Adobe Pass身份验证SDK：
-   * [JAVASCRIPT SDK](../../legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
-   * [iOS/tvOS SDK](../../legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
-   * [ANDROID SDK](../../legacy/sdks/android-sdk/android-sdk-api-reference.md)
-   * [FireOS SDK](../../legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
+   * [（旧版）JavaScript SDK](../../legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
+   * [（旧版）iOS/tvOS SDK](../../legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
+   * [（旧版）Android SDK](../../legacy/sdks/android-sdk/android-sdk-api-reference.md)
+   * [（旧版）FireOS SDK](../../legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
 
 >[!IMPORTANT]
 >

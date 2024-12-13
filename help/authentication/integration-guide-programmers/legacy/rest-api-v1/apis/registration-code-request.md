@@ -2,14 +2,14 @@
 title: 注册页面
 description: 注册页面
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '494'
 ht-degree: 0%
 
 ---
 
-# 注册页面 {#registration-page}
+# （旧版）注册页面 {#registration-page}
 
 ## REST API端点 {#clientless-endpoints}
 
@@ -49,8 +49,8 @@ ht-degree: 0%
 | Accept | 标头<br>值： application/json | 指示客户端应该能够理解的内容类型 |
 | 请求者 | 查询参数 | 此操作有效的程序员requestorId。 |
 | deviceId | 查询参数 | 设备ID字节。 |
-| 设备信息/<br>X — 设备信息 | device_info：正文<br> X-Device-Info：标头 | 流设备信息。<br>**注意**：可以将此device_info作为URL参数传递，但由于此参数的潜在大小以及GETURL的长度限制，它应作为X-Device-Info传递到http标头。 <br>在[传递设备和连接信息](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
-| mvpd | 查询参数 | 此操作有效的MVPD ID。 |
+| 设备信息/<br>X — 设备信息 | device_info：正文<br> X-Device-Info：标头 | 流设备信息。<br>**注意**：可以将此device_info作为URL参数传递，但由于此参数的潜在大小以及GETURL的长度限制，它应作为X-Device-Info传递到http标头。 <br>在[传递设备和连接信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
+| mvpd | 查询参数 | 此操作对其有效的MVPD ID。 |
 | ttl | 查询参数 | 此正则码应在秒内保持多长时间。<br>**注意**： ttl允许的最大值为36000秒（10小时）。 较高的值会导致400 HTTP响应（错误请求）。 如果`ttl`留空，则Adobe Pass身份验证将默认值设置为30分钟。 |
 | _deviceType_ | 查询参数 | 已弃用，不应使用。 |
 | _设备用户_ | 查询参数 | 已弃用，不应使用。 |

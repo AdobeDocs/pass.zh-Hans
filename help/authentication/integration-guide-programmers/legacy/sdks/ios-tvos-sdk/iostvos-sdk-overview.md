@@ -2,14 +2,14 @@
 title: iOS/tvOS SDK概述
 description: iOS/tvOS SDK概述
 exl-id: b02a6234-d763-46c0-bc69-9cfd65917a19
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '3731'
+source-wordcount: '3732'
 ht-degree: 0%
 
 ---
 
-# iOS/tvOS SDK概述 {#iostvos-sdk-overview}
+# （旧版）iOS/tvOS SDK概述 {#iostvos-sdk-overview}
 
 >[!NOTE]
 >
@@ -25,7 +25,7 @@ iOS AccessEnabler是一个Objective C iOS/tvOS库，它使移动应用程序能�
 
 ## iOS和tvOS要求 {#reqs}
 
-有关iOS和tvOS平台以及Adobe Pass身份验证的当前技术要求，请参阅[平台/设备/工具要求](#ios)，并查阅SDK下载随附的发行说明。 在本页面的其余部分中，您会看到一些章节，其中记录了适用于特定SDK版本及更高版本的更改。 例如，以下是关于1.7.5 SDK的合理说明：
+有关iOS和tvOS平台以及Adobe Pass身份验证的当前技术要求，请参阅[平台/设备/工具要求](#ios)，并查阅SDK下载随附的发行说明。 在本页面的其余部分中，您会看到一些部分，其中记录了适用于特定SDK版本及更高版本的更改。 例如，以下是关于1.7.5 SDK的合理说明：
 
 ## 了解本机客户端工作流 {#flows}
 
@@ -61,8 +61,8 @@ AccessEnabler支持的所有授权工作流都假定您之前已调用[`setReque
 
 1. 您的应用程序通过调用AccessEnabler的`getAuthentication() `API方法来启动身份验证工作流，此方法检查有效的缓存身份验证令牌。
 1. 如果用户当前已通过身份验证，则AccessEnabler将调用您的[`setAuthenticationStatus()`](#setAuthNStatus)回调函数，传递表示成功的身份验证状态，并结束流。
-1. 如果用户当前未经过身份验证，则AccessEnabler通过确定用户的最后一次身份验证尝试是否成功使用给定的MVPD来继续身份验证流程。 如果已缓存MVPD ID并且`canAuthenticate`标志为true或使用[`setSelectedProvider()`](#setSelProv)选择了MVPD，则不会使用MVPD选择对话框提示用户。 身份验证流继续使用MVPD的缓存值（即在上次成功身份验证期间使用的MVPD值）。 对后端服务器进行网络调用，并将用户重定向到MVPD登录页面（下面的步骤6）。
-1. 如果未缓存MVPD ID，并且未使用[`setSelectedProvider()`](#setSelProv)选择MVPD，或者`canAuthenticate`标志设置为false，则调用[`displayProviderDialog()`](#dispProvDialog)回调。 此回调指示应用程序创建UI，向用户显示可供选择的MVPD列表。 提供了一个MVPD对象数组，其中包含构建MVPD选择器所需的信息。 每个MVPD对象描述一个MVPD实体，并包含MVPD的ID（例如XFINITY、AT\&amp;T等）以及可以找到MVPD徽标的URL等信息。
+1. 如果用户当前未经过身份验证，则AccessEnabler通过确定用户的最后一次身份验证尝试在给定MVPD中是否成功来继续身份验证流程。 如果缓存了MVPD ID并且`canAuthenticate`标志为true或使用[`setSelectedProvider()`](#setSelProv)选择了MVPD，则不会通过MVPD选择对话框提示用户。 身份验证流程继续使用MVPD的缓存值(即，在上次成功身份验证期间使用的MVPD值)。 系统会向后端服务器发出网络调用，并将用户重定向到MVPD登录页面（下面的步骤6）。
+1. 如果未缓存MVPD ID，并且未使用[`setSelectedProvider()`](#setSelProv)选择MVPD，或者`canAuthenticate`标志设置为false，则会调用[`displayProviderDialog()`](#dispProvDialog)回调。 此回调指示应用程序创建UI，向用户显示可供选择的MVPD列表。 提供了一系列MVPD对象，其中包含构建MVPD选择器所需的信息。 每个MVPD对象都描述一个MVPD实体，并包含MVPD的ID（例如XFINITY、AT\&amp;T等）和可以找到MVPD徽标的URL等信息。
 1. 选择特定的MVPD后，您的应用程序必须通知AccessEnabler用户所做的选择。 用户选择所需的MVPD后，您可以通过调用[`setSelectedProvider()`](#setSelProv)方法向AccessEnabler通知用户选择的内容。
 1. iOS AccessEnabler调用您的`navigateToUrl:`回调或`navigateToUrl:useSVC:`回调以将用户重定向到MVPD登录页面。 通过触发其中任一项，AccessEnabler会向应用程序发出请求，以创建`UIWebView/WKWebView or SFSafariViewController`控制器并加载回调的`url`参数中提供的URL。 这是后端服务器上的身份验证终结点的URL。 对于tvOS AccessEnabler，使用`statusDictionary`参数调用[status()](#status_callback_implementation)回调，并立即开始轮询第二个屏幕身份验证。 `statusDictionary`包含需要用于第二个屏幕身份验证的`registration code`。
 1. 如果是iOS AccessEnabler，则用户登陆MVPD的登录页面，通过应用程序`UIWebView/WKWebView or SFSafariViewController `控制器的介质输入其凭据。 请注意，在此传输过程中将执行多次重定向操作，并且您的应用程序必须监控控制器在多次重定向操作期间加载的URL。
@@ -127,13 +127,13 @@ Adobe Pass身份验证权利解决方案围绕Adobe Pass身份验证在成功完
 
 #### 身份验证令牌
 
-- **AccessEnabler 1.7：**&#x200B;此SDK引入了令牌存储的新方法，启用多个Programmer-MVPD存储桶，从而启用多个身份验证令牌。 现在，“每个请求者的身份验证”方案和正常的身份验证流程都使用相同的存储布局。 两者之间的唯一区别在于执行身份验证的方式：“每个请求者的身份验证”包含一项新的改进（被动身份验证），使AccessEnabler能够根据存储中是否存在身份验证令牌执行后端通道身份验证（对于不同的程序员）。 用户只需验证一次，此会话将用于在其他应用程序中获取身份验证令牌。 此后端通道流在[`setRequestor()`](#setReq)调用期间发生，对程序员基本上是透明的。 **但是，这里有一个重要的要求：程序员必须从主UI线程中调用setRequestor()。**
+- **AccessEnabler 1.7：**&#x200B;此SDK引入了一种新的令牌存储方法，可启用多个Programmer-MVPD存储桶，从而启用多个身份验证令牌。 现在，“每个请求者的身份验证”方案和正常的身份验证流程都使用相同的存储布局。 两者之间的唯一区别在于执行身份验证的方式：“每个请求者的身份验证”包含一项新的改进（被动身份验证），使AccessEnabler能够根据存储中是否存在身份验证令牌执行后端通道身份验证（对于不同的程序员）。 用户只需验证一次，此会话将用于在其他应用程序中获取身份验证令牌。 此后端通道流在[`setRequestor()`](#setReq)调用期间发生，对程序员基本上是透明的。 **但是，这里有一个重要的要求：程序员必须从主UI线程中调用setRequestor()。**
 - **AccessEnabler 1.6及更早版本：**&#x200B;身份验证令牌在设备上缓存的方式取决于与当前MVPD关联的“**每个请求者的身份验证”**&#x200B;标志：
 
 <!-- end list -->
 
 1. 如果“每个请求者的身份验证”功能被禁用，则单个身份验证令牌将本地存储在全局粘贴板中；此令牌将在与当前MVPD集成的所有应用程序之间共享。
-1. 如果启用了“每个请求者的身份验证”功能，则令牌将与执行身份验证流的程序员显式关联（令牌不会存储在全局粘贴板中，而是存储在只能由该程序员的应用程序看到的私有文件中）。 更具体地说，将禁用不同应用程序之间的单点登录(SSO)；在切换到新应用程序时，用户将需要明确执行身份验证流程（前提是第二个应用程序的程序员已与当前MVPD集成，并且本地缓存中没有该程序员的身份验证令牌）。
+1. 如果启用了“每个请求者的身份验证”功能，则令牌将与执行身份验证流的程序员显式关联（令牌不会存储在全局粘贴板中，而是存储在只能由该程序员的应用程序看到的私有文件中）。 更具体地说，将禁用不同应用程序之间的单点登录(SSO)；在切换到新应用程序时，用户将需要明确执行身份验证流程(前提是第二个应用程序的程序员已与当前MVPD集成，并且本地缓存中没有该程序员的身份验证令牌)。
 
 
 
@@ -186,7 +186,7 @@ iOS AccessEnabler库通过将令牌数据存储到名为&#x200B;*粘贴板*&#x20
 
 - 如果两个应用程序中的捆绑包种子ID/团队ID由同一配置配置文件生成，则它们是相同的。 要查找更多信息，请访问以下链接：
   [http://developer.apple.com/library/ios/\#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html](http://developer.apple.com/library/ios/#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html)
-- 无论使用什么Adobe Pass Authentication SDK，iOS 7中都会存在这种“跨SSO”限制。
+- 无论使用什么Adobe Pass身份验证SDK，iOS 7中将存在这种“跨SSO”限制。
 
 请阅读此技术说明，了解有关在iOS 7和更高版本上配置SSO的更多信息（此技术说明适用于Access Enabler v1.8和更高版本）： <https://tve.zendesk.com/entries/58233434-Configuring-Pay-TV-pass-SSO-on-iOS>
 
@@ -194,13 +194,13 @@ iOS AccessEnabler库通过将令牌数据存储到名为&#x200B;*粘贴板*&#x20
 
 ### 令牌存储(AccessEnabler 1.7)
 
-从AccessEnabler 1.7开始，令牌存储可以支持多个Programmer-MVPD组合，依赖于可以保存多个身份验证令牌的多级嵌套映射结构。 此新存储不会以任何方式影响AccessEnabler公共API，并且不需要程序员进行更改。 下面是一个示例，
+从AccessEnabler 1.7开始，令牌存储可支持多个程序员 — MVPD组合，依赖于可保存多个身份验证令牌的多级别嵌套映射结构。 此新存储不会以任何方式影响AccessEnabler公共API，并且不需要程序员进行更改。 下面是一个示例，
 说明了此新功能：
 
 1. 打开应用程序1（由程序员1开发）。
 1. 使用MVPD1（与程序员1集成）进行身份验证。
 1. 暂停/关闭当前应用程序，然后打开App2（由Programmer2开发）。
-1. 我们假设Programmer2未与MVPD2集成；因此，用户不会在App2中进行身份验证。
+1. 我们假设Programmer2未与MVPD2集成；因此，用户在App2中将不会进行身份验证。
 1. 在App2中使用MVPD2（与程序员2集成）进行身份验证。
 1. 切换回App1；用户仍将通过Programmer1进行身份验证。
 
@@ -208,7 +208,7 @@ iOS AccessEnabler库通过将令牌数据存储到名为&#x200B;*粘贴板*&#x20
 
 
 
-从某个程序员/MVPD会话注销将清除整个底层存储，包括设备上的所有其他程序员/MVPD身份验证令牌。 另一方面，取消身份验证流程（调用[`setSelectedProvider(null)`](#setSelProv)）将不会清除基础存储，但只会影响当前的程序员/MVPD身份验证尝试（通过清除当前程序员的MVPD）。
+从某个程序员/MVPD会话中注销将会清除整个底层存储，包括设备上的所有其他程序员/MVPD身份验证令牌。 另一方面，取消身份验证流程（调用[`setSelectedProvider(null)`](#setSelProv)）将不会清除基础存储，但只会影响当前的程序员/MVPD身份验证尝试(通过清除当前程序员的MVPD)。
 
 
 

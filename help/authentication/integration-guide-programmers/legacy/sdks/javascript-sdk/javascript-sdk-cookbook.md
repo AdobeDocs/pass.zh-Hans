@@ -2,14 +2,14 @@
 title: JavaScript SDK指南
 description: JavaScript SDK指南
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '934'
+source-wordcount: '935'
 ht-degree: 0%
 
 ---
 
-# JavaScript SDK指南 {#javascript-sdk-cookbook}
+# （旧版）JavaScript SDK指南 {#javascript-sdk-cookbook}
 
 >[!NOTE]
 >
@@ -51,7 +51,7 @@ ht-degree: 0%
 
 - `displayProviderDialog(mvpds)`
 
-  **触发器：** `getAuthentication(),`仅当用户尚未选择提供程序(MVPD)且尚未进行身份验证时
+  **触发器：** `getAuthentication(),`仅当用户尚未选择提供程序(MVPD)且尚未通过身份验证时
 mvpds参数是用户可用的提供程序数组。
 
 - `setAuthenticationStatus(status, errorcode)`

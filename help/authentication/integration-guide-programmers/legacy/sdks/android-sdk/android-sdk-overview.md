@@ -2,14 +2,14 @@
 title: Android SDK概述
 description: Android SDK概述
 exl-id: a1d98325-32a1-4881-8635-9a3c38169422
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '2731'
+source-wordcount: '2732'
 ht-degree: 0%
 
 ---
 
-# Android SDK概述 {#android-sdk-overview}
+# （旧版）Android SDK概述 {#android-sdk-overview}
 
 >[!NOTE]
 >
@@ -54,9 +54,9 @@ AccessEnabler支持的所有授权工作流都假定您之前已调用[`setReque
 
 1. 您的页面或播放器通过调用[getAuthentication()](#getAuthN)来启动身份验证工作流，该调用会检查缓存的有效身份验证令牌。 此方法具有可选的`redirectURL`参数；如果不提供`redirectURL`的值，则在成功进行身份验证后，用户将返回到初始化身份验证的URL。
 1. AccessEnabler确定当前的身份验证状态。 如果用户当前已通过身份验证，则AccessEnabler将调用您的`setAuthenticationStatus()`回调函数，传递一个表示成功的身份验证状态（下面的步骤7）。
-1. 如果用户未经过身份验证，则AccessEnabler通过确定用户的最后一次身份验证尝试是否成功使用给定的MVPD来继续身份验证流程。 如果已缓存MVPD ID并且`canAuthenticate`标志为true或使用[`setSelectedProvider()`](#setSelectedProvider)选择了MVPD，则不会使用MVPD选择对话框提示用户。 身份验证流继续使用MVPD的缓存值（即在上次成功身份验证期间使用的MVPD值）。 对后端服务器进行网络调用，并将用户重定向到MVPD登录页面（下面的步骤6）。
-1. 如果未缓存MVPD ID，并且未使用[`setSelectedProvider()`](#setSelectedProvider)选择MVPD，或者`canAuthenticate`标志设置为false，则调用[`displayProviderDialog()`](#displayProviderDialog)回调。 此回调会指示您的页面或播放器创建UI，为用户显示可从中进行选择的MVPD列表。 提供了一个MVPD对象数组，其中包含构建MVPD选择器所需的信息。 每个MVPD对象描述一个MVPD实体，并包含MVPD的ID（例如XFINITY、AT\&amp;T等）以及可以找到MVPD徽标的URL等信息。
-1. 选择特定的MVPD后，您的页面或播放器必须通知AccessEnabler用户的选择。 对于非Flash客户端，一旦用户选择了所需的MVPD，您就会通过调用[`setSelectedProvider()`](#setSelectedProvider)方法向AccessEnabler通知用户选择的内容。 Flash客户端改为调度类型为“`mvpdSelection`”的共享`MVPDEvent`，传递选定的提供程序。
+1. 如果用户未经过身份验证，AccessEnabler将通过确定用户的最后一次身份验证尝试在给定MVPD中是否成功来继续身份验证流程。 如果缓存了MVPD ID并且`canAuthenticate`标志为true或使用[`setSelectedProvider()`](#setSelectedProvider)选择了MVPD，则不会通过MVPD选择对话框提示用户。 身份验证流程继续使用MVPD的缓存值(即，在上次成功身份验证期间使用的MVPD值)。 系统会向后端服务器发出网络调用，并将用户重定向到MVPD登录页面（下面的步骤6）。
+1. 如果未缓存MVPD ID，并且未使用[`setSelectedProvider()`](#setSelectedProvider)选择MVPD，或者`canAuthenticate`标志设置为false，则会调用[`displayProviderDialog()`](#displayProviderDialog)回调。 此回调会指示您的页面或播放器创建UI，为用户显示可从中进行选择的MVPD列表。 提供了一系列MVPD对象，其中包含构建MVPD选择器所需的信息。 每个MVPD对象都描述一个MVPD实体，并包含MVPD的ID（例如XFINITY、AT\&amp;T等）和可以找到MVPD徽标的URL等信息。
+1. 选择特定的MVPD后，您的页面或播放器必须通知AccessEnabler用户的选择。 对于非Flash客户端，一旦用户选择所需的MVPD，您就会通过调用[`setSelectedProvider()`](#setSelectedProvider)方法通知AccessEnabler用户选择的内容。 Flash客户端改为调度类型为“`mvpdSelection`”的共享`MVPDEvent`，传递选定的提供程序。
 1. 对于Android应用程序，如果com.android.chrome可用，则身份验证URL将加载到Chrome自定义选项卡中。
 1. 通过Chrome自定义选项卡，用户访问MVPD的登录页面并输入其凭据。 请注意，在此传输过程中会执行多个重定向操作。
 1. 当Chrome自定义选项卡检测到URL与资源“redirect\_uri”(即adobepass://com.adobepass )中的方案(adobepass://)和深层链接匹配时，AccessEnabler将从后端服务器检索实际的身份验证令牌。 请注意，最终重定向URL实际上无效，它们不适用于Chrome自定义标签页实际加载它们。 它们只能由SDK解释为身份验证流程已完成的信号。
@@ -68,7 +68,7 @@ AccessEnabler支持的所有授权工作流都假定您之前已调用[`setReque
 
 
 
-**注意：**从一名程序员/MVPD会话注销将会清除
+**注意：**从某个程序员/MVPD会话注销操作将清除
 该特定MVPD的基础存储，包括所有
 通过SSO获取的其他程序员身份验证令牌
 那个装置。 为其他MVPD或未通过SSO获取的令牌将不会
@@ -114,7 +114,7 @@ Adobe Pass身份验证权利解决方案围绕Adobe Pass身份验证在成功完
 
 
 1. 如果“每个请求者的身份验证”功能为&#x200B;*禁用*，则单个身份验证令牌将本地存储在全局粘贴板中。 此令牌将在与当前MVPD集成的所有应用程序之间共享。
-1. 如果“每个请求者的身份验证”功能是&#x200B;*已启用*，则令牌将与执行身份验证流的程序员显式关联（令牌不会存储在全局粘贴板中，而是存储在只能供该程序员应用程序查看的私有文件中）。 更具体地说，将禁用不同应用程序之间的单点登录(SSO)；在切换到新应用程序时，用户将需要明确执行身份验证流程（前提是第二个应用程序的程序员与当前MVPD集成，并且本地缓存中没有该程序员的身份验证令牌）。
+1. 如果“每个请求者的身份验证”功能是&#x200B;*已启用*，则令牌将与执行身份验证流的程序员显式关联（令牌不会存储在全局粘贴板中，而是存储在只能供该程序员应用程序查看的私有文件中）。 更具体地说，将禁用不同应用程序之间的单点登录(SSO)；用户在切换到新应用程序时需要明确执行身份验证流程(前提是第二个应用程序的程序员已与当前MVPD集成，并且本地缓存中没有该程序员的身份验证令牌)。
 
    **注意：** AE 1.6 Google GSON技术说明：[如何解析Gson依赖项](https://tve.zendesk.com/entries/22902516-Android-AccessEnabler-1-6-How-to-resolve-Gson-dependencies)
 
@@ -153,19 +153,19 @@ Adobe Pass身份验证权利解决方案围绕Adobe Pass身份验证在成功完
 
 
 
-从AccessEnabler 1.7开始，令牌存储可以支持多个Programmer-MVPD组合，依赖于可以保存多个身份验证令牌的多级嵌套映射结构。 此新存储不会以任何方式影响AccessEnabler公共API，并且不需要程序员进行更改。 以下是一个示例来说明此新功能：
+从AccessEnabler 1.7开始，令牌存储可支持多个程序员 — MVPD组合，依赖于可保存多个身份验证令牌的多级别嵌套映射结构。 此新存储不会以任何方式影响AccessEnabler公共API，并且不需要程序员进行更改。 以下是一个示例来说明此新功能：
 
 1. 打开应用程序1（由程序员1开发）。
 1. 使用MVPD1（与程序员1集成）进行身份验证。
 1. 暂停/关闭当前应用程序，然后打开App2（由Programmer2开发）。
-1. 我们假设Programmer2未与MVPD2集成；因此，用户不会在App2中进行身份验证。
+1. 我们假设Programmer2未与MVPD2集成；因此，用户在App2中将不会进行身份验证。
 1. 在App2中使用MVPD2（与程序员2集成）进行身份验证。
 1. 切换回App1；用户仍将通过Programmer1进行身份验证。
 
 在旧版AccessEnabler中，步骤6会将用户呈现为“未验证”，因为以前令牌存储仅支持一个身份验证令牌。
 
 
-**注意：**&#x200B;从一个Programmer/MVPD会话注销将清除基础存储，包括具有SSO的设备上的所有其他Programmer身份验证令牌。 不会删除为其他MVPD获取或未通过SSO获取的令牌。 取消身份验证流程（调用[`setSelectedProvider(null)`](#setSelectedProvider)）将不会清除基础存储，但只会影响当前的程序员/MVPD身份验证尝试（通过清除当前程序员的MVPD）。
+**注意：**&#x200B;从某个程序员/MVPD会话注销将清除基础存储，包括具有SSO的设备上的所有其他程序员身份验证令牌。 不会删除为其他MVPD获取或未通过SSO获取的令牌。 取消身份验证流程（调用[`setSelectedProvider(null)`](#setSelectedProvider)）将不会清除基础存储，但只会影响当前的程序员/MVPD身份验证尝试(通过清除当前程序员的MVPD)。
 
 
 AccessEnabler 1.7中包含的另一个与存储相关的功能允许从旧存储区域导入身份验证令牌。 此“令牌导入器”有助于在连续的AccessEnabler版本之间实现兼容性，即使在存储版本升级时也能保持SSO状态。

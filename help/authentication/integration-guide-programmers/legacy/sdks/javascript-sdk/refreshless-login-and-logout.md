@@ -2,14 +2,14 @@
 title: 无刷新登录和注销
 description: 无刷新登录和注销
 exl-id: 3ce8dfec-279a-4d10-93b4-1fbb18276543
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1761'
+source-wordcount: '1762'
 ht-degree: 0%
 
 ---
 
-# 无刷新登录和注销 {#tefresh-less-login-and-logout}
+# （旧版）无刷新登录和注销 {#tefresh-less-login-and-logout}
 
 >[!NOTE]
 >
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-对于Web应用程序，您必须考虑身份验证和注销用户时可能出现的一些不同情况。  MVPD要求用户登录MVPD的网页进行身份验证，并且会影响以下附加因素：
+对于Web应用程序，您必须考虑身份验证和注销用户时可能出现的一些不同情况。  MVPD要求用户登录MVPD的网页进行身份验证，并且会影响以下其他因素：
 
 - 某些MVPD要求从您的站点完全重定向到其登录页面
 - 某些MVPD要求您在网站上打开iFrame以显示MVPD的登录页面
@@ -44,10 +44,10 @@ ht-degree: 0%
 
 Adobe Pass身份验证Web客户端有两种身份验证方式，具体取决于MVPD的要求：
 
-1. **全页重定向 —**&#x200B;用户选择提供程序后    （使用全页重定向进行配置）    在AccessEnabler上调用程序员网站`setSelectedProvider(<mvpd>)`，用户将被重定向到MVPD的登录页面。 用户提供有效凭据后，他将被重定向回程序员网站。 AccessEnabler已初始化，并在`setRequestor`期间从Adobe Pass身份验证中检索身份验证令牌。
+1. **全页重定向 —**&#x200B;用户选择提供程序后    MVPD （使用全页重定向进行配置）时，可选择    在AccessEnabler上调用程序员网站`setSelectedProvider(<mvpd>)`，用户将被重定向到MVPD的登录页面。 用户提供有效凭据后，他将被重定向回程序员网站。 AccessEnabler已初始化，并在`setRequestor`期间从Adobe Pass身份验证中检索身份验证令牌。
 1. **iFrame/弹出窗口 —**&#x200B;用户选择提供程序（配置了iFrame）后，将在AccessEnabler上调用`setSelectedProvider(<mvpd>)`。 此操作将触发`createIFrame(width, height)`回调，通知程序员使用名称`"mvpdframe"`和提供的维度创建一个iFrame（或弹出窗口，具体取决于浏览器/首选项）。 创建iFrame/弹出窗口后，AccessEnabler会在iFrame/弹出窗口中加载MVPD的登录页面。 用户提供有效凭据，iFrame/弹出窗口被重定向到Adobe Pass身份验证，该身份验证返回一个JS代码片段，该代码片段关闭iFrame/弹出窗口并重新加载父页面（程序员网站）。 与流程1类似，在`setRequestor`期间检索身份验证令牌。
 
-`displayProviderDialog`回调（由`getAuthentication`/`getAuthorization`触发）返回MVPD及其相应设置的列表。 MVPD的`iFrameRequired`属性允许程序员知道它应该激活流1还是流2。 请注意，程序员仅需要对流程2执行额外操作（创建iFrame/弹出窗口）。
+`displayProviderDialog`回调（由`getAuthentication`/`getAuthorization`触发）返回MVPD及其相应设置的列表。 MVPD的`iFrameRequired`属性允许程序员知道它应激活流1还是流2。 请注意，程序员仅需要对流程2执行额外操作（创建iFrame/弹出窗口）。
 
 **取消身份验证**
 
@@ -61,7 +61,7 @@ Adobe Pass身份验证Web客户端有两种身份验证方式，具体取决于M
 
 ## 原始注销流程 {#orig_logout}
 
-AccessEnabler的注销API会清除库的本地状态，并在当前选项卡/窗口中加载MVPD的注销URL。 浏览器导航到MVPD的注销端点，进程完成后，用户将被重定向回程序员网站。 代表用户所需的唯一操作是按注销按钮/链接并启动流；无需用户在MVPD的注销端点上进行交互。
+AccessEnabler的注销API会清除库的本地状态，并在当前选项卡/窗口中加载MVPD的注销URL。 浏览器导航到MVPD的注销端点，在该过程完成后，用户将被重定向回程序员网站。 代表用户只需按下“注销”按钮/链接并启动流即可；无需在MVPD的注销端点上进行用户交互。
 
 **页面刷新时的原始身份验证/注销流程**
 
@@ -92,7 +92,7 @@ AccessEnabler的注销API会清除库的本地状态，并在当前选项卡/窗
 
 以下几点描述了原始验证流和改进流之间的过渡：
 
-1. 全页重定向将被用于执行MVPD登录的新浏览器选项卡替换。 当用户选择MVPD （带有`iFrameRequired = false`）时，程序员需要创建名为`mvpdwindow`的新选项卡（通过`window.open`）。 然后程序员执行`setSelectedProvider(<mvpd>)`，允许AccessEnabler在新选项卡中加载MVPD登录URL。 在用户提供有效凭据后，Adobe Pass身份验证将关闭选项卡，并向程序员的网站发送window.postMessage，以向AccessEnabler发出身份验证流程已完成的信号。 将触发以下回调：
+1. 全页重定向将被新的浏览器选项卡替换，在新的浏览器选项卡中执行MVPD登录。 当用户选择带有`iFrameRequired = false`的MVPD时，程序员需要创建名为`mvpdwindow`的新选项卡（通过`window.open`）。 然后程序员执行`setSelectedProvider(<mvpd>)`，允许AccessEnabler在新选项卡中加载MVPD登录URL。 在用户提供有效凭据后，Adobe Pass身份验证将关闭选项卡，并向程序员的网站发送window.postMessage，以向AccessEnabler发出身份验证流程已完成的信号。 将触发以下回调：
 
    - 如果流程由`getAuthentication`启动： `setAuthenticationStatus`和`sendTrackingData(AUTHENTICATION_DETECTION...)`将触发以表示身份验证成功/不成功。
 
@@ -104,7 +104,7 @@ AccessEnabler的注销API会清除库的本地状态，并在当前选项卡/窗
 
 >[!IMPORTANT]
 > 
->必须将MVPD登录iFrame或弹出窗口作为包含AccessEnabler实例的页面的直接子级加载。 如果MVPD登录iFrame或弹出窗口在包含AccessEnabler实例的页面下嵌套了两个或多个级别，则流可能会挂起。 例如，如果在主页面和MVPD iFrame(Page =\> iFrame =\> MVPD iFrame)之间有一个iFrame，则登录流可能会失败。
+>您必须将MVPD登录iFrame或弹出窗口加载为包含AccessEnabler实例的页面的直接子页面。 如果MVPD登录iFrame或弹出窗口在包含AccessEnabler实例的页面下嵌套了两个或更多级别，则流量可能会挂起。 例如，如果在主页和MVPD iFrame(Page =\> iFrame =\> MVPD iFrame)之间有一个iFrame，则登录流可能会失败。
 
 </br>
 
@@ -122,7 +122,7 @@ AccessEnabler的注销API会清除库的本地状态，并在当前选项卡/窗
 
 ## 改进的注销流程 {#improved_logout}
 
-新的注销流将在隐藏的iFrame中执行，从而消除完整页面重定向。  这是可能的，因为用户不需要在MVPD的注销页面上执行特定操作。
+新的注销流将在隐藏的iFrame中执行，从而消除完整页面重定向。  该操作之所以可行，是因为用户无需在MVPD的注销页面上执行特定操作。
 
 注销流程完成后，它会将iFrame重定向到自定义Adobe Pass身份验证端点。 这将向父项提供执行`window.postMessage`的JS代码片段，通知AccessEnabler注销已完成。 触发了以下回调： `setAuthenticationStatus()`和`sendTrackingData(AUTHENTICATION_DETECTION ...)`，指示用户不再进行身份验证。
 
@@ -144,9 +144,9 @@ AccessEnabler的注销API会清除库的本地状态，并在当前选项卡/窗
 
 - 在开始身份验证之前，只需要为非TempPass MVPD创建iFrame或弹出窗口。 通过读取MVPD对象的`tempPass`属性（由`setConfig()` / `displayProviderDialog()`返回），程序员可以检测MVPD是否为TempPass。
 
-- `createIFrame()`回调必须包含对TempPass的检查，并且仅在MVPD不是TempPass时才执行其逻辑。
+- `createIFrame()`回调必须包含对TempPass的检查，并且仅在MVPD不是TempPass时执行其逻辑。
 
-- `destroyIFrame()`回调必须包含对TempPass的检查，并且仅在MVPD不是TempPass时才执行其逻辑。
+- `destroyIFrame()`回调必须包含对TempPass的检查，并且仅在MVPD不是TempPass时执行其逻辑。
 
 - 身份验证完成后将调用`setAuthenticationStatus()`和`sendTrackingData()`回调（与普通MVPD的无刷新流中完全相同）。
 

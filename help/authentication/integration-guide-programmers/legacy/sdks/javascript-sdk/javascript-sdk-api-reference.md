@@ -2,14 +2,14 @@
 title: JavaScript SDK API参考
 description: JavaScript SDK API参考
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '2860'
+source-wordcount: '2861'
 ht-degree: 0%
 
 ---
 
-# JavaScript SDK API参考 {#javascript-sdk-api-reference}
+# （旧版）JavaScript SDK API参考 {#javascript-sdk-api-reference}
 
 >[!NOTE]
 >
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## API参考 {#api-reference}
 
-这些函数启动与MVPD交互的请求。 所有调用都是异步调用；您必须实施[回调](#callbacks)来处理响应：
+这些函数启动与MVPD进行交互的请求。 所有调用都是异步调用；您必须实施[回调](#callbacks)来处理响应：
 
 - [setRequestor()](#setReq)
 - [getAuthorization()](#getAuthZ)
@@ -40,7 +40,7 @@ ht-degree: 0%
 
 - *端点* — 此参数是可选的。 它可以是以下值之一：
 
-   - 一个数组，允许您为Adobe提供的身份验证和授权服务指定端点（其他实例可用于调试目的）。 如果提供了多个URL，则MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供程序相关联；即首先响应并支持该MVPD的服务提供程序。 默认情况下（如果未指定值），将使用Adobe服务提供程序(<http://sp.auth.adobe.com/>)。
+   - 一个数组，允许您为Adobe提供的身份验证和授权服务指定端点（其他实例可用于调试目的）。 如果提供了多个URL，则MVPD列表将由所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商相关联；即首先响应并支持该MVPD的提供商。 默认情况下（如果未指定值），将使用Adobe服务提供程序(<http://sp.auth.adobe.com/>)。
 
   示例：
    - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
@@ -84,14 +84,14 @@ ht-degree: 0%
 ```
 
 
-上述模板中的所有顶级键都是可选的，且具有默认值（*backgroundLogin*、*backgroundLogut*&#x200B;默认为false，而mvpdConfig为null — 表示不覆盖任何MVPD设置）。
+上述模板中的所有顶级键均为可选键，且具有默认值(*backgroundLogin*、*backgroundLogut*&#x200B;默认情况下为false，而mvpdConfig为null — 这意味着不会覆盖任何MVPD设置)。
 
 
 - **注意**：为上述参数指定无效值/类型将导致未定义的行为。
 
 
 
-以下是以下方案的示例配置：激活无刷新登录和注销，将MVPD1更改为全页重定向登录（非iFrame），并将MVPD2更改为iFrame登录(width=500 and height=300)：
+以下是以下方案的示例配置：激活无刷新登录和注销，将MVPD1更改为完整页面重定向登录（非iFrame），并将MVPD2更改为iFrame登录(width=500 and height=300)：
 
 ```JSON
     {  
@@ -120,14 +120,14 @@ ht-degree: 0%
 
 ## getAuthorization(inResourceID， redirect_url) {#getauthorization(inresourceid,redirect_url)}
 
-**描述：**&#x200B;请求对指定资源的授权。 每次客户尝试访问可授权资源时，均调用此函数以从Access Enabler获取短期授权令牌。 资源ID与提供授权的MVPD协商一致。
+**描述：**&#x200B;请求对指定资源的授权。 每次客户尝试访问可授权资源时，均调用此函数以从Access Enabler获取短期授权令牌。 资源ID与MVPD协商并提供授权。
 
 使用当前客户的缓存身份验证令牌。 如果未找到此类令牌，则先启动身份验证过程，然后继续授权。
 
 **参数：**
 
 - `inResourceID` — 用户请求授权的资源的ID。
-- `redirect_url` — 可以选择提供重定向URL，以便MVPD的授权进程将用户返回到该页面，而不是返回启动授权的页面。
+- `redirect_url` — 可以选择提供重定向URL，以便MVPD的授权过程将用户返回到该页面，而不是返回启动授权的页面。
 
 
 已触发&#x200B;**回调：** [setToken()](#settokeninrequestedresourceid-intoken-settokeninrequestedresourceidintoken)成功，[tokenRequestFailed](#tokenrequestfailedinrequestedresourceid-inrequesterrorcode-inrequestdetailederrormessage-tokenrequestfailedinrequestedresourceidinrequesterrorcodeinrequestdetailederrormessage)失败
@@ -150,7 +150,7 @@ ht-degree: 0%
 
 **参数：**
 
-- redirect_url — 可以选择提供重定向URL，以便MVPD的身份验证进程将用户返回到该页面，而不是启动身份验证的页面。
+- redirect_url — 可以选择提供重定向URL，以便MVPD的身份验证过程将用户返回到该页面，而不是启动身份验证的页面。
 
 已触发&#x200B;**回调：** [setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[displayProviderDialog()](#displayproviderdialogproviders-displayproviderdialogproviders)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
@@ -197,7 +197,7 @@ ht-degree: 0%
 
 **参数：**
 
-- *资源*：资源参数是应检查其授权的资源数组。 列表中的每个元素都应该是一个表示资源ID的字符串。 资源ID的限制与`getAuthorization()`调用中的资源ID的限制相同，即它是程序员与MVPD之间建立的商定值，或媒体RSS片段。
+- *资源*：资源参数是应检查其授权的资源数组。 列表中的每个元素都应该是一个表示资源ID的字符串。 资源ID与`getAuthorization()`调用中的资源ID受相同的限制，即它是程序员和MVPD之间建立的商定值或媒体RSS片段。
 
 </br>
 
@@ -208,7 +208,7 @@ ht-degree: 0%
 
 **参数：**
 
-- *资源*：资源参数是应检查其授权的资源数组。 列表中的每个元素都应该是一个表示资源ID的字符串。 资源ID的限制与`getAuthorization()`调用中的资源ID的限制相同，即它是程序员与MVPD之间建立的商定值，或媒体RSS片段。
+- *资源*：资源参数是应检查其授权的资源数组。 列表中的每个元素都应该是一个表示资源ID的字符串。 资源ID与`getAuthorization()`调用中的资源ID受相同的限制，即它是程序员和MVPD之间建立的商定值或媒体RSS片段。
 
 - *缓存*：检查预授权资源时是否使用内部缓存。 这是可选参数，默认为&#x200B;**true**。 如果为true，则其行为与上述API相同，这意味着对此函数的后续调用将使用内部缓存来解析预授权的资源。 为此参数传递&#x200B;**false**&#x200B;将禁用内部缓存，导致每次调用&#x200B;**checkPreauthorizedResources** API时都会调用服务器。
 
@@ -226,7 +226,7 @@ ht-degree: 0%
 有两种类型的元数据：
 
 - **静态**（身份验证令牌TTL、授权令牌TTL和设备ID）
-- **用户元数据** （这包括在身份验证和/或授权流期间从MVPD传递到用户设备的用户特定信息）
+- **用户元数据** (这包括在身份验证和/或授权流期间从MVPD传递到用户设备的用户特定信息)
 
 **更多信息：** [用户元数据](#UserMetadata)
 
@@ -245,11 +245,11 @@ ht-degree: 0%
 
    - `"encryptedZip"` — 加密的邮政编码
 
-   - `"householdID"` — 家庭标识符。 在MVPD不支持子帐户的情况下，它将与用户ID相同。
+   - `"householdID"` — 家庭标识符。 在MVPD不支持子帐户的情况下，这将与用户ID相同。
 
    - `"maxRating"` — 用户的最大家长评级
 
-   - `"userID"` — 用户标识符。 如果MVPD支持子帐户，并且用户不是主帐户，则userID将不同于householdID。
+   - `"userID"` — 用户标识符。 如果MVPD支持子帐户，并且用户不是主帐户，则用户ID将不同于家庭ID。
 
    - `"channelID"` — 用户有权查看的渠道列表
 
@@ -302,7 +302,7 @@ ht-degree: 0%
 
 ## setSelectedProvider(providerid) {#setSelectedProvider}
 
-**描述：**&#x200B;当用户从提供程序选择UI中选择MVPD以便向访问启用程序发送提供程序选择时，调用此函数，或者使用null参数调用此函数，以防用户在不选择提供程序的情况下取消您的提供程序选择UI。
+**描述：**&#x200B;当用户从您的提供程序选择UI中选择了MVPD以便将该提供程序选择发送到Access Enabler时，调用此函数，或者使用null参数调用此函数，以防用户未选择提供程序而关闭您的提供程序选择UI。
 
 **回调
 已触发：**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
@@ -319,7 +319,7 @@ ht-degree: 0%
 
 此函数是异步函数，并将其结果返回给`selectedProvider()`回调函数。
 
-- **MVPD**&#x200B;当前选定的MVPD，如果未选择MVPD，则返回null。
+- **MVPD**&#x200B;当前选定的MVPD，如果未选择MVPD，则为null。
 - **AE_State**&#x200B;当前客户的身份验证结果为“新用户”、“用户未身份验证”或“用户已身份验证”之一
 
 已触发&#x200B;**回调：** [selectedProvider()](#getselectedprovider-getselectedprovider)
@@ -374,7 +374,7 @@ ht-degree: 0%
 
 **参数：**
 
-- *configXML*：保存当前REQUESTOR的配置（包括MVPD列表）的xml对象。
+- *configXML*：包含当前REQUESTOR(包括MVPD列表)的配置的xml对象。
 
 
 **触发者：** [setRequestor()](#setrequestor-inrequestorid-endpoints-optionssetreq)
@@ -409,7 +409,7 @@ ht-degree: 0%
 
 ## createIFrame(inWidth， inHeight) {#createIFrame(inWidth,inHeight)}
 
-**描述：**&#x200B;如果用户选择的MVPD需要iFrame才能显示其身份验证登录页UI，则实施此回调。
+**描述：**&#x200B;如果用户选择的MVPD需要一个iFrame来显示其身份验证登录页UI，则实施此回调。
 
 **触发者：**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
@@ -423,7 +423,7 @@ ht-degree: 0%
 
 >[!NOTE]
 > 
->如果您使用的是当前的[高级错误报告](/help/authentication/integration-guide-programmers/features-standard/error-reporting/error-reporting.md)系统，则可以忽略发送到此函数的errorCode参数。  但是， isAuthenticated标记仍用于跟踪权利流中用户的身份验证状态
+>如果您使用的是当前的[高级错误报告](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)系统，则可以忽略发送到此函数的errorCode参数。  但是， isAuthenticated标记仍用于跟踪权利流中用户的身份验证状态
 
 
 **参数：**
@@ -463,7 +463,7 @@ ht-degree: 0%
 
 传递事件类型和关联信息的数组。 事件类型包括：
 
-| mvpdSelection | 用户在提供程序选择对话框中选择了MVPD。 |
+| mvpdSelection | 用户在提供商选择对话框中选择了MVPD。 |
 | ----------------------- | --------------------------------------------------------- |
 | authenticationDetection | 身份验证检查已完成。 |
 | authorizationDetection | 授权请求已完成。 |
@@ -479,14 +479,14 @@ ht-degree: 0%
 |  | 2：Access Enabler客户端类型 |
 |  | 3：操作系统 |
 | authenticationDetection | 0：令牌请求是否成功(true/false) |
-|  | 1： MVPD ID |
+|  | 1：MVPD ID |
 |  | 2： GUID |
 |  | 3：令牌已在缓存中(true/false) |
 |  | 4：设备类型 |
 |  | 5：Access Enabler客户端类型 |
 |  | 6：操作系统 |
 | authorizationDetection | 0：令牌请求是否成功(true/false) |
-|  | 1： MVPD ID |
+|  | 1：MVPD ID |
 |  | 2： GUID |
 |  | 3：令牌已在缓存中(true/false) |
 |  | 4：错误 |
@@ -527,7 +527,7 @@ ht-degree: 0%
 
 - *inRequestedResourceID* — 提供授权请求中使用的资源ID的字符串。
 - *inRequestErrorCode* — 显示Adobe Pass身份验证错误代码的字符串，用于指示失败的原因；可能的值是“用户未验证错误”和“用户未授权错误”；有关更多详细信息，请参阅下面的“回调错误代码”。
-- *inRequestDetailedErrorMessage* — 适用于显示的附加描述性字符串。 如果此描述性字符串由于任何原因不可用，则Adobe Pass身份验证发送空字符串&#x200B;**(&quot;)**。  MVPD可使用此命令来传递自定义错误消息或与销售相关的消息。 例如，如果订阅者被拒绝对资源的授权，则MVPD可以使用`*inRequestDetailedErrorMessage*`进行回复，例如： **&quot;您当前在包中无法访问此渠道。 如果要升级包，请单击\*此处\*。”**&#x200B;消息由Adobe Pass身份验证通过此回调传递到程序员网站。 然后，程序员可以选择显示或忽略它。 Adobe Pass身份验证还可以使用`*inRequestDetailedErrorMessage*`将可能导致错误的情况通知程序员。 例如，**“与提供商的授权服务通信时出现网络错误”。**
+- *inRequestDetailedErrorMessage* — 适用于显示的附加描述性字符串。 如果此描述性字符串由于任何原因不可用，则Adobe Pass身份验证发送空字符串&#x200B;**(&quot;)**。  MVPD可使用此功能传递自定义错误消息或与销售相关的消息。 例如，如果订阅者被拒绝对资源的授权，MVPD可能会回复`*inRequestDetailedErrorMessage*`，例如： **&quot;您当前在包中无法访问此渠道。 如果要升级包，请单击\*此处\*。”**&#x200B;消息由Adobe Pass身份验证通过此回调传递到程序员网站。 然后，程序员可以选择显示或忽略它。 Adobe Pass身份验证还可以使用`*inRequestDetailedErrorMessage*`将可能导致错误的情况通知程序员。 例如，**“与提供商的授权服务通信时出现网络错误”。**
 
 
 
@@ -609,7 +609,7 @@ ht-degree: 0%
 
 **描述：**&#x200B;实施此回调以接收当前选定的MVPD以及封装在`result`参数中的当前用户的身份验证结果。 `result`参数是一个具有以下属性的对象：
 
-- **MVPD**&#x200B;当前选定的MVPD，如果未选择MVPD，则返回null。
+- **MVPD**&#x200B;当前选定的MVPD，如果未选择MVPD，则为null。
 - **AE\_State**&#x200B;当前用户、“新用户”、“用户未验证”或“用户已验证”之一验证的结果
 
 **触发者：** [getSelectedProvider()](#getSelProv)

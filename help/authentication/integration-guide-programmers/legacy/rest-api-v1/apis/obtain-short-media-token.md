@@ -2,14 +2,14 @@
 title: 获取短媒体令牌
 description: 获取短媒体令牌
 exl-id: 667eaaba-423e-4d54-9dbe-084b3c049e1f
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '370'
+source-wordcount: '371'
 ht-degree: 0%
 
 ---
 
-# 获取短媒体令牌 {#obtain-short-media-token}
+# （旧版）获取短媒体令牌 {#obtain-short-media-token}
 
 >[!NOTE]
 >
@@ -55,9 +55,9 @@ ht-degree: 0%
 |-------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 请求者 | 此操作有效的程序员requestorId。 |
 | deviceId | 设备ID字节。 |
-| 资源 | 一个字符串，它包含resourceId（或MRSS片段），标识用户请求的内容并被MVPD授权端点识别。 |
-| 设备信息/</br></br>X — 设备信息 | 流设备信息。</br></br>**注意**：可以将此device_info作为URL参数传递，但由于此参数的潜在大小以及GETURL的长度限制，它应作为X-Device-Info传递到http标头。 </br></br>在[传递设备和连接信息](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
-| _deviceType_ | 设备类型（例如，Roku、PC）。</br></br>如果此参数设置正确，ESM会在使用无客户端程序时提供按设备类型]/(help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type)划分的[个量度，以便可以对其执行不同类型的分析。 例如，Roku、AppleTV和Xbox。</br></br>查看[使用无客户端设备类型参数的好处&#x200B;](/help/authentication/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**： device_info将替换此参数。 |
+| 资源 | 一个字符串，它包含resourceId（或MRSS片段），可标识用户请求的内容并由MVPD授权端点识别。 |
+| 设备信息/</br></br>X — 设备信息 | 流设备信息。</br></br>**注意**：可以将此device_info作为URL参数传递，但由于此参数的潜在大小以及GETURL的长度限制，它应作为X-Device-Info传递到http标头。 </br></br>在[传递设备和连接信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
+| _deviceType_ | 设备类型（例如，Roku、PC）。</br></br>如果此参数设置正确，ESM会在使用无客户端程序时提供按设备类型]/(help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type)划分的[个量度，以便可以对其执行不同类型的分析。 例如，Roku、AppleTV和Xbox。</br></br>查看[使用无客户端设备类型参数的好处&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**： device_info将替换此参数。 |
 | _设备用户_ | 设备用户标识符。</br></br>**注意**：如果使用，则deviceUser的值应与[创建注册码](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)请求中的值相同。 |
 | _appId_ | 应用程序id/名称。 </br></br>**注意**： device_info将替换此参数。 如果使用，`appId`应具有与[创建注册码](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)请求中相同的值。 |
 

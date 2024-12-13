@@ -2,7 +2,7 @@
 title: 欢迎使用Adobe&amp；reg；通过身份验证！
 description: 欢迎使用Adobe&amp；reg；通过身份验证概述
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
 source-wordcount: '331'
 ht-degree: 0%
@@ -33,9 +33,9 @@ Adobe Pass身份验证是TV Everywhere的权利解决方案，提供了一个模
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | <ul><li>[程序员Kickstart指南](/help/authentication/kickstart/programmer-kickstart-guide.md)</li><li>[用户元数据](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)</li></ul> | <ul><li>[MVPD Kickstart指南](/help/authentication/kickstart/mvpd-kickstart-guide.md)</li><li>[身份验证](/help/authentication/integration-guide-mvpds/authn-usecase.md)</li><li>[授权](/help/authentication/integration-guide-mvpds/authz-usecase.md)</li><li>[注销](/help/authentication/integration-guide-mvpds/usecase-mvpd-logout.md)</li></ul> |
 | 本机应用客户端的&#x200B;**** | 每个人&#x200B;**** |
-| <ul><li>[iOS技术概述](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)</li><li>[Android技术概述](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)</li></ul> | <ul><li>[技术文件](/help/authentication/kickstart/technical-paper.md)</li><li>[提升过程](/help/authentication/notes-technical/escalation-procedures.md)</li><li>[词汇表](/help/authentication/kickstart/glossary.md)</li></ul> |
+| <ul><li>[iOS技术概述](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)</li><li>[Android技术概述](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)</li></ul> | <ul><li>[技术文件](/help/authentication/kickstart/technical-paper.md)</li><li>[提升过程](/help/authentication/kickstart/escalation-procedures.md)</li><li>[词汇表](/help/authentication/kickstart/glossary.md)</li></ul> |
 | 用于智能设备的&#x200B;**** |                                                                                                                                                                                                                                                                                                                                                                       |
-| <ul><li>[无客户端技术概述](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/rest-api-overview.md)</li><li>[无客户端API](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)</li></ul> |                                                                                                                                                                                                                                                                                                                                                                       |
+| <ul><li>[无客户端技术概述](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)</li><li>[无客户端API](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)</li></ul> |                                                                                                                                                                                                                                                                                                                                                                       |
 
 >[!IMPORTANT]
 >
@@ -43,7 +43,7 @@ Adobe Pass身份验证是TV Everywhere的权利解决方案，提供了一个模
 >
 >[发送电子邮件给支持团队](mailto:tve-support@adobe.com)也是任何问题或事件报告的第一步。
 >
->如果您有[严重级别为1的实时](/help/authentication/notes-technical/escalation-procedures.md)问题，并且您通过电子邮件向我们发送了，30分钟没有响应，请查看[上报程序](/help/authentication/notes-technical/escalation-procedures.md)文档以了解要拨打的电话号码。
+>如果您有[严重级别为1的实时](/help/authentication/kickstart/escalation-procedures.md)问题，并且您通过电子邮件向我们发送了，30分钟没有响应，请查看[上报程序](/help/authentication/kickstart/escalation-procedures.md)文档以了解要拨打的电话号码。
 >
 
 

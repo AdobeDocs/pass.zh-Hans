@@ -2,9 +2,9 @@
 title: Apple SSO概述
 description: Apple SSO概述
 exl-id: 7cf47d01-a35a-4c85-b562-e5ebb6945693
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1256'
+source-wordcount: '1260'
 ht-degree: 0%
 
 ---
@@ -51,13 +51,13 @@ Adobe Pass身份验证与Apple合作，为iPhone、iPad和Apple电视所有者�
 
      请参阅[Apple SSO指南(REST API V2)](apple-sso-cookbook-rest-api-v2.md)文档。
 
-   * Adobe Pass身份验证REST API V1支持合作伙伴单点登录(SSO)。
+   * 旧版Adobe Pass身份验证REST API V1支持合作伙伴单点登录(SSO)。
 
-     请参阅[Apple SSO指南(REST API V1)](apple-sso-cookbook-rest-api-v1.md)文档。
+     请参阅[（旧版） Apple SSO指南(REST API V1)](../../../../legacy/sso-access/apple-sso-cookbook-rest-api-v1.md)文档。
 
-   * Adobe Pass Authentication AccessEnabler iOS/tvOS SDK支持合作伙伴单点登录(SSO)。
+   * 旧版Adobe Pass Authentication AccessEnabler iOS/tvOS SDK支持合作伙伴单点登录(SSO)。
 
-     请参阅[Apple SSO指南(iOS/tvOS SDK)](apple-sso-cookbook-iostvos-sdk.md)文档。
+     请参阅[（旧版） Apple SSO指南(iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)文档。
 
 ### MVPD {#apple-sso-prerequisites-mvpd}
 
@@ -88,41 +88,41 @@ Adobe Pass身份验证与Apple合作，为iPhone、iPad和Apple电视所有者�
   此信息不可用。
 
 
-* 如果用户通过使用未与应用程序集成的MVPD登录到iOS/iPadOS上的&#x200B;*`Settings -> TV Provider`*&#x200B;或tvOS上的&#x200B;*`Settings -> Accounts -> TV Provider`*&#x200B;分区，会发生什么情况？
+* 如果用户使用未与应用程序集成的MVPD登录到iOS/iPadOS上的&#x200B;*`Settings -> TV Provider`*&#x200B;或tvOS上的&#x200B;*`Settings -> Accounts -> TV Provider`*&#x200B;分区，会发生什么情况？
 
   当用户启动应用程序时，将无法通过Apple SSO工作流对用户进行身份验证。 因此，应用程序必须回退到常规身份验证流程，并显示自己的MVPD选取器。
 
 
-* 如果用户通过使用在&#x200B;**NO**&#x200B;上设置&#x200B;**启用单点登录**&#x200B;的MVPD(通过适用于iOS/tvOS平台的[Adobe Pass TVE功能板](https://experience.adobe.com/#/pass/authentication))，转到iOS/iPadOS上的&#x200B;*`Settings -> TV Provider`*&#x200B;或tvOS上的&#x200B;*`Settings -> Accounts -> TV Provider`*&#x200B;区域进行登录，会出现什么情况？
+* 如果用户通过使用在&#x200B;**NO**&#x200B;上设置&#x200B;**启用单点登录**&#x200B;的MVPD(通过适用于iOS/tvOS平台的[Adobe Pass TVE功能板](https://experience.adobe.com/#/pass/authentication))，转到iOS/iPadOS上的&#x200B;*`Settings -> TV Provider`*&#x200B;或tvOS上的&#x200B;*`Settings -> Accounts -> TV Provider`*&#x200B;分区进行登录，会出现什么情况？
 
   当用户启动应用程序时，将无法通过Apple SSO工作流对用户进行身份验证。 因此，应用程序必须回退到常规身份验证流程，并显示自己的MVPD选取器。
 
 
-* 如果用户具有不受Apple载入（不支持）但存在于Apple选取器中的MVPD，会发生什么情况？
+* 如果用户具有不受Apple载入（不支持）的MVPD，但它存在于Apple选取器中，会发生什么情况？
 
   当用户启动应用程序时，用户将仅通过Apple SSO工作流选择MVPD，而不完成身份验证流程。 因此，应用程序必须回退到常规身份验证流程，但可以使用已选择的MVPD。
 
 
-* 如果用户具有Apple未载入（不支持）的MVPD，会发生什么情况？
+* 如果用户具有不受Apple载入（不支持）的MVPD，会发生什么情况？
 
   当用户启动应用程序时，将通过Apple SSO工作流选择“其他电视提供商”选取器选项。 因此，应用程序必须回退到常规身份验证流程，并显示自己的MVPD选取器。
 
 
-* 如果用户的MVPD通过[Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication)介质降级，会发生什么情况？
+* 如果用户的MVPD通过[Adobe Pass TVE仪表板](https://experience.adobe.com/#/pass/authentication)介质降级，会发生什么情况？
 
   当用户启动应用程序时，将通过降级机制而不是通过Apple SSO工作流对用户进行身份验证。 该体验应该对用户来说是无缝的，但如果应用程序使用Adobe Pass Authentication AccessEnabler iOS/tvOS SDK，则会通过&#x200B;*N010*&#x200B;警告代码通知应用程序。
 
 
-* Apple SSO和非Apple SSO身份验证流之间的MVPD用户ID是否会更改？
+* MVPD用户ID在Apple SSO和非Apple SSO身份验证流程之间是否会更改？
 
   预计用户ID不会发生更改，但需要为每个选择的提供商验证该ID。
 
 
 * 身份验证TTL是否会有任何更改？
 
-  Adobe Pass身份验证将继续遵循程序员集成每个MVPD所需的TTL。 当通过Apple SSO从一个程序员应用程序导航到另一个程序员应用程序时，第二个应用程序将拥有其相应程序员x MVPD集成的TTL（它不会共享验证第一个应用程序的TTL）
+  Adobe Pass身份验证将继续遵守程序员为与每个MVPD的集成所需的TTL。 当通过Apple SSO从一个程序员应用程序导航到另一个程序员应用程序时，第二个应用程序将拥有其相应的程序员x MVPD集成的TTL（它不会共享验证第一个应用程序的TTL）
 
 |                                      | Adobe Pass身份验证TTL已过期 | Adobe Pass身份验证TTL有效 |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| **Apple的设备令牌TTL已过期** | 用户未验证（应显示MVPD选取器） | 用户已完成身份验证，并且TTL是其Adobe Pass身份验证令牌/配置文件的剩余时间 |
+| **Apple的设备令牌TTL已过期** | 用户未经过身份验证(应显示MVPD选取器) | 用户已完成身份验证，并且TTL是其Adobe Pass身份验证令牌/配置文件的剩余时间 |
 | **Apple的设备令牌TTL有效** | 用户通过静默身份验证，并使用TVE仪表板中指定的TTL获取另一个Adobe Pass身份验证令牌/配置文件 | 用户已完成身份验证，并且TTL是其Adobe Pass身份验证令牌/配置文件的剩余时间 |

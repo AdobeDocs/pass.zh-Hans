@@ -2,14 +2,14 @@
 title: 启动授权
 description: 启动授权
 exl-id: 2f8a5499-e94f-40dd-9fb0-aac8e080de66
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '423'
+source-wordcount: '424'
 ht-degree: 0%
 
 ---
 
-# 启动授权 {#initiate-authorization}
+# （旧版）启动授权 {#initiate-authorization}
 
 >[!NOTE]
 >
@@ -50,9 +50,9 @@ ht-degree: 0%
 | --- | --- |
 | 请求者 | 此操作有效的程序员requestorId。 |
 | deviceId | 设备ID字节。 |
-| 资源 | 一个字符串，它包含resourceId（或MRSS片段），标识用户请求的内容并被MVPD授权端点识别。 |
-| 设备信息/</br></br>X — 设备信息 | 流设备信息。</br></br>**注意**：可以将此device_info作为URL参数传递，但由于此参数的潜在大小以及GETURL的长度限制，它应作为X-Device-Info传递到http标头。 </br></br>在[传递设备和连接信息](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
-| _deviceType_ | 设备类型（例如Roku、PC）。</br></br>如果此参数设置正确，ESM提供的量度在使用无客户端程序时按设备类型](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)进行[划分，因此可以对Roku、AppleTV、Xbox等执行不同类型的分析。</br></br>查看[传递量度中无客户端设备类型参数的好处&#x200B;](/help/authentication/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**： device_info将替换此参数。 |
+| 资源 | 一个字符串，它包含resourceId（或MRSS片段），可标识用户请求的内容并由MVPD授权端点识别。 |
+| 设备信息/</br></br>X — 设备信息 | 流设备信息。</br></br>**注意**：可以将此device_info作为URL参数传递，但由于此参数的潜在大小以及GETURL的长度限制，它应作为X-Device-Info传递到http标头。 </br></br>在[传递设备和连接信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
+| _deviceType_ | 设备类型（例如Roku、PC）。</br></br>如果此参数设置正确，ESM提供的量度在使用无客户端程序时按设备类型](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)进行[划分，因此可以对Roku、AppleTV、Xbox等执行不同类型的分析。</br></br>查看[传递量度中无客户端设备类型参数的好处&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**： device_info将替换此参数。 |
 | _设备用户_ | 设备用户标识符。 |
 | _appId_ | 应用程序id/名称。 </br></br>**注意**： device_info将替换此参数。 |
 | 额外参数 | 调用可能还包含可选参数，这些参数可启用其他功能，如：</br></br>* generic_data — 允许使用[促销临时传递](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)</br></br>示例： `generic_data=("email":"email@domain.com")` |

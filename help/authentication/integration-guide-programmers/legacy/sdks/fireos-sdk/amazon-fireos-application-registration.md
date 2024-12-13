@@ -2,14 +2,14 @@
 title: Amazon FireOS应用程序注册
 description: Amazon FireOS应用程序注册
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '516'
 ht-degree: 0%
 
 ---
 
-# Amazon FireOS应用程序注册 {#amazon-fireos-application-registration}
+# （旧版）Amazon FireOS应用程序注册 {#amazon-fireos-application-registration}
 
 >[!NOTE]
 >
@@ -19,13 +19,13 @@ ht-degree: 0%
 
 ## 简介 {#intro}
 
-从FireOS AccessEnabler SDK版本3.0开始，我们正在更改Adobe服务器的身份验证机制。 我们引入了“软件语句”字符串的概念，而不是使用公钥和密码系统对requestorID进行签名，该字符串可用于获取访问令牌，该令牌稍后将用于SDK对我们的服务器进行的所有调用。 除了软件声明之外，您还需要为应用程序创建深层链接。
+从FireOS AccessEnabler SDK版本3.0开始，我们正在更改Adobe服务器的身份验证机制。 我们引入了软件语句字符串的概念，这种字符串可用于获取访问令牌，该令牌稍后将用于SDK对我们的服务器进行的所有调用，而不是使用公钥和密码系统来对requestorID进行签名。 除了软件声明之外，您还需要为应用程序创建深层链接。
 
 有关详细信息，请参阅[动态客户端注册概述](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)。
 
 ## 什么是软件声明？ {#what}
 
-软件语句是一个JWT令牌，其中包含有关应用程序的信息。 每个应用程序都应该有一个独一无二的软件声明，供我们的服务器用来识别Adobe系统中的应用程序。 初始化AccessEnabler SDK时需要传递软件语句，并且软件语句将用于向Adobe注册应用程序。 注册后，SDK将接收客户端ID和用于获取访问令牌的客户端密码。 SDK对我们的服务器进行的任何调用都需要有效的访问令牌。 SDK负责注册应用程序、获取和刷新访问令牌。
+软件语句是一个JWT令牌，其中包含有关应用程序的信息。 每个应用程序都应该有一个独一无二的软件声明，供我们的服务器用来识别Adobe系统中的应用程序。 初始化AccessEnabler SDK时需要传递软件语句，并且软件语句将用于向Adobe注册应用程序。 在注册后，SDK将接收客户端ID和客户端密码，这些密码将用于获取访问令牌。 SDK对我们的服务器进行的任何调用都需要有效的访问令牌。 SDK负责注册应用程序、获取和刷新访问令牌。
 
 **注意：**&#x200B;软件语句特定于应用程序，单个软件语句不能用于多个应用程序。 请注意，这同样适用于提供对多个渠道访问权限的应用程序。
 

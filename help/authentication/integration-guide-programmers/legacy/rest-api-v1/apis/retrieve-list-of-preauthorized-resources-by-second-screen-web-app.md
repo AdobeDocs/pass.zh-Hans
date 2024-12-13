@@ -2,14 +2,14 @@
 title: 按第二屏Web应用程序检索预授权资源列表
 description: 按第二屏Web应用程序检索预授权资源列表
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '254'
+source-wordcount: '255'
 ht-degree: 0%
 
 ---
 
-# 按第二屏Web应用程序检索预授权资源列表 {#retrieve-list-of-preauthorized-resources-by-second-screen-web-app}
+# （旧版）按第二屏Web应用程序检索预授权资源列表 {#retrieve-list-of-preauthorized-resources-by-second-screen-web-app}
 
 >[!NOTE]
 >
@@ -50,7 +50,7 @@ ht-degree: 0%
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 注册码 | 用户在身份验证流程开始时提供的注册代码值。 |
 | 请求者 | 此操作有效的程序员requestorId。 |
-| 资源列表 | 一个字符串，其中包含以逗号分隔的resourceId列表，该resourceId列表标识用户可能可以访问并被MVPD授权端点识别的内容。 |
+| 资源列表 | 一个字符串，其中包含以逗号分隔的resourceId列表，以标识用户可能可以访问并被MVPD授权端点识别的内容。 |
 
 
 ### 示例响应 {#sample-response}

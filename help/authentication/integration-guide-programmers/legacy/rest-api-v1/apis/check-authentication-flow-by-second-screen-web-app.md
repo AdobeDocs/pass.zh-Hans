@@ -2,14 +2,14 @@
 title: 通过第二屏幕Web应用程序检查身份验证流程
 description: 通过第二屏幕Web应用程序检查身份验证流程
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '211'
+source-wordcount: '212'
 ht-degree: 0%
 
 ---
 
-# 通过第二屏幕Web应用程序检查身份验证流程 {#check-authentication-flow-by-second-screen-web-app}
+# （旧版）按第二屏Web应用程序检查身份验证流程 {#check-authentication-flow-by-second-screen-web-app}
 
 >[!NOTE]
 >
