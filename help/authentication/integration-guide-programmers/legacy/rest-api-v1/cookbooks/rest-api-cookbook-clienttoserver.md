@@ -2,9 +2,9 @@
 title: REST API指南（客户端到服务器）
 description: Rest API指南客户端到服务器。
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '899'
+source-wordcount: '888'
 ht-degree: 0%
 
 ---
@@ -44,10 +44,6 @@ Adobe Pass身份验证REST API受[限制机制](/help/authentication/integration
 | Adobe基础架构 | Adobe Pass服务 | 与MVPD IdP和AuthZ服务集成并提供身份验证和授权决策的服务。 |
 | MVPD基础架构 | MVPD IdP | MVPD端点，它提供基于凭据的身份验证服务以验证其用户的身份。 |
 | | MVPD AuthZ服务 | MVPD端点，根据用户的订阅、家长控制等提供授权决策。 |
-
-
-
-流中使用的其他术语在[术语表](/help/authentication/kickstart/glossary.md)中定义。
 
 ## 流{#flows}
 

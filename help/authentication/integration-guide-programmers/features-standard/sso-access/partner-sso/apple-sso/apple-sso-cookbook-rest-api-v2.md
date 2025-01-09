@@ -2,9 +2,9 @@
 title: Apple SSO指南(REST API V2)
 description: Apple SSO指南(REST API V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '3442'
+source-wordcount: '3443'
 ht-degree: 0%
 
 ---
@@ -189,7 +189,7 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
    >
    > <br/>
    >
-   > 如果验证失败，将生成错误响应，提供附加信息，这些信息将遵循[增强型错误代码](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
+   > 如果验证失败，将生成错误响应，提供附加信息以遵守[增强型错误代码](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)文档。
 
    >[!IMPORTANT]
    >
@@ -291,7 +291,7 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
    * `authenticationRequest - request`属性包含传递到合作伙伴框架的SAML请求。
    * `authenticationRequest - attributesNames`属性包含传递到合作伙伴框架的SAML属性。
 
-   如果Adobe Pass后端未识别有效的配置文件，并且合作伙伴单点登录验证通过，则流应用程序会收到一个包含操作和数据的响应，这些操作和数据将传递到合作伙伴框架，以便使用MVPD启动身份验证流程。
+   如果Adobe Pass后端未识别有效的配置文件，并且合作伙伴单点登录验证通过，则流应用程序会收到一个包含操作和数据的Response，以便传递到Partner Framework，从而开始使用MVPD的身份验证流程。
 
 1. **使用合作伙伴框架完成MVPD身份验证：**&#x200B;将上一步骤中获得的合作伙伴身份验证请求（SAML请求）转发到[视频订阅者帐户框架](https://developer.apple.com/documentation/videosubscriberaccount)。 如果身份验证流程成功，则与MVPD的[视频订阅者帐户框架](https://developer.apple.com/documentation/videosubscriberaccount)交互将生成合作伙伴身份验证响应（SAML响应），该响应将随合作伙伴框架状态信息一起返回。
 

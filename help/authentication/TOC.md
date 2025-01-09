@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
 user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '1260'
+source-wordcount: '1267'
 ht-degree: 2%
 
 ---
@@ -51,11 +51,12 @@ ht-degree: 2%
    + [程序员kickstart指南](kickstart/programmer-kickstart-guide.md)
    + [MVPD快速入门指南](kickstart/mvpd-kickstart-guide.md)
    + [上报程序](kickstart/escalation-procedures.md)
-   + [术语表](kickstart/glossary.md)
 + 程序员集成指南{#integration-guide-programmers}
    + REST API {#rest-apis}
       + REST API DCR {#rest-api-dcr}
-         + [动态客户端注册概述](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+         + [Dynamic Client注册概述](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+         + [Dynamic Client注册术语表](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
+         + [动态客户端注册常见问题解答](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)
          + API {#rest-api-dcr-apis}
             + [检索客户端凭据](integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)
             + [检索访问令牌](integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)

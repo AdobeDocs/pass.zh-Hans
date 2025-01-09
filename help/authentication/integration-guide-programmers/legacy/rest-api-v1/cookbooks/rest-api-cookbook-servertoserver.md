@@ -2,9 +2,9 @@
 title: REST API指南（服务器到服务器）
 description: Rest API指南服务器到服务器。
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '1867'
+source-wordcount: '1856'
 ht-degree: 0%
 
 ---
@@ -42,10 +42,6 @@ Adobe Pass身份验证REST API受[限制机制](/help/authentication/integration
 | Adobe基础架构 | Adobe Pass服务 | 与MVPD IdP和AuthZ服务集成并提供身份验证和授权决策的服务。 |
 | MVPD基础架构 | MVPD IdP | MVPD端点，它提供基于凭据的身份验证服务以验证其用户的身份。 |
 | | MVPD AuthZ服务 | MVPD端点，根据用户的订阅、家长控制等提供授权决策。 |
-
-
-流中使用的其他术语定义于
-[词汇表](/help/authentication/kickstart/glossary.md)。
 
 ## 流 {#flows}
 
@@ -197,10 +193,3 @@ Adobe Pass服务运行于分布在美国各地的多个数据中心上。  为�
 在缓存时，程序员服务必须遵守authN和authZ TTL，并在收到通知时，使authN或authZ会话失效。
 
 程序员必须维护与Adobe共享的证书。
-
-<!--
-## Related Information {#related}
-
-* [REST API Reference](/help/authentication/rest-api-reference.md)
-* [Glossary of Terms](/help/authentication/adobe-pass-glossary.md)
--->

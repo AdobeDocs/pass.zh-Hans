@@ -2,7 +2,7 @@
 title: 程序员
 description: 了解TVE仪表板中的程序员及其配置。
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1139'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-TVE仪表板的&#x200B;**程序员**&#x200B;部分允许您查看和管理链接到帐户权利的[程序员](/help/authentication/kickstart/glossary.md#programmer)的设置。 您还可以根据需要[添加新程序员](#add-new-programmer)。
+TVE仪表板的&#x200B;**程序员**&#x200B;部分允许您查看和管理链接到帐户权利的[程序员](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#programmer)的设置。 您还可以根据需要[添加新程序员](#add-new-programmer)。
 
 左侧面板中的&#x200B;**程序员**&#x200B;选项卡显示现有程序员的列表，其中包含以下详细信息：
 

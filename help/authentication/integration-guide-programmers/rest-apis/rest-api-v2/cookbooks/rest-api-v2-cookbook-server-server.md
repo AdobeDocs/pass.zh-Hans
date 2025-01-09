@@ -2,7 +2,7 @@
 title: REST API V2指南（服务器到服务器）
 description: REST API V2指南（服务器到服务器）
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1578'
 ht-degree: 0%
@@ -32,10 +32,10 @@ ht-degree: 0%
 | \[可选\]身份验证设备 | AuthN应用程序 | 如果流设备没有用户代理（即Web浏览器），则AuthN应用程序是程序员Web应用程序，可使用Web浏览器从单独的用户设备访问。 |
 | 程序员基础架构 | 程序员服务 | 将流设备与Adobe Pass服务链接以获取身份验证和授权决策的服务。 |
 | Adobe基础架构 | Adobe Pass服务 | 与MVPD IdP和AuthZ服务集成并提供身份验证和授权决策的服务。 |
-| MVPD基础架构 | MVPD IdP | MVPD端点，提供基于凭据的身份验证服务以验证其用户的身份。 |
+| MVPD基础架构 | MVPD IdP | MVPD端点，它提供基于凭据的身份验证服务以验证其用户的身份。 |
 |                           | MVPD AuthZ服务 | MVPD端点，根据用户的订阅、家长控制等提供授权决策。 |
 
-流中使用的其他术语在[术语表](/help/authentication/kickstart/glossary.md)中定义。
+流中使用的其他术语在[术语表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)中定义。
 
 下图说明了整个流程：
 
@@ -78,8 +78,8 @@ ht-degree: 0%
    * <b>步骤2.a：</b>程序员服务检索可用于serviceProvider <b>/api/v2/{serviceProvider}/configuration</b><br>的MVPD列表
 （[检索可用MVPD的列表](../apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)）
    * 程序员服务可以在MVPD列表上实施筛选，并仅显示希望隐藏其他MVPD（TempPass、测试MVPD、正在开发的MVPD等）
-   * 程序员服务应返回已过滤的MVPD列表，以便流式应用程序显示选择器，用户选择MVPD
-   * 从流式应用程序中选择MVPD后，程序员服务将创建一个会话： <b>/api/v2/{serviceProvider}/sessions</b><br>
+   * 程序员服务应返回已过滤的MVPD列表，以便流式应用程序显示选取器。用户选择MVPD
+   * 从流应用程序中选择MVPD后，程序员服务将创建一个会话： <b>/api/v2/{serviceProvider}/sessions</b><br>
 （[创建身份验证会话](../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)）<br>
       * 返回用于身份验证的代码和URL
       * 如果找到配置文件，程序员服务可能会继续到<a href="#preauthorization-phase">C。预授权阶段</a>
@@ -89,17 +89,17 @@ ht-degree: 0%
 
 使用浏览器或基于Web的第二个屏幕应用程序：
 
-* 选项1. 流应用程序可以打开浏览器或Web视图，加载URL以进行身份验证，并且用户登陆需要提交凭据的MVPD登录页面
+* 选项1. 流媒体应用程序可以打开浏览器或Web视图，加载URL以进行身份验证，并且用户登陆需要提交凭据的MVPD登录页面
    * 用户输入登录/密码，最终重定向显示成功页面
 * 选项2。 流应用程序无法打开浏览器，而只显示代码。 <b>需要开发单独的Web应用程序AuthN_APP</b>，以要求用户输入代码、生成并打开URL： <b>/api/v2/authenticate/{serviceProvider}/{CODE}</b>
    * 用户输入登录/密码，最终重定向显示成功页面
 
 ### 步骤4：检查已验证的用户档案 {#step-4-check-for-authenticated-profiles}
 
-程序员服务在浏览器或第二个屏幕中检查是否使用MVPD完成身份验证
+程序员服务会检查是否已在浏览器或第二个屏幕中完成与MVPD的身份验证
 
 * 建议在<b>/api/v2/{serviceProvider}/profiles/{mvpd}</b><br>上每15秒轮询一次
-（[检索特定MVPD的已验证配置文件](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)）
+([检索特定MVPD的已验证配置文件](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md))
    * 如果流应用程序中未选择MVPD，因为第二个屏幕应用程序中存在MVPD选取器，则应该使用代码<b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br>进行轮询
 （[检索特定代码的已验证配置文件](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)）
 * 如果轮询时间达到30分钟，并且流应用程序仍处于活动状态，则轮询不应超过30分钟，此时需要启动新会话，并会返回新的代码和URL
@@ -114,7 +114,7 @@ ht-degree: 0%
 
 * 步骤是可选的，如果应用程序要过滤掉在经过身份验证的用户包中不可用的资源，则执行此步骤
 * 调用<b>/api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}</b><br>
-（[使用特定的MVPD检索预授权决策](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)）
+([使用特定的MVPD检索预授权决策](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md))
 
 ## D.授权阶段 {#authorization-phase}
 
@@ -125,7 +125,7 @@ ht-degree: 0%
 * 每个播放开始都需要执行步骤
 * 流式应用程序将此信息传递给程序员服务
 * 程序员服务代表流式处理应用程序，调用<b>/api/v2/{serviceProvider}/decision/authorize/{mvpd}</b><br>
-（[使用特定MVPD检索授权决策](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)）
+([使用特定MVPD检索授权决定](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md))
    * decision = &#39;Permit&#39;，程序员服务指示流应用程序开始流
    * decision = &#39;Deny&#39;，程序员服务会指示流应用程序通知用户它无权访问该视频
    * 在此过程中，程序员服务可能会评估其他业务规则，并将适当的决策返回给流应用程序
@@ -139,7 +139,7 @@ ht-degree: 0%
 * 流应用程序会通知程序员服务，它需要从MVPD注销此特定应用程序。
 * 程序员服务可清除其存储的有关已验证用户的信息
 * 程序员服务调用<b>/api/v2/{serviceProvider}/logout/{mvpd}</b><br>
-（[启动特定MVPD的注销](../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)）
+([启动特定MVPD的注销](../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md))
 * 如果存在response actionType=&#39;interactive&#39;和url，则程序员服务将返回流应用程序的url
 * 基于现有功能，流应用程序可能会在浏览器中打开url（通常与用于身份验证的url相同）
 * 如果流应用程序没有浏览器，或者它与身份验证时的实例不同，则可以停止流，因为MVPD会话未保留在浏览器缓存中。

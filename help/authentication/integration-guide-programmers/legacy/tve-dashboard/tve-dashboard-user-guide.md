@@ -2,9 +2,9 @@
 title: Primetime TVE仪表板用户指南
 description: Primetime TVE仪表板用户指南
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '5527'
+source-wordcount: '5526'
 ht-degree: 0%
 
 ---
@@ -34,8 +34,6 @@ ht-degree: 0%
 * [TVE技术文档](/help/authentication/kickstart/technical-paper.md)
 * [程序员Kickstart指南](/help/authentication/kickstart/programmer-kickstart-guide.md)
 * [权利流](/help/authentication/integration-guide-programmers/entitlement-flow.md)
-* [术语表](/help/authentication/kickstart/glossary.md)
-
 
 继续本用户指南的后续部分，您将发现如何为公司的渠道、程序员或渠道与MVPD（多渠道视频项目分发商）之间的集成管理不同的设置。
 

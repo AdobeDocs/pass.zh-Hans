@@ -2,9 +2,9 @@
 title: REST API V2术语表
 description: REST API V2术语表
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '1964'
+source-wordcount: '1747'
 ht-degree: 0%
 
 ---
@@ -15,19 +15,19 @@ ht-degree: 0%
 >
 > 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-本文档提供集成Adobe Pass身份验证REST API V2文档时使用的术语的定义，并覆盖我们的旧版[术语表](/help/authentication/kickstart/glossary.md)。
+本文档提供集成Adobe Pass身份验证REST API V2时使用的术语的定义。
+
+>[!MORELIKETHIS]
+>
+> * [动态客户端注册(DCR)术语表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
 
 ## 术语表 {#glossary-terms}
 
 ### A {#a}
 
-#### 访问令牌 {#access-token}
-
-访问令牌是由Adobe Pass身份验证作为[动态客户端注册(DCR)](#dcr)进程的结果生成的令牌，该进程旨在确保访问受保护的API。
-
 #### 身份验证 {#authentication}
 
-身份验证是一个进程，它允许用户在通过[MVPD](#mvpd)验证用户订阅后向[程序员](#programmer)证明其身份，以便获得对受保护内容（[资源](#resource)）的访问权限。
+身份验证是一个进程，它允许用户在[MVPD](#mvpd)验证用户订阅后，向[程序员](#programmer)证明其身份，以获得对受保护内容（[资源](#resource)）的访问权限。
 
 #### 身份验证代码 {#code}
 
@@ -49,27 +49,11 @@ ht-degree: 0%
 
 ### C {#c}
 
-#### 客户端凭据 {#client-credentials}
-
-客户端凭据是在[动态客户端注册(DCR)](#dcr)过程中生成的一组唯一值，旨在用于获取[访问令牌](#access-token)。
-
 #### 配置 {#configuration}
 
 该配置是一个Adobe Pass身份验证概念，它存储有关[程序员](#programmer)和[MVPD](#mvpd)集成设置的信息，在[身份验证](#authentication)过程中询问用户从活动集成列表中选择其[电视提供程序](#tv-provider)时可以使用。
 
-#### 自定义方案 {#custom-scheme}
-
-自定义方案是引用[程序员](#programmer)应用程序的唯一值，可以从Adobe Pass [TVE仪表板](#tve-dashboard)生成和下载该应用程序，其目的是在iOS设备上运行的应用程序中用作最终重定向。
-
 ### 日期{#d}
-
-#### DCR {#dcr}
-
-动态客户端注册(DCR)是由[RFC 7591](https://datatracker.ietf.org/doc/html/rfc7591)定义的授权机制，它基于[RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749)描述的OAuth 2.0授权框架。
-
-DCR作为Adobe Pass身份验证服务交付给[程序员](#programmer)，该服务可进一步启用对受保护API的访问。
-
-有关详细信息，请参阅[动态客户端注册概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)文档。
 
 #### 决策 {#decision}
 
@@ -81,11 +65,15 @@ DCR作为Adobe Pass身份验证服务交付给[程序员](#programmer)，该服�
 
 有关详细信息，请参阅[降级API概述](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-api-overview.md)文档。
 
+#### 设备ID {#device-id}
+
+设备ID是绑定到用户设备的唯一标识符，必须由[程序员](#programmer)应用程序在[权利](#entitlement)流的所有阶段提供。
+
 ### E {#e}
 
 #### 权利 {#entitlement}
 
-权利是一个Adobe Pass身份验证概念，它整合了帮助用户通过不同阶段的可用流程和功能，以访问受保护的内容，这些阶段包括[身份验证](#authentication)、[预授权](#preauthorization)、[授权](#authorization)以及最后的[注销](#logout)。
+权利是一个Adobe Pass身份验证概念，它整合了帮助用户通过不同阶段的可用流程和功能，以访问受保护的内容，这些阶段包括[身份验证](#authentication)、[预授权](#preauthorization)、[授权](#authorization)，最后是[注销](#logout)。
 
 #### 增强的错误代码 {#enhanced-error-code}
 
@@ -97,7 +85,7 @@ DCR作为Adobe Pass身份验证服务交付给[程序员](#programmer)，该服�
 
 #### HBA {#hba}
 
-家庭身份验证(HBA)是一个过程，通过该过程，消费者将被自动授予访问连接到其家庭网络的选定设备上的[TV Everywhere (TVE)](#tve)内容的权限，这些设备是订阅合同中位置的一部分。
+基于家庭的身份验证(HBA)是一个过程，通过该过程，消费者将被自动授予访问连接到其家庭网络（属于订阅合同内的位置）的选定设备上的[TV Everywhere (TVE)](#tve)内容的权限。
 
 ### 我{#i}
 
@@ -105,7 +93,7 @@ DCR作为Adobe Pass身份验证服务交付给[程序员](#programmer)，该服�
 
 身份提供程序是一家公司，在[TV Everywhere (TVE)](#tve)的上下文中通过有线电视、卫星或基于互联网的服务向消费者提供身份服务。
 
-与[MVPD](#mvpd)和[TV提供程序](#tv-provider)同义。
+与[MVPD](#mvpd)和[电视提供程序](#tv-provider)同义。
 
 ### L {#l}
 
@@ -117,7 +105,7 @@ DCR作为Adobe Pass身份验证服务交付给[程序员](#programmer)，该服�
 
 #### 媒体令牌 {#media-token}
 
-媒体令牌是由Adobe Pass身份验证生成的令牌，它是旨在提供对受保护内容的访问权限的授权[决策](#decision)的结果。
+媒体令牌是Adobe Pass身份验证生成的令牌，它是授权[决定](#decision)的结果，该授权旨在提供对受保护内容的访问权限。
 
 媒体令牌已传递给[程序员](#programmer)，程序员随后验证该令牌以确保该[资源](#resource)的访问安全。
 
@@ -131,9 +119,9 @@ DCR作为Adobe Pass身份验证服务交付给[程序员](#programmer)，该服�
 
 #### MVPD {#mvpd}
 
-多频道视频节目分发商(MVPD)是一家通过有线电视、卫星电视或基于互联网的服务向消费者提供电视服务的公司。
+多频道视频节目分销商(MVPD)是一家通过有线电视、卫星电视或互联网服务为消费者提供电视服务的公司。
 
-MVPD由MVPD和Adobe之间的载入流程中定义的唯一值标识。
+MVPD由MVPD和Adobe在新用户引导过程中定义的唯一值标识。
 
 与[电视提供程序](#tv-provider)和[身份提供程序](#identity-provider)同义。
 
@@ -147,13 +135,13 @@ MVPD由MVPD和Adobe之间的载入流程中定义的唯一值标识。
 
 #### 预授权 {#preauthorization}
 
-预授权是一个进程，允许用户在使用[MVPD](#mvpd)验证用户权限后，从[程序员](#programmer)目录预览他们有权访问的[资源](#resource)的子集。
+预授权是一个进程，允许用户在[MVPD](#mvpd)验证用户权限后，从[程序员](#programmer)目录预览他们有权访问的[资源](#resource)的子集。
 
 与[Preflight](#preflight)同义。
 
 #### Preflight {#preflight}
 
-预检是一个进程，允许用户在使用[MVPD](#mvpd)验证用户权限后，从[程序员](#programmer)目录预览他们有权访问的[资源](#resource)的子集。
+预检是允许用户在[MVPD](#mvpd)验证用户权限后，从[程序员](#programmer)目录预览他们有权访问的[资源](#resource)的子集的进程。
 
 与[预授权](#preauthorization)同义。
 
@@ -175,7 +163,7 @@ The Programmer是一家通过各种平台拥有的渠道（品牌）向消费者
 
 #### 代理MVPD {#proxy-mvpd}
 
-代理MVPD是为其他MVPD提供身份服务并直接与Adobe Pass身份验证集成的公司。
+代理MVPD是一家为其他MVPD提供身份服务并直接与Adobe Pass身份验证集成的公司。
 
 #### 代理的MVPD {#proxied-mvpd}
 
@@ -183,15 +171,11 @@ The Programmer是一家通过各种平台拥有的渠道（品牌）向消费者
 
 #### 平台标识 {#platform-identity}
 
-平台标识是由绑定到用户设备的服务或框架（库）生成的唯一平台标识符有效负载，提供给[程序员](#programmer)以启用单点登录用户体验。
+平台标识是由绑定到用户设备的服务或框架（库）生成的唯一平台标识符有效负荷，提供给[程序员](#programmer)以启用单点登录用户体验。
 
 有关详细信息，请参阅[使用平台标识流的单点登录](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)文档。
 
 ### R {#r}
-
-#### 已注册的应用程序 {#registered-application}
-
-注册的应用程序是一个Adobe Pass身份验证概念，它存储有关[程序员](#programmer)应用程序的信息，该应用程序需要继续执行[动态客户端注册(DCR)](#dcr)进程。
 
 #### 资源 {#resource}
 
@@ -223,13 +207,9 @@ The Programmer是一家通过各种平台拥有的渠道（品牌）向消费者
 
 服务提供商是[程序员](#programmer)拥有的渠道（品牌）。
 
-服务提供商由程序员和Adobe在新用户引导过程中定义的唯一值来标识。
+服务提供商由程序员和Adobe在新用户引导过程中定义的唯一值标识。
 
-与先前术语的同义词使用了[请求者id](/help/authentication/kickstart/glossary.md#requestor-id)。
-
-#### 软件声明 {#software-statement}
-
-软件语句是可以从Adobe Pass [TVE仪表板](#tve-dashboard)下载的JSON Web令牌(JWT)，其目的是作为[动态客户端注册(DCR)](#dcr)进程的一部分使用。
+与使用请求者ID的前一个术语同义。
 
 #### SLO {#slo}
 
@@ -253,7 +233,7 @@ The Programmer是一家通过各种平台拥有的渠道（品牌）向消费者
 
 #### TempPass提升 {#temp-pass-promotional}
 
-提升TempPass是Adobe Pass身份验证功能，它允许用户在最大资源数和有限时间内访问受保护的内容，而无需使用[MVPD](#mvpd)进行身份验证。
+提升TempPass是一种Adobe Pass身份验证功能，它允许用户在最大数量的资源和有限的时间内访问受保护的内容，而无需使用[MVPD](#mvpd)进行身份验证。
 
 有关详细信息，请参阅[促销临时通行证](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)文档。
 
@@ -261,7 +241,7 @@ The Programmer是一家通过各种平台拥有的渠道（品牌）向消费者
 
 生存时间(TTL)是一个值，它指示基础实体有效的时间量。
 
-可以为[访问令牌](#access-token)、[配置文件](#profile)、授权[决策](#decision)或[媒体令牌](#media-token)提及TTL。
+可以为[访问令牌](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md#access-token)、[配置文件](#profile)、授权[决策](#decision)或[媒体令牌](#media-token)提及TTL。
 
 #### TVE {#tve}
 
@@ -277,15 +257,19 @@ TV Everywhere (TVE) Dashboard是提供给[程序员](#programmer)的Adobe Pass�
 
 电视提供商是一家公司，通过有线电视、卫星电视或互联网服务为消费者提供电视服务。
 
-通过电视提供商和Adobe在新用户引导过程中定义的唯一值来标识电视提供商。
+根据电视提供商和Adobe在新用户引导过程中定义的唯一值，来标识电视提供商。
 
-与[MVPD](#mvpd)和[标识提供程序](#identity-provider)同义。
+与[MVPD](#mvpd)和[身份提供程序](#identity-provider)同义。
 
 ### U {#u}
 
 #### 用户代理 {#user-agent}
 
 用户代理是指能够导航Web并呈现[MVPD](#mvpd)登录页面的浏览器或类似组件（特定于平台）。
+
+#### 用户 ID {#user-id}
+
+用户ID是绑定到用户的唯一标识符，源自[MVPD](#mvpd)身份验证过程。
 
 #### 用户元数据 {#user-metadata}
 

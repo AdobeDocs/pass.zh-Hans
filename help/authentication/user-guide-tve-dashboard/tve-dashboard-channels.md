@@ -2,7 +2,7 @@
 title: 渠道
 description: 了解TVE仪表板中的渠道及其各种配置。
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1556'
 ht-degree: 0%
@@ -21,7 +21,7 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 
 * **显示名称**：用于商业目的的渠道的品牌名称。
 * **渠道ID**：唯一标识符，也称为请求者ID。
-* **集成**：与[MVPD](/help/authentication/kickstart/glossary.md#mvpd)建立的连接数。
+* **集成**：与[MVPD](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#mvpd)建立的连接数。
 
 ![现有渠道列表](../assets/tve-dashboard/new-tve-dashboard/channels/channels-list-view.png)
 

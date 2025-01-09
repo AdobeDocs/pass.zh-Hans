@@ -2,7 +2,7 @@
 title: 临时传递
 description: 临时传递
 exl-id: 1df14090-8e71-4e3e-82d8-f441d07c6f64
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '2243'
 ht-degree: 0%
@@ -25,8 +25,8 @@ ht-degree: 0%
    * 程序员可以提供前两种情况的组合；例如，初始的较长的查看时段，一天后的一系列较短的查看时段，这些查看时段在随后的某天每天重复。
 * 程序员指定其临时传递的持续时间（生存时间或TTL）。
 * 临时传递针对每个请求者运行。  例如，NBC可以为请求者“NBCOlympics”设置4小时的临时传递。
-* 程序员可以重置授予特定请求者的所有令牌。  用于实施Temp Pass的“临时MVPD”必须在启用“每个请求者的身份验证”的情况下进行配置。
-* **临时传递访问权限已授予特定设备上的个别用户**。 在某个用户的临时传递访问过期后，该用户将无法在同一设备上获得临时访问权限，直到从Adobe Pass身份验证服务器中清除该用户的过期[授权令牌](/help/authentication/kickstart/glossary.md#authz-token)为止。
+* 程序员可以重置授予特定请求者的所有令牌。  用于实施Temp Pass的“临时MVPD”必须配置为启用“每个请求者的身份验证”。
+* **临时传递访问权限已授予特定设备上的个别用户**。 在某个用户的“临时传递”访问过期后，该用户将无法在同一设备上获得临时访问权限，直到从Adobe Pass身份验证服务器中清除该用户的过期授权令牌为止。
 
 
 >[!NOTE]
@@ -37,13 +37,13 @@ ht-degree: 0%
 
 * **如何计算查看时间** - Temp Pass保持有效的时间与用户在程序员应用程序上查看内容所花费的时间无关。  在通过Temp Pass对授权发出初始用户请求时，通过将初始当前请求时间加到由程序员指定的TTL来计算到期时间。 此到期时间与用户的设备ID和程序员的请求者ID关联，并存储在Adobe Pass身份验证数据库中。 每次用户尝试使用同一设备上的Temp Pass访问内容时，Adobe Pass身份验证都会将服务器请求时间与用户的设备ID和程序员的请求者ID关联的过期时间进行比较。 如果服务器请求时间小于过期时间，则将授予授权；否则，将拒绝授权。
 * **配置参数** — 程序员可以指定以下Temp Pass参数以创建Temp Pass规则：
-   * **令牌TTL** — 允许用户在未登录MVPD的情况下观看的时间。 此时间基于时钟，并且无论用户是否观看内容都会过期。
+   * **令牌TTL** — 在未登录到MVPD的情况下允许用户观看的时间。 此时间基于时钟，并且无论用户是否观看内容都会过期。
   >[!NOTE]
   >请求者ID不能有多个与其关联的临时传递规则。
-* **身份验证/授权** — 在Temp Pass流中，将MVPD指定为“Temp Pass”。  Adobe Pass身份验证不会与Temp Pass流中的实际MVPD通信，因此“Temp Pass”MVPD会授权任何资源。 程序员可以指定可使用Temp Pass访问的资源，就像对其网站上的其他资源执行操作一样。 媒体验证器库可以照常使用，以在播放之前验证Temp Pass短媒体令牌并强制执行资源检查。
+* **身份验证/授权** — 在Temp Pass流程中，您将MVPD指定为“Temp Pass”。  Adobe Pass身份验证不会与Temp Pass流中的实际MVPD通信，因此“Temp Pass”MVPD可授权任何资源。 程序员可以指定可使用Temp Pass访问的资源，就像对其网站上的其他资源执行操作一样。 媒体验证器库可以照常使用，以在播放之前验证Temp Pass短媒体令牌并强制执行资源检查。
 * **Temp Pass流中的跟踪数据** - Temp Pass权利流中关于跟踪数据的两点：
    * 从Adobe Pass身份验证传递到&#x200B;**sendTrackingData()**&#x200B;回调的跟踪ID是设备ID的哈希。
-   * 由于Temp Pass流中使用的MVPD ID是“Temp Pass”，因此该MVPD ID将传递回&#x200B;**sendTrackingData()**。 大多数程序员可能会希望以不同的方式处理临时传递量度与实际的MVPD量度。 这需要在您的Analytics实施中进行一些额外的工作。
+   * 由于临时传递流中使用的MVPD ID是“临时传递”，因此该MVPD ID将传递回&#x200B;**sendTrackingData()**。 大多数程序员可能会希望以不同的方式处理临时传递量度与实际的MVPD量度。 这需要在您的Analytics实施中进行一些额外的工作。
 
 下图显示了Temp Pass流程：
 
@@ -53,18 +53,18 @@ ht-degree: 0%
 
 ## 实施临时传递 {#implement-tempass}
 
-在Adobe Pass身份验证方面，Temp Pass是通过向参与程序员的服务器配置中添加名为“TempPass”的伪MVPD实现的。  此伪MVPD的作用类似于临时授予对程序员受保护内容的访问权限的实际MVPD。
+在Adobe Pass身份验证方面，Temp Pass是在向参与的程序员的服务器配置中添加名为“TempPass”的伪MVPD之后实施的。  这个伪MVPD的作用类似于一个实际的MVPD，临时授予对程序员受保护内容的访问权限。
 
 在程序员方面，对于MVPD用于身份验证的两种方案，Temp Pass的实现方式如下：
 
 * 程序员页面上的&#x200B;**iFrame**。 无论MVPD的身份验证类型如何，Temp Pass都能正常工作，但对于iFrame方案，需要执行其他步骤来取消当前身份验证流程并使用Temp Pass进行身份验证。 这些步骤显示在下面的[iFrame登录](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass.md)中。
-* **重定向到MVPD登录页**。 在更传统的情况下，即在开始使用MVPD进行身份验证之前提供用于触发Temp Pass的UI，无需采取任何特殊步骤。 临时传递应像常规MVPD一样处理。
+* **重定向到MVPD登录页面**。 在更传统的情况下，如果在开始使用MVPD进行身份验证之前提供了用于触发临时传递的UI，则无需执行任何特殊步骤。 临时传递的待遇应当与常规MVPD相同。
 
 以下几点适用于两种实施方案：
 
 * 仅对于尚未请求临时传递授权的用户，“临时传递”应显示在MVPD选取器中。 通过在Cookie上保留标记，可以阻止显示后续请求。 只要用户不清除浏览器缓存，该操作就会运行。 如果用户清除其浏览器缓存，则选择器中将再次显示“Temp Pass”，用户将能够再次请求它。 仅当“临时通过”时间尚未过期时，才会授予访问权限。
 * 当用户通过Temp Pass请求访问时，Adobe Pass身份验证服务器在身份验证过程中将不会执行其常见的安全断言标记语言(SAML)请求。 相反，身份验证端点将在令牌对设备有效期间每次调用它时返回成功结果。
-* Temp Pass过期时，其用户将不再进行身份验证，因为在Temp Pass流中，身份验证令牌和授权令牌具有相同到期日期。 为了向用户说明其Temp Pass已过期，程序员必须在调用`setRequestor()`后立即检索选定的MVPD，然后照常调用`checkAuthentication()`。 在`setAuthenticationStatus()`回调中，可以进行检查以确定身份验证状态是否为0，以便如果选定的MVPD为“TempPass”，则可以为用户显示一条消息，指出其临时传递会话已过期。
+* Temp Pass过期时，其用户将不再进行身份验证，因为在Temp Pass流中，身份验证令牌和授权令牌具有相同到期日期。 为了向用户说明他们的临时传递已过期，程序员必须在调用`setRequestor()`后立即检索选定的MVPD，然后照常调用`checkAuthentication()`。 在`setAuthenticationStatus()`回调中，可以进行检查以确定身份验证状态是否为0，如果选定的MVPD为“TempPass”，则会向用户显示其Temp Pass会话已过期的消息。
 * 如果用户在Temp Pass令牌过期前将其删除，则后续权利检查将生成一个TTL等于剩余时间的令牌。
 * 如果用户过期后删除Temp Pass令牌，则后续权利检查将返回“用户未授权”。
 
@@ -215,7 +215,7 @@ ht-degree: 0%
 **第一次请求临时传递：**
 
 1. 用户访问程序员页面并单击登录链接。
-1. 此时将打开MVPD选取器，用户将从列表中选择MVPD。
+1. 将打开MVPD选取器，用户将从列表中选择MVPD。
 1. 将显示身份验证iFrame。 此iFrame包含一个“临时通过”链接。
 1. 用户单击“Temp Pass”，因此程序员会向Cookie添加一个标志，以防止用户随后访问页面时看到“Temp Pass”链接。
 1. 临时传递身份验证请求将发送到Adobe Pass身份验证服务器，服务器将生成身份验证令牌。 TTL等于程序员为Temp Pass设置的时间段。
@@ -227,7 +227,7 @@ ht-degree: 0%
 **要在回访的Temp Pass用户删除浏览器Cookie后再次请求Temp Pass：**
 
 1. 用户访问程序员页面并单击登录链接。
-1. 此时将打开MVPD选取器，用户将从列表中选择MVPD。
+1. 将打开MVPD选取器，用户将从列表中选择MVPD。
 1. 将显示身份验证iFrame。 此iFrame包含一个“临时传递”链接（用户删除了原始Cookie，因此程序员不知道用户之前是否单击了“临时传递”链接）。
 1. 用户再次单击“Temp Pass”，因此程序员会再次向Cookie添加标记，以防用户随后访问页面时看到“Temp Pass”链接。
 1. 临时传递身份验证请求到达Adobe Pass身份验证服务器，服务器将生成身份验证令牌。 TTL现在是Temp Pass的剩余时间（当前时间与与设备ID关联的到期时间之间的差值）。
@@ -480,7 +480,7 @@ ht-degree: 0%
 
 ### 程序员实施 {#mult-tempass-prog-impl}
 
-在Adobe配置两个TempPass实例后，两个额外的MVPD（TempPass1和TempPass2）将显示在程序员的MVPD列表中。  程序员需要执行以下步骤来实施多个临时传递：
+在Adobe配置两个TempPass实例后，两个附加的MVPD（TempPass1和TempPass2）将显示在程序员的MVPD列表中。  程序员需要执行以下步骤来实施多个临时传递：
 
 1. 用户首次访问网站时，会自动使用TempPass1登录。 您可以使用上面的自动登录示例作为此任务的起点。
 1. 当您检测到TempPass1已过期时，请将该事实存储（在Cookie/本地存储中）并向用户展示您的标准MVPD选取器。 **确保从该列表**&#x200B;中过滤掉TempPass1和TempPass2。
