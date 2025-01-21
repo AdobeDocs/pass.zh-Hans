@@ -2,9 +2,9 @@
 title: 在资格预审中设置环境和测试
 description: 在资格预审中设置环境和测试
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: ca95bc45027410becf8987154c7c9f8bb8c2d5f8
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '478'
 ht-degree: 0%
 
 ---
@@ -41,6 +41,16 @@ ht-degree: 0%
 
 ```Choose any IP from **addresses** section (e.g. `52.13.71.11)```
 
+```cmd
+C:\>nslookup entitlement-prequal.auth.adobe.com 
+...
+Addresses:  52.26.79.43
+            54.190.212.171
+```
+
+```Choose any IP from **addresses** section (e.g. `54.190.212.171)```
+
+
 * **在 Linux/Mac 上**
 
 ```sh
@@ -53,6 +63,17 @@ ht-degree: 0%
 ```
 
 ```Choose any IP from **A records (**e.g `52.13.71.11)```
+
+```sh
+    $ dig entitlement-prequal.auth.adobe.com
+    
+    ;; ANSWER SECTION:
+    ...
+    ............ 60 IN A      52.26.79.43
+    ............ 60 IN A      54.190.212.171
+```
+
+```Choose any IP from **A records (**e.g `54.190.212.171)```
 
 >[!NOTE]
 >
@@ -68,14 +89,15 @@ ht-degree: 0%
 * *编辑 c：\\windows\\System32\\drivers\\etc\\hosts* 文件（在 Windows 中）或 */etc/hosts* 文件（在 Macintosh/Linux/Android 上），然后添加以下内容：
 
 * 恶搞制作配置文件
-   * 52.13.71.11 entitlement.auth.adobe.com sp.auth.adobe.com api.auth.adobe.com
+   * 52.13.71.11 sp.auth.adobe.com api.auth.adobe.com
+   * 54.190.212.171 entitlement.auth.adobe.com
 
 **在Android上欺骗：**&#x200B;为了欺骗Android，您必须使用Android模拟器。
 
 * 一旦设置好欺骗，您只需将常规URL用于生产和暂存配置文件即可： (即`http://sp.auth-staging.adobe.com`和`http://entitlement.auth-staging.adobe.com`，您实际上将点击*新内部版本的&#x200B;*资格预审环境/生产*。
 
 
-## 步骤3.  验证您是否指向正确的环境 {#Verify-you-are-pointing-to-the-right-environment}
+## 步骤3.  验证您指向的是正确的环境 {#Verify-you-are-pointing-to-the-right-environment}
 
 **这是一个简单的步骤：**
 
@@ -88,11 +110,11 @@ ht-degree: 0%
 
 ## 步骤 5.  使用程序员的网站执行场景测试 {#perform-scenario-testing-using-programmer-website}
 
-* 完成环境设置并确保基本身份验证-授权流正常工作后，可以继续测试更复杂的方案。
+* 完成环境设置并确保基本身份验证授权流程正常工作后，您可以继续测试更复杂的场景。
 
 
 ## 步骤6.  使用API测试站点执行测试 {#perform-testing-using-api-testing-site}
 
 * 如果您想更深入地测试Adobe Pass身份验证，我们建议您使用[API测试站点](http://entitlement-prequal.auth.adobe.com/apitest/api.html)。
 
-您可以在[找到有关API测试站点的更多详细信息。如何使用Adobe的API测试站点](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)测试身份验证和授权流。
+您可以在如何使用 Adobe 的 API 测试站点](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)测试身份验证和授权流中找到[有关 API 测试站点的更多详细信息。
