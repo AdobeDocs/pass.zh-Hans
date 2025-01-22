@@ -2,9 +2,9 @@
 title: 如何使用Adobe API测试站点测试身份验证和授权流
 description: 如何使用Adobe API测试站点测试身份验证和授权流
 exl-id: 04af4aed-35e4-44cb-98ce-7643165a8869
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 811feba1f2476bdfacb20e332e33df7f7ae8ac00
 workflow-type: tm+mt
-source-wordcount: '334'
+source-wordcount: '380'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 > 确保随时了解汇总在[产品公告](/help/authentication/product-announcements.md)页中的最新Adobe Pass身份验证产品公告和停用时间表。
 
-为了测试AuthN和AuthZ流，我们准备了一个&#x200B;**API测试站点**，可供您使用。 我们的支持团队将很乐意为您提供凭据。 您可以通过&#x200B;**support@tve.zendesk.com**&#x200B;联系我们。
+为了测试AuthN和AuthZ流，我们准备了一个&#x200B;**API测试站点**，可供您使用。 我们的支持团队将很乐意为您提供凭据。 您可以通过&#x200B;**tve-support@adobe.com**&#x200B;联系我们。
 
 
 ## 第一部分 {#part-I}
@@ -32,10 +32,9 @@ ht-degree: 0%
 
 
 1. 打开网页： [测试API](https://sp.auth-staging.adobe.com/apitest/api.html)。
-1. 从以下URL加载访问启用码：
-   * [用于暂存的Access Enabler Javascript](https://entitlement.auth-staging.adobe.com/entitlement/js/AccessEnabler.js)。
-   * 或者
-   * [用于生产](https://entitlement.auth.adobe.com/entitlement/js/AccessEnabler.js)的Access Enabler Javascript。
+1. 通过以下方式加载访问启用码：
+   * 从下拉菜单中选取所需的AccessEnabler版本（v3或v4）、要从何处访问（暂存或生产）以及是否应处于调试模式
+   * 输入要在其中测试是否使用v4的软件语句
    * 然后单击“**Load Access Enabler**”按钮。
 1. 现在，将请求者ID值设置为“**requestorID**”，然后单击“setRequestor”按钮。
 1. 之后，按“getAuthentication”按钮，等待显示选择器出现。
@@ -43,6 +42,6 @@ ht-degree: 0%
 1. 在“**MVPD**”登录页面上输入您的凭据。
 1. 重定向回之后，重做步骤1至3
 1. 在“setAuthenticationStatus”上重新执行步骤3后，您应该会看到值“1”。 如果身份验证不起作用，将显示MVPD对话框。
-1. 要测试授权，请在资源输入字段中输入“**requestorID**”并单击“getAuthorization”按钮。
+1. 要测试授权，请在标记为“checkAuthorization”和“getAuthorization”的按钮右侧的输入字段中输入要授权的&#x200B;**资源**，然后单击“getAuthorization”按钮。
 1. 因此，在“setToken” — \>“resource id”文本框中将显示资源，在“setToken” — \>“token”文本框中将显示shortAuthorizationToken，表示authZ成功。
 1. 现在，您可以单击“注销”按钮以删除令牌。
