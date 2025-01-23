@@ -2,9 +2,9 @@
 title: 如何使用Adobe API测试站点测试身份验证和授权流
 description: 如何使用Adobe API测试站点测试身份验证和授权流
 exl-id: 04af4aed-35e4-44cb-98ce-7643165a8869
-source-git-commit: 811feba1f2476bdfacb20e332e33df7f7ae8ac00
+source-git-commit: 65475d6da7a1b25cb2d8ebd6229a7cb360c7ab4a
 workflow-type: tm+mt
-source-wordcount: '380'
+source-wordcount: '368'
 ht-degree: 0%
 
 ---
@@ -33,8 +33,8 @@ ht-degree: 0%
 
 1. 打开网页： [测试API](https://sp.auth-staging.adobe.com/apitest/api.html)。
 1. 通过以下方式加载访问启用码：
-   * 从下拉菜单中选取所需的AccessEnabler版本（v3或v4）、要从何处访问（暂存或生产）以及是否应处于调试模式
-   * 输入要在其中测试是否使用v4的软件语句
+   * 从下拉菜单中选取要从中访问它（暂存或生产）以及它是否应处于调试模式的选项
+   * 输入您要测试的软件语句
    * 然后单击“**Load Access Enabler**”按钮。
 1. 现在，将请求者ID值设置为“**requestorID**”，然后单击“setRequestor”按钮。
 1. 之后，按“getAuthentication”按钮，等待显示选择器出现。
