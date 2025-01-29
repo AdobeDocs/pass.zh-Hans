@@ -2,7 +2,7 @@
 title: 跟踪预防评估Apple Safari
 description: 跟踪预防评估Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '1849'
 ht-degree: 0%
@@ -133,7 +133,7 @@ Adobe Pass身份验证服务使用并依赖于Cookie作为身份验证过程&#x2
 
 **临时传递**
 
-为了缓解个性化问题并让用户进行交互，我们建议您以交互方式使用&#x200B;**[促销临时密码](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)**，并提供至少一个有关用户的附加信息（例如电子邮件地址）。
+为了缓解个性化问题并让用户进行交互，我们建议您以交互方式使用&#x200B;**[促销临时密码](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)**，并提供至少一个有关用户的附加信息（例如电子邮件地址）。
 
 ## Safari 13 {#safari13}
 

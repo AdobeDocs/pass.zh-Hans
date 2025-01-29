@@ -2,7 +2,7 @@
 title: 临时访问流
 description: REST API V2 — 临时访问流
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '3215'
 ht-degree: 0%
@@ -19,9 +19,9 @@ ht-degree: 0%
 >
 > REST API V2实施受[限制机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)文档限制。
 
-TempPass允许程序员提供对其受保护内容的临时访问，而无需要求用户使用有效的MVPD帐户进行身份验证。
+TempPass允许程序员提供对其受保护内容的临时访问权限，而无需要求用户使用有效的MVPD帐户进行身份验证。
 
-有关TempPass功能的更多详细信息，请参阅[TempPass](../../../../features-premium/temporary-access/temp-pass.md)文档。
+有关TempPass功能的更多详细信息，请参阅[TempPass](../../../../features-premium/temporary-access/temp-pass-feature.md)文档。
 
 临时访问流允许您查询以下方案：
 
@@ -351,7 +351,7 @@ TempPass允许程序员提供对其受保护内容的临时访问，而无需要
 
    >[!TIP]
    >
-   > 建议：流应用程序可以通知用户已超过最大资源数，并通知用户使用常规MVPD启动基本验证流以继续观看。
+   > 建议：流应用程序可以通知用户已超出最大资源数，并通知用户使用常规MVPD启动基本身份验证流程以继续观看。
 
 ## 在基本或促销TempPass过期时检索授权决策 {#retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
 
@@ -431,7 +431,7 @@ TempPass允许程序员提供对其受保护内容的临时访问，而无需要
 
    >[!TIP]
    >
-   > 建议：流应用程序可以通知用户临时访问已过期，并建议用户使用常规MVPD启动基本验证流程以继续观看。
+   > 建议：流应用程序可以通知用户临时访问已过期，并建议用户使用常规MVPD启动基本身份验证流程以继续观看。
 
 ## 检索基本临时传递的配置文件 {#retrieve-profile-for-basic-temppass}
 

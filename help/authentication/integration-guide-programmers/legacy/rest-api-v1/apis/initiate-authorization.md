@@ -2,7 +2,7 @@
 title: 启动授权
 description: 启动授权
 exl-id: 2f8a5499-e94f-40dd-9fb0-aac8e080de66
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '446'
 ht-degree: 0%
@@ -51,7 +51,7 @@ ht-degree: 0%
 
 
 | 输入参数 | 描述 |
-| --- | --- |
+| --- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 请求者 | 此操作有效的程序员requestorId。 |
 | deviceId | 设备ID字节。 |
 | 资源 | 一个字符串，它包含resourceId（或MRSS片段），可标识用户请求的内容并由MVPD授权端点识别。 |
@@ -59,7 +59,7 @@ ht-degree: 0%
 | _deviceType_ | 设备类型（例如Roku、PC）。</br></br>如果此参数设置正确，ESM提供的量度在使用无客户端程序时按设备类型](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)进行[划分，因此可以对Roku、AppleTV、Xbox等执行不同类型的分析。</br></br>查看[传递量度中无客户端设备类型参数的好处&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**： device_info将替换此参数。 |
 | _设备用户_ | 设备用户标识符。 |
 | _appId_ | 应用程序id/名称。 </br></br>**注意**： device_info将替换此参数。 |
-| 额外参数 | 调用可能还包含可选参数，这些参数可启用其他功能，如：</br></br>* generic_data — 允许使用[促销临时传递](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)</br></br>示例： `generic_data=("email":"email@domain.com")` |
+| 额外参数 | 调用可能还包含可选参数，这些参数可启用其他功能，如：</br></br>* generic_data — 允许使用[促销临时传递](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)</br></br>示例： `generic_data=("email":"email@domain.com")` |
 
 {style="table-layout:auto"}
 

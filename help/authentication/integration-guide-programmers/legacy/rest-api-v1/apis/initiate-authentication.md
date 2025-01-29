@@ -2,7 +2,7 @@
 title: 启动身份验证
 description: 启动身份验证
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '314'
 ht-degree: 0%
@@ -85,7 +85,7 @@ ht-degree: 0%
 >
 >调用可能还包含可选参数，用于启用其他功能，例如：
 >
-> * generic\_data — 允许使用[促销临时传递](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)
+> * generic\_data — 允许使用[促销临时传递](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)
 >
 >```JSON
 >Example:

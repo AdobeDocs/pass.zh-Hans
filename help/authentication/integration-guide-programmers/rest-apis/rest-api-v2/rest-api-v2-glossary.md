@@ -2,9 +2,9 @@
 title: REST API V2术语表
 description: REST API V2术语表
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
-source-wordcount: '1744'
+source-wordcount: '1743'
 ht-degree: 0%
 
 ---
@@ -229,13 +229,13 @@ The Programmer是一家通过各种平台拥有的渠道（品牌）向消费者
 
 基本的TempPass是Adobe Pass身份验证功能，它允许用户在有限的时间内访问受保护的内容，而无需使用[MVPD](#mvpd)进行身份验证。
 
-有关详细信息，请参阅[临时密码](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass.md)文档。
+有关详细信息，请参阅[基本TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#basic-temp-pass)文档。
 
 #### TempPass提升 {#temp-pass-promotional}
 
 提升TempPass是一种Adobe Pass身份验证功能，它允许用户在最大数量的资源和有限的时间内访问受保护的内容，而无需使用[MVPD](#mvpd)进行身份验证。
 
-有关详细信息，请参阅[促销临时通行证](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)文档。
+有关详细信息，请参阅[促销临时传递](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)文档。
 
 #### TTL {#ttl}
 

@@ -2,7 +2,7 @@
 title: Dynamic Client注册概述
 description: Dynamic Client注册概述
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '813'
 ht-degree: 0%
@@ -20,7 +20,7 @@ ht-degree: 0%
 Adobe Pass提供动态客户端注册服务，允许访问以下受保护的API：
 
 * Adobe Pass身份验证管理API：
-   * [重置临时传递API](../../features-premium/temporary-access/reset-temp-pass.md)
+   * [重置临时传递API](../../features-premium/temporary-access/temp-pass-feature.md)
    * [降级API](../../features-premium/degraded-access/degradation-api-overview.md)
    * [代理MVPD API](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
    * [授权服务监控API](../../features-premium/esm/entitlement-service-monitoring-api.md)
