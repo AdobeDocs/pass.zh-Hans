@@ -2,9 +2,9 @@
 title: REST API V2术语表
 description: REST API V2术语表
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
-source-wordcount: '1747'
+source-wordcount: '1744'
 ht-degree: 0%
 
 ---
@@ -115,7 +115,7 @@ ht-degree: 0%
 
 媒体令牌验证器是由Adobe Pass身份验证分发的库，负责验证[媒体令牌](#media-token)的真实性。
 
-有关详细信息，请参阅[集成媒体令牌验证器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md)文档。
+有关详细信息，请参阅[媒体令牌验证器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier)文档。
 
 #### MVPD {#mvpd}
 
@@ -183,7 +183,7 @@ The Programmer是一家通过各种平台拥有的渠道（品牌）向消费者
 
 资源由程序员和MVPD之间商定的唯一值标识。
 
-有关详细信息，请参阅[识别受保护的资源](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md)文档。
+有关详细信息，请参阅[受保护的资源](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers)文档。
 
 ### S {#s}
 
@@ -275,7 +275,7 @@ TV Everywhere (TVE) Dashboard是提供给[程序员](#programmer)的Adobe Pass�
 
 用户元数据是指由[MVPD](#mvpd)维护并由Adobe Pass身份验证作为[配置文件](#profile)的一部分提供的用户特定属性（例如，邮政编码、家长评级、用户ID等）。
 
-有关详细信息，请参阅[用户元数据](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)文档。
+有关详细信息，请参阅[用户元数据](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)文档。
 
 ### 版本{#v}
 

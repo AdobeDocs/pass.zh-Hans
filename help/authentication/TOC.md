@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
 user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
-source-wordcount: '1267'
+source-wordcount: '1256'
 ht-degree: 2%
 
 ---
@@ -120,11 +120,10 @@ ht-degree: 2%
                + [标头 — AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + 标准功能{#standard-features}
       + 权利{#entitlements}
-         + [标识受保护的资源](integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md)
          + [印前检查授权](integration-guide-programmers/features-standard/entitlements/preflight-authz.md)
-         + [如何集成媒体令牌验证器](integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md)
-         + [用户元数据](integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)
-         + [用于加密的用户元数据证书](integration-guide-programmers/features-standard/entitlements/user-metadata-certificate.md)
+         + [受保护的资源](integration-guide-programmers/features-standard/entitlements/protected-resources.md)
+         + [媒体令牌](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
+         + [用户元数据](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
       + 报告{#error-reporting}时出错
          + [增强的错误代码](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
       + 单点登录访问{#sso-access}

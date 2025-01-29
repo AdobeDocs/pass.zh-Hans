@@ -2,9 +2,9 @@
 title: REST API V2常见问题解答
 description: REST API V2常见问题解答
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
-source-wordcount: '6668'
+source-wordcount: '6664'
 ht-degree: 0%
 
 ---
@@ -126,7 +126,7 @@ ht-degree: 0%
 
 #### 3.客户端应用程序如何获取用户的元数据信息？ {#authentication-phase-faq3}
 
-客户端应用程序可以查询以下端点之一，这些端点能够返回[用户元数据](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)信息作为配置文件信息的一部分：
+客户端应用程序可以查询以下端点之一，这些端点能够返回[用户元数据](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)信息作为配置文件信息的一部分：
 
 * [配置文件端点API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
 * [特定MVPD API的配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
@@ -245,7 +245,7 @@ ht-degree: 0%
 * 简单的字符串格式，如渠道（品牌）的唯一标识符。
 * 一种媒体RSS (MRSS)格式，包含标题、评级和家长控制元数据等附加信息。
 
-有关更多详细信息，请参阅[识别受保护的资源](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md)文档。
+有关更多详细信息，请参阅[受保护的资源](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers)文档。
 
 #### 6.客户端应用程序一次可获取多少资源来作出预授权决定？ {#preauthorization-phase-faq6}
 
@@ -294,7 +294,7 @@ ht-degree: 0%
 
 媒体令牌包含以明文发送的已签名字符串，可以从决策授权端点检索。
 
-有关详细信息，请参阅[集成媒体令牌验证器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md)文档。
+有关详细信息，请参阅[媒体令牌验证器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier)文档。
 
 媒体令牌在问题时指定的有限且较短的时间范围内有效，指示在再次请求查询Decisions Authorize端点之前客户端应用程序必须使用该令牌的时间量。
 
@@ -316,7 +316,7 @@ ht-degree: 0%
 * 简单的字符串格式，如渠道（品牌）的唯一标识符。
 * 一种媒体RSS (MRSS)格式，包含标题、评级和家长控制元数据等附加信息。
 
-有关更多详细信息，请参阅[识别受保护的资源](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md)文档。
+有关更多详细信息，请参阅[受保护的资源](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers)文档。
 
 #### 6.客户端应用程序一次可获取多少资源来作出授权决定？ {#authorization-phase-faq6}
 
