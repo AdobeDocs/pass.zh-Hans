@@ -2,7 +2,7 @@
 title: 标准元数据属性
 description: 标准元数据属性
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
 source-wordcount: '1053'
 ht-degree: 0%
@@ -21,10 +21,10 @@ ht-degree: 0%
 并发监视API强制客户端将以下值作为任何有效初始化调用的一部分发送： [会话启动调用](/help/concurrency-monitoring/restrict-concurr-usage-mult-apps.md#api-calls-descr)。
 
 | 字段名称 | 示例值 | 在何处使用 | 获取自 |
-|-------------|---------------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------|
+|---------------|-----------------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | applicationId | 75b4-431b-adb2-eb6b9e546013 | 授权标头 | 集成中的Zendesk票证 |
-| mvpdName | Sample_MVPD | URI路径 | 当用户选择MVPD时，从配置端点进行Adobe Pass身份验证 |
-| accountId | 12345 | URI路径 | 用户登录[用户Metadata upstreamUserID - Adobe Pass身份验证](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)后的Adobe Pass身份验证upstreamUserID元数据 |
+| mvpdName | Sample_MVPD | URI路径 | 用户选择MVPD时，从配置端点进行Adobe Pass身份验证 |
+| accountId | 12345 | URI路径 | 用户登录[用户Metadata upstreamUserID - Adobe Pass身份验证](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)后的Adobe Pass身份验证upstreamUserID元数据 |
 
 
 ## 元数据属性 {#metadata-attr}
@@ -40,7 +40,7 @@ ht-degree: 0%
 | 资源 | 渠道 | 字符串 | 电视频道 |                                                   | ChannelY |                                                                                   |
 |                 | 资产ID | 字符串 | 要为此内容显示的“友好”或消费者可读的标题 | [EIDR 2.0数据字段引用](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/EIDR_2_0_Data_Fields.pdf){target=_blank} | 本胡尔 |                                                                                   |
 |                 | type | 明细列表 | 描述TveItem表示的内容的一般类型的值。 枚举值包括：电影broadcastEpisodeBroadcastEpisode音乐Video awards节目剪辑音乐会新闻活动体育活动预告片 | [OATC元数据馈送建议做法](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230803T144225Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=1200&amp;X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} | broadcastEpisode | 该字段必须对应于枚举中的项之一 |
-|                 | 内容类型 | 字符串 | 此字段确定请求的内容是实时内容还是VOD | 不适用 | 实时，vod | live或vod |
+|                 | 内容类型 | 字符串 | 此字段确定请求的内容是实时内容还是VOD内容 | 不适用 | 实时，vod | live或vod |
 |                 | 流派 | 字符串 | 流式传输内容的流派。 描述常规编程类型 | [OATC元数据馈送建议](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230803T144225Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=1200&amp;X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank}实践 | 喜剧 | 有效的流派类型 |
 |                 | 持续时间 | 数字 | 媒体项目的持续时间（以秒为单位） | [OATC元数据馈送建议做法](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230803T144225Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=1200&amp;X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} | 1800 | 编号规则 |
 | 设备/浏览器 | deviceId | 字符串 | 唯一设备标识符。 | [Device Atlas属性](https://deviceatlas.com/device-data/properties){target=_blank} | 2b6f0cc904d137be2e1730235f5664094b831186 |                                                                                   |
@@ -55,7 +55,7 @@ ht-degree: 0%
 |                 | applicationId | 字符串 | 唯一标识客户端应用程序的应用程序ID。 | 不适用 | de305d54-75b4-431b-adb2-eb6b9e546013 |                                                                                   |
 |                 | applicationplatform | 字符串 | 应用程序的本机平台 | 不适用 | ios、android |                                                                                   |
 |                 | applicationversion | 字符串 | 此值可用于分析目的 | 不适用 | 1.0、2.0 |                                                                                   |
-| 主题 | accountId | 字符串 | 并发监控主体的帐户ID（在MVPD的范围内） | 不适用 | test-account |                                                                                   |
+| 主题 | accountId | 字符串 | 并发监控主体的帐户ID(在MVPD范围内) | 不适用 | test-account |                                                                                   |
 |                 | contracttype | 字符串 | 高级，基本。 客户可以将其添加为自定义元数据，并在其自己的领域中使用它 | 不适用 | 高级，基本 |                                                                                   |
 | 用户 | name | 字符串 | 某些MVPD提供与播放内容的特定用户相关的信息。 | 不适用 |                                                                                                                                                         |                                                                                   |
 |                 | hba | 布尔型 | 标识用户是否尝试从其家乡启动流 | 不适用 | true， false | true或false |
