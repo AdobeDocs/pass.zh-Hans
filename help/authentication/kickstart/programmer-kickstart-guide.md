@@ -2,9 +2,9 @@
 title: 程序员kickstart指南
 description: 程序员kickstart指南
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '972'
+source-wordcount: '969'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->这是面向程序员（内容提供商）的Kickstart指南。 如果您使用多通道视频编程分发服务器(MVPD)，请务必查看[MVPD快速入门指南](/help/authentication/kickstart/mvpd-kickstart-guide.md)。
+>这是面向程序员（内容提供商）的Kickstart指南。 如果您是多频道视频节目分发商(MVPD)，请务必查看[MVPD快速入门指南](/help/authentication/kickstart/mvpd-kickstart-guide.md)。
 
 
 Adobe Pass身份验证联系人：
@@ -51,12 +51,11 @@ Adobe将提供：
 
 * 部署指南： **`https://tve.zendesk.com/entries/498741-tve-deployment-guide`**
 * 访问我们的Zendesk客户支持系统。 您还可以在这里找到有关某些流程的示例、信息和视频教程。 若要在Zendesk上访问此文档以及在其中发布的其他文档，您必须在`https://tve.zendesk.com/home`注册并创建一个帐户。 您可以注册的用户数量没有限制。  您可以查看和共享任何已归档票证的评论。 所有支持问题都应发送至`tve-support@adobe.com`。
-* [程序员集成指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)
 * 媒体令牌验证器库： `https://tve.zendesk.com/entries/471323-media-token-validator-library`。
 
 ## 测试环境设置 {#test-env-setup}
 
-Adobe将首先为您设置Adobe测试站点，在该站点中，Adobe充当MVPD用于测试。 然后，您的团队可以设置一个调用AdobeAPI的测试网站。 使用默认的MVPD选择器，并选择“Adobe”作为idP。
+Adobe将首先为您设置Adobe测试站点，在该站点中，Adobe充当MVPD以进行测试。 然后，您的团队可以设置一个调用AdobeAPI的测试网站。 使用默认的MVPD选择器，并选择“Adobe”作为idP。
 
 您将提供：
 
@@ -68,28 +67,28 @@ Adobe将设置帐户，Adobe将提供：
 
 * 用于访问测试站点的登录名和密码
 
-## 使用MVPD设置 {#setup-mvpd}
+## 使用MVPD进行设置 {#setup-mvpd}
 
-本节介绍从Adobe测试站点迁移以使用MVPD时需要执行的操作。
+本节介绍从Adobe测试站点迁移至使用MVPD时需要执行的操作。
 
-您将提供（通过MVPD）：
+您将(通过MVPD)提供：
 
 * **两组凭据**：
    * AuthN + AuthZ ：经过身份验证和授权的用户的登录/密码
    * AuthN + Non-AuthZ ：已验证但未授权的用户的登录/密码
-* **资源ID**。 这是一个特定的内容标识符，将通过AuthZ协议通过MVPD进行验证。 这可以在渠道、节目、集或资产级别；它应与您的MVPD商定。
+* **资源ID**。 这是一个特定的内容标识符，将通过AuthZ协议通过MVPD进行验证。 可以在渠道、节目、集或资源级别进行整合；应该与您的MVPD达成一致意见。
 
 Adobe Pass身份验证支持基于MRSS的元数据架构，这意味着资源ID可以根据需要而特定，并且可以包含对于特定MVPD唯一的标识符。
 
-**新MVPD集成**：请务必记住，您选择的MVPD在完成任何集成时都起着不可或缺的作用。 Adobe需要根据每个MVPD的规范为其编写代码。 在这些步骤完成之前，您将无法从对话框中选择该MVPD，也无法完成产品测试。 Adobe需要提前安排此工作，以便与下一个可用冲刺相匹配。 （有关当前计划信息，请参阅发布日历。）
+**新MVPD集成**：请务必记住，您选择的MVPD在完成任何集成时都起着不可或缺的作用。 Adobe需要根据各自的规范为每个MVPD编写代码。 在这些步骤完成之前，您将无法从对话框中选择该MVPD，或完成产品测试。 Adobe需要提前安排此工作，以便与下一个可用冲刺相匹配。 （有关当前计划信息，请参阅发布日历。）
 
-**现有MVPD集成**：如果您选择的MVPD已使用Adobe进行设置，那么连接步骤应该简单得多（更快），并且通常可以通过配置更改实现连接。
+**现有MVPD集成**：如果您选择的MVPD已使用Adobe进行设置，那么连接步骤应该要简单得多（更快），并且通常可以通过更改配置来实现连接。
 
 >[!NOTE]
 >
->MVPD仍必须启用程序员，并签署任何相关的商业交易。
+>MVPD仍需要启用程序员，并签署任何相关的商业交易。
 
-**QE与MVPD**：所有集成都将涉及联合QE，由于最终用户最终是MVPD的客户，因此许多人在推送“实时”之前设置了测试周期。 由于这涉及MVPD资源的调度，因此这是一个潜在的延迟区域。
+**QE与MVPD**：所有集成都将涉及联合QE，由于最终用户最终是MVPD的客户，因此许多人在推送“实时”之前设置了测试周期。 由于这涉及安排MVPD资源，因此可能出现延迟。
 
 <!--
 >[RELATEDINFORMATION]

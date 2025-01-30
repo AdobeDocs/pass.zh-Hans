@@ -2,9 +2,9 @@
 title: 启动身份验证
 description: 启动身份验证
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '314'
+source-wordcount: '306'
 ht-degree: 0%
 
 ---
@@ -95,7 +95,7 @@ ht-degree: 0%
 
 ### **备注** {#notes}
 
-* `domain_name`参数的值必须设置为在Adobe Pass身份验证中注册的域名之一。 有关详细信息，请参阅[注册和初始化](/help/authentication/kickstart/programmer-overview.md)。
+* `domain_name`参数的值必须设置为在Adobe Pass身份验证中注册的域名之一。
 
 * [避免在/authenticate请求中使用“&amp;”reg\_code（技术说明）](/help/authentication/integration-guide-programmers/legacy/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
 

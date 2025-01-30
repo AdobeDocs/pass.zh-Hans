@@ -2,9 +2,9 @@
 title: 媒体令牌
 description: 媒体令牌
 exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '653'
+source-wordcount: '667'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,9 @@ ht-degree: 0%
 >
 > 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-媒体令牌是由Adobe Pass身份验证[REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)生成的令牌，它是授权决策的结果，该决策旨在提供对受保护内容（资源）的查看访问权限。 媒体令牌在发布时指定的有限且较短的时间范围（几分钟）内有效，这表示客户端应用程序必须验证和使用它的时长。
+媒体令牌是由Adobe Pass身份验证[REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)生成的令牌，它是授权决策的结果，该决策旨在提供对受保护内容（资源）的查看访问权限。
+
+媒体令牌在发布时指定的有限且较短的时间范围（默认为7分钟）内有效，这表示客户端应用程序必须验证和使用它之前的时间限制。 媒体令牌限制为一次性使用，不得缓存。
 
 媒体令牌由以明文发送的基于公钥基础设施(PKI)的已签名字符串组成。 使用基于PKI的保护，使用由证书颁发机构(CA)颁发给Adobe的非对称密钥对令牌进行签名。
 
@@ -25,7 +27,7 @@ ht-degree: 0%
 
 ## 媒体令牌验证器 {#media-token-verifier}
 
-Adobe Pass身份验证建议程序员将媒体令牌发送到集成媒体令牌验证器库的后端服务，以确保在启动视频流之前安全访问。 媒体令牌的生存时间(TTL)旨在解决令牌生成服务器和验证服务器之间的潜在时钟同步问题。
+Adobe Pass身份验证建议程序员将媒体令牌发送到他们自己的后端服务，其中集成了媒体令牌验证器库，以确保在启动视频流之前能够安全地访问。 媒体令牌的生存时间(TTL)旨在解决令牌生成服务器和验证服务器之间的潜在时钟同步问题。
 
 Adobe Pass身份验证强烈建议不要解析媒体令牌并直接提取其数据，因为不保证令牌格式，并且将来可能会更改。 媒体令牌验证器库应该是唯一用于分析令牌内容的工具。
 
