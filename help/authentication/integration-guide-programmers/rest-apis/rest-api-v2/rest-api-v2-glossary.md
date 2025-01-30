@@ -2,9 +2,9 @@
 title: REST API V2术语表
 description: REST API V2术语表
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
-source-wordcount: '1743'
+source-wordcount: '1742'
 ht-degree: 0%
 
 ---
@@ -63,7 +63,7 @@ ht-degree: 0%
 
 降级是一种Adobe Pass身份验证功能，它允许用户访问受保护的内容，即使其[MVPD](#mvpd)遇到服务中断也是如此。
 
-有关详细信息，请参阅[降级API概述](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-api-overview.md)文档。
+有关详细信息，请参阅[降级功能](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)文档。
 
 #### 设备ID {#device-id}
 

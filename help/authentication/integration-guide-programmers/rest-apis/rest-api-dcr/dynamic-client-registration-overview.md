@@ -2,7 +2,7 @@
 title: Dynamic Client注册概述
 description: Dynamic Client注册概述
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
 source-wordcount: '813'
 ht-degree: 0%
@@ -20,8 +20,8 @@ ht-degree: 0%
 Adobe Pass提供动态客户端注册服务，允许访问以下受保护的API：
 
 * Adobe Pass身份验证管理API：
-   * [重置临时传递API](../../features-premium/temporary-access/temp-pass-feature.md)
-   * [降级API](../../features-premium/degraded-access/degradation-api-overview.md)
+   * [重置临时传递API](../../features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+   * [降级API](../../features-premium/degraded-access/degradation-feature.md#degradation-api-access)
    * [代理MVPD API](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
    * [授权服务监控API](../../features-premium/esm/entitlement-service-monitoring-api.md)
 * Adobe Pass身份验证REST API：
@@ -102,7 +102,7 @@ Adobe Pass TVE Dashboard是一款用于Adobe Pass身份验证客户（程序员�
 
 有关软件语句是什么及其工作方式的更多详细说明，请参阅[RFC 7591](https://tools.ietf.org/html/rfc7591)文档。
 
-## 动态客户端注册流程  {#dynamic-client-registration-flow}
+## 动态客户端注册流程 {#dynamic-client-registration-flow}
 
 总之，动态客户端注册授权机制涉及几个步骤：
 

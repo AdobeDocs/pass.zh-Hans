@@ -2,7 +2,7 @@
 title: 降级访问流
 description: REST API V2 — 降级访问流
 exl-id: 9276f5d9-8b1a-4282-8458-0c1e1e06bcf5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
 source-wordcount: '1605'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 降级提供临时绕过特定MVPD身份验证和授权端点。 通常，程序员会启动此操作，但无论谁触发了降级事件，该操作都取决于与受影响的MVPD所做的预先安排。
 
-有关降级功能的更多详细信息，请参阅[降级](../../../../features-premium/degraded-access/degradation-api-overview.md)文档。
+有关降级功能的更多详细信息，请参阅[降级](../../../../features-premium/degraded-access/degradation-feature.md)文档。
 
 降级访问流允许您查询以下情况：
 
@@ -36,7 +36,7 @@ ht-degree: 0%
 
 在应用降级的情况下执行身份验证流之前，请确保满足以下先决条件：
 
-* 当流应用程序需要使用MVPD登录时，它必须启动身份验证会话。
+* 当流应用程序需要使用MVPD登录时，必须启动身份验证会话。
 
 >[!IMPORTANT]
 > 
@@ -44,7 +44,7 @@ ht-degree: 0%
 > 
 > <br/>
 > 
-> * 流应用程序没有保存在Adobe Pass后端中的该特定MVPD的有效配置文件。
+> * 流应用程序没有在Adobe Pass后端保存该特定MVPD的有效配置文件。
 > * 提供的`serviceProvider`和`mvpd`之间的集成应用了AuthNAll降级规则。
 
 ### 工作流 {#workflow-perform-authentication-while-degradation-is-applied}
@@ -112,7 +112,7 @@ ht-degree: 0%
 > 
 > <br/>
 > 
-> * 流应用程序没有该特定MVPD的有效配置文件。
+> * 流应用程序没有适用于该特定MVPD的有效配置文件。
 > * 提供的`serviceProvider`和`mvpd`之间的集成应用了AuthZAll或AuthNAll降级规则。
 
 ### 工作流 {#workflow-retrieve-authorization-decisions-while-degradation-is-applied}
@@ -178,7 +178,7 @@ ht-degree: 0%
 >
 > <br/>
 > 
-> * 流应用程序没有该特定MVPD的有效配置文件。
+> * 流应用程序没有适用于该特定MVPD的有效配置文件。
 > * 提供的`serviceProvider`和`mvpd`之间的集成应用了AuthZAll或AuthNAll降级规则。
 
 ### 工作流 {#workflow-retrieve-preauthorization-decisions-while-degradation-is-applied}
@@ -252,18 +252,18 @@ ht-degree: 0%
 >
 > <br/>
 > 
-> * 流应用程序没有该特定MVPD的有效配置文件。
+> * 流应用程序没有适用于该特定MVPD的有效配置文件。
 > * 提供的`serviceProvider`和`mvpd`之间的集成应用了AuthNAll降级规则。
 
 ### 工作流 {#workflow-retrieve-profile-while-degradation-is-applied}
 
-在应用降级的情况下，按照给定的步骤实施特定MVPD的配置文件检索流，如下图所示。
+在应用降级时，请按照给定的步骤来实施特定MVPD的配置文件检索流，如下图所示。
 
 ![应用降级时检索配置文件](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-profile-while-degradation-is-applied-flow.png)
 
 *应用降级时检索配置文件*
 
-1. **检索特定mvpd的配置文件：**&#x200B;流应用程序通过向“配置文件”端点发送请求，收集所有必需的数据以检索该特定MVPD的配置文件信息。
+1. **检索特定mvpd的配置文件：**&#x200B;流应用程序通过向配置文件端点发送请求，收集所有必需的数据以检索该特定MVPD的配置文件信息。
 
    >[!IMPORTANT]
    >
