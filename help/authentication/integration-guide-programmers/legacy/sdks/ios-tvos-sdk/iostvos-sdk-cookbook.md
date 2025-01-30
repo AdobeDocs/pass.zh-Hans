@@ -2,9 +2,9 @@
 title: iOS/tvOS指南
 description: iOS/tvOS指南
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
-source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
-source-wordcount: '2425'
+source-wordcount: '2424'
 ht-degree: 0%
 
 ---
@@ -229,7 +229,7 @@ H. [不带Apple SSO的注销流程](#logout_flow_wo_AppleSSO) </br>
 1. 调用[getAuthorization()](#$getAuthZ)以启动授权流。
 
    * **依赖项：**&#x200B;与MVPD商定的有效ResourceID。
-   * 资源ID应当与在任何其他设备或平台上使用的资源ID相同，并且在MVPD中也将相同。 有关资源ID的信息，请参阅[识别受保护的资源](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers)
+   * 资源ID应当与在任何其他设备或平台上使用的资源ID相同，并且在MVPD中也将相同。 有关资源ID的信息，请参阅[资源标识符](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#resource-identifier)
 
 1. 验证身份验证和授权。
 

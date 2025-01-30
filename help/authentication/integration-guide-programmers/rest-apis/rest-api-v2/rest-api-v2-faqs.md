@@ -2,7 +2,7 @@
 title: REST API V2常见问题解答
 description: REST API V2常见问题解答
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '6664'
 ht-degree: 0%
@@ -245,7 +245,7 @@ ht-degree: 0%
 * 简单的字符串格式，如渠道（品牌）的唯一标识符。
 * 一种媒体RSS (MRSS)格式，包含标题、评级和家长控制元数据等附加信息。
 
-有关更多详细信息，请参阅[受保护的资源](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers)文档。
+有关更多详细信息，请参阅[受保护的资源](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources)文档。
 
 #### 6.客户端应用程序一次可获取多少资源来作出预授权决定？ {#preauthorization-phase-faq6}
 
@@ -316,7 +316,7 @@ ht-degree: 0%
 * 简单的字符串格式，如渠道（品牌）的唯一标识符。
 * 一种媒体RSS (MRSS)格式，包含标题、评级和家长控制元数据等附加信息。
 
-有关更多详细信息，请参阅[受保护的资源](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers)文档。
+有关更多详细信息，请参阅[受保护的资源](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources)文档。
 
 #### 6.客户端应用程序一次可获取多少资源来作出授权决定？ {#authorization-phase-faq6}
 

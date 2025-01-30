@@ -2,7 +2,7 @@
 title: REST API V2术语表
 description: REST API V2术语表
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '1742'
 ht-degree: 0%
@@ -183,7 +183,7 @@ The Programmer是一家通过各种平台拥有的渠道（品牌）向消费者
 
 资源由程序员和MVPD之间商定的唯一值标识。
 
-有关详细信息，请参阅[受保护的资源](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers)文档。
+有关详细信息，请参阅[受保护的资源](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources)文档。
 
 ### S {#s}
 

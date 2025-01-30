@@ -1,9 +1,10 @@
 ---
 title: 媒体令牌
 description: 媒体令牌
-source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
+exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
-source-wordcount: '654'
+source-wordcount: '653'
 ht-degree: 0%
 
 ---
@@ -12,9 +13,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-媒体令牌是Adobe Pass身份验证作为授权决策的结果而生成的令牌，旨在提供对受保护内容（资源）的查看访问权限。 媒体令牌在发布时指定的有限且较短的时间范围（几分钟）内有效，这表示在需要检索新令牌之前，客户端应用程序必须使用该令牌的时间量。
+媒体令牌是由Adobe Pass身份验证[REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)生成的令牌，它是授权决策的结果，该决策旨在提供对受保护内容（资源）的查看访问权限。 媒体令牌在发布时指定的有限且较短的时间范围（几分钟）内有效，这表示客户端应用程序必须验证和使用它的时长。
 
 媒体令牌由以明文发送的基于公钥基础设施(PKI)的已签名字符串组成。 使用基于PKI的保护，使用由证书颁发机构(CA)颁发给Adobe的非对称密钥对令牌进行签名。
 
@@ -49,7 +50,7 @@ Adobe Pass身份验证强烈建议不要解析媒体令牌并直接提取其数�
 
 `ITokenVerifier`类定义了以下方法：
 
-* 用于验证媒体令牌的`isValid()`方法。 它接受一个参数[资源标识符](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md)。 如果提供的资源标识符为`null`，则该方法将仅验证媒体令牌的真实性和有效期。
+* 用于验证媒体令牌的`isValid()`方法。 它接受一个参数[资源标识符](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#resource-identifier)。 如果提供的资源标识符为`null`，则该方法将仅验证媒体令牌的真实性和有效期。
 
   `isValid()`方法返回以下状态值之一：
 
@@ -193,7 +194,7 @@ public class EntitlementVerifierTest {
 
 * [使用特定的mvpd检索授权决策](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
 
-请参阅上述API的&#x200B;**响应**&#x200B;和&#x200B;**示例**&#x200B;部分，以了解授权决策和媒体令牌模型。
+请参阅上述API的&#x200B;**响应**&#x200B;和&#x200B;**示例**&#x200B;部分，以了解授权决策和媒体令牌的结构。
 
 有关如何以及何时集成上述API的更多详细信息，请参阅以下文档：
 
