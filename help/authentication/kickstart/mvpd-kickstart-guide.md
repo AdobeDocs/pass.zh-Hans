@@ -1,126 +1,144 @@
 ---
-title: MVPD直接集成计划
-description: MVPD直接集成计划
+title: MVPD快速入门指南
+description: MVPD快速入门指南
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 936c1cda465dd3a9fc3f16381edb24a2b3e41779
 workflow-type: tm+mt
-source-wordcount: '1071'
+source-wordcount: '934'
 ht-degree: 0%
 
 ---
 
-# MVPD快速入门指南：MVPD直接集成计划 {#mvpd-dir-int-plan}
-
->[!NOTE]
->
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
-
-## 简介 {#mvpd-kickstart-intro}
-
-欢迎使用Adobe Pass Authentication for TV Everywhere。  我们期待着与您合作。
-
->[!NOTE]
->
->这是多频道视频节目分发商(MVPD)的快速入门指南。 如果您是程序员（内容提供商），请参阅[程序员快速入门指南](/help/authentication/kickstart/programmer-kickstart-guide.md)。
-
-您可以随时通过Zendesk上的Adobe Pass身份验证票证系统提供支持。 在这里，您还可以找到用于我们流程的示例、文档和视频教程。 若要使用[Zendesk](https://adobeprimetime.zendesk.com/)，您必须在https://tve.zendesk.com/home注册并创建一个帐户。 您可以注册的用户数量以及在已归档票证上可查看或发表评论的用户数量没有限制。 所有支持问题都应发送至：tve-support，网址为adobe.com
-
-**团队联系人**：
-
-**支持** — 对于所有问题、事件或功能请求&#x200B;**tve-support@adobe.com**。
-
-## 1.启动会议 {#kickoff-meetings}
-
-这些会议的范围是Adobe与MVPD之间开始技术讨论。 在这个流程中，文档需要由双方共享。 接下来，Adobe需要在我们的票证系统(https://tve.zendesk.com/)中打开票证来跟踪集成的状态。
-
-## 2.功能 {#features}
-
-Adobe将设置每周状态调用，以讨论和跟踪集成的总体计划、步骤、时间线和实施详细信息。 在此阶段，Adobe将审核MVPD的规范。 其结果应该是规范页面，其中详细介绍了MVPD所需的所有功能。 MVPD将向Adobe发送一份规范文档，其中详细介绍MVPD的身份验证/授权实施。
-
-要阐明的项目，请参阅[MVPD集成功能](/help/authentication/integration-guide-mvpds/mvpd-integr-features.md)。
-
-有几个设置需要在此时详细描述：
-
-* **MVPD徽标URL** — 这是具有以下维度的文件： 112 x 33像素。 当用户单击“登录”按钮选择他们的付费电视提供商时，程序员会在他们的网站上显示徽标。
-* **TTL（生存时间）值** - TTL通常由MVPD在身份验证/授权过程中设置。 但是，Adobe可以覆盖这些TTL值，并根据程序员和MVPD双方同意的内容提供不同的值。
-* **显示名称** — 当用户单击“登录”按钮选择他们的付费电视提供商时，程序员会在他们的网站上显示此名称。
-* **测试凭据** — 配置文件（暂存和生产）都应该有测试凭据的列表。
+# MVPD快速入门指南 {#mvpd-kickstart-guide}
 
 >[!IMPORTANT]
 >
->每次用户启动授权流时，他都会与单个、不透明、唯一的用户ID相关联。  用户ID用于标识程序员应用程序的用户，但源自MVPD。
+> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+
+本Kickstart指南面向计划与Adobe® Pass身份验证集成的多渠道视频节目分发商(MVPD)。
+
+本文档概述了确保顺利高效地启动集成流程的关键初始步骤。 它旨在明确我们的期望，并为我们如何与合作伙伴协作以实现成功集成提供指导。
+
+Adobe提供了一系列资源来帮助您与Adobe Pass身份验证集成。 请参阅&#x200B;**“您将提供”**&#x200B;和&#x200B;**“Adobe将提供”**&#x200B;提及内容（分别来自以下各节）。
 
 >[!CAUTION]
 >
->每个MVPD的重要注意事项：用户ID不应包含任何PII（个人身份信息）、可单独使用或与其他信息一起用于识别、联系或查找用户的信息。
-
-## 2.元数据交换 {#metadata-ex}
-
-双方需要交换涉及的所有环境（生产、暂存等）的元数据。
-
-* **Adobe**
-   * 对于暂存环境Adobe，可以从以下位置检索其SP元数据： [身份验证暂存SP元数据](https://sp.auth-staging.adobe.com/sp/metadata)
-   * 对于生产环境Adobe，可从以下位置检索其SP元数据： [身份验证生产sp元数据](https://sp.auth.adobe.com/sp/metadata)
-
-* **MVPD**
-   * 添加元数据（暂存/生产）。
-
-## 4.允许IP列表 {#allow-ip-list}
-
-以下IP应在MVPD的防火墙中列入白名单。 请联系Adobe以获取IP列表。
-
-* Adobe Pass身份验证要求在端口80和443上打开防火墙，以允许访问受限资源。
-
-* MVPD需要为身份验证和授权服务器添加一个IP地址列表（如果是这种情况）。
-
-## 5.发展 {#deve}
-
-开发阶段的持续时间将在审查规格并考虑到双方签署的项目后确定。 Adobe需要为授权部分编写自定义代码。
-
->[!NOTE]
+> 每次用户启动授权流时，都会为他们分配一个不透明的唯一用户ID。 此ID源自MVPD，用于识别程序员应用程序中的用户。
 >
->请注意，授权是按资源执行的。 授权交易通常使用从程序员站点传递的ID字符串执行，该ID字符串表示用户请求授权的渠道。 此资源ID在程序员和MVPD之间建立，并且可以根据需要精确显示。
-
-## 6.Adobe环境 {#adobe-env}
-
-Adobe为开发过程的不同阶段提供不同的环境：
-
-* **资格预审** (PRE-QUAL)：资格预审环境包含下一个发行候选版本。 在将集成升级到发布环境之前，Adobe最初在此环境中集成新合作伙伴。 合作伙伴有两周时间可以在质量前环境中进行测试，并且必须明确请求对质量前配置进行任何更改(有关更改请求流程的详细信息，请与您的Adobe代表联系)。 错误修复会在此环境中触发新部署。
-* **版本** （版本）：Adobe的当前生产版本已部署到此处的实时环境中。
-
-有关如何使用Adobe环境的详细信息，请参阅[了解Adobe环境](/help/authentication/notes-technical/environments/understanding-the-adobe-environments.md)
-
-## 7.暂存部署 {#stag-env}
-
-根据从MVPD收到的元数据，Adobe将在Adobe Pass身份验证系统中创建和配置新的MVPD。 这将部署在Adobe的预测试环境中，并将使用我们的测试程序员(TestDistributors)进行配置。
-
-MVPD需要在其QA/暂存/测试环境中执行相同的部署。
-
-## 8.测试和故障排除 {#tes-troubleshoot}
-
-在此阶段，Adobe和MVPD测试并排除集成故障。 为了帮助测试集成，Adobe Pass身份验证团队可以使用Adobe的API测试站点。 若要了解有关使用Adobe API测试站点的更多信息，请参阅[使用AdobeAPI测试站点测试身份验证和授权流程](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)。
-
-测试和故障排除成功完成后，会在Adobe的发布暂存环境中启用集成。 此时，Adobe可以将MVPD与实际的程序员集成。
-
-## 9.生产部署 {#prod-dep}
-
-* MVPD需要首先在生产配置文件中部署，以测试连接。
-
-* Adobe部署在前期生产中。
-
-* 现在，所有各方都可以在生产用户档案中进行测试。
-
-* 如果此时一切正常，Adobe可以将集成移动到发布生产环境（“实时”），该环境可供所有用户使用。
-
-## 10.上报程序 {#esc-proc}
-
-一旦集成在生产环境中投入使用，提供最佳客户体验就变得至关重要。 为了确保服务器停机问题时获得最佳响应，MVPD必须提供上报过程文档，以记录提请Adobe注意的问题。
-
-反过来，Adobe会为MVPD提供最新的Adobe Pass身份验证升级流程。
-
-
-<!--- [!RELATEDINFORMATION]
+> <br/>
 >
->* [Programmer Kickstart Guide](/help/authentication/programmer-kickstart-guide.md)
->* [MVPD Integration Guide](/help/authentication/mvpd-integr-features.md)
--->
+> 用户ID不得包含任何个人身份识别信息(PII)或数据，这些信息或数据可以单独使用或与其他详细信息结合使用，以识别、联系或查找用户。
+
+## 设置过程 {#setup-process}
+
+设置过程涉及以下步骤：
+
+![Adobe®通过身份验证集成进程](../assets/mvpd-int-lifecycle.png)
+
+*Adobe®通过身份验证集成进程*
+
+### 启动 {#kickoff}
+
+**您将在启动阶段提供**：
+
+* **显示名称**
+
+  这是提示用户选择其付费电视提供商时显示在程序员网站或应用程序上的字符串。
+
+* **徽标URL**
+
+  这是一个文件，大小为112 x 33像素，其中包含提示用户选择其付费电视提供商时显示在程序员网站或应用程序上的徽标。
+
+* **存留时间(TTL)**
+
+  TTL是一个值，通常由MVPD在身份验证或授权过程中设置。 但是，Adobe可以覆盖这些TTL值，并根据程序员和MVPD商定的内容提供不同的值。
+
+* **凭据集**
+
+  这些凭据用于通过MVPD验证和授权用户，或仅验证用户。 通常，这些凭据由用户名和密码组成，必须同时为配置文件（暂存和生产）提供用户名和密码。
+
+### 元数据交换(SAML) {#metadata-exchange-saml}
+
+**Adobe将在元数据交换阶段提供**：
+
+* **暂存环境元数据**
+
+  可以从https://sp.auth-staging.adobe.com/sp/metadata中检索Adobe的SP元数据。
+
+* **生产环境元数据**
+
+  可以从https://sp.auth.adobe.com/sp/metadata中检索Adobe的SP元数据。
+
+**您将在元数据交换阶段提供**：
+
+* **暂存元数据**
+
+  MVPD的暂存环境元数据。
+
+* **生产元数据**
+
+  MVPD的生产环境元数据。
+
+### 连接性 {#connectivity}
+
+**您将提供**&#x200B;一种从Adobe允许列表IP的方法，因为Adobe Pass身份验证要求防火墙允许通过端口80和443的流量在身份验证和授权过程中启用对受限资源的访问。
+
+**您将在暂存配置文件中提供**&#x200B;部署以测试连接。
+
+### 开发 {#development}
+
+**Adobe将提供**&#x200B;个工程时间来与MVPD密切合作，以确保正确建立技术集成。 此过程包括根据MVPD的特定要求定制自定义代码。
+
+### 暂存部署 {#deployment-staging}
+
+**Adobe将为**&#x200B;内部版本提供所需的代码更新，这些代码更新将首先部署在PRE-QUAL暂存环境中。 在此阶段中，还将执行必要的配置更改以将MVPD与`TestDistributors`服务提供商集成以进行测试。
+
+**您和Adobe将提供**&#x200B;质量保证(QA)时间，以确保集成在PRE-QUAL暂存环境中成功测试。 在此阶段之后，MVPD将移至发行版暂存环境，以供使用实际的程序员进一步测试。
+
+### 在生产环境中部署 {#deployment-production}
+
+**您将在生产配置文件中提供**&#x200B;部署以测试连接。
+
+**Adobe将为**&#x200B;内部版本提供所需的代码更新，这些代码更新将部署在PRE-QUAL生产环境中。
+
+**您和Adobe将提供**&#x200B;质量保证(QA)时间，以确保使用生产配置文件成功测试集成。 如果此时一切正常，Adobe可以将集成移至可供所有用户使用的发行版生产环境（“实时”）。
+
+>[!IMPORTANT]
+>
+> 一旦集成在RELEASE生产环境中上线，保持最佳客户体验就变得至关重要。 为了有效地解决服务器停机问题， MVPD必须提供详细的升级过程文档以Adobe管理此类问题。
+>
+> 作为回报，Adobe将确保MVPD接收最新版本的Adobe Pass身份验证升级过程，以简化问题解决方案。
+
+## 对环境的访问权限 {#access-environments}
+
+**Adobe将为开发过程的不同阶段提供**&#x200B;对环境的访问权限：
+
+* **资格预审（资格预审）**
+
+  PRE-QUAL环境托管下一个发行候选版本，并用作新合作伙伴的初始集成平台。 在迁移到RELEASE环境之前，合作伙伴有时间在PRE-QUAL中测试其集成。
+
+* **版本（版本）**
+
+  RELEASE环境托管当前（稳定的）生产版本。
+
+有关如何使用这些环境的更多信息，请参阅[了解Adobe环境](/help/authentication/notes-technical/environments/understanding-the-adobe-environments.md)文档。
+
+>[!IMPORTANT]
+> 
+> 在已建立的更改请求流程之后，必须通过Adobe代表明确请求对这些环境的配置更改。
+
+## 访问客户支持 {#access-customer-support}
+
+**Adobe将通过[Zendesk](https://tve.zendesk.com/home)提供**&#x200B;访问我们的客户支持系统的权限。 要访问Zendesk，您必须在https://tve.zendesk.com/home上注册并创建一个帐户。
+
+Adobe Pass身份验证团队可用于解答我们在集成过程中可能遇到的任何问题或技术问题。 请通过[tve-support@adobe.com](mailto:tve-support@adobe.com)联系我们。
+
+## 文档访问权限 {#access-documentation}
+
+**Adobe将通过[Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home)提供**&#x200B;对公共文档的访问权限。
+
+Adobe Pass身份验证团队提供了[MVPD集成指南](/help/authentication/kickstart/mvpd-overview.md)部分下可用功能和工作流的综合文档。 有关每个主题的详细信息的链接，请参阅本节下的目录。
+
+## 访问测试工具 {#access-testing-tool}
+
+**Adobe将通过[Adobe Developer](https://developer.adobe.com/adobe-pass/)网站提供**&#x200B;对我们API探索工具的访问权限。
