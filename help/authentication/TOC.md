@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
 user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: 1b9847d8dcb078755fd68a6363972f8973290e52
+source-git-commit: ffedb5db269644c8d9c81480d27dff43bd4eb5d6
 workflow-type: tm+mt
-source-wordcount: '1250'
+source-wordcount: '1240'
 ht-degree: 2%
 
 ---
@@ -120,8 +120,7 @@ ht-degree: 2%
                + [标头 — AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + 标准功能{#standard-features}
       + 权利{#entitlements}
-         + [印前检查授权](integration-guide-programmers/features-standard/entitlements/preflight-authz.md)
-         + [受保护的资源](integration-guide-programmers/features-standard/entitlements/protected-resources.md)
+         + [决策](integration-guide-programmers/features-standard/entitlements/decisions.md)
          + [媒体令牌](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
          + [用户元数据](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
       + 报告{#error-reporting}时出错
@@ -137,8 +136,7 @@ ht-degree: 2%
             + Roku单点登录{#roku-sso}
                + [Roku SSO概述](integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
       + 基于主页的身份验证访问{#hba-access}
-         + [适用于所有地区的电视的家庭身份验证](integration-guide-programmers/features-standard/hba-access/home-based-authn-tve.md)
-         + [MVPD的HBA状态](integration-guide-programmers/features-standard/hba-access/hba-status-mvpds.md)
+         + [基于家庭的身份验证(HBA)](integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)
       + 隐私支持{#privacy-support}
          + [隐私支持概述](integration-guide-programmers/features-premium/privacy-support/privacy-supp-overview.md)
          + [如何提出隐私请求](integration-guide-programmers/features-premium/privacy-support/make-privacy-req.md)
