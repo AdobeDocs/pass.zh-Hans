@@ -2,9 +2,9 @@
 title: Primetime TVE仪表板用户指南
 description: Primetime TVE仪表板用户指南
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
 workflow-type: tm+mt
-source-wordcount: '5524'
+source-wordcount: '5517'
 ht-degree: 0%
 
 ---
@@ -287,7 +287,7 @@ TVE Dashboard提供两个名为Prequal (Prequalification)和Release的环境，�
 
 要更新现有集成，请在集成部分或渠道部分（包含集成选项卡）中单击该特定集成的表条目。
 
-使用基本Workspace模式时，此部分将允许查看和编辑最常更新的设置，例如身份验证和授权令牌TTL（生存时间）以及iFrame设置。 请记住，与支持动态定义的令牌持久性TTL的MVPD的集成可能缺少TTL设置(请参阅[MVPD集成要求](/help/authentication/integration-guide-mvpds/mvpd-integr-features.md)中的条目1.19)。
+使用基本Workspace模式时，此部分将允许查看和编辑最常更新的设置，例如身份验证和授权令牌TTL（生存时间）以及iFrame设置。 请记住，与支持动态定义的令牌持久性TTL的MVPD的集成可能缺少TTL设置。
 
 
 
