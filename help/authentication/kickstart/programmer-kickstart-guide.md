@@ -2,95 +2,89 @@
 title: 程序员kickstart指南
 description: 程序员kickstart指南
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: 37858fa83aecbdf443a4a6058c78e4f9246eee42
 workflow-type: tm+mt
-source-wordcount: '969'
+source-wordcount: '758'
 ht-degree: 0%
 
 ---
 
 # 程序员kickstart指南 {#programmer-kickstart-guide}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-## 简介 {#prog-kickstart-guide-intro}
+本快速入门指南面向计划将Adobe®传递身份验证集成到其网站或应用程序中的内容提供商（程序员）。
 
-欢迎使用Adobe Pass Authentication for TV Everywhere。 我们期待着与您合作。
+本文档概述了确保顺利高效地启动集成流程的关键初始步骤。 它旨在明确我们的期望，并为我们如何与合作伙伴协作以实现成功集成提供指导。
 
->[!NOTE]
+Adobe提供了一系列资源，帮助您将Adobe Pass身份验证集成到网站或应用程序中。 请参阅&#x200B;**“您将提供”**&#x200B;和&#x200B;**“Adobe将提供”**&#x200B;提及内容（分别来自以下各节）。
+
+## 设置过程 {#setup-process}
+
+设置过程涉及以下步骤：
+
+![Adobe®通过身份验证集成进程](../assets/progr-flow-int-lifecycle.png)
+
+*Adobe®通过身份验证集成进程*
+
+**您将在启动阶段提供**：
+
+* **服务提供商（请求者标识符）**
+
+  这是一个字符串，它将唯一标识向Adobe Pass身份验证发出请求的网站或应用程序的品牌。 字符串本身是任意的，但需要在Adobe和程序员之间达成一致
+
+* **渠道信息**
+
+  这是一组字符串，用于标识服务提供商请求的内容渠道。 在许多情况下，渠道和服务提供商是相同的。 但是，单个标识符可以表示多个内容渠道。 这些频道名称字符串应与相应的有线电视频道一致。 请注意，某些MVPD可能会在身份验证和/或授权过程中验证此值。
+
+* **域名**
+
+  此列表将包含实际域名，这些域名将Adobe为表示服务提供商。 它可确保只有授权域才能使用您的元数据访问Adobe Pass身份验证。 请确保为生产和暂存（测试）环境提供并清楚地标识域名，因为这些域名可能不同。
+
+**您将通过MVPD提供**：
+
+* **凭据集**
+
+  这些凭据用于通过MVPD验证和授权用户，或仅验证用户。 通常，这些凭据由用户名和密码组成，MVPD将为这两个配置文件（暂存和生产）向您提供这些用户名和密码。
+
+* **资源标识符**
+
+  这些是服务提供商要保护的内容渠道、节目、集数或资产的唯一标识符。 这些标识符用于请求授权决策，必须与MVPD协商一致。
+
+>[!IMPORTANT]
 >
->这是面向程序员（内容提供商）的Kickstart指南。 如果您是多频道视频节目分发商(MVPD)，请务必查看[MVPD快速入门指南](/help/authentication/kickstart/mvpd-kickstart-guide.md)。
-
-
-Adobe Pass身份验证联系人：
-
-* 支持 — 针对所有问题、事件或功能请求，`tve-support@adobe.com`
-* 到项目启动时，会向项目分配一个支持联系人。
-
-以下信息概述了一些重要的首要步骤，以便我们开始一个扎实而有效的计划。 我们的目标是提供有关我们将如何与合作伙伴合作来实现集成的解释和预期。 请注意下面每个项目的“您将提供”/“Adobe将提供”部分。 在我们完成项目时，这些内容以核对清单或指南的方式列出。
-
-本文档假定程序员已注册与选定的MVPD合作伙伴合作。
-
-## 发布计划 {#release-schedule}
-
-我们规划了Adobe冲刺开发周期，以便您能够了解排程发布的时间以及如何通过我们的开发系统推广每个版本。
-
-在每次冲刺完成后，它可用于QE，或在UAT服务器上看到新的实施。
-
-大约每6周会向Adobe资格预审服务器发布一次。 （这是我们在执行最终定量宽松的同时保留提议的下一版本的服务器。 ） 这些内部版本将包含自上次放置以来在冲刺中完成的所有工作。 目前，合作伙伴可以利用2周的QE窗口测试这一版本。
-
-假定在前两个星期的测试时段中没有出现任何严重问题，则该版本将提升至实时生产。 这意味着该集成将在Adobe发布环境中可用，但合作伙伴会在发布时进行选择。
-
-<!--For the latest release schedule information, see the Release Calendar.-->
-
-## 支持文档 {#supp-doc}
-
-Adobe将提供：
-
-* 部署指南： **`https://tve.zendesk.com/entries/498741-tve-deployment-guide`**
-* 访问我们的Zendesk客户支持系统。 您还可以在这里找到有关某些流程的示例、信息和视频教程。 若要在Zendesk上访问此文档以及在其中发布的其他文档，您必须在`https://tve.zendesk.com/home`注册并创建一个帐户。 您可以注册的用户数量没有限制。  您可以查看和共享任何已归档票证的评论。 所有支持问题都应发送至`tve-support@adobe.com`。
-* 媒体令牌验证器库： `https://tve.zendesk.com/entries/471323-media-token-validator-library`。
-
-## 测试环境设置 {#test-env-setup}
-
-Adobe将首先为您设置Adobe测试站点，在该站点中，Adobe充当MVPD以进行测试。 然后，您的团队可以设置一个调用AdobeAPI的测试网站。 使用默认的MVPD选择器，并选择“Adobe”作为idP。
-
-您将提供：
-
-1. 请求者ID。 这是一个字符串，它将唯一标识向Adobe Pass身份验证发出请求的网站或应用程序的品牌。 字符串本身是任意的，但需要在Adobe和程序员之间达成一致
-1. 渠道信息。 这是一组字符串，用于标识请求者ID所请求的内容渠道。 在许多情况下，渠道和请求者ID是相同的。 但是，您可能具有多个可通过同一ID请求的内容渠道。 频道名称字符串应该与有线电视频道相对应。 某些MVPD将通过AuthN和/或AuthZ协议验证此值。
-1. 域名（允许用于该请求者ID）。 这将是一个实际域名列表，Adobe将列出这些域名以接受请求者ID。 这可以确保只有您批准的域才能访问使用您的元数据的Adobe Pass身份验证。 注意：对生产有效的域名在测试/暂存时可能不同，应该提供并识别这两个域名。
-
-Adobe将设置帐户，Adobe将提供：
-
-* 用于访问测试站点的登录名和密码
-
-## 使用MVPD进行设置 {#setup-mvpd}
-
-本节介绍从Adobe测试站点迁移至使用MVPD时需要执行的操作。
-
-您将(通过MVPD)提供：
-
-* **两组凭据**：
-   * AuthN + AuthZ ：经过身份验证和授权的用户的登录/密码
-   * AuthN + Non-AuthZ ：已验证但未授权的用户的登录/密码
-* **资源ID**。 这是一个特定的内容标识符，将通过AuthZ协议通过MVPD进行验证。 可以在渠道、节目、集或资源级别进行整合；应该与您的MVPD达成一致意见。
-
-Adobe Pass身份验证支持基于MRSS的元数据架构，这意味着资源ID可以根据需要而特定，并且可以包含对于特定MVPD唯一的标识符。
-
-**新MVPD集成**：请务必记住，您选择的MVPD在完成任何集成时都起着不可或缺的作用。 Adobe需要根据各自的规范为每个MVPD编写代码。 在这些步骤完成之前，您将无法从对话框中选择该MVPD，或完成产品测试。 Adobe需要提前安排此工作，以便与下一个可用冲刺相匹配。 （有关当前计划信息，请参阅发布日历。）
-
-**现有MVPD集成**：如果您选择的MVPD已使用Adobe进行设置，那么连接步骤应该要简单得多（更快），并且通常可以通过更改配置来实现连接。
-
->[!NOTE]
+> 程序员负责与MVPD协调，以敲定任何必要的业务协议。 同时，Adobe Pass身份验证将与MVPD协作，确保正确建立技术集成：
 >
->MVPD仍需要启用程序员，并签署任何相关的商业交易。
+> * **新MVPD**
+>
+>     如果MVPD未与Adobe集成，则必须根据MVPD的特定要求开发自定义代码。 在此开发完成之前，MVPD将不可用，并且无法继续使用该MVPD进行产品测试。
+>
+> * **现有MVPD**
+>
+>     如果MVPD已与Adobe集成，则连接过程将得到显着简化。 在大多数情况下，可通过配置调整而非广泛开发来快速建立连接。
+>
+> 所有集成都需要共同的质量保证(QA)工作，包括MVPD的测试，因为最终用户最终是MVPD的客户。 协调测试周期通常取决于MVPD的资源可用性，这可能会导致延迟。
 
-**QE与MVPD**：所有集成都将涉及联合QE，由于最终用户最终是MVPD的客户，因此许多人在推送“实时”之前设置了测试周期。 由于这涉及安排MVPD资源，因此可能出现延迟。
+## 访问客户支持 {#access-customer-support}
 
-<!--
->[RELATEDINFORMATION]
->[MVPD Kickstart Guide](help\authentication\mvpd-kickstart-guide.md)
--->
+**Adobe将通过[Zendesk](https://tve.zendesk.com/home)提供**&#x200B;访问我们的客户支持系统的权限。 要访问Zendesk，您必须在https://tve.zendesk.com/home上注册并创建一个帐户。 您可以注册的用户数量没有限制。 注册后，您可以查看和共享任何已提交票证的注释。
+
+Adobe Pass身份验证团队可以帮助您解决在集成过程中可能遇到的任何问题或技术问题。 请通过[tve-support@adobe.com](mailto:tve-support@adobe.com)联系我们。
+
+## 文档访问权限 {#access-documentation}
+
+**Adobe将通过[Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home)提供**&#x200B;对公共文档的访问权限。
+
+Adobe Pass身份验证团队提供了[程序员集成指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)部分下可用功能和API的综合文档。 有关每个主题的详细信息的链接，请参阅本节下的目录。
+
+## 访问测试工具 {#access-testing-tool}
+
+**Adobe将通过[Adobe Developer](https://developer.adobe.com/adobe-pass/)网站提供**&#x200B;对我们API探索工具的访问权限。
+
+## 访问配置管理工具 {#access-configuration-management-tool}
+
+**Adobe将通过[Adobe Pass TVE Dashboard](https://experience.adobe.com/pass/authentication)提供**&#x200B;访问自助服务工具的权限，以便管理您的配置和数据。
+
+Adobe Pass身份验证团队在[TVE仪表板用户指南](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)部分下提供了有关TVE仪表板用法的综合文档。 有关每个主题的详细信息的链接，请参阅本节下的目录。
