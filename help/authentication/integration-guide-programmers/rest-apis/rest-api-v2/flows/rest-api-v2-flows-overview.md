@@ -2,7 +2,7 @@
 title: REST API V2流概述
 description: REST API V2流概述
 exl-id: 84a9ac0f-c26a-4159-82a8-3a31bb31f529
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
 source-wordcount: '170'
 ht-degree: 0%
@@ -13,7 +13,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+> 确保随时了解汇总在[产品公告](/help/authentication/product-announcements.md)页中的最新Adobe Pass身份验证产品公告和停用时间表。
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![直播网络研讨会系列](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 要开始配置，请访问下面列表中您感兴趣的流的公共文档。
 

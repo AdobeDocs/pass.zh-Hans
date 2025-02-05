@@ -2,9 +2,9 @@
 title: 欢迎使用Adobe&amp；reg；通过身份验证
 description: 欢迎使用Adobe&amp；reg；通过身份验证
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: c9e31a036a0300fabd9f75dd85d472c390d9053e
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
-source-wordcount: '419'
+source-wordcount: '423'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,8 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > 确保随时了解汇总在[产品公告](/help/authentication/product-announcements.md)页中的最新Adobe Pass身份验证产品公告和停用时间表。
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![直播网络研讨会系列](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 Adobe Pass身份验证是TV Everywhere (TVE)的强大权利解决方案，旨在简化和安全验证查看者是否有权访问受保护内容的过程。 此模块化框架将内容提供商（程序员）与付费电视提供商(MVPD)连接起来，以快速、一致和可靠的方式促进授权事务。
 

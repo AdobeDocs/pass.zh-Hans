@@ -2,7 +2,7 @@
 title: Dynamic Client注册概述
 description: Dynamic Client注册概述
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
 source-wordcount: '813'
 ht-degree: 0%
@@ -13,7 +13,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+> 确保随时了解汇总在[产品公告](/help/authentication/product-announcements.md)页中的最新Adobe Pass身份验证产品公告和停用时间表。
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![直播网络研讨会系列](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 动态客户端注册表示由[RFC 7591](https://datatracker.ietf.org/doc/html/rfc7591)定义的授权机制，它基于[RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749)描述的OAuth 2.0授权框架。
 

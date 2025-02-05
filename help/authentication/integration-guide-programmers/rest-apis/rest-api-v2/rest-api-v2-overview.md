@@ -2,7 +2,7 @@
 title: REST API V2概述
 description: REST API V2概述
 exl-id: a5595193-82c4-4033-bd98-596b4908b401
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 0%
@@ -13,7 +13,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+> 确保随时了解汇总在[产品公告](/help/authentication/product-announcements.md)页中的最新Adobe Pass身份验证产品公告和停用时间表。
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![直播网络研讨会系列](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 您是否希望提高TVE应用程序的成本效益？
 
@@ -41,7 +43,7 @@ REST API V2允许在不同的设备之间安全地传递身份验证会话。 �
 
 ### 多个活动身份验证会话
 
-现在可以使用不同的活动MVPD会话，客户可以在需要时选择在TempPass和常规MVPD集成之间进行切换。
+现在可以使用其他活动MVPD会话，客户可以在需要时选择在TempPass和常规MVPD集成之间切换。
 
 ### 增强的安全机制
 

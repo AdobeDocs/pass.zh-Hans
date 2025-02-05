@@ -2,14 +2,39 @@
 title: 产品公告
 description: 产品公告
 exl-id: 3c9c66e1-d31d-4af3-8ab2-eb32492f42ca
-source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
-source-wordcount: '670'
+source-wordcount: '859'
 ht-degree: 1%
 
 ---
 
 # 产品公告 {#product-announcements}
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![直播网络研讨会系列](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
+
+作为尊贵的Adobe Pass身份验证合作伙伴，我们希望邀请您参加我们即将举办的关于新REST API的实时网络研讨会。 新API去年推出，旨在增强最终用户体验并简化与Adobe Pass服务的集成。 
+
+我们将举办一系列的两个网络研讨会，概述新API、好处以及可以通过迁移到新API激活的其他用例。
+
+请注册最适合您和您的团队的网络研讨会。
+
+* [网络研讨会1 - 2025年2月19日](https://events.teams.microsoft.com/event/83c6ec1e-2522-4918-910f-c529b4fb0574@fa7b1b5a-7b34-4387-94ae-d2c178decee1)
+* [网络研讨会2 - 2025年3月5日](https://events.teams.microsoft.com/event/6f673689-e848-4c00-93d9-4f5d8f108977@fa7b1b5a-7b34-4387-94ae-d2c178decee1)
+
+在该会议中，您将了解：
+
+* REST API v2概述和优势
+* 基本流演练
+* 时间表和后续步骤
+
+如果您符合以下条件，该网络研讨会将会很有用：
+
+* 计划启动新TVE应用程序的新客户
+* 需要迁移到新API的现有客户
+* 将为客户实施API的实施合作伙伴
+
+您可以在[此处](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)找到有关新API的技术文档。 我们鼓励您和您的团队填写您想在[此处](https://forms.office.com/r/sJea78tUy3)的会议中讨论的任何问题。
 
 ## 生命周期结束(EOL) {#eol}
 
