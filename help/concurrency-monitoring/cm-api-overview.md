@@ -2,9 +2,9 @@
 title: API概述
 description: 并发监控的API概述
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: dd370b231acc08ea0544c0dedaa1bdb0683e378f
+source-git-commit: b30d9217e70f48bf8b8d8b5eaaa98fea257f3fc5
 workflow-type: tm+mt
-source-wordcount: '1556'
+source-wordcount: '2102'
 ht-degree: 0%
 
 ---
@@ -73,12 +73,27 @@ ID为&#x200B;**demo-app**&#x200B;的应用程序已由Adobe团队分配策略，
 
 我们需要的所有数据都包含在响应标头中。 **Location**&#x200B;标头表示新创建的会话的ID，**Date**&#x200B;和&#x200B;**Expires**&#x200B;标头表示用于安排应用程序发出下一个检测信号以保持会话活动的值。
 
+通过每次调用，您都可以发送所需的任何元数据，而不仅仅是应用程序的必需元数据。 可通过两种方式发送元数据：
+* 使用&#x200B;**查询** **参数**：
+
+  ```sh
+  curl -i -XPOST -u "user:pass" "https://streams-stage.adobeprimetime.com/v2/sessions/some_idp/some_user?metadata1=value1&metadata2=value2"
+  ```
+
+* 使用&#x200B;**请求** **正文**：
+
+  ```sh
+  curl -i -XPOST -u "user:pass" https://streams-stage.adobeprimetime.com/v2/sessions/some_idp/some_user -d "metadata1=value1" -d "metadata2=value2" -H "Content-Type=application/x-www-form-urlencoded"
+  ```
+
 #### 心率 {#heartbeat}
 
 进行心跳调用。 提供在会话初始化调用中获取的&#x200B;**会话ID**，以及使用的&#x200B;**主题**&#x200B;和&#x200B;**idp**&#x200B;参数。
 
 ![](assets/heartbeat.png)
 
+对于心跳调用，允许您采用与会话初始化相同的方式发送元数据。 可以随时添加新的元数据，并且可以更新以前发送的具有某些&#x200B;**例外**&#x200B;的值。 设置后，无法更改以下值： **package**、**channel**、**platform**、**assetId**、**idp**、**mvpd**、**hba_status**、**hba**，
+**移动设备**
 
 如果会话仍然有效（未过期或已手动删除），您将收到一个成功的结果：
 
@@ -111,8 +126,11 @@ ID为&#x200B;**demo-app**&#x200B;的应用程序已由Adobe团队分配策略，
 
 ![](assets/get-all-running-streams-success.png)
 
-请注意&#x200B;**过期**标头。 这是第一个会话在发送心跳之前应过期的时间。 OtherStreams具有值0，因为没有针对此用户在其他租户的应用程序上运行的其他流。
+对于每个会话，都将获得&#x200B;**terminationCode**&#x200B;并完成元数据。
+
+请注意&#x200B;**过期**标头。 这是第一个会话在发送心跳之前应过期的时间。
 元数据字段将填充会话启动时发送的所有元数据。 我们不筛选它，你将收到你发送的所有内容。
+只要其他租户的应用程序共享相同的策略，响应就会包含这些应用程序上运行的所有流。
 如果调用时没有针对特定用户的运行会话，您将收到此响应：
 
 ![](assets/get-all-running-streams-empty.png)
@@ -126,8 +144,13 @@ ID为&#x200B;**demo-app**&#x200B;的应用程序已由Adobe团队分配策略，
 
 ![](assets/breaking-policy-frstapp.png)
 
+我们在有效负荷中获取一个409 CONFLICT响应以及一个求值结果对象。 这表示服务器端策略不允许创建或继续此会话。 响应正文将包含一个具有非空AssociatedAdvice的EvaluationResult对象，该对象是包含每个规则违规说明的Advice对象的列表。
 
-我们在有效负荷中获取一个409 CONFLICT响应以及一个求值结果对象。 阅读[Swagger API规范](http://docs.adobeptime.io/cm-api-v2/#evaluation-result)中评估结果的完整说明。
+应用程序应提示用户显示每个“建议”实例所携带的错误消息。 此外，每个建议还会指明规则详细信息，如属性、阈值、规则和策略名称。 此外，冲突值也将包含在每个值的活动会话列表中。
+
+此信息用于高级错误消息格式设置，以及允许用户针对冲突的会话执行操作。
+
+每个冲突的会话都将带有可用于&#x200B;**终止该流的**&#x200B;的&#x200B;**终止代码**。 这样，应用程序可以允许用户选择要终止的会话，以便尝试获得对当前会话的访问权限。
 
 应用程序可以使用评估结果中的信息在停止视频时向用户显示特定消息，并在需要时采取进一步的操作。 一个用例可以是停止其他现有流以启动新流。 这是通过使用特定冲突属性的&#x200B;**冲突**&#x200B;字段中存在的&#x200B;**terminationCode**&#x200B;值完成的。 该值将作为新会话初始化调用中的X-Terminate HTTP标头提供。
 
@@ -136,6 +159,30 @@ ID为&#x200B;**demo-app**&#x200B;的应用程序已由Adobe团队分配策略，
 当在会话初始化时提供一个或多个终止代码时，呼叫将成功，并会生成一个新会话。 然后，如果我们尝试对某个已远程停止的会话发出心率，则会收到410 GONE响应，其中包含描述该会话已远程终止的评估结果有效负载，如示例所示：
 
 ![](assets/remote-termination.png)
+
+根据导致当前会话终止的原因，可以返回410而不返回主体。
+
+当响应没有正文时，410表示为不再活动的会话（由于超时或以前的冲突或其他原因）尝试心率（或终止）调用。 从此状态恢复的唯一方法是应用程序启动新会话。 由于没有主体，因此应用程序应该在用户不知道的情况下处理此错误。
+
+另一方面，当提供响应正文时，应用程序需要查看&#x200B;**associatedAdvice**&#x200B;属性以查找&#x200B;**远程终止**&#x200B;建议，该建议指示以&#x200B;**终止**&#x200B;当前会话的明确意图启动的远程会话。 这应该会导致“您的会话被设备/应用程序踢出”之类的错误消息。
+
+### 响应正文 {#response-body}
+
+对于所有会话生命周期API调用，响应正文（如果存在）将是包含以下字段的JSON对象：
+
+![](assets/body_small.png)
+
+**建议**
+**EvaluationResult**&#x200B;将在&#x200B;**associatedAdvice**&#x200B;下包含一系列Advice对象。 这些建议旨在让应用程序为用户显示全面的错误消息，并（可能）允许用户采取相应措施。
+
+目前，有两种类型的建议（由其&#x200B;**type**&#x200B;属性值指定）： **rule-violation**&#x200B;和&#x200B;**remote-termination**。 第一个提供了有关中断的规则以及与当前规则冲突的会话的详细信息（包括可用于远程终止该会话的terminate属性）。 第二个只是声明当前会话被远程会话蓄意终止，这样用户就可以知道在达到限制时是谁将其踢出了会话。
+
+![](assets/advices.png)
+
+**义务**
+评估还可能包含一个或多个预定义操作，应用程序必须作为此评估的结果触发这些操作。
+
+![](assets/obligation.png)
 
 ### 第二个应用程序 {#second-application}
 
