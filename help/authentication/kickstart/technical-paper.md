@@ -2,9 +2,9 @@
 title: 关于Adobe Pass Authentication和随处电视
 description: 关于Adobe Pass Authentication和随处电视
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 95e750b5c0efe5850a3ff8130f5b4bb6c5b35f57
 workflow-type: tm+mt
-source-wordcount: '6288'
+source-wordcount: '6287'
 ht-degree: 0%
 
 ---
@@ -112,7 +112,11 @@ Adobe Pass安全地协调程序员和付费电视提供商之间的权利事务�
 
 ## 建筑构件 {#arch-building-blocks}
 
-![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/import-pc7mz3dfnv/check.gif)下面讨论了身份验证和授权的中心授权事务。 身份验证是向付费电视提供商确认给定用户是已知客户的过程。 授权是付费电视提供商确认经过身份验证的用户具有对给定资源的有效预订的过程。
+<!-- BROKEN LINK
+![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/import-pc7mz3dfnv/check.gif) 
+-->
+
+下面讨论了身份验证和授权的中心授权事务。 身份验证是向付费电视提供商确认给定用户是已知客户的过程。 授权是付费电视提供商确认经过身份验证的用户具有对给定资源的有效预订的过程。
 Adobe Pass身份验证包含以下基本组件：
 
 * 客户端组件（以下之一）：
