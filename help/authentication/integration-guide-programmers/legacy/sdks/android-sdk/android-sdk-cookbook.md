@@ -2,9 +2,9 @@
 title: Android SDK指南
 description: Android SDK指南
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 79b3856e3ab2755cc95c3fcd34121171912a5273
 workflow-type: tm+mt
-source-wordcount: '1704'
+source-wordcount: '1703'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 0%
 
 - UI域 — 这是上层应用程序层，用于实施UI并使用AccessEnabler库提供的服务来提供对受限内容的访问。
 - AccessEnabler域 — 这是权利工作流的实施形式：
-   - 向Adobe后端服务器发出的网络调用
+   - 对Adobe后端服务器发出的网络调用
    - 与身份验证和授权工作流相关的业务逻辑规则
    - 管理各种资源和处理工作流状态（如令牌缓存）
 
@@ -135,7 +135,9 @@ Android Library (AccessEnabler)
 
    | 注意 |     |
    | --- | --- |  
-   | ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/icons/1313859077_lightbulb.png) | 在完全建立请求者身份之前，无法完成任何授权请求。 这实际上意味着，在setRequestor()仍在运行时，所有后续的权利请求（例如，`checkAuthentication()`）都将被阻止。<br><br>您有两个实施选项：将请求者标识信息发送到后端服务器后，UI应用层可以选择以下两种方法之一：<br><br>1.  等待`setRequestorComplete()`回调的触发（AccessEnabler委托的一部分）。  此选项可让您最确定已完成`setRequestor()`，因此建议对大多数实施使用此选项。<br>2。  继续而不等待`setRequestorComplete()`回调的触发，并开始发出授权请求。 这些调用(checkAuthentication、checkAuthorization、getAuthorization、getAuthorization、checkPreauthorizedResource、getMetadata、logout)由AccessEnabler库排队，该库将在`setRequestor(). `后进行实际的网络调用。例如，如果网络连接不稳定，此选项有时可能会中断。 |
+   |  | 在完全建立请求者身份之前，无法完成任何授权请求。 这实际上意味着，在setRequestor()仍在运行时，所有后续的权利请求（例如，`checkAuthentication()`）都将被阻止。<br><br>您有两个实施选项：将请求者标识信息发送到后端服务器后，UI应用层可以选择以下两种方法之一：<br><br>1.  等待`setRequestorComplete()`回调的触发（AccessEnabler委托的一部分）。  此选项可让您最确定已完成`setRequestor()`，因此建议对大多数实施使用此选项。<br>2。  继续而不等待`setRequestorComplete()`回调的触发，并开始发出授权请求。 这些调用(checkAuthentication、checkAuthorization、getAuthorization、getAuthorization、checkPreauthorizedResource、getMetadata、logout)由AccessEnabler库排队，该库将在`setRequestor(). `后进行实际的网络调用。例如，如果网络连接不稳定，此选项有时可能会中断。 |
+
+   <!--Removed bad image link from first note cell above. ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/icons/1313859077_lightbulb.png) -->
 
 1. 调用[checkAuthentication()](#$checkAuthN)以检查现有身份验证，而不启动完整的身份验证流程。   如果此调用成功，您可以直接进入授权流程。  如果没有，请继续进入身份验证流程。
 
