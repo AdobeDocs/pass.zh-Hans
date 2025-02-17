@@ -2,14 +2,14 @@
 title: Adobe Pass Authentication 2.70发行说明
 description: Adobe Pass Authentication 2.70发行说明
 exl-id: 81713f8e-bc51-4057-9b00-6a2d6c83cd02
-source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '140'
 ht-degree: 0%
 
 ---
 
-# Adobe Pass Authentication 2.70发行说明 {#pt-authn-270-rn}
+# Adobe Pass Authentication 2.70发行说明 {#authn-270-rn}
 
 >[!NOTE]
 >
@@ -20,23 +20,24 @@ ht-degree: 0%
 ## 服务器端和Web客户端 {#server-side-web-clients-270}
 
 * [内部版本号](#build-number-270)
-* [新增功能](#new-features-270)
+* [发行版概述](#release-overview-270)
 
 ### 内部版本号 {#build-number-270}
 
 Adobe Pass身份验证： adobe-pass-**2.70**
-发行日期： **04/23/2024 - 04/25/2024**
 
-### 新增功能 {#new-features-270}
+发行日期：**04/23/2024 - 04/25/2024**
 
-#### 杂项 {#misc}
+### 发行版概述 {#release-overview-270}
+
+#### 杂项
 
 * 修补了安全漏洞。
 * 对降级API服务的增强。
    * 使用DCR作为降级API的安全机制。
    * 您可以在此处找到更多详细信息：[降级功能](../integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
 
-#### REST API {#rest-apis}
+#### REST API
 
 * 正在开发新的REST API。
    * 即将发布的专用版本将引入新的端点和流程，这些端点和流程将在单独的通知中公告。

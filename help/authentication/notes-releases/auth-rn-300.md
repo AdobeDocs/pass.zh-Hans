@@ -2,14 +2,14 @@
 title: Adobe Pass Authentication 3.0发行说明
 description: Adobe Pass Authentication 3.0发行说明
 exl-id: 9284151a-8458-44a3-937b-35f379ca0e4e
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '199'
 ht-degree: 0%
 
 ---
 
-# Adobe Pass Authentication 3.0发行说明 {#pt-authn-300-rn}
+# Adobe Pass Authentication 3.0发行说明 {#authn-300-rn}
 
 >[!NOTE]
 >
@@ -22,14 +22,15 @@ ht-degree: 0%
 * [内部版本号](#build-number-300)
 * [发行版概述](#release-overview-300)
 
-### 内部版本号 {#build-number-2651}
+### 内部版本号 {#build-number-300}
 
 Adobe Pass身份验证： adobe-pass-**3.0**
-发行日期： **09/10/2024 - 09/12/2024**
 
-### 新增功能 {#new-features-300}
+发行日期：**09/10/2024 - 09/12/2024**
 
-#### REST API v2 {#rest-apis}
+### 发行版概述 {#release-overview-300}
+
+#### REST API v2
 
 ##### 代码
 
@@ -48,6 +49,6 @@ Adobe Pass身份验证： adobe-pass-**3.0**
 
 * 要尝试使用新的REST API v2，请参阅[Adobe Developer](https://developer.adobe.com/adobe-pass)网站上的新Adobe Pass身份验证页面。
 
-### 错误修复 {#bug-fixes-300}
+#### 错误修复
 
 * 修复了注销请求中存在时未使用重定向URL参数的问题。

@@ -2,14 +2,14 @@
 title: Adobe Pass Authentication 3.0.3发行说明
 description: Adobe Pass Authentication 3.0.3发行说明
 exl-id: f54b7c4a-78c5-4536-bed7-3c5f15640dea
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '152'
 ht-degree: 0%
 
 ---
 
-# Adobe Pass Authentication 3.0.3发行说明 {#pt-authn-303-rn}
+# Adobe Pass Authentication 3.0.3发行说明 {#authn-303-rn}
 
 >[!NOTE]
 >
@@ -22,14 +22,15 @@ ht-degree: 0%
 * [内部版本号](#build-number-303)
 * [发行版概述](#release-overview-303)
 
-### 内部版本号 {#build-number-2651}
+### 内部版本号 {#build-number-303}
 
 Adobe Pass身份验证： adobe-pass-**3.0.3**
-发行日期： **2024年10月29日 — 2024年10月31日**
 
-### 新增功能 {#new-features-303}
+发行日期：**2024年10月29日 — 2024年10月31日**
 
-#### REST API v2 {#rest-apis}
+### 发行版概述 {#release-overview-303}
+
+#### REST API v2
 
 ##### 代码
 

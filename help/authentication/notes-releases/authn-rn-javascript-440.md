@@ -2,14 +2,14 @@
 title: Adobe Pass Authentication JavaScript 4.4.0发行说明
 description: Adobe Pass Authentication JavaScript 4.4.0发行说明
 exl-id: 28cc0ccc-7a1d-45bd-8455-26cfde25c5c5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '245'
 ht-degree: 0%
 
 ---
 
-# Adobe Pass Authentication JavaScript 4.4.0发行说明 {#javascript-sdk-440-release-notes}
+# Adobe Pass Authentication JavaScript 4.4.0发行说明 {#javascript-sdk-440-rn}
 
 >[!NOTE]
 >
@@ -17,16 +17,15 @@ ht-degree: 0%
 
 本页介绍了此版本的新增功能、更改和已知问题：
 
-## 内部版本号 {#build-no-javascript-sdk-440}
+## 内部版本号 {#build-number-440}
 
 Adobe Pass身份验证： JavaScript 4.4.0
 
 发行日期：**06/22/2021**
 
+## 发行版概述 {#release-overview-440}
 
-## 发行版概述 {#overview-javascript-sdk-440}
-
-### 新增功能 {#new-features-javascript-sdk-440}
+### 新增功能
 
 印前检查授权
 
@@ -42,14 +41,13 @@ Adobe Pass身份验证： JavaScript 4.4.0
 
 * 内部架构改进。
 
-
-### 错误修复 {#bug-fixes-javascript-sdk-440}
+### 错误修复
 
 * 修复在同时调用setRequestor和getAuthentication时生成的争用条件。
 * 修复了阻止在暂存环境中正确加载权利的问题。
 * 解决了阻止后台注销流在Safari浏览器上完成的问题，因此用户似乎在页面刷新之前仍保持身份验证状态。 引入了超时，当前设置为30秒，因此，如果在此期间没有来自Primetime身份验证服务器的响应，SDK将调用setAuthenticationStatus回调。
 
-## 发行包 {#rel-pkg-javascript-sdk-440}
+## 发行包 {#release-package-440}
 
 生产URL为：https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js
 

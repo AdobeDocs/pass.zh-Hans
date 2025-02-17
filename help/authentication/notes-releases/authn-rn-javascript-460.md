@@ -2,14 +2,14 @@
 title: Adobe Pass Authentication JavaScript 4.6.0发行说明
 description: Adobe Pass Authentication JavaScript 4.6.0发行说明
 exl-id: 09b79384-2385-48ce-9ee2-6db93bbce15d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '126'
 ht-degree: 0%
 
 ---
 
-# Adobe Pass Authentication JavaScript 4.6.0发行说明 {#javascript-sdk-460-release-notes}
+# Adobe Pass Authentication JavaScript 4.6.0发行说明 {#javascript-sdk-460-rn}
 
 >[!NOTE]
 >
@@ -17,20 +17,18 @@ ht-degree: 0%
 
 本页介绍了此版本的新增功能、更改和已知问题：
 
-## 内部版本号 {#build-no-javascript-sdk-460}
+## 内部版本号 {#build-number-460}
 
 Adobe Pass身份验证： JavaScript 4.6.0
 
 发行日期：**09/20/2022 - 09/22/2022**
 
-
-## 发行版概述 {#overview-javascript-sdk-460}
+## 发行版概述 {#release-overview-460}
 
 * 删除了`eval`函数的使用，从而使SDK符合内容安全策略。
 * 修复了合作伙伴应用程序明确清除浏览器的本地存储时，身份验证流无法成功完成的问题。
 
-
-## 发行包 {#rel-pkg-javascript-sdk-460}
+## 发行包 {#release-package-460}
 
 生产URL为：https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js
 

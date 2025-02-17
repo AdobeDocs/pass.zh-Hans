@@ -2,9 +2,9 @@
 title: Adobe Pass Authentication 2.64发行说明
 description: Adobe Pass Authentication 2.64发行说明
 exl-id: 4db21026-a0c2-4e33-b01f-4ccae824a110
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
-source-wordcount: '136'
+source-wordcount: '134'
 ht-degree: 0%
 
 ---
@@ -17,25 +17,24 @@ ht-degree: 0%
 
 本页介绍了此版本的新增功能、更改和已知问题：
 
-## 服务器端和Web客户端 {#ss-web-clients}
+## 服务器端和Web客户端 {#server-side-web-clients-264}
 
-* [内部版本号](#build-no-264)
-* [新增功能](#new-featres-264)
-* [错误修复](#bug-fixes-264)
+* [内部版本号](#build-number-264)
+* [发行版概述](#release-overview-264)
 
-### 内部版本号 {#build-no-264}
+### 内部版本号 {#build-number-264}
 
 Adobe Pass身份验证： adobe-pass-**2.64**
 
 发行日期：**2022年11月8日 — 2022年11月10日**
 
-### 新增功能 {#new-featres-264}
+### 发行版概述 {#release-overview-264}
 
 * 基础架构更新，旨在缩短服务器响应时间，提高系统整体性能。
 * 改进了新的平台识别机制。
 * 能够阻止来自MVPD的未经请求的身份验证响应，其中SAML断言中缺少“in_response_to”参数。
 
-### 错误修复 {#bug-fixes-264}
+#### 错误修复
 
 * 修复了某些旧版TempPass令牌的格式不正确的问题。
 * 解决了第二个屏幕身份验证流程中的轻微问题。

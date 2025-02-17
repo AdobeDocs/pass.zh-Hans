@@ -2,9 +2,9 @@
 title: Adobe Pass Authentication 2.68发行说明
 description: Adobe Pass Authentication 2.68发行说明
 exl-id: 88628696-448e-4afa-91f0-d3767d68d2f4
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
-source-wordcount: '148'
+source-wordcount: '146'
 ht-degree: 0%
 
 ---
@@ -20,20 +20,20 @@ ht-degree: 0%
 ## 服务器端和Web客户端 {#server-side-web-clients-268}
 
 * [内部版本号](#build-number-268)
-* [新增功能](#new-features-268)
-* [错误修复](#bug-fixes-268)
+* [发行版概述](#release-overview-268)
 
 ### 内部版本号 {#build-number-268}
 
 Adobe Pass身份验证： adobe-pass-**2.68.0.5**
-发行日期： **2023年12月5日 — 2023年12月7日**
 
-### 新增功能 {#new-features-268}
+发行日期：**2023年12月5日 — 2023年12月7日**
+
+### 发行版概述 {#release-overview-268}
 
 * 正在开发新的REST API。 计划在即将发布的专用版本中提供的新端点和流程。 正在更新文档以使用这些新API。
 * 持续改善内部架构。
 * 已将Device Atlas库更新到最新版本以改进设备识别。
 
-#### 错误修复 {#bug-fixes-268}
+#### 错误修复
 
-* 修复了Vidgo MVPD的问题，以便无法为同一资源返回多个决策。
+* 修复了Vidgo MVPD的一个问题，以便无法为同一资源返回多个决策。
