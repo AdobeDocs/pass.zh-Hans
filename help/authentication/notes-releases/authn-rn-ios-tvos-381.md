@@ -2,18 +2,18 @@
 title: Authentication iOS / tvOS 3.8.1发行说明
 description: Authentication iOS / tvOS 3.8.1发行说明
 exl-id: e1e24b47-e5b7-4706-8690-ad71dee35cb8
-source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
+source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '96'
+source-wordcount: '92'
 ht-degree: 0%
 
 ---
 
 # Authentication iOS / tvOS 3.8.1发行说明 {#ios-tvos-sdk-381-rn}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+> 确保随时了解汇总在[产品公告](/help/authentication/product-announcements.md)页中的最新Adobe Pass身份验证产品公告和停用时间表。
 
 本页介绍了此版本的新增功能、更改和已知问题：
 

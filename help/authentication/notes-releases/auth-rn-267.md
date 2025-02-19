@@ -2,18 +2,18 @@
 title: Adobe Pass Authentication 2.67发行说明
 description: Adobe Pass Authentication 2.67发行说明
 exl-id: d899fe96-a273-4681-90a5-bde54cc2f3b3
-source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
+source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '127'
+source-wordcount: '122'
 ht-degree: 0%
 
 ---
 
 # Adobe Pass Authentication 2.67发行说明 {#authn-267-rn}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+> 确保随时了解汇总在[产品公告](/help/authentication/product-announcements.md)页中的最新Adobe Pass身份验证产品公告和停用时间表。
 
 本页介绍了此版本的新增功能、更改和已知问题：
 
