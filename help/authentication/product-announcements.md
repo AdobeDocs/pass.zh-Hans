@@ -2,9 +2,9 @@
 title: 产品公告
 description: 产品公告
 exl-id: 3c9c66e1-d31d-4af3-8ab2-eb32492f42ca
-source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
+source-git-commit: 4ad5ea619f64a78a72f69228c9ae3c83a7b66f24
 workflow-type: tm+mt
-source-wordcount: '859'
+source-wordcount: '883'
 ht-degree: 1%
 
 ---
@@ -52,6 +52,13 @@ ht-degree: 1%
 ## 产品版本 {#product-releases}
 
 此部分编译对Adobe Pass身份验证的发行历史记录和相应发行说明的引用。
+
+### 2025 {#product-releases-2025}
+
+| 发行说明 | 日期 |
+|-----------------------------------------------------------------------------------------------------------|-------------------------|
+| [Adobe Pass Authentication 3.1.0发行说明](notes-releases/auth-rn-310.md) | 02/25/2025 - 02/27/2025 |
+| [Adobe Pass Authentication JavaScript SDK 4.7.1发行说明](notes-releases/authn-rn-javascript-471.md) | 02/25/2025 - 02/27/2025 |
 
 ### 2024 {#product-releases-2024}
 
