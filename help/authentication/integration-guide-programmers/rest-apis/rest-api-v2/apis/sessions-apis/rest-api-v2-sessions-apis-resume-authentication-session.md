@@ -2,9 +2,9 @@
 title: 恢复身份验证会话
 description: REST API V2 — 恢复身份验证会话
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
+source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
 workflow-type: tm+mt
-source-wordcount: '841'
+source-wordcount: '876'
 ht-degree: 1%
 
 ---
@@ -233,17 +233,14 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">原因类型</td>
                <td>
-                  用于说明“actionName”的原因类型。
+                  说明“actionName”的原因类型。
                   <br/><br/>
                   可能的值包括：
                   <ul>
-                    <li><b>无</b></li>
-                    <li><b>已验证</b></li>
-                    <li><b>临时</b></li>
-                    <li><b>已降级</b></li>
-                    <li><b>authenticatedSSO</b></li>
-                    <li><b>pfs_fallback</b></li>
-                    <li><b>configuration_fallback</b></li>
+                    <li><b>无</b><br/>需要客户端应用程序才能继续验证。</li>
+                    <li><b>已通过身份验证</b><br/>客户端应用程序已通过基本访问流进行身份验证。</li>
+                    <li><b>临时</b><br/>客户端应用程序已通过临时访问流进行身份验证。</li>
+                    <li><b>已降级</b><br/>客户端应用程序已通过降级的访问流进行身份验证。</li>
                   </ul>
                <td><i>必填</i></td>
             </tr>
@@ -353,6 +350,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authenticate",
     "actionType": "interactive",
+    "reasonType": "none",
     "url": "/api/v2/authenticate/REF30/8ER640M",
     "code": "8ER640M",
     "sessionId": "1b614390-6610-4d14-9421-6565f6e75958",
@@ -444,6 +442,8 @@ Content-Type: application/json;charset=UTF-8
     "serviceProvider": "REF30"
 }
 ```
+
+>[!ENDTABS]
 
 ### 4.使用基本或提升TempPass恢复身份验证会话（非必需）
 

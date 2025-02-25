@@ -2,9 +2,9 @@
 title: 创建身份验证会话
 description: REST API V2 — 创建身份验证会话
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
+source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
 workflow-type: tm+mt
-source-wordcount: '1000'
+source-wordcount: '1047'
 ht-degree: 1%
 
 ---
@@ -132,7 +132,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
       <td>
-        <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Platform-Subject-Token</a>标头文档介绍了为Platform Identity方法生成单点登录有效负载的过程。Adobe
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>标头文档介绍了为Platform Identity方法生成单点登录有效负载的过程。
         <br/><br/>
         有关使用平台标识启用单点登录的流的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台标识流的单点登录</a>文档。
       </td>
@@ -268,17 +268,15 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">原因类型</td>
                <td>
-                  用于说明“actionName”的原因类型。
+                  说明“actionName”的原因类型。
                   <br/><br/>
                   可能的值包括：
                   <ul>
-                    <li><b>无</b></li>
-                    <li><b>已验证</b></li>
-                    <li><b>临时</b></li>
-                    <li><b>已降级</b></li>
-                    <li><b>authenticatedSSO</b></li>
-                    <li><b>pfs_fallback</b></li>
-                    <li><b>configuration_fallback</b></li>
+                    <li><b>无</b><br/>需要客户端应用程序才能继续验证。</li>
+                    <li><b>已通过身份验证</b><br/>客户端应用程序已通过基本访问流进行身份验证。</li>
+                    <li><b>临时</b><br/>客户端应用程序已通过临时访问流进行身份验证。</li>
+                    <li><b>已降级</b><br/>客户端应用程序已通过降级的访问流进行身份验证。</li>
+                    <li><b>authenticatedSSO</b><br/>客户端应用程序已通过单点登录访问流验证。</li>
                   </ul>
                <td><i>必填</i></td>
             </tr>
@@ -483,6 +481,8 @@ Content-Type: application/json;charset=UTF-8
     "serviceProvider": "REF30"
 }
 ```
+
+>[!ENDTABS]
 
 ### 4.使用基本或提升TempPass创建身份验证会话（非必需）
 

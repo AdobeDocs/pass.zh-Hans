@@ -2,9 +2,9 @@
 title: 检索合作伙伴身份验证请求
 description: REST API V2 — 检索合作伙伴身份验证请求
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
+source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
 workflow-type: tm+mt
-source-wordcount: '1136'
+source-wordcount: '1230'
 ht-degree: 1%
 
 ---
@@ -258,6 +258,23 @@ ht-degree: 1%
                <td><i>必填</i></td>
             </tr>
             <tr>
+               <td style="background-color: #DEEBFF;">原因类型</td>
+               <td>
+                  说明“actionName”的原因类型。
+                  <br/><br/>
+                  可能的值包括：
+                  <ul>
+                    <li><b>无</b><br/>需要客户端应用程序才能继续验证。</li>
+                    <li><b>已通过身份验证</b><br/>客户端应用程序已通过基本访问流进行身份验证。</li>
+                    <li><b>临时</b><br/>客户端应用程序已通过临时访问流进行身份验证。</li>
+                    <li><b>已降级</b><br/>客户端应用程序已通过降级的访问流进行身份验证。</li>
+                    <li><b>authenticatedSSO</b><br/>客户端应用程序已通过单点登录访问流验证。</li>
+                    <li><b>pfs_fallback</b><br/>由于<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>标头值缺失或无效，需要客户端应用程序回退到基本身份验证流程。</li>
+                    <li><b>configuration_fallback</b><br/>由于Adobe Pass后端上的合作伙伴单点登录配置，需要客户端应用程序回退到基本身份验证流程。</li>
+                  </ul>
+               <td><i>必填</i></td>
+            </tr>
+            <tr>
                <td style="background-color: #DEEBFF;">missingParameters</td>
                <td>
                     需要提供以完成基本身份验证流程的缺失参数。
@@ -379,6 +396,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "partner_profile",
     "actionType": "direct",
+    "reasonType": "none",
     "url": "/api/v2/REF30/profiles/sso/Apple",
     "sessionId": "83c046be-ea4b-4581-b5f2-13e56e69dee9",
     "mvpd": "Cablevision",
@@ -435,15 +453,52 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3.检索合作伙伴身份验证请求，但回退到基本身份验证流程，而不丢失参数
+### 3.检索合作伙伴身份验证请求，但由于AP-Partner-Framework-Status标头值缺失或无效，将回退到基本身份验证流程
 
->[!IMPORTANT]
-> 
-> 假设
-> 
-> <br/>
->
-> * 回退到基本身份验证流程，原因在于合作伙伴单点登录参数或Adobe Pass后端上的合作伙伴单点登录配置。
+>[!BEGINTABS]
+
+>[!TAB 请求]
+
+```HTTPS
+POST /api/v2/REF30/sessions/sso/Apple HTTP/1.1
+ 
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    Content-Type: application/x-www-form-urlencoded
+    AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+    X-Device-Info: ewoJInByaW1hcnlIYXJkd2FyZVR5cGUiOiAiU2V0VG9wQm94IiwKCSJtb2RlbCI6ICJUViA1dGggR2VuIiwKCSJtYW51ZmFjdHVyZXIiOiAiQXBwbGUiLAoJIm9zTmFtZSI6ICJ0dk9TIgoJIm9zVmVuZG9yIjogIkFwcGxlIiwKCSJvc1ZlcnNpb24iOiAiMTEuMCIKfQ==
+    AP-Partner-Framework-Status: ewogICAgImZyYW1ld29ya1Blcm1pc3Npb25JbmZvIjogewogICAgICAiYWNjZXNzU3RhdHVzIjogImRlbmllZCIKICAgIH0sCiAgICAiZnJhbWV3b3JrUHJvdmlkZXJJbmZvIiA6IHt9Cn0=
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
+
+Body:
+
+domainName=adobe.com&redirectUrl=https%3A%2F%2Fadobe.com
+```
+
+>[!TAB 响应]
+
+```HTTPS
+HTTP/1.1 200 OK  
+
+Content-Type: application/json;charset=UTF-8
+
+{
+    "actionName": "authenticate",
+    "actionType": "interactive",
+    "reasonType": "pfs_fallback",
+    "url": "/api/v2/authenticate/REF30/OKTWW2W",
+    "code": "OKTWW2W",
+    "sessionId": "748f0b9e-a2ae-46d5-acd9-4b4e6d71add7",
+    "mvpd": "Cablevision",
+    "serviceProvider": "REF30",
+    "notBefore": "1733735289035",
+    "notAfter": "1733737089035"
+}
+```
+
+>[!ENDTABS]
+
+### 4.检索合作伙伴身份验证请求，但由于Adobe Pass后端上的合作伙伴单点登录配置，将回退到基本身份验证流程
 
 >[!BEGINTABS]
 
@@ -475,7 +530,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authenticate",
     "actionType": "interactive",
-    "reasonType": "none",
+    "reasonType": "configuration_fallback",
     "url": "/api/v2/authenticate/REF30/OKTWW2W",
     "code": "OKTWW2W",
     "sessionId": "748f0b9e-a2ae-46d5-acd9-4b4e6d71add7",
@@ -488,15 +543,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4.检索合作伙伴身份验证请求，但回退到缺少参数的基本身份验证流程
-
->[!IMPORTANT]
->
-> 假设
->
-> <br/>
->
-> * 回退到基本身份验证流程，原因在于合作伙伴单点登录参数或Adobe Pass后端上的合作伙伴单点登录配置。
+### 5.检索合作伙伴身份验证请求，但由于缺少参数而回退到基本身份验证流程
 
 >[!BEGINTABS]
 
