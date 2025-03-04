@@ -2,9 +2,9 @@
 title: API概述
 description: 并发监控的API概述
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: b30d9217e70f48bf8b8d8b5eaaa98fea257f3fc5
+source-git-commit: 0cabb090e3c0282f9bcd097719d52374f2d991dd
 workflow-type: tm+mt
-source-wordcount: '2102'
+source-wordcount: '2155'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ ht-degree: 0%
 
 ### 第一个应用程序 {#first-app-use-cases}
 
-ID为&#x200B;**demo-app**&#x200B;的应用程序已由Adobe团队分配策略，该策略有一个规则将并发流数量限制为3。 策略会根据在Zendesk中提交的请求分配给特定应用程序。
+Adobe团队已为ID为&#x200B;**demo-app**&#x200B;的应用程序分配一项策略，该策略中有一个规则将并发流数量限制为3。 策略会根据在Zendesk中提交的请求分配给特定应用程序。
 
 
 #### 正在检索元数据 {#retrieve-metadata-use-case}
@@ -137,6 +137,10 @@ ID为&#x200B;**demo-app**&#x200B;的应用程序已由Adobe团队分配策略，
 
 另请注意，在这种情况下，**Expires**&#x200B;标头不存在。
 
+如果创建了一个会话，使用&#x200B;**X-Terminate**&#x200B;标头终止另一个会话，则在元数据下，您会发现字段&#x200B;**取代了**。 它的值是一个指示为当前的会话腾出空间而终止的会话的指示器。
+
+![](assets/get-all-running-streams-superseded.png)
+
 #### 破坏策略 {#breaking-policy-app-first}
 
 
@@ -175,7 +179,7 @@ ID为&#x200B;**demo-app**&#x200B;的应用程序已由Adobe团队分配策略，
 **建议**
 **EvaluationResult**&#x200B;将在&#x200B;**associatedAdvice**&#x200B;下包含一系列Advice对象。 这些建议旨在让应用程序为用户显示全面的错误消息，并（可能）允许用户采取相应措施。
 
-目前，有两种类型的建议（由其&#x200B;**type**&#x200B;属性值指定）： **rule-violation**&#x200B;和&#x200B;**remote-termination**。 第一个提供了有关中断的规则以及与当前规则冲突的会话的详细信息（包括可用于远程终止该会话的terminate属性）。 第二个只是声明当前会话被远程会话蓄意终止，这样用户就可以知道在达到限制时是谁将其踢出了会话。
+目前，有两种类型的建议（由其&#x200B;**type**&#x200B;属性值指定）： **rule-violation**&#x200B;和&#x200B;**remote-termination**。 第一个提供了有关中断的规则以及与当前规则冲突的会话的详细信息（包括可用于远程终止该会话的terminate属性）。 第二个只是声明当前会话被远程会话蓄意终止，这样用户就可以知道在达到限制时是谁将其踢出了会话。 如果元数据中包含&#x200B;**superseded**，则相关会话是使用&#x200B;**X-Terminate**&#x200B;标头创建的。
 
 ![](assets/advices.png)
 
