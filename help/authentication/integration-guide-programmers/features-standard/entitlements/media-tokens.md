@@ -2,9 +2,9 @@
 title: 媒体令牌
 description: 媒体令牌
 exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: a19f4fd40c9cd851a00f05f82adbabb85edd8422
 workflow-type: tm+mt
-source-wordcount: '667'
+source-wordcount: '682'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ Adobe Pass身份验证强烈建议不要解析媒体令牌并直接提取其数�
 
 由`mediatoken-verifier-VERSION.jar` Java存档表示的媒体令牌验证器库包括：
 
-* 公钥Adobe。
+* Adobe公钥。
 * 令牌验证API (`ITokenVerifier.java`)。
 * 引用实现(`com.adobe.entitlement.test.EntitlementVerifierTest.java`)。
 * 依赖项和证书密钥库。
@@ -198,10 +198,14 @@ public class EntitlementVerifierTest {
 
 请参阅上述API的&#x200B;**响应**&#x200B;和&#x200B;**示例**&#x200B;部分，以了解授权决策和媒体令牌的结构。
 
+>[!IMPORTANT]
+>
+> 客户端应用程序不需要查询单独的终结点来检索[媒体令牌](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md)，因为它们已包含在允许用户访问的授权决策中。
+
 有关如何以及何时集成上述API的更多详细信息，请参阅以下文档：
 
 * [在主应用程序中执行的基本授权流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
 
->[!IMPORTANT]
+>[!MORELIKETHIS]
 >
-> 客户端应用程序必须将返回的`token`中的`serializedToken`值传递给[媒体令牌验证器](#media-token-verifier)进行验证。
+> [授权阶段常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)

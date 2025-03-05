@@ -1,9 +1,10 @@
 ---
 title: 决策
 description: 决策
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+exl-id: 1efd70af-8c1d-43c4-87fc-14488d42b23d
+source-git-commit: a19f4fd40c9cd851a00f05f82adbabb85edd8422
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '988'
 ht-degree: 0%
 
 ---
@@ -69,6 +70,17 @@ MVPD可能支持通过各种机制进行预授权，每种机制对性能以及�
 >
 > 只有在与MVPD和Adobe Pass身份验证代表达成协议后，才能增加资源的最大数量。
 
+## 授权生存时间(TTL)管理 {#authorization-ttl-management}
+
+授权生存时间(TTL)定义在需要重新授权之前，资源保持授权状态的时间。 此时间范围是有限的，必须与MVPD代表商定。 TTL值可能因以下原因而异：
+
+* 平台类别（例如，台式机、移动设备、电视连接设备）
+* 特定平台(例如iOS、Android、tvOS、Roku、FireTV)
+
+授权(authZ) TTL可由您的组织管理员之一或代表您行事的Adobe Pass身份验证代表通过Adobe Pass [TVE仪表板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)查看和更改。
+
+有关更多详细信息，请参阅[TVE仪表板集成用户指南](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows)文档。
+
 ## 受保护的资源 {#protected-resources}
 
 受保护的资源是指可流化的内容，由MVPD与参与程序员之间协议定义的唯一值标识。
@@ -133,3 +145,8 @@ MVPD可能支持通过各种机制进行预授权，每种机制对性能以及�
 
 * [在主应用程序中执行的基本预授权流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
 * [在主应用程序中执行的基本授权流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
+
+>[!MORELIKETHIS]
+>
+> [预授权阶段常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#preauthorization-phase-faqs-general)
+> [授权阶段常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)
