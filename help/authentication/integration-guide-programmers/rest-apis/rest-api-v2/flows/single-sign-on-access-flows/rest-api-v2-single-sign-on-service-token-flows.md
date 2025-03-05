@@ -2,9 +2,9 @@
 title: 单点登录 — 服务令牌 — 流程
 description: REST API V2 — 单点登录 — 服务令牌 — 流程
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1848'
+source-wordcount: '1858'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > REST API V2实施受[限制机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)文档限制。
+
+>[!MORELIKETHIS]
+>
+> 确保也访问[REST API V2常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
 
 使用Adobe Pass服务时，服务令牌方法使多个应用程序能够使用唯一的用户标识符跨多个设备和平台实现单点登录(SSO)。
 
@@ -38,7 +42,7 @@ ht-degree: 0%
 
 * 外部标识服务必须在多个设备和平台上跨所有应用程序以`JWS`有效负载的形式返回一致的信息。
 * 第一个流应用程序必须检索唯一用户标识符，并将`JWS`有效负载作为所有指定该标识符的请求的[AD-Service-Token](../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)标头的一部分包含。
-* 第一个流应用程序必须选择一个MVPD。
+* 第一个流应用程序必须选择MVPD。
 * 第一个流应用程序必须启动身份验证会话，才能使用选定的MVPD登录。
 * 第一个流应用程序必须在用户代理中使用选定的MVPD进行身份验证。
 * 第二个流应用程序必须检索唯一用户标识符，并将`JWS`有效负载作为所有指定该标识符的请求的[AD-Service-Token](../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)标头的一部分包含。
@@ -49,7 +53,7 @@ ht-degree: 0%
 > 
 > <br/>
 > 
-> * 第一流应用程序支持用户交互以选择MVPD。
+> * 第一个流应用程序支持用户交互以选择MVPD。
 > * 第一流应用程序支持用户交互以在用户代理中与所选MVPD进行身份验证。
 
 ### 工作流 {#workflow-steps-scenario-performing-authentication-flow-using-service-token-single-sign-on-method}
@@ -102,7 +106,7 @@ ht-degree: 0%
    > 如果验证失败，将生成错误响应，提供附加信息以遵守[增强型错误代码](../../../../features-standard/error-reporting/enhanced-error-codes.md)文档。
 
 1. **在用户代理中打开URL：**&#x200B;会话终结点响应包含以下数据：
-   * `url`可用于在MVPD登录页中启动交互式身份验证。
+   * `url`可用于在MVPD登录页面中启动交互式身份验证。
    * `actionName`属性设置为“身份验证”。
    * `actionType`属性设置为“交互式”。
 

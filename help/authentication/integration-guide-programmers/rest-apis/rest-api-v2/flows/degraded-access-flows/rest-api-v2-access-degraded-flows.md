@@ -2,9 +2,9 @@
 title: 降级访问流
 description: REST API V2 — 降级访问流
 exl-id: 9276f5d9-8b1a-4282-8458-0c1e1e06bcf5
-source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1605'
+source-wordcount: '1615'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > REST API V2实施受[限制机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)文档限制。
+
+>[!MORELIKETHIS]
+>
+> 确保也访问[REST API V2常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
 
 降级提供临时绕过特定MVPD身份验证和授权端点。 通常，程序员会启动此操作，但无论谁触发了降级事件，该操作都取决于与受影响的MVPD所做的预先安排。
 

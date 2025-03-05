@@ -2,9 +2,9 @@
 title: 单次注销 — 流量
 description: REST API V2 — 单次注销 — 流量
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '587'
 ht-degree: 0%
 
 ---
@@ -19,16 +19,20 @@ ht-degree: 0%
 >
 > REST API V2实施受[限制机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)文档限制。
 
+>[!MORELIKETHIS]
+>
+> 确保也访问[REST API V2常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
+
 ## 为特定mvpd启动单一注销 {#initiate-single-logout-for-specific-mvpd}
 
 ### 先决条件 {#prerequisites-initiate-single-logout-for-specific-mvpd}
 
-在启动特定MVPD的单次注销之前，请确保满足以下先决条件：
+在启动特定MVPD的单一注销之前，请确保满足以下先决条件：
 
-* 第二个流应用程序必须具有有效的单一登录配置文件，该配置文件已使用单一登录身份验证流之一为MVPD成功创建：
+* 第二个流应用程序必须具有有效的单点登录配置文件，该配置文件已成功使用其中一个单点登录身份验证流程为MVPD创建：
    * [使用平台身份通过单点登录执行身份验证](rest-api-v2-single-sign-on-platform-identity-flows.md)
    * [使用服务令牌通过单点登录执行身份验证](rest-api-v2-single-sign-on-service-token-flows.md)
-* 第二个流应用程序在需要注销MVPD时必须启动单个注销流。
+* 第二个流应用程序必须在需要注销MVPD时启动单个注销流程。
 
 >[!IMPORTANT]
 > 
@@ -40,7 +44,7 @@ ht-degree: 0%
 
 ### 工作流 {#workflow-initiate-single-logout-for-specific-mvpd}
 
-执行给定步骤以实施特定MVPD的单个注销流，如下图所示。
+执行给定步骤以实施特定MVPD的单一注销流程，如下图所示。
 
 ![启动特定mvpd的单一注销](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-initiate-single-logout-for-specific-mvpd-flow.png)
 
@@ -62,7 +66,7 @@ ht-degree: 0%
    >
    > <br/>
    > 
-   > 有关`Adobe-Subject-Token`标头的更多详细信息，请参阅[Adobe主题令牌](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)文档。
+   > 有关`Adobe-Subject-Token`标头的更多详细信息，请参阅[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)文档。
    > 
    > <br/>
    > 
@@ -89,9 +93,9 @@ ht-degree: 0%
    > 
    > 如果验证失败，将生成错误响应，提供附加信息以遵守[增强型错误代码](../../../../features-standard/error-reporting/enhanced-error-codes.md)文档。
 
-1. **指示注销完成：**&#x200B;如果MVPD不支持注销流程，则流应用程序将处理该响应，并可以使用它选择性地在用户界面上显示特定消息。
+1. **指示注销完成：**&#x200B;如果MVPD不支持注销流程，则流式应用程序会处理该响应，并可以使用它选择性地在用户界面上显示特定消息。
 
-1. **启动MVPD注销：**&#x200B;如果MVPD支持注销流程，则流应用程序将处理响应并使用用户代理启动与MVPD的注销流程。 该流可能包括到MVPD系统的多个重定向。 但是，结果是MVPD执行其内部清理，并将最终注销确认发送回Adobe Pass后端。
+1. **启动MVPD注销：**&#x200B;如果MVPD不支持注销流程，则流应用程序会处理响应并使用用户代理启动MVPD的注销流程。 该流程可能包括多个重定向到MVPD系统的操作。 但是，结果是MVPD执行其内部清理，并将最终注销确认发送回Adobe Pass后端。
 
 1. **指示注销完成：**&#x200B;流应用程序可以等待用户代理到达提供的`redirectUrl`，并可以将它用作信号，以选择在用户界面上显示特定消息。
 

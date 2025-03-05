@@ -2,9 +2,9 @@
 title: 检索特定mvpd的配置文件
 description: REST API V2 — 检索特定mvpd的配置文件
 exl-id: ed1abc33-c279-4465-b5a0-b4e5b892076e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1006'
+source-wordcount: '1016'
 ht-degree: 1%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 > REST API V2实施受[限制机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)文档限制。
+
+>[!MORELIKETHIS]
+>
+> 确保也访问[REST API V2常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
 
 ## 请求 {#request}
 
@@ -94,7 +98,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
       <td>
-        <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Platform-Subject-Token</a>标头文档介绍了为Platform Identity方法生成单点登录有效负载的过程。Adobe
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>标头文档介绍了为Platform Identity方法生成单点登录有效负载的过程。
         <br/><br/>
         有关使用平台标识启用单点登录的流的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台标识流的单点登录</a>文档。
       </td>
@@ -171,7 +175,7 @@ ht-degree: 1%
       <td>403</td>
       <td>禁止</td>
       <td>
-        临时访问生存时间(TTL)已过期或超出最大资源数，客户端需要指示用户使用常规MVPD启动基本验证流程。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。
+        临时访问生存时间(TTL)已过期或超出最大资源数，客户端需要指示用户使用常规MVPD启动基本身份验证流程。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。
       </td>
    </tr>
    <tr>

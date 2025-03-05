@@ -2,9 +2,9 @@
 title: 检索用户档案
 description: REST API V2 — 检索配置文件
 exl-id: 72922aa8-95ca-48dc-8523-e335802fc366
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '814'
+source-wordcount: '824'
 ht-degree: 1%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 > REST API V2实施受[限制机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)文档限制。
+
+>[!MORELIKETHIS]
+>
+> 确保也访问[REST API V2常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
 
 ## 请求 {#request}
 
@@ -89,7 +93,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
       <td>
-        <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Platform-Subject-Token</a>标头文档介绍了为Platform Identity方法生成单点登录有效负载的过程。Adobe
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>标头文档介绍了为Platform Identity方法生成单点登录有效负载的过程。
         <br/><br/>
         有关使用平台标识启用单点登录的流的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台标识流的单点登录</a>文档。
       </td>

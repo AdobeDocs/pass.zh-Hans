@@ -2,10 +2,10 @@
 title: 使用代码检索身份验证会话
 description: REST API V2 — 使用代码检索身份验证会话
 exl-id: 5cc209eb-ee6b-4bb9-9c04-3444408844b7
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '415'
-ht-degree: 2%
+source-wordcount: '425'
+ht-degree: 3%
 
 ---
 
@@ -18,6 +18,10 @@ ht-degree: 2%
 >[!IMPORTANT]
 >
 > REST API V2实施受[限制机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)文档限制。
+
+>[!MORELIKETHIS]
+>
+> 确保也访问[REST API V2常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
 
 ## 请求 {#request}
 

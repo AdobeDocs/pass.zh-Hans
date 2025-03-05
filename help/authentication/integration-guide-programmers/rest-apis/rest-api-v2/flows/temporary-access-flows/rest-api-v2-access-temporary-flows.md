@@ -2,9 +2,9 @@
 title: 临时访问流
 description: REST API V2 — 临时访问流
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '3215'
+source-wordcount: '3225'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > REST API V2实施受[限制机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)文档限制。
+
+>[!MORELIKETHIS]
+>
+> 确保也访问[REST API V2常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
 
 TempPass允许程序员提供对其受保护内容的临时访问权限，而无需要求用户使用有效的MVPD帐户进行身份验证。
 

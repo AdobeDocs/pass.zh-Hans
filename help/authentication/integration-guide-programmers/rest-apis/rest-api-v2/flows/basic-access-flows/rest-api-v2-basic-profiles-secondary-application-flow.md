@@ -2,9 +2,9 @@
 title: 基本配置文件 — 辅助应用程序 — 流量
 description: REST API V2 — 基本配置文件 — 辅助应用程序 — 流量
 exl-id: 1fcefcfa-7534-4b85-b3b5-df513685d66b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '408'
+source-wordcount: '418'
 ht-degree: 0%
 
 ---
@@ -19,6 +19,10 @@ ht-degree: 0%
 >
 > REST API V2实施受[限制机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)文档限制。
 
+>[!MORELIKETHIS]
+>
+> 确保也访问[REST API V2常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
+
 Adobe Pass身份验证权利中的&#x200B;**配置文件流**&#x200B;允许辅助应用程序访问有关活动用户登录的信息。
 
 基本用户档案流允许您查询以下方案：
@@ -31,7 +35,7 @@ Adobe Pass身份验证权利中的&#x200B;**配置文件流**&#x200B;允许辅�
 
 在检索特定身份验证代码的配置文件之前，请确保满足以下先决条件：
 
-* 辅助应用程序具有用于与MVPD执行交互式身份验证的`code`，它想要检索特定身份验证代码的配置文件。
+* 辅助应用程序具有用于与MVPD进行交互式身份验证的`code`，它想要检索特定身份验证代码的配置文件。
 
 ### 工作流 {#workflow-retrieve-profile-for-specific-code}
 

@@ -2,9 +2,9 @@
 title: 基本配置文件 — 主要应用程序 — 流量
 description: REST API V2 — 基本配置文件 — 主应用程序 — 流量
 exl-id: 19ddf382-9a32-4b94-aa84-7611c0e1780e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '964'
+source-wordcount: '974'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > REST API V2实施受[限制机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)文档限制。
+
+>[!MORELIKETHIS]
+>
+> 确保也访问[REST API V2常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
 
 Adobe Pass身份验证权利文件中的&#x200B;**配置文件流**&#x200B;允许流式应用程序访问有关活动用户登录的信息。
 
@@ -85,13 +89,13 @@ Adobe Pass身份验证权利文件中的&#x200B;**配置文件流**&#x200B;允�
 
 ### 工作流 {#workflow-retrieve-profile-for-specific-mvpd}
 
-按照给定的步骤实施在主应用程序中执行的特定MVPD的基本配置文件检索流，如下图所示。
+按照给定的步骤，为主要应用程序中执行的特定MVPD实施基本配置文件检索流程，如下图所示。
 
 ![检索特定mvpd的配置文件](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-primary-application-for-specific-mvpd.png)
 
 *检索特定mvpd的配置文件*
 
-1. **检索特定mvpd的配置文件：**&#x200B;流应用程序通过向“配置文件”端点发送请求，收集所有必需的数据以检索该特定MVPD的配置文件信息。
+1. **检索特定mvpd的配置文件：**&#x200B;流应用程序通过向“配置文件”端点发送请求，收集检索该特定MVPD的配置文件信息所需的所有数据。
 
    >[!IMPORTANT]
    >
@@ -130,7 +134,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**配置文件流**&#x200B;允�
 
 在检索特定身份验证代码的配置文件之前，请确保满足以下先决条件：
 
-* 流式应用程序具有用于与MVPD执行交互式身份验证的`code`，它想要检索特定身份验证代码的配置文件。
+* 流式应用程序希望检索特定身份验证代码的配置文件，该应用程序具有用于与MVPD进行交互式身份验证的`code`。
 
 ### 工作流 {#workflow-retrieve-profile-for-specific-code}
 

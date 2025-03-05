@@ -2,9 +2,9 @@
 title: 单点登录 — 合作伙伴 — 流程
 description: REST API V2 — 单点登录 — 合作伙伴 — 流程
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1444'
+source-wordcount: '1454'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > REST API V2实施受[限制机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)文档限制。
+
+>[!MORELIKETHIS]
+>
+> 确保也访问[REST API V2常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
 
 使用Adobe Pass服务时，Partner方法可让多个应用程序使用合作伙伴框架状态有效负载在设备级别实现单点登录(SSO)。
 
@@ -47,8 +51,8 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
 > 
 > <br/>
 > 
-> * 合作伙伴框架支持用户交互以选择MVPD。
-> * 合作伙伴框架支持用户交互以通过所选MVPD进行身份验证。
+> * 合作伙伴框架支持用户通过交互选择MVPD。
+> * 合作伙伴框架支持用户通过交互使用选定的MVPD进行身份验证。
 > * 合作伙伴框架提供用户权限和提供程序信息。
 
 ### 工作流 {#workflow-retrieve-partner-authentication-request}
@@ -119,7 +123,7 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
    * `authenticationRequest - request`属性包含传递到合作伙伴框架的SAML请求。
    * `authenticationRequest - attributesNames`属性包含传递到合作伙伴框架的SAML属性。
 
-   如果Adobe Pass后端未识别有效的配置文件，并且合作伙伴单点登录验证通过，则流应用程序会收到一个包含操作和数据的响应，这些操作和数据将传递到合作伙伴框架，以便使用MVPD启动身份验证流程。
+   如果Adobe Pass后端未识别有效的配置文件，并且合作伙伴单点登录验证通过，则流应用程序会收到一个包含操作和数据的Response，以便传递到Partner Framework，从而开始使用MVPD的身份验证流程。
 
    有关使用合作伙伴身份验证响应的配置文件检索流程的更多详细信息，请参阅[使用合作伙伴身份验证响应检索配置文件](#retrieve-profile-using-partner-authentication-response)部分。
 
@@ -154,15 +158,15 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
 
 在使用合作伙伴身份验证响应检索配置文件之前，请确保满足以下先决条件：
 
-* 合作伙伴框架必须执行对所选MVPD的身份验证。
+* 合作伙伴框架必须使用选定的MVPD执行身份验证。
 * 流应用程序必须从合作伙伴框架中获取合作伙伴身份验证响应以及合作伙伴框架状态信息，并将其传递到Adobe Pass服务器。
 
 >[!IMPORTANT]
 >
 > 假设
 >
-> * 合作伙伴框架支持用户交互以选择MVPD。
-> * 合作伙伴框架支持用户交互以通过所选MVPD进行身份验证。
+> * 合作伙伴框架支持用户通过交互选择MVPD。
+> * 合作伙伴框架支持用户通过交互使用选定的MVPD进行身份验证。
 > * 合作伙伴框架提供用户权限和提供程序信息。
 
 ### 工作流 {#workflow-retrieve-profile-using-partner-authentication-response}
@@ -173,7 +177,7 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
 
 *使用合作伙伴身份验证响应检索经过身份验证的配置文件*
 
-1. **使用合作伙伴框架完成MVPD身份验证：**&#x200B;如果身份验证流程成功，则合作伙伴框架与MVPD的交互将生成合作伙伴身份验证响应（SAML响应），该响应将随合作伙伴框架状态信息一起返回。
+1. **使用合作伙伴框架完成MVPD身份验证：**&#x200B;如果身份验证流程成功，合作伙伴框架与MVPD的交互将生成合作伙伴身份验证响应（SAML响应），该响应将随合作伙伴框架状态信息一起返回。
 
 1. **返回合作伙伴身份验证响应：**&#x200B;流式应用程序验证响应数据以确保满足基本条件：
    * 已授予用户权限访问状态。

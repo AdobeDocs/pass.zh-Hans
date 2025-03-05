@@ -2,9 +2,9 @@
 title: 检索特定代码的配置文件
 description: REST API V2 — 检索特定代码的配置文件
 exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '701'
+source-wordcount: '711'
 ht-degree: 1%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 > REST API V2实施受[限制机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)文档限制。
+
+>[!MORELIKETHIS]
+>
+> 确保也访问[REST API V2常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
 
 ## 请求 {#request}
 
@@ -127,7 +131,7 @@ ht-degree: 1%
       <td>403</td>
       <td>禁止</td>
       <td>
-        临时访问生存时间(TTL)已过期或超出最大资源数，客户端需要指示用户使用常规MVPD启动基本验证流程。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。
+        临时访问生存时间(TTL)已过期或超出最大资源数，客户端需要指示用户使用常规MVPD启动基本身份验证流程。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。
       </td>
    </tr> 
    <tr>

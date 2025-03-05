@@ -2,7 +2,7 @@
 title: 节流机构
 description: 了解Adobe Pass身份验证中使用的限制机制。 在此页面中浏览此机制的概述。
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
 source-wordcount: '1141'
 ht-degree: 0%
@@ -42,7 +42,7 @@ Pass Authentication引入了Throttling机制，以确保在客户的用户之间
 
 您可以在[此处](legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md)找到有关如何传递X-Forwarded-For标头的更多详细信息。
 
-### 实际限制和端点
+### 实际限制和端点 {#throttling-mechanism-limits}
 
 目前，默认限制允许每秒最多1个请求，初始突发为10个请求（所标识的客户端第一次交互允许一次性使用，这应允许成功完成初始化）。 这应该不会影响我们所有客户的任何常规业务案例。
 
@@ -77,27 +77,27 @@ Pass Authentication引入了Throttling机制，以确保在客户的用户之间
 
 #### setRequestor
 
-在从SDK中使用`setRequestor`函数达到限制限制时，SDK将通过`errorHandler`回调返回CFG429错误代码。
+在从SDK使用`setRequestor`函数达到限制限制时，SDK将通过`errorHandler`回调返回CFG429错误代码。
 
 #### getAuthorization
 
-在从SDK中使用`getAuthorization`函数达到限制限制时，SDK将通过`errorHandler`回调返回Z100错误代码。
+从SDK使用`getAuthorization`函数达到限制时，SDK将通过`errorHandler`回调返回Z100错误代码。
 
 #### checkPreauthorizedResources
 
-在从SDK中使用`checkPreauthorizedResources`函数达到限制限制时，SDK将通过`errorHandler`回调返回P100错误代码。
+从SDK使用`checkPreauthorizedResources`函数达到限制时，SDK将通过`errorHandler`回调返回P100错误代码。
 
 #### getMetadata
 
 使用SDK中的`getMetadata`函数达到限制时，SDK将通过`setMetadataStatus`回调返回空响应。
 
-有关每个特定实施的详细信息，请参阅特定SDK文档。
+有关每个特定实施的详细信息，请参阅特定的SDK文档。
 
 - [JavaScript SDK API参考](legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
 - [Android SDK API参考](legacy/sdks/android-sdk/android-sdk-api-reference.md)
 - [iOS/tvOS API参考](legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
 
-### API响应更改和响应
+### API响应更改和响应 {#throttling-mechanism-response}
 
 当我们确定已违反限制时，我们会将此请求标记为特定的响应状态（HTTP 429请求过多），并指示您已使用在时间间隔内分配给用户设备（IP地址）的所有令牌。
 

@@ -2,9 +2,9 @@
 title: 单点登录 — 平台标识 — 流程
 description: REST API V2 — 单点登录 — 平台标识 — 流程
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1836'
+source-wordcount: '1846'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > REST API V2实施受[限制机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)文档限制。
+
+>[!MORELIKETHIS]
+>
+> 确保也访问[REST API V2常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
 
 使用Adobe Pass服务时，平台标识方法允许多个应用程序使用唯一的平台标识符在设备或平台级别实现单点登录(SSO)。
 

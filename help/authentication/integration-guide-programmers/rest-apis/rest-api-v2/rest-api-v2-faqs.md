@@ -2,9 +2,9 @@
 title: REST API V2常见问题解答
 description: REST API V2常见问题解答
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 871afc4e7ec04d62590dd574bf4e28122afc01b6
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '6963'
+source-wordcount: '8198'
 ht-degree: 0%
 
 ---
@@ -123,7 +123,51 @@ ht-degree: 0%
 
 当客户端应用程序需要播放内容时，身份验证阶段是预授权阶段或授权阶段的先决步骤。
 
-#### 2.客户端应用程序如何知道用户是否已验证？ {#authentication-phase-faq2}
+#### 2.什么是身份验证会话？该会话的有效时间是多久？ {#authentication-phase-faq2}
+
+身份验证会话是[术语表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#session)文档中定义的术语。
+
+身份验证会话存储有关启动身份验证过程的信息，该信息可以从会话端点检索。
+
+身份验证会话的有效期为`notAfter`时间戳在发出问题时指定的有限且较短的时间范围，这表示在需要重新启动流之前，用户必须完成身份验证过程的时间量。
+
+客户端应用程序可以使用身份验证会话响应来了解如何继续进行身份验证过程。 请注意，在某些情况下，用户不需要进行身份验证，例如提供临时访问、降级访问或用户已经过身份验证。
+
+有关更多信息，请参阅以下文档：
+
+* [创建身份验证会话API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
+* [恢复身份验证会话API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
+* [在主应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
+* [在辅助应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
+
+#### 3.什么是身份验证代码以及它的有效时间长短？ {#authentication-phase-faq3}
+
+身份验证代码是[词汇表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#code)文档中定义的术语。
+
+验证代码存储当用户启动验证过程时生成的唯一值，并唯一标识用户的验证会话，直到该过程完成或验证会话过期为止。
+
+身份验证代码在由`notAfter`时间戳启动身份验证会话时指定的有限和较短时间范围内有效，这表示在需要重新启动流之前，用户必须完成身份验证过程的时间量。
+
+客户端应用程序可以使用身份验证代码验证用户是否已成功完成身份验证并检索用户的配置文件信息，通常通过轮询机制。
+
+客户端应用程序还可以使用身份验证代码来允许用户在同一设备或第二个（屏幕）设备上完成或恢复身份验证过程，因为身份验证会话没有过期。
+
+有关更多信息，请参阅以下文档：
+
+* [创建身份验证会话API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
+* [恢复身份验证会话API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
+* [在主应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
+* [在辅助应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
+
+#### 4.客户端应用程序如何知道用户是否键入了有效的身份验证代码以及身份验证会话是否尚未过期？ {#authentication-phase-faq4}
+
+客户端应用程序可以通过向负责恢复身份验证会话或检索与身份验证代码关联的身份验证会话信息的“会话”端点之一发送请求，来验证用户在辅助（屏幕）应用程序中键入的身份验证代码。
+
+如果提供的身份验证代码键入错误或身份验证会话过期，客户端应用程序将收到[错误](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)。
+
+有关详细信息，请参阅[恢复身份验证会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)和[检索身份验证会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)文档。
+
+#### 5.客户端应用程序如何知道用户是否已验证？ {#authentication-phase-faq5}
 
 客户端应用程序可以查询以下能够验证用户是否已过身份验证的端点之一并返回配置文件信息：
 
@@ -136,7 +180,128 @@ ht-degree: 0%
 * [基本配置文件在主要应用程序中执行](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [基本配置文件在辅助应用程序中执行](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
 
-#### 3.客户端应用程序如何获取用户的元数据信息？ {#authentication-phase-faq3}
+#### 6.什么是配置文件，它的有效时间是多久？ {#authentication-phase-faq6}
+
+配置文件是[词汇表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#profile)文档中定义的术语。
+
+配置文件存储有关用户身份验证有效性的信息、元数据信息以及许多可从配置文件端点检索的信息。
+
+客户端应用程序可以使用配置文件来了解用户的验证状态、访问用户元数据信息、查找用于验证的方法或用于提供身份的实体。
+
+有关更多详细信息，请参阅以下文档：
+
+* [配置文件端点API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
+* [特定MVPD API的配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
+* [特定（身份验证）代码API的配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
+* [基本配置文件在主要应用程序中执行](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
+* [基本配置文件在辅助应用程序中执行](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+
+该配置文件在被`notAfter`时间戳查询时指定的有限时间范围内有效，这表示在需要再次完成身份验证阶段之前，用户具有有效身份验证的时间量。
+
+您组织的一名管理员或代表您行事的Adobe Pass身份验证代表可以通过Adobe Pass [TVE仪表板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)查看和更改这个称为身份验证(authN) [TTL](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#ttl)的有限时间范围。
+
+有关更多详细信息，请参阅[TVE仪表板集成用户指南](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows)文档。
+
+#### 7.客户端应用程序是否应将用户的配置文件信息缓存到永久存储中？ {#authentication-phase-faq7}
+
+客户端应用程序应将用户的配置文件信息缓存在永久性存储中，以避免不必要的请求，并提高用户体验，同时应考虑到以下方面：
+
+| 属性 | 用户体验 |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `attributes` | 客户端应用程序可以使用此项根据不同的[用户元数据](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)密钥（例如，`zip`、`maxRating`等）个性化用户体验。 |
+| `mvpd` | 客户端应用程序可以使用此项来跟踪用户选择的电视提供商。<br/><br/>当当前用户配置文件过期时，客户端应用程序可以使用记住的MVPD选择，只需请求用户确认即可。 |
+| `notAfter` | 客户端应用程序可以使用此项来跟踪用户配置文件过期日期，并在过期时触发重新身份验证过程，从而避免在预授权或授权阶段出现错误。<br/><br/>客户端应用程序错误处理必须能够处理[authenticated_profile_expired](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)错误代码，这表示客户端应用程序要求用户重新进行身份验证。 |
+
+#### 8.客户端应用程序能否在不要求重新验证的情况下扩展用户的配置文件？ {#authentication-phase-faq8}
+
+不适用。
+
+在没有用户交互的情况下，用户配置文件不能超出其有效期，因为它的过期时间是由使用MVPD建立的身份验证TTL确定的。
+
+因此，客户端应用程序必须提示用户重新进行身份验证，并与MVPD登录页面进行交互，以便刷新我们在系统上的配置文件。
+
+但是，对于支持[基于主目录的身份验证](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md) (HBA)的MVPD，将不需要用户输入凭据。
+
+#### 9.每个可用配置文件端点的用例是什么？ {#authentication-phase-faq9}
+
+配置文件端点旨在为客户端应用程序提供以下功能：了解用户的身份验证状态、访问用户元数据信息、查找用于身份验证的方法或用于提供身份的实体。
+
+每个端点都适合特定的用例，如下所示：
+
+| API | 描述 | 用例 |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [配置文件端点API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) | 检索所有用户配置文件。 | **用户首次打开客户端应用程序**<br/><br/>&#x200B;在这种情况下，客户端应用程序不会将用户选定的MVPD标识符缓存到永久存储中。<br/><br/>因此，它将发送单个请求以检索所有可用的用户配置文件。 |
+| 特定MVPD API的[配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | 检索与特定MVPD关联的用户配置文件。 | **用户在上次访问中进行身份验证后返回客户端应用程序**<br/><br/>&#x200B;在这种情况下，客户端应用程序必须将用户之前选择的MVPD标识符缓存到永久存储中。<br/><br/>因此，它将发送一个请求，以检索该特定MVPD的用户配置文件。 |
+| [特定（身份验证）代码API的配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 检索与特定身份验证代码关联的用户配置文件。 | **用户启动身份验证过程**<br/><br/>&#x200B;在此方案中，客户端应用程序必须确定用户是否已成功完成身份验证并检索其配置文件信息。<br/><br/>因此，它将启动轮询机制以检索与身份验证代码关联的用户配置文件。 |
+
+#### 10.如果用户有多个MVPD配置文件，客户端应用程序应该怎么做？ {#authentication-phase-faq10}
+
+当用户有多个MVPD配置文件时，客户端应用程序负责确定处理此场景的最佳方法。
+
+客户端应用程序可以选择提示用户选择所需的MVPD配置文件或自动进行选择，例如从响应中选择第一个用户配置文件或具有最长有效期的用户配置文件。
+
+#### 11.用户配置文件过期后会发生什么情况？ {#authentication-phase-faq11}
+
+用户配置文件过期后，将不再包含在来自配置文件端点的响应中。
+
+如果Profiles端点返回空的配置文件映射响应，则客户端应用程序必须创建新的身份验证会话并提示用户重新进行身份验证。
+
+有关详细信息，请参阅[创建身份验证会话API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)文档。
+
+#### 12.用户配置文件何时失效？ {#authentication-phase-faq12}
+
+在以下情况下，用户配置文件将失效：
+
+* 身份验证TTL过期时间，如配置文件终结点响应中的`notAfter`时间戳所示。
+* 客户端应用程序更改[AP-Device-Identifier](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)标头值时。
+* 客户端应用程序更新用于检索[Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)标头值的客户端凭据时。
+* 当客户端应用程序撤销或更新用于获取客户端凭据的软件语句时。
+
+#### 13.客户端应用程序何时应启动轮询机制？ {#authentication-phase-faq13}
+
+为确保效率并避免不必要的请求，客户端应用程序必须在以下条件下启动轮询机制：
+
+**在主（屏幕）应用程序内执行的身份验证**
+
+在浏览器组件加载为[会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)终结点请求中的`redirectUrl`参数指定的URL后，主（流）应用程序应在用户到达最终目标页面时开始轮询。
+
+**在辅助（屏幕）应用程序内执行的身份验证**
+
+主（流）应用程序应在用户启动身份验证过程后立即开始轮询 — 在收到[会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)端点响应并向用户显示身份验证代码之后。
+
+#### 14.客户端应用程序何时应停止轮询机制？ {#authentication-phase-faq14}
+
+为确保效率并避免不必要的请求，客户端应用程序必须在以下条件下停止轮询机制：
+
+**身份验证成功**
+
+已成功检索用户的配置文件信息，确认其身份验证状态。 此时，不再需要轮询。
+
+**身份验证会话和代码过期**
+
+身份验证会话和代码将过期，如[会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)终结点响应中的`notAfter`时间戳所指示。 如果发生这种情况，用户必须重新启动身份验证过程，使用以前的身份验证代码的轮询应立即停止。
+
+**已生成新的身份验证代码**
+
+如果用户在主设备（屏幕）上请求新的身份验证代码，则现有会话不再有效，使用以前的身份验证代码的轮询应立即停止。
+
+#### 15.客户端应用程序应使用何种间隔时间进行轮询机制？ {#authentication-phase-faq15}
+
+为确保效率并避免不必要的请求，客户端应用程序必须在以下条件下配置轮询机制频率：
+
+| **在主（屏幕）应用程序内执行的身份验证** | **在辅助（屏幕）应用程序内执行的身份验证** |
+|----------------------------------------------------------------------|----------------------------------------------------------------------|
+| 主（流）应用程序应每1-5秒轮询一次。 | 主（流）应用程序应每3-5秒轮询一次。 |
+
+#### 16.客户端应用程序可以发送的轮询请求的最大数量是多少？ {#authentication-phase-faq16}
+
+客户端应用程序必须遵守Adobe Pass身份验证[限制机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-limits)定义的当前限制。
+
+客户端应用程序错误处理必须能够处理[429请求过多](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-response)错误代码，这表示客户端应用程序已超出允许的最大请求数。
+
+有关更多详细信息，请参阅[节流机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)文档。
+
+#### 17.客户端应用程序如何获取用户的元数据信息？ {#authentication-phase-faq17}
 
 客户端应用程序可以查询以下端点之一，这些端点能够返回[用户元数据](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)信息作为配置文件信息的一部分：
 
@@ -144,74 +309,18 @@ ht-degree: 0%
 * [特定MVPD API的配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
 * [特定（身份验证）代码API的配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
 
+客户端应用程序不需要查询单独的端点来检索用户的元数据信息，因为验证用户是否经过身份验证时，获得的配置文件信息中已包含该信息。
+
 有关更多详细信息，请参阅以下文档：
 
 * [基本配置文件在主要应用程序中执行](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [基本配置文件在辅助应用程序中执行](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
 
-#### 4.什么是身份验证会话？该会话的有效时间是多久？ {#authentication-phase-faq4}
+#### 18.客户端应用程序应如何管理降级访问？ {#authentication-phase-faq18}
 
-身份验证会话是[术语表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#session)文档中定义的术语。
+鉴于您的组织打算使用[降级](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)功能，客户端应用程序必须处理降级的访问流，这概述了REST API v2端点在此类场景中的行为。
 
-身份验证会话存储有关启动身份验证过程的信息，该信息可以从会话端点检索。
-
-身份验证会话在发布时指定的有限和短时间范围内有效，指示用户在需要重新启动流之前必须完成身份验证过程的时间量。
-
-客户端应用程序可以使用身份验证会话响应来了解如何继续进行身份验证过程。 请注意，在某些情况下，用户不需要进行身份验证，例如提供临时访问、降级访问或用户已经过身份验证。
-
-有关更多信息，请参阅以下文档：
-
-* [创建身份验证会话API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
-* [恢复身份验证会话API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
-* [在主应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
-* [在辅助应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
-
-#### 5.什么是身份验证代码以及它的有效时间长短？ {#authentication-phase-faq5}
-
-身份验证代码是[词汇表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#code)文档中定义的术语。
-
-验证代码存储当用户启动验证过程时生成的唯一值，并唯一标识用户的验证会话，直到该过程完成或验证会话过期为止。
-
-该认证代码在启动认证会话时指定的有限和短的时间范围内有效，这指示在要求重新启动流之前用户必须完成认证过程的时间量。
-
-客户端应用程序可以使用身份验证代码来允许用户在同一设备或第二台设备上完成或恢复身份验证过程，因为身份验证会话未过期。
-
-有关更多信息，请参阅以下文档：
-
-* [创建身份验证会话API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
-* [恢复身份验证会话API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
-* [在主应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
-* [在辅助应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
-
-#### 6.客户端应用程序如何知道用户是否键入了有效的身份验证代码以及身份验证会话是否尚未过期？ {#authentication-phase-faq6}
-
-客户端应用程序可以通过向负责检索与验证代码关联的验证会话信息的“会话”端点发送请求来验证用户在辅助（屏幕）应用程序中键入的验证代码。
-
-如果提供的身份验证代码键入错误或身份验证会话过期，则客户端应用程序将收到[错误](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)。
-
-有关详细信息，请参阅[检索身份验证会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)文档。
-
-#### 7.什么是配置文件，它的有效时间长短？ {#authentication-phase-faq7}
-
-配置文件是[词汇表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#profile)文档中定义的术语。
-
-配置文件存储有关用户身份验证有效性的信息、元数据信息以及许多可从配置文件端点检索的信息。
-
-客户端应用程序可以使用配置文件来了解用户的验证状态、访问用户元数据信息或查找用于验证的方法。
-
-有关更多详细信息，请参阅以下文档：
-
-* [配置文件端点API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
-* [特定MVPD API的配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
-* [特定（身份验证）代码API的配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
-* [基本配置文件在主要应用程序中执行](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
-* [基本配置文件在辅助应用程序中执行](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
-
-该配置文件在查询时指定的有限时间范围内有效，这表示在需要再次通过身份验证阶段之前，用户已进行了有效身份验证的时间。
-
-您组织的一名管理员或代表您行事的Adobe Pass身份验证代表可以通过Adobe Pass [TVE仪表板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)查看和更改这个称为身份验证(authN) [TTL](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#ttl)的有限时间范围。
-
-有关更多详细信息，请参阅[TVE仪表板集成用户指南](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows)文档。
+有关更多详细信息，请参阅[降级访问流](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md)文档。
 
 +++
 
@@ -476,9 +585,17 @@ Adobe Pass身份验证将不支持在API和流之间集成REST API V2和REST API
 
 是的。
 
-集成REST API V2的客户端应用程序受益于默认启用的增强错误代码功能。
+默认情况下，迁移到REST API V2的客户端应用程序将自动受益于此功能，从而提供更详细和准确的错误信息。
 
 有关更多详细信息，请参阅[增强型错误代码](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)文档。
+
+#### 5.迁移到REST API V2时，现有集成是否需要更改配置？ {#migration-faq5}
+
+不适用。
+
+迁移到REST API V2的客户端应用程序无需对现有MVPD集成进行任何配置更改。 此外，它们将继续对现有[服务提供商](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#service-provider)和[MVPD](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#mvpd)使用相同的标识符。
+
+此外，Adobe Pass身份验证用于与MVPD端点通信的协议保持不变。
 
 +++
 

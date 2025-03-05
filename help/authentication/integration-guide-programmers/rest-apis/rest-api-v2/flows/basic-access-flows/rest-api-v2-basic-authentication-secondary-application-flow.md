@@ -2,9 +2,9 @@
 title: 基本身份验证 — 辅助应用程序 — 流程
 description: REST API V2 — 基本身份验证 — 辅助应用程序 — 流程
 exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '2000'
+source-wordcount: '2010'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,11 @@ ht-degree: 0%
 >
 > REST API V2实施受[限制机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)文档限制。
 
-Adobe Pass身份验证权利内的&#x200B;**身份验证流**&#x200B;允许流式应用程序验证用户是否拥有有效的MVPD帐户。 此过程要求用户具有活动的MVPD帐户，并在MVPD登录页上输入有效的登录凭据。
+>[!MORELIKETHIS]
+>
+> 确保也访问[REST API V2常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
+
+Adobe Pass身份验证权利中的&#x200B;**身份验证流程**&#x200B;允许流式应用程序验证用户是否拥有有效的MVPD帐户。 此过程要求用户拥有活动的MVPD帐户，并在MVPD登录页面上输入有效的登录凭据。
 
 在以下情况下需要验证流程：
 
@@ -30,9 +34,9 @@ Adobe Pass身份验证权利内的&#x200B;**身份验证流**&#x200B;允许流�
 
 在所有这些情况下，调用任何配置文件端点的应用程序都会收到空响应或一个或多个配置文件，但目标对象是不同的MVPD。
 
-**身份验证流**&#x200B;需要用户代理（浏览器）完成从应用程序到Adobe Pass后端，然后到MVPD登录页面，最后返回到应用程序的一系列调用。 此流程可能包括到MVPD系统的多个重定向以及管理为每个域存储的Cookie或会话，如果没有用户代理，实现这些重定向和会话将是非常困难的。
+**身份验证流**&#x200B;需要用户代理（浏览器）完成从应用程序到Adobe Pass后端，再到MVPD登录页面，最后返回到应用程序的一系列调用。 此流程可能包括多次重定向到MVPD系统并管理为每个域存储的Cookie或会话，如果没有用户代理，实现起来和安全可能比较困难。
 
-基于支持用户交互以选择MVPD并在用户代理中使用所选MVPD进行验证的主应用程序（流应用程序）功能，验证方案包括：
+基于支持用户交互以选择MVPD并在用户代理中使用所选MVPD进行身份验证的主要应用程序（流应用程序）功能，身份验证方案包括：
 
 * [在主应用程序中执行身份验证](rest-api-v2-basic-authentication-primary-application-flow.md)
 * [使用预选的mvpd在辅助应用程序中执行身份验证](./rest-api-v2-basic-authentication-secondary-application-flow.md)
@@ -55,11 +59,11 @@ Adobe Pass身份验证权利内的&#x200B;**身份验证流**&#x200B;允许流�
 > <br/>
 > 
 > * 流应用程序支持用户交互以选择MVPD。
-> * 辅助应用程序（通常在辅助设备上）支持用户交互以在用户代理中与所选MVPD进行身份验证。
+> * 辅助应用程序（通常在辅助设备上）支持用户交互以在用户代理中与选定的MVPD进行身份验证。
 
 ### 工作流 {#workflow-perform-authentication-within-secondary-application-with-preselected-mvpd}
 
-按照给定的步骤实施使用预选MVPD在辅助应用程序中执行的基本验证流程，如下图所示。
+按照给定的步骤实施基本身份验证流程，该流程通过预选的MVPD在辅助应用程序中执行，如下图所示。
 
 ![使用预选的mvpd在辅助应用程序中执行身份验证](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-with-preselected-mvpd.png)
 
@@ -109,7 +113,7 @@ Adobe Pass身份验证权利内的&#x200B;**身份验证流**&#x200B;允许流�
 
    如果Adobe Pass后端未标识有效的配置文件，则流应用程序显示可用于在辅助应用程序中恢复身份验证会话的`code`。
 
-1. **验证验证代码：**&#x200B;辅助应用程序验证提供的用户`code`，以确保它可以在用户代理中继续进行MVPD身份验证。
+1. **验证身份验证代码：**&#x200B;辅助应用程序验证提供的用户`code`，以确保它可以在用户代理中继续进行MVPD身份验证。
 
    >[!IMPORTANT]
    >
@@ -199,11 +203,11 @@ Adobe Pass身份验证权利内的&#x200B;**身份验证流**&#x200B;允许流�
 > <br/>
 > 
 > * 辅助应用程序（通常在辅助设备上）支持用户交互以选择MVPD。
-> * 辅助应用程序（通常在辅助设备上）支持用户交互以在用户代理中与所选MVPD进行身份验证。
+> * 辅助应用程序（通常在辅助设备上）支持用户交互以在用户代理中与选定的MVPD进行身份验证。
 
 ### 工作流 {#workflow-perform-authentication-within-secondary-application-without-preselected-mvpd}
 
-按照给定的步骤实施在没有预选MVPD的情况下在辅助应用程序中执行的基本验证流程，如下图所示。
+按照给定的步骤实施在辅助应用程序中执行的基本身份验证流程，而无需预先选择的MVPD，如下图所示。
 
 ![在辅助应用程序中执行身份验证，无需预先选择mvpd](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-without-preselected-mvpd.png)
 
@@ -282,7 +286,7 @@ Adobe Pass身份验证权利内的&#x200B;**身份验证流**&#x200B;允许流�
    如果Adobe Pass后端标识有效的配置文件，则流应用程序无需使用选定的MVPD重新进行身份验证，因为已存在可用于后续决策流的配置文件。
 
 1. **在用户代理中打开URL：**&#x200B;会话终结点响应包含以下数据：
-   * `url`可用于在MVPD登录页中启动交互式身份验证。
+   * `url`可用于在MVPD登录页面中启动交互式身份验证。
    * `actionName`属性设置为“身份验证”。
    * `actionType`属性设置为“交互式”。
 
