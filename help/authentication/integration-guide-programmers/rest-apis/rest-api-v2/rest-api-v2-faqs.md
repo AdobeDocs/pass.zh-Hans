@@ -2,9 +2,9 @@
 title: REST API V2常见问题解答
 description: REST API V2常见问题解答
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 871afc4e7ec04d62590dd574bf4e28122afc01b6
 workflow-type: tm+mt
-source-wordcount: '6744'
+source-wordcount: '6963'
 ht-degree: 0%
 
 ---
@@ -39,57 +39,73 @@ ht-degree: 0%
 
 #### 1.配置阶段的用途是什么？ {#configuration-phase-faq1}
 
-配置阶段的目的是向客户端应用程序提供与其主动集成的MVPD列表，以及Adobe Pass身份验证为每个MVPD保存的配置详细信息。
+配置阶段的目的是向客户端应用程序提供与其主动集成的MVPD列表以及Adobe Pass身份验证为每个MVPD保存的配置详细信息（例如，`id`、`displayName`、`logoUrl`等）。
 
 当客户端应用程序需要要求用户选择其电视提供商时，配置阶段是身份验证阶段的先决条件步骤。
 
 #### 2.配置阶段是否为强制阶段？ {#configuration-phase-faq2}
 
-配置阶段不是强制性的，客户端应用程序可以在以下情况下跳过此阶段：
+配置阶段不是强制性的，仅当用户需要选择其MVPD进行身份验证或重新身份验证时，客户端应用程序必须检索配置。
+
+在以下情形中，客户端应用程序可以跳过此阶段：
 
 * 用户已经过身份验证。
-* 通过基本或促销的TempPass功能向用户提供临时访问权限。
+* 通过基本或提升[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)功能向用户提供临时访问权限。
 * 用户身份验证已过期，但客户端应用程序已缓存之前选择的MVPD作为用户体验驱动型选择，并且只是提示用户确认他们仍然是该MVPD的订阅者。
 
 #### 3.什么是配置以及它的有效期？ {#configuration-phase-faq3}
 
 该配置是[词汇表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#configuration)文档中定义的术语。
 
-该配置包含可从配置端点检索的MVPD列表。
+该配置包含由以下属性`id`、`displayName`、`logoUrl`等定义的MVPD列表，这些属性可以从[配置](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)终结点中检索。
 
-当要求用户选择其MVPD时，客户端应用程序可使用配置提供一个名为“选取器”的UI组件。
+仅当用户需要选择其MVPD进行身份验证或重新身份验证时，客户端应用程序必须检索配置。
 
-客户端应用程序应在用户完成身份验证阶段之前刷新配置。
+当用户需要选择电视提供商时，客户端应用程序可使用配置响应来显示具有可用MVPD选项的UI选取器。
+
+客户端应用程序必须存储用户选定的MVPD标识符(由MVPD的配置级别`id`属性指定)，以继续身份验证、预授权、授权或注销阶段。
 
 有关详细信息，请参阅[检索配置](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)文档。
 
-#### 4.客户端应用程序能否管理自己的MVPD列表？ {#configuration-phase-faq4}
+#### 4.客户端应用程序是否应将配置响应信息缓存到永久存储中？ {#configuration-phase-faq4}
 
-客户端应用程序可以管理自己的MVPD列表，但建议使用Adobe Pass身份验证提供的配置以确保列表是最新且准确的。
+仅当用户需要选择其MVPD进行身份验证或重新身份验证时，客户端应用程序必须检索配置。
 
-如果用户选择的Adobe Pass没有与指定的[服务提供程序](rest-api-v2-glossary.md#service-provider)的有效集成，则客户端应用程序将从MVPD身份验证REST API V2收到[错误](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)。
+客户端应用程序应将配置响应信息缓存到内存存储中，以避免不必要的请求，并改善以下情况下的用户体验：
 
-#### 5.客户端应用程序能否过滤MVPD列表？ {#configuration-phase-faq5}
+* 用户已经过身份验证。
+* 通过基本或提升[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)功能向用户提供临时访问权限。
+* 用户身份验证已过期，但客户端应用程序已缓存之前选择的MVPD作为用户体验驱动型选择，并且只是提示用户确认他们仍然是该MVPD的订阅者。
 
-客户端应用程序可以通过实现基于自身业务逻辑和诸如先前选择的用户位置或用户历史记录等要求的定制机制来过滤配置响应中提供的MVPD列表。
+#### 5.客户端应用程序能否管理自己的MVPD列表？ {#configuration-phase-faq5}
 
-#### 6.如果与MVPD的集成被禁用并标记为不活动，会发生什么情况？ {#configuration-phase-faq6}
+客户端应用程序可以管理自己的MVPD列表，但需要使MVPD标识符与Adobe Pass身份验证保持同步。 因此，建议使用Adobe Pass身份验证提供的配置，以确保列表是最新且准确的。
 
-如果禁用了与MVPD的集成并标记为不活动，则将从进一步配置响应中提供的MVPD列表中删除MVPD，需要考虑以下两个重要后果：
+如果提供的Adobe Pass标识符无效，或者客户端应用程序与指定的[服务提供程序](rest-api-v2-glossary.md#service-provider)没有活动集成，则客户端应用程序将从MVPD身份验证REST API V2收到[错误](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)。
+
+#### 6.客户端应用程序能否过滤MVPD列表？ {#configuration-phase-faq6}
+
+客户端应用程序可以通过基于其自身业务逻辑和诸如先前选择的用户位置或用户历史等要求实现定制机制来过滤配置响应中提供的MVPD列表。
+
+客户端应用程序可以筛选[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) MVPD的列表或其集成仍在开发或测试中的MVPD。
+
+#### 7.如果与MVPD的集成被禁用并标记为不活动，会发生什么情况？ {#configuration-phase-faq7}
+
+如果禁用了与MVPD的集成并将其标记为不活动，则将从进一步配置响应中提供的MVPD列表中删除MVPD，同时需要考虑以下两个重要后果：
 
 * 该MVPD的未经身份验证的用户将无法再使用该MVPD完成身份验证阶段。
 * 经过身份验证的MVPD用户将无法再使用该MVPD完成预授权、授权或注销阶段。
 
-如果用户选择的Adobe Pass不再与指定的[服务提供程序](rest-api-v2-glossary.md#service-provider)有效集成，则客户端应用程序将从MVPD身份验证REST API V2收到[错误](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)。
+如果用户选择的Adobe Pass不再与指定的[服务提供程序](rest-api-v2-glossary.md#service-provider)有效集成，则客户端应用程序将从MVPD身份验证REST API V2收到[错误](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)。
 
-#### 7.如果已重新启用与MVPD的集成并标记为活动，会发生什么情况？ {#configuration-phase-faq7}
+#### 8.如果已重新启用与MVPD的集成并标记为活动，会发生什么情况？ {#configuration-phase-faq8}
 
-重新启用与MVPD的集成并标记为活动时，MVPD将重新包含在进一步配置响应中提供的MVPD列表中，这会产生两个需要考虑的重要结果：
+重新启用与MVPD的集成并标记为活动时，MVPD将重新包含在进一步配置响应中提供的MVPD列表中，需要考虑以下两个重要后果：
 
 * 该MVPD的未经身份验证的用户将能够再次使用该MVPD完成身份验证阶段。
 * 经过身份验证的MVPD用户将能够使用该MVPD再次完成预授权、授权或注销阶段。
 
-#### 8.如何启用或禁用与MVPD的集成？ {#configuration-phase-faq8}
+#### 9.如何启用或禁用与MVPD的集成？ {#configuration-phase-faq9}
 
 此操作可以由您的组织管理员或代表您行事的Adobe Pass身份验证代表通过Adobe Pass [TVE仪表板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)完成。
 

@@ -2,9 +2,9 @@
 title: 检索特定服务提供商的配置
 description: REST API V2 — 检索特定服务提供商的配置
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 871afc4e7ec04d62590dd574bf4e28122afc01b6
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '725'
 ht-degree: 2%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 2%
 >[!IMPORTANT]
 >
 > REST API V2实施受[限制机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)文档限制。
+
+>[!MORELIKETHIS]
+>
+> 确保也访问[REST API V2常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#configuration-phase-faqs-general)。
 
 ## 请求 {#request}
 
@@ -210,9 +214,9 @@ ht-degree: 2%
                 <td>
                     具有以下属性的JSON对象：
                     <ul>
-                        <li><b>id</b></li>
-                        <li><b>name</b></li>
-                        <li><b>域</b></li>
+                        <li><b>id</b><br/>载入过程中与服务提供商关联的内部唯一标识符。</li>
+                        <li><b>名称</b><br/>新用户引导过程中与服务提供商关联的商业（品牌）名称。</li>
+                        <li><b>域</b><br/>列在Adobe Pass身份验证中的域名列表，表示服务提供商。</li>
                     </ul>
                 </td>
                 <td><i>必填</i></td>
@@ -222,16 +226,16 @@ ht-degree: 2%
                 <td>
                     具有以下属性的JSON对象：
                     <ul>
-                        <li><b>id</b></li>
-                        <li><b>显示名称</b></li>
-                        <li><b>logoUrl</b></li>
-                        <li><b>istemppass</b></li>
-                        <li><b>isProxy</b></li>
-                        <li><b>登机状态</b></li>
-                        <li><b>platformMappingId</b></li>
-                        <li><b>enablePlatformServices</b></li>
-                        <li><b>Displayplatformpicker</b></li>
-                        <li><b>enforcePlatformPermissions</b></li>
+                        <li><b>id</b><br/>在登录过程中与身份提供程序关联的内部唯一标识符。</li>
+                        <li><b>displayName</b><br/>新用户引导过程中与身份提供程序关联的商业（品牌）名称。</li>
+                        <li><b>logoUrl</b><br>用于下载与身份提供程序关联的徽标的URL。</li>
+                        <li><b>isTempPass</b><br/>用于指定MVPD是否旨在提供<a href="../../../../features-premium/temporary-access/temp-pass-feature.md">TempPass</a>功能功能的标志。</li>
+                        <li><b>isProxy</b><br/>指定MVPD是否为代理的MVPD的标志。</li>
+                        <li><b>boardingStatus</b><br/>指定流设备平台是否已为单一登录流载入身份提供程序的状态。</li>
+                        <li><b>platformMappingId</b><br/>流式设备平台与单一登录流标识提供程序关联的内部唯一标识符。</li>
+                        <li><b>enablePlatformServices</b><br/>指定是否为单一登录流的流设备平台启用身份提供程序配置的标志。</li>
+                        <li><b>displayInPlatformPicker</b><br/>指定是否可以将身份提供程序显示在流式设备平台选择器中以进行单点登录流程的标志。</li>
+                        <li><b>enforcePlatformPermissions</b><br/>指定流设备是否必须强制平台提供的用户权限以供单点登录流程使用的标志。</li>
                     </ul>
                 </td>
                 <td><i>必填</i></td>
