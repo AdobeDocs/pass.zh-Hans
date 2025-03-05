@@ -1,15 +1,15 @@
 ---
-title: 使用合作伙伴身份验证响应检索配置文件
-description: REST API V2 — 使用合作伙伴身份验证响应检索配置文件
+title: 使用合作伙伴身份验证响应创建和检索配置文件
+description: REST API V2 — 使用合作伙伴身份验证响应创建和检索配置文件
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '724'
+source-wordcount: '734'
 ht-degree: 1%
 
 ---
 
-# 使用合作伙伴身份验证响应检索配置文件 {#retrieve-profile-using-partner-authentication-response}
+# 使用合作伙伴身份验证响应创建和检索配置文件 {#create-and-retrieve-profile-using-partner-authentication-response}
 
 >[!IMPORTANT]
 >
@@ -321,7 +321,7 @@ ht-degree: 1%
 
 ## 示例 {#samples}
 
-### 1.使用合作伙伴身份验证响应检索配置文件
+### 1.使用合作伙伴身份验证响应创建和检索配置文件
 
 >[!BEGINTABS]
 
@@ -378,7 +378,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2.使用合作伙伴身份验证响应检索配置文件，但应用降级
+### 2.使用合作伙伴身份验证响应创建和检索用户档案，但应用了性能降级
 
 >[!BEGINTABS]
 

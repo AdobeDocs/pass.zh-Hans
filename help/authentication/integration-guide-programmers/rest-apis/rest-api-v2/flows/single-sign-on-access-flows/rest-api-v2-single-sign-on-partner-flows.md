@@ -2,9 +2,9 @@
 title: 单点登录 — 合作伙伴 — 流程
 description: REST API V2 — 单点登录 — 合作伙伴 — 流程
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '1454'
+source-wordcount: '1468'
 ht-degree: 0%
 
 ---
@@ -125,7 +125,7 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
 
    如果Adobe Pass后端未识别有效的配置文件，并且合作伙伴单点登录验证通过，则流应用程序会收到一个包含操作和数据的Response，以便传递到Partner Framework，从而开始使用MVPD的身份验证流程。
 
-   有关使用合作伙伴身份验证响应的配置文件检索流程的更多详细信息，请参阅[使用合作伙伴身份验证响应检索配置文件](#retrieve-profile-using-partner-authentication-response)部分。
+   有关使用合作伙伴身份验证响应的配置文件检索流程的更多详细信息，请参阅[使用合作伙伴身份验证响应创建和检索配置文件](#create-and-retrieve-profile-using-partner-authentication-response)部分。
 
 1. **继续基本身份验证流程：**&#x200B;会话合作伙伴终结点响应包含以下数据：
    * `actionName`属性设置为“身份验证”或“恢复”。
@@ -152,9 +152,9 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
    > 
    > 有关`AP-Partner-Framework-Status`标头的更多详细信息，请参阅[AP-Partner-Framework-Status](../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)文档。
 
-## 使用合作伙伴身份验证响应检索配置文件 {#retrieve-profile-using-partner-authentication-response}
+## 使用合作伙伴身份验证响应创建和检索配置文件 {#create-and-retrieve-profile-using-partner-authentication-response}
 
-### 先决条件 {#prerequisites-retrieve-profile-using-partner-authentication-response}
+### 先决条件 {#prerequisites-create-and-retrieve-profile-using-partner-authentication-response}
 
 在使用合作伙伴身份验证响应检索配置文件之前，请确保满足以下先决条件：
 
@@ -169,13 +169,13 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
 > * 合作伙伴框架支持用户通过交互使用选定的MVPD进行身份验证。
 > * 合作伙伴框架提供用户权限和提供程序信息。
 
-### 工作流 {#workflow-retrieve-profile-using-partner-authentication-response}
+### 工作流 {#workflow-create-and-retrieve-profile-using-partner-authentication-response}
 
 执行给定步骤以使用合作伙伴身份验证响应实施配置文件检索流程，如下图所示。
 
-![使用合作伙伴身份验证响应检索配置文件](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
+![使用合作伙伴身份验证响应创建和检索配置文件](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
 
-*使用合作伙伴身份验证响应检索经过身份验证的配置文件*
+*使用合作伙伴身份验证响应创建和检索经过身份验证的配置文件*
 
 1. **使用合作伙伴框架完成MVPD身份验证：**&#x200B;如果身份验证流程成功，合作伙伴框架与MVPD的交互将生成合作伙伴身份验证响应（SAML响应），该响应将随合作伙伴框架状态信息一起返回。
 
@@ -184,11 +184,11 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
    * 用户提供程序映射标识符存在且有效。
    * 用户提供程序配置文件的到期日期（如果可用）有效。
 
-1. **使用合作伙伴身份验证响应检索配置文件：**&#x200B;流应用程序通过调用Profiles Partner终结点来收集创建和检索配置文件所需的所有数据。
+1. **使用合作伙伴身份验证响应创建和检索配置文件：**&#x200B;流应用程序通过调用Profiles Partner终结点来收集创建和检索配置文件所需的所有数据。
 
    >[!IMPORTANT]
    >
-   > 有关以下内容的详细信息，请参阅[使用合作伙伴身份验证响应检索配置文件](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) API文档：
+   > 有关以下内容的详细信息，请参阅[使用合作伙伴身份验证响应创建和检索配置文件](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) API文档：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`partner`和`SAMLResponse`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`、`Content-Type`、`X-Device-Info`和`AP-Partner-Framework-Status`
@@ -208,7 +208,7 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
 
    >[!IMPORTANT]
    >
-   > 有关配置文件响应中提供的信息的详细信息，请参阅[使用合作伙伴身份验证响应检索配置文件](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) API文档。
+   > 有关配置文件响应中提供的信息的详细信息，请参阅[使用合作伙伴身份验证响应创建和检索配置文件](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) API文档。
    > 
    > <br/>
    > 

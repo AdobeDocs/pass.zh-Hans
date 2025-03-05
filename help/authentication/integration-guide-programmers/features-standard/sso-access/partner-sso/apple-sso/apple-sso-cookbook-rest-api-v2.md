@@ -2,9 +2,9 @@
 title: Apple SSO指南(REST API V2)
 description: Apple SSO指南(REST API V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '3443'
+source-wordcount: '3615'
 ht-degree: 0%
 
 ---
@@ -284,7 +284,7 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
    * [使用预选的mvpd在辅助应用程序中执行身份验证](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
    * [无需预选mvpd就可在辅助应用程序中执行身份验证](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-1. **继续使用合作伙伴身份验证响应流检索配置文件：**&#x200B;会话合作伙伴终结点响应包含以下数据：
+1. **继续使用合作伙伴身份验证响应流创建和检索配置文件：**&#x200B;会话合作伙伴终结点响应包含以下数据：
    * `actionName`属性设置为“partner_profile”。
    * `actionType`属性设置为“直接”。
    * `authenticationRequest - type`属性包括合作伙伴框架用于MVPD登录的安全协议（当前仅设置为SAML）。
@@ -316,11 +316,11 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
    * 用户提供程序配置文件的到期日期（如果可用）有效。
    * 合作伙伴身份验证响应（SAML响应）存在且有效。
 
-1. **使用合作伙伴身份验证响应检索配置文件：**&#x200B;流应用程序通过调用Profiles Partner终结点来收集创建和检索配置文件所需的所有数据。
+1. **使用合作伙伴身份验证响应创建和检索配置文件：**&#x200B;流应用程序通过调用Profiles Partner终结点来收集创建和检索配置文件所需的所有数据。
 
    >[!IMPORTANT]
    >
-   > 有关以下内容的详细信息，请参阅[使用合作伙伴身份验证响应检索配置文件](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request) API文档：
+   > 有关以下内容的详细信息，请参阅[使用合作伙伴身份验证响应创建和检索配置文件](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request) API文档：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`partner`和`SAMLResponse`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`、`Content-Type`、`X-Device-Info`和`AP-Partner-Framework-Status`
@@ -338,7 +338,7 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
 
    >[!IMPORTANT]
    >
-   > 有关配置文件响应中提供的信息的详细信息，请参阅[使用合作伙伴身份验证响应检索配置文件](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Response) API文档。
+   > 有关配置文件响应中提供的信息的详细信息，请参阅[使用合作伙伴身份验证响应创建和检索配置文件](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Response) API文档。
    >
    > <br/>
    >
@@ -371,6 +371,10 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
 1. **检索合作伙伴框架状态：**&#x200B;流应用程序调用由Apple开发的[视频订阅者帐户框架](https://developer.apple.com/documentation/videosubscriberaccount)，以获取用户权限和提供程序信息。
 
    >[!IMPORTANT]
+   > 
+   > 如果所选的用户配置文件类型不是“appleSSO”，则流应用程序可以跳过此步骤。
+
+   >[!IMPORTANT]
    >
    > 有关以下内容的详细信息，请参阅[视频订阅者帐户框架](https://developer.apple.com/documentation/videosubscriberaccount)文档：
    >
@@ -386,13 +390,17 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
    > 流应用程序必须确保它为`VSAccountMetadataRequest`对象中的[`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed)属性指定了等于`false`的布尔值，以指示在此阶段不能中断用户。
 
    >[!TIP]
-   > 
-   > 建议：流式应用程序可以使用缓存的值作为合作伙伴框架状态信息，建议在应用程序从后台状态转换为前台状态时进行刷新。
+   >
+   > 建议：流式应用程序可以使用缓存的值来获取合作伙伴框架状态信息，建议在应用程序从后台状态转换为前台状态时进行刷新。 在这种情况下，流应用程序必须确保它缓存并仅使用合作伙伴框架状态的有效值，如“返回合作伙伴框架状态信息”步骤所述。
 
 1. **返回合作伙伴框架状态信息：**&#x200B;流式应用程序验证响应数据以确保满足基本条件：
    * 已授予用户权限访问状态。
    * 用户提供程序映射标识符存在且有效。
-   * 用户提供程序配置文件的到期日期（如果可用）有效。
+   * 用户提供程序配置文件的到期日期有效。
+
+   >[!IMPORTANT]
+   >
+   > 如果所选的用户配置文件类型不是“appleSSO”，则流应用程序可以跳过此步骤。
 
 1. **检索预授权决策：**&#x200B;流应用程序通过调用Decisions Preauthorize终结点，收集所有必要的数据以获取资源列表的预授权决策。
 
@@ -406,7 +414,7 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
    >
    > <br/>
    >
-   > 如果所选配置文件是“appleSSO”类型配置文件，则流应用程序在进一步发出请求之前，必须确保它包含合作伙伴框架状态的有效值。
+   > 如果所选配置文件是“appleSSO”类型配置文件，则流应用程序在进一步发出请求之前，必须确保它包含合作伙伴框架状态的有效值。 但是，如果所选的用户配置文件类型不是“appleSSO”，则可以跳过此步骤。
    >
    > <br/>
    >
@@ -435,6 +443,10 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
 
    >[!IMPORTANT]
    >
+   > 如果所选的用户配置文件类型不是“appleSSO”，则流应用程序可以跳过此步骤。
+
+   >[!IMPORTANT]
+   >
    > 有关以下内容的详细信息，请参阅[视频订阅者帐户框架](https://developer.apple.com/documentation/videosubscriberaccount)文档：
    >
    > <br/>
@@ -450,12 +462,16 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
 
    >[!TIP]
    >
-   > 建议：流式应用程序可以使用缓存的值作为合作伙伴框架状态信息，建议在应用程序从后台状态转换为前台状态时进行刷新。
+   > 建议：流式应用程序可以使用缓存的值来获取合作伙伴框架状态信息，建议在应用程序从后台状态转换为前台状态时进行刷新。 在这种情况下，流应用程序必须确保它缓存并仅使用合作伙伴框架状态的有效值，如“返回合作伙伴框架状态信息”步骤所述。
 
 1. **返回合作伙伴框架状态信息：**&#x200B;流式应用程序验证响应数据以确保满足基本条件：
    * 已授予用户权限访问状态。
    * 用户提供程序映射标识符存在且有效。
-   * 用户提供程序配置文件的到期日期（如果可用）有效。
+   * 用户提供程序配置文件的到期日期有效。
+
+   >[!IMPORTANT]
+   >
+   > 如果所选的用户配置文件类型不是“appleSSO”，则流应用程序可以跳过此步骤。
 
 1. **检索授权决定：**&#x200B;流应用程序通过调用Decisions Authorize终结点，收集所有必需的数据以获取特定资源的授权决定。
 
@@ -469,7 +485,7 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
    >
    > <br/>
    >
-   > 如果所选配置文件是“appleSSO”类型配置文件，则流应用程序在进一步发出请求之前，必须确保它包含合作伙伴框架状态的有效值。
+   > 如果所选配置文件是“appleSSO”类型配置文件，则流应用程序在进一步发出请求之前，必须确保它包含合作伙伴框架状态的有效值。 但是，如果所选的用户配置文件类型不是“appleSSO”，则可以跳过此步骤。
    >
    > <br/>
    >
@@ -515,6 +531,10 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
 
    >[!IMPORTANT]
    >
+   > 当删除的用户配置文件类型为“appleSSO”时，流应用程序必须提示用户在合作伙伴级别完成注销过程，如`actionName`和`actionType`属性所指定。
+
+   >[!IMPORTANT]
+   >
    > 有关注销响应中提供的信息的详细信息，请参阅特定mvpd ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#response) API的[启动注销。
    >
    > <br/>
@@ -527,9 +547,5 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
    > <br/>
    >
    > 如果验证失败，将生成错误响应，提供附加信息以遵守[增强型错误代码](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)文档。
-
-   >[!IMPORTANT]
-   > 
-   > 流应用程序必须确保它指示用户继续从合作伙伴级别注销。
 
 +++

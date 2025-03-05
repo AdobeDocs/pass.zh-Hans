@@ -2,9 +2,9 @@
 title: REST API V2常见问题解答
 description: REST API V2常见问题解答
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '8198'
+source-wordcount: '9072'
 ht-degree: 0%
 
 ---
@@ -224,7 +224,7 @@ ht-degree: 0%
 
 #### 9.每个可用配置文件端点的用例是什么？ {#authentication-phase-faq9}
 
-配置文件端点旨在为客户端应用程序提供以下功能：了解用户的身份验证状态、访问用户元数据信息、查找用于身份验证的方法或用于提供身份的实体。
+基本配置文件端点旨在为客户端应用程序提供了解用户的身份验证状态、访问用户元数据信息、查找用于身份验证的方法或用于提供身份的实体的功能。
 
 每个端点都适合特定的用例，如下所示：
 
@@ -233,6 +233,18 @@ ht-degree: 0%
 | [配置文件端点API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) | 检索所有用户配置文件。 | **用户首次打开客户端应用程序**<br/><br/>&#x200B;在这种情况下，客户端应用程序不会将用户选定的MVPD标识符缓存到永久存储中。<br/><br/>因此，它将发送单个请求以检索所有可用的用户配置文件。 |
 | 特定MVPD API的[配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | 检索与特定MVPD关联的用户配置文件。 | **用户在上次访问中进行身份验证后返回客户端应用程序**<br/><br/>&#x200B;在这种情况下，客户端应用程序必须将用户之前选择的MVPD标识符缓存到永久存储中。<br/><br/>因此，它将发送一个请求，以检索该特定MVPD的用户配置文件。 |
 | [特定（身份验证）代码API的配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 检索与特定身份验证代码关联的用户配置文件。 | **用户启动身份验证过程**<br/><br/>&#x200B;在此方案中，客户端应用程序必须确定用户是否已成功完成身份验证并检索其配置文件信息。<br/><br/>因此，它将启动轮询机制以检索与身份验证代码关联的用户配置文件。 |
+
+有关详细信息，请参阅在主应用程序](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)中执行的[基本配置文件流和在辅助应用程序](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)文档中执行的[基本配置文件流。
+
+配置文件SSO端点具有不同的用途，它使客户端应用程序能够使用合作伙伴身份验证响应创建用户配置文件，并在单次、一次性操作中检索该配置文件。
+
+| API | 描述 | 用例 |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [配置文件SSO端点API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) | 使用合作伙伴身份验证响应创建和检索用户配置文件。 | **用户允许应用程序使用合作伙伴单点登录进行身份验证**<br/><br/>&#x200B;在此方案中，客户端应用程序必须在收到合作伙伴身份验证响应后创建用户配置文件，并在单次、一次性操作中检索该配置文件。 |
+
+对于任何后续查询，必须使用基本配置文件端点确定用户的身份验证状态、访问用户元数据信息、查找用于身份验证的方法或用于提供身份的实体。
+
+有关更多详细信息，请参阅[使用合作伙伴流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)的单点登录[Apple SSO指南(REST API V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)文档。
 
 #### 10.如果用户有多个MVPD配置文件，客户端应用程序应该怎么做？ {#authentication-phase-faq10}
 
@@ -351,11 +363,29 @@ ht-degree: 0%
 * [检索预授权决策API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
 * [在主应用程序中执行的基本预授权流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
 
-#### 4.为何预授权决策缺少媒体令牌？ {#preauthorization-phase-faq4}
+#### 4.客户端应用程序是否应将预授权决策缓存到永久存储中？ {#preauthorization-phase-faq4}
+
+客户端应用程序不需要将预授权决策存储在永久存储中。 但是，建议将允许决策缓存到内存中以改进用户体验。 这有助于避免对已预授权的资源的Decisions Preauthorize端点进行不必要的调用，从而减少延迟并提高性能。
+
+#### 5.客户端应用程序如何确定预授权决定被拒绝的原因？ {#preauthorization-phase-faq5}
+
+通过检查决策预授权终结点响应中包含的[错误代码和消息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，客户端应用程序可以确定拒绝预授权决策的原因。 这些详细信息可让您深入了解预授权请求被拒绝的具体原因，从而帮助告知用户体验或在应用程序中触发任何必要的处理。
+
+请确保在预授权决策被拒绝时，为检索预授权决策而实施的任何重试机制都不会导致无限循环。
+
+考虑将重试限制为合理数字，并通过向用户提供明确的反馈，谨慎处理拒绝请求。
+
+#### 6.为何预授权决策缺少媒体令牌？ {#preauthorization-phase-faq6}
 
 预授权决策缺少媒体令牌，因为预授权阶段不能用于播放资源，因为这是授权阶段的目的。
 
-#### 5.什么是资源？支持哪些格式？ {#preauthorization-phase-faq5}
+#### 7.如果已经存在预授权决定，是否可以跳过授权阶段？ {#preauthorization-phase-faq7}
+
+不适用。
+
+即使预授权决策可用，也不能跳过授权阶段。 预授权决策仅供参考，不会授予实际的播放权限。 预授权阶段旨在提供早期指导，但在播放任何内容之前仍需要授权阶段。
+
+#### 8.什么是资源？支持哪些格式？ {#preauthorization-phase-faq8}
 
 资源是[术语表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#resource)文档中定义的术语。
 
@@ -368,7 +398,7 @@ ht-degree: 0%
 
 有关更多详细信息，请参阅[受保护的资源](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources)文档。
 
-#### 6.客户端应用程序一次可获取多少资源来作出预授权决定？ {#preauthorization-phase-faq6}
+#### 9.客户端应用程序一次可获取多少资源预授权决定？ {#preauthorization-phase-faq9}
 
 由于MVPD施加的条件，客户端应用程序可以在单个API请求中为有限数量的资源获取预授权决策，通常最多可达5个。
 
@@ -409,7 +439,19 @@ ht-degree: 0%
 
 有关更多详细信息，请参阅[TVE仪表板集成用户指南](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows)文档。
 
-#### 4.什么是媒体令牌，其有效期是多久？ {#authorization-phase-faq4}
+#### 4.客户端应用程序是否应将授权决策缓存到永久存储中？ {#authorization-phase-faq4}
+
+客户端应用程序不需要将授权决策存储在永久存储中。
+
+#### 5.客户端应用程序如何确定授权决定被拒绝的原因？ {#authorization-phase-faq5}
+
+通过检查决策授权终结点响应中包含的[错误代码和消息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，客户端应用程序可以确定拒绝授权决策的原因。 这些详细信息可让您深入了解授权请求被拒绝的具体原因，从而帮助告知用户体验或在应用程序中触发任何必要的处理。
+
+请确保在授权决策被拒绝时，为检索授权决策而实施的任何重试机制都不会导致无限循环。
+
+考虑将重试限制为合理数字，并通过向用户提供明确的反馈，谨慎处理拒绝请求。
+
+#### 6.什么是媒体令牌，其有效期是多久？ {#authorization-phase-faq6}
 
 媒体令牌是[词汇表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#media-token)文档中定义的术语。
 
@@ -417,7 +459,7 @@ ht-degree: 0%
 
 有关详细信息，请参阅[媒体令牌验证器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier)文档。
 
-媒体令牌在问题时指定的有限且较短的时间范围内有效，指示在再次请求查询Decisions Authorize端点之前客户端应用程序必须使用该令牌的时间量。
+媒体令牌在发布时指定的有限且较短的时间范围内有效，指示客户端应用程序必须验证和使用它之前的时间限制。
 
 客户端应用程序可以使用媒体令牌播放资源流，以防电视提供商（权威）决策允许用户访问它。
 
@@ -426,7 +468,41 @@ ht-degree: 0%
 * [检索授权决策API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
 * [在主应用程序中执行的基本授权流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
 
-#### 5.什么是资源？支持哪些格式？ {#authorization-phase-faq5}
+#### 7.客户端应用程序是否应在播放资源流之前验证媒体令牌？ {#authorization-phase-faq7}
+
+是的。
+
+客户端应用程序必须在开始播放资源流之前验证媒体令牌。 应使用[媒体令牌验证器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier)执行此验证。 通过验证返回的`token`中的`serializedToken`，客户端应用程序有助于防止未经授权的访问（如流翻录），并确保只有经过适当授权的用户才能播放内容。
+
+#### 8.客户端应用程序是否应在播放期间刷新过期的媒体令牌？ {#authorization-phase-faq8}
+
+不适用。
+
+当流正在主动播放时，不需要客户端应用程序刷新过期的媒体令牌。 如果媒体令牌在播放期间过期，则应该允许流继续而不会中断。 但是，下次用户尝试播放同一资源时，客户端必须请求新的授权决定，并获取新的媒体令牌。
+
+#### 9.授权决策中每个时间戳属性的用途是什么？ {#authorization-phase-faq9}
+
+授权决策包括多个时间戳属性，这些属性提供有关授权本身的有效期和相关媒体令牌的基本上下文。 根据时间戳与授权决策还是媒体令牌的关系，这些时间戳有不同的用途。
+
+**决策级别的时间戳**
+
+以下时间戳描述整体授权决策的有效期：
+
+| 属性 | 描述 | 注释 |
+|-------------|------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `notBefore` | 授权决策的发布时间。 | 这将标记授权有效性窗口的开始。 |
+| `notAfter` | 授权决策到期的时间。 | [授权生存时间(TTL)](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#authorization-ttl-management)确定授权在需要重新授权之前保持有效的时间。 此TTL将与MVPD代表协商。 |
+
+**令牌级时间戳**
+
+以下时间戳描述与授权决策关联的媒体令牌的有效期：
+
+| 属性 | 描述 | 注释 |
+|-------------|-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `notBefore` | 发布媒体令牌的时间。 | 当令牌对于播放变得有效时，此标记。 |
+| `notAfter` | 媒体令牌过期的时间。 | 媒体令牌的生命周期特意缩短（通常为7分钟），以最大程度地降低误用风险，并解决令牌生成服务器和令牌验证服务器之间的潜在时钟差异。 |
+
+#### 10.什么是资源？支持哪些格式？ {#authorization-phase-faq10}
 
 资源是[术语表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#resource)文档中定义的术语。
 
@@ -439,7 +515,7 @@ ht-degree: 0%
 
 有关更多详细信息，请参阅[受保护的资源](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources)文档。
 
-#### 6.客户端应用程序一次可获取多少资源来作出授权决定？ {#authorization-phase-faq6}
+#### 11.客户应用程序一次可获取多少资源作出授权决定？ {#authorization-phase-faq11}
 
 由于MVPD施加的条件，客户端应用程序可以在单个API请求中获取对有限数量的资源的授权决策，通常最多可达1。
 
@@ -452,6 +528,10 @@ ht-degree: 0%
 #### 1.注销阶段的目的是什么？ {#logout-phase-faq1}
 
 注销阶段的目的是让客户端应用程序能够根据用户请求在Adobe Pass身份验证中终止用户的已验证配置文件。
+
+#### 2.注销阶段是否为必填项？ {#logout-phase-faq2}
+
+注销阶段是强制性的，客户端应用程序必须为用户提供注销功能。
 
 +++
 

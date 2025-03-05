@@ -2,9 +2,9 @@
 title: REST API V2 API概述
 description: REST API V2 API概述
 exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
-source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '149'
+source-wordcount: '151'
 ht-degree: 1%
 
 ---
@@ -48,7 +48,7 @@ ht-degree: 1%
 ## 合作伙伴单点登录 {#rest-api-v2-apis-partner-single-sign-on}
 
 * [检索合作伙伴身份验证请求](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
-* [使用合作伙伴身份验证响应检索配置文件](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
+* [使用合作伙伴身份验证响应创建和检索配置文件](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
 
 ## 想要尝试REST API V2吗？
 

@@ -2,9 +2,9 @@
 title: 程序员集成指南
 description: 程序员集成指南
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '2071'
+source-wordcount: '2073'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 > 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-本集成指南适用于计划与Adobe®通过身份验证集成的内容提供商（程序员）。
+本集成指南适用于计划与Adobe® Pass身份验证集成的内容提供商（程序员）。
 
 在当今的数字环境中，查看者可以随时随地访问Internet，并请求访问您的受保护内容。 他们可能希望观看一次性的活动，或者希望获得播放您正在播放的整个电视剧的权利。
 
@@ -210,7 +210,7 @@ Adobe Pass Authentication充当代理，通过为双方提供安全一致的界�
 **API**
 
 * [检索合作伙伴身份验证请求](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
-* [使用合作伙伴身份验证响应检索配置文件](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
+* [使用合作伙伴身份验证响应创建和检索配置文件](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
 
 **流**
 
