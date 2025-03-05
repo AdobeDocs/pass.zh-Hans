@@ -1,8 +1,8 @@
 ---
 title: 标头 — Adobe-Subject-Token
-description: REST API V2 — 标头 — Adobe主题令牌
+description: REST API V2 — 标头 — Adobe-Subject-Token
 exl-id: 906d88f4-3b8f-491a-ab58-8e63d3b958d8
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '166'
 ht-degree: 1%
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 ## 概述 {#overview}
 
-<b>Request-Subject-Token</b>Adobe标头包含作为`JWS`或`JWE`的唯一平台标识符，该标识符是从在Adobe Pass身份验证系统外部运行的身份服务或库获得的。
+<b>Adobe-Subject-Token</b>请求标头包含作为`JWS`或`JWE`的唯一平台标识符，该标识符是从在Adobe Pass身份验证系统之外运行的身份服务或库获得的。
 
 此标头旨在用于利用Platform Identity方法启用单点登录(SSO)的流。
 
@@ -25,9 +25,9 @@ ht-degree: 1%
 
 ## 语法 {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <td style="background-color: #DEEBFF;" colspan="2"><b>Adobe — 主题 — 令牌</b>： &lt;unique_platform_identifier&gt;</td>
+      <td style="background-color: #DEEBFF;" colspan="2"><b>Adobe-Subject-Token</b>： &lt;唯一平台标识符&gt;</td>
    </tr>
    <tr>
       <td>标题类型</td>

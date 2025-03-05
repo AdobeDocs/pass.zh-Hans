@@ -2,7 +2,7 @@
 title: 标头 — AP-Partner-Framework-Status
 description: REST API V2 — 标头 — AP-Partner-Framework-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '388'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## 语法 {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>AP-Partner-Framework-Status</b>： &lt;partner_framework_status_information&gt;</td>
    </tr>
@@ -41,7 +41,7 @@ ht-degree: 0%
 
 包含以下属性的JSON元素的`Base64-encoded`值：
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <th style="background-color: #EFF2F7; width: 15%;">属性</th>
       <th style="background-color: #EFF2F7;"></th>
@@ -68,10 +68,10 @@ ht-degree: 0%
                   这是具有以下可能值的枚举：
                   <br/>
                   <ul>
-                     <li>granted — 用户允许应用程序访问订阅信息。</li>
-                     <li>拒绝 — 用户拒绝应用程序访问订阅信息。</li>
-                     <li>挂起 — 用户尚未选择允许应用程序访问订阅信息。</li>
-                     <li>notDetermined — 不允许应用程序访问订阅信息。</li>
+                     <li><b>已授予</b><br/>用户允许应用程序访问订阅信息。</li>
+                     <li><b>拒绝</b><br/>用户拒绝应用程序访问订阅信息。</li>
+                     <li><b>挂起</b><br/>用户尚未选择允许应用程序访问订阅信息。</li>
+                     <li><b>notDetermined</b><br/>不允许应用程序访问订阅信息。</li>
                   </ul>
                </td>
             </tr>

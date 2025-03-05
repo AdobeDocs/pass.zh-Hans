@@ -2,9 +2,9 @@
 title: 标头 — AP-Device-Identifier
 description: REST API V2 — 标头 — AP-Device-Identifier
 exl-id: 90a5882b-2e6d-4e67-994a-050465cac6c6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
-source-wordcount: '413'
+source-wordcount: '485'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## 语法 {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>AP设备标识符</b>： &lt;类型&gt; &lt;标识符&gt;</td>
    </tr>
@@ -43,7 +43,7 @@ ht-degree: 0%
 
 只有一种受支持的类型，如下所示。
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <th style="background-color: #EFF2F7; width: 15%;">类型</th>
       <th style="background-color: #EFF2F7;"></th>
@@ -51,9 +51,9 @@ ht-degree: 0%
    <tr>
       <td>指纹</td>
       <td>
-            设备标识符由客户端应用程序创建和管理的一个稳定的唯一标识符组成。
+            设备标识符由客户端应用程序为每个设备创建和管理的稳定且唯一的标识符组成。
             <br/>
-            客户端应用程序必须阻止由于用户操作（如应用程序卸载、重新安装或升级）引起的值更改。
+            客户端应用程序应将设备标识符缓存在永久存储中，因为丢失或更改它会使身份验证失效。 客户端应用程序应防止由于用户操作（如应用程序卸载、重新安装或升级）而导致值更改。
       </td>
    </tr>
 </table>
@@ -134,3 +134,9 @@ _(*)建议对OS提供的值应用SHA-256哈希函数。_
 * [GetChannelClientId](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string)的Roku开发人员文档。
 
 _(*)建议对OS提供的值应用SHA-256哈希函数。_
+
+### 其他  {#others}
+
+对于文档中未涵盖的设备平台，设备标识符应链接到任何可用的硬件标识，通常在设备的硬件手册中指定。
+
+如果没有可用的硬件标识符，则应该使用基于客户端应用程序属性的唯一生成的标识符，并将其缓存在永久存储中。

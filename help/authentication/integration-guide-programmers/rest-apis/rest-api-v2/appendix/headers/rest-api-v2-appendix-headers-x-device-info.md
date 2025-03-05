@@ -2,9 +2,9 @@
 title: 标头 — X-Device-Info
 description: REST API V2 — 标头 — X-Device-Info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
-source-wordcount: '1085'
+source-wordcount: '1122'
 ht-degree: 2%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 2%
 
 ## 语法 {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>X — 设备信息</b>： &lt;设备信息&gt;</td>
    </tr>
@@ -41,7 +41,7 @@ ht-degree: 2%
 
 JSON元素的`Base64-encoded`值，至少包含下表要求标记的属性。
 
-<table>
+<table style="table-layout:auto">
     <tr>
         <th style="background-color: #EFF2F7; width: 15%;">存在</th>
         <th style="background-color: #EFF2F7; width: 15%;">键</th>
@@ -721,3 +721,7 @@ private JSONObject computeClientInformation() {
 | 键 | Source | 值（示例） |
 |---------------|-----------|-----------------|
 | applicationId | 硬编码 | REF30 |
+
+### 其他  {#others}
+
+对于文档中未涵盖的设备平台，客户端信息（设备、连接和应用程序）应链接到任何可用的硬件和操作系统(OS)属性，通常在设备的硬件和操作系统手册中指定。
