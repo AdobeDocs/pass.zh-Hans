@@ -2,9 +2,9 @@
 title: 使用合作伙伴身份验证响应创建和检索配置文件
 description: REST API V2 — 使用合作伙伴身份验证响应创建和检索配置文件
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: 7fdfd28e2aba0d201f19dc25757bbe37cebd8ffe
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '734'
+source-wordcount: '775'
 ht-degree: 1%
 
 ---
@@ -268,9 +268,9 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">属性</td>
                <td>
-                    用户元数据属性的列表。
+                    JSON包含键、值对的映射。
                     <br/><br/>
-                    这些属性可以是：
+                    关键元素由用户元数据属性定义，可以是：
                     <ul>
                         <li>必填，如“userID”</li>
                         <li>非强制性的，如“zip”、“householdID”、“maxRating”等。</li>
@@ -281,6 +281,7 @@ ht-degree: 1%
                         <li>列表</li>
                         <li>映射</li>
                     </ul>
+                    在身份验证流程完成后，用户元数据将变为可用，但在授权流程期间，某些元数据属性可能会更新，具体取决于MVPD和有问题的特定元数据属性。
                </td>
                <td><i>必填</i></td>
             </tr>

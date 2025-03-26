@@ -2,9 +2,9 @@
 title: REST API V2常见问题解答
 description: REST API V2常见问题解答
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 1795b4aba2940879f2dcb575048d553db4f0bf35
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '9072'
+source-wordcount: '9113'
 ht-degree: 0%
 
 ---
@@ -321,12 +321,14 @@ ht-degree: 0%
 * [特定MVPD API的配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
 * [特定（身份验证）代码API的配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
 
-客户端应用程序不需要查询单独的端点来检索用户的元数据信息，因为验证用户是否经过身份验证时，获得的配置文件信息中已包含该信息。
+用户元数据在身份验证流程完成后变为可用，因此客户端应用程序不需要查询单独的端点来检索[用户元数据](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)信息，因为它已包含在配置文件信息中。
 
 有关更多详细信息，请参阅以下文档：
 
 * [基本配置文件在主要应用程序中执行](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [基本配置文件在辅助应用程序中执行](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+
+某些元数据属性可能会在授权流程期间更新，具体取决于MVPD和特定的元数据属性。 因此，客户端应用程序可能需要再次查询上述API以检索最新的用户元数据。
 
 #### 18.客户端应用程序应如何管理降级访问？ {#authentication-phase-faq18}
 
