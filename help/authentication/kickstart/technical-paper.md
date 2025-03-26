@@ -1,23 +1,23 @@
 ---
-title: 关于Adobe Pass Authentication和随处电视
-description: 关于Adobe Pass Authentication和随处电视
+title: 关于Adobe Pass身份验证
+description: 关于Adobe Pass身份验证
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: 95e750b5c0efe5850a3ff8130f5b4bb6c5b35f57
+source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
 workflow-type: tm+mt
-source-wordcount: '6287'
+source-wordcount: '1832'
 ht-degree: 0%
 
 ---
 
-# 关于Adobe Pass Authentication和随处电视 {#about-auth-tve}
+# 关于Adobe®通过身份验证 {#about-adobe-pass-authentication}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+> 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-## 关于所有地方的电视 {#about-tve}
+## 关于所有地方的电视 {#about-tv-everywhere}
 
-当今的电视观众可以随时随地上网，他们期待自己能够随身携带付费电视内容。 此外，受众正在使用越来越多支持Internet的设备查看内容，这些设备包括：
+当今的电视观众期待随时随地无缝访问付费电视内容。 随着互联网连接设备的兴起，受众在越来越多的平台上消费内容，包括：
 
 * 笔记本电脑
 * 平板电脑
@@ -28,400 +28,229 @@ ht-degree: 0%
 * 机顶盒
 * 智能电视
 
-TV Everywhere是一项行业运动，它支持付费电视用户通过多种设备访问他们已经在购买的内容，无论是在家里还是户外。 尽管大部分电视观看仍然发生在传统的线性电视上，但消费增长发生在时移内容、在线视频和替代屏幕上。 结果，今天的视频分发市场处于一种混乱状态，TV Everywhere已经成为了协调程序员、付费电视提供商和付费电视订户利益的解决方案。
+TV Everywhere是一项行业计划，旨在确保付费电视订阅者能够通过家庭内外多种设备访问他们已付费的内容。
 
+虽然传统（线性）电视仍然很强大，但视频消费增长最快的领域是时移内容、在线流媒体和替代屏幕。 这种转变扰乱了视频分发市场，使TV Everywhere成为协调&#x200B;**程序员、付费电视提供商和订阅者利益的关键解决方案。**
 
-TV Everywhere的技术目标是使付费电视客户能够访问他们在所有设备和平台上已订阅的内容。
+### 各处电视的目标 {#goals-tv-everywhere}
 
+**技术目标**
 
-TV Everywhere的业务目标是：
+* 支持付费电视客户在所有设备和平台上无缝访问其订阅的内容。
 
-* **保留现有客户关系并启用新客户关系**
-* 允许程序员和内容所有者接触到最广泛的受众，并从优质内容中获得更多价值
-* 通过与查看者直接在线互动来扩展品牌
+**业务目标**
 
-## TV Everywhere挑战 {#tve-challenges}
+* 保持和加强现有客户关系，同时创造新的机会。
+* 使程序员和内容所有者能够接触到更广泛的受众，并最大化高级内容的价值。
+* 通过与查看者直接在线互动来扩展品牌。
 
-随着各行各业都迎来了各种机遇，也带来了挑战。 其核心是权利。 在查看者访问订阅内容之前，必须确定他们是否有资格访问该内容。
+### 各地电视的挑战 {#challenges-tv-everywhere}
 
-用户是否订阅了付费电视提供商？ 如果是这样的话，该订阅是否包含所请求的内容？ 权利对于程序员和内容所有者尤其难以直接确定，因为付费电视运营商拥有其客户的识别数据及其客户的访问权限。
+随处可见的电视机会带来了巨大的挑战，权利是最关键的。 在查看者能够访问订阅内容之前，系统必须验证其权限。
 
+关键问题包括：
 
-在权利之外，还有许多相关的技术和集成挑战，包括：
+* 用户是否与付费电视提供商存在有效订阅？
+* 他们的订阅是否包含请求的内容？
 
-* 制定并颁布全面的多设备战略
-* 协调程序员和付费电视提供商之间的各种关系
-* 防止欺诈性访问或滥用服务条款
-* 为跨网站和应用程序的用户提供一致且无挫折的身份验证体验
-* 保持快速上市以跟上关联交易
-* 管理与多个集成相关的成本
+对于程序员和内容所有者来说，确定权利尤其具有挑战性，因为付费电视操作员可以控制客户数据和访问权限。
 
-这些挑战使得在程序员和多个付费电视提供商的身份验证系统之间执行和维护复杂的直接集成变得非常耗费资源，需要时间和精通技术。
+除了应享权利之外，还出现了一些技术和集成挑战，包括：
 
+* 制定可确保无缝访问的多设备策略。
+* 管理程序员和付费电视提供商之间的复杂关系。
+* 防止欺骗性访问并强制实施服务条款。
+* 跨网站和应用程序提供一致、用户友好的身份验证体验。
+* 保持快速上市时间以与关联协议保持一致。
+* 控制与多个集成相关的成本。
 
-解决方案？ **Adobe®通过身份验证**。
+这些挑战使得程序员和多个付费电视身份验证系统之间的直接集成高度占用资源，需要时间和技术专业知识。
 
-## Adobe Pass身份验证简介 {#authentication-intro}
+为了克服这些障碍，**Adobe® Pass Authentication**&#x200B;简化并简化了授权验证，从而能够无缝、安全地访问TV Everywhere内容。
 
-借助Adobe Pass身份验证，程序员和付费电视提供商只需使用Adobe Pass身份验证API进行简单的集成，即可访问整个生态系统，包括：
+## Adobe Pass身份验证简介 {#introduction-adobe-pass-authentication}
 
-* 程序员，如Turner Broadcasting(TBS、TNT、CNN)、Fox Broadcast Networks和Hulu
-
-* 美国所有顶级付费电视提供商，占美国付费电视所有家庭的90%以上
-
-此外，Adobe Pass Authentication提供了一个框架，使用户身份验证和授权变得简单而安全。
+Adobe Pass身份验证安全地协调程序员和付费电视提供商之间的授权交易，确保适当的客户可以轻松访问适当的内容。
 
 ![](../assets/programmers-connect-authn.png)
 
-*图1：通过Adobe Pass身份验证连接的一些程序员和付费电视提供商……*
+*通过Adobe Pass身份验证连接的一些程序员和付费电视提供商*
 
-Adobe Pass安全地协调程序员和付费电视提供商之间的权利事务，便于查看者访问订阅内容。 或者，换句话说……
+**受益于Adobe Pass身份验证的人员**
 
-**Adobe Pass身份验证使适当的客户能够轻松快速地访问适当的内容。**
+* **程序员**
 
-**谁的Adobe Pass身份验证？**
+  ，这些用户希望轻松与付费电视提供商（也称为MVPD，即多频道视频节目分发商）集成，以吸引最广泛的受众并优化收入。
 
-* **程序员**&#x200B;希望轻松与付费电视提供商（也称为“MVPD”或“多频道视频节目分发商”）集成，以吸引最广泛的受众，从而实现最佳收入。 使用Adobe Pass身份验证，程序员可以跨所有主要提供商对查看器进行身份验证，这与客户端平台无关。
+* **付费电视提供商(MVPD)**
 
-* **付费电视提供商/MVPD**，他们寻求与多个程序员建立无痛苦的连接，并通过促进在线访问订阅内容来提高客户满意度。
+  寻求通过单一集成与多个内容所有者（程序员）建立联系的客户，通过促进在线访问订阅内容来提高客户满意度。
 
-* **向希望轻松访问已订阅内容的电视客户付款**，无论他们身在何处，无需额外付费。 单点登录可跨Web或移动应用程序提供安全的查看器身份验证，无需客户端下载或重复登录，并且用户体验良好。
+* **付费电视客户**
 
-对于&#x200B;**程序员**，Adobe Pass身份验证提供：
+  想要随时随地通过任何设备观看已付费内容的用户。
 
-* 与顶级付费电视提供商轻松集成和即时连接，无需多个直接集成的麻烦
-* 通过支持内容的最广泛受众，优化订阅（许可）和广告收入
-* 安全身份验证，对高级内容的访问权限仅授予授权用户/设备
-* 开放灵活的框架，与玩家和DRM平台无关；可在多种平台上进行播放，包括iOS、Android、Windows 8、游戏机、机顶盒等。
-* 与任何DRM技术(如AdobeFlash Access®或Play Ready®)的兼容性。
-* 支持单点登录(SSO)身份验证和授权，这样订阅者就无需在自己的系统上首次进行身份验证后再次登录。
+**程序员**
 
+希望最大限度地扩大受众范围和收入的程序员可以：
 
-对于&#x200B;**付费电视提供商/MVPD**，Adobe Pass身份验证提供：
+* 轻松与顶级付费电视提供商集成，无需管理多个直接连接。
+* 通过确保所有主要提供商和平台之间的身份验证来扩展其受众。
+* 通过安全身份验证保护高级内容，限制对授权用户和设备的访问。
+* 启用单点登录(SSO)以改善跨应用程序和网站的用户体验。
 
-* 与内容所有者轻松集成，通过单一集成提供与多个程序员的即时连接
-* 通过支持客户在查看跨多个平台和设备的内容时获得流畅的品牌体验，增强了客户参与度
-* 安全身份验证，确保仅授权用户/设备被授予访问高级内容的权限，并（可选）限制每个家庭帐户可以连接的设备和并发流的数量。
+**付费电视提供商(MVPD)**
 
+付费电视提供商可通过以下方式改善客户体验并简化操作：
 
-对于&#x200B;**付费电视客户**，Adobe Pass身份验证提供：
+* 通过单个集成与多个内容所有者连接。
+* 跨设备和平台提供贴牌、无缝的观看体验。
+* 确保安全身份验证，以防止未经授权的访问，并管理每个家庭的并发流。
 
-* **所有地方都有电视！**
+**付费电视客户**
 
-本白皮书的其他部分将介绍Adobe Pass身份验证的技术介绍。  虽然下面的许多内容都侧重于程序员集成，但也有适用于付费电视提供商的一般和特定信息。 本文档还重点介绍了Adobe Pass身份验证如何作为随时随地播放电视的解决方案来发挥其功能的安全性和完整性。 若需本文以外的其他详细信息，请联系您的Adobe代表或填写[此处](https://www.adobe.com/)的信息请求表。
+订户可随时随地通过电视收看自己已付费的内容。
 
-## 建筑构件 {#arch-building-blocks}
+### 与Adobe Pass身份验证集成 {#integrating-adobe-pass-authentication}
 
-<!-- BROKEN LINK
-![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/import-pc7mz3dfnv/check.gif) 
--->
+无论您是付费电视提供商还是程序员，与Adobe Pass身份验证集成都需要主动参与。 下面是这两个角色的过程的高度概述。
 
-下面讨论了身份验证和授权的中心授权事务。 身份验证是向付费电视提供商确认给定用户是已知客户的过程。 授权是付费电视提供商确认经过身份验证的用户具有对给定资源的有效预订的过程。
-Adobe Pass身份验证包含以下基本组件：
+#### 程序员集成流程 {#programmer-integration-process}
 
-* 客户端组件（以下之一）：
+正式启动集成后，可提供其他指导，但流程通常涉及以下步骤：
 
-   * Access Enabler — 特定于平台的库；提供易于使用的API和代码示例以实施权利流
-   * 无客户端API - RESTful Web服务；为没有网页渲染功能的平台（如游戏机、机顶盒等）提供权限流端点
+**先决条件**
 
-* Adobe托管后端服务器
-* 媒体令牌验证器
-* 一个安全的中央ExchangeMedium（令牌）
+* 内容管理系统(CMS)。
+* 一种内容传送机制，其可以包括第三方内容传送网络(CDN)。
+* 在网站或独立应用程序中嵌入了媒体播放器的现有在线视频平台。
 
-在基本级别上，Adobe Pass身份验证包括三个组件(Access Enabler、Adobe托管后端服务器和媒体令牌验证器)和一个中心交换项目（令牌）。
+**集成任务**
 
-### 客户端组件 {#client-components}
+* 集成Adobe Pass身份验证[REST API DCR](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)。
+* 集成Adobe Pass身份验证[REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)。
+* 集成Adobe Pass身份验证[媒体令牌验证器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier)。
+* 开发用于身份验证、授权和注销工作流程的用户界面。
 
-* 访问启用码
-* 无客户端API
+有关程序员集成过程的更多详细信息，请参阅[程序员kickstart指南](/help/authentication/kickstart/programmer-kickstart-guide.md)和[程序员集成指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)文档。
 
-#### 访问启用码 {#access-enabler}
+#### 付费电视提供商集成流程 {#pay-tv-provider-integration-process}
 
-在完全支持的平台(包括Web、iOS、Android、Windows 8)上，程序员通过Access Enabler客户端组件与Adobe Pass身份验证进行交互。 此组件方便了与客户的所有身份验证和授权交互。  Access Enabler在其系统上本地运行。 当用户访问程序员网站或应用程序并请求内容时，Adobe托管/维护的Access Enabler组件将在后台静默加载。
+正式启动集成后，可提供其他指导，但流程通常涉及以下步骤：
 
-Access Enabler处理实际的权利工作流，而Programmer则负责实施用户界面并与该Access Enabler交互的更高级别的网页或播放器应用程序。 这些交互通过由Access Enabler API定义的函数和回调的异步系统进行。
+**先决条件**
 
-以下是基本权利流程，使用Access Enabler API可轻松实施：
+* 签署Adobe Pass身份验证保密协议(NDA)。
+* 向Adobe Pass身份验证工程团队提供有关身份验证和授权系统的规范。 为了实现最简单的集成，建议使用基于SAML的身份验证提供程序(IdP)和基于SOAP的授权系统。
 
-* 设置请求者（程序员）身份
-* 检查/获取针对特定付费电视运营商（“身份提供程序”）的用户身份验证
-* 检查/获取特定资源的用户授权
-* 注销用户
+**集成任务**
 
-Access Enabler还提供以下服务：
+* 建立与Adobe Pass身份验证服务器的连接。
+* 完成暂存版本并确保质量保证。
+* 完成生产版本并确保质量保证。
 
-* 它验证来自程序员的查询，包括特定客户端、其域及其资源/渠道的注册状态。
-* 它提供创建付费电视运营商列表的数据，用户从中选择其提供商。 此列表还会根据请求所来自的程序员的需要验证和定义。
-* 它启动特定于付费电视运营商的身份验证和授权工作流。
-* 它会按程序员资源/渠道缓存成功的授权响应，以最大限度地减少不必要的请求流量。
-* 可以为特定于每个付费电视运营商的预定义工作流配置此服务，例如显式设备注册。
+付费电视提供商可免费使用标准集成，包括文档和基本电子邮件支持。 但是，需要大量帮助或加快时间安排的提供商可能会收取支持费用，或者选择与经验丰富的第三方合作伙伴（如Synacor）合作。
 
-根据您的网站或播放器应用程序，Access Enabler可以采用以下形式：
+Adobe Pass身份验证可以通过两种关键方式有效支持特定于付费电视提供商的业务逻辑：
 
-* Flash Player运行时可以执行的SWF文件
-* 由浏览器直接执行的JS文件
-* 支持平台(包括iOS、Android和Windows 8)的本机Access Enabler
+* 对于自包含且由付费电视提供商在收到授权请求时应用的业务逻辑，Adobe会提供支持实施所需的数据（例如唯一设备ID、IP地址）。
+* 对于需要用户干预的业务逻辑或Adobe的特定处理，可以为每个付费电视提供商维护自定义属性。 这些配置可能包括在身份验证过程中的特定点触发的预定义工作流。
 
-#### 无客户端API {#clientless-api}
+有关付费电视提供商集成流程的更多详细信息，请参阅[MVPD kickstart指南](/help/authentication/kickstart/mvpd-kickstart-guide.md)和[MVPD集成指南](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md)文档。
 
-无客户端API方法适用于不支持Web浏览器（通过MVPD进行身份验证所必需的）的“智能设备”（游戏机、机顶盒和智能电视）。  在无客户端方法中，智能设备应用程序通过RESTful Web服务API直接与Adobe Pass身份验证进行通信，除了在第二屏幕（浏览器）应用程序上执行的身份验证之外，其他所有应用程序均采用此方式。 换句话说，不使用Access Enabler客户端库。 相反，智能设备应用程序的开发人员直接使用Adobe Pass身份验证Web服务API来实施权利流。
+### 权利流 {#entitlement-flow}
 
-### Adobe托管后端服务器 {#adobe-backend-servers}
+Adobe Pass Authentication充当代理，通过为双方提供安全一致的界面，促进程序员和MVPD之间的权利流。
 
-Adobe Pass身份验证后端服务器，由Adobe托管：
+对于程序员，Adobe Pass身份验证将API作为&#x200B;**Standard**&#x200B;或&#x200B;**Premium**&#x200B;层的一部分提供：
 
-* 与付费电视提供商配置身份验证和授权工作流，这些提供商需要在Adobe Pass身份验证和操作员之间进行服务器到服务器通信。
-* 维护程序员站点和应用程序的配置。
-* 托管可下载的Access Enabler组件文件。
-* 为无客户端API集成提供RESTful Web服务端点。
-* 生成（在某些情况下，存储）身份验证和授权令牌。
+* 标准Adobe Pass身份验证API：
+   * [REST API DCR](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+   * [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
-### 令牌和媒体令牌验证器 {#tokens-media-token-verifier}
+* Premium Adobe Pass身份验证API：
+   * [重置临时传递API](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+   * [降级API](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+      * [退化特征](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+   * [授权服务监控API](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
-Adobe Pass身份验证权利解决方案侧重于生成在成功完成身份验证/授权工作流后获取的特定数据段。 这些数据段称为令牌。 它们的生命周期有限，而且如果采用无客户端API解决方案，它们会安全地存储在客户端上依赖于平台的位置或Adobe服务器上。 过期后，必须通过重新启动身份验证和/或授权工作流重新颁发令牌。
+有关权利流程的更多详细信息，请参阅[程序员集成指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md#entitlement-flow)文档。
 
-在身份验证/授权工作流中，Adobe Pass身份验证会发布三种类型的令牌。 其中两个是“长期”的，提供了用户观看体验的连续性。 第三个令牌是短期令牌，它支持用于减少欺诈的行业最佳实践（例如，欺诈包括流欺诈等漏洞）。 存留时间(“TTL”)值是根据程序员和付费电视提供商之间的协议设置的，这些提供商就最适合所有相关人员的价值达成了共识。
+#### 了解权利 {#understanding-entitlements}
 
-#### （长期）身份验证令牌 {#long-lived-auth-token}
+Adobe Pass身份验证解决方案围绕着权限创建来考虑的，权限是在成功完成身份验证和授权工作流后生成的特定数据段。 这些权限授予对受保护内容的访问权限，但具有有限的生命周期。 权利到期后，必须通过重新启动身份验证或授权过程来续订权利。
 
-一旦客户使用Adobe Pass身份验证成功登录到他们的付费电视帐户，身份验证就会成功。 Adobe Pass身份验证然后生成与请求设备绑定的长期身份验证(AuthN)令牌，以及（取决于付费电视提供商）可匿名识别用户的全局唯一标识符(“GUID”)。
+有关授权的更多详细信息，请参阅以下文档：
 
-* Adobe Pass身份验证将AuthN令牌安全地存储在所有使用Adobe Pass身份验证的应用程序都可用的位置。 对于Access Enabler集成，令牌安全地存储在客户端。  Adobe Pass身份验证使用AuthN令牌代表用户进行后续授权查询。
-* 在任意给定时刻，只存储一个AuthN令牌。 每当发出新的AuthN令牌并且旧令牌已存在时，新令牌会覆盖现有的存储值。
+* **配置文件**
 
-#### （长期）授权令牌 {#long-lived-authriz-token}
+  在成功进行身份验证后，Adobe Pass身份验证会创建一个已身份验证配置文件（“长期”），该配置文件与请求应用程序、设备和服务提供商标识符（请求者标识符）相关联。
 
-在成功授权后，Adobe Pass身份验证会创建一个长期授权(“AuthZ”)令牌。 此令牌不可移植，因为它绑定到请求设备和特定的受保护资源（例如，频道、系列或剧集）。
+* **[用户元数据](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)**
 
-* Adobe Pass身份验证安全地存储AuthZ令牌，以及其他资源的其他授权令牌。  同样，与AuthN令牌一样，在使用Access Enabler的平台上，令牌存储在客户端本地；在使用无客户端API的平台上，令牌存储在Adobe Pass身份验证服务器上。
-* 长期AuthZ令牌的生存时间(TTL)通常定义在天到几周之间，具体取决于付费电视提供商和程序员之间的特定协议。
-* 在任意给定时间，每个资源仅存储一个AuthZ令牌。 可以存储多个授权令牌，前提是它们与不同的资源相关联。 每当颁发了新授权令牌并且同一资源已存在旧授权令牌时，新令牌会覆盖现有的缓存值。
-* Adobe Pass身份验证使用长期AuthZ令牌创建用于实际查看访问权限的短期媒体令牌。
+  在成功进行身份验证后（在某些情况下，在身份验证之后也是如此），Adobe Pass身份验证将从MVPD接收用户元数据，这些元数据可能会向请求应用程序公开这些元数据。
 
-#### 短期媒体令牌 {#short-lived-media-token}
+* **[决策](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md)**
 
-一旦Adobe Pass身份验证生成AuthZ令牌，它就会使用该令牌生成一个一次性使用的短期媒体令牌，该令牌经过Adobe签名和加密，以避免在交换期间被篡改：
+  成功授权后，Adobe Pass身份验证会创建一个与请求应用程序、设备、服务提供商标识符（请求者标识符）和特定受保护资源（资源标识符）关联的授权决策（“长期”）。
 
-* 将短期令牌的TTL（默认值： 5分钟）设置为允许在生成令牌的服务器与验证令牌的服务器之间出现时钟同步问题。
-* 在提供对受保护资源的访问权限之前，短暂的令牌会向嵌入站点公开，因此程序员必须使用媒体令牌验证器来验证令牌(对于Access Enabler集成，请使用令牌验证器服务，对于无客户端API集成，请使用令牌验证器。
+* **[媒体令牌](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md)**
 
-#### 媒体令牌验证器 {#media-token-verifier}
+  成功授权后，Adobe Pass身份验证会创建一个与成功的播放请求关联的媒体令牌（“短暂的”），并为减少欺诈（例如，流翻录）的行业最佳实践提供支持。
 
-程序员负责将媒体令牌验证器库集成到其现有的应用程序服务器中，以便验证器能够在视频流实际开始之前执行最终用户验证。 媒体令牌验证器库定义：
+用户档案和决策的生存时间(“TTL”)值是根据程序员和付费电视提供商之间的协议设置的，这些提供商就最适合所有相关人员的价值达成了共识。
 
-* 令牌验证API从令牌中检索信息，例如是否有效、令牌发布的时间以及其他相关数据
-* 用于验证令牌是否确实来自Adobe的Adobe公钥
-* 一个参考实现，显示如何使用验证器API以及如何使用库中包含的Adobe公钥验证其来源
+#### 构建用户界面 {#building-user-interface}
 
-![](../assets/high-level-architecture-nflows.png)
+程序员负责为其网站或应用程序内的授权工作流设计和实现用户界面(UI)，而某些元素（如登录流程）则由付费电视提供商处理。
 
-*图2： Access Enabler集成中Adobe Pass身份验证生态系统的高级架构*
+程序员至少必须：
 
-## 与Adobe Pass身份验证集成 {#integrate-auth}
+* **实现提供程序选择接口**
+   * 允许新用户识别其付费电视提供商并首次登录。
+   * 有些付费电视提供商会将用户重定向到外部登录页面，而另一些提供商则需要在iframe内登录。 程序员必须实施回调函数才能在需要时生成iframe。
 
-无论您是付费电视提供商还是程序员，与Adobe Pass身份验证集成的过程都需要您一定程度的积极参与。 下面将介绍每个流程。
+* **管理支持的付费电视提供商列表**
+   * 确保用户只能通过批准的提供商访问内容。
 
-### 付费电视提供商流程
+* **指示身份验证状态**
+   * 显示用户在应用程序或网站中经过身份验证的时间。
 
-付费电视提供商对Adobe Pass身份验证的主要责任是验证请求用户是否确实是有权访问程序员内容的已知订阅者。 在高处
-级别，要与新的付费电视提供商集成，Adobe Pass身份验证过程需要以下步骤：
-
-1. 提供商签署《Adobe Pass身份验证保密协议》(NDA)。
-1. 提供商为Adobe提供认证和授权系统规格。 为了最简单的集成，建议付费电视运营商具有基于SAML的身份提供者(IdP)以进行身份验证，并能够通过SOAP访问协议进行通信以进行授权。
-1. 该提供商在其服务器与Adobe Pass身份验证服务器之间建立连接。 这包括提供端点和列出IP。
-1. 资格预审版本和QE。
-1. 生产版本和量化宽松。
-
-虽然Adobe Pass身份验证可能会取代程序员的现有集成，但付费电视提供商通常不需要这样做。 Adobe可与提供商的技术团队一起配置Adobe Pass身份验证，以满足任何现有集成的需求。 如果采用“标准”集成且支持要求最少（文档和基本电子邮件支持），则付费电视提供商可免费使用该集成。 如果提供商需要大量支持或升级时间线，可能需要收取支持费用，或者提供商可能需要与熟悉我们的解决方案的第三方（如Synacor）合作。
-
-
-Adobe Pass身份验证还支持有效处理付费电视提供商的业务逻辑，如下所示：
-
-* 对于自包含的、在接收到授权请求时可由操作员应用的业务逻辑，当操作员接收到授权请求时，Adobe提供支持业务逻辑执行所需的必要数据。 此数据可以包括但不限于发出请求的用户唯一设备ID和设备的IP地址。
-* 对于需要Adobe干预和/或用户解决方案进行特定处理的业务逻辑，Adobe可以为每个付费电视提供商维护一些自定义属性。 这些特定于操作员的配置/策略包括支持预定义的工作流，这些工作流可在顶级工作流的某些特定点启动。 有关自定义资产支持的详细信息，请联系您的Adobe代表。
-
-Adobe还提供欺诈限制服务。 有关详细信息，请联系您的Adobe代表。
-
-### 程序员流程 {#programmer-process}
-
-要成功集成Adobe Pass身份验证，程序员必须设置其媒体播放器应用程序或网页，以使用Adobe Pass身份验证处理核心权利文件进程：身份验证、授权和注销。
-
-
-在开始与Adobe Pass身份验证集成之前，程序员应具有：
-
-* 现有的在线视频平台，包括作为网站的一部分或作为独立应用程序的媒体播放器
-* 内容管理系统
-* 一种投放机制，其可以包含也可能不包含第三方内容投放网络(CDN)
-
-作为使用Adobe Pass身份验证提供TV Everywhere服务的一部分，程序员应执行一些集成任务。 这些任务包括：
-
-* 将Adobe Pass身份验证的Access Enabler库集成到您的网页或媒体播放器中，或者使用无客户端方法为不支持Web的“智能设备”实现集成
-* 服务器端工作，用于将Adobe Pass身份验证令牌验证器组件集成到您的视频流工作流中
-* 为访问您的网站或应用程序的工作流创建UI(其中的某些元素（例如实际登录流程）由付费电视运营商提供，而某些元素可以选择作为Adobe Pass身份验证的一部分提供)
-
-本文概述了程序员流程，Adobe为正式启动集成提供了其他指导。
-
-#### 请求者（程序员）设置 {#requester-prog-setup}
-
-##### 向Adobe注册 {#registering}
-
-作为第一步，程序员必须向Adobe或Adobe授权的合作伙伴注册，并指定要用于Adobe Pass身份验证的域。 Adobe Pass然后，程序员会收到一个唯一的请求者ID，为程序员与Access Enabler交互的每个会话提供该ID 。
-
-##### 设置Initial Access Enabler集成 {#access-enabler-int-setup}
-
-在任何客户请求访问内容之前，程序员必须将Adobe Pass身份验证客户端组件（访问启用程序）集成到其现有的媒体播放器应用程序或网页中。 对于如何执行此操作，有多种选项：
-
-* 您可以在网页上将Flash版本AccessEnabler.swf嵌入到基于Flash的视频播放器中，或者直接嵌入到HTML中。 您可以在ActionScript或JavaScript中与SWF通信。 基本APIActionScript，但提供了完整的JavaScript包装器库。
-* 对于非Flash设备，您可以：
-   * 使用HTML5/JavaScript版本AccessEnabler.js，并通过JavaScript API与其通信，或
-   * 使用本机Access Enabler库，例如用于iOS、Android或Windows 8
-
-##### 设置初始无客户端API集成 {#clientless-api-int-setup}
-
-在任何客户请求访问内容之前，程序员必须在他们的媒体播放器应用程序中使用无客户端API实施RESTful Web服务调用，并设置“第二屏幕”应用程序以处理用户通过Web登录到他们的付费电视提供商。
-
-#### 处理身份验证和授权 {#auth-authr-handling}
-
-当客户首次向程序员请求受保护资源时，程序员向客户呈现一个付费电视提供商的列表，以便进行选择。 选择提供程序后，用户将被重定向到该操作员，以进行初始用户身份验证。 身份验证成功后，Adobe Pass身份验证将与选定的付费电视提供商通信，以授权对指定资源的访问。 有关这些过程的详细信息如下。
-
-![](../assets/providr-selection-ui.png)
-
-
-*图3：示例提供程序选择UI*
-
->[!NOTE]
->
->* 身份验证是以作为服务提供商（或“SP”）的Adobe Pass身份验证和作为身份提供商（或“IdP”）的付费电视提供商之间的SAML交换形式发生的。
->* 授权在Adobe Pass身份验证(SP)和付费电视提供商(IdP)之间使用背道（服务器到服务器）Web服务交换。
-
-
-##### 使用Access Enabler的程序员通信
-
-Access Enabler与程序员的网页或播放器应用程序之间的双向通信渠道遵循完全异步模式。 程序员通过Access Enabler API公开的方法将消息发送到Access Enabler。 Access Enabler通过在Access Enabler库中注册的回调进行响应。
-
-* 如果在本地系统上未找到身份验证令牌，则任何授权请求都会首先自动请求身份验证。 身份验证成功后，客户的令牌将存储在本地，这样他们便无需在给定时间段内再次登录。 如果他们已经在任何其他上下文中通过Adobe Pass身份验证权利解决方案成功进行了身份验证（例如，通过付费电视提供商的网站或其他程序员），则访问启用程序可以访问本地令牌，并且不需要执行其他身份验证。
-* 当客户请求特定资源时，程序员通过访问启用码向付费电视提供商请求授权。 验证（或启动）身份验证后，Access Enabler会联系付费电视提供商(通过Adobe Pass身份验证)，以确定客户是否有权查看资源。 Adobe Pass身份验证处理与付费电视提供商的通信以获取授权。 程序员只需要将请求发送到访问启用程序并处理响应（授权成功或失败）。 如果授权成功，则授权令牌存储在客户端系统上，并且回调接收短期媒体令牌。
-
-##### 使用无客户端API的程序员通信 {#progr-comm-clientless-api}
-
-程序员的应用程序与Adobe Pass身份验证之间的通信是通过RESTful Web服务进行的。  所有对Adobe Pass身份验证端点的API调用均已制定安全协议。  无客户端API文档中介绍了安全要求。
-
-##### 具有基于SSO的SAML Web浏览器身份验证的示例工作流 {#sample-wf}
-
-1. 查看器导航到站点(dummy1.com)并尝试访问授权的内容。
-1. 视频页面/播放器从adobe.com加载Access Enabler，并在用户操作提示时请求授权所请求的内容。
-1. Access Enabler运行并验证请求者和请求。
-1. Access Enabler检查本地存储中的有效授权令牌。 如果找到有效的授权，则Access Enabler会生成一个短期的媒体令牌（请参阅步骤14）。
-1. 如果未找到所请求资源的有效授权，但存在有效的身份验证令牌，则Access Enabler会向付费电视提供商发起授权请求，用户将针对该提供商进行身份验证。 Adobe服务器与付费电视提供商提供授权请求/响应交换。
-1. 如果未找到有效的身份验证令牌，则Access Enabler将提示用户输入其付费电视提供商。 (选择支持SAML Web浏览器基于SSO的身份验证的提供程序会触发基于SAML的身份验证工作流。 对于非SAML提供程序，Adobe处理类似的自定义工作流。)
-1. Access Enabler将浏览器导航到Adobe的SAML SP（服务提供商）服务，并传递所有适当的参数。
-1. SAML SP使用SAML Web浏览器配置文件，在用户的Pay TV提供商处调用相应的SAML IdP（身份提供程序），如IdP元数据中所示。 这会有效地将用户导航到IdP（付费电视提供商）的网站，以便用户进行身份验证。
-1. 成功验证后，用户将被重定向回Adobe的SAML SP，并在SAML响应中向其传递身份验证GUID。
-1. Adobe的SAML SP在存储身份验证GUID的服务器端创建会话，并将用户重定向回原始程序员页面。 （在Access Enabler检索authN令牌时删除服务器会话。）
-1. Access Enabler从Adobe服务器检索身份验证GUID，以将其包含在令牌中，该令牌具有由Adobe Pass身份验证维护的设备ID。 当FlashDRM位于设备上时，此操作将通过Flash AccessAPI(Flash Player的DRM组件)完成，这些API允许将GUID绑定到设备ID并返回身份验证令牌。 否则，可使用基于HTML5的存储或特定的本机组件，通过HTTPS通过JS API来做到这一点。
-1. Access Enabler使用身份验证令牌向付费电视提供商发出授权请求。 在启用了Flash Access的设备上，始终通过Flash AccessAPI发出请求，以便生成的授权令牌捆绑到设备。 在非Flash Access设备上，HTTPS用于客户端与服务器之间的安全通信。
-1. 成功授权后，Adobe Pass身份验证会创建一个长期授权(“authZ”)令牌，并将其传递给Access Enabler，后者将其存储在本地系统中。
-1. Access Enabler使用authZ令牌创建用于实际查看访问的短期媒体令牌。 为安全起见，这些短期令牌必须由另一个Adobe Pass身份验证组件（媒体令牌验证器）验证。
-
-![](../assets/authn-authz-entitlmnt-flow.png)
-
-
-*图4： Authentication and Authorization Access Enabler工作流*
-
-##### 提供授权用户界面 {#entitlement-ui}
-
-程序员必须创建自己的UI，以便访问其网站或应用程序中的工作流。 某些元素（例如实际登录流程）由付费电视提供商提供，而某些元素可以选择作为Adobe Pass身份验证的一部分提供。 程序员至少要执行以下操作：
-
-* **实现提供程序选择接口**，该接口允许新用户识别其付费电视提供程序并首次登录。 对于开发，Access Enabler提供了一个基本的用户界面，使客户可以选择付费电视提供商并启动登录过程。 对于生产环境，程序员必须实施自己的提供程序选择器对话框。 有些付费电视提供商会重定向到自己的网站以进行登录，而有些提供商会要求在iframe中显示其登录页面。 如果客户选择其中一个提供程序，程序员必须实施创建此iframe的回调。
-* **标识受保护的资源。**&#x200B;受保护资源是需要授权才能访问的资源。 在提供这些资源时，程序员界面应指明在查看之前需要授权。 授权成功后，界面应显示资源现在已获得授权。
-* **创建和维护付费电视提供商列表**，以仅控制您指定的提供商的用户访问权限。
-* **显示用户已通过身份验证。**&#x200B;程序员应将客户的身份验证状态指示为用于识别受保护资源的任何方法的一部分。 程序员可以查询Access Enabler以确定客户是否已通过身份验证。
-
-#### 支持单一注销 {#single-logout-support}
-
-在大多数情况下，程序员负责通过简单的API调用处理用户注销。 logout()调用指示Adobe Pass身份验证通过以下方式注销当前用户：
-
-* 删除所有AuthN和AuthZ令牌
-* 清除该用户的所有身份验证和授权信息
-* 启动特定于付费电视提供商的工作流，以清除用户与提供商的身份验证会话（例如，如果身份验证是使用SAML身份验证请求协议完成的，则注销可以使用SAML单一注销协议完成。）
-
-如果用户让计算机空闲足够长的时间以致令牌过期，则他们仍可以返回到会话并成功启动注销。 Adobe Pass身份验证确保删除所有令牌，并通知付费电视提供商删除其会话。
-
-
-当从未与Adobe Pass身份验证集成的站点启动注销时，付费电视提供商可以通过浏览器重定向调用Adobe Pass身份验证单次注销服务。
-
-## 基本权利流之外 — 其他功能 {#beyond-basics}
-
-基本权利文件流程包括“启动”、“身份验证”、“授权”和“注销”。  随着Adobe Pass身份验证的发展和成熟，基本流程中已经添加并正在添加许多其他功能。  这些功能包括：
-
-* **用户元数据** — 根据MVPD和程序员之间的协议，MVPD可以安全地交换元数据，例如邮政编码、最大评级、渠道ID等。 元数据支持各种用例，包括家长控制、体育活动的区域冻结期等。
-* **临时免费访问** — 允许程序员提供对其受保护内容的临时免费访问（例如，每日编程的简短示例或大型事件的免费演示）。
-* **代理MVPD** - MVPD可以管理其自身与Adobe Pass身份验证的集成，还可以代表一组关联的“ProxiedMVPD”管理授权进程。
-
-## 安全性 {#security}
-
-此部分重点介绍Adobe Pass身份验证基础架构的安全性和完整性。
-
-### 令牌安全 {#token-security}
-
-Adobe Pass身份验证的主要目标之一是确保系统能够抵御恶意用户或内容聚合器对内容授权数据的攻击。 因此，在工作流中的不同级别保护数据访问，同时保护具有最高重要性的授权令牌数据的生成和使用。 Adobe Pass身份验证架构旨在确保安全地维护令牌内容，并确保令牌保留在向其颁发令牌的设备上。
-
-* **长寿命AuthN和AuthZ令牌安全性** — 所有长寿命令牌均由Adobe Pass身份验证服务器进行数字签名。 但是，数字签名在平台之间有所不同，因为它使用的设备ID与生成、保护和验证设备ID的方式有所不同。 在所有情况下，客户端验证可确保数字签名保持不变，并保留令牌的完整性。 Access Enabler将经过验证的令牌安全地存储在运行它的环境的特定位置。 如果设备ID验证失败，身份验证会话将失效，令牌将被重置，并且系统会提示用户再次登录。
-* **短期媒体令牌安全** — 在内容访问前的最后一步中生成的短期媒体令牌将通过Adobe签名并加密，以避免在交换期间被篡改。 短期媒体令牌还需要通过附加的Adobe Pass身份验证组件（媒体令牌验证器）执行额外的验证步骤。 短期令牌的TTL默认设置为5分钟，如有需要，可以缩短。 绝不会缓存生命周期短的媒体令牌；每次调用授权API时，都会从服务器检索新令牌。
-
-### 特定于平台的设备安全性 {#platform-sp-security}
-
-Adobe Pass身份验证使用的安全措施因平台而异，但都非常强大且处于一流水平。
-
-* **启用Flash的设备** — 当Flash Player10.1+或AIR 2.5+位于设备上时，Adobe Pass身份验证使用Flash PlayerDRM功能进行保护，也称为Flash Access。 Flash提供了更高级别的保护；基于Flash的令牌的设备绑定的强大保证意味着在大多数情况下，生存时间可能会更长，用户无需像以往一样登录，并且用户体验通常会更顺畅。
-* **在支持HTML5的设备上的浏览器内体验** — 在包含HTML5浏览器功能的非Flash设备上，Adobe Pass身份验证有另一种方法可限制对基于浏览器的集成的保护。 但是，由于HTML5的设备捆绑没有那么强，因此HTML5平台上令牌的生存时间(TTL)通常较短。
-* **对家庭内和家庭外设备的本机应用程序支持** -Adobe提供针对每个操作系统(iOS、Android、Windows 8等)的本机SDK，从而提供优于HTML5解决方案的增强安全性。 这些SDK使用本机API检索设备ID，并将其安全地传递到Adobe Pass身份验证服务器。
-* **无客户端** - Adobe Pass身份验证使用HTTPS协议进行安全通信。 此外，来自智能设备的所有调用都必须经过数字签名。
+* **识别受保护的资源**
+   * 明确指示哪些内容在查看之前需要授权。
+   * 在授予访问权限后，更新UI以反映成功的授权。
 
 ## 常见问题解答 {#faqs}
 
-**什么是TV Everywhere？**
-这个名为“电视无所不在”的行业运动使付费电视客户能够使用各种互联网连接设备访问他们已订阅的高级内容，包括个人计算机、平板电脑、智能手机、游戏机、机顶盒和“智能”电视。 此计划面临的挑战是使身份验证过程尽可能简单和轻松，使客户能够顺利访问其订阅内容，而不会遇到令人望而却步的障碍和多次登录。
+**哪里都有电视？**
 
+TV Everywhere是一项行业计划，允许Pay TV客户通过各种互联网连接设备访问他们已订阅的优质内容。 这包括个人计算机、平板电脑、智能手机、游戏机、机顶盒和智能电视。 主要挑战是确保无缝且用户友好的身份验证过程，使客户能够访问其订阅内容而无需多次登录或技术障碍。
 
-**什么是Adobe Pass身份验证，它与TV Everywhere有何关系？**
-Adobe Pass身份验证以简单且安全的方式顺利验证用户访问内容的权限，从概念到现实再到再到再到其他任何地方，TV都发生了变化。 Adobe Pass身份验证是一项托管服务，允许根据程序员和付费电视提供商所需的业务规则进行快速后端集成。 这意味着，可以快速面向各方进行营销，提供更安全的环境以防止欺诈，并提供卓越的客户体验，让更多平台上的更多人能够看到更多电视内容。
+**什么是Adobe Pass身份验证，它如何支持所有地方的电视节目？**
 
+Adobe Pass身份验证通过简单高效地安全验证用户访问内容的权限，让TV Everywhere变得生动有趣。 它是一项托管服务，可根据程序员和付费电视提供商设置的业务规则促进快速后端集成。 这将缩短所有利益相关者的上市时间，提供更加安全的环境以最大程度地减少欺诈，并提供更好的用户体验，在多个平台上可访问更多电视内容。
 
-**如何提供/提供Adobe Pass身份验证？**
-Adobe Pass身份验证通过软件即服务(SaaS)模型提供。 这使得最终用户、程序员和付费电视提供商之间的通信更加安全，从而验证内容的权限。 服务的核心组件包括客户端Access Enabler（或某些设备的无客户端API）和托管的Adobe Pass Authentication Server。 Access Enabler是加载到程序员的网页或播放器应用程序中的小文件。 它与Adobe Pass身份验证服务器通信，这些服务器又将连接内置到各种付费电视提供商的身份验证系统中。 Adobe Pass身份验证还为某些不支持Web的“智能设备”（智能电视、机顶盒、游戏控制台等）提供了无客户端API集成方法。 无客户端方法提供了RESTful Web服务，开发人员可以使用该服务在这些设备上实施Adobe Pass身份验证权利流。
+**如何传递Adobe Pass身份验证？**
 
+Adobe Pass身份验证作为软件即服务(SaaS)解决方案提供。 此方法可确保最终用户、程序员和付费电视提供商之间的安全通信，以进行内容权利验证。
 
-**Adobe Pass身份验证与其他TV Everywhere解决方案有何不同？**
-与替代的TV Everywhere解决方案相比，Adobe Pass身份验证具有明显的优势。 与各个提供商的直接集成无法提供单个永久登录(SSO)的灵活性，因为用户会通过Internet从一个站点到另一个站点。 Adobe Pass Authentication还具有显着的市场渗透率；一旦程序员与Adobe Pass Authentication集成，他们就会立即与面向美国90%以上家庭的付费电视运营商建立连接。 此外，Adobe Pass身份验证利用Flash运行时（如果可用）内置的独特安全功能来帮助减少欺诈，同时还提供了SDK，这样程序员就可以将相同的TV Everywhere功能内置到本机应用程序中，以用于无法使用Flash的移动设备或家庭设备。 最后，虽然Adobe Pass身份验证作为独立服务提供，但我们还提供了与其他与交付、保护和盈利TV EverywhereAdobe相关的内容产品和服务(包括Adobe Pass和Adobe Analytics)紧密集成的选项。
+**什么因素使Adobe Pass身份验证不同于其他TV Everywhere解决方案？**
+
+与其他解决方案相比，Adobe Pass身份验证具有以下几个优势：
+
+* **无缝单点登录(SSO)** — 与各个提供商的直接集成不同，Adobe Pass身份验证在用户在不同网站和应用之间移动时提供持久登录体验。
+* **广泛的市场渗透** — 一旦程序员与Adobe Pass身份验证集成，他们将立即获得覆盖超过90%美国家庭的付费电视运营商的访问权限。
+* **与Adobe的生态系统集成** — 与其他Adobe解决方案无缝协作，以实现内容交付、保护和盈利，包括Adobe Analytics。
 
 **Adobe Pass身份验证的安全程度如何？**
-Adobe Pass身份验证架构的首要任务是确保仅授权查看者通过身份验证并被授予对高级内容的访问权限。 Adobe Pass身份验证将访问与观看设备紧密绑定，并帮助限制给定家庭的流、会话和/或设备。
 
-
-**是否需要Flash Player？**
-AdobeFlash Player11.x或更高版本对于最严格的设备绑定安全是必需的。 但是，适用于TV Everywhere的Adobe Pass身份验证与播放器和平台无关，并且与任何播放应用程序(包括Silverlight和HTML5)集成。 此外，Adobe Pass身份验证还为iOS、Android和Xbox等无法使用Flash Player的设备提供本机支持。  最后，Adobe Pass身份验证为无法呈现网页的设备（游戏机、智能电视、机顶盒）提供无客户端方法。
-
+安全是重中之重。 Adobe Pass身份验证通过绑定对用户设备的访问权限，确保只有经过授权的用户才能访问高级内容。 它还提供了用于限制每个家庭并发流、会话或设备数的选项。
 
 **Adobe Pass身份验证支持哪些设备？**
-几乎任何具有HTML5 Web工具包的设备都支持Adobe Pass身份验证，以便在浏览器中查看体验。 此外，Adobe Pass身份验证将继续为各种特定于设备的平台(包括iOS、Android™和Windows 8)推出本机软件开发工具包(SDK)。 Adobe Pass身份验证通过其RESTful Web服务API部分支持某些不支持Web的设备（智能电视、机顶盒、游戏控制台等）。
 
-**Adobe Pass身份验证是否支持各地电视的新兴标准？**
-Adobe Pass身份验证符合**CableLabs OLCA（在线内容访问）** [规范](https://www.cablelabs.com/specifications)，该规范为从在线源向付费电视客户交付视频提供了技术要求和架构。 Adobe在2011年6月参与了CableLabs的联合互操作测试项目，并通过了服务提供商实施的测试流程。 Adobe Pass身份验证已根据OLCA身份验证规范进行验证（完成并测试）。 授权组件已完成，但测试验证将等待CableLabs测试环境（ETA 2011年11月）的发布。
+Adobe Pass身份验证设计用于各种设备，例如基于Web的设备、移动设备或连接电视的设备。
 
-Adobe也是&#x200B;**OATC（开放式身份验证技术联盟）**&#x200B;的积极成员，并作为该机构的一部分参与若干小组委员会的规范起草项目。
+**Adobe Pass身份验证对最终用户是否造成任何损失？**
 
-**Adobe Pass身份验证如何处理联合身份管理/单点登录(SSO)？**
-Adobe Pass身份验证允许您使用Adobe Pass身份验证与参与付费电视运营商之间的后渠道（服务器到服务器）通信，为客户提供单点登录(SSO)身份验证和授权。 因此，使用Adobe Pass身份验证时，只要付费电视运营商允许保留该身份验证，订阅者就不需要在首次身份验证后再次登录。 通常，此限制设置为30天。 为实现此目标，Adobe Pass身份验证为客户提供了一个用于身份验证令牌的通用域。 此身份验证状态信息适用于与给定付费电视运营商集成的所有参与站点。
-
-目前，大多数Adobe Pass身份验证与付费电视运营商集成都使用SAML协议，该协议是主要身份验证标准之一。 Adobe Pass身份验证在SAML架构中充当代理服务提供商，并将SAML身份验证响应作为安全令牌保留在Adobe公共域中。 Adobe Pass身份验证符合SAML 2.0标准。
-
-虽然Adobe Pass身份验证目前通常与SAML SSO解决方案一起使用，但Adobe Pass身份验证架构从程序员集成中抽象出任何协议细节。 因此，可以逐渐增加对新协议（例如基于OAuth 2.0或自定义协议的协议）的支持。
-
-**对于最终用户来说，TV Everywhere的Adobe Pass身份验证需要多少费用？**
-最终用户使用Adobe Pass身份验证不会产生额外费用。
-
->[!NOTE]
->
->**后续步骤：**&#x200B;有关详细信息，请与您的Adobe代表联系或在[此处](https://www.adobe.com/cfusion/mmform/index.cfm?name=adobepass_rfi)填写信息请求表。
->
+不适用。 Adobe Pass身份验证对最终用户是免费的。

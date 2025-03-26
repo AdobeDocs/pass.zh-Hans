@@ -2,9 +2,9 @@
 title: 程序员集成指南
 description: 程序员集成指南
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
 workflow-type: tm+mt
-source-wordcount: '2073'
+source-wordcount: '2119'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,9 @@ Adobe Pass Authentication充当代理，通过为双方提供安全一致的界�
 
 * Premium Adobe Pass身份验证API：
    * [重置临时传递API](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
    * [降级API](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+      * [退化特征](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
    * [授权服务监控API](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 ### 用例 {#use-cases}
@@ -323,4 +325,6 @@ Adobe Pass身份验证解决方案围绕着权限创建来考虑的，权限是�
 
 * **[媒体令牌](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md)**
 
-  成功授权后，Adobe Pass身份验证会创建一个与成功播放请求关联的媒体令牌（“短暂有效”）。
+  成功授权后，Adobe Pass身份验证会创建一个与成功的播放请求关联的媒体令牌（“短暂的”），并为减少欺诈（例如，流翻录）的行业最佳实践提供支持。
+
+用户档案和决策的生存时间(“TTL”)值是根据程序员和付费电视提供商之间的协议设置的，这些提供商就最适合所有相关人员的价值达成了共识。
