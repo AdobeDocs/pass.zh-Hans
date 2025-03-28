@@ -2,9 +2,9 @@
 title: 标头 — X-Device-Info
 description: REST API V2 — 标头 — X-Device-Info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
 workflow-type: tm+mt
-source-wordcount: '1122'
+source-wordcount: '1133'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 ## 概述 {#overview}
 
-<b>X-Device-Info</b>请求标头包含与实际流设备相关的客户端信息（设备、连接和应用程序）。
+<b>X-Device-Info</b>请求标头包含与实际流设备相关的客户端信息（设备、连接和应用程序），用于确定MVPD可能强制实施的特定于平台的规则。
 
 ## 语法 {#syntax}
 

@@ -2,9 +2,9 @@
 title: REST API V2常见问题解答
 description: REST API V2常见问题解答
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
 workflow-type: tm+mt
-source-wordcount: '9113'
+source-wordcount: '9537'
 ht-degree: 0%
 
 ---
@@ -248,9 +248,18 @@ ht-degree: 0%
 
 #### 10.如果用户有多个MVPD配置文件，客户端应用程序应该怎么做？ {#authentication-phase-faq10}
 
-当用户有多个MVPD配置文件时，客户端应用程序负责确定处理此场景的最佳方法。
+是否支持多个用户档案取决于客户端应用程序的业务要求。
+
+大多数用户将只有一个配置文件。 但是，如果存在多个用户档案（如下所述），则客户端应用程序负责确定用于选择用户档案的最佳用户体验。
 
 客户端应用程序可以选择提示用户选择所需的MVPD配置文件或自动进行选择，例如从响应中选择第一个用户配置文件或具有最长有效期的用户配置文件。
+
+REST API v2支持多个配置文件以适应：
+
+* 用户可能必须在常规的MVPD配置文件以及通过单点登录(SSO)获得的配置文件之间进行选择。
+* 提供临时访问权限的用户无需从其常规MVPD注销。
+* 具有MVPD订阅和直接消费者(DTC)服务的用户。
+* 具有多个MVPD订阅的用户。
 
 #### 11.用户配置文件过期后会发生什么情况？ {#authentication-phase-faq11}
 
@@ -332,9 +341,35 @@ ht-degree: 0%
 
 #### 18.客户端应用程序应如何管理降级访问？ {#authentication-phase-faq18}
 
-鉴于您的组织打算使用[降级](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)功能，客户端应用程序必须处理降级的访问流，这概述了REST API v2端点在此类场景中的行为。
+[降级功能](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)使客户端应用程序能够保持用户的无缝流体验，即使用户的MVPD身份验证或授权服务遇到问题也是如此。
+
+总之，这可以确保无中断访问内容，尽管MVPD临时服务发生了中断。
+
+鉴于您的组织打算使用高级降级功能，客户端应用程序必须处理降级访问流，这概述了REST API v2端点在此类场景中的行为。
 
 有关更多详细信息，请参阅[降级访问流](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md)文档。
+
+#### 19.客户端应用程序应如何管理临时访问？ {#authentication-phase-faq19}
+
+[TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)允许客户端应用程序提供对用户的临时访问。
+
+总之，这可以通过提供在指定时间段内对内容或预定义数量的VOD标题的有限访问来吸引用户。
+
+鉴于您的组织打算使用高级TempPass功能，客户端应用程序必须处理临时访问流程，这些流程概述了REST API v2端点在此类场景中的行为。
+
+在以前的API版本中，客户端应用程序必须注销通过常规MVPD身份验证的用户，以提供临时访问权限。
+
+使用REST API v2时，客户端应用程序可在常规MVPD和TempPass MVPD之间无缝切换，而无需用户注销。
+
+有关更多详细信息，请参阅[临时访问流](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)文档。
+
+#### 20.客户端应用程序应如何管理跨设备单点登录访问？ {#authentication-phase-faq20}
+
+如果客户端应用程序跨设备提供一致的唯一用户标识符，则REST API v2可以启用跨设备单点登录。
+
+此标识符（称为服务令牌）必须由客户端应用程序通过实施或集成所选外部标识服务来生成。
+
+有关更多详细信息，请参阅[使用服务令牌流的单点登录](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md)文档。
 
 +++
 
@@ -574,9 +609,15 @@ ht-degree: 0%
 >
 > 如果客户端应用程序从REST API V1迁移到REST API V2，则客户端应用程序可以继续使用与之前相同的方法计算设备信息值。
 
-[X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)请求标头包含与实际流设备相关的客户端信息（设备、连接和应用程序）。
+[X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)请求标头包含与实际流设备相关的客户端信息（设备、连接和应用程序），用于确定MVPD可能强制实施的特定于平台的规则。
 
 [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)标头文档为主要平台提供了计算值的示例，但客户端应用程序可以根据自己的业务逻辑和要求选择使用其他方法。
+
+如果[X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)标头缺失或包含不正确的值，则请求可能会被分类为源自`unknown`平台。
+
+这可能会导致请求被视为不安全，并受到更严格的规则约束，例如更短的身份验证TTL。 此外，某些字段，如流设备`connectionIp`和`connectionPort`，对于诸如Spectrum的[Home Base Authentication](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)之类的功能是必需的。
+
+即使请求来自代表设备的服务器，[X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)标头值也必须反映实际的流设备信息。
 
 +++
 
