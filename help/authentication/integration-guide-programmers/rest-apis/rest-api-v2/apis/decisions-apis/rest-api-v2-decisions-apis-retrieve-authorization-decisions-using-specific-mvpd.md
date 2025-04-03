@@ -2,9 +2,9 @@
 title: 使用特定的mvpd检索授权决策
 description: REST API V2 — 使用特定mvpd检索授权决策
 exl-id: e8889395-4434-4bec-a212-a8341bb9c310
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 27aaa0d3351577e60970a4035b02d814f0a17e2f
 workflow-type: tm+mt
-source-wordcount: '907'
+source-wordcount: '924'
 ht-degree: 1%
 
 ---
@@ -59,7 +59,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">资源</td>
-      <td>在可以播放它们之前需要MVPD决策的资源的列表。</td>
+      <td>在可以播放之前需要MVPD决策的资源的列表。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -113,7 +113,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
       <td>
-        <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Platform-Subject-Token</a>标头文档介绍了为Platform Identity方法生成单点登录有效负载的过程。Adobe
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>标头文档介绍了为Platform Identity方法生成单点登录有效负载的过程。
         <br/><br/>
         有关使用平台标识启用单点登录的流的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台标识流的单点登录</a>文档。
       </td>
@@ -262,7 +262,7 @@ ht-degree: 1%
                   <br/><br/>
                   可能的值包括：
                   <ul>
-                    <li><b>mvpd</b><br/>决策由MVPD授权终结点发出。</li>
+                    <li><b>mvpd</b><br/>决策由MVPD授权端点发出。</li>
                     <li><b>降级</b><br/>决策因访问降级而发出。</li>
                     <li><b>temppass</b><br/>决策作为临时访问的结果发布。</li>
                     <li><b>dummy</b><br/>决策是由虚拟授权功能发出的。</li>
@@ -334,7 +334,7 @@ ht-degree: 1%
 
 ## 示例 {#samples}
 
-### 1.使用特定的mvpd检索授权决策
+### 1.在决策许可时使用特定mvpd检索授权决策
 
 >[!BEGINTABS]
 
@@ -386,7 +386,63 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2.在应用降级的情况下，使用特定的mvpd检索授权决策
+### 2.在决策被拒绝时使用特定mvpd检索授权决策
+
+>[!BEGINTABS]
+
+>[!TAB 请求]
+
+```HTTPS
+POST /api/v2/REF30/decisions/authorize/Cablevision HTTP/1.1
+
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    Content-Type: application/json
+    AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+    X-Device-Info: ewoJInByaW1hcnlIYXJkd2FyZVR5cGUiOiAiU2V0VG9wQm94IiwKCSJtb2RlbCI6ICJUViA1dGggR2VuIiwKCSJtYW51ZmFjdHVyZXIiOiAiQXBwbGUiLAoJIm9zTmFtZSI6ICJ0dk9TIgoJIm9zVmVuZG9yIjogIkFwcGxlIiwKCSJvc1ZlcnNpb24iOiAiMTEuMCIKfQ==
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
+        
+Body:
+
+{
+    "resources": ["REF30"]
+}
+```
+
+>[!TAB 响应]
+
+```HTTPS
+HTTP/1.1 200 OK
+
+Content-Type: application/json;charset=UTF-8
+
+{
+    "decisions": [
+        {
+            "resource": "REF30",
+            "serviceProvider": "REF30",
+            "mvpd": "Cablevision",
+            "source": "mvpd",
+            "authorized": false,
+            "error": {
+                "action": "none",
+                "status": 403,
+                "code": "authorization_denied_by_mvpd",
+                "message": "The MVPD has returned a "Deny" decision when requesting authorization for the specified resource",
+                "details": "Your subscription package does not include the "Live" channel",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+                "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
+            },
+            "notBefore": 1697094207324,
+            "notAfter": 1697098802367
+        }
+    ]
+}
+```
+
+>[!ENDTABS]
+
+### 3.在应用降级的情况下，使用特定的mvpd检索授权决策
 
 >[!BEGINTABS]
 
@@ -530,7 +586,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3.使用基本TempPass检索授权决策
+### 4.使用基本TempPass检索授权决策
 
 >[!BEGINTABS]
 
@@ -636,7 +692,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4.使用促销临时传递检索授权决策
+### 5.使用促销临时传递检索授权决策
 
 >[!BEGINTABS]
 
