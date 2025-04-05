@@ -2,9 +2,9 @@
 title: 使用特定的mvpd检索预授权决策
 description: REST API V2 — 使用特定的mvpd检索预授权决策
 exl-id: 8647e4fb-00b6-45cd-b81b-d00618b2e08b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
 workflow-type: tm+mt
-source-wordcount: '789'
+source-wordcount: '792'
 ht-degree: 1%
 
 ---
@@ -59,7 +59,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">资源</td>
-      <td>需要MVPD决策才能显示的资源列表。</td>
+      <td>显示之前需要MVPD决策的资源的列表。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -111,9 +111,9 @@ ht-degree: 1%
       <td>可选</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
+      <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>或<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Platform-Subject-Token</a>标头文档介绍了为Platform Identity方法生成单点登录有效负载的过程。Adobe
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>标头文档中介绍了为Platform Identity方法生成单点登录有效负载的过程。
         <br/><br/>
         有关使用平台标识启用单点登录的流的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台标识流的单点登录</a>文档。
       </td>
@@ -257,7 +257,7 @@ ht-degree: 1%
                   <br/><br/>
                   可能的值包括：
                   <ul>
-                    <li><b>mvpd</b><br/>决策由MVPD预授权终结点发出。</li>
+                    <li><b>mvpd</b><br/>决策由MVPD预授权端点发出。</li>
                     <li><b>降级</b><br/>决策因访问降级而发出。</li>
                     <li><b>temppass</b><br/>决策作为临时访问的结果发布。</li>
                     <li><b>dummy</b><br/>决策是由虚拟预授权功能发出的。</li>

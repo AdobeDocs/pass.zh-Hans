@@ -2,9 +2,9 @@
 title: 创建身份验证会话
 description: REST API V2 — 创建身份验证会话
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
 workflow-type: tm+mt
-source-wordcount: '1057'
+source-wordcount: '1060'
 ht-degree: 1%
 
 ---
@@ -134,9 +134,9 @@ ht-degree: 1%
       <td>可选</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
+      <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>或<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>标头文档介绍了为Platform Identity方法生成单点登录有效负载的过程。
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>标头文档中介绍了为Platform Identity方法生成单点登录有效负载的过程。
         <br/><br/>
         有关使用平台标识启用单点登录的流的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台标识流的单点登录</a>文档。
       </td>
