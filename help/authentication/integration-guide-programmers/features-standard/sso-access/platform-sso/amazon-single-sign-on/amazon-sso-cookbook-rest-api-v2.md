@@ -2,9 +2,9 @@
 title: Amazon SSO指南(REST API V2)
 description: Amazon SSO指南(REST API V2)
 exl-id: 63e4fa63-8ca3-40eb-b49a-84dd75c2ca1d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '542'
+source-wordcount: '567'
 ht-degree: 0%
 
 ---
@@ -21,27 +21,29 @@ Adobe Pass身份验证REST API V2支持在FireOS上运行的客户端应用程�
 
 ## 使用平台标识流的Amazon单点登录 {#cookbook}
 
+Adobe Pass身份验证可与Amazon协作以改善登录用户体验，并促进电视订阅者在TV Everywhere应用程序中进行单点登录(SSO)。
+
 ### 先决条件 {#prerequisites}
 
-在继续使用平台标识流进行Amazon单点登录之前，请确保满足以下先决条件。
+Before proceeding with the Amazon single sign-on using platform identity flows, ensure the following prerequisites are met.
 
-#### 集成Amazon SSO SDK {#integrate-amazon-sso-sdk}
+#### Integrate Amazon SSO SDK {#integrate-amazon-sso-sdk}
 
-流应用程序必须将用于单点登录(SSO)的[Amazon SSO SDK](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar)库集成到其内部版本中。
+The streaming application must integrate the [Amazon SSO SDK](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar) library for Single Sign-On (SSO) into its build.
 
 * 将最新的Amazon SSO SDK库下载并复制到与应用程序目录平行的`/SSOEnabler`文件夹中。
 
-* 更新清单和Gradle文件以使用Amazon SSO SDK库。
+* 更新manifest和Gradle文件以使用Amazon SSO SDK库。
 
-  **清单：**
+  **Manifest:**
 
   ```JAVA
   <uses-library android:name="com.amazon.ottssotokenlib" android:required="false">
   ```
 
-  **Gradle：**
+  **Gradle:**
 
-  在存储库下：
+  Under repositories:
 
   ```JAVA
   flatDir {
@@ -49,15 +51,15 @@ Adobe Pass身份验证REST API V2支持在FireOS上运行的客户端应用程�
   }
   ```
 
-  在依赖项下：
+  Under dependencies:
 
   ```JAVA
   provided fileTree(include: ['ottSSOTokenStub.jar'], dir: '../SSOEnabler')
   ```
 
-#### 使用Amazon SSO SDK {#use-amazon-sso-sdk}
+#### Use Amazon SSO SDK {#use-amazon-sso-sdk}
 
-流应用程序必须使用Amazon SSO SDK获取SSO令牌（平台身份）有效负载。
+流应用程序必须使用Amazon SSO SDK来获取SSO令牌（平台身份）有效负载。
 
 Amazon SSO SDK提供同步和异步API来获取SSO令牌（平台身份）有效负载。
 
@@ -95,17 +97,17 @@ Amazon SSO SDK提供同步和异步API来获取SSO令牌（平台身份）有效
 
   <br/>
 
-* 获取SSO标记：
+* Get the SSO token:
 
   ```JAVA
   Bundle getSSOTokenAsync(Void);
   ```
 
-  此API将在初始化期间通过回调集提供响应。
+  This API will provide the response via callback set during the initialisation.
 
 ##### 同步API
 
-* 获取`SSOEnabler`实例：
+* Get the `SSOEnabler` instance:
 
   ```JAVA
   SSOEnabler ssoEnabler = SSOEnabler.getInstance(context);
@@ -117,45 +119,45 @@ Amazon SSO SDK提供同步和异步API来获取SSO令牌（平台身份）有效
   Bundle getSSOTokenSync(Void);
   ```
 
-  此API将阻止调用方线程并使用结果包做出响应。 由于这是同步调用，请确保不要在主线程中使用它。
+  此API将阻止调用方线程并使用结果包做出响应。 Since this is a synchronous call, be sure to not use it in your main thread.
 
   ```JAVA
   void setSSOTokenTimeout(long);
   ```
 
-  此API将设置同步调用的超时值。 默认超时值为1分钟。
+  This API will set the timeout value for the synchronous call. The default timeout value is 1 minute.
 
-#### Amazon SSO的回退 {#fallback-amazon-sso}
+#### Fallback for Amazon SSO {#fallback-amazon-sso}
 
-流应用程序必须处理从Amazon SSO流到常规身份验证流的回退方案。
+The streaming application must handle fallback scenarios from the Amazon SSO flow to the regular authentication flow.
 
-确保流应用程序正在处理：
+Ensure that the streaming application is handling:
 
 * 缺少应在Amazon设备上运行的Amazon配套应用程序。
    * 流应用程序可能在运行时在以下类`com.amazon.ottssotokenlib.SSOEnabler`上遇到`ClassNotFoundException`。
 
 * 缺少应由上述API返回的SSO令牌（平台身份）有效负载。
-   * 流媒体应用程序可以联系Amazon和Adobe代表进行调查。
+   * 流应用程序可以联系Amazon和Adobe代表进行调查。
 
 ### 工作流 {#workflow}
 
-针对Amazon身份验证REST API V2端点发出的所有HTTP请求上都需要有Adobe Pass SSO令牌（平台身份）有效负载：
+The Amazon SSO token (platform identity) payload needs to be present on all HTTP requests made against Adobe Pass Authentication REST API V2 endpoints:
 
 ```
 /api/v2/*
 ```
 
-Adobe Pass身份验证REST API V2支持以下方法接收SSO令牌（平台身份）有效负载，该有效负载是设备范围或平台范围的标识符：
+Adobe Pass Authentication REST API V2 supports the following methods to receive the SSO token (platform identity) payload which is a device-scoped or platform-scoped identifier:
 
-* 作为名为`Adobe-Subject-Token`的标头
+* As a header named: `Adobe-Subject-Token`
 
 >[!IMPORTANT]
 > 
-> 有关`Adobe-Subject-Token`标头的更多详细信息，请参阅[Adobe主题令牌](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)文档。
+> For more details about `Adobe-Subject-Token` header, refer to the [Adobe-Subject-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) documentation.
 
 #### 示例
 
-**作为标头发送**
+**Sending as a header**
 
 ```HTTPS
 GET /api/v2/{serviceProvider}/sessions HTTP/1.1 
@@ -166,4 +168,4 @@ Adobe-Subject-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyb2t1IiwiaW
 
 >[!IMPORTANT]
 >
-> 如果`Adobe-Subject-Token`标头值缺失或无效，则Adobe Pass身份验证将无需考虑单点登录即可为请求提供服务。
+> In case the `Adobe-Subject-Token` header value is missing or invalid, then Adobe Pass Authentication will service the requests without taking Single Sign-On into account.

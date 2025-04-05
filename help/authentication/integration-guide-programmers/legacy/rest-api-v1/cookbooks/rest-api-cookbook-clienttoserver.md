@@ -2,9 +2,9 @@
 title: REST API指南（客户端到服务器）
 description: Rest API指南客户端到服务器。
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '888'
+source-wordcount: '886'
 ht-degree: 0%
 
 ---
@@ -84,7 +84,7 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
 
 1. 用户从第二屏应用程序返回并按设备上的“继续”按钮。 或者，您可以实施轮询机制来检查身份验证状态，但Adobe Pass身份验证建议使用继续按钮方法而不是轮询。 <!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)-->例如： [\&lt;SP\_FQDN\>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)
 
-2. 向Adobe Pass Authentication Authorization Service发送GET请求以启动授权。 例如： `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
+2. 将GET请求发送到Adobe Pass身份验证授权服务以启动授权。 例如： `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
 
 <!-- end list -->
 
@@ -140,7 +140,6 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
 某些设备提供对Platform单点登录(SSO)的专用支持：
 
 * [AMAZON SSO](../../sso-access/amazon-sso-cookbook-rest-api-v1.md)
-* [Roku SSO](../../../features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
 
 ## REST API的TempPass和提升TempPass {#temppass}
 

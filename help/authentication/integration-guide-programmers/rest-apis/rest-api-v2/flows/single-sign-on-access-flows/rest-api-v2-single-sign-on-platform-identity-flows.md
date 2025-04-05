@@ -2,9 +2,9 @@
 title: 单点登录 — 平台标识 — 流程
 description: REST API V2 — 单点登录 — 平台标识 — 流程
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '1846'
+source-wordcount: '1856'
 ht-degree: 0%
 
 ---
@@ -27,14 +27,14 @@ ht-degree: 0%
 
 这些应用程序负责使用Adobe Pass系统之外的设备特定身份服务或库检索唯一平台标识符有效负载。
 
-应用程序负责将此唯一平台标识符有效负载包含在所有指定该有效负载的`Adobe-Subject-Token`标头中。
+应用程序负责将此唯一的平台标识符有效负载包含在所有指定该有效负载的请求的`Adobe-Subject-Token` / `X-Roku-Reserved-Roku-Connect-Token`标头中。
 
-有关`Adobe-Subject-Token`标头的更多详细信息，请参阅[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)文档。
+有关`Adobe-Subject-Token` / `X-Roku-Reserved-Roku-Connect-Token`标头的更多详细信息，请参阅[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)文档。
 
 >[!MORELIKETHIS]
 > 
 > * [Amazon SSO指南](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
-> * [Roku SSO指南](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
+> * [Roku SSO指南](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
 
 ## 使用平台身份通过单点登录执行身份验证 {#perform-authentication-through-single-sign-on-using-platform-identity}
 
@@ -43,11 +43,11 @@ ht-degree: 0%
 在使用平台标识通过单点登录执行身份验证流程之前，请确保满足以下先决条件：
 
 * 平台必须提供一个标识服务或库，该服务或库在同一设备或平台上的所有应用程序上以`JWS`或`JWE`有效负载的形式返回一致的信息。
-* 第一个流应用程序必须检索唯一的平台标识符，并在所有指定该标识符的请求的[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)标头中包含`JWS`或`JWE`有效负载。
+* 第一个流应用程序必须检索唯一的平台标识符，并将`JWS`或`JWE`有效负载包含在所有指定该标识符的请求的[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)标头中。
 * 第一个流应用程序必须选择MVPD。
 * 第一个流应用程序必须启动身份验证会话，才能使用选定的MVPD登录。
 * 第一个流应用程序必须在用户代理中使用选定的MVPD进行身份验证。
-* 第二个流应用程序必须检索唯一的平台标识符，并在所有指定该标识符的请求的[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)标头中包含`JWS`或`JWE`有效负载。
+* 第二个流应用程序必须检索唯一的平台标识符，并将`JWS`或`JWE`有效负载包含在所有指定该标识符的请求的[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)标头中。
 
 >[!IMPORTANT]
 >
@@ -88,7 +88,7 @@ ht-degree: 0%
    >
    > <br/>
    > 
-   > 有关`Adobe-Subject-Token`标头的更多详细信息，请参阅[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)文档。
+   > 有关`Adobe-Subject-Token` / `X-Roku-Reserved-Roku-Connect-Token`标头的更多详细信息，请参阅[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)文档。
 
 1. **指示下一个操作：**&#x200B;会话终结点响应包含指导第一个流应用程序执行下一个操作的必需数据。
 
@@ -156,7 +156,7 @@ ht-degree: 0%
    >
    > <br/>
    > 
-   > 有关`Adobe-Subject-Token`标头的更多详细信息，请参阅[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)文档。
+   > 有关`Adobe-Subject-Token` / `X-Roku-Reserved-Roku-Connect-Token`标头的更多详细信息，请参阅[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)文档。
 
 1. **检索平台标识符：**&#x200B;第二个流应用程序在Adobe Pass系统之外调用标识服务或库，以获取与唯一平台标识符关联的`JWS`或`JWE`有效负载。
 
@@ -180,7 +180,7 @@ ht-degree: 0%
    >
    > <br/>
    > 
-   > 有关`Adobe-Subject-Token`标头的更多详细信息，请参阅[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)文档。
+   > 有关`Adobe-Subject-Token` / `X-Roku-Reserved-Roku-Connect-Token`标头的更多详细信息，请参阅[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)文档。
 
 1. **查找单点登录配置文件：** Adobe Pass服务器根据收到的参数和标头标识有效的单点登录配置文件。
 
@@ -208,7 +208,7 @@ ht-degree: 0%
    >
    > <br/>
    > 
-   > 有关`Adobe-Subject-Token`标头的更多详细信息，请参阅[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)文档。
+   > 有关`Adobe-Subject-Token` / `X-Roku-Reserved-Roku-Connect-Token`标头的更多详细信息，请参阅[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)文档。
 
 ## 使用平台标识通过单点登录检索授权决策{#performing-authorization-flow-using-platform-identity-single-sign-on-method}
 
@@ -217,7 +217,7 @@ ht-degree: 0%
 在使用平台标识通过单点登录执行授权流之前，请确保满足以下先决条件：
 
 * 平台必须提供一个标识服务或库，该服务或库在同一设备或平台上的所有应用程序上以`JWS`或`JWE`有效负载的形式返回一致的信息。
-* 第二个流应用程序必须检索唯一的平台标识符，并在所有指定该标识符的请求的[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)标头中包含`JWS`或`JWE`有效负载。
+* 第二个流应用程序必须检索唯一的平台标识符，并将`JWS`或`JWE`有效负载包含在所有指定该标识符的请求的[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)标头中。
 * 第二个流应用程序必须在播放用户选择的资源之前检索授权决定。
 
 >[!IMPORTANT]
@@ -226,7 +226,7 @@ ht-degree: 0%
 > 
 > <br/>
 > 
-> * 第一个流应用程序已执行身份验证，并包含[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)请求标头的有效值。
+> * 第一个流应用程序已执行身份验证，并包含[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)请求标头的有效值。
 
 ### 工作流 {#workflow-scenario-performing-authorization-flow-using-platform-identity-single-sign-on-method}
 
@@ -258,7 +258,7 @@ ht-degree: 0%
    >
    > <br/>
    > 
-   > 有关`Adobe-Subject-Token`标头的更多详细信息，请参阅[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)文档。
+   > 有关`Adobe-Subject-Token` / `X-Roku-Reserved-Roku-Connect-Token`标头的更多详细信息，请参阅[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)文档。
 
 1. **查找单点登录配置文件：** Adobe Pass服务器根据收到的参数和标头标识有效的单点登录配置文件。
 

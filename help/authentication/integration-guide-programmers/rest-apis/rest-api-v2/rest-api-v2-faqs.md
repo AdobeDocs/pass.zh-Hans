@@ -2,9 +2,9 @@
 title: REST API V2常见问题解答
 description: REST API V2常见问题解答
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '9537'
+source-wordcount: '9697'
 ht-degree: 0%
 
 ---
@@ -123,7 +123,18 @@ ht-degree: 0%
 
 当客户端应用程序需要播放内容时，身份验证阶段是预授权阶段或授权阶段的先决步骤。
 
-#### 2.什么是身份验证会话？该会话的有效时间是多久？ {#authentication-phase-faq2}
+#### 2.身份验证阶段是否为强制性的？ {#authentication-phase-faq2}
+
+身份验证阶段是强制性的，如果客户端应用程序在Adobe Pass身份验证中没有有效的配置文件，则必须对用户进行身份验证。
+
+在以下情形中，客户端应用程序可以跳过此阶段：
+
+* 用户已经过身份验证，配置文件仍然有效。
+* 通过基本或提升[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)功能向用户提供临时访问权限。
+
+客户端应用程序错误处理需要处理[错误](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)代码（例如，`authenticated_profile_missing`、`authenticated_profile_expired`、`authenticated_profile_invalidated`等），这表示客户端应用程序要求用户进行身份验证。
+
+#### 3.什么是身份验证会话？该会话的有效时间是多久？ {#authentication-phase-faq3}
 
 身份验证会话是[术语表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#session)文档中定义的术语。
 
@@ -140,7 +151,7 @@ ht-degree: 0%
 * [在主应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
 * [在辅助应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-#### 3.什么是身份验证代码以及它的有效时间长短？ {#authentication-phase-faq3}
+#### 4.什么是身份验证代码以及它的有效时间长短？ {#authentication-phase-faq4}
 
 身份验证代码是[词汇表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#code)文档中定义的术语。
 
@@ -159,7 +170,7 @@ ht-degree: 0%
 * [在主应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
 * [在辅助应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-#### 4.客户端应用程序如何知道用户是否键入了有效的身份验证代码以及身份验证会话是否尚未过期？ {#authentication-phase-faq4}
+#### 5.客户端应用程序如何知道用户是否键入了有效的身份验证代码以及身份验证会话是否尚未过期？ {#authentication-phase-faq5}
 
 客户端应用程序可以通过向负责恢复身份验证会话或检索与身份验证代码关联的身份验证会话信息的“会话”端点之一发送请求，来验证用户在辅助（屏幕）应用程序中键入的身份验证代码。
 
@@ -167,7 +178,7 @@ ht-degree: 0%
 
 有关详细信息，请参阅[恢复身份验证会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)和[检索身份验证会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)文档。
 
-#### 5.客户端应用程序如何知道用户是否已验证？ {#authentication-phase-faq5}
+#### 6.客户端应用程序如何知道用户是否已验证？ {#authentication-phase-faq6}
 
 客户端应用程序可以查询以下能够验证用户是否已过身份验证的端点之一并返回配置文件信息：
 
@@ -180,7 +191,7 @@ ht-degree: 0%
 * [基本配置文件在主要应用程序中执行](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [基本配置文件在辅助应用程序中执行](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
 
-#### 6.什么是配置文件，它的有效时间是多久？ {#authentication-phase-faq6}
+#### 7.什么是配置文件，它的有效时间长短？ {#authentication-phase-faq7}
 
 配置文件是[词汇表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#profile)文档中定义的术语。
 
@@ -202,17 +213,17 @@ ht-degree: 0%
 
 有关更多详细信息，请参阅[TVE仪表板集成用户指南](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows)文档。
 
-#### 7.客户端应用程序是否应将用户的配置文件信息缓存到永久存储中？ {#authentication-phase-faq7}
+#### 8.客户端应用程序是否应将用户的配置文件信息缓存到永久存储中？ {#authentication-phase-faq8}
 
-客户端应用程序应将用户的配置文件信息缓存在永久性存储中，以避免不必要的请求，并提高用户体验，同时应考虑到以下方面：
+客户端应用程序应将部分用户配置文件信息缓存在永久性存储中，以避免不必要的请求，并提高用户体验，同时应考虑到以下方面：
 
 | 属性 | 用户体验 |
-|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `attributes` | 客户端应用程序可以使用此项根据不同的[用户元数据](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)密钥（例如，`zip`、`maxRating`等）个性化用户体验。 |
-| `mvpd` | 客户端应用程序可以使用此项来跟踪用户选择的电视提供商。<br/><br/>当当前用户配置文件过期时，客户端应用程序可以使用记住的MVPD选择，只需请求用户确认即可。 |
-| `notAfter` | 客户端应用程序可以使用此项来跟踪用户配置文件过期日期，并在过期时触发重新身份验证过程，从而避免在预授权或授权阶段出现错误。<br/><br/>客户端应用程序错误处理必须能够处理[authenticated_profile_expired](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)错误代码，这表示客户端应用程序要求用户重新进行身份验证。 |
+|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `mvpd` | 客户端应用程序可以使用此项来跟踪用户选择的电视提供商，并在预授权或授权阶段继续使用它。<br/><br/>当当前用户配置文件过期时，客户端应用程序可以使用记住的MVPD选择，只需请求用户确认即可。 |
+| `attributes` | 客户端应用程序可以使用此项根据不同的[用户元数据](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)密钥（例如，`zip`、`maxRating`等）个性化用户体验。<br/><br/>用户元数据在身份验证流程完成后变为可用，因此客户端应用程序不需要查询单独的终结点来检索[用户元数据](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)信息，因为它已包含在配置文件信息中。<br/><br/>某些元数据属性可能会在授权流程中更新，具体取决于MVPD和特定的元数据属性。 因此，客户端应用程序可能需要再次查询Profiles API以检索最新的用户元数据。 |
+| `notAfter` | 客户端应用程序可以使用此项来跟踪用户配置文件到期日期。<br/><br/>客户端应用程序错误处理需要处理[错误](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)代码（例如，`authenticated_profile_missing`、`authenticated_profile_expired`、`authenticated_profile_invalidated`等），这表示客户端应用程序要求用户进行身份验证。 |
 
-#### 8.客户端应用程序能否在不要求重新验证的情况下扩展用户的配置文件？ {#authentication-phase-faq8}
+#### 9.客户端应用程序能否在不要求重新验证的情况下扩展用户的配置文件？ {#authentication-phase-faq9}
 
 不适用。
 
@@ -222,7 +233,7 @@ ht-degree: 0%
 
 但是，对于支持[基于主目录的身份验证](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md) (HBA)的MVPD，将不需要用户输入凭据。
 
-#### 9.每个可用配置文件端点的用例是什么？ {#authentication-phase-faq9}
+#### 10.每个可用用户档案端点的用例是什么？ {#authentication-phase-faq10}
 
 基本配置文件端点旨在为客户端应用程序提供了解用户的身份验证状态、访问用户元数据信息、查找用于身份验证的方法或用于提供身份的实体的功能。
 
@@ -246,7 +257,7 @@ ht-degree: 0%
 
 有关更多详细信息，请参阅[使用合作伙伴流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)的单点登录[Apple SSO指南(REST API V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)文档。
 
-#### 10.如果用户有多个MVPD配置文件，客户端应用程序应该怎么做？ {#authentication-phase-faq10}
+#### 11.如果用户有多个MVPD配置文件，客户端应用程序应该怎么做？ {#authentication-phase-faq11}
 
 是否支持多个用户档案取决于客户端应用程序的业务要求。
 
@@ -261,7 +272,7 @@ REST API v2支持多个配置文件以适应：
 * 具有MVPD订阅和直接消费者(DTC)服务的用户。
 * 具有多个MVPD订阅的用户。
 
-#### 11.用户配置文件过期后会发生什么情况？ {#authentication-phase-faq11}
+#### 12.用户配置文件过期后会发生什么情况？ {#authentication-phase-faq12}
 
 用户配置文件过期后，将不再包含在来自配置文件端点的响应中。
 
@@ -269,7 +280,7 @@ REST API v2支持多个配置文件以适应：
 
 有关详细信息，请参阅[创建身份验证会话API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)文档。
 
-#### 12.用户配置文件何时失效？ {#authentication-phase-faq12}
+#### 13.用户配置文件何时失效？ {#authentication-phase-faq13}
 
 在以下情况下，用户配置文件将失效：
 
@@ -278,7 +289,7 @@ REST API v2支持多个配置文件以适应：
 * 客户端应用程序更新用于检索[Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)标头值的客户端凭据时。
 * 当客户端应用程序撤销或更新用于获取客户端凭据的软件语句时。
 
-#### 13.客户端应用程序何时应启动轮询机制？ {#authentication-phase-faq13}
+#### 14.客户端应用程序何时应启动轮询机制？ {#authentication-phase-faq14}
 
 为确保效率并避免不必要的请求，客户端应用程序必须在以下条件下启动轮询机制：
 
@@ -290,7 +301,7 @@ REST API v2支持多个配置文件以适应：
 
 主（流）应用程序应在用户启动身份验证过程后立即开始轮询 — 在收到[会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)端点响应并向用户显示身份验证代码之后。
 
-#### 14.客户端应用程序何时应停止轮询机制？ {#authentication-phase-faq14}
+#### 15.客户端应用程序何时应停止轮询机制？ {#authentication-phase-faq15}
 
 为确保效率并避免不必要的请求，客户端应用程序必须在以下条件下停止轮询机制：
 
@@ -306,15 +317,15 @@ REST API v2支持多个配置文件以适应：
 
 如果用户在主设备（屏幕）上请求新的身份验证代码，则现有会话不再有效，使用以前的身份验证代码的轮询应立即停止。
 
-#### 15.客户端应用程序应使用何种间隔时间进行轮询机制？ {#authentication-phase-faq15}
+#### 16.客户端应用程序应使用哪个呼叫间隔来轮询机制？ {#authentication-phase-faq16}
 
-为确保效率并避免不必要的请求，客户端应用程序必须在以下条件下配置轮询机制频率：
+为了确保效率并避免不必要的请求，客户端应用程序必须在以下情况下配置轮询机制频率：
 
 | **在主（屏幕）应用程序内执行的身份验证** | **在辅助（屏幕）应用程序内执行的身份验证** |
 |----------------------------------------------------------------------|----------------------------------------------------------------------|
 | 主（流）应用程序应每3-5秒轮询一次。 | 主（流）应用程序应每3-5秒轮询一次。 |
 
-#### 16.客户端应用程序可以发送的轮询请求的最大数量是多少？ {#authentication-phase-faq16}
+#### 17.客户端应用程序可以发送的轮询请求的最大数量是多少？ {#authentication-phase-faq17}
 
 客户端应用程序必须遵守Adobe Pass身份验证[限制机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-limits)定义的当前限制。
 
@@ -322,7 +333,7 @@ REST API v2支持多个配置文件以适应：
 
 有关更多详细信息，请参阅[节流机制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)文档。
 
-#### 17.客户端应用程序如何获取用户的元数据信息？ {#authentication-phase-faq17}
+#### 18.客户端应用程序如何获取用户的元数据信息？ {#authentication-phase-faq18}
 
 客户端应用程序可以查询以下端点之一，这些端点能够返回[用户元数据](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)信息作为配置文件信息的一部分：
 
@@ -339,7 +350,7 @@ REST API v2支持多个配置文件以适应：
 
 某些元数据属性可能会在授权流程期间更新，具体取决于MVPD和特定的元数据属性。 因此，客户端应用程序可能需要再次查询上述API以检索最新的用户元数据。
 
-#### 18.客户端应用程序应如何管理降级访问？ {#authentication-phase-faq18}
+#### 19.客户端应用程序应如何管理降级访问？ {#authentication-phase-faq19}
 
 [降级功能](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)使客户端应用程序能够保持用户的无缝流体验，即使用户的MVPD身份验证或授权服务遇到问题也是如此。
 
@@ -349,21 +360,21 @@ REST API v2支持多个配置文件以适应：
 
 有关更多详细信息，请参阅[降级访问流](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md)文档。
 
-#### 19.客户端应用程序应如何管理临时访问？ {#authentication-phase-faq19}
+#### 20.客户端应用程序应如何管理临时访问？ {#authentication-phase-faq20}
 
 [TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)允许客户端应用程序提供对用户的临时访问。
 
-总之，这可以通过提供在指定时间段内对内容或预定义数量的VOD标题的有限访问来吸引用户。
+作为摘要，这可以通过在指定时间段内提供对内容或预定义数量的VOD字幕的限时访问来吸引用户。
 
-鉴于您的组织打算使用高级TempPass功能，客户端应用程序必须处理临时访问流程，这些流程概述了REST API v2端点在此类场景中的行为。
+鉴于您的组织打算使用高级TempPass功能，客户端应用程序必须处理临时访问流，这些访问流概述了REST API v2端点在此类情况下的行为。
 
-在以前的API版本中，客户端应用程序必须注销通过常规MVPD身份验证的用户，以提供临时访问权限。
+在以前的API版本中，客户端应用程序必须注销使用其常规MVPD进行身份验证的用户，以提供临时访问。
 
-使用REST API v2时，客户端应用程序可在常规MVPD和TempPass MVPD之间无缝切换，而无需用户注销。
+使用REST API v2，客户端应用程序在授权流时可以在常规MVPD和TempPass MVPD之间无缝切换，而无需用户注销。
 
 有关更多详细信息，请参阅[临时访问流](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)文档。
 
-#### 20.客户端应用程序应如何管理跨设备单点登录访问？ {#authentication-phase-faq20}
+#### 21.客户端应用程序应如何管理跨设备单点登录访问？ {#authentication-phase-faq21}
 
 如果客户端应用程序跨设备提供一致的唯一用户标识符，则REST API v2可以启用跨设备单点登录。
 
@@ -527,7 +538,7 @@ REST API v2支持多个配置文件以适应：
 
 | 属性 | 描述 | 注释 |
 |-------------|------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `notBefore` | 授权决策的发布时间。 | 这将标记授权有效性窗口的开始。 |
+| `notBefore` | 授权决定的发布时间。 | 这将标记授权有效性窗口的开始。 |
 | `notAfter` | 授权决策到期的时间。 | [授权生存时间(TTL)](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#authorization-ttl-management)确定授权在需要重新授权之前保持有效的时间。 此TTL将与MVPD代表协商。 |
 
 **令牌级时间戳**
@@ -753,7 +764,7 @@ Adobe Pass身份验证将不支持在API和流之间集成REST API V2和REST API
 
 在从REST API V1迁移到REST API V2的过程中，下表显示了需要考虑的高级别更改：
 
-| 范围 | REST API V1 | REST API V2 | 观察结果 |
+| 范围 | REST API V1 | REST API V2 | 观察 |
 |------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
 | 检索具有活动集成的MVPD列表 | [GET <br/> /api/v1/config/{serviceProvider}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md) | [GET <br/> /api/v2/{serviceProvider}/configuration](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md) |              |
 
@@ -879,7 +890,7 @@ Adobe Pass身份验证将不支持在API和流之间集成REST API V2和REST API
 
 | 范围 | SDK | REST API V2 | 观察结果 |
 |------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| 检索具有活动集成的MVPD列表 | [AccessEnabler.getAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN) | [GET <br/> /api/v2/{serviceProvider}/configuration](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md) |              |
+| 检索具有活动集成的MVPD列表 | [AccessEnabler.getAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN) | [GET<br/> /api/v2/{serviceProvider}/configuration](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md) |              |
 
 ###### AccessEnabler Android SDK
 
@@ -917,7 +928,7 @@ Adobe Pass身份验证将不支持在API和流之间集成REST API V2和REST API
 |------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 启动(MVPD)身份验证 | [AccessEnabler.getAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN) <br/> [AccessEnabler.setSelectedProvider](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setSelProv) | [发布<br/> /api/v2/{serviceProvider}/sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) <br/> [GET <br/> /api/v2/authenticate/{serviceProvider}/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) | 有关更多详细信息，请参阅以下文档： <br/> <ul><li>[在主应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)</li><li>[在辅助应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
 | 检查用户身份验证状态 | [AccessEnabler.checkAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#checkAuthN) | 使用以下选项之一： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 客户端应用程序可以同时出于多个目的使用这些API的响应： <br/> <ul><li>检查用户身份验证状态</li><li>检索用户配置文件</li><li>检索用户元数据信息</li></ul> <br/>有关更多详细信息，请参阅以下文档： <br/> <ul><li>[在主应用程序中执行的基本配置文件流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在辅助应用程序中执行的基本配置文件流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
-| 检索用户元数据信息 | [AccessEnabler.getMetadata](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getMeta) | 使用以下选项之一： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 客户端应用程序可以同时出于多个目的使用这些API的响应： <br/> <ul><li>检查用户身份验证状态</li><li>检索用户配置文件</li><li>检索用户元数据信息</li></ul> <br/>有关更多详细信息，请参阅以下文档： <br/> <ul><li>[在主应用程序中执行的基本配置文件流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在辅助应用程序中执行的基本配置文件流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
+| 检索用户元数据信息 | [AccessEnabler.getMetadata](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getMeta) | 使用以下选项之一： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET<br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 客户端应用程序一次可以将这些API的响应用于多种用途： <br/> <ul><li>检查用户身份验证状态</li><li>检索用户配置文件</li><li>检索用户元数据信息</li></ul> <br/>有关更多详细信息，请参阅以下文档： <br/> <ul><li>[在主应用程序中执行的基本配置文件流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在辅助应用程序中执行的基本配置文件流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
 
 ###### AccessEnabler tvOS SDK
 
@@ -944,7 +955,7 @@ Adobe Pass身份验证将不支持在API和流之间集成REST API V2和REST API
 |-------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 检索注册码（身份验证码） | [AccessEnabler.getAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#getAuthN) <br/> [AccessEnabler.setSelectedProvider](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#setSelectedProvider) | [发布<br/> /api/v2/{serviceProvider}/sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) | 有关更多详细信息，请参阅以下文档： <br/> <ul><li>[在主应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)</li><li>[在辅助应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
 | 检查注册码（身份验证码） | [GET <br/> /reggie/v1/{serviceProvider}/regcode/{code}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md) | [GET <br/> /api/v2/{serviceProvider}/sessions/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) | 有关更多详细信息，请参阅以下文档： <br/> <ul><li>[在辅助应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
-| 在第二个屏幕上恢复(MVPD)身份验证（应用程序） | [GET <br/> /api/v1/authenticate](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) | [发布<br/> /api/v2/{serviceProvider}/sessions/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md) <br/> [GET <br/> /api/v2/authenticate/{serviceProvider}/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) | 有关更多详细信息，请参阅以下文档： <br/> <ul><li>[在辅助应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
+| 在第二屏上恢复(MVPD)身份验证（应用程序） | [GET <br/> /api/v1/authenticate](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) | [发布<br/> /api/v2/{serviceProvider}/sessions/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md) <br/> [GET <br/> /api/v2/authenticate/{serviceProvider}/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) | 有关更多详细信息，请参阅以下文档： <br/> <ul><li>[在辅助应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
 | 启动(MVPD)身份验证 | [AccessEnabler.getAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#getAuthN) <br/> [AccessEnabler.setSelectedProvider](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#setSelectedProvider) | [发布<br/> /api/v2/{serviceProvider}/sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) <br/> [GET <br/> /api/v2/authenticate/{serviceProvider}/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) | 有关更多详细信息，请参阅以下文档： <br/> <ul><li>[在主应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)</li><li>[在辅助应用程序中执行的基本身份验证流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
 | 检查用户身份验证状态 | [AccessEnabler.checkAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#checkAuthN) | 使用以下选项之一： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 客户端应用程序可以同时出于多个目的使用这些API的响应： <br/> <ul><li>检查用户身份验证状态</li><li>检索用户配置文件</li><li>检索用户元数据信息</li></ul> <br/>有关更多详细信息，请参阅以下文档： <br/> <ul><li>[在主应用程序中执行的基本配置文件流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在辅助应用程序中执行的基本配置文件流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
 | 检索用户元数据信息 | [AccessEnabler.getMetadata](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#getMetadata) | 使用以下选项之一： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 客户端应用程序可以同时出于多个目的使用这些API的响应： <br/> <ul><li>检查用户身份验证状态</li><li>检索用户配置文件</li><li>检索用户元数据信息</li></ul> <br/>有关更多详细信息，请参阅以下文档： <br/> <ul><li>[在主应用程序中执行的基本配置文件流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在辅助应用程序中执行的基本配置文件流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
@@ -1001,7 +1012,7 @@ Adobe Pass身份验证将不支持在API和流之间集成REST API V2和REST API
 
 | 范围 | SDK | REST API V2 | 观察结果 |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 检索短授权令牌（媒体令牌） | [AccessEnabler.checkAuthorization](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#checkAuthZ) <br/> [AccessEnabler.getAuthorization](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthZ) | [发布<br/> /api/v2/{serviceProvider}/decisions/authorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) | 客户端应用程序可以同时将此API的响应用于多个目的： <br/> <ul><li>启动(MVPD)授权</li><li>检索授权决策</li><li>检索短媒体令牌</li></ul> <br/>有关更多详细信息，请参阅以下文档： <br/> <ul><li>[在主应用程序中执行的基本授权流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)</li></ul> |
+| 检索短授权令牌（媒体令牌） | [AccessEnabler.checkAuthorization](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#checkAuthZ) <br/> [AccessEnabler.getAuthorization](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthZ) | [发布<br/> /api/v2/{serviceProvider}/decisions/authorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) | 客户端应用程序可以同时将此API的响应用于多个目的： <br/> <ul><li>启动(MVPD)授权</li><li>检索授权决策</li><li>检索短媒体令牌</li></ul> <br/>有关更多详细信息，请参阅以下文档： <br/> <ul><li>[在主应用程序中执行了基本授权流](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)</li></ul> |
 
 ###### AccessEnabler Android SDK
 

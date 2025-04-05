@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
 user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: 7e56c0a3651290376a72752638f463cf9415ec0e
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '1248'
+source-wordcount: '1257'
 ht-degree: 2%
 
 ---
@@ -68,6 +68,7 @@ ht-degree: 2%
             + [动态客户端注册流程](integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
       + REST API V2 {#rest-api-v2}
          + [REST API V2概述](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)
+         + [REST API V2检查表](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-checklist.md)
          + [REST API V2术语表](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)
          + [REST API V2常见问题解答](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md)
          + API {#rest-api-v2-apis}
@@ -120,6 +121,7 @@ ht-degree: 2%
                + [标头 — X-Device-Info](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
                + [标头 — AD-Service-Token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
                + [标头 — Adobe-Subject-Token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
+               + [标头 — X-Roku-Reserved-Roku-Connect-Token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)
                + [标头 — AP-Partner-Framework-Status](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
                + [标头 — AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + 标准功能{#standard-features}
@@ -138,7 +140,7 @@ ht-degree: 2%
             + Amazon单点登录{#amazon-sso}
                + [Amazon SSO指南(REST API V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
             + Roku单点登录{#roku-sso}
-               + [Roku SSO概述](integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
+               + [Roku SSO指南(REST API V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
       + 基于主页的身份验证访问{#hba-access}
          + [基于家庭的身份验证(HBA)](integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)
       + 隐私支持{#privacy-support}

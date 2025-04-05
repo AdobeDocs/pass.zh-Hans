@@ -2,9 +2,9 @@
 title: 检索合作伙伴身份验证请求
 description: REST API V2 — 检索合作伙伴身份验证请求
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '1230'
+source-wordcount: '1219'
 ht-degree: 1%
 
 ---
@@ -266,7 +266,6 @@ ht-degree: 1%
                   <ul>
                     <li><b>无</b><br/>需要客户端应用程序才能继续验证。</li>
                     <li><b>已通过身份验证</b><br/>客户端应用程序已通过基本访问流进行身份验证。</li>
-                    <li><b>临时</b><br/>客户端应用程序已通过临时访问流进行身份验证。</li>
                     <li><b>已降级</b><br/>客户端应用程序已通过降级的访问流进行身份验证。</li>
                     <li><b>authenticatedSSO</b><br/>客户端应用程序已通过单点登录访问流验证。</li>
                     <li><b>pfs_fallback</b><br/>由于<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>标头值缺失或无效，需要客户端应用程序回退到基本身份验证流程。</li>
