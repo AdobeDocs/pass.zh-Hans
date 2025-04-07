@@ -2,9 +2,9 @@
 title: 基本身份验证 — 主要应用程序 — 流量
 description: REST API V2 — 基本身份验证 — 主应用程序 — 流程
 exl-id: 8122108d-e9da-43c5-9abb-ab177cb21eb6
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '904'
+source-wordcount: '903'
 ht-degree: 0%
 
 ---
@@ -127,7 +127,7 @@ Adobe Pass身份验证权利中的&#x200B;**身份验证流程**&#x200B;允许�
 
    >[!TIP]
    >
-   > 建议：流应用程序可以等待用户代理到达提供的`redirectUrl`，以检查是否已成功生成并保存常规配置文件。
+   > 流应用程序必须等待用户代理到达提供的`redirectUrl`以检查是否成功生成并保存了常规配置文件。
 
 1. **返回有关常规配置文件的信息：**&#x200B;配置文件终结点响应包含有关与收到的参数和标头关联的常规配置文件的信息。
 

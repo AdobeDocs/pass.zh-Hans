@@ -4,7 +4,7 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
 user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: f054da9a4c35fa0715039e8e06e2d10737b91b57
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '1251'
 ht-degree: 2%
@@ -58,7 +58,7 @@ ht-degree: 2%
    + [节流机构](integration-guide-programmers/throttling-mechanism.md)
    + REST API {#rest-apis}
       + REST API DCR {#rest-api-dcr}
-         + [动态客户端注册概述](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+         + [Dynamic Client注册概述](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
          + [Dynamic Client注册术语表](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
          + [动态客户端注册常见问题解答](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)
          + API {#rest-api-dcr-apis}
@@ -68,8 +68,8 @@ ht-degree: 2%
             + [动态客户端注册流程](integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
       + REST API V2 {#rest-api-v2}
          + [REST API V2概述](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)
-         + [REST API V2检查表](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-checklist.md)
          + [REST API V2术语表](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)
+         + [REST API V2检查表](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-checklist.md)
          + [REST API V2常见问题解答](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md)
          + API {#rest-api-v2-apis}
             + [REST API V2 API概述](integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
@@ -84,9 +84,9 @@ ht-degree: 2%
                + [检索用户档案](integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
                + [检索特定mvpd的配置文件](integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
                + [检索特定代码的配置文件](integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
-            + 决定{#rest-api-v2-decisions-apis}
-               + [使用特定mvpd检索授权决定](integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
-               + [使用特定mvpd检索预授权决定](integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
+            + 决策{#rest-api-v2-decisions-apis}
+               + [使用特定的mvpd检索授权决策](integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
+               + [使用特定的mvpd检索预授权决策](integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
             + 注销{#rest-api-v2-logout-apis}
                + [启动特定mvpd的注销](integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
             + 合作伙伴单点登录{#rest-api-v2-partner-single-sign-on-apis}
@@ -175,7 +175,7 @@ ht-degree: 2%
             + [（旧版）获取短媒体令牌](integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md)
             + [（旧版）按第二屏Web应用程序检查身份验证流程](integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md)
             + [（旧版）检索预授权资源的列表](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources.md)
-            + [（旧版）通过第二个屏幕Web应用程序检索预授权资源的列表](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md)
+            + [（旧版）按第二屏Web应用程序检索预授权资源列表](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md)
             + [（旧版）启动注销](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)
             + [（旧版）用户元数据](integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)
             + [（旧版）Retrieve profile-request](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-profilerequest.md)
@@ -204,17 +204,17 @@ ht-degree: 2%
          + （旧版）Android SDK {#android-sdk}
             + [（旧版）Android SDK概述](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)
             + [（旧版）Android SDK指南](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-cookbook.md)
-            + [（旧版） Android SDK API参考](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md)
-            + [（旧版） Android SDK API预授权](integration-guide-programmers/legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
+            + [（旧版）Android SDK API参考](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md)
+            + [（旧版）Android SDK API预授权](integration-guide-programmers/legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
             + （旧版）准则{#android-sdk-guidelines}
-               + [（旧版） Android应用程序注册](integration-guide-programmers/legacy/sdks/android-sdk/android-application-registration.md)
+               + [（旧版）Android应用程序注册](integration-guide-programmers/legacy/sdks/android-sdk/android-application-registration.md)
                + [（旧版）Android SDK，带有动态客户端注册功能](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-with-dynamic-client-registration.md)
          + （旧版）FireOS SDK {#fireos-sdk}
-            + [（旧版） Amazon FireOS技术概述](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-technical-overview.md)
-            + [旧版Amazon FireOS集成Cookbook](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-integration-cookbook.md)
-            + [（旧版） Amazon FireOS API参考](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
-            + [（旧版） Amazon FireOS应用程序注册](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-application-registration.md)
-            + [（旧版）具有动态客户端注册的FireOS SDK](integration-guide-programmers/legacy/sdks/fireos-sdk/fireos-sdk-with-dynamic-client-registration.md)
+            + [（旧版）Amazon FireOS技术概述](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-technical-overview.md)
+            + [（旧版）Amazon FireOS集成指南](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-integration-cookbook.md)
+            + [（旧版）Amazon FireOS API参考](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
+            + [（旧版）Amazon FireOS应用程序注册](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-application-registration.md)
+            + [（旧版）带有Dynamic Client注册的FireOS SDK](integration-guide-programmers/legacy/sdks/fireos-sdk/fireos-sdk-with-dynamic-client-registration.md)
             + [（旧版）Amazon FireOS SSO — 程序员启动指南](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-firetv-sso-programmer-kickoff-guide.md)
       + （旧版）客户端信息{#client-information}
          + [（旧版）传递客户端信息（设备、连接和应用程序）](integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)
@@ -225,7 +225,7 @@ ht-degree: 2%
          + [（旧版）通过被动身份验证的SSO](integration-guide-programmers/legacy/sso-access/sso-passive-authn.md)
          + [（旧版）Amazon SSO指南(REST API V1)](integration-guide-programmers/legacy/sso-access/amazon-sso-cookbook-rest-api-v1.md)
          + [（旧版）Apple SSO指南(REST API V1)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-rest-api-v1.md)
-         + [（旧版）Apple SSO Cookbook (iOS/tvOS SDK)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)
+         + [（旧版）Apple SSO指南(iOS/tvOS SDK)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)
       + （旧版） TVE仪表板{#tve-dashboard}
          + [（旧版）TVE功能板用户指南](integration-guide-programmers/legacy/tve-dashboard/tve-dashboard-user-guide.md)
       + （旧版）技术说明{#tech-notes}
@@ -278,7 +278,7 @@ ht-degree: 2%
 + TVE仪表板{#user-guide-tve-dashboard}用户指南
    + [TVE仪表板概述](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)
    + [环境](/help/authentication/user-guide-tve-dashboard/tve-dashboard-environments.md)
-   + [审阅并推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)
+   + [审核和推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)
    + [仪表板](/help/authentication/user-guide-tve-dashboard/tve-dashboard-home.md)
    + [渠道](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md)
    + [程序员](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md)

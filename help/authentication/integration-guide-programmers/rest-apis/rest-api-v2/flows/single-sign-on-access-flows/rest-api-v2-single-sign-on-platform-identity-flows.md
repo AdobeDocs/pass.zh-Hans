@@ -2,9 +2,9 @@
 title: 单点登录 — 平台标识 — 流程
 description: REST API V2 — 单点登录 — 平台标识 — 流程
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '1856'
+source-wordcount: '1855'
 ht-degree: 0%
 
 ---
@@ -128,7 +128,7 @@ ht-degree: 0%
 
    >[!TIP]
    >
-   > 建议：流应用程序可以等待用户代理到达提供的`redirectUrl`，以检查是否已成功生成并保存常规配置文件。
+   > 流应用程序必须等待用户代理到达提供的`redirectUrl`以检查是否成功生成并保存了常规配置文件。
 
 1. **查找常规配置文件：** Adobe Pass服务器根据收到的参数和标头标识有效的配置文件。
 

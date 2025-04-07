@@ -2,7 +2,7 @@
 title: 程序员集成指南
 description: 程序员集成指南
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '2119'
 ht-degree: 0%
@@ -201,7 +201,7 @@ Adobe Pass Authentication充当代理，通过为双方提供安全一致的界�
 
 **常见问题解答**
 
-* [身份验证阶段常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
+* [身份验证阶段常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)
 
 >[!TIP]
 >
@@ -236,7 +236,7 @@ Adobe Pass Authentication充当代理，通过为双方提供安全一致的界�
 
 **常见问题解答**
 
-* [预授权阶段常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#preauthorization-phase-faqs-general)。
+* [预授权阶段常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#preauthorization-phase-faqs-general)
 
 >[!TIP]
 >
@@ -277,7 +277,7 @@ Adobe Pass Authentication充当代理，通过为双方提供安全一致的界�
 
 **常见问题解答**
 
-* [授权阶段常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)。
+* [授权阶段常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)
 
 >[!TIP]
 >
@@ -297,7 +297,7 @@ Adobe Pass Authentication充当代理，通过为双方提供安全一致的界�
 
 **常见问题解答**
 
-* [注销阶段常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#logout-phase-faqs-general)。
+* [注销阶段常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#logout-phase-faqs-general)
 
 #### 单次注销(SLO) {#single-logout}
 

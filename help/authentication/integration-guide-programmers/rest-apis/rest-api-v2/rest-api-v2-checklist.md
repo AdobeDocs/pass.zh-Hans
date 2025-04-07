@@ -1,9 +1,10 @@
 ---
 title: REST API V2检查表
 description: REST API V2检查表
-source-git-commit: f0001d86f595040f4be74f357c95bd2919dadf15
+exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '2535'
+source-wordcount: '2545'
 ht-degree: 0%
 
 ---
@@ -40,7 +41,7 @@ ht-degree: 0%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>访问令牌缓存</i></td>
-      <td>将访问令牌存储在永久存储中并重复使用，直到其过期 — 不要为每个REST API v2调用请求新令牌。</td>
+      <td>将访问令牌存储在永久存储中并重复使用，直到其过期。<br/><br/>不要为每个REST API v2调用请求新令牌，仅在访问令牌过期时才刷新访问令牌。</td>
       <td>存在系统资源过载的风险，会增加延迟，并可能触发HTTP 429“请求过多”错误响应。</td>
    </tr>
 </table>
@@ -85,7 +86,7 @@ ht-degree: 0%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>轮询机制配置</i></td>
-      <td>在以下条件下配置轮询机制频率： <br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md">在主（屏幕）应用程序内执行的身份验证</a></b><ul><li>主（流）应用程序应每3-5秒轮询一次。</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md">在辅助（屏幕）应用程序内执行的身份验证</a></b><ul><li>主（流）应用程序应每3-5秒轮询一次。</li></ul></td>
+      <td>在以下条件下配置轮询机制频率： <br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md">在主（屏幕）应用程序内执行的身份验证</a></b><ul><li>主（流）应用程序应每3-5秒或更长时间轮询一次。</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md">在辅助（屏幕）应用程序内执行的身份验证</a></b><ul><li>主（流）应用程序应每3-5秒轮询一次。</li></ul></td>
       <td>存在系统资源过载的风险，会增加延迟，并可能触发HTTP 429“请求过多”错误响应。</td>
    </tr>
    <tr>
@@ -237,7 +238,7 @@ ht-degree: 0%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>访问令牌验证</i></td>
-      <td>主动检查访问令牌的有效性并在过期时刷新它。<br/><br/>在重试原始请求之前，请确保用于处理HTTP 401“未授权”错误的任何重试机制首先刷新访问令牌。</td>
+      <td>主动检查访问令牌的有效性，以在过期时刷新令牌。<br/><br/>在重试原始请求之前，请确保用于处理HTTP 401“未授权”错误的任何重试机制首先刷新访问令牌。</td>
       <td>可能会触发HTTP 401“未授权”错误响应，导致系统资源过载并增加延迟。</td>
    </tr>
 </table>

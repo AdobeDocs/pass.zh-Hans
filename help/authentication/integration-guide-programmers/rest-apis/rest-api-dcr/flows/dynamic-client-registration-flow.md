@@ -2,9 +2,9 @@
 title: 动态客户端注册流程
 description: 动态客户端注册流程
 exl-id: d881cf0a-de09-4b1d-a094-d5490f944796
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '564'
 ht-degree: 0%
 
 ---
@@ -70,7 +70,7 @@ ht-degree: 0%
 
    >[!TIP]
    >
-   > 建议：必须缓存客户端凭据，并且可无限期使用。
+   > 必须缓存并无限期使用客户端凭据。
 
 1. **检索访问令牌：**&#x200B;客户端应用程序通过调用客户端令牌终结点，收集检索访问令牌所需的所有数据。
 
@@ -100,7 +100,7 @@ ht-degree: 0%
 
    >[!TIP]
    >
-   > 建议：访问令牌必须在指定的时间段内缓存和使用（例如，24小时存留期）。 过期后，客户端应用程序必须请求新的访问令牌。
+   > 访问令牌必须仅在指定的时间内（例如，24小时存留期）缓存和使用。 过期后，客户端应用程序必须请求新的访问令牌。
 
 1. **继续访问受保护的API：**&#x200B;客户端应用程序使用访问令牌访问其他受Adobe Pass保护的API。 客户端应用程序必须在使用`Bearer`身份验证方案（即`Authorization: Bearer <access_token>`）的`Authorization`请求标头中包含访问令牌。
 

@@ -2,9 +2,9 @@
 title: 单点登录 — 服务令牌 — 流程
 description: REST API V2 — 单点登录 — 服务令牌 — 流程
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '1858'
+source-wordcount: '1857'
 ht-degree: 0%
 
 ---
@@ -126,7 +126,7 @@ ht-degree: 0%
 
    >[!TIP]
    >
-   > 建议：流应用程序可以等待用户代理到达提供的`redirectUrl`，以检查是否已成功生成并保存常规配置文件。
+   > 流应用程序必须等待用户代理到达提供的`redirectUrl`以检查是否成功生成并保存了常规配置文件。
 
 1. **查找常规配置文件：** Adobe Pass服务器根据收到的参数和标头标识有效的配置文件。
 
