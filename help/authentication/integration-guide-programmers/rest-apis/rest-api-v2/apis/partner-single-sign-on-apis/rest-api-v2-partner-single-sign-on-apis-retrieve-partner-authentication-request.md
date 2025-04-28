@@ -2,7 +2,7 @@
 title: 检索合作伙伴身份验证请求
 description: REST API V2 — 检索合作伙伴身份验证请求
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: e8836c76aec10607717c0a67434b2ba5a78a8954
 workflow-type: tm+mt
 source-wordcount: '1219'
 ht-degree: 1%
@@ -307,7 +307,7 @@ ht-degree: 1%
                     <ul>
                         <li><b>type</b><br/>指示MVPD支持的协议类型（仅限SAML）。</li>
                         <li><b>请求</b><br/>SAML请求。</li>
-                        <li><b>属性</b><br/>SAML请求属性。</li>
+                        <li><b>attributesNames</b><br/>SAML请求属性。</li>
                     </ul>
                </td>
                <td>可选</td>
