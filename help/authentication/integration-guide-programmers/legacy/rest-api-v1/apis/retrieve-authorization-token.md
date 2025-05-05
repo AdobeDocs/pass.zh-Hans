@@ -56,7 +56,7 @@ ht-degree: 0%
 | deviceId | 设备ID字节。 |
 | 资源 | 一个字符串，它包含resourceId（或MRSS片段），可标识用户请求的内容并由MVPD授权端点识别。 |
 | 设备信息/</br></br>X — 设备信息 | 流设备信息。</br></br>**注意**：可以将此device_info作为URL参数传递，但由于此参数的潜在大小以及GETURL的长度限制，它应作为X-Device-Info传递到http标头。 </br></br>在[传递设备和连接信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
-| _deviceType_ | 设备类型（例如，Roku、PC）。</br></br>如果该参数设置正确，ESM提供的量度在使用无客户端程序时按设备类型](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)进行[划分，以便可以执行不同类型的分析，例如Roku、AppleTV和Xbox。</br></br>查看，[在传递量度中使用无客户端设备类型参数的好处&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**： device_info将替换此参数。 |
+| _deviceType_ | 设备类型（例如，Roku、PC）。</br></br>如果该参数设置正确，ESM提供的量度在使用无客户端程序时按设备类型[&#128279;](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)进行划分，以便可以执行不同类型的分析，例如Roku、AppleTV和Xbox。</br></br>查看，[在传递量度中使用无客户端设备类型参数的好处&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**： device_info将替换此参数。 |
 | _设备用户_ | 设备用户标识符。 |
 | _appId_ | 应用程序id/名称。 </br></br>**注意**： device_info将替换此参数。 |
 

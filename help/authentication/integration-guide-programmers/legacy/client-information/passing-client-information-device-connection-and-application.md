@@ -164,7 +164,7 @@ AccessEnabler iOS/tvOS SDK支持&#x200B;**通过[setOptions](/help/authenticatio
 
 >[!IMPORTANT]
 >
-必须将设备、连接和应用程序信息添加到同一JSON对象中。 之后，生成的对象必须为&#x200B;**Base64编码**。 此外，对于Adobe Pass身份验证REST API，该值必须为&#x200B;**URL编码**。
+>必须将设备、连接和应用程序信息添加到同一JSON对象中。 之后，生成的对象必须为&#x200B;**Base64编码**。 此外，对于Adobe Pass身份验证REST API，该值必须为&#x200B;**URL编码**。
 
 **示例代码**
 
@@ -243,8 +243,8 @@ private JSONObject computeClientInformation() {
 
 >[!NOTE]
 >
-**资源：**
-* Java开发人员文档中的公共类[生成](https://developer.android.com/reference/android/os/Build.html){target=_blank}。
+>**资源：**
+>* Java开发人员文档中的公共类[生成](https://developer.android.com/reference/android/os/Build.html){target=_blank}。
 
 ### FireTV {#fire-tv}
 
@@ -276,13 +276,13 @@ private JSONObject computeClientInformation() {
 
 >[!IMPORTANT]
 >
-必须将设备、连接和应用程序信息添加到同一JSON对象中。 之后，生成的对象必须为&#x200B;**Base64编码**。 此外，对于Adobe Pass身份验证REST API，该值必须为&#x200B;**URL编码**。
+>必须将设备、连接和应用程序信息添加到同一JSON对象中。 之后，生成的对象必须为&#x200B;**Base64编码**。 此外，对于Adobe Pass身份验证REST API，该值必须为&#x200B;**URL编码**。
 
 >[!NOTE]
 >
-**资源：**
-* Android开发人员文档中的公共类[生成](https://developer.android.com/reference/android/os/Build.html){target=_blank}。
-* [识别FireTV设备](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html){target=_blank}
+>**资源：**
+>* Android开发人员文档中的公共类[生成](https://developer.android.com/reference/android/os/Build.html){target=_blank}。
+>* [识别FireTV设备](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html){target=_blank}
 
 ### iOS/tvOS {#ios-tvos}
 
@@ -315,7 +315,7 @@ private JSONObject computeClientInformation() {
 
 >[!IMPORTANT]
 >
-必须将设备、连接和应用程序信息添加到同一JSON对象中。 之后，生成的对象必须为Base64编码。 此外，对于Adobe Pass身份验证REST API，该值必须为URL编码。
+>必须将设备、连接和应用程序信息添加到同一JSON对象中。 之后，生成的对象必须为Base64编码。 此外，对于Adobe Pass身份验证REST API，该值必须为URL编码。
 
 **示例代码**
 
@@ -387,10 +387,10 @@ private JSONObject computeClientInformation() {
 
 >[!NOTE]
 >
-**资源：**
-* [UIDevice](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice){target=_blank}
-* [uname](https://man7.org/linux/man-pages/man2/uname.2.html){target=_blank}
-* [关于可达性](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html){target=_blank}
+>**资源：**
+>* [UIDevice](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice){target=_blank}
+>* [uname](https://man7.org/linux/man-pages/man2/uname.2.html){target=_blank}
+>* [关于可达性](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html){target=_blank}
 
 ### Roku {#roku}
 
@@ -422,11 +422,11 @@ private JSONObject computeClientInformation() {
 
 >[!IMPORTANT]
 >
-必须将设备、连接和应用程序信息添加到同一JSON对象中。 之后，生成的对象必须为&#x200B;**Base64编码**。 此外，对于Adobe Pass身份验证REST API，该值必须为URL编码。
+>必须将设备、连接和应用程序信息添加到同一JSON对象中。 之后，生成的对象必须为&#x200B;**Base64编码**。 此外，对于Adobe Pass身份验证REST API，该值必须为URL编码。
 
 >[!NOTE]
 >
-有关详细信息，请参阅[ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md)
+>有关详细信息，请参阅[ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md)
 
 ### XBOX 1/360 {#xbox}
 
@@ -458,7 +458,7 @@ private JSONObject computeClientInformation() {
 
 >[!IMPORTANT]
 >
-必须将设备、连接和应用程序信息添加到同一JSON对象中。 之后，生成的对象必须为&#x200B;**Base64编码**。 此外，对于Adobe Pass身份验证REST API，该值必须为&#x200B;**URL编码**。
+>必须将设备、连接和应用程序信息添加到同一JSON对象中。 之后，生成的对象必须为&#x200B;**Base64编码**。 此外，对于Adobe Pass身份验证REST API，该值必须为&#x200B;**URL编码**。
 
 **资源**
 

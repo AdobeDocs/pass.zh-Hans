@@ -61,7 +61,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**注销流**&#x200B;允许流�
 
    >[!IMPORTANT]
    >
-   > 有关以下内容的详细信息，请参阅特定mvpd ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的[Initiate注销：
+   > 有关以下内容的详细信息，请参阅特定mvpd [&#128279;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的Initiate注销：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`redirectUrl`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`
@@ -78,7 +78,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**注销流**&#x200B;允许流�
 
    >[!IMPORTANT]
    >
-   > 有关注销响应中提供的信息的详细信息，请参阅特定mvpd ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的[启动注销。
+   > 有关注销响应中提供的信息的详细信息，请参阅特定mvpd [&#128279;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的启动注销。
    > 
    > <br/>
    > 
@@ -127,7 +127,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**注销流**&#x200B;允许流�
 
    >[!IMPORTANT]
    >
-   > 有关以下内容的详细信息，请参阅特定mvpd ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的[Initiate注销：
+   > 有关以下内容的详细信息，请参阅特定mvpd [&#128279;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的Initiate注销：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`redirectUrl`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`
@@ -144,7 +144,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**注销流**&#x200B;允许流�
 
    >[!IMPORTANT]
    >
-   > 有关注销响应中提供的信息的详细信息，请参阅特定mvpd ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的[启动注销。
+   > 有关注销响应中提供的信息的详细信息，请参阅特定mvpd [&#128279;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的启动注销。
    > 
    > <br/>
    > 

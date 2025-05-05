@@ -23,7 +23,7 @@ ht-degree: 0%
 * 低(20%-40%)
 * 非常低(0%-20%)
 
-红线标记当前区段](#threshold-selector)面板中[帐户超过阈值中选定的阈值范围，浅红色区域包含超过该阈值的所有帐户的总数。
+红线标记当前区段[&#128279;](#threshold-selector)面板中帐户超过阈值中选定的阈值范围，浅红色区域包含超过该阈值的所有帐户的总数。
 
 ![](assets/accounts-sharing-probability-pie.png)
 

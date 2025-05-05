@@ -15,7 +15,7 @@ Account IQ的D2C和TV Everywhere版本为流提供商提供使用和订阅共享
 
 * [总体共享得分](/help/accountiq/data-panels.md#overall-sharing-score)当前包括[共享级别](/help/accountiq/data-panels.md#sharing-level)和[来自共享帐户的使用情况](/help/accountiq/data-panels.md#usage-from-shared-accounts)。 未来版本将包含更多量度。
 
-* 在仪表板或使用模式上定义区段时，区段](/help/accountiq/data-panels.md#video-categories-segment)中的[视频类别、[按渠道和MVPD共享得分](/help/accountiq/data-panels.md#sharin-score-by-channels-and-mvpds)以及视频类别的[使用模式分发](/help/accountiq/usage-patterns.md#usage-pattern-dis-video-categories)报告只能显示最多20个[视频类别](product-concepts.md#video-category-def)的数据。 包含超过20个视频类别的区段将不会在这些报表中显示数据。
+* 在仪表板或使用模式上定义区段时，区段[&#128279;](/help/accountiq/data-panels.md#video-categories-segment)中的视频类别、[按渠道和MVPD共享得分](/help/accountiq/data-panels.md#sharin-score-by-channels-and-mvpds)以及视频类别的[使用模式分发](/help/accountiq/usage-patterns.md#usage-pattern-dis-video-categories)报告只能显示最多20个[视频类别](product-concepts.md#video-category-def)的数据。 包含超过20个视频类别的区段将不会在这些报表中显示数据。
 
 * 目前，导出帐户统计信息的选项仅限于导出1000个帐户。
 

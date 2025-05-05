@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# （旧版）iOS SDK 3.1+ {#wkwebview-support-on-ios-sdk-3.1}上的WKWebView支持
+# （旧版）iOS SDK 3.1+上的WKWebView支持 {#wkwebview-support-on-ios-sdk-3.1}
 
 >[!NOTE]
 >

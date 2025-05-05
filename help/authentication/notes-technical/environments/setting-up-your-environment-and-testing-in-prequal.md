@@ -17,7 +17,7 @@ ht-degree: 0%
 
 本技术说明旨在帮助我们的合作伙伴设置其环境并开始测试在 Adobe 资格预审环境中部署的新版本。
 
-由于有两种构建风格：生产和&#x200B;******&#x200B;暂存&#x200B;***，***&#x200B;因此在本文档中，我们将重点介绍生产设置，并提到暂存的所有步骤都是相同的，只是 URL 不同。
+由于有两种构建风格：生产和&#x200B;**&#x200B;**&#x200B;**&#x200B;暂存&#x200B;***，***&#x200B;因此在本文档中，我们将重点介绍生产设置，并提到暂存的所有步骤都是相同的，只是 URL 不同。
 
 步骤1和2是在其中一台测试机器上设置测试环境，步骤3是对基本流程的验证，步骤4和5提供了一些测试指南。
 
@@ -30,7 +30,7 @@ ht-degree: 0%
 
 * 要查找可用于欺骗的负载平衡器IP，请运行以下命令：
 
-* Windows上的&#x200B;****
+* Windows上的&#x200B;**&#x200B;**
 
   ```cmd
   C:\>nslookup sp-prequal.auth.adobe.com
@@ -101,7 +101,7 @@ Addresses:  52.26.79.43
 
 **这是一个简单的步骤：**
 
-* 加载[权利 环境和](https://entitlement-prequal.auth.adobe.com/environment.html)[权利](https://entitlement.auth.adobe.com/environment.html)。它们应返回相同的响应。
+* 加载[权利 环境和](https://entitlement-prequal.auth.adobe.com/environment.html) [权利](https://entitlement.auth.adobe.com/environment.html)。它们应返回相同的响应。
 
 
 ## 步骤 4.  使用程序员的网站执行简单的身份验证/授权流程 {#peform-a-simple-auth-flow}
@@ -117,4 +117,4 @@ Addresses:  52.26.79.43
 
 * 如果您想更深入地测试Adobe Pass身份验证，我们建议您使用[API测试站点](http://entitlement-prequal.auth.adobe.com/apitest/api.html)。
 
-您可以在如何使用 Adobe 的 API 测试站点](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)测试身份验证和授权流中找到[有关 API 测试站点的更多详细信息。
+您可以在如何使用 Adobe 的 API 测试站点[&#128279;](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)测试身份验证和授权流中找到有关 API 测试站点的更多详细信息。

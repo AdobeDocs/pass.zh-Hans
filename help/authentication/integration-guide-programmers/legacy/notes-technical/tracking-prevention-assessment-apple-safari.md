@@ -86,7 +86,7 @@ Adobe Pass身份验证服务使用并依赖于Cookie作为身份验证过程&#x2
 >请记住，对于AccessEnabler JavaScript SDK版本2.x和AccessEnabler JavaScript SDK版本3.x，它们都使用第三方Cookie进行身份验证过程，并且由于从Safari 11开始的ITP和第三方Cookie策略，用户的身份验证体验可能是意外的，并且未定义，从无法登录到比预期的身份验证持续时间更短。
 
 
-### Safari 12 {#certified-functionality-of-accessenabler-javacscript=sdk-v4}上AccessEnabler JavaScript SDK v4（版本4.x）的认证功能
+### Safari 12上AccessEnabler JavaScript SDK v4（版本4.x）的认证功能 {#certified-functionality-of-accessenabler-javacscript=sdk-v4}
 
 **使用用户交互的**&#x200B;身份验证流将始终有效，即使用户的浏览器禁用了第三方Cookie，因为从4.0版开始，AccessEnabler JavaScript SDK不再将第三方Cookie用于身份验证过程。
 

@@ -47,7 +47,7 @@ ht-degree: 0%
 
 * [`setOptions:options:`](#setOptions) — 配置全局SDK选项，如配置文件或visitorID。
 
-* [`setRequestor:`](#setReqV3)[`requestorID`](#setReqV3)，[`setRequestor:requestorID:serviceProviders:`](#setReqV3) — 建立程序员的身份。
+* [`setRequestor:`](#setReqV3) [`requestorID`](#setReqV3)，[`setRequestor:requestorID:serviceProviders:`](#setReqV3) — 建立程序员的身份。
 
 * **[已弃用]** [`setRequestor:signedRequestorId:`](#setReq)，[`setRequestor:signedRequestorId:serviceProviders:`](#setReq) — 建立程序员的身份。
 
@@ -59,7 +59,7 @@ ht-degree: 0%
 
 * [`getAuthentication`](#getAuthN)，[`getAuthentication:withData:`](#getAuthN) — 启动完整的身份验证工作流。
 
-* [`getAuthentication:filter`](#getAuthN_filter)，[`getAuthentication:withData:`](#getAuthN)[andFilter](#getAuthN_filter) — 启动完整的身份验证工作流。
+* [`getAuthentication:filter`](#getAuthN_filter)，[`getAuthentication:withData:`](#getAuthN) [andFilter](#getAuthN_filter) — 启动完整的身份验证工作流。
 
 * [`displayProviderDialog:`](#dispProvDialog) — 通知您的应用程序实例化相应的UI元素，以便用户选择MVPD。
 
@@ -166,7 +166,7 @@ ht-degree: 0%
 * *options*：包含全局SDK选项的NSDictionary。 目前，以下选项可用：
    * **applicationProfile** — 可用于根据此值生成服务器配置。
    * **visitorID** -Experience CloudID服务。 此值以后可用于高级分析报表。
-   * **handleSVC** — 布尔值，指示程序员是否将处理SFSafariViewControllers。 有关详细信息，请参阅iOS SDK 3.2+](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的[SFSafariViewController支持。
+   * **handleSVC** — 布尔值，指示程序员是否将处理SFSafariViewControllers。 有关详细信息，请参阅iOS SDK 3.2+[&#128279;](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的SFSafariViewController支持。
       * 如果设置为&#x200B;**false，**，SDK将自动向最终用户显示SFSafariViewController。 SDK将进一步导航到MVPD登录页面URL。
       * 如果设置为&#x200B;**true，** SDK将&#x200B;**NOT**&#x200B;自动向最终用户显示SFSafariViewController。 SDK将进一步触发&#x200B;**navigate(toUrl：{url}， useSVC：YES)**。
 * **device\_info** — 客户端信息，如[传递客户端信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中所述。
@@ -369,7 +369,7 @@ ht-degree: 0%
 
 **文件：** AccessEnabler/headers/AccessEnabler.h
 
-**描述：**检查当前用户的身份验证状态。
+**描述：**&#x200B;检查当前用户的身份验证状态。
 它通过在本地搜索有效的身份验证令牌来完成此操作
 令牌存储空间。 此方法不执行任何网络调用，我们建议在主线程上调用它。
 应用程序使用它来查询用户的身份验证状态并
@@ -712,11 +712,11 @@ ht-degree: 0%
 
 **文件：** AccessEnabler/headers/EntitlementDelegate.h
 
-**描述：**&#x200B;由AccessEnabler而不是`navigateToUrl:`回调触发的回调，以防您的应用程序之前通过[setOptions(\[&quot;handleSVC&quot;：true&quot;\])](#setOptions)调用启用了手动Safari视图控制器(SVC)处理，并且仅适用于MVPD需要Safari视图控制器(SVC)的情况。 对于所有其他MVPD，将调用`navigateToUrl:`回调。 有关如何管理Safari视图控制器(SVC)的详细信息，请参阅iOS SDK 3.2+](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的[SFSafariViewController支持。
+**描述：**&#x200B;由AccessEnabler而不是`navigateToUrl:`回调触发的回调，以防您的应用程序之前通过[setOptions(\[&quot;handleSVC&quot;：true&quot;\])](#setOptions)调用启用了手动Safari视图控制器(SVC)处理，并且仅适用于MVPD需要Safari视图控制器(SVC)的情况。 对于所有其他MVPD，将调用`navigateToUrl:`回调。 有关如何管理Safari视图控制器(SVC)的详细信息，请参阅iOS SDK 3.2+[&#128279;](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的SFSafariViewController支持。
 
 与`navigateToUrl:`回调类似，`navigateToUrl:useSVC:`由AccessEnabler触发，请求应用程序实例化`SFSafariViewController`控制器并加载回调的&#x200B;**`url`**&#x200B;参数中提供的URL。 callback传递表示身份验证终结点URL或注销终结点URL的&#x200B;**`url`**&#x200B;参数，以及指定应用程序必须使用`SFSafariViewController`的&#x200B;**`useSVC`**&#x200B;参数。
 
-在`SFSafariViewController`控制器执行多次重定向时，您的应用程序必须监控该控制器的活动，并检测其加载`application's custom scheme`定义的特定自定义URL的时间(例**，**`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`)。 请注意，此特定自定义URL实际上无效，控制器不会将其实际加载。 必须由应用程序将其解释为验证或注销流程已完成，并且关闭控制器是安全的信号。 当控制器加载此特定自定义URL时，应用程序必须关闭`SFSafariViewController`并调用AccessEnabler的`handleExternalURL:url `API方法。
+在`SFSafariViewController`控制器执行多次重定向时，您的应用程序必须监控该控制器的活动，并检测其加载`application's custom scheme`定义的特定自定义URL的时间(例&#x200B;**，**`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`)。 请注意，此特定自定义URL实际上无效，控制器不会将其实际加载。 必须由应用程序将其解释为验证或注销流程已完成，并且关闭控制器是安全的信号。 当控制器加载此特定自定义URL时，应用程序必须关闭`SFSafariViewController`并调用AccessEnabler的`handleExternalURL:url `API方法。
 
 **注意：**&#x200B;请注意，对于身份验证流程，用户可以按下“上一步”按钮，这等同于身份验证流程中止。 在这种情况下，应用程序需要调用[setSelectedProvider：](#setSelProv)方法，将&#x200B;**`nil`**&#x200B;作为参数传递，并为AccessEnabler提供重置其身份验证状态计算机的机会。
 
@@ -732,19 +732,19 @@ ht-degree: 0%
 <tbody>
 <tr class="odd">
 <td><pre><code>@optional
-- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
+&#x200B;- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
 </tr>
 </tbody>
 </table>
 
-**可用性：**v 3.2+
+**可用性：**&#x200B;v 3.2+
 
 **参数**：
 
 * *url：*&#x200B;指向MVPD登录页面的URL
 * *useSVC：*&#x200B;是否应在SFSafariViewController中加载URL。
 
-**由[setSelectedProvider：](#setSelProv)之前的**[ setOptions：](#setOptions)触发
+**由[setSelectedProvider：](#setSelProv)之前的**&#x200B;[ setOptions：](#setOptions)触发
 
 [返回页首……](#apis)
 

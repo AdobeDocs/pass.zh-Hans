@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## D2C和电视上的通用术语
 
-以下产品术语及其定义对于Account IQ](versions-aiq.md)的所有[版本都是通用的。
+以下产品术语及其定义对于Account IQ[&#128279;](versions-aiq.md)的所有版本都是通用的。
 
 ### [!UICONTROL Accounts Sharing Probability] {#account-sharing-probability-def}
 

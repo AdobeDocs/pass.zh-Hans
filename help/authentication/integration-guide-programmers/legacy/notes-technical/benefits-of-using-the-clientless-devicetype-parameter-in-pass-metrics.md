@@ -35,7 +35,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->如果参数`deviceType`设置正确，则在授权服务监控中具有以下&#x200B;**权益**：它提供了在使用无客户端程序时按设备类型](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)细分的指标[，以便可以对Roku、AppleTV、Xbox等执行不同类型的分析。
+>如果参数`deviceType`设置正确，则在授权服务监控中具有以下&#x200B;**权益**：它提供了在使用无客户端程序时按设备类型[&#128279;](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)细分的指标，以便可以对Roku、AppleTV、Xbox等执行不同类型的分析。
 
 
 有关授权服务监控API的更多信息，请参阅[深入分析树](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md#drill-down_tree)，该树说明了ESM 2.0中可用的[维度](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#esm_dimensions)（资源）。

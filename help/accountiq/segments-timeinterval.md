@@ -86,9 +86,9 @@ D2C服务的&#x200B;*区段摘要*
 
 **区段摘要**&#x200B;包含以下定义区段的条件：
 
-区段&#x200B;**中的**[&#x200B;区域和内容类型](product-concepts.md#video-category-def)是指与由帐户共享报表中表示的共享帐户观看的视频流关联的元数据标签。
+区段&#x200B;**中的**&#x200B;[&#x200B;区域和内容类型](product-concepts.md#video-category-def)是指与由帐户共享报表中表示的共享帐户观看的视频流关联的元数据标签。
 
-区段&#x200B;**中的**[&#x200B;量度](product-concepts.md#metric)是指订阅者必须满足才能在帐户共享报表中识别的属性或条件。
+区段&#x200B;**中的**&#x200B;[&#x200B;量度](product-concepts.md#metric)是指订阅者必须满足才能在帐户共享报表中识别的属性或条件。
 
 +++
 
@@ -100,12 +100,12 @@ D2C服务的&#x200B;*区段摘要*
 
 **区段摘要**&#x200B;包含以下定义区段的条件：
 
-区段&#x200B;**中的**[&#x200B;程序员](product-concepts.md#programmer-def)是指其视频流由帐户共享报表中表示的共享帐户观看的内容提供商。
+区段&#x200B;**中的**&#x200B;[&#x200B;程序员](product-concepts.md#programmer-def)是指其视频流由帐户共享报表中表示的共享帐户观看的内容提供商。
 
-区段&#x200B;**中的**[&#x200B;频道](product-concepts.md#channel-def)是指其视频流由帐户共享报表中表示的共享帐户观看的频道。
+区段&#x200B;**中的**&#x200B;[&#x200B;频道](product-concepts.md#channel-def)是指其视频流由帐户共享报表中表示的共享帐户观看的频道。
 
-区段&#x200B;**中的**[ MVPD](product-concepts.md#mvpd-def)是指与订阅者相关联以便在帐户共享报表中标识的多视频编程分发服务器。
+区段&#x200B;**中的**&#x200B;[ MVPD](product-concepts.md#mvpd-def)是指与订阅者相关联以便在帐户共享报表中标识的多视频编程分发服务器。
 
-区段&#x200B;**中的**[&#x200B;量度](product-concepts.md#metric)是指订阅者必须满足才能在帐户共享报表中识别的属性或条件。
+区段&#x200B;**中的**&#x200B;[&#x200B;量度](product-concepts.md#metric)是指订阅者必须满足才能在帐户共享报表中识别的属性或条件。
 
 +++

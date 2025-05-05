@@ -73,7 +73,7 @@ x轴表示基于当前间隔的时间，y轴表示该期间的基本订户活动
 
 * 邮编数阈值
 
-当您根据所选阈值](#account-segments-basedon-segments)在基于[帐户区段的面板中更新阈值时，您将在以下位置查看效果：
+当您根据所选阈值[&#128279;](#account-segments-basedon-segments)在基于帐户区段的面板中更新阈值时，您将在以下位置查看效果：
 
 * [每个帐户的每周（或每月）设备数](#devices-week-account)
 
@@ -121,7 +121,7 @@ x轴绘制帐户数，y轴绘制设备数。 根据您为每个帐户设置的�
 
 ## 每个帐户的每周（或每月）位置数 {#locations-week-account}
 
-与每个帐户](#devices-week-account)每周（或每月）设备[的量度类似，每个帐户每周（或每月）的位置量度允许您从不同位置分析订阅者帐户的使用情况。 x轴绘制帐户数，y轴绘制位置数。
+与每个帐户[&#128279;](#devices-week-account)每周（或每月）设备的量度类似，每个帐户每周（或每月）的位置量度允许您从不同位置分析订阅者帐户的使用情况。 x轴绘制帐户数，y轴绘制位置数。
 
 ![](assets/graph-loc-week-acc.png)
 
@@ -151,13 +151,13 @@ x轴绘制帐户数，y轴绘制IP数。
 
 ## 帐户段 — 历史视图 {#account-segment-historical-view}
 
-历史视图条形图可帮助您比较不同时间间隔内的使用度量。 此外，它还集体绘制各种使用量度，如每个帐户](#devices-week-account)每周（或每月）的[设备、每个帐户](#locations-week-account)每周（或每月）的[位置，以及每个帐户](#ip-week-account)每周（或每月）的[IP。
+历史视图条形图可帮助您比较不同时间间隔内的使用度量。 此外，它还集体绘制各种使用量度，如每个帐户[&#128279;](#devices-week-account)每周（或每月）的[设备、每个帐户](#locations-week-account)每周（或每月）的[位置，以及每个帐户](#ip-week-account)每周（或每月）的IP。
 
 * x轴绘制时间间隔，y轴绘制订户帐户、设备、位置和IP的数量。
 
 * 橙色条表示不同时间间隔中的区段。
 
-* 折线图以曲线表示每个帐户](#devices-week-account)每周（或每月）的[个设备、每个帐户](#locations-week-account)每周（或每月）的[个位置以及整个时间间隔内（基于阈值）每个帐户](#ip-week-account)值的[周（或每月）IP数的变化。
+* 折线图以曲线表示每个帐户[&#128279;](#devices-week-account)每周（或每月）的[个设备、每个帐户](#locations-week-account)每周（或每月）的[个位置以及整个时间间隔内（基于阈值）每个帐户](#ip-week-account)值的周（或每月）IP数的变化。
 
 ![](assets/historical-view.png)
 

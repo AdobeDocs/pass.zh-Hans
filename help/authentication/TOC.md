@@ -129,7 +129,7 @@ ht-degree: 2%
          + [用户元数据](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
          + [决策](integration-guide-programmers/features-standard/entitlements/decisions.md)
          + [媒体令牌](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
-      + 报告{#error-reporting}时出错
+      + 报告时出错{#error-reporting}
          + [增强的错误代码](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
       + 单点登录访问{#sso-access}
          + 合作伙伴单点登录{#partner-sso}
@@ -275,7 +275,7 @@ ht-degree: 2%
    + [代理MVPD SAML集成](integration-guide-mvpds/proxy-mvpd-saml-int.md)
    + [服务提供商范围](integration-guide-mvpds/serv-provider-scoping.md)
    + [MVPD允许IP地址](integration-guide-mvpds/mvpd-listing-ip-addres.md)
-+ TVE仪表板{#user-guide-tve-dashboard}用户指南
++ TVE仪表板用户指南{#user-guide-tve-dashboard}
    + [TVE仪表板概述](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)
    + [环境](/help/authentication/user-guide-tve-dashboard/tve-dashboard-environments.md)
    + [审核和推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)

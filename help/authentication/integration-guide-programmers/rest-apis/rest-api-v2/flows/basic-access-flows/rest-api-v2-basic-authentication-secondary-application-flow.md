@@ -149,7 +149,7 @@ Adobe Pass身份验证权利中的&#x200B;**身份验证流程**&#x200B;允许�
 
    >[!IMPORTANT]
    >
-   > 有关以下内容的详细信息，请参阅用户代理](../../apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) API文档中的[执行身份验证：
+   > 有关以下内容的详细信息，请参阅用户代理[&#128279;](../../apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) API文档中的执行身份验证：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`和`code`
    > * 所有&#x200B;_可选_&#x200B;参数和标头

@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> 确保您随时了解“产品公告](/help/authentication/product-announcements.md)”页面中[汇总的最新 Adobe Pass 身份验证产品公告和停用时间表。
+> 确保您随时了解“产品公告[&#128279;](/help/authentication/product-announcements.md)”页面中汇总的最新 Adobe Pass 身份验证产品公告和停用时间表。
 
 </br>
 
