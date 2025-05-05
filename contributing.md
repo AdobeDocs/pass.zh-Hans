@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## 参与者指南文档
 
-请参阅 [投稿人指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html).
+请参阅 [投稿人指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=zh-Hans).
 
 ## 有疑问吗？
 
@@ -44,4 +44,4 @@ submitting a pull request!
 
 ## 安全问题
 
-不应在此问题跟踪器上报告安全问题。 相反， [向我们的安全专家提出问题](https://helpx.adobe.com/security/alertus.html)
+不应在此问题跟踪器上报告安全问题。 相反， [向我们的安全专家提出问题](https://helpx.adobe.com/cn/security/alertus.html)

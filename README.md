@@ -29,7 +29,7 @@ ht-degree: 0%
 1. 在“此内容是否有帮助？”中 浏览器窗口底部显示的横幅单击 **详细的反馈选项**.
 1. 单击 **建议编辑** 并在GitHub UI中提交拉取请求(PR)，以及您所做的更改。
 
-   查看常规 [Adobe文档参与者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) 以了解更多信息。
+   查看常规 [Adobe文档参与者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=zh-Hans) 以了解更多信息。
 
 您为此存储库中的文档和代码示例提交的小幅度更正或说明受Adobe使用条款的约束。
 
@@ -43,7 +43,7 @@ ht-degree: 0%
 
 社区参与者可以使用GitHub UI进行基本编辑或创建存储库分支以进行重大更改。
 
-请参阅 [Adobe文档参与者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) 以了解详细信息。
+请参阅 [Adobe文档参与者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=zh-Hans) 以了解详细信息。
 
 ## 内部参与者
 

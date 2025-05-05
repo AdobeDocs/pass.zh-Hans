@@ -186,7 +186,7 @@ AccessEnabler库)
 
 ## 配置访客Id {#visitorID}
 
-从Analytics的角度来看，配置[Experience CloudvisitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html)值非常重要。 设置EC visitorID值后，SDK将在每次网络调用时发送此信息，Adobe Pass身份验证服务将收集此信息。 这样，您就可以将来自Adobe Pass身份验证服务的分析数据与来自其他应用程序或网站的任何其他分析报表相关联。 有关如何设置EC visitorID的信息可在[此处](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en)找到。
+从Analytics的角度来看，配置[Experience CloudvisitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)值非常重要。 设置EC visitorID值后，SDK将在每次网络调用时发送此信息，Adobe Pass身份验证服务将收集此信息。 这样，您就可以将来自Adobe Pass身份验证服务的分析数据与来自其他应用程序或网站的任何其他分析报表相关联。 有关如何设置EC visitorID的信息可在[此处](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)找到。
 
 
 >[!NOTE]
