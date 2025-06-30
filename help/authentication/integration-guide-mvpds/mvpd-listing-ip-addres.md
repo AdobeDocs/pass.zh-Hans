@@ -12,10 +12,10 @@ ht-degree: 0%
 
 # MVPD IP地址列表
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 >
 >此页面上的内容仅供参考。 使用此API需要当前许可证来自
->> Adobe。 不允许未经授权使用。
+>&#x200B;> Adobe。 不允许未经授权使用。
 
 对于MVPD/Adobe Pass身份验证集成，必须在MVPD的防火墙中允许某些IP。 这些是
 出口IP：
