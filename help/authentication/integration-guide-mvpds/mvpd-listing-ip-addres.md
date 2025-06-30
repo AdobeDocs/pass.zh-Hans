@@ -2,23 +2,26 @@
 title: MVPD IP地址列表
 description: MVPD IP地址列表
 exl-id: be18084c-22f5-47b5-b088-d9032681113d
-source-git-commit: 1f04f0c60d404d8ae1056a8610e76c07d0c6505e
+source-git-commit: 0fd11dbcc9072fd14fb06e76f60c15d7729c3876
 workflow-type: tm+mt
-source-wordcount: '127'
+source-wordcount: '139'
 ht-degree: 0%
 
 ---
 
+
 # MVPD IP地址列表
 
->[!NOTE]
+> [!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
+>此页面上的内容仅供参考。 使用此API需要当前许可证来自
+>> Adobe。 不允许未经授权使用。
 
-对于MVPD/Adobe Pass身份验证集成，必须在MVPD的防火墙中允许某些IP。 以下是出口IP：
+对于MVPD/Adobe Pass身份验证集成，必须在MVPD的防火墙中允许某些IP。 这些是
+出口IP：
 
 | IP | 环境 | 区域 |
-| :-------------: | :---------: | :-----: |
+|:---------------:|:-----------:|:-------:|
 | 34.233.60.171 | 生产 | us-east |
 | 34.233.163.243 | 生产 | us-east |
 | 34.206.195.149 | 生产 | us-east |
@@ -39,6 +42,12 @@ ht-degree: 0%
 | 34.193.92.8 | 暂存 | us-east |
 | 18.215.135.17 | 暂存 | us-east |
 | 193.105.140.131 | VPN | eu-east |
+| 130.248.80.10 | VPN | eu-east |
+| 130.248.81.10 | VPN | eu-east |
+| 130.248.80.11 | VPN | eu-east |
+| 130.248.81.11 | VPN | eu-east |
+| 130.248.80.12 | VPN | eu-east |
+| 130.248.81.12 | VPN | eu-east |
 | 192.150.10.0/24 | VPN | us-west |
 | 192.150.11.4 | VPN | us-west |
 | 192.150.19.4 | VPN | us-west |
