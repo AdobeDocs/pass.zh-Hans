@@ -2,9 +2,9 @@
 title: 创建身份验证会话
 description: REST API V2 — 创建身份验证会话
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '1060'
+source-wordcount: '1064'
 ht-degree: 1%
 
 ---
@@ -316,12 +316,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>身份验证代码无效之前的时间戳。</td>
+               <td>身份验证代码无效之前的时间戳（以毫秒为单位）。</td>
                <td>可选</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>身份验证代码失效之前的时间戳。</td>
+               <td>身份验证代码无效的时间戳（以毫秒为单位）。</td>
                <td>可选</td>
             </tr>
 </table>

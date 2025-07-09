@@ -2,9 +2,9 @@
 title: 恢复身份验证会话
 description: REST API V2 — 恢复身份验证会话
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '890'
 ht-degree: 1%
 
 ---
@@ -280,12 +280,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>身份验证代码无效之前的时间戳。</td>
+               <td>身份验证代码无效之前的时间戳（以毫秒为单位）。</td>
                <td>可选</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>身份验证代码失效之前的时间戳。</td>
+               <td>身份验证代码无效的时间戳（以毫秒为单位）。</td>
                <td>可选</td>
             </tr>
          </table>

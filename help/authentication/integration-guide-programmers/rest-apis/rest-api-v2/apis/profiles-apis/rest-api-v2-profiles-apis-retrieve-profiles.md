@@ -2,9 +2,9 @@
 title: 检索用户档案
 description: REST API V2 — 检索配置文件
 exl-id: 72922aa8-95ca-48dc-8523-e335802fc366
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '872'
 ht-degree: 1%
 
 ---
@@ -227,12 +227,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>配置文件无效之前的时间戳。</td>
+               <td>配置文件无效之前的时间戳（以毫秒为单位）。</td>
                <td><i>必填</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>时间戳，超过该时间戳后，配置文件无效。</td>
+               <td>时间戳（以毫秒为单位），在该时间戳之后配置文件无效。</td>
                <td><i>必填</i></td>
             </tr>
             <tr>

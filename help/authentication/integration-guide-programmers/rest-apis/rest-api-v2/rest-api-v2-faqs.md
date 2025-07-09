@@ -2,9 +2,9 @@
 title: REST API V2常见问题解答
 description: REST API V2常见问题解答
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '9703'
+source-wordcount: '9566'
 ht-degree: 0%
 
 ---
@@ -81,7 +81,7 @@ ht-degree: 0%
 
 客户端应用程序可以管理自己的MVPD列表，但需要使MVPD标识符与Adobe Pass身份验证保持同步。 因此，建议使用Adobe Pass身份验证提供的配置，以确保列表是最新且准确的。
 
-如果提供的Adobe Pass标识符无效，或者客户端应用程序与指定的[服务提供程序](rest-api-v2-glossary.md#service-provider)没有活动集成，则客户端应用程序将从MVPD身份验证REST API V2收到[错误](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)。
+如果提供的Adobe Pass标识符无效，或者客户端应用程序与指定的[服务提供程序](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)没有活动集成，则客户端应用程序将从MVPD身份验证REST API V2收到[错误](rest-api-v2-glossary.md#service-provider)。
 
 #### 6.客户端应用程序能否过滤MVPD列表？ {#configuration-phase-faq6}
 
@@ -96,7 +96,7 @@ ht-degree: 0%
 * 该MVPD的未经身份验证的用户将无法再使用该MVPD完成身份验证阶段。
 * 经过身份验证的MVPD用户将无法再使用该MVPD完成预授权、授权或注销阶段。
 
-如果用户选择的Adobe Pass不再与指定的[服务提供程序](rest-api-v2-glossary.md#service-provider)有效集成，则客户端应用程序将从MVPD身份验证REST API V2收到[错误](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)。
+如果用户选择的Adobe Pass不再与指定的[服务提供程序](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)有效集成，则客户端应用程序将从MVPD身份验证REST API V2收到[错误](rest-api-v2-glossary.md#service-provider)。
 
 #### 8.如果已重新启用与MVPD的集成并标记为活动，会发生什么情况？ {#configuration-phase-faq8}
 
@@ -209,7 +209,7 @@ ht-degree: 0%
 
 该配置文件在被`notAfter`时间戳查询时指定的有限时间范围内有效，这表示在需要再次完成身份验证阶段之前，用户具有有效身份验证的时间量。
 
-您组织的一名管理员或代表您行事的Adobe Pass身份验证代表可以通过Adobe Pass [TVE仪表板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)查看和更改这个称为身份验证(authN) [TTL](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#ttl)的有限时间范围。
+您组织的一名管理员或代表您行事的Adobe Pass身份验证代表可以通过Adobe Pass [TVE仪表板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#ttl)查看和更改这个称为身份验证(authN) [TTL](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)的有限时间范围。
 
 有关更多详细信息，请参阅[TVE仪表板集成用户指南](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows)文档。
 
@@ -245,7 +245,7 @@ ht-degree: 0%
 | 特定MVPD API的[配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | 检索与特定MVPD关联的用户配置文件。 | **用户在上次访问中进行身份验证后返回客户端应用程序**<br/><br/>&#x200B;在这种情况下，客户端应用程序必须将用户之前选择的MVPD标识符缓存到永久存储中。<br/><br/>因此，它将发送一个请求，以检索该特定MVPD的用户配置文件。 |
 | [特定（身份验证）代码API的配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 检索与特定身份验证代码关联的用户配置文件。 | **用户启动身份验证过程**<br/><br/>&#x200B;在此方案中，客户端应用程序必须确定用户是否已成功完成身份验证并检索其配置文件信息。<br/><br/>因此，它将启动轮询机制以检索与身份验证代码关联的用户配置文件。 |
 
-有关详细信息，请参阅在主应用程序[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)中执行的[基本配置文件流和在辅助应用程序](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)文档中执行的基本配置文件流。
+有关详细信息，请参阅在主应用程序[中执行的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)基本配置文件流和在辅助应用程序[文档中执行的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)基本配置文件流。
 
 配置文件SSO端点具有不同的用途，它使客户端应用程序能够使用合作伙伴身份验证响应创建用户配置文件，并在单次、一次性操作中检索该配置文件。
 
@@ -295,7 +295,7 @@ REST API v2支持多个配置文件以适应：
 
 **在主（屏幕）应用程序内执行的身份验证**
 
-在浏览器组件加载为[会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)终结点请求中的`redirectUrl`参数指定的URL后，主（流）应用程序应在用户到达最终目标页面时开始轮询。
+在浏览器组件加载为`redirectUrl`会话[终结点请求中的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)参数指定的URL后，主（流）应用程序应在用户到达最终目标页面时开始轮询。
 
 **在辅助（屏幕）应用程序内执行的身份验证**
 
@@ -311,7 +311,7 @@ REST API v2支持多个配置文件以适应：
 
 **身份验证会话和代码过期**
 
-身份验证会话和代码将过期，如[会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)终结点响应中的`notAfter`时间戳（如30分钟）所指示。 如果发生这种情况，用户必须重新启动身份验证过程，使用以前的身份验证代码的轮询应立即停止。
+身份验证会话和代码将过期，如`notAfter`会话[终结点响应中的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)时间戳（如30分钟）所指示。 如果发生这种情况，用户必须重新启动身份验证过程，使用以前的身份验证代码的轮询应立即停止。
 
 **已生成新的身份验证代码**
 
@@ -417,7 +417,7 @@ REST API v2支持多个配置文件以适应：
 
 #### 5.客户端应用程序如何确定预授权决定被拒绝的原因？ {#preauthorization-phase-faq5}
 
-通过检查决策预授权终结点响应中包含的[错误代码和消息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，客户端应用程序可以确定拒绝预授权决策的原因。 这些详细信息可让您深入了解预授权请求被拒绝的具体原因，从而帮助告知用户体验或在应用程序中触发任何必要的处理。
+通过检查决策预授权终结点响应中包含的[错误代码和消息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，客户端应用程序可以确定拒绝预授权决策的原因。 这些详细信息可为insight提供预授权请求被拒绝的特定原因，帮助通知用户体验或在应用程序中触发任何必要的处理。
 
 请确保在预授权决策被拒绝时，为检索预授权决策而实施的任何重试机制都不会导致无限循环。
 
@@ -483,7 +483,7 @@ REST API v2支持多个配置文件以适应：
 
 授权决策在问题时指定的有限且较短的时间范围内有效，指示在再次查询MVPD之前，Adobe Pass身份验证将缓存该决策的时间。
 
-您组织的一名管理员或代表您行事的Adobe Pass身份验证代表可以通过Adobe Pass [TVE仪表板](rest-api-v2-glossary.md#tve-dashboard)查看和更改这个称为授权(authZ) [TTL](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#ttl)的有限时间范围。
+您组织的一名管理员或代表您行事的Adobe Pass身份验证代表可以通过Adobe Pass [TVE仪表板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#ttl)查看和更改这个称为授权(authZ) [TTL](rest-api-v2-glossary.md#tve-dashboard)的有限时间范围。
 
 有关更多详细信息，请参阅[TVE仪表板集成用户指南](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows)文档。
 
@@ -493,7 +493,7 @@ REST API v2支持多个配置文件以适应：
 
 #### 5.客户端应用程序如何确定授权决定被拒绝的原因？ {#authorization-phase-faq5}
 
-通过检查决策授权终结点响应中包含的[错误代码和消息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，客户端应用程序可以确定拒绝授权决策的原因。 这些详细信息可让您深入了解授权请求被拒绝的具体原因，从而帮助告知用户体验或在应用程序中触发任何必要的处理。
+通过检查决策授权终结点响应中包含的[错误代码和消息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，客户端应用程序可以确定拒绝授权决策的原因。 这些详细信息可为insight提供授权请求被拒绝的具体原因，有助于告知用户体验或在应用程序中触发任何必要的处理。
 
 请确保在授权决策被拒绝时，为检索授权决策而实施的任何重试机制都不会导致无限循环。
 
@@ -520,7 +520,7 @@ REST API v2支持多个配置文件以适应：
 
 是的。
 
-客户端应用程序必须在开始播放资源流之前验证媒体令牌。 应使用[媒体令牌验证器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier)执行此验证。 通过验证返回的`token`中的`serializedToken`，客户端应用程序有助于防止未经授权的访问（如流翻录），并确保只有经过适当授权的用户才能播放内容。
+客户端应用程序必须在开始播放资源流之前验证媒体令牌。 应使用[媒体令牌验证器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier)执行此验证。 通过验证返回的`serializedToken`中的`token`，客户端应用程序有助于防止未经授权的访问（如流翻录），并确保只有经过适当授权的用户才能播放内容。
 
 #### 8.客户端应用程序是否应在播放期间刷新过期的媒体令牌？ {#authorization-phase-faq8}
 
@@ -537,18 +537,18 @@ REST API v2支持多个配置文件以适应：
 以下时间戳描述整体授权决策的有效期：
 
 | 属性 | 描述 | 注释 |
-|-------------|------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `notBefore` | 授权决策的发布时间。 | 这将标记授权有效性窗口的开始。 |
-| `notAfter` | 授权决策到期的时间。 | [授权生存时间(TTL)](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#authorization-ttl-management)确定授权在需要重新授权之前保持有效的时间。 此TTL将与MVPD代表协商。 |
+|-------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `notBefore` | 发出授权决策的时间（以毫秒为单位）。 | 这将标记授权有效性窗口的开始。 |
+| `notAfter` | 授权决策过期的时间（以毫秒为单位）。 | [授权生存时间(TTL)](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#authorization-ttl-management)确定授权在需要重新授权之前保持有效的时间。 此TTL将与MVPD代表协商。 |
 
 **令牌级时间戳**
 
 以下时间戳描述与授权决策关联的媒体令牌的有效期：
 
 | 属性 | 描述 | 注释 |
-|-------------|-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `notBefore` | 发布媒体令牌的时间。 | 当令牌对于播放变得有效时，此标记。 |
-| `notAfter` | 媒体令牌过期的时间。 | 媒体令牌的生命周期特意缩短（通常为7分钟），以最大程度地降低误用风险，并解决令牌生成服务器和令牌验证服务器之间的潜在时钟差异。 |
+|-------------|-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `notBefore` | 发布媒体令牌的时间（以毫秒为单位）。 | 当令牌对于播放变得有效时，此标记。 |
+| `notAfter` | 媒体令牌过期的时间（以毫秒为单位）。 | 媒体令牌的生命周期特意缩短（通常为7分钟），以最大程度地降低误用风险，并解决令牌生成服务器和令牌验证服务器之间的潜在时钟差异。 |
 
 #### 10.什么是资源？支持哪些格式？ {#authorization-phase-faq10}
 
@@ -645,7 +645,7 @@ REST API v2支持多个配置文件以适应：
 * [DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)
 * [REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)
 
-要与[REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)交互，必须包含[Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)标头以及通过[DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)获得的`Bearer`访问令牌。
+要与[REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)交互，必须包含[Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)标头以及通过`Bearer`DCR API[获得的](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)访问令牌。
 
 要使用[DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)，需要具有REST API V2范围的软件语句。 有关更多详细信息，请参阅[动态客户端注册(DCR)常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)文档。
 
@@ -653,7 +653,7 @@ REST API v2支持多个配置文件以适应：
 
 是的。
 
-您可以从[Adobe Developer](https://developer.adobe.com/adobe-pass/)网站下载[DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)和[REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)的OpenAPI规范文件。
+您可以从[Adobe Developer](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)网站下载[DCR API](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)和[REST API V2](https://developer.adobe.com/adobe-pass/)的OpenAPI规范文件。
 
 要下载OpenAPI规范文件，请单击下载按钮以将以下文件保存到本地计算机：
 
@@ -671,7 +671,7 @@ REST API v2支持多个配置文件以适应：
 * [DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)
 * [REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)
 
-要与[REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)交互，必须包含[Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)标头以及通过[DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)获得的`Bearer`访问令牌。
+要与[REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)交互，必须包含[Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)标头以及通过`Bearer`DCR API[获得的](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)访问令牌。
 
 要使用[DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)，需要具有REST API V2范围的软件语句。 有关更多详细信息，请参阅[动态客户端注册(DCR)常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)文档。
 
@@ -715,7 +715,7 @@ Adobe Pass身份验证将不支持在API和流之间集成REST API V2和REST API
 
 因此，用户需要在迁移到REST API V2的新客户端应用程序中重新进行身份验证。
 
-#### 4. REST API V2中是否默认启用了增强错误代码？ {#migration-faq4}
+#### &#x200B;4. REST API V2中是否默认启用了增强错误代码？ {#migration-faq4}
 
 是的。
 

@@ -2,9 +2,9 @@
 title: 使用特定的mvpd检索授权决策
 description: REST API V2 — 使用特定mvpd检索授权决策
 exl-id: e8889395-4434-4bec-a212-a8341bb9c310
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '927'
+source-wordcount: '935'
 ht-degree: 1%
 
 ---
@@ -104,9 +104,9 @@ ht-degree: 1%
       <td>
          流设备的IP地址。
          <br/><br/>
-         强烈建议始终将其用于服务器到服务器的实现，特别是在调用由程序员服务而不是流设备进行时。
+         强烈建议始终将其用于服务器到服务器的实施，尤其是在由程序员服务而不是流设备进行调用时。
          <br/><br/>
-         对于客户端到服务器的实现，流设备的IP地址被隐式发送。
+         对于客户端到服务器实施，流设备的IP地址将隐式发送。
       </td>
       <td>可选</td>
    </tr>
@@ -131,9 +131,9 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">AP — 合作伙伴 — 框架 — 状态</td>
       <td>
-        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>标头文档介绍了为Partner方法生成单一登录负载的过程。
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>标头文档介绍了为Partner方法生成单一登录有效负载的过程。
         <br/><br/>
-        有关使用合作伙伴启用单点登录的流程的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">使用合作伙伴进行单点登录的流程</a>文档。</td>
+        有关使用合作伙伴启用单点登录流程的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">使用合作伙伴流程进行单点登录</a>文档。</td>
       <td>可选</td>
    </tr>
    <tr>
@@ -142,7 +142,7 @@ ht-degree: 1%
       <td>可选</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">接受</td>
+      <td style="background-color: #DEEBFF;">Accept</td>
       <td>
          客户端应用程序接受的媒体类型。
          <br/><br/>
@@ -228,7 +228,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">决策</td>
       <td>
-         包含元素列表的JSON，每个元素都具有以下属性：
+         JSON包含元素列表，每个元素均具有以下属性：
          <table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">属性</th>
@@ -262,10 +262,10 @@ ht-degree: 1%
                   <br/><br/>
                   可能的值包括：
                   <ul>
-                    <li><b>mvpd</b><br/>决策由MVPD授权终结点发出。</li>
-                    <li><b>降级</b><br/>由于访问降级而发布决定。</li>
-                    <li><b>临时通行证</b><br/>由于临时访问而发布决定。</li>
-                    <li><b>dummy</b><br/>作为虚拟授权功能的结果发出决策。</li>
+                    <li><b>mvpd</b><br/>决策由MVPD授权端点发出。</li>
+                    <li><b>降级</b><br/>决策因访问降级而发出。</li>
+                    <li><b>temppass</b><br/>决策作为临时访问的结果发布。</li>
+                    <li><b>dummy</b><br/>决策是由虚拟授权功能发出的。</li>
                   </ul>
                <td><i>必填</i></td>
             </tr>
@@ -274,22 +274,22 @@ ht-degree: 1%
                <td>
                   有关媒体令牌的信息。
                   <br/><br/>
-                  JSON对象具有以下属性：
+                  具有以下属性的JSON对象：
                   <ul>
-                    <li><b>notBefore</b><br/>媒体令牌无效之前的时间戳。</li>
-                    <li><b>notAfter</b><br/>时间戳，在此时间戳之后媒体令牌无效。</li>
+                    <li><b>notBefore</b><br/>媒体令牌无效的时间戳（以毫秒为单位）。</li>
+                    <li><b>notAfter</b><br/>时间戳（以毫秒为单位），在此时间戳之后媒体令牌无效。</li>
                     <li><b>serializedToken</b><br/>Base64编码的媒体令牌。</li>
                   </ul>
                <td>可选</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>决策无效之前的时间戳。</td>
+               <td>决策无效之前的时间戳（以毫秒为单位）。</td>
                <td>可选</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>超过该时间戳决策无效。</td>
+               <td>决策无效的时间戳（以毫秒为单位）。</td>
                <td>可选</td>
             </tr>
             <tr>
@@ -430,7 +430,7 @@ Content-Type: application/json;charset=UTF-8
                 "code": "authorization_denied_by_mvpd",
                 "message": "The MVPD has returned a "Deny" decision when requesting authorization for the specified resource",
                 "details": "Your subscription package does not include the "Live" channel",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
             },
             "notBefore": 1697094207324,
@@ -562,7 +562,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }
@@ -576,7 +576,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }
@@ -655,7 +655,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "temporary_access_duration_limit_exceeded",
                 "message": "The temporary access duration limit has been exceeded.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "authentication"
             }
         }
@@ -682,7 +682,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 500,
                 "code": "invalid_configuration_temporary_access",
                 "message": "The temporary access configuration is invalid.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "configuration"
             }
         }
@@ -762,7 +762,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "temporary_access_duration_limit_exceeded",
                 "message": "The temporary access duration limit has been exceeded.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "authentication"
             }
         }
@@ -789,7 +789,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "temporary_access_resources_limit_exceeded",
                 "message": "The temporary access resources limit has been exceeded.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "authentication"
             }
         }
@@ -816,7 +816,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 500,
                 "code": "invalid_configuration_temporary_access",
                 "message": "The temporary access configuration is invalid.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "configuration"
             }
         }
@@ -843,7 +843,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 400,
                 "code": "invalid_header_identity_for_temporary_access",
                 "message": "The identity for temporary access header value is missing or invalid.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }

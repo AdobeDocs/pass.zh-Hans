@@ -2,9 +2,9 @@
 title: 使用合作伙伴身份验证响应创建和检索配置文件
 description: REST API V2 — 使用合作伙伴身份验证响应创建和检索配置文件
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '775'
+source-wordcount: '779'
 ht-degree: 1%
 
 ---
@@ -233,12 +233,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>配置文件无效之前的时间戳。</td>
+               <td>配置文件无效之前的时间戳（以毫秒为单位）。</td>
                <td><i>必填</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>时间戳，超过该时间戳后，配置文件无效。</td>
+               <td>时间戳（以毫秒为单位），在该时间戳之后配置文件无效。</td>
                <td><i>必填</i></td>
             </tr>
             <tr>
