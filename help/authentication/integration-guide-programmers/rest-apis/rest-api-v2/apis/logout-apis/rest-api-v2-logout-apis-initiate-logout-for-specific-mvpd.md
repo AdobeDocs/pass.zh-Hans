@@ -2,9 +2,9 @@
 title: 启动特定mvpd的注销
 description: REST API V2 — 启动特定mvpd的注销
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '1009'
+source-wordcount: '1025'
 ht-degree: 1%
 
 ---
@@ -121,6 +121,12 @@ ht-degree: 1%
         <br/><br/>
         有关使用服务令牌启用单点登录的流的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">使用服务令牌流的单点登录</a>文档。
       </td>
+      <td>可选</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>标头文档中描述了访客标识符有效负载的生成。
       <td>可选</td>
    </tr>
    <tr>

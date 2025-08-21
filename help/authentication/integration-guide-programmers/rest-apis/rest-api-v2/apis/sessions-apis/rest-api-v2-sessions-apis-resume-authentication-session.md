@@ -2,9 +2,9 @@
 title: 恢复身份验证会话
 description: REST API V2 — 恢复身份验证会话
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '890'
+source-wordcount: '906'
 ht-degree: 1%
 
 ---
@@ -118,6 +118,12 @@ ht-degree: 1%
          <br/><br/>
          对于客户端到服务器实施，流设备的IP地址将隐式发送。
       </td>
+      <td>可选</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>标头文档中描述了访客标识符有效负载的生成。
       <td>可选</td>
    </tr>
    <tr>

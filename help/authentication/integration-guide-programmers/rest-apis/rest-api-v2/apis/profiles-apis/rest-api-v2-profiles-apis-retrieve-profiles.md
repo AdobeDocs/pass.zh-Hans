@@ -2,9 +2,9 @@
 title: 检索用户档案
 description: REST API V2 — 检索配置文件
 exl-id: 72922aa8-95ca-48dc-8523-e335802fc366
-source-git-commit: be2b75d3dcde92c0b83700705892403291dcab2e
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '872'
+source-wordcount: '888'
 ht-degree: 1%
 
 ---
@@ -114,6 +114,12 @@ ht-degree: 1%
         <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>标头文档介绍了为Partner方法生成单一登录有效负载的过程。
         <br/><br/>
         有关使用合作伙伴启用单点登录流程的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">使用合作伙伴流程进行单点登录</a>文档。</td>
+      <td>可选</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>标头文档中描述了访客标识符有效负载的生成。
       <td>可选</td>
    </tr>
    <tr>

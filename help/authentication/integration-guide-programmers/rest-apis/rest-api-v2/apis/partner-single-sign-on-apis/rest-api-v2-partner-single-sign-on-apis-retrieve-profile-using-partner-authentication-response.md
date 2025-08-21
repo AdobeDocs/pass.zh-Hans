@@ -2,9 +2,9 @@
 title: 使用合作伙伴身份验证响应创建和检索配置文件
 description: REST API V2 — 使用合作伙伴身份验证响应创建和检索配置文件
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: be2b75d3dcde92c0b83700705892403291dcab2e
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '779'
+source-wordcount: '795'
 ht-degree: 1%
 
 ---
@@ -120,6 +120,12 @@ ht-degree: 1%
          <br/><br/>
          对于客户端到服务器实施，流设备的IP地址将隐式发送。
       </td>
+      <td>可选</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>标头文档中描述了访客标识符有效负载的生成。
       <td>可选</td>
    </tr>
    <tr>

@@ -2,9 +2,9 @@
 title: 检索合作伙伴身份验证请求
 description: REST API V2 — 检索合作伙伴身份验证请求
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 9f872ad94e0aaa0546c8fcac9f88c50f47e10f6e
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '1236'
+source-wordcount: '1252'
 ht-degree: 1%
 
 ---
@@ -135,6 +135,12 @@ ht-degree: 1%
          <br/><br/>
          对于客户端到服务器实施，流设备的IP地址将隐式发送。
       </td>
+      <td>可选</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>标头文档中描述了访客标识符有效负载的生成。
       <td>可选</td>
    </tr>
    <tr>
