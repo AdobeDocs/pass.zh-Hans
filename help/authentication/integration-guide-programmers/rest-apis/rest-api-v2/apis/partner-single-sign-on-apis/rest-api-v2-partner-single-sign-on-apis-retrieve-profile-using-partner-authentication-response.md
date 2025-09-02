@@ -2,9 +2,9 @@
 title: 使用合作伙伴身份验证响应创建和检索配置文件
 description: REST API V2 — 使用合作伙伴身份验证响应创建和检索配置文件
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
 workflow-type: tm+mt
-source-wordcount: '795'
+source-wordcount: '847'
 ht-degree: 1%
 
 ---
@@ -321,7 +321,22 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>响应正文可能提供附加的错误信息，这些信息将遵循<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档。</td>
+      <td>
+            响应正文可能提供附加的错误信息，这些信息将遵循<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档。
+            <br/><br/>
+            客户端应用程序必须实施一种错误处理机制，该机制能够正确处理此API最常返回的错误代码：
+            <ul>
+                <li>invalid_header_pfs_permission_access_not_present</li>
+                <li>invalid_header_pfs_permission_access_not_determined</li>
+                <li>invalid_header_pfs_permission_access_not_granted</li>
+                <li>invalid_header_pfs_provider_id_not_determined</li>
+                <li>invalid_header_pfs_provider_id_mismatch</li>
+                <li>无效的_header_pfs_provider_info_expired</li>
+                <li>invalid_parameter_saml_response</li>
+                <li>等等。</li>
+            </ul>
+            以上列表并非详尽无遗。 客户端应用程序必须能够处理<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">公共文档</a>中定义的所有增强型错误代码。
+      </td>
       <td><i>必填</i></td>
    </tr>
 </table>
