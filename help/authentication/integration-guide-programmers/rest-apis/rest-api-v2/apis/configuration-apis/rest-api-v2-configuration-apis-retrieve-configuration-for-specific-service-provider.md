@@ -2,7 +2,7 @@
 title: 检索特定服务提供商的配置
 description: REST API V2 — 检索特定服务提供商的配置
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: 871afc4e7ec04d62590dd574bf4e28122afc01b6
+source-git-commit: 8952283ccce38f70f4f504f07714c583fcb7e272
 workflow-type: tm+mt
 source-wordcount: '725'
 ht-degree: 2%
@@ -74,7 +74,7 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">AP设备标识符</td>
       <td><a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>标头文档中描述了设备标识符有效负载的生成。</td>
-      <td><i>必填</i></td>
+      <td>可选</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
@@ -87,7 +87,7 @@ ht-degree: 2%
          <br/><br/>
          如果未提供，Adobe Pass身份验证后端将隐式使用提取的值（默认情况下）。
       </td>
-      <td><i>必填</i></td>
+      <td>可选</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
