@@ -744,7 +744,7 @@ ht-degree: 0%
 * *url：*&#x200B;指向MVPD登录页面的URL
 * *useSVC：*&#x200B;是否应在SFSafariViewController中加载URL。
 
-**由[setSelectedProvider：](#setSelProv)之前的**&#x200B;[ setOptions：](#setOptions)触发
+**由[setSelectedProvider：](#setSelProv)之前的**&#x200B;[&#x200B; setOptions：](#setOptions)触发
 
 [返回页首……](#apis)
 

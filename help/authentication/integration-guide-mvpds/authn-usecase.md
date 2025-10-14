@@ -29,7 +29,7 @@ ht-degree: 0%
 
 如上述步骤所示，在AuthN流期间，MVPD必须同时接受基于SAML的AuthN请求和发送SAML AuthN响应。
 
-[联机内容访问(OLCA)身份验证和授权接口规范](https://www.cablelabs.com/specifications/search?query=&amp;category=&amp;subcat=&amp;doctype=&amp;content=false&amp;archives=false){target=_blanck}提供了标准的AuthN请求和响应。 虽然Adobe Pass身份验证不要求MVPD使其授权消息基于此标准，但查看规范可以深入了解AuthN事务所需的关键属性。
+[联机内容访问(OLCA)身份验证和授权接口规范](https://www.cablelabs.com/specifications/search?query=&category=&subcat=&doctype=&content=false&archives=false){target=_blanck}提供了标准的AuthN请求和响应。 虽然Adobe Pass身份验证不要求MVPD使其授权消息基于此标准，但查看规范可以深入了解AuthN事务所需的关键属性。
 
 >[!NOTE]
 >

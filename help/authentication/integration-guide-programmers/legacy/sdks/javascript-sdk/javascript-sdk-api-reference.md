@@ -309,7 +309,7 @@ ht-degree: 0%
 **描述：**&#x200B;当用户从您的提供程序选择UI中选择了MVPD以便将该提供程序选择发送到Access Enabler时，调用此函数，或者使用null参数调用此函数，以防用户未选择提供程序而关闭您的提供程序选择UI。
 
 **回调
-已触发：**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+已触发：**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -415,7 +415,7 @@ ht-degree: 0%
 
 **描述：**&#x200B;如果用户选择的MVPD需要一个iFrame来显示其身份验证登录页UI，则实施此回调。
 
-**触发者：**&#x200B;[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**触发者：**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [返回页首](#top)
 
