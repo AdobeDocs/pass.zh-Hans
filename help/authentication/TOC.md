@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: 'Adobe Pass Authentication '
 user-guide-description: Adobe Pass Authentication 是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: 2276066d453701dc5e034da29cb971b090688afe
+source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '1274'
+source-wordcount: '1279'
 ht-degree: 3%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 3%
 
 # Adobe Pass身份验证帮助 {#authentication}
 
-- [Adobe Pass Authentication &#x200B;](home.md)
+- [Adobe Pass Authentication ](home.md)
 - [产品公告](product-announcements.md)
 - 产品版本 {#product-releases}
    - 2025 {#2025}
@@ -74,6 +74,7 @@ ht-degree: 3%
          - [REST API V2概述](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)
          - [REST API V2术语表](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)
          - [REST API V2检查表](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-checklist.md)
+         - [REST API V2 AI规则](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-ai-rules.md)
          - [REST API V2常见问题解答](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md)
          - API {#rest-api-v2-apis}
             - [REST API V2 API概述](integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)

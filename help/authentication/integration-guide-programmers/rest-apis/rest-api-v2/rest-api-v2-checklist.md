@@ -2,9 +2,9 @@
 title: REST API V2检查表
 description: REST API V2检查表
 exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '2545'
+source-wordcount: '2563'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 本文档将强制要求和建议实践汇总到一个位置，以便程序员实施使用Adobe Pass身份验证[REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)的客户端应用程序。
 
 在实施REST API V2时，必须遵循本文档作为验收标准的一部分，并且必须用作核对清单，以确保已执行所有必要步骤来成功集成。
+
+>[!TIP]
+>
+> 有关AI辅助开发，请参阅我们的[AI规则](rest-api-v2-ai-rules.md)，它将这些要求转换为AI编码助理的结构化规则。
 
 ## 强制性要求 {#mandatory-requirements}
 
@@ -96,7 +100,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 4. （可选）预授权阶段 {#mandatory-requirements-preauthorization-phase}
+### &#x200B;4. （可选）预授权阶段 {#mandatory-requirements-preauthorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -283,7 +287,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 4. （可选）预授权阶段 {#recommended-practices-preauthorization-phase}
+### &#x200B;4. （可选）预授权阶段 {#recommended-practices-preauthorization-phase}
 
 <table style="table-layout:auto">
    <tr>
