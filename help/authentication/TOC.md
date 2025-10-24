@@ -14,7 +14,7 @@ ht-degree: 3%
 
 # Adobe Pass身份验证帮助 {#authentication}
 
-- [Adobe Pass Authentication ](home.md)
+- [Adobe Pass Authentication &#x200B;](home.md)
 - [产品公告](product-announcements.md)
 - 产品版本 {#product-releases}
    - 2025 {#2025}
