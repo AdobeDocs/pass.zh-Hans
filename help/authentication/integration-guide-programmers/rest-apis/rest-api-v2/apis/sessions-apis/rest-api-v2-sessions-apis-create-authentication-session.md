@@ -2,7 +2,7 @@
 title: 创建身份验证会话
 description: REST API V2 — 创建身份验证会话
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 3efe25ddde7dfd2562932f623a2c440d4a059672
 workflow-type: tm+mt
 source-wordcount: '1080'
 ht-degree: 1%
@@ -303,7 +303,7 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">代码</td>
                <td>可用于辅助应用程序以恢复身份验证会话的身份验证代码。</td>
-               <td><i>必填</i></td>
+               <td>可选</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">sessionId</td>

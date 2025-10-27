@@ -2,9 +2,9 @@
 title: 检索合作伙伴身份验证请求
 description: REST API V2 — 检索合作伙伴身份验证请求
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 3efe25ddde7dfd2562932f623a2c440d4a059672
 workflow-type: tm+mt
-source-wordcount: '1252'
+source-wordcount: '1280'
 ht-degree: 1%
 
 ---
@@ -292,7 +292,7 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">url</td>
                <td>客户端应用程序需要导航的URL。</td>
-               <td><i>必填</i></td>
+               <td>可选</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">代码</td>
@@ -333,6 +333,16 @@ ht-degree: 1%
                <td style="background-color: #DEEBFF;">serviceProvider</td>
                <td>在载入过程中与服务提供商关联的内部唯一标识符。</td>
                <td><i>必填</i></td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">notBefore</td>
+               <td>身份验证代码无效之前的时间戳（以毫秒为单位）。</td>
+               <td>可选</td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">notAfter</td>
+               <td>身份验证代码无效的时间戳（以毫秒为单位）。</td>
+               <td>可选</td>
             </tr>
          </table>
       </td>
