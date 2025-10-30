@@ -2,9 +2,9 @@
 title: 恢复身份验证会话
 description: REST API V2 — 恢复身份验证会话
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '953'
+source-wordcount: '956'
 ht-degree: 1%
 
 ---
@@ -131,7 +131,7 @@ ht-degree: 1%
       <td>
          客户端应用程序接受的媒体类型。
          <br/><br/>
-         如果指定，则必须是application/json。
+         如果指定，则必须为application/json；charset=utf-8。
       </td>
       <td>可选</td>
    </tr>

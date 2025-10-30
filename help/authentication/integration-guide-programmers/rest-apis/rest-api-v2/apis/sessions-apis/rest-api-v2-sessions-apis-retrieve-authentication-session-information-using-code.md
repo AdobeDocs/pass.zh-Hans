@@ -2,9 +2,9 @@
 title: 使用代码检索身份验证会话
 description: REST API V2 — 使用代码检索身份验证会话
 exl-id: 5cc209eb-ee6b-4bb9-9c04-3444408844b7
-source-git-commit: 92d2befd154b21abf743075c78ad617cff79b7e9
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '529'
+source-wordcount: '532'
 ht-degree: 2%
 
 ---
@@ -88,7 +88,7 @@ ht-degree: 2%
       <td>
          客户端应用程序接受的媒体类型。
          <br/><br/>
-         如果指定，则必须是application/json。
+         如果指定，则必须为application/json；charset=utf-8。
       </td>
       <td>可选</td>
    </tr>

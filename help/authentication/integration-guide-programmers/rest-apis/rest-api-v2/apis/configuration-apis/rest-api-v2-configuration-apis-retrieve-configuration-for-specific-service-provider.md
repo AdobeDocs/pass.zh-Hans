@@ -2,9 +2,9 @@
 title: 检索特定服务提供商的配置
 description: REST API V2 — 检索特定服务提供商的配置
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: 8952283ccce38f70f4f504f07714c583fcb7e272
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '725'
+source-wordcount: '728'
 ht-degree: 2%
 
 ---
@@ -105,7 +105,7 @@ ht-degree: 2%
       <td>
          客户端应用程序接受的媒体类型。
          <br/><br/>
-         如果指定，则必须是application/json。
+         如果指定，则必须为application/json；charset=utf-8。
       </td>
       <td>可选</td>
    </tr>

@@ -2,9 +2,9 @@
 title: 使用合作伙伴身份验证响应创建和检索配置文件
 description: REST API V2 — 使用合作伙伴身份验证响应创建和检索配置文件
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '847'
+source-wordcount: '850'
 ht-degree: 1%
 
 ---
@@ -133,7 +133,7 @@ ht-degree: 1%
       <td>
          客户端应用程序接受的媒体类型。
          <br/><br/>
-         如果指定，则必须是application/json。
+         如果指定，则必须为application/json；charset=utf-8。
       </td>
       <td>可选</td>
    </tr>
