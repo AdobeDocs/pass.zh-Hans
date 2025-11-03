@@ -2,7 +2,7 @@
 title: 渠道
 description: 了解TVE仪表板中的渠道及其各种配置。
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '1556'
 ht-degree: 0%
@@ -23,7 +23,7 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 * **渠道ID**：唯一标识符，也称为请求者ID。
 * **集成**：与[MVPD](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#mvpd)建立的连接数。
 
-![现有渠道列表](../assets/tve-dashboard/new-tve-dashboard/channels/channels-list-view.png)
+![现有渠道列表](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channels-list-view.png)
 
 *现有渠道列表*
 
@@ -46,7 +46,7 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
    * [已注册的应用程序](#registered-applications)
    * [自定义架构](#custom-schemes)
 
-   ![渠道设置](../assets/tve-dashboard/new-tve-dashboard/channels/channel-tabs-view.png)
+   ![渠道设置](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-tabs-view.png)
 
    *渠道设置*
 
@@ -68,7 +68,7 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 
 * **错误报告**：选择&#x200B;**是**&#x200B;时，Adobe Pass SDK将错误报告发送到Adobe Pass后端以进行Analytics。
 
-![编辑频道信息](../assets/tve-dashboard/new-tve-dashboard/channels/channel-general-settings-tab-view.png)
+![编辑频道信息](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-general-settings-tab-view.png)
 
 *编辑频道信息*
 
@@ -78,7 +78,7 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 
 要启用&#x200B;**Analytics配置**，请联系您的技术客户经理(TAM)，了解有关设置报表包ID (RSID)的详细信息。
 
-![启用Analytics配置](../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-analytics-configuration-button.png)
+![启用Analytics配置](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-analytics-configuration-button.png)
 
 *启用Analytics配置*
 
@@ -90,7 +90,7 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 
 此选项卡显示当前所选渠道与MVPD之间可用集成的列表。 该列表会显示每个集成及其状态，指示集成是否已启用。 从此列表中选择特定集成以访问[集成](tve-dashboard-integrations.md)部分中的详细信息。
 
-![可用集成列表](../assets/tve-dashboard/new-tve-dashboard/channels/channel-integrations-tab-view.png)
+![可用集成列表](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-integrations-tab-view.png)
 
 *可用集成列表*
 
@@ -120,7 +120,7 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 
 1. 在&#x200B;**可用证书**&#x200B;部分的顶部选择&#x200B;**添加新证书**。
 
-   ![添加新证书](../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-certificate-button.png)
+   ![添加新证书](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-certificate-button.png)
 
    *添加新证书*
 
@@ -146,19 +146,19 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 
 1. 选择&#x200B;**删除**。
 
-   ![删除所选的证书](../assets/tve-dashboard/new-tve-dashboard/channels/channel-delete-certificate-button.png)
+   ![删除所选的证书](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-delete-certificate-button.png)
 
    *删除所选的证书*
 
 1. 从&#x200B;**删除活动证书**&#x200B;对话框中选择&#x200B;**删除**。
 
-已创建新的配置更改，可以随时更新服务器。 仅在[审阅和推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)后，证书才会从&#x200B;**可用证书**&#x200B;部分中删除。
+已创建新的配置更改，可以随时更新服务器。 仅在&#x200B;**审阅和推送更改**&#x200B;后，证书才会从[可用证书](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)部分中删除。
 
 #### 继承的可用证书 {#inherited-avail-certificates}
 
 媒体公司在其自己的级别定义这些证书。 与同一媒体公司关联的所有渠道都可以使用这些证书。
 
-![继承的可用证书](../assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-available-certificates-panel-view.png)
+![继承的可用证书](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-available-certificates-panel-view.png)
 
 *继承的可用证书*
 
@@ -181,7 +181,7 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 
 1. 选择&#x200B;**可用域**&#x200B;部分的右上角的&#x200B;**添加新域**。
 
-   ![添加新域](../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-domain-button.png)
+   ![添加新域](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-domain-button.png)
 
    *添加新域*
 
@@ -199,19 +199,19 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 
 1. 选择&#x200B;**删除**。
 
-   ![删除选定的域](../assets/tve-dashboard/new-tve-dashboard/channels/channel-remove-domain-button.png)
+   ![删除选定的域](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-remove-domain-button.png)
 
    *删除选定的域*
 
 1. 在&#x200B;**删除域**&#x200B;对话框中选择&#x200B;**删除**。
 
-已创建新的配置更改，可以随时更新服务器。 只有在[审阅并推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)后，才会从&#x200B;**可用域**&#x200B;部分删除该域。
+已创建新的配置更改，可以随时更新服务器。 只有在&#x200B;**审阅并推送更改**&#x200B;后，才会从[可用域](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)部分删除该域。
 
 所选域不再可用。 因此，与此域关联的应用程序将无法访问Adobe Pass身份验证服务。
 
 ### 已注册的应用程序 {#registered-applications}
 
-此选项卡显示已注册应用程序的列表。 有关已注册应用程序使用的更多详细信息，请参阅[动态客户端注册概述](../integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)文档。
+此选项卡显示已注册应用程序的列表。 有关已注册应用程序使用的更多详细信息，请参阅[动态客户端注册概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)文档。
 
 您可以对已注册的应用程序执行以下操作：
 
@@ -224,7 +224,7 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 
 1. 在&#x200B;**已注册的应用程序**&#x200B;部分的右上角选择&#x200B;**添加新应用程序**。
 
-   ![添加新应用程序](../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-application-button.png)
+   ![添加新应用程序](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-application-button.png)
 
    *添加新应用程序*
 
@@ -262,7 +262,7 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 
 1. 选择&#x200B;**下载**。
 
-   ![下载软件语句](../assets/tve-dashboard/new-tve-dashboard/channels/channel-download-software-statement-button.png)
+   ![下载软件语句](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-download-software-statement-button.png)
 
    *下载软件语句*
 
@@ -280,7 +280,7 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 
 1. 选择&#x200B;**生成新的自定义方案**。
 
-   ![生成新的自定义方案](../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-custom-scheme-button.png)
+   ![生成新的自定义方案](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-custom-scheme-button.png)
 
    *生成新的自定义方案*
 
@@ -290,7 +290,7 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 
 媒体公司根据自己的级别定义这些自定义方案。 与同一媒体公司关联的所有渠道都可以使用这些自定义方案。
 
-![继承的自定义方案](../assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-custom-schemes-panel-view.png)
+![继承的自定义方案](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-custom-schemes-panel-view.png)
 
 *继承的自定义方案*
 
@@ -302,7 +302,7 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 
 1. 选择&#x200B;**渠道**&#x200B;部分的右上角的&#x200B;**添加新渠道**。
 
-   ![添加新频道](../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-channel-button.png)
+   ![添加新频道](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-channel-button.png)
 
    *添加新频道*
 

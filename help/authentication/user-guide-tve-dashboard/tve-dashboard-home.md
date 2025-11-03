@@ -2,7 +2,7 @@
 title: 仪表板
 description: 了解TVE功能板的主页。
 exl-id: 3073cd86-89f8-4c65-996b-24edda24f25b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '276'
 ht-degree: 0%
@@ -31,7 +31,7 @@ ht-degree: 0%
 * **数据库更新**：对当前环境所做的配置更改数。 选择&#x200B;**在更改日志部分**&#x200B;中查看更多以访问[更改日志](tve-dashboard-changes-log.md)部分中的详细信息。
 * **ESM仪表板**：密切关注即将推出的ESM仪表板，提供有关当前环境中属性使用情况的深入量度。 此功能将在以后的更新中访问。
 
-![欢迎屏幕](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-welcome-panel-view.png)
+![欢迎屏幕](/help/authentication/assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-welcome-panel-view.png)
 
 *欢迎屏幕*
 
@@ -43,7 +43,7 @@ ht-degree: 0%
 * **由**&#x200B;推送：负责更改的帐户。
 * **推送日期**：进行更改的日期。
 
-更改日志的![配置状态](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-configuration-status-panel-view.png)
+更改日志的![配置状态](/help/authentication/assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-configuration-status-panel-view.png)
 
 更改日志的&#x200B;*配置状态*
 

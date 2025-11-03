@@ -2,7 +2,7 @@
 title: 临时访问流
 description: REST API V2 — 临时访问流
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '3223'
 ht-degree: 0%
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 TempPass允许程序员提供对其受保护内容的临时访问权限，而无需要求用户使用有效的MVPD帐户进行身份验证。
 
-有关TempPass功能的更多详细信息，请参阅[TempPass](../../../../features-premium/temporary-access/temp-pass-feature.md)文档。
+有关TempPass功能的更多详细信息，请参阅[TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)文档。
 
 临时访问流允许您查询以下方案：
 
@@ -58,7 +58,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
 按照给定的步骤，使用基本的TempPass实施授权流，如下图所示。
 
-![使用基本TempPass检索授权决策](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-using-basic-temppass-flow.png)
+![使用基本TempPass检索授权决策](/help/authentication/assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-using-basic-temppass-flow.png)
 
 *使用基本TempPass检索授权决策*
 
@@ -66,7 +66,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
    >[!IMPORTANT]
    >
-   > 有关以下各项的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策：
+   > 有关以下各项的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策：
    > 
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`和`AP-Device-Identifier`
@@ -78,7 +78,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策。
    >
    > <br/>
    > 
@@ -127,7 +127,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
 按照给定的步骤使用提升TempPass实施授权流，如下图所示。
 
-![使用提升TempPass检索授权决策](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-using-promotional-temppass-flow.png)
+![使用提升TempPass检索授权决策](/help/authentication/assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-using-promotional-temppass-flow.png)
 
 *使用提升TempPass检索授权决策*
 
@@ -135,7 +135,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
    >[!IMPORTANT]
    >
-   > 有关以下各项的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策：
+   > 有关以下各项的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`和`AP-Device-Identifier`
@@ -155,7 +155,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策。
    > 
    > <br/>
    > 
@@ -205,7 +205,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
 使用提升TempPass消耗最大数量的资源时，请按照给定的步骤实施授权流，如下图所示。
 
-![使用提升TempPass使用最大数量的资源](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-consume-maximum-number-of-resources-using-promotional-temppass-flow.png)
+![使用提升TempPass使用最大数量的资源](/help/authentication/assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-consume-maximum-number-of-resources-using-promotional-temppass-flow.png)
 
 *使用提升TempPass使用最大数量的资源*
 
@@ -213,7 +213,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
    >[!IMPORTANT]
    >
-   > 有关以下内容的详细信息，请参阅特定mvpd [&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API的检索配置文件：
+   > 有关以下内容的详细信息，请参阅特定mvpd [ API的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)检索配置文件：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`和`mvpd`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`和`AP-Device-Identifier`
@@ -229,7 +229,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
    >[!IMPORTANT]
    >
-   > 有关配置文件响应中提供的信息的详细信息，请参阅特定mvpd [&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API的检索配置文件。
+   > 有关配置文件响应中提供的信息的详细信息，请参阅特定mvpd [ API的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)检索配置文件。
    > 
    > <br/>
    > 
@@ -259,7 +259,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
    >[!IMPORTANT]
    > 
-   > 有关以下各项的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策：
+   > 有关以下各项的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`和`AP-Device-Identifier`
@@ -279,7 +279,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策。
    > 
    > <br/>
    > 
@@ -307,7 +307,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
    >[!IMPORTANT]
    >
-   > 有关以下各项的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策：
+   > 有关以下各项的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`和`AP-Device-Identifier`
@@ -327,7 +327,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策。
    > 
    > <br/>
    > 
@@ -379,7 +379,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
 按照给定的步骤，在基本或提升TempPass过期时实施授权流，如下图所示。
 
-![在基本或促销的TempPass过期时检索授权决策](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires-flow.png)
+![在基本或促销的TempPass过期时检索授权决策](/help/authentication/assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires-flow.png)
 
 *在基本或促销的TempPass过期时检索授权决策*
 
@@ -387,7 +387,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
    >[!IMPORTANT]
    >
-   > 有关以下各项的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策：
+   > 有关以下各项的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策：
    > 
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`和`AP-Device-Identifier`
@@ -407,7 +407,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策。
    > 
    > <br/>
    > 
@@ -462,7 +462,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
 按照给定的步骤实施基本TempPass的配置文件检索流程，如下图所示。
 
-![检索基本临时传递的配置文件](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-profile-for-basic-temppass-flow.png)
+![检索基本临时传递的配置文件](/help/authentication/assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-profile-for-basic-temppass-flow.png)
 
 *检索基本临时传递的配置文件*
 
@@ -470,7 +470,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
    >[!IMPORTANT]
    >
-   > 有关以下内容的详细信息，请参阅特定mvpd [&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API的检索配置文件：
+   > 有关以下内容的详细信息，请参阅特定mvpd [ API的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)检索配置文件：
    > 
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`和`mvpd`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`和`AP-Device-Identifier`
@@ -482,7 +482,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
    >[!IMPORTANT]
    >
-   > 有关配置文件响应中提供的信息的详细信息，请参阅特定mvpd [&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API的检索配置文件。
+   > 有关配置文件响应中提供的信息的详细信息，请参阅特定mvpd [ API的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)检索配置文件。
    > 
    > <br/>
    > 
@@ -533,7 +533,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
 按照给定的步骤实施提升TempPass的用户档案检索流程，如下图所示。
 
-![检索促销TempPass的配置文件](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-profile-for-promotional-temppass-flow.png)
+![检索促销TempPass的配置文件](/help/authentication/assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-profile-for-promotional-temppass-flow.png)
 
 *检索促销TempPass的配置文件*
 
@@ -541,7 +541,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
    >[!IMPORTANT]
    >
-   > 有关以下内容的详细信息，请参阅特定mvpd [&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API的检索配置文件：
+   > 有关以下内容的详细信息，请参阅特定mvpd [ API的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)检索配置文件：
    > 
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`和`mvpd`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`和`AP-Device-Identifier`
@@ -553,7 +553,7 @@ TempPass允许程序员提供对其受保护内容的临时访问权限，而无
 
    >[!IMPORTANT]
    >
-   > 有关配置文件响应中提供的信息的详细信息，请参阅特定mvpd [&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API的检索配置文件。
+   > 有关配置文件响应中提供的信息的详细信息，请参阅特定mvpd [ API的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)检索配置文件。
    > 
    > <br/>
    > 

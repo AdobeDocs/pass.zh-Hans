@@ -2,7 +2,7 @@
 title: 基本预授权 — 主要应用程序 — 流程
 description: REST API V2 — 基本预授权 — 主要应用程序 — 流程
 exl-id: f557f6c3-d5b2-4ec8-be51-91a90fbd31c0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 0%
@@ -27,7 +27,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**预授权流**&#x200B;允许�
 
 在使用特定MVPD检索预授权决策之前，请确保满足以下先决条件：
 
-* 流应用程序必须具有使用基本身份验证流之一为MVPD成功创建的有效常规配置文件：
+* 流应用程序必须具有已使用以下基本身份验证流之一为MVPD成功创建的有效的常规配置文件：
    * [在主应用程序中执行身份验证](rest-api-v2-basic-authentication-primary-application-flow.md)
    * [使用预选的mvpd在辅助应用程序中执行身份验证](rest-api-v2-basic-authentication-secondary-application-flow.md)
    * [无需预选mvpd就可在辅助应用程序中执行身份验证](rest-api-v2-basic-authentication-secondary-application-flow.md)
@@ -35,9 +35,9 @@ Adobe Pass身份验证权利文件中的&#x200B;**预授权流**&#x200B;允许�
 
 ### 工作流 {#workflow-retrieve-preauthorization-decisions-using-specific-mvpd}
 
-按照给定的步骤，使用在主应用程序中执行的特定MVPD实施基本预授权流，如下图所示。
+按照给定的步骤，使用在主应用程序中执行的特定MVPD实施基本的预授权流程，如下图所示。
 
-![使用特定的mvpd检索预授权决策](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-preauthorization-decisions-within-primary-application-using-specific-mvpd.png)
+![使用特定的mvpd检索预授权决策](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-preauthorization-decisions-within-primary-application-using-specific-mvpd.png)
 
 *使用特定的mvpd检索预授权决策*
 
@@ -45,7 +45,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**预授权流**&#x200B;允许�
 
    >[!IMPORTANT]
    >
-   > 有关以下各项的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) API检索预授权决策：
+   > 有关以下各项的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)预授权决策：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`和`AP-Device-Identifier`
@@ -53,7 +53,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**预授权流**&#x200B;允许�
 
 1. **查找常规配置文件：** Adobe Pass服务器根据收到的参数和标头标识有效的配置文件。
 
-1. **检索所请求资源的MVPD决策：** Adobe Pass服务器调用MVPD预授权终结点以获取从流应用程序接收的每个资源的`Permit`或`Deny`决策。
+1. **检索所请求资源的MVPD决策：** Adobe Pass服务器调用MVPD预授权终结点以获取从流应用程序收到的每个资源的`Permit`或`Deny`决策。
 
 1. **返回预授权决策：**&#x200B;决策预授权终结点响应包含每个资源的`Permit`或`Deny`决策：
    * `Permit`决策意味着资源可播放。 响应不包含媒体令牌，因为不得使用预授权流播放资源。
@@ -61,7 +61,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**预授权流**&#x200B;允许�
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) API检索预授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)预授权决策。
    > 
    > <br/>
    > 

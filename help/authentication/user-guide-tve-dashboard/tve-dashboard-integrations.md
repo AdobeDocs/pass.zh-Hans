@@ -2,7 +2,7 @@
 title: TVE功能板集成
 description: 了解您的渠道和MVPD之间的集成以及如何管理集成。
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '2093'
 ht-degree: 0%
@@ -24,11 +24,11 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 * 具有渠道ID的渠道名称
 * MVPD显示名称和MVPD ID
 
-![现有集成的列表](../assets/tve-dashboard/new-tve-dashboard/integrations/integrations-list.png)
+![现有集成的列表](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integrations-list.png)
 
 *现有集成的列表*
 
-在列表上方的&#x200B;**搜索**&#x200B;栏中键入渠道或MVPD的名称，了解有关集成的详细信息。
+在列表上方的&#x200B;**Search**&#x200B;栏中键入渠道或MVPD的名称，了解有关集成的更多信息。
 
 ## 管理集成配置 {#manage-integration-conf}
 
@@ -47,15 +47,15 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 
 ### 端点选择 {#endpoint-selection}
 
-此部分允许您从各自的下拉菜单中选择用于身份验证、授权和注销流的MVPD端点。
+在此部分中，您可以从各自的下拉菜单中选择用于身份验证、授权和注销流的MVPD端点。
 
-身份验证、授权和注销流的![端点](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-endpoint-selection-panel-view.png)
+身份验证、授权和注销流的![端点](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-endpoint-selection-panel-view.png)
 
 身份验证、授权和注销流的&#x200B;*端点*
 
 >[!NOTE]
 >
->MVPD可以为每个流提供一个或多个端点。 在集成新通道时，MVPD必须为每个流指定其首选端点。
+>MVPD可以为每个流提供一个或多个端点。 集成新渠道时，MVPD必须为每个流指定其首选端点。
 
 >[!IMPORTANT]
 >
@@ -69,29 +69,29 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 
 >[!IMPORTANT]
 >
->要确定为平台设置中的每个属性设置的值，需要与MVPD达成协议。
+>要确定为平台设置中的每个属性设置的值，需要与MVPD签订协议。
 
 >[!IMPORTANT]
 >
-> 设置继承遵循从MVPD设置（最常用）、MVPD端点、集成、平台类别和platform（包含最具体的值）开始的链。
+> 设置继承所遵循的链依次从MVPD设置（最常用）、MVPD端点、集成、平台类别和平台（包含最具体的值）开始。
 
 **平台设置**&#x200B;用于覆盖继承链中每个级别的设置。 链中的可用级别分组如下：
 
 * **Default for All**：如果未定义特定平台值，则为适用于所有平台的属性设置值，而不管程序员的实施如何。
 
-* **台式机设备**：设置适用于所有台式机和笔记本电脑的属性值，不考虑编程方法（JS SDK或REST API）。
+* **桌面设备**：设置适用于所有台式机和笔记本电脑的属性值，不考虑编程方法(JS SDK或REST API)。
 
-* **移动设备**：设置适用于所有移动设备的属性值，包括&#x200B;**iOS**、**Android**&#x200B;和其他设备，而不管编程方法如何（SDK或REST API）。
+* **移动设备**：设置适用于所有移动设备的属性值，包括&#x200B;**iOS**、**Android**&#x200B;和其他设备，而不管编程方法如何(SDK或REST API)。
 
-* **TV连接设备**：设置适用于所有电视连接设备的属性值，包括&#x200B;**tvOS**、**Roku**、**FireTV**&#x200B;和其他设备，不考虑编程方法（SDK或REST API）。
+* **TV连接设备**：设置适用于所有电视连接设备的属性值，包括&#x200B;**tvOS**、**Roku**、**FireTV**&#x200B;和其他设备，不考虑编程方法(SDK或REST API)。
 
-* **未识别的设备**：设置适用于当前机制无法准确识别平台的所有设备的属性值。 在这种情况下，应用MVPD定义的最严格的规则。
+* **未识别的设备**：设置适用于当前机制无法准确识别平台的所有设备的属性值。 在这种情况下，应应用MVPD定义的最严格的规则。
 
-  ![平台及其设备的类别](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-menu.png)
+  ![平台及其设备的类别](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-menu.png)
 
   *平台及其设备的类别*
 
-选择 位于每个属性右侧的<img alt= "继承链图标" src="../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-inheritance-chain-icon.svg" width="25">图标可浏览用于上述每个继承级别的属性。
+选择 位于每个属性右侧的<img alt= "继承链图标" src="/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-inheritance-chain-icon.svg" width="25">图标可浏览用于上述每个继承级别的属性。
 
 #### 最常用的业务流程 {#most-used-flows}
 
@@ -101,7 +101,7 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 
 >[!IMPORTANT]
 >
->身份验证(AuthN) TTL和授权(AuthZ) TTL值必须与MVPD设置一致。
+>身份验证(AuthN) TTL和授权(AuthZ) TTL值必须与MVPD设置保持一致。
 
 按照以下步骤更改特定集成在所有平台上的身份验证和授权TTL。
 
@@ -117,7 +117,7 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
    >
    >如果要更改平台类别或特定平台的&#x200B;**AuthN TTL**&#x200B;和&#x200B;**AuthZ TTL**&#x200B;的持续时间，请相应地选择平台。
 
-   ![更改所有平台上的AuthN TTL AuthZ TTL持续时间](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-authn-ttl-authz-ttl-properties.png)
+   ![更改所有平台上的AuthN TTL AuthZ TTL持续时间](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-authn-ttl-authz-ttl-properties.png)
 
    *更改所有平台上的AuthN TTL AuthZ TTL持续时间*
 
@@ -125,13 +125,13 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 
 1. 选择向上和向下箭头可调整&#x200B;**AuthN TTL**&#x200B;和&#x200B;**AuthZ TTL**&#x200B;属性中天数、小时数、分钟数和秒数的持续时间。
 
-只有在[查看和推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)之后，才会更新所有平台上的&#x200B;**AuthN TTL**&#x200B;和&#x200B;**AuthZ TTL**&#x200B;的持续时间。
+只有在&#x200B;**查看和推送更改**&#x200B;之后，才会更新所有平台上的&#x200B;**AuthN TTL**&#x200B;和[AuthZ TTL](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)的持续时间。
 
 **启用平台SSO**
 
 >[!IMPORTANT]
 >
->**在&#x200B;*iOS、tvOS、Roku和FireTV*平台上专门支持启用单点登录**&#x200B;属性。 它仅适用于与支持这些平台单点登录的MVPD的集成。
+>**在** iOS、tvOS、Roku和FireTV *平台上专门支持启用单点登录*&#x200B;属性。 它仅适用于与支持这些平台单点登录的MVPD的集成。
 
 按照以下步骤为特定集成和平台启用或禁用SSO。
 
@@ -143,7 +143,7 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 
 1. 选择要在&#x200B;**平台设置**&#x200B;下启用单点登录的特定平台或平台类别。
 
-   ![为特定平台启用单点登录](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-single-sign-on-properties.png)
+   ![为特定平台启用单点登录](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-single-sign-on-properties.png)
 
    *为特定平台启用单点登录*
 
@@ -157,7 +157,7 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 
    例如，如果同时启用了&#x200B;**启用单点登录**&#x200B;和&#x200B;**强制平台权限**，并且用户选择拒绝平台访问其电视提供商订阅，则相应的应用程序（频道）将无法使用由其他应用程序（频道）获得的Adobe Pass身份验证令牌。
 
-仅在[查看和推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)之后，才能启用或禁用所选平台的&#x200B;**单点登录**&#x200B;属性。
+仅在&#x200B;**查看和推送更改**&#x200B;之后，才能启用或禁用所选平台的[单点登录](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)属性。
 
 **启用基于主目录的身份验证**
 
@@ -171,7 +171,7 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 
 1. 选择要在&#x200B;**平台设置**&#x200B;下启用基于主页的身份验证的特定平台或平台类别。
 
-   ![为特定平台启用基于主目录的身份验证](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-attempt-hba-properties.png)
+   ![为特定平台启用基于主目录的身份验证](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-attempt-hba-properties.png)
 
    *为特定平台启用基于主目录的身份验证*
 
@@ -183,7 +183,7 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 >
 >应避免更改&#x200B;**HBA AuthN TTL**&#x200B;属性的持续时间。 它可能会导致授权过程中出现意外故障。
 
-只有在[查看和推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)之后，才能启用或禁用特定MVPD的&#x200B;**尝试HBA**&#x200B;属性。
+只有在&#x200B;**查看和推送更改**&#x200B;之后，才能启用或禁用特定MVPD的[尝试HBA](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)属性。
 
 #### 添加更多属性 {#add-more-properties}
 
@@ -200,11 +200,11 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 **更改预授权资源的数量**
 
 默认情况下，大多数MVPD支持最多使用5个资源ID的预检authZ调用。
-但是，如果MVPD同意提高此限制，则可以导航到&#x200B;**添加更多属性**，然后从选项菜单中选择&#x200B;**预检最大资源**。
+但是，如果MVPD同意提高此限制，则可以导航到**添加更多属性**，然后从选项菜单中选择&#x200B;**预检最大资源**。
 
-**预检最大资源**&#x200B;将添加新的属性，可以指定与MVPD商定的限制。
+**预检最大资源**&#x200B;将添加新的属性，以便指定与MVPD商定的限制。
 
-![添加预检最大资源属性](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-preflight-max-resources-properties.png)
+![添加预检最大资源属性](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-preflight-max-resources-properties.png)
 
 *添加预检最大资源属性*
 
@@ -216,7 +216,7 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 
 这些属性的不同值可用于相同的MVPD，具体取决于设备平台和所需的用户体验。
 
-![添加显示名称或徽标URL属性](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-display-name-logo-url-properties.png)
+![添加显示名称或徽标URL属性](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-display-name-logo-url-properties.png)
 
 *添加显示名称或徽标URL属性*
 
@@ -228,27 +228,27 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 
 为每个聚合器&#x200B;**添加**&#x200B;身份验证会有效地中断相应渠道的单点登录。
 
-![为每个聚合器属性添加身份验证](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-auth-per-aggregator-properties.png)
+![为每个聚合器属性添加身份验证](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-auth-per-aggregator-properties.png)
 
 *为每个聚合器属性添加身份验证*
 
-仅在[审阅和推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)之后才会添加每个聚合器&#x200B;**的身份验证**&#x200B;属性。
+仅在&#x200B;**审阅和推送更改**&#x200B;之后才会添加每个聚合器[的身份验证](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)属性。
 
 添加后，选择&#x200B;**是**&#x200B;为选定的集成启用每个聚合器的&#x200B;**身份验证**&#x200B;属性。
 
 #### 删除属性 {#delete-properties}
 
-选择 每个属性右侧的<img alt= "“删除属性”按钮" src="../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-delete-property-icon.svg" width="25">图标用于删除不再需要的属性。
+选择 每个属性右侧的<img alt= "“删除属性”按钮" src="/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-delete-property-icon.svg" width="25">图标用于删除不再需要的属性。
 
 >[!NOTE]
 >
 >无法删除某些属性，因为它们是所选MVPD的必需要求。
 
-只有在[审阅和推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)后，属性才会从&#x200B;**平台设置**&#x200B;部分中删除。
+只有在&#x200B;**审阅和推送更改**&#x200B;后，属性才会从[平台设置](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)部分中删除。
 
 ### 用户元数据 {#user-metadata}
 
-此部分允许您更新MVPD共享的每个用户元数据参数的设置。
+在此部分中，您可以更新MVPD共享的每个用户元数据参数的设置。
 
 >[!NOTE]
 >
@@ -271,7 +271,7 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 
 **已启用**：此列允许您通过从下拉菜单中分别选择&#x200B;**是**&#x200B;或&#x200B;**否**&#x200B;来启用或禁用API中的参数。
 
-![可用于用户元数据的参数](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-user-metadata-panel-view.png)
+![可用于用户元数据的参数](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-user-metadata-panel-view.png)
 
 *可用于用户元数据的参数*
 
@@ -283,43 +283,43 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 
 1. 选择&#x200B;**集成**&#x200B;部分的右上角的&#x200B;**新建集成**。
 
-   ![创建新集成](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-create-new-integration-button.png)
+   ![创建新集成](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-create-new-integration-button.png)
 
    *创建新集成*
 
    将显示以下部分：
 
-   **选择通道和MVPD**
+   **选择渠道和MVPD**
 
-   从&#x200B;**选择渠道**&#x200B;下拉菜单中选择一个&#x200B;**渠道**&#x200B;以添加新集成。 选择渠道后，从&#x200B;**选择MVPD**&#x200B;下拉菜单中选择要与所选渠道集成所需的&#x200B;**MVPD**。
+   从&#x200B;**选择渠道**&#x200B;下拉菜单中选择一个&#x200B;**渠道**&#x200B;以添加新集成。 选择渠道后，从&#x200B;**选择MVPD**&#x200B;下拉菜单中选择所需的&#x200B;**MVPD**&#x200B;以便与所选渠道集成。
 
-   ![选择通道和MVPD](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-channel-and-mvpd-panel-view.png)
+   ![选择渠道和MVPD](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-channel-and-mvpd-panel-view.png)
 
-   *选择通道和MVPD*
+   *选择渠道和MVPD*
 
    **选择端点**
 
-   选择所需的MVPD后，**选择终结点**&#x200B;部分将预填充为该特定MVPD配置的默认终结点。
+   选择所需的MVPD后，**选择端点**&#x200B;部分将预填充为该特定MVPD配置的默认端点。
 
    >[!IMPORTANT]
    >
-   >不更改任何流中的默认端点，除非MVPD特别说明。
+   >除非MVPD特别说明，否则请勿更改任何流中的默认端点。
 
-   ![选择终结点](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
+   ![选择终结点](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
 
    *选择端点*
 
    **其他信息**
 
-   此部分包括需要在&#x200B;**选择通道和MVPD**&#x200B;部分中为所选MVPD配置的各种属性。
+   此部分包括需要在&#x200B;**选择渠道和MVPD**&#x200B;部分中为所选MVPD配置的各种属性。
 
    >[!NOTE]
    >
-   > 根据&#x200B;**选择通道和MVPD**&#x200B;部分中选择的MVPD，实际属性可能会有所不同。
+   > 根据&#x200B;**选择渠道和MVPD**&#x200B;部分中选择的MVPD，实际属性可能会有所不同。
 
    例如，您可以在下图的MVPD登录页面上编辑&#x200B;**AuthN TTL**&#x200B;或&#x200B;**合作伙伴ID** （渠道ID）以用于品牌联合。
 
-   ![编辑其他信息](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-additional-information-panel-view.png)
+   ![编辑其他信息](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-additional-information-panel-view.png)
 
    *编辑其他信息*
 
@@ -338,7 +338,7 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 
 1. 禁用所选集成右上角的切换。
 
-   ![禁用集成](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-enabled-disabled-button.png)
+   ![禁用集成](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-enabled-disabled-button.png)
 
    *禁用集成*
 

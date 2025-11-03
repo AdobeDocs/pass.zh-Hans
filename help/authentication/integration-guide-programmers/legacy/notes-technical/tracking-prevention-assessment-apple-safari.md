@@ -2,7 +2,7 @@
 title: 跟踪预防评估Apple Safari
 description: 跟踪预防评估Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '1849'
 ht-degree: 0%
@@ -33,7 +33,7 @@ ht-degree: 0%
 
 为了减轻这些限制，您可以指示用户更改Safari 10浏览器隐私设置，并对浏览器“首选项”中“隐私”选项卡上的“**Cookie和网站数据**”条目使用“**始终允许**”选项，如下图所示。
 
-![](../../../assets/always-allow-safari10.png)
+![](/help/authentication/assets/always-allow-safari10.png)
 
 
 ## Safari 11 {#safari11}
@@ -44,9 +44,9 @@ ht-degree: 0%
 >
 >Safari 10部分的所有上述详细信息仍然适用于Safari 11。
 
-从Safari 11开始，浏览器引入了[智能防跟踪](https://webkit.org/blog/7675/intelligent-tracking-prevention/)(ITP)机制，这是一种使用启发式技术防止跨站点跟踪的技术。 这些启发式方法会影响在网络调用中存储和重播第三方Cookie的方式，这意味着根据ITP机制激活，Safari浏览器将在客户端 — 服务器模型通信中阻止第三方Cookie。
+从Safari 11开始，浏览器引入了[智能防跟踪](https://webkit.org/blog/7675/intelligent-tracking-prevention/)&#x200B;(ITP)机制，这是一种使用启发式技术防止跨站点跟踪的技术。 这些启发式方法会影响在网络调用中存储和重播第三方Cookie的方式，这意味着根据ITP机制激活，Safari浏览器将在客户端 — 服务器模型通信中阻止第三方Cookie。
 
-Adobe Pass身份验证服务使用并依赖于Cookie作为身份验证过程&#x200B;**的一部分以便正常工作**。 在身份验证过程自动发生（例如，临时通过）或使用iFrame或“无刷新”功能的实施中，Adobe的Cookie被视为第三方Cookie，默认情况下会被阻止。 对于任何其他情况，Safari都使用机器学习算法，该算法可能会将所有Adobe的Pass Authentication服务Cookie标记为跟踪Cookie，因此可能会受到ITP的阻止。
+Adobe Pass身份验证服务使用并依赖于Cookie作为身份验证过程&#x200B;**的一部分以便正常工作**。 在身份验证过程自动发生（例如Temp Pass）或使用iFrame或“无刷新”功能的实施中，Adobe的Cookie会被视为第三方Cookie，并且默认情况下会被阻止。 对于任何其他情况，Safari都使用机器学习算法，该算法可能会将所有Adobe的Pass身份验证服务Cookie标记为跟踪Cookie，因此可能会受到ITP的阻止。
 
 总之，在激活智能防跟踪(ITP)机制后，Safari 11浏览器的用户可能无法在启用了Adobe Pass身份验证的网站上进行身份验证，尤其是当用户使用多个启用了Adobe Pass身份验证的网站时。 因此，用户的身份验证体验可能是意外的，并且未定义，从无法登录到身份验证持续时间短于预期不等。
 
@@ -64,12 +64,12 @@ Adobe Pass身份验证服务使用并依赖于Cookie作为身份验证过程&#x2
 
 * 对于Mac OS X High Sierra及更高版本：从“首选项”取消选中浏览器“隐私”选项卡中“**网站跟踪**”条目的“**阻止跨站点跟踪**”选项，如下图所示。
 
-  ![](../../../assets/uncheck-prvnt-cr-st-tr-safari11.png)
+  ![](/help/authentication/assets/uncheck-prvnt-cr-st-tr-safari11.png)
 
 
 * 对于Mac OS X Sierra和之前的版本：从首选项的浏览器“隐私”选项卡中选中“**Cookie和网站数据**”条目的“**始终允许**”选项，如下图所示。
 
-  ![](../../../assets/always-allow-safari11.png)
+  ![](/help/authentication/assets/always-allow-safari11.png)
 
 ## Safari 12 {#safari12}
 
@@ -86,7 +86,7 @@ Adobe Pass身份验证服务使用并依赖于Cookie作为身份验证过程&#x2
 >请记住，对于AccessEnabler JavaScript SDK版本2.x和AccessEnabler JavaScript SDK版本3.x，它们都使用第三方Cookie进行身份验证过程，并且由于从Safari 11开始的ITP和第三方Cookie策略，用户的身份验证体验可能是意外的，并且未定义，从无法登录到比预期的身份验证持续时间更短。
 
 
-### Safari 12上AccessEnabler JavaScript SDK v4（版本4.x）的认证功能 {#certified-functionality-of-accessenabler-javacscript=sdk-v4}
+### Safari 12上的AccessEnabler JavaScript SDK v4（版本4.x）的认证功能 {#certified-functionality-of-accessenabler-javacscript=sdk-v4}
 
 **使用用户交互的**&#x200B;身份验证流将始终有效，即使用户的浏览器禁用了第三方Cookie，因为从4.0版开始，AccessEnabler JavaScript SDK不再将第三方Cookie用于身份验证过程。
 
@@ -126,14 +126,14 @@ Adobe Pass身份验证服务使用并依赖于Cookie作为身份验证过程&#x2
 
 在撰写本文时，没有已知的缓解措施可用或可能。 Apple确实在Safari 12 (`https://webkit.org/blog/8124/introducing-storage-access-api`)中引入了“Storage Access API”，但当前实现不适用于localStorage，而仅适用于Cookie。 此外，API需要用户交互才能使用，并且在您使用它后，还会提示用户一个权限对话框，类似于以下对话框。
 
-![](../../../assets/permission-dialog-apple.png)
+![](/help/authentication/assets/permission-dialog-apple.png)
 
 
 此时，这些Safari要求/提示与我们的UX要求不一致，并且我们在其他浏览器上的行为也不一致，在这些浏览器中，一旦我们在公共域localStorage中保存了令牌，SSO“刚刚起效”。
 
 **临时传递**
 
-为了缓解个性化问题并让用户进行交互，我们建议您以交互方式使用&#x200B;**[促销临时密码](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)**，并提供至少一个有关用户的附加信息（例如电子邮件地址）。
+为了缓解个性化问题并让用户进行交互，我们建议您以交互方式使用&#x200B;**[促销临时密码](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)**，并提供至少一个有关用户的附加信息（例如电子邮件地址）。
 
 ## Safari 13 {#safari13}
 
@@ -146,9 +146,9 @@ Adobe Pass身份验证服务使用并依赖于Cookie作为身份验证过程&#x2
 
 从Safari 13开始，浏览器引入了[智能防跟踪](https://webkit.org/blog/7675/intelligent-tracking-prevention/) (ITP)的新更改，使得在将第三方Cookie标记为跟踪Cookie的过程中机制背后的启发式更严格，以防止跨站点跟踪。
 
-如前几节所述，当实施者使用AccessEnabler JavaScript SDK v2（版本2.x）和AccessEnabler JavaScript SDK v3（版本3.x）时，Adobe Pass身份验证服务使用并依赖第三方Cookie作为身份验证过程的一部分。 与Safari浏览器的先前版本相比，在ITP花了一段时间才加入“了解”用户与有关各方之间的交互(程序员的网站和Adobe)时，Safari 13浏览器从一开始就阻止第三方Cookie，这被视为在客户端 — 服务器模型通信中跟踪Cookie。
+如前几节所述，当实施者使用AccessEnabler JavaScript SDK v2（版本2.x）和AccessEnabler JavaScript SDK v3（版本3.x）时，Adobe Pass身份验证服务使用并依赖第三方Cookie作为身份验证过程的一部分。 与Safari浏览器的先前版本相比，在ITP花了一段时间用于“了解”用户与相关方(程序员的网站和Adobe)之间的交互时，Safari 13浏览器从一开始就阻止第三方Cookie，这被视为在客户端 — 服务器模型通信中跟踪Cookie。
 
-总之，Safari 13浏览器的用户极有可能无法在启用了Adobe Pass身份验证的网站上启动新的身份验证，该网站使用的是旧版AccessEnabler JavaScript SDK v2（版本2.x）或v3（版本3.x）。 出现这种情况的原因是，ITP阻止了所有必需的AdobePrimetime身份验证服务Cookie，从而导致服务无法满足身份验证请求。
+总之，Safari 13浏览器的用户极有可能无法在启用了Adobe Pass身份验证的网站上启动新的身份验证，该网站使用的是旧版AccessEnabler JavaScript SDK v2（版本2.x）或v3（版本3.x）。 出现这种情况是由于ITP阻止了所有必需的Adobe Primetime身份验证服务Cookie，从而导致服务无法满足身份验证请求。
 
 AccessEnabler JavaScript SDK v4（版本4.x）库不使用第三方Cookie进行身份验证，因此其操作不会以任何方式受到Safari 13更改的影响。
 
@@ -164,8 +164,8 @@ AccessEnabler JavaScript SDK v4（版本4.x）库不使用第三方Cookie进行�
 
 * 对于Mac OS X High Sierra及更高版本：从“首选项”取消选中浏览器“隐私”选项卡中“**网站跟踪**”条目的“**阻止跨站点跟踪**”选项，如下图所示。
 
-  ![](../../../assets/prvnt-cross-site-tr-safari13.png)
+  ![](/help/authentication/assets/prvnt-cross-site-tr-safari13.png)
 
-* 对于Mac OS X Sierra和之前的版本：选中“首选项”下浏览器“隐私”选项卡中的“**Cookie和网站数据**”项的“**始终允许**”选项，如下图所示。</span>
+* 对于Mac OS X Sierra和之前的版本：选中“首选项”下浏览器“隐私”选项卡中的“</span>Cookie和网站数据&#x200B;**”项的“**&#x200B;始终允许&#x200B;**”选项，如下图所示。**
 
-  ![](../../../assets/always-allow-safari13.png)
+  ![](/help/authentication/assets/always-allow-safari13.png)

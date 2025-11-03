@@ -2,11 +2,11 @@
 product: adobe primetime
 audience: end-user
 feature: Authentication
-user-guide-title: 'Adobe Pass Authentication '
-user-guide-description: Adobe Pass Authentication 是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
+user-guide-title: Adobe Pass 身份验证
+user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
-source-wordcount: '1279'
+source-wordcount: '1212'
 ht-degree: 3%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 3%
 
 # Adobe Pass身份验证帮助 {#authentication}
 
-- [Adobe Pass Authentication &#x200B;](home.md)
+- [Adobe Pass 身份验证](home.md)
 - [产品公告](product-announcements.md)
 - 产品版本 {#product-releases}
    - 2025 {#2025}
@@ -57,17 +57,17 @@ ht-degree: 3%
    - [MVPD快速入门指南](kickstart/mvpd-kickstart-guide.md)
    - [支持过程常见问题解答](kickstart/support-procedures-faqs.md)
 - 程序员集成指南 {#integration-guide-programmers}
-   - [程序员集成指南](integration-guide-programmers/programmer-integration-guide-overview.md)
+   - [程序员集成指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)
    - [最低系统要求](integration-guide-programmers/minimum-system-requirements.md)
    - [节流机构](integration-guide-programmers/throttling-mechanism.md)
    - REST API {#rest-apis}
       - REST API DCR {#rest-api-dcr}
-         - [Dynamic Client注册概述](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+         - [Dynamic Client注册概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
          - [Dynamic Client注册术语表](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
          - [动态客户端注册常见问题解答](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)
          - API {#rest-api-dcr-apis}
             - [检索客户端凭据](integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)
-            - [检索访问令牌](integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+            - [检索访问令牌](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)
          - 流 {#rest-api-dcr-flows}
             - [动态客户端注册流程](integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
       - REST API V2 {#rest-api-v2}
@@ -137,33 +137,12 @@ ht-degree: 3%
          - [媒体令牌](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
       - 错误报告 {#error-reporting}
          - [增强的错误代码](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
-      - 单点登录访问 {#sso-access}
-         - 合作伙伴单点登录 {#partner-sso}
-            - Apple单点登录 {#apple-sso}
-               - [Apple SSO概述](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md)
-               - [Apple SSO指南(REST API V2)](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)
-         - Platform单点登录 {#platform-sso}
-            - Amazon单点登录 {#amazon-sso}
-               - [Amazon SSO指南(REST API V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
-            - Roku单点登录 {#roku-sso}
-               - [Roku SSO指南(REST API V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
-      - 基于主目录的身份验证访问 {#hba-access}
-         - [基于家庭的身份验证(HBA)](integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)
       - 隐私支持 {#privacy-support}
-         - [隐私支持概述](integration-guide-programmers/features-premium/privacy-support/privacy-supp-overview.md)
-         - [如何提出隐私请求](integration-guide-programmers/features-premium/privacy-support/make-privacy-req.md)
-   - 高级功能 {#features-premium}
-      - 临时访问 {#temporary-access}
-         - [TempPass功能](integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
-      - 访问已降级 {#degraded-access}
-         - [退化特征](integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
-      - ESM {#esm}
-         - [授权服务监控概述](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)
-         - [授权服务监控API](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
-         - [服务器端量度](integration-guide-programmers/features-premium/esm/understanding-serverside-metrics.md)
+         - [隐私支持概述](integration-guide-programmers/features-standard/privacy-support/privacy-supp-overview.md)
+         - [如何提出隐私请求](integration-guide-programmers/features-standard/privacy-support/make-privacy-req.md)
       - 分析 {#analytics}
-         - [将Adobe Pass身份验证服务器端数据集成到Adobe Analytics](integration-guide-programmers/features-premium/analytics/integrate-authn-servr-data-analytics.md)
-         - [在Adobe Pass身份验证中使用Experience Cloud ID](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
+         - [将Adobe Pass身份验证服务器端数据集成到Adobe Analytics](integration-guide-programmers/features-standard/analytics/integrate-authn-servr-data-analytics.md)
+         - [在Adobe Pass身份验证中使用Experience Cloud ID](/help/authentication/integration-guide-programmers/features-standard/analytics/exp-cloud-id-authn.md)
    - 旧版 {#legacy}
       - （旧版）REST API V1 {#rest-api-v1}
          - [（旧版）REST API V1概述](integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)

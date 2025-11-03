@@ -2,7 +2,7 @@
 title: 审核和推送更改
 description: 了解如何在TVE仪表板中查看和推送更改。
 exl-id: 2f29712e-7b3f-472a-a36f-32780bec1508
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '250'
 ht-degree: 0%
@@ -21,7 +21,7 @@ TVE仪表板允许您查看对当前配置所做的更改，然后将它们部�
 
 1. 在屏幕底部找到审核和推送更改通知。
 
-   ![审阅和推送更改通知](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-banner-view.png)
+   ![审阅和推送更改通知](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-banner-view.png)
 
    *审核和推送更改通知框*
 
@@ -29,7 +29,7 @@ TVE仪表板允许您查看对当前配置所做的更改，然后将它们部�
 
 1. 在&#x200B;**配置说明**&#x200B;中键入更改的简要说明，以便有效地跟踪和了解每个更改的用途。
 
-   ![添加配置说明](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-configuration-details-panel-view.png)
+   ![添加配置说明](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-configuration-details-panel-view.png)
 
    *添加配置说明*
 
@@ -39,7 +39,7 @@ TVE仪表板允许您查看对当前配置所做的更改，然后将它们部�
 
 1. 选择&#x200B;**视图**&#x200B;以查看与配置更改关联的以前值和新值。
 
-   ![查看配置更改](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-view-button.png)
+   ![查看配置更改](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-view-button.png)
 
    *查看配置更改*
 
@@ -49,7 +49,7 @@ TVE仪表板允许您查看对当前配置所做的更改，然后将它们部�
    >
    >只有在添加&#x200B;**配置描述**&#x200B;之后，**推送更改**&#x200B;按钮才会变为活动状态。
 
-   ![推送更改](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-push-changes-button.png)
+   ![推送更改](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-push-changes-button.png)
 
    *推送更改*
 

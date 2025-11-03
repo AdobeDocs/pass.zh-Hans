@@ -2,7 +2,7 @@
 title: 单点登录 — 平台标识 — 流程
 description: REST API V2 — 单点登录 — 平台标识 — 流程
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 2afe9ea2a814817757f1ab28484a84466da68d62
 workflow-type: tm+mt
 source-wordcount: '1855'
 ht-degree: 0%
@@ -33,8 +33,8 @@ ht-degree: 0%
 
 >[!MORELIKETHIS]
 > 
-> * [Amazon SSO指南](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
-> * [Roku SSO指南](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
+> * [Amazon SSO指南](/help/premium-workflow/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+> * [Roku SSO指南](/help/premium-workflow/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
 
 ## 使用平台身份通过单点登录执行身份验证 {#perform-authentication-through-single-sign-on-using-platform-identity}
 
@@ -62,7 +62,7 @@ ht-degree: 0%
 
 执行以下给定步骤，使用平台身份实施通过单点登录的身份验证流程，如下图所示。
 
-![使用平台标识通过单点登录执行身份验证](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-platform-identity-flow.png)
+![使用平台标识通过单点登录执行身份验证](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-platform-identity-flow.png)
 
 *使用平台标识通过单点登录执行身份验证*
 
@@ -232,7 +232,7 @@ ht-degree: 0%
 
 执行给定步骤以使用平台标识通过单点登录实施授权流，如下图所示。
 
-![使用平台标识通过单点登录检索授权决策](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-platform-identity-flow.png)
+![使用平台标识通过单点登录检索授权决策](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-platform-identity-flow.png)
 
 *使用平台标识通过单点登录检索授权决策*
 
@@ -246,7 +246,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 有关以下各项的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策：
+   > 有关以下各项的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`和`AP-Device-Identifier`
@@ -268,7 +268,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策。
    > 
    > <br/>
    > 
@@ -287,7 +287,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策。
    > 
    > <br/>
    > 
@@ -304,4 +304,4 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> 预授权流的步骤与授权流的步骤相同，不同之处在于，使用的终结点是使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)文档的Retrieve preauthorization决策中描述的终结点。
+> 预授权流的步骤与授权流的步骤相同，不同之处在于，使用的终结点是使用特定mvpd[文档的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)Retrieve preauthorization决策中描述的终结点。

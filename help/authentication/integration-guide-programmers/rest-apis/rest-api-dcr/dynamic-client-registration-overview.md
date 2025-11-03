@@ -2,7 +2,7 @@
 title: Dynamic Client注册概述
 description: Dynamic Client注册概述
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
+source-git-commit: 7ca9d8996756086a6b963c0b6d5b0bb64608ecbc
 workflow-type: tm+mt
 source-wordcount: '809'
 ht-degree: 0%
@@ -20,10 +20,10 @@ ht-degree: 0%
 Adobe Pass提供动态客户端注册服务，允许访问以下受保护的API：
 
 * Adobe Pass身份验证管理API：
-   * [重置临时传递API](../../features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-   * [降级API](../../features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+   * [重置临时传递API](/help/premium-workflow/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+   * [降级API](/help/premium-workflow/degraded-access/degradation-feature.md#degradation-api-access)
    * [代理MVPD API](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
-   * [授权服务监控API](../../features-premium/esm/entitlement-service-monitoring-api.md)
+   * [授权服务监控API](/help/premium-workflow/esm/entitlement-service-monitoring-api.md)
 * Adobe Pass身份验证REST API：
    * [REST API V2](../rest-api-v2/apis/rest-api-v2-apis-overview.md)
    * [（旧版）REST API V1](../../legacy/rest-api-v1/rest-api-reference.md)
@@ -114,6 +114,6 @@ Adobe Pass TVE Dashboard是一款用于Adobe Pass身份验证客户（程序员�
 **流量**
 
 * 客户端应用程序必须按照[检索客户端凭据](apis/dynamic-client-registration-apis-retrieve-client-credentials.md) API文档中所述获取客户端凭据。
-* 客户端应用程序必须按照[检索访问令牌](apis/dynamic-client-registration-apis-retrieve-access-token.md) API文档中所述获取访问令牌。
+* 客户端应用程序必须按照[检索访问令牌](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) API文档中所述获取访问令牌。
 
 请参阅[动态客户端注册流程](flows/dynamic-client-registration-flow.md)文档，以更好地了解如何访问受Adobe Pass保护的API。 此外，您还可以观看此[网络研讨会](https://my.adobeconnect.com/pzkp8ujrigg1/)录像，其中提供了更多背景信息并包括演示。

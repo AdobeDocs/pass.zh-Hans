@@ -2,7 +2,7 @@
 title: Android SDK与Dynamic Client注册
 description: Android SDK与Dynamic Client注册
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '1301'
 ht-degree: 0%
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 ## 动态客户端注册 {#DCR}
 
-Android SDK v3.0+将使用[动态客户端注册概述](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)中定义的动态客户端注册过程。
+Android SDK v3.0+将使用[动态客户端注册概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)中定义的动态客户端注册过程。
 
 
 ## 功能演示 {#Demo}
@@ -75,7 +75,7 @@ Android SDK v3.0+将使用[动态客户端注册概述](../../../rest-apis/rest-
 
 服务器响应包含MVPD列表以及附加到通道标识的一些配置信息。 服务器响应由访问启用码在内部使用。 通过setRequestorComplete()回调只向应用程序显示操作的状态（即SUCCESS/FAIL）。
 
-如果未使用&#x200B;*url*&#x200B;参数，则生成的网络调用将定向默认服务提供程序URL：Adobe版本/生产环境。
+如果未使用&#x200B;*url*&#x200B;参数，则生成的网络调用将定向默认服务提供程序URL： Adobe Release/Production环境。
 
 如果为&#x200B;*url*&#x200B;参数提供了值，则生成的网络调用将针对&#x200B;*url*&#x200B;参数中提供的所有URL。 所有配置请求都在单独的线程中同时触发。 在编译MVPD列表时，优先使用第一个响应程序。 对于列表中的每个MVPD， Access Enabler会记住关联服务提供商的URL。 所有后续权利请求都定向到与服务提供商关联的URL，该URL在配置阶段与目标MVPD配对。
 
@@ -93,8 +93,8 @@ Android SDK v3.0+将使用[动态客户端注册概述](../../../rest-apis/rest-
 
 **参数：**
 
-- *requestorID*：与渠道关联的唯一ID。 首次向Adobe Pass身份验证服务注册时，将Adobe分配的唯一ID传递到您的网站。
-- *url*：可选参数；默认情况下，使用Adobe服务提供程序[http://sp.auth.adobe.com/](http://sp.auth.adobe.com/)。 此阵列允许您为Adobe提供的身份验证和授权服务指定端点（其他实例可能用于调试目的）。 您可以使用此选项指定多个Adobe Pass身份验证服务提供程序实例。 在执行此操作时，MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商相关联；即首先响应并支持该MVPD的提供商。
+- *requestorID*：与渠道关联的唯一ID。 首次使用Adobe身份验证服务注册时，请将Adobe Pass分配的唯一ID传递到您的网站。
+- *url*：可选参数；默认情况下，使用Adobe服务提供程序[http://sp.auth.adobe.com/](http://sp.auth.adobe.com/)。 此阵列允许您为Adobe提供的身份验证和授权服务指定端点（不同的实例可用于调试目的）。 您可以使用此选项指定多个Adobe Pass身份验证服务提供程序实例。 在执行此操作时，MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商相关联；即首先响应并支持该MVPD的提供商。
 
 已弃用：
 

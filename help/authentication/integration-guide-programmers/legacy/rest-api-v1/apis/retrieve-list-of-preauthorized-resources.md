@@ -2,7 +2,7 @@
 title: 检索预授权资源的列表
 description: 检索预授权资源的列表
 exl-id: 3821378c-bab5-4dc9-abd7-328df4b60cc3
-source-git-commit: 1c357b918fa4f6d4b92a9055de018c55ee5861e0
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '390'
 ht-degree: 0%
@@ -54,8 +54,8 @@ ht-degree: 0%
 | 请求者 | 此操作有效的程序员requestorId。 |
 | deviceId | 设备ID字节。 |
 | 资源 | 一个字符串，其中包含以逗号分隔的resourceId列表，以标识用户可能可以访问并被MVPD授权端点识别的内容。 |
-| 设备信息/</br></br>X — 设备信息 | 流设备信息。</br></br>**注意**：可以将此device_info作为URL参数传递，但由于此参数的潜在大小以及GETURL的长度限制，它应作为X-Device-Info传递到http标头。 </br></br>在[传递设备和连接信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
-| _deviceType_ | 设备类型（例如，Roku、PC）。</br></br>如果该参数设置正确，ESM提供的量度在使用无客户端程序时按设备类型[&#128279;](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)进行划分，以便可以执行不同类型的分析，例如Roku、AppleTV和Xbox。</br></br>查看[在传递量度中使用无客户端设备类型参数的好处&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**： `device_info`将替换此参数。 |
+| 设备信息/</br></br>X — 设备信息 | 流设备信息。</br></br>**注意**：可以将此device_info作为URL参数传递，但由于此参数的潜在大小以及GET URL的长度限制，它应作为X-Device-Info传递到http标头。 </br></br>在[传递设备和连接信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
+| _deviceType_ | 设备类型（例如，Roku、PC）。</br></br>如果该参数设置正确，ESM提供的量度在使用无客户端程序时按设备类型[进行](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#clientless_device_type)划分，以便可以执行不同类型的分析，例如Roku、AppleTV和Xbox。</br></br>查看[在传递量度中使用无客户端设备类型参数的好处&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**： `device_info`将替换此参数。 |
 | _设备用户_ | 设备用户标识符。 |
 | _appId_ | 应用程序id/名称。 </br></br>**注意**： device_info将替换此参数。 |
 

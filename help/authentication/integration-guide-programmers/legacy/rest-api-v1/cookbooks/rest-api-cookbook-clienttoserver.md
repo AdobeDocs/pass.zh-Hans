@@ -2,7 +2,7 @@
 title: REST API指南（客户端到服务器）
 description: Rest API指南客户端到服务器。
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '886'
 ht-degree: 0%
@@ -49,12 +49,12 @@ Adobe Pass身份验证REST API受[限制机制](/help/authentication/integration
 
 ### 动态客户端注册(DCR)
 
-Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务之间的客户端通信。 DCR流程是独立的，在[Dynamic Client Registration Overview](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)文档中进行了说明。
+Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务之间的客户端通信。 DCR流程是独立的，在[Dynamic Client Registration Overview](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)文档中进行了说明。
 
 
 ### 流（智能设备）应用程序流量
 
-![](../../../../assets/smart-device-app-flow.png)
+![](/help//authentication/assets/smart-device-app-flow.png)
 
 #### 启动流程
 
@@ -119,7 +119,7 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
 
 ### AuthN（第2屏）应用程序流程
 
-![](../../../../assets/secnd-screen-authn-flow.png)
+![](/help//authentication/assets/secnd-screen-authn-flow.png)
 
 1. 获取此用户的MVPD列表。 例如： [`<SP_FQDN>/api/v1/config/[requestorID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)
 
@@ -148,4 +148,4 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
 **要使用此API，流应用程序需要确保设备ID的唯一性，因为此设备ID正用于标识令牌以及可选的额外数据。**
 
 
-![](../../../../assets/temp-pass-promo-temppass.png)
+![](/help//authentication/assets/temp-pass-promo-temppass.png)

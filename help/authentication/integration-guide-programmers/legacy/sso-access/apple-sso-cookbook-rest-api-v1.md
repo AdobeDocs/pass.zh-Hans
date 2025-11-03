@@ -2,7 +2,7 @@
 title: Apple SSO指南(REST API V1)
 description: Apple SSO指南(REST API V1)
 exl-id: 072a011f-e1bb-4d3e-bcb5-697f2d1739cc
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '1496'
 ht-degree: 0%
@@ -43,19 +43,19 @@ Adobe Pass身份验证REST API V1支持在iOS、iPadOS或tvOS上运行的客户�
 
 ### 身份验证 {#apple-sso-cookbook-rest-api-v1-authentication}
 
-* [是否存在有效的Adobe身份验证令牌？](#step1)
+* [是否有有效的Adobe身份验证令牌？](#step1)
 * [用户是否通过合作伙伴SSO登录？](#step2)
 * [获取Adobe配置](#step3)
 * [使用Adobe配置启动合作伙伴SSO工作流](#step4)
 * [用户登录是否成功？](#step5)
 * [从Adobe获取所选MVPD的配置文件请求](#step6)
 * [将Adobe请求转发给Partner SSO以获取配置文件](#step7)
-* [交换Adobe身份验证令牌的合作伙伴SSO配置文件](#step8)
-* [是否已成功生成Adobe令牌？](#step9)
+* [将合作伙伴SSO配置文件交换为Adobe身份验证令牌](#step8)
+* [Adobe令牌是否已成功生成？](#step9)
 * [启动常规身份验证工作流](#step10)
 * [继续授权流程](#step11)
 
-![](../../../assets/rest-api-v1/apple-sso-cookbook-rest-api-v1.png)
+![](/help/authentication/assets/rest-api-v1/apple-sso-cookbook-rest-api-v1.png)
 
 #### 步骤：“是否存在有效的Adobe身份验证令牌？” {#step1}
 
@@ -141,7 +141,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 >
 > **<u>专业提示：</u>**&#x200B;请了解MVPD属性： *`enablePlatformServices`*、*`boardingStatus`*、*`displayInPlatformPicker`*、*`platformMappingId`*、*`requiredMetadataFields`*，并特别注意其他步骤中代码片段出现的注释。
 
-#### 步骤“使用Adobe配置启动Partner SSO工作流” {#step4}
+#### 步骤“使用Adobe配置启动合作伙伴SSO工作流” {#step4}
 
 >[!TIP]
 >
@@ -267,7 +267,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 >
 > **<u>专业提示：</u>**&#x200B;请注意，从Adobe Pass身份验证配置中获得的提供程序标识符代表&#x200B;*`platformMappingId`*。 因此，应用程序必须使用&#x200B;*`platformMappingId`*&#x200B;值，通过MVPD身份验证[提供Adobe Pass列表](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md) API服务的介质来确定MVPD ID属性值。
 
-#### 步骤：“将Adobe请求转发给Partner SSO以获取配置文件” {#step7}
+#### 步骤：“将Adobe请求转发给合作伙伴SSO以获取配置文件” {#step7}
 
 >[!TIP]
 >
@@ -344,7 +344,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
     ...
 ```
 
-#### 步骤：“将Partner SSO配置文件交换为Adobe身份验证令牌” {#step8}
+#### 步骤：“将合作伙伴SSO配置文件交换为Adobe身份验证令牌” {#step8}
 
 >[!TIP]
 >
@@ -352,7 +352,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>专业提示：</u>**&#x200B;请注意[“将Adobe请求转发给合作伙伴SSO以获取配置文件”](#step7)步骤中的代码片段。 此&#x200B;*`vsaMetadata!.samlAttributeQueryResponse!`*&#x200B;表示需要在[令牌交换](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md)上传递的&#x200B;*`SAMLResponse`*，它需要在调用之前进行字符串操作和编码（*Base64*&#x200B;编码和&#x200B;*URL*&#x200B;编码）。
+> **<u>专业提示：</u>**&#x200B;请注意[“将Adobe请求转发给合作伙伴SSO以获取配置文件”](#step7)步骤中的代码片段。 此&#x200B;*`vsaMetadata!.samlAttributeQueryResponse!`*&#x200B;表示需要在&#x200B;*`SAMLResponse`*&#x200B;令牌交换[上传递的](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md)，它需要在调用之前进行字符串操作和编码（*Base64*&#x200B;编码和&#x200B;*URL*&#x200B;编码）。
 
 #### 步骤：“是否已成功生成Adobe令牌？” {#step9}
 
@@ -380,8 +380,8 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 > **<u>专业提示：</u>**&#x200B;请按照以下步骤实施iOS/iPadOS。
 
 * 应用程序必须[获取不应在第1台设备（屏幕）上呈现给最终用户的注册码](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)。
-* 应用程序必须在第一个设备（屏幕）上使用注册码和[WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)或[SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)组件[启动身份验证](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md)。
-* 在[WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)或[SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)组件关闭后，应用程序必须启动[轮询以了解第一个设备（屏幕）上的身份验证状态](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)。
+* 应用程序必须在第一个设备（屏幕）上使用注册码和[WKWebView](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md)或[SFSafariViewController](https://developer.apple.com/documentation/webkit/wkwebview)组件[启动身份验证](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)。
+* 在[WKWebView](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)或[SFSafariViewController](https://developer.apple.com/documentation/webkit/wkwebview)组件关闭后，应用程序必须启动[轮询以了解第一个设备（屏幕）上的身份验证状态](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)。
 * 生成身份验证令牌时，应用程序必须停止在第1台设备（屏幕）上的[轮询](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)。
 
 #### 步骤：“继续进行授权流” {#step11}
@@ -403,7 +403,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 > **<u>专业提示：</u>**&#x200B;请按照以下步骤实施tvOS。
 
 * 应用程序必须使用Adobe Pass身份验证服务中的&quot;*tokenSource&quot;* [user metadata](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)，确定是否由于通过合作伙伴SSO登录而发生了身份验证。
-* 如果&#x200B;*“tokenSource”*&#x200B;值等于“*Apple”，则应用程序必须指示/提示用户仅在tvOS **上**&#x200B;从&#x200B;*`Settings -> Accounts -> TV Provider`*显式注销。*
+* 如果&#x200B;*`Settings -> Accounts -> TV Provider`*“tokenSource”**值等于“** Apple”，则应用程序必须指示/提示用户仅在tvOS *上*&#x200B;从&#x200B;*显式注销。*
 * 应用程序必须使用直接HTTP调用从Adobe Pass身份验证服务[启动注销](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)。 这将无助于MVPD端的会话清理。
 
 >[!TIP]
@@ -411,5 +411,5 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 > **<u>专业提示：</u>**&#x200B;请按照以下步骤实施iOS/iPadOS。
 
 * 应用程序必须使用Adobe Pass身份验证服务中的&quot;*tokenSource&quot;* [user metadata](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)，确定是否由于通过合作伙伴SSO登录而发生了身份验证。
-* 如果&#x200B;*“tokenSource”*&#x200B;值等于&#x200B;*“Apple”*，则应用程序必须指示/提示用户仅在iOS/iPadOS **上**&#x200B;从&#x200B;*`Settings -> TV Provider`*&#x200B;显式注销。
-* 应用程序必须使用[WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)或[SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)组件从Adobe Pass身份验证服务[启动注销](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)。 这将有助于MVPD端的会话清理。
+* 如果&#x200B;*`Settings -> TV Provider`*“tokenSource”**值等于**“Apple”*，则应用程序必须指示/提示用户仅在iOS/iPadOS*&#x200B;上&#x200B;*从*&#x200B;显式注销。
+* 应用程序必须使用[WKWebView](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)或[SFSafariViewController](https://developer.apple.com/documentation/webkit/wkwebview)组件从Adobe Pass身份验证服务[启动注销](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)。 这将有助于MVPD端的会话清理。

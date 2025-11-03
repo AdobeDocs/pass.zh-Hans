@@ -2,7 +2,7 @@
 title: REST API V2术语表
 description: REST API V2术语表
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '1742'
 ht-degree: 0%
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 #### 身份验证 {#authentication}
 
-身份验证是一个进程，它允许用户在[MVPD](#mvpd)验证用户订阅后，向[程序员](#programmer)证明其身份，以获得对受保护内容（[资源](#resource)）的访问权限。
+身份验证是一个进程，它允许用户在[MVPD](#programmer)验证用户订阅后，向[程序员](#resource)证明其身份，以获得对受保护内容（[资源](#mvpd)）的访问权限。
 
 #### 身份验证代码 {#code}
 
@@ -45,7 +45,7 @@ ht-degree: 0%
 
 #### 授权 {#authorization}
 
-授权是一个进程，它允许用户在通过[MVPD](#mvpd)验证用户权限后，基于拥有的[MVPD](#mvpd)订阅，从[程序员](#programmer)目录访问受保护的内容（[资源](#resource)）。
+授权是一个进程，它允许用户在通过[MVPD](#resource)验证用户权限后，基于拥有的[MVPD](#programmer)订阅，从[程序员](#mvpd)目录访问受保护的内容（[资源](#mvpd)）。
 
 ### C {#c}
 
@@ -53,7 +53,7 @@ ht-degree: 0%
 
 该配置是一个Adobe Pass身份验证概念，它存储有关[程序员](#programmer)和[MVPD](#mvpd)集成设置的信息，在[身份验证](#authentication)过程中询问用户从活动集成列表中选择其[电视提供程序](#tv-provider)时可以使用。
 
-### 日期{#d}
+### D {#d}
 
 #### 决策 {#decision}
 
@@ -63,7 +63,7 @@ ht-degree: 0%
 
 降级是一种Adobe Pass身份验证功能，它允许用户访问受保护的内容，即使其[MVPD](#mvpd)遇到服务中断也是如此。
 
-有关详细信息，请参阅[降级功能](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)文档。
+有关详细信息，请参阅[降级功能](/help/premium-workflow/degraded-access/degradation-feature.md)文档。
 
 #### 设备ID {#device-id}
 
@@ -87,7 +87,7 @@ ht-degree: 0%
 
 基于家庭的身份验证(HBA)是一个过程，通过该过程，消费者将被自动授予访问连接到其家庭网络（属于订阅合同内的位置）的选定设备上的[TV Everywhere (TVE)](#tve)内容的权限。
 
-### 我{#i}
+### I {#i}
 
 #### 身份提供者 {#identity-provider}
 
@@ -121,7 +121,7 @@ ht-degree: 0%
 
 多频道视频节目分销商(MVPD)是一家通过有线电视、卫星电视或互联网服务为消费者提供电视服务的公司。
 
-MVPD由MVPD和Adobe在新用户引导过程中定义的唯一值标识。
+MVPD由MVPD和Adobe在新用户引导过程中定义的唯一值来标识。
 
 与[电视提供程序](#tv-provider)和[身份提供程序](#identity-provider)同义。
 
@@ -131,23 +131,23 @@ MVPD由MVPD和Adobe在新用户引导过程中定义的唯一值标识。
 
 合作伙伴是向[程序员](#programmer)提供服务或框架以启用单点登录用户体验的公司。
 
-合作伙伴由唯一值标识（例如“apple”），该值在合作伙伴和Adobe之间的载入流程中定义。
+合作伙伴由唯一值（例如“apple”）标识，该唯一值在合作伙伴和Adobe之间的载入流程中定义。
 
 #### 预授权 {#preauthorization}
 
-预授权是一个进程，允许用户在[MVPD](#mvpd)验证用户权限后，从[程序员](#programmer)目录预览他们有权访问的[资源](#resource)的子集。
+预授权是一个进程，允许用户在[MVPD](#resource)验证用户权限后，从[程序员](#programmer)目录预览他们有权访问的[资源](#mvpd)的子集。
 
 与[Preflight](#preflight)同义。
 
 #### Preflight {#preflight}
 
-预检是允许用户在[MVPD](#mvpd)验证用户权限后，从[程序员](#programmer)目录预览他们有权访问的[资源](#resource)的子集的进程。
+预检是允许用户在[MVPD](#resource)验证用户权限后，从[程序员](#programmer)目录预览他们有权访问的[资源](#mvpd)的子集的进程。
 
 与[预授权](#preauthorization)同义。
 
 #### 主要（程序员）应用程序 {#primary-application}
 
-主应用程序引用了一个启动[身份验证](#authentication)的[程序员](#programmer)应用程序，但该应用程序可能无法通过使用[用户代理](#user-agent)导航到[MVPD](#mvpd)登录页来完成该进程。
+主应用程序引用了一个启动[身份验证](#programmer)的[程序员](#authentication)应用程序，但该应用程序可能无法通过使用[用户代理](#user-agent)导航到[MVPD](#mvpd)登录页来完成该进程。
 
 #### 个人资料 {#profile}
 
@@ -193,7 +193,7 @@ The Programmer是一家通过各种平台拥有的渠道（品牌）向消费者
 
 #### 辅助（程序员）应用程序 {#secondary-application}
 
-辅助应用程序是指能够使用[用户代理](#user-agent)导航到[MVPD](#mvpd)登录页来完成[身份验证](#authentication)进程的[程序员](#programmer)应用程序。
+辅助应用程序是指能够使用[用户代理](#programmer)导航到[MVPD](#authentication)登录页来完成[身份验证](#user-agent)进程的[程序员](#mvpd)应用程序。
 
 辅助应用程序可以在与主应用程序相同的设备上运行，或者在其他（辅助）设备上运行，在这种情况下，登录体验称为“第二屏幕验证”用户体验。
 
@@ -207,7 +207,7 @@ The Programmer是一家通过各种平台拥有的渠道（品牌）向消费者
 
 服务提供商是[程序员](#programmer)拥有的渠道（品牌）。
 
-服务提供商由程序员和Adobe在新用户引导过程中定义的唯一值标识。
+服务提供商由程序员和Adobe在新用户引导过程中定义的唯一值来标识。
 
 与使用请求者ID的前一个术语同义。
 
@@ -217,7 +217,7 @@ The Programmer是一家通过各种平台拥有的渠道（品牌）向消费者
 
 #### SP {#sp}
 
-服务提供商(SP)是指在与[MVPD](#mvpd)的集成中，Adobe Pass身份验证代表[程序员](#programmer)发挥的作用。
+服务提供商(SP)是指在与[MVPD](#programmer)的集成中，Adobe Pass身份验证代表[程序员](#mvpd)发挥的作用。
 
 #### SSO {#sso}
 
@@ -229,13 +229,13 @@ The Programmer是一家通过各种平台拥有的渠道（品牌）向消费者
 
 基本的TempPass是Adobe Pass身份验证功能，它允许用户在有限的时间内访问受保护的内容，而无需使用[MVPD](#mvpd)进行身份验证。
 
-有关详细信息，请参阅[基本TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#basic-temp-pass)文档。
+有关详细信息，请参阅[基本TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md#basic-temp-pass)文档。
 
 #### TempPass提升 {#temp-pass-promotional}
 
 提升TempPass是一种Adobe Pass身份验证功能，它允许用户在最大数量的资源和有限的时间内访问受保护的内容，而无需使用[MVPD](#mvpd)进行身份验证。
 
-有关详细信息，请参阅[促销临时传递](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)文档。
+有关详细信息，请参阅[促销临时传递](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)文档。
 
 #### TTL {#ttl}
 
@@ -257,7 +257,7 @@ TV Everywhere (TVE) Dashboard是提供给[程序员](#programmer)的Adobe Pass�
 
 电视提供商是一家公司，通过有线电视、卫星电视或互联网服务为消费者提供电视服务。
 
-根据电视提供商和Adobe在新用户引导过程中定义的唯一值，来标识电视提供商。
+根据电视提供商和Adobe在新用户引导过程中定义的唯一值，来识别电视提供商。
 
 与[MVPD](#mvpd)和[身份提供程序](#identity-provider)同义。
 
@@ -277,7 +277,7 @@ TV Everywhere (TVE) Dashboard是提供给[程序员](#programmer)的Adobe Pass�
 
 有关详细信息，请参阅[用户元数据](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)文档。
 
-### 版本{#v}
+### V {#v}
 
 #### VSA {#vsa}
 

@@ -2,7 +2,7 @@
 title: JavaScript SDK API参考
 description: JavaScript SDK API参考
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '2883'
 ht-degree: 0%
@@ -34,24 +34,24 @@ ht-degree: 0%
 - [logout()](#logout)
 
 
-## setRequestor (inRequestorID， endpoints， options){#setrequestor(inRequestorID,endpoints,options)}
+## setRequestor（inRequestorID、端点、选项）{#setrequestor(inRequestorID,endpoints,options)}
 
 **描述：**&#x200B;标识请求源自的站点。  在通信会话中，必须在任何其他API调用之前进行此调用。
 
 **参数：**
 
-- *inRequestorID* -Adobe在注册期间分配给原始站点的唯一标识符。
+- *inRequestorID* - Adobe在注册期间分配给原始站点的唯一标识符。
 
 - *端点* — 此参数是可选的。 它可以是以下值之一：
 
-   - 一个数组，允许您为Adobe提供的身份验证和授权服务指定端点（其他实例可用于调试目的）。 如果提供了多个URL，则MVPD列表将由所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商相关联；即首先响应并支持该MVPD的提供商。 默认情况下（如果未指定值），将使用Adobe服务提供程序(<http://sp.auth.adobe.com/>)。
+   - 一个数组，允许您为Adobe提供的身份验证和授权服务指定端点（不同的实例可用于调试目的）。 如果提供了多个URL，则MVPD列表将由所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商相关联；即首先响应并支持该MVPD的提供商。 默认情况下（如果未指定值），将使用Adobe服务提供程序(<http://sp.auth.adobe.com/>)。
 
   示例：
    - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
 
 - *选项* — 包含应用程序ID值、访客ID值无刷新设置（后台登录注销）和MVPD设置(iFrame)的JSON对象。 所有值都是可选的。
-   1. 如果指定，将在库执行的所有网络调用中报告Experience CloudvisitorID。 该值以后可用于高级分析报表。
-   2. 如果指定了应用程序的唯一标识符 — `applicationId` — 则该值将作为X-Device-Info HTTP标头的一部分添加到应用程序发出的所有后续调用中。 稍后可以使用正确的查询从[ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)报表中获取此值。
+   1. 如果指定，将会在库执行的所有网络调用中报告Experience Cloud visitorID。 该值以后可用于高级分析报表。
+   2. 如果指定了应用程序的唯一标识符 — `applicationId` — 则该值将作为X-Device-Info HTTP标头的一部分添加到应用程序发出的所有后续调用中。 稍后可以使用正确的查询从[ESM](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md)报表中获取此值。
 
   **注意：**&#x200B;所有JSON密钥都区分大小写。
 
@@ -178,7 +178,7 @@ ht-degree: 0%
 
 ## checkAuthorization(inResourceID) {#checkauthorization(inresourceid)}
 
-**描述：**&#x200B;应用程序使用此方法来检查当前客户和给定资源的授权状态。 首先检查身份验证状态。 如果未经过身份验证，则触发tokenRequestFailed()回调，此方法将退出。 如果用户通过了身份验证，它还会触发授权流。 查看有关[getAuthorization()] (#getAuthZ方法的详细信息。
+**描述：**&#x200B;应用程序使用此方法来检查当前客户和给定资源的授权状态。 首先检查身份验证状态。 如果未经过身份验证，则触发tokenRequestFailed()回调，此方法将退出。 如果用户通过了身份验证，它还会触发授权流。 查看有关[getAuthorization()]&#x200B;(#getAuthZ方法的详细信息。
 
 >[!TIP]
 >
@@ -196,7 +196,7 @@ ht-degree: 0%
 
 ## checkPreauthorizedResources(resources) {#checkPreauthorizedResources(resources)}
 
-**描述：**&#x200B;请求列表的“预检”授权状态
+**描述：**请求列表的“预检”授权状态
 资源。
 
 **参数：**
@@ -309,7 +309,7 @@ ht-degree: 0%
 **描述：**&#x200B;当用户从您的提供程序选择UI中选择了MVPD以便将该提供程序选择发送到Access Enabler时，调用此函数，或者使用null参数调用此函数，以防用户未选择提供程序而关闭您的提供程序选择UI。
 
 **回调
-已触发：**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+已触发：**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -365,7 +365,7 @@ ht-degree: 0%
 
 ## entitlementLoaded() {#entitlementLoaded}
 
-**描述：**&#x200B;在Access Enabler已完成初始化并准备好接收请求时触发。 实施此回调以了解何时可以使用Access Enabler API开始通信。
+**描述：**在Access Enabler已完成初始化并准备好接收请求时触发。 实施此回调以了解何时可以使用Access Enabler API开始通信。
 </br>
 
 [返回页首](#top)
@@ -415,7 +415,7 @@ ht-degree: 0%
 
 **描述：**&#x200B;如果用户选择的MVPD需要一个iFrame来显示其身份验证登录页UI，则实施此回调。
 
-**触发者：**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**触发者：**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [返回页首](#top)
 
@@ -448,7 +448,7 @@ ht-degree: 0%
 
 >[!CAUTION]
 >
->通过使用公共Java库(<http://java.net/projects/user-agent-utils>)和用户代理字符串派生设备类型和操作系统。 请注意，此信息仅以粗略的方式提供，用于按设备类别细分操作量度，但该Adobe对错误结果不承担任何责任。 请相应地使用新功能。
+>通过使用公共Java库(<http://java.net/projects/user-agent-utils>)和用户代理字符串派生设备类型和操作系统。 请注意，此信息仅以粗略的方式提供，用于按设备类别细分操作量度，但Adobe对错误结果不承担任何责任。 请相应地使用新功能。
 
 **描述：**&#x200B;实施此回调以在发生特定事件时接收跟踪数据。 例如，您可以使用它来跟踪有多少用户使用相同的凭据登录。 跟踪当前不可配置。 使用Adobe Pass Authentication 1.6时，`sendTrackingData()`还报告有关设备、 Access Enabler客户端和操作系统类型的信息。 `sendTrackingData()`回调保持向后兼容。
 
@@ -558,7 +558,7 @@ ht-degree: 0%
 
 </br>
 
-## setMetadataStatus(key， encrypted， data) {#setMetadataStatus(key,encrypted,data)}
+## setMetadataStatus（密钥，加密，数据） {#setMetadataStatus(key,encrypted,data)}
 
 **描述：**&#x200B;由Access启用程序触发的回调，该启用程序提供通过`getMetadata()`调用请求的元数据。
 

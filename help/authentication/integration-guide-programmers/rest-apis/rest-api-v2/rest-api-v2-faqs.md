@@ -2,9 +2,9 @@
 title: REST API V2常见问题解答
 description: REST API V2常见问题解答
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 0b8ef6c6b326d1a9de52b24823886c708c2aad33
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
-source-wordcount: '9682'
+source-wordcount: '9611'
 ht-degree: 0%
 
 ---
@@ -50,7 +50,7 @@ ht-degree: 0%
 在以下情形中，客户端应用程序可以跳过此阶段：
 
 * 用户已经过身份验证。
-* 通过基本或提升[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)功能向用户提供临时访问权限。
+* 通过基本或提升[TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)功能向用户提供临时访问权限。
 * 用户身份验证已过期，但客户端应用程序已缓存之前选择的MVPD作为用户体验驱动型选择，并且只是提示用户确认他们仍然是该MVPD的订阅者。
 
 #### 3.什么是配置以及它的有效期？ {#configuration-phase-faq3}
@@ -88,7 +88,7 @@ ht-degree: 0%
 客户端应用程序应将配置响应信息缓存到内存存储中，以避免不必要的请求，并改善以下情况下的用户体验：
 
 * 用户已经过身份验证。
-* 通过基本或提升[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)功能向用户提供临时访问权限。
+* 通过基本或提升[TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)功能向用户提供临时访问权限。
 * 用户身份验证已过期，但客户端应用程序已缓存之前选择的MVPD作为用户体验驱动型选择，并且只是提示用户确认他们仍然是该MVPD的订阅者。
 
 #### 6.客户端应用程序能否管理自己的MVPD列表？ {#configuration-phase-faq6}
@@ -101,7 +101,7 @@ ht-degree: 0%
 
 客户端应用程序可以通过基于其自身业务逻辑和诸如先前选择的用户位置或用户历史等要求实现定制机制来过滤配置响应中提供的MVPD列表。
 
-客户端应用程序可以筛选[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) MVPD的列表或其集成仍在开发或测试中的MVPD。
+客户端应用程序可以筛选[TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md) MVPD的列表或其集成仍在开发或测试中的MVPD。
 
 #### 8.如果与MVPD的集成被禁用并标记为不活动，会发生什么情况？ {#configuration-phase-faq8}
 
@@ -144,7 +144,7 @@ ht-degree: 0%
 在以下情形中，客户端应用程序可以跳过此阶段：
 
 * 用户已经过身份验证，配置文件仍然有效。
-* 通过基本或提升[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)功能向用户提供临时访问权限。
+* 通过基本或提升[TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)功能向用户提供临时访问权限。
 
 客户端应用程序错误处理需要处理[错误](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)代码（例如，`authenticated_profile_missing`、`authenticated_profile_expired`、`authenticated_profile_invalidated`等），这表示客户端应用程序要求用户进行身份验证。
 
@@ -245,7 +245,7 @@ ht-degree: 0%
 
 因此，客户端应用程序必须提示用户重新进行身份验证，并与MVPD登录页面进行交互，以便刷新我们在系统上的配置文件。
 
-但是，对于支持[基于主目录的身份验证](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md) (HBA)的MVPD，将不需要用户输入凭据。
+但是，对于支持[基于主目录的身份验证](/help/premium-workflow/hba-access/home-based-authentication.md) (HBA)的MVPD，将不需要用户输入凭据。
 
 #### 10.每个可用用户档案端点的用例是什么？ {#authentication-phase-faq10}
 
@@ -269,7 +269,7 @@ ht-degree: 0%
 
 对于任何后续查询，必须使用基本配置文件端点确定用户的身份验证状态、访问用户元数据信息、查找用于身份验证的方法或用于提供身份的实体。
 
-有关更多详细信息，请参阅[使用合作伙伴流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)的单点登录[Apple SSO指南(REST API V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)文档。
+有关更多详细信息，请参阅[使用合作伙伴流程](/help/premium-workflow/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)的单点登录文档。
 
 #### 11.如果用户有多个MVPD配置文件，客户端应用程序应该怎么做？ {#authentication-phase-faq11}
 
@@ -366,7 +366,7 @@ REST API v2支持多个配置文件以适应：
 
 #### 19.客户端应用程序应如何管理降级访问？ {#authentication-phase-faq19}
 
-[降级功能](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)使客户端应用程序能够保持用户的无缝流体验，即使用户的MVPD身份验证或授权服务遇到问题也是如此。
+[降级功能](/help/premium-workflow/degraded-access/degradation-feature.md)使客户端应用程序能够保持用户的无缝流体验，即使用户的MVPD身份验证或授权服务遇到问题也是如此。
 
 总之，这可以确保无中断访问内容，尽管MVPD临时服务发生了中断。
 
@@ -376,7 +376,7 @@ REST API v2支持多个配置文件以适应：
 
 #### 20.客户端应用程序应如何管理临时访问？ {#authentication-phase-faq20}
 
-[TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)允许客户端应用程序提供对用户的临时访问。
+[TempPass功能](/help/premium-workflow/temporary-access/temp-pass-feature.md)允许客户端应用程序提供对用户的临时访问。
 
 总之，这可以通过提供在指定时间段内对内容或预定义数量的VOD标题的有限访问来吸引用户。
 
@@ -640,7 +640,7 @@ REST API v2支持多个配置文件以适应：
 
 如果[X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)标头缺失或包含不正确的值，则请求可能会被分类为源自`unknown`平台。
 
-这可能会导致请求被视为不安全，并受到更严格的规则约束，例如更短的身份验证TTL。 此外，某些字段，如流设备`connectionIp`和`connectionPort`，对于诸如Spectrum的[Home Base Authentication](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)之类的功能是必需的。
+这可能会导致请求被视为不安全，并受到更严格的规则约束，例如更短的身份验证TTL。 此外，某些字段，如流设备`connectionIp`和`connectionPort`，对于诸如Spectrum的[Home Base Authentication](/help/premium-workflow/hba-access/home-based-authentication.md)之类的功能是必需的。
 
 即使请求来自代表设备的服务器，[X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)标头值也必须反映实际的流设备信息。
 
@@ -864,25 +864,25 @@ Adobe Pass身份验证将不支持在API和流之间集成REST API V2和REST API
 
 | 范围 | SDK | REST API V2 | 观察结果 |
 |--------------------------------------------|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 完成动态客户端注册(DCR) | 向构造函数提供软件语句 | [发布<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) <br/> [GET <br/> /o/client/token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) | 有关更多详细信息，请参阅以下文档： <br/> <ul><li>[动态客户端注册概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[动态客户端注册流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
+| 完成动态客户端注册(DCR) | 向构造函数提供软件语句 | [发布<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[动态客户端注册流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
 
 ###### AccessEnabler iOS/tvOS SDK
 
 | 范围 | SDK | REST API V2 | 观察结果 |
 |--------------------------------------------|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 完成动态客户端注册(DCR) | 向构造函数提供软件语句 | [发布<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) <br/> [GET <br/> /o/client/token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) | 有关更多详细信息，请参阅以下文档： <br/> <ul><li>[动态客户端注册概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[动态客户端注册流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
+| 完成动态客户端注册(DCR) | 向构造函数提供软件语句 | [发布<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[动态客户端注册流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
 
 ###### AccessEnabler Android SDK
 
 | 范围 | SDK | REST API V2 | 观察结果 |
 |--------------------------------------------|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 完成动态客户端注册(DCR) | 向构造函数提供软件语句 | [发布<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) <br/> [GET <br/> /o/client/token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) | 有关更多详细信息，请参阅以下文档： <br/> <ul><li>[动态客户端注册概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[动态客户端注册流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
+| 完成动态客户端注册(DCR) | 向构造函数提供软件语句 | [发布<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[动态客户端注册流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
 
 ###### AccessEnabler FireOS SDK
 
 | 范围 | SDK | REST API V2 | 观察结果 |
 |--------------------------------------------|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 完成动态客户端注册(DCR) | 向构造函数提供软件语句 | [发布<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) <br/> [GET <br/> /o/client/token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) | 有关更多详细信息，请参阅以下文档： <br/> <ul><li>[动态客户端注册概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[动态客户端注册流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
+| 完成动态客户端注册(DCR) | 向构造函数提供软件语句 | [发布<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[动态客户端注册流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
 
 +++
 

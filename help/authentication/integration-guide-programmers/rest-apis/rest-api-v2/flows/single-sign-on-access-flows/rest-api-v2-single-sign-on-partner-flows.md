@@ -2,7 +2,7 @@
 title: 单点登录 — 合作伙伴 — 流程
 description: REST API V2 — 单点登录 — 合作伙伴 — 流程
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '1468'
 ht-degree: 0%
@@ -33,7 +33,7 @@ ht-degree: 0%
 
 Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户端应用程序的最终用户的合作伙伴单点登录(SSO)。
 
-有关Apple平台单点登录(SSO)的更多详细信息，请参阅[Apple SSO指南(REST API V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)文档。
+有关Apple平台单点登录(SSO)的更多详细信息，请参阅[Apple SSO指南(REST API V2)](/help/premium-workflow/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)文档。
 
 ## 检索合作伙伴身份验证请求 {#retrieve-partner-authentication-request}
 
@@ -59,7 +59,7 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
 
 执行给定步骤以检索合作伙伴身份验证请求，如下图所示。
 
-![检索合作伙伴身份验证请求](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-partner-authentication-request-flow.png)
+![检索合作伙伴身份验证请求](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-partner-authentication-request-flow.png)
 
 *检索合作伙伴身份验证请求*
 
@@ -173,7 +173,7 @@ Adobe Pass身份验证REST API V2支持在iOS、iPadOS或tvOS上运行的客户�
 
 执行给定步骤以使用合作伙伴身份验证响应实施配置文件检索流程，如下图所示。
 
-![使用合作伙伴身份验证响应创建和检索配置文件](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
+![使用合作伙伴身份验证响应创建和检索配置文件](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
 
 *使用合作伙伴身份验证响应创建和检索经过身份验证的配置文件*
 

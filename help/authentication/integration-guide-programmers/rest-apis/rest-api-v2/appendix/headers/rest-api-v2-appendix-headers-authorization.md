@@ -2,7 +2,7 @@
 title: 标头 — 授权
 description: REST API V2 — 标头 — 授权
 exl-id: 86917d7e-ffd9-4d34-8f9c-5a50083f85e6
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '118'
 ht-degree: 1%
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 <b>Authorization</b>请求标头包含客户端应用程序访问受Adobe Pass保护的API所需的`Bearer`访问令牌。
 
-有关访问Adobe Pass保护的API的机制的更多详细信息，请参阅[动态客户端注册概述](../../../rest-api-dcr/dynamic-client-registration-overview.md)文档。
+有关访问Adobe Pass保护的API的机制的更多详细信息，请参阅[动态客户端注册概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)文档。
 
 ## 语法 {#syntax}
 
@@ -42,7 +42,7 @@ ht-degree: 1%
 
 <b>&lt;access_token></b>
 
-访问令牌值是一个具有有限生存时间（例如，24小时）的不透明值，必须从Adobe Pass获取，如[检索访问令牌](../../../rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) API文档中所述。
+访问令牌值是一个具有有限生存时间（例如，24小时）的不透明值，必须从Adobe Pass获取，如[检索访问令牌](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) API文档中所述。
 
 ## 示例 {#examples}
 

@@ -2,7 +2,7 @@
 title: 程序员kickstart指南
 description: 程序员kickstart指南
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
-source-git-commit: 37858fa83aecbdf443a4a6058c78e4f9246eee42
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '758'
 ht-degree: 0%
@@ -15,17 +15,17 @@ ht-degree: 0%
 >
 > 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-本快速入门指南面向计划将Adobe®传递身份验证集成到其网站或应用程序中的内容提供商（程序员）。
+本快速入门指南面向计划将Adobe®传递身份验证集成到其网站或应用程序的内容提供商（程序员）。
 
 本文档概述了确保顺利高效地启动集成流程的关键初始步骤。 它旨在明确我们的期望，并为我们如何与合作伙伴协作以实现成功集成提供指导。
 
-Adobe提供了一系列资源，帮助您将Adobe Pass身份验证集成到网站或应用程序中。 请参阅&#x200B;**“您将提供”**&#x200B;和&#x200B;**“Adobe将提供”**&#x200B;提及内容（分别来自以下各节）。
+Adobe提供了一系列资源来帮助您将Adobe Pass身份验证集成到网站或应用程序中。 请参考&#x200B;**“您将提供”**&#x200B;和&#x200B;**“Adobe将提供”**&#x200B;以下各部分的提及内容。
 
 ## 设置过程 {#setup-process}
 
 设置过程涉及以下步骤：
 
-![Adobe®通过身份验证集成进程](../assets/progr-flow-int-lifecycle.png)
+![Adobe®通过身份验证集成进程](/help/authentication/assets/progr-flow-int-lifecycle.png)
 
 *Adobe®通过身份验证集成进程*
 
@@ -41,7 +41,7 @@ Adobe提供了一系列资源，帮助您将Adobe Pass身份验证集成到网�
 
 * **域名**
 
-  此列表将包含实际域名，这些域名将Adobe为表示服务提供商。 它可确保只有授权域才能使用您的元数据访问Adobe Pass身份验证。 请确保为生产和暂存（测试）环境提供并清楚地标识域名，因为这些域名可能不同。
+  此列表将包含列在Adobe中用于表示服务提供商的实际域名。 它可确保只有授权域才能使用您的元数据访问Adobe Pass身份验证。 请确保为生产和暂存（测试）环境提供并清楚地标识域名，因为这些域名可能不同。
 
 **您将通过MVPD提供**：
 
@@ -69,22 +69,22 @@ Adobe提供了一系列资源，帮助您将Adobe Pass身份验证集成到网�
 
 ## 访问客户支持 {#access-customer-support}
 
-**Adobe将通过[Zendesk](https://tve.zendesk.com/home)提供**&#x200B;访问我们的客户支持系统的权限。 要访问Zendesk，您必须在https://tve.zendesk.com/home上注册并创建一个帐户。 您可以注册的用户数量没有限制。 注册后，您可以查看和共享任何已提交票证的注释。
+**Adobe将通过** Zendesk[提供](https://tve.zendesk.com/home)访问我们的客户支持系统的权限。 要访问Zendesk，您必须在https://tve.zendesk.com/home上注册并创建一个帐户。 您可以注册的用户数量没有限制。 注册后，您可以查看和共享任何已提交票证的注释。
 
 Adobe Pass身份验证团队可以帮助您解决在集成过程中可能遇到的任何问题或技术问题。 请通过[tve-support@adobe.com](mailto:tve-support@adobe.com)联系我们。
 
 ## 文档访问权限 {#access-documentation}
 
-**Adobe将通过[Adobe Experience League](https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/home)提供**&#x200B;对公共文档的访问权限。
+**Adobe将通过** Adobe Experience League[提供](https://experienceleague.adobe.com/en/docs/pass/authentication/home)对公共文档的访问权限。
 
 Adobe Pass身份验证团队提供了[程序员集成指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)部分下可用功能和API的综合文档。 有关每个主题的详细信息的链接，请参阅本节下的目录。
 
 ## 访问测试工具 {#access-testing-tool}
 
-**Adobe将通过[Adobe Developer](https://developer.adobe.com/adobe-pass/)网站提供**&#x200B;对我们API探索工具的访问权限。
+**Adobe将通过** Adobe Developer[网站提供](https://developer.adobe.com/adobe-pass/)对我们API探索工具的访问权限。
 
 ## 访问配置管理工具 {#access-configuration-management-tool}
 
-**Adobe将通过[Adobe Pass TVE Dashboard](https://experience.adobe.com/pass/authentication)提供**&#x200B;访问自助服务工具的权限，以便管理您的配置和数据。
+**Adobe将提供**&#x200B;访问权限，以通过[Adobe Pass TVE Dashboard](https://experience.adobe.com/pass/authentication)管理您的配置和数据。
 
 Adobe Pass身份验证团队在[TVE仪表板用户指南](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)部分下提供了有关TVE仪表板用法的综合文档。 有关每个主题的详细信息的链接，请参阅本节下的目录。

@@ -2,7 +2,7 @@
 title: Android SDK指南
 description: Android SDK指南
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 79b3856e3ab2755cc95c3fcd34121171912a5273
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '1703'
 ht-degree: 0%
@@ -113,7 +113,7 @@ AccessEnabler的网络活动发生在不同的线程中，因此从不阻止UI�
      `authorizedResources`参数表示用户有权查看的资源。
 
 
-![](../../../../assets/android-entitlement-flows.png)
+![](/help//authentication/assets/android-entitlement-flows.png)
 
 
 ### B.启动流程 {#startup_flow}
@@ -158,7 +158,7 @@ Android Library (AccessEnabler)
 
 1. 通过上一步中实例化的WebView，用户登陆MVPD的登录页面并输入登录凭据。 在WebView中执行了若干重定向操作。
 
-   **注意：**&#x200B;此时，用户有机会取消身份验证流程。 如果发生这种情况，您的UI层将负责使用`null`作为参数调用`setSelectedProvider()`，以便向AccessEnabler通知此事件。 这允许AccessEnabler清理其内部状态并重置身份验证流程。
+   **注意：**&#x200B;此时，用户有机会取消身份验证流程。 如果发生这种情况，您的UI层将负责使用`setSelectedProvider()`作为参数调用`null`，以便向AccessEnabler通知此事件。 这允许AccessEnabler清理其内部状态并重置身份验证流程。
 
 1. 用户成功登录后，应用层将检测“自定义重定向URL”（即： `http://adobepass.android.app`）的加载。 此自定义URL实际上是一个无效URL，不适用于WebView加载。 它是身份验证流程已完成，并且需要关闭WebView的信号。
 

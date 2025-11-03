@@ -2,7 +2,7 @@
 title: 使用OAuth 2.0协议进行身份验证
 description: 使用OAuth 2.0协议进行身份验证
 exl-id: 0c1f04fe-51dc-4b4d-88e7-66e8f4609e02
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '1088'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-尽管SAML仍然是美国MVPD和一般企业用于身份验证的主要协议，但是向OAuth 2.0迁移作为主要身份验证协议的趋势是明显的。 OAuth 2.0协议(https://tools.ietf.org/html/rfc6749)主要针对消费者网站开发，并很快被Facebook、Google和Twitter等互联网巨头采用。
+尽管SAML仍然是美国MVPD和一般企业用于身份验证的主要协议，但是向OAuth 2.0迁移作为主要身份验证协议的趋势是明显的。 OAuth 2.0协议(https://tools.ietf.org/html/rfc6749)主要针对消费者网站开发，并很快被脸书、Google和推特等互联网巨头采用。
 
 OAuth 2.0非常成功，这促使企业缓慢地升级其基础架构以支持它。
 
@@ -39,21 +39,21 @@ OAuth 2.0非常成功，这促使企业缓慢地升级其基础架构以支持�
 
 要支持使用OAuth 2.0进行身份验证，MVPD需要满足以下先决条件：
 
-首先，MVPD必须确保它支持[授权代码授权](https://oauthlib.readthedocs.io/en/latest/oauth2/grants/authcode.html)流。
+首先，MVPD必须确保支持[授权代码授权](https://oauthlib.readthedocs.io/en/latest/oauth2/grants/authcode.html)流程。
 
-在确认它支持该流之后，MVPD必须向我们提供以下信息：
+在确认其支持流量后，MVPD必须向我们提供以下信息：
 
 * 身份验证端点
    * 该端点将提供授权代码，该代码稍后将用于交换刷新和访问令牌
 * /token端点
    * 这将提供刷新令牌和访问令牌
    * 刷新令牌需要稳定（每次我们请求新访问令牌时它不能更改）
-   * mvpd需要为每个刷新令牌允许多个活动访问令牌
+   * MVPD需要为每个刷新令牌允许多个活动访问令牌
    * 此端点还将交换访问令牌的刷新令牌
 * 我们需要用户配置文件&#x200B;**的**&#x200B;端点
    * 此端点将提供用户ID，该用户ID对于帐户必须是唯一的，并且不应包含任何个人身份信息
 * **/注销**&#x200B;端点（可选）
-   * Adobe Pass身份验证将重定向到此端点，向MVPD提供重定向后端URI；在此端点上，MVPD可以清除客户端计算机上的Cookie或应用任何所需的逻辑进行注销
+   * Adobe Pass身份验证将重定向到此端点，向MVPD提供重定向后URI；在此端点上，MVPD可以清除客户端计算机上的Cookie或应用任何所需的注销逻辑
 * 强烈建议支持授权的客户端（不会触发用户授权页面的客户端应用程序）
 * 我们还将需要：
    * 集成配置的&#x200B;**clientID**&#x200B;和&#x200B;**客户端密钥**
@@ -63,11 +63,11 @@ OAuth 2.0非常成功，这促使企业缓慢地升级其基础架构以支持�
 
 ## 身份验证流程 {#authn-flow}
 
-在身份验证流程中，Adobe Pass身份验证将以配置中选择的协议与MVPD进行通信。 下图描述了OAuth 2.0流程：
+在身份验证流程中，Adobe Pass身份验证将采用在配置中选择的协议与MVPD通信。 下图描述了OAuth 2.0流程：
 
 
 
-![在配置中所选协议上与MVPD通信的Adobe身份验证中显示身份验证流的图表。](../assets/authn-flow.png)
+![在配置中选择的协议上显示Adobe Authentication中与MVPD通信的身份验证流的图表。](/help/authentication/assets/authn-flow.png)
 
 **图1： OAuth 2.0身份验证流程**
 
@@ -78,7 +78,7 @@ OAuth 2.0非常成功，这促使企业缓慢地升级其基础架构以支持�
 简而言之，支持OAuth 2.0协议的MVPD的身份验证流程遵循以下步骤：
 
 1. 最终用户导航到程序员网站，并选择使用其MVPD凭据登录
-1. 安装在程序员端的AccessEnabler以HTTP请求的形式向Adobe Pass身份验证端点发送身份验证请求，Adobe Pass身份验证端点将重定向到MVPD授权端点。
+1. 安装在程序员端的AccessEnabler，会以HTTP请求的形式将身份验证请求发送到Adobe Pass身份验证端点，Adobe Pass身份验证端点会将它重定向到MVPD授权端点。
 1. MVPD授权端点向Adobe Pass身份验证端点发送授权代码
 1. Adobe Pass身份验证使用收到的授权代码从MVPD令牌端点请求刷新令牌和访问令牌
 1. 如果令牌中未包含用户信息，则可以将获取用户信息和元数据的调用发送到用户配置文件端点
@@ -95,7 +95,7 @@ OAuth 2.0非常成功，这促使企业缓慢地升级其基础架构以支持�
 
 此限制源于不允许服务器更新AuthNToken的客户端流，对于OAuth 2.0协议，该客户端流还包含刷新令牌。
 
-典型的授权流执行保存在AuthNToken中的刷新令牌的交换，以换取访问令牌，该访问令牌随后用于以在第一位置进行身份验证的用户的名义执行授权调用。 如果授权服务器(MVPD)更改刷新令牌并使旧令牌失效，我们将无法更新有效的AuthNToken。 因此，MVPD需要支持稳定的刷新令牌才能为其设置OAuth 2.0集成。
+典型的授权流执行保存在AuthNToken中的刷新令牌的交换，以换取访问令牌，该访问令牌随后用于以在第一位置进行身份验证的用户的名义执行授权调用。 如果授权服务器(MVPD)要更改刷新令牌并使旧令牌失效，我们将无法更新有效的AuthNToken。 因此，MVPD需要支持稳定的刷新令牌才能为其设置OAuth 2.0集成。
 
 
 ## 从SAML迁移到OAuth 2.0 {#saml-auth2-migr}
@@ -106,8 +106,8 @@ OAuth 2.0非常成功，这促使企业缓慢地升级其基础架构以支持�
 
 从技术角度来看：
 
-1. Adobe将启用程序员和MVPD之间的OAuth 2.0集成，而不删除SAML集成。
+1. Adobe将启用程序员与MVPD之间的OAuth 2.0集成，而不删除SAML集成。
 1. 启用后，所有新用户都将使用OAuth 2.0流。
 1. 经过身份验证的用户，如果已具有包含SAML主体ID的本地AuthN令牌，将由Adobe通过SAML集成自动路由。
-1. 对于步骤3中的用户，一旦其SAML生成的AuthN令牌过期，Adobe会将他们视为新用户，并且其行为与步骤2中的用户类似。
+1. 对于步骤3中的用户，一旦其SAML生成的AuthN令牌过期，Adobe会将他们视为新用户，其行为与步骤2中的用户类似。
 1. Adobe将审查使用模式，以确定何时可以安全停用SAML集成。

@@ -2,7 +2,7 @@
 title: REST API指南（服务器到服务器）
 description: Rest API指南服务器到服务器。
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '1856'
 ht-degree: 0%
@@ -48,7 +48,7 @@ Adobe Pass身份验证REST API受[限制机制](/help/authentication/integration
 ### 动态客户端注册(DCR)
 
 
-Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务之间的客户端通信。 DCR流程是独立的，在[Dynamic Client Registration Overview](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)文档中进行了说明。
+Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务之间的客户端通信。 DCR流程是独立的，在[Dynamic Client Registration Overview](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)文档中进行了说明。
 
 
 ### 身份验证(authN)
@@ -73,7 +73,7 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
 
 下图说明了身份验证流程：
 
-![](../../../../assets/authn-flow.png)
+![](/help//authentication/assets/authn-flow.png)
 
 ### 授权(authZ)
 
@@ -86,7 +86,7 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
 
 下图说明了授权流程：
 
-![](../../../../assets/authz-flow.png)
+![](/help//authentication/assets/authz-flow.png)
 
 ### 注销
 
@@ -98,7 +98,7 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
 
 下图说明了注销流程：
 
-![](../../../../assets/logout-flow.png)
+![](/help//authentication/assets/logout-flow.png)
 
 ### \[可选\]预授权（也称为预检）
 
@@ -114,7 +114,7 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
 
 下图说明了预授权流程：
 
-![](../../../../assets/preauthz-flow.png)
+![](/help//authentication/assets/preauthz-flow.png)
 
 
 ### \[Optional\]元数据
@@ -130,7 +130,7 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
 
 
 
-![](../../../../assets/user-metadata-api-preauthz.png)
+![](/help//authentication/assets/user-metadata-api-preauthz.png)
 
 
 
@@ -159,7 +159,7 @@ Adobe Pass服务运行于分布在美国各地的多个数据中心上。  为�
 
 ### 暂存
 
-暂存环境可以是最小的，但应包括所有系统组件和业务逻辑。 其功能应该与生产环境类似，并且允许在生产环境之外测试版本。 理想情况下，暂存环境可以连接到Adobe Pass测试环境以供程序员使用，并在需要时通过Adobe进行连接，以便我们协助测试和故障排除。
+暂存环境可以是最小的，但应包括所有系统组件和业务逻辑。 其功能应该与生产环境类似，并且允许在生产环境之外测试版本。 理想情况下，暂存环境可以连接到Adobe Pass测试环境以供程序员使用，并在需要时由Adobe使用，以便我们能够协助测试和故障排除。
 
 ### 功能要求
 
@@ -167,21 +167,21 @@ Adobe Pass服务运行于分布在美国各地的多个数据中心上。  为�
 
     **X-Forwarded-For ： \&lt;client\_ip\>**
     
-    其中\&lt;client\_ip\>是客户端的公共IP地址
+    其中\&lt;client\_ip\>是客户端公共IP地址
     
     
     
-    需要在&#x200B;**regcode**&#x200B;和&#x200B;**authorize**&#x200B;调用中添加标头
+    需要在**regcode**和**authorize**调用中添加标头
     
     示例：
     
-    POST/reggie/v1/{req\_id}/regcode HTTP/1.1
+    POST /reggie/v1/{req\_id}/regcode HTTP/1.1
     
     X-Forwarded-For：203.45.101.20
     
     
     
-    GET/api/v1/authorize HTTP X/1.1
+    GET /api/v1/authorize HTTP X/1.1
     
     X-Forwarded-For：203.45.101.20
 

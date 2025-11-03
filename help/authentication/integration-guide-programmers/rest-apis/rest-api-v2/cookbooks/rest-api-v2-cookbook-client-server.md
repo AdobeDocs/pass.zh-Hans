@@ -2,9 +2,9 @@
 title: REST API V2指南（客户端到服务器）
 description: REST API V2指南（客户端到服务器）
 exl-id: 6a5a89d2-ea54-4f9c-9505-e575ced4301c
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
-source-wordcount: '1846'
+source-wordcount: '1833'
 ht-degree: 0%
 
 ---
@@ -107,7 +107,7 @@ ht-degree: 0%
 * **方案2：**&#x200B;没有现有的配置文件，流应用程序可以继续执行下一步以[对用户进行身份验证](#step-3-authenticate-the-user)。
 
 
-* **方案3：**&#x200B;没有现有的配置文件，流应用程序可以继续通过[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)功能为用户提供临时访问权限。
+* **方案3：**&#x200B;没有现有的配置文件，流应用程序可以继续通过[TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)功能为用户提供临时访问权限。
 
    * 此方案超出了此文档的范围，有关详细信息，请参阅[临时访问流](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)文档。
 
@@ -132,11 +132,11 @@ ht-degree: 0%
 
 ### 步骤4：检查已验证的用户档案 {#step-4-check-for-authenticated-profiles}
 
-* **检索特定代码的配置文件：**&#x200B;流应用程序必须使用`code`实施轮询机制，以通过调用&#x200B;[**/api/v2/{serviceProvider}/profiles/code/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)&#x200B;终结点来检查是否成功生成并保存了配置文件。
+* **检索特定代码的配置文件：**&#x200B;流应用程序必须使用`code`实施轮询机制，以通过调用&#x200B;[**/api/v2/{serviceProvider}/profiles/code/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)终结点来检查是否成功生成并保存了配置文件。
 
    * 流应用程序必须在以下条件下&#x200B;**启动轮询**&#x200B;机制：
 
-      * **在主（屏幕）应用程序内执行的身份验证：**&#x200B;当浏览器组件加载[会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)终结点请求中为`redirectUrl`参数指定的URL后，主（流）应用程序应在用户到达最终目标页面时开始轮询。
+      * **在主（屏幕）应用程序内执行的身份验证：**&#x200B;当浏览器组件加载`redirectUrl`会话[终结点请求中为](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)参数指定的URL后，主（流）应用程序应在用户到达最终目标页面时开始轮询。
 
       * **在辅助（屏幕）应用程序内执行的身份验证：**&#x200B;主（流）应用程序应在用户启动身份验证过程后立即开始轮询 — 在收到[会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)终结点响应并向用户显示身份验证代码之后。
 
@@ -144,7 +144,7 @@ ht-degree: 0%
 
       * **身份验证成功：**&#x200B;已成功检索用户的配置文件信息，确认其身份验证状态。 此时，不再需要轮询。
 
-      * **身份验证会话和代码过期：**&#x200B;身份验证会话和代码过期，如[会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)终结点响应中的`notAfter`时间戳（如30分钟）所指示。 如果发生这种情况，用户必须重新启动身份验证过程，使用以前的身份验证代码的轮询应立即停止。
+      * **身份验证会话和代码过期：**&#x200B;身份验证会话和代码过期，如`notAfter`会话[终结点响应中的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)时间戳（如30分钟）所指示。 如果发生这种情况，用户必须重新启动身份验证过程，使用以前的身份验证代码的轮询应立即停止。
 
       * **生成的新身份验证代码：**&#x200B;如果用户请求在主（屏幕）设备上生成新的身份验证代码，则现有会话不再有效，使用以前的身份验证代码的轮询应立即停止。
 
@@ -182,11 +182,11 @@ ht-degree: 0%
 
 ### 步骤5：检查预授权的资源 {#step-5-check-for-preauthorized-resources}
 
-* **检索预授权决策：**&#x200B;流应用程序通过调用&#x200B;[**/api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)&#x200B;终结点来检索资源列表的预授权决策。
+* **检索预授权决策：**&#x200B;流应用程序通过调用&#x200B;[**/api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)终结点来检索资源列表的预授权决策。
 
    * 流应用程序不需要将预授权决策存储在永久存储中。 但是，建议将允许决策缓存到内存中以改进用户体验。 这有助于避免对已预授权的资源进行不必要的调用，从而减少延迟并提高性能。
 
-   * 流应用程序可以通过检查包含在来自Decisions Preauthorize端点的响应中的[错误代码和消息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)来确定拒绝预授权决策的原因。 这些详细信息可让您深入了解预授权请求被拒绝的具体原因，从而帮助告知用户体验或在应用程序中触发任何必要的处理。 请确保在预授权决策被拒绝时，为检索预授权决策而实施的任何重试机制都不会导致无限循环。 考虑将重试限制为合理数字，并通过向用户提供明确的反馈，谨慎处理拒绝请求。
+   * 流应用程序可以通过检查包含在来自Decisions Preauthorize端点的响应中的[错误代码和消息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)来确定拒绝预授权决策的原因。 这些详细信息可为insight提供预授权请求被拒绝的特定原因，帮助通知用户体验或在应用程序中触发任何必要的处理。 请确保在预授权决策被拒绝时，为检索预授权决策而实施的任何重试机制都不会导致无限循环。 考虑将重试限制为合理数字，并通过向用户提供明确的反馈，谨慎处理拒绝请求。
 
    * 由于MVPD施加的条件，流应用程序可以在单个API请求中获取对有限数量的资源的预授权决策，通常最多可达5个。 在通过Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)与MVPD达成一致后，您的组织管理员或代表您行事的Adobe Pass身份验证代表可以查看和更改资源的最大数量。
 
@@ -215,11 +215,11 @@ ht-degree: 0%
 
 ### 步骤6：检查授权资源 {#step-6-check-for-authorized-resources}
 
-* **检索授权决定：**&#x200B;流应用程序通过调用&#x200B;[**/api/v2/{serviceProvider}/decision/authorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)&#x200B;终结点检索特定资源的授权决定。
+* **检索授权决定：**&#x200B;流应用程序通过调用&#x200B;[**/api/v2/{serviceProvider}/decision/authorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)终结点检索特定资源的授权决定。
 
    * 不需要流式应用程序将授权决策存储在永久存储中。
 
-   * 流应用程序可以通过检查包含在来自Decisions Authorize端点的响应中的[错误代码和消息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)来确定拒绝授权决策的原因。 这些详细信息可让您深入了解授权请求被拒绝的具体原因，从而帮助告知用户体验或在应用程序中触发任何必要的处理。 请确保在授权决策被拒绝时，为检索授权决策而实施的任何重试机制都不会导致无限循环。 考虑将重试限制为合理数字，并通过向用户提供明确的反馈，谨慎处理拒绝请求。
+   * 流应用程序可以通过检查包含在来自Decisions Authorize端点的响应中的[错误代码和消息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)来确定拒绝授权决策的原因。 这些详细信息可为insight提供授权请求被拒绝的具体原因，有助于告知用户体验或在应用程序中触发任何必要的处理。 请确保在授权决策被拒绝时，为检索授权决策而实施的任何重试机制都不会导致无限循环。 考虑将重试限制为合理数字，并通过向用户提供明确的反馈，谨慎处理拒绝请求。
 
    * 当流正在主动播放时，不需要流应用程序刷新过期的媒体令牌。 如果媒体令牌在播放期间过期，则应该允许流继续而不会中断。 但是，下次用户尝试播放资源时，客户端必须请求新的授权决定，并获取新的媒体令牌。
 
@@ -249,7 +249,7 @@ ht-degree: 0%
 
 ### 步骤7：注销 {#step-7-logout}
 
-* **启动Adobe Pass注销：**&#x200B;流应用程序通过调用&#x200B;[**/api/v2/{serviceProvider}/logout/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)&#x200B;终结点来启动注销流程。
+* **启动Adobe Pass注销：**&#x200B;流应用程序通过调用&#x200B;[**/api/v2/{serviceProvider}/logout/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)终结点来启动注销流程。
 
    * 流应用程序必须按照注销终结点响应的`actionName`和`actionType`属性中提供的说明进行操作，以确保正确完成注销过程。
 

@@ -2,7 +2,7 @@
 title: Amazon FireOS集成指南
 description: Amazon FireOS集成指南
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '1447'
 ht-degree: 0%
@@ -30,7 +30,7 @@ ht-degree: 0%
 
 - UI域 — 这是上层应用程序层，它实现UI并使用`AccessEnabler`库提供的服务来提供对受限内容的访问权限。
 - `AccessEnabler`域 — 这是权利工作流的实施形式：
-   - 向Adobe后端服务器发出的网络调用
+   - 对Adobe后端服务器发出的网络调用
    - 与身份验证和授权工作流相关的业务逻辑规则
    - 管理各种资源和处理工作流状态（如令牌缓存）
 
@@ -107,7 +107,7 @@ ht-degree: 0%
       - `authorizedResources`参数表示用户有权查看的资源。
 
 
-![](../../../../assets/android-entitlement-flows.png)
+![](/help//authentication/assets/android-entitlement-flows.png)
 
 
 ### B.启动流程 {#startup_flow}

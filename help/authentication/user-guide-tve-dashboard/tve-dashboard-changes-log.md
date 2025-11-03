@@ -2,7 +2,7 @@
 title: 更改日志
 description: 了解管理员如何在TVE仪表板中监控配置更改。
 exl-id: 9b53a61b-679f-491e-90f3-5d827e21b32c
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '270'
 ht-degree: 0%
@@ -30,7 +30,7 @@ TVE仪表板的&#x200B;**更改日志**&#x200B;部分允许您查看通过TVE仪
 
 1. 从列表中选择要比较的两个配置更改。
 
-   ![比较配置更改](../assets/tve-dashboard/new-tve-dashboard/review/review-changes-compare-button.png)
+   ![比较配置更改](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-changes-compare-button.png)
 
    *比较配置更改*
 
@@ -42,12 +42,12 @@ TVE仪表板的&#x200B;**更改日志**&#x200B;部分允许您查看通过TVE仪
 
 1. 选择&#x200B;**视图**&#x200B;以访问更改的值。
 
-   ![查看配置更改](../assets/tve-dashboard/new-tve-dashboard/review/review-changes-view-button.png)
+   ![查看配置更改](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-changes-view-button.png)
 
    *查看配置更改*
 
 以下是在所选配置中所做更改的示例。 您可以在更改中查看新旧值之间的差异。
 
-![新旧值](../assets/tve-dashboard/new-tve-dashboard/review/review-change-modal-view.png)
+![新旧值](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-change-modal-view.png)
 
 *新旧值*
