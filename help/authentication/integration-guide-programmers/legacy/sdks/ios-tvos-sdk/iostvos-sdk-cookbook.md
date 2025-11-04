@@ -48,7 +48,7 @@ AccessEnabler的网络活动在其自己的线程中进行，因此从不阻止U
 
 ## 配置Experience Cloud ID服务（访客ID） {#visitorIDSetup}
 
-从[的角度来看，配置](https://experienceleague.adobe.com/docs/id-service/using/home.html)Experience Cloud ID[!DNL Analytics]值非常重要。 设置`visitorID`值后，SDK会随每个网络调用发送此信息，并且[!DNL Adobe Pass]身份验证服务器会收集此信息。 您可以将Adobe Pass身份验证服务中的分析与其他应用程序或网站中的任何其他分析报表相关联。 有关如何设置visitorID的信息可在[此处](#setOptions)找到。
+从[的角度来看，配置](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)Experience Cloud ID[!DNL Analytics]值非常重要。 设置`visitorID`值后，SDK会随每个网络调用发送此信息，并且[!DNL Adobe Pass]身份验证服务器会收集此信息。 您可以将Adobe Pass身份验证服务中的分析与其他应用程序或网站中的任何其他分析报表相关联。 有关如何设置visitorID的信息可在[此处](#setOptions)找到。
 
 ## 权利流 {#entitlement}
 
