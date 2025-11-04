@@ -21,7 +21,7 @@ Experience Cloud ID（简称ECID）是Adobe Experience Cloud为您应用程序/�
 
 如果您已具有提供访客ID的系统，则应该对此文档的范围使用同一ID。
 
-获取ECID的一种方法是使用Experience Cloud ID服务。 您可以使用基于TDM、JS库、服务器端、直接集成或移动设备平台本机库的首选实施类型。 要全面了解可用的服务、库、SDK和实施指南，请参阅：<https://experienceleague.adobe.com/docs/id-service/using/implementation/implementation-guides.html?lang=zh-Hans>
+获取ECID的一种方法是使用Experience Cloud ID服务。 您可以使用基于TDM、JS库、服务器端、直接集成或移动设备平台本机库的首选实施类型。 要全面了解可用的服务、库、SDK和实施指南，请参阅：<https://experienceleague.adobe.com/docs/id-service/using/implementation/implementation-guides.html>
 
 ## 在Adobe Pass身份验证中使用Experience Cloud ID有何好处？ {#benefit-ex-cloud-id}
 
