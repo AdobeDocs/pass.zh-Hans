@@ -132,7 +132,7 @@ H. [不带Apple SSO的注销流程](#logout_flow_wo_AppleSSO) </br>
 
    b.调用`setRequestor()`以建立程序员的身份；传入程序员的`requestorID`和（可选）Adobe Pass身份验证终结点数组。 对于tvOS，您还需要提供公钥和密钥。 有关详细信息，请参阅[无客户端文档](#create_dev)。
 
-   * **依赖项：**有效的Adobe Pass身份验证请求者ID (使用您的Adobe Pass身份验证帐户)
+   * **依赖项：**&#x200B;有效的Adobe Pass身份验证请求者ID (使用您的Adobe Pass身份验证帐户)
 经理安排此工作)。
 
    * **触发器：**

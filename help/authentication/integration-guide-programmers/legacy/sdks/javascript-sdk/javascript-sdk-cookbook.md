@@ -99,7 +99,7 @@ mvpds参数是用户可用的提供程序数组。
 
 **I.加载AccessEnabler JavaScript：**
 
-暂存配置文件的&#x200B;****
+暂存配置文件的&#x200B;**&#x200B;**
 
 ```JSON
 <script type="text/javascript"         
@@ -117,7 +117,7 @@ src="https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js">
 </script>"
 ```
 
-**触发器：**初始化完成后，Adobe Pass
+**触发器：**&#x200B;初始化完成后，Adobe Pass
 身份验证调用您的`entitlementLoaded()`回调函数。 这是应用程序与AccessEnabler通信的入口点。
 
 
@@ -169,7 +169,7 @@ src="https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js">
 使用媒体令牌验证器验证从成功的`getAuthorization()`调用返回的shortMediaToken。
 
 
-**依赖关系：**短媒体令牌验证器(包含在
+**依赖关系：**&#x200B;短媒体令牌验证器(包含在
 AccessEnabler库)
 
 - 如果验证通过：为用户显示/回放请求的媒体。
