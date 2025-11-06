@@ -322,7 +322,7 @@ ht-degree: 0%
 
 ### setAuthenticationStatus {#setAuthNStatus}
 
-**描述：**由Access Enabler触发的回调，它会通知
+**描述：**&#x200B;由Access Enabler触发的回调，它会通知
 身份验证流状态的应用。 有很多
 可能导致此流失败的位置，原因可能是用户的
 互动或由于其他不可预见的情况(即网络

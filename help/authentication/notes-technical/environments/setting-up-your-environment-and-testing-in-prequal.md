@@ -30,7 +30,7 @@ ht-degree: 0%
 
 * 要查找可用于欺骗的负载平衡器IP，请运行以下命令：
 
-* Windows上的&#x200B;****
+* Windows上的&#x200B;**&#x200B;**
 
   ```cmd
   C:\>nslookup sp-prequal.auth.adobe.com
@@ -51,7 +51,7 @@ Addresses:  52.26.79.43
 ```Choose any IP from **addresses** section (e.g. `54.190.212.171)```
 
 
-* 在Linux/Mac上&#x200B;****
+* 在Linux/Mac上&#x200B;**&#x200B;**
 
 ```sh
     $ dig sp-prequal.auth.adobe.com

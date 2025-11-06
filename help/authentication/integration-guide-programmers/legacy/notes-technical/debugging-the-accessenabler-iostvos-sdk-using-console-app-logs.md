@@ -59,7 +59,7 @@ AccessEnabler iOS/tvOS日志记录机制的目的是发出有用的消息，用�
 
 ![](../../../assets/subsys-console-app.png)
 
-* 使用包含&#x200B;****
+* 使用包含&#x200B;**&#x200B;**
   [AccessEnabler]值，如下图所示。
 
 ![](../../../assets/any-optn-console-app.png)

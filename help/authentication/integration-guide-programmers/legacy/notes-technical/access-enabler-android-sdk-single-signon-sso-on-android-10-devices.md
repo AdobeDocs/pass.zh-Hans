@@ -32,8 +32,8 @@ ht-degree: 0%
 根据您应用程序的&#x200B;**[!UICONTROL target SDK level]**&#x200B;或&#x200B;**android:requestLegacyExternalStorage**&#x200B;清单属性的使用情况，Access Enabler Android版本3.2.1 SDK（最新）和早期版本提供的单点登录(SSO)当前将按如下方式运行：
 
 - 您的应用程序目标&#x200B;**Android 9 （API级别28）**&#x200B;或更低的&#x200B;**-\>**&#x200B;单点登录(SSO) **将工作**
-- 应用程序以&#x200B;**Android 10** **（API级别29）**&#x200B;为目标，并&#x200B;**将**&#x200B;应用程序清单文件&#x200B;**-\>**&#x200B;单点登录(SSO) **中的** requestLegacyExternalStorage的值设置为true ****&#x200B;将起作用
-- 应用程序以&#x200B;**Android 10** **（API级别29）**&#x200B;为目标，并且&#x200B;**未将**&#x200B;应用程序清单文件&#x200B;**-\>**&#x200B;单点登录(SSO) **中的** requestLegacyExternalStorage的值设置为true ****&#x200B;将无法工作
+- 应用程序以&#x200B;**Android 10** **（API级别29）**&#x200B;为目标，并&#x200B;**将**&#x200B;应用程序清单文件&#x200B;**-\>**&#x200B;单点登录(SSO) **中的** requestLegacyExternalStorage的值设置为true **&#x200B;**&#x200B;将起作用
+- 应用程序以&#x200B;**Android 10** **（API级别29）**&#x200B;为目标，并且&#x200B;**未将**&#x200B;应用程序清单文件&#x200B;**-\>**&#x200B;单点登录(SSO) **中的** requestLegacyExternalStorage的值设置为true **&#x200B;**&#x200B;将无法工作
 
 >[!TIP]
 >
