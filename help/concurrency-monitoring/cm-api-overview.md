@@ -60,7 +60,7 @@ Adobe团队已为ID为&#x200B;**demo-app**&#x200B;的应用程序分配一项策
 
 无需在首次调用时提供任何终止代码，因为我们没有任何其他活动的流。 没有元数据属性，因为检索元数据调用未返回任何属性。
 
-**subject**&#x200B;和&#x200B;**idp**&#x200B;参数是必需的，它们将被指定为URI路径变量。 通过从Adobe Pass身份验证中调用&#x200B;**mvpd**&#x200B;和&#x200B;**upstreamUserID**&#x200B;元数据字段，可获取&#x200B;**subject**&#x200B;和&#x200B;**idp**&#x200B;参数。 另请参阅元数据API的[概述](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=en#)。 在本例中，我们将提供值“12345”作为主题，“adobe”作为idp。
+**subject**&#x200B;和&#x200B;**idp**&#x200B;参数是必需的，它们将被指定为URI路径变量。 通过从Adobe Pass身份验证中调用&#x200B;**mvpd**&#x200B;和&#x200B;**upstreamUserID**&#x200B;元数据字段，可获取&#x200B;**subject**&#x200B;和&#x200B;**idp**&#x200B;参数。 另请参阅元数据API的[概述](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=zh-Hans#)。 在本例中，我们将提供值“12345”作为主题，“adobe”作为idp。
 
 
 ![](assets/session-init-params-frstapp.png)

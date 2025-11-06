@@ -22,7 +22,7 @@ Harman维护Primetime广告和发布产品，而Adobe则管理Adobe Pass产品�
 
 | 指南 | 描述 |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------- |
-| [Primetime动态Ad Insertion](https://experienceleague.adobe.com/docs/primetime/ad-insertion/home.html) | Adobe Pass Ad Insertion帮助 |
+| [Primetime动态Ad Insertion](https://experienceleague.adobe.com/docs/primetime/ad-insertion/home.html?lang=zh-Hans) | Adobe Pass Ad Insertion帮助 |
 
 ## Adobe Pass Guides
 
