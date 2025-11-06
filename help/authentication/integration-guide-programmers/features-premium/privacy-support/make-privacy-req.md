@@ -239,7 +239,7 @@ Adobe Experience Platform Privacy Service为访问/删除请求和私人数据�
 **使用Postman（免费的第三方软件）可视化API调用：**
 
 * GitHub上的[Privacy Service API Postman收藏集](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
-* [用于创建Postman环境的视频指南](https://video.tv.adobe.com/v/28832)
+* [用于创建Postman环境的视频指南](https://video.tv.adobe.com/v/31668?captions=chi_hans)
 * [在Postman中导入环境和收藏集的步骤](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
 
