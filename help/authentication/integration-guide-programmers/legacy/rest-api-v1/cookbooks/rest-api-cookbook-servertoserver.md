@@ -171,7 +171,7 @@ Adobe Pass服务运行于分布在美国各地的多个数据中心上。  为�
     
     
     
-    需要在**regcode**和**authorize**调用中添加标头
+    需要在&#x200B;**regcode**&#x200B;和**authorize**&#x200B;调用中添加标头
     
     示例：
     

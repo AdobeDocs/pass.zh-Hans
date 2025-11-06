@@ -152,7 +152,7 @@ ht-degree: 0%
    - 已取消登录：重置MVPD选择
    - URL方案将建立为“adobepass://android.app”，以便在身份验证完成时捕获
 
-- e. get/checkAuthorization ： SDK将在标头中包含**access\_token**作为授权：持有者&#x200B;**access\_token**
+- e. get/checkAuthorization ： SDK将在标头中包含&#x200B;**access\_token**&#x200B;作为授权：持有者&#x200B;**access\_token**
 
 - 如果授权成功，将调用以获取媒体令牌
 
