@@ -82,11 +82,11 @@ ht-degree: 0%
 
 ### setRequestor {#setRequestor}
 
-**描述：**&#x200B;建立程序员的身份。 在为Adobe Pass身份验证系统注册Adobe时，每个程序员都会分配一个唯一的ID。 在处理SSO和远程令牌时，当应用程序处于后台时，身份验证状态可能会更改，当应用程序进入前台时，可以再次调用setRequestor以便与系统状态同步（如果启用了SSO，则获取远程令牌，如果同时发生注销，则删除本地令牌）。
+**描述：**&#x200B;建立程序员的身份。 在为Adobe Pass身份验证系统注册Adobe后，每个程序员都会分配一个唯一的ID。 在处理SSO和远程令牌时，当应用程序处于后台时，身份验证状态可能会更改，当应用程序进入前台时，可以再次调用setRequestor以便与系统状态同步（如果启用了SSO，则获取远程令牌，如果同时发生注销，则删除本地令牌）。
 
 服务器响应包含MVPD列表以及附加到程序员标识的一些配置信息。 服务器响应由访问启用码在内部使用。 通过setRequestorComplete()回调只向应用程序显示操作的状态（即SUCCESS/FAIL）。
 
-如果未使用&#x200B;*url*&#x200B;参数，则生成的网络调用将定向默认服务提供程序URL：Adobe版本/生产环境。
+如果未使用&#x200B;*url*&#x200B;参数，则生成的网络调用将定向默认服务提供程序URL： Adobe Release/Production环境。
 
 如果为&#x200B;*url*&#x200B;参数提供了值，则生成的网络调用将针对&#x200B;*url*&#x200B;参数中提供的所有URL。 所有配置请求都在单独的线程中同时触发。 在编译MVPD列表时，优先使用第一个响应程序。 对于列表中的每个MVPD， Access Enabler会记住关联服务提供商的URL。 所有后续权利请求都定向到与服务提供商关联的URL，该URL在配置阶段与目标MVPD配对。
 
@@ -105,11 +105,11 @@ ht-degree: 0%
 
 **参数：**
 
-- *requestorID*：与程序员关联的唯一ID。 首次向Adobe Pass身份验证服务注册时，将Adobe分配的唯一ID传递到您的网站。
+- *requestorID*：与程序员关联的唯一ID。 首次使用Adobe身份验证服务注册时，请将Adobe Pass分配的唯一ID传递到您的网站。
 
 - *signedRequestorID*：用您的私钥进行数字签名的请求者ID的副本。<!--For more details. see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->。
 
-- *url*：可选参数；默认情况下，使用Adobe服务提供程序(http://sp.auth.adobe.com/)。 此阵列允许您为Adobe提供的身份验证和授权服务指定端点（其他实例可能用于调试目的）。 您可以使用此选项指定多个Adobe Pass身份验证服务提供程序实例。 在执行此操作时，MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商相关联；即首先响应并支持该MVPD的提供商。
+- *url*：可选参数；默认情况下，使用Adobe服务提供程序(http://sp.auth.adobe.com/)。 此阵列允许您为Adobe提供的身份验证和授权服务指定端点（不同的实例可用于调试目的）。 您可以使用此选项指定多个Adobe Pass身份验证服务提供程序实例。 在执行此操作时，MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商相关联；即首先响应并支持该MVPD的提供商。
 
 已触发&#x200B;**回调：** `setRequestorComplete()`
 
@@ -161,7 +161,7 @@ ht-degree: 0%
 
 - *选项*：包含全局SDK选项的Map&lt;字符串，字符串>。 目前，以下选项可用：
    - **applicationProfile** — 可用于根据此值生成服务器配置。
-   - **ap_vi** -Experience CloudID (visitorID)。 此值以后可用于高级分析报表。
+   - **ap_vi** - Experience Cloud ID (visitorID)。 此值以后可用于高级分析报表。
    - **ap_ai** - Advertising ID
    - **device_info** — 客户端信息，如下所述： [传递客户端信息设备连接和应用程序](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)。
 
@@ -259,7 +259,7 @@ ht-degree: 0%
 
 请注意，这不适用于提升临时传递，因为getAuthentication()方法提供了额外的参数。
 
-将&#x200B;*null*&#x200B;作为参数传递时，Access Enabler假定用户已取消身份验证流程（即按“返回”按钮），并通过重置身份验证状态计算机和使用`AccessEnablerConstants.PROVIDER_NOT_SELECTED_ERROR`错误代码调用&#x200B;*setAuthenticationStatus()*&#x200B;回调进行响应。
+将&#x200B;*null*&#x200B;作为参数传递时，Access Enabler假定用户已取消身份验证流程（即按“返回”按钮），并通过重置身份验证状态计算机和使用&#x200B;*错误代码调用* setAuthenticationStatus()`AccessEnablerConstants.PROVIDER_NOT_SELECTED_ERROR`回调进行响应。
 
 | API调用：设置当前选定的提供程序 |
 | --- |
@@ -322,7 +322,7 @@ ht-degree: 0%
 
 ### setAuthenticationStatus {#setAuthNStatus}
 
-**描述：**&#x200B;由Access Enabler触发的回调，它会通知
+**描述：**由Access Enabler触发的回调，它会通知
 身份验证流状态的应用。 有很多
 可能导致此流失败的位置，原因可能是用户的
 互动或由于其他不可预见的情况(即网络
@@ -706,7 +706,7 @@ Access Enabler会触发一个附加回调，该回调不一定与权利文件流
 
 >[!WARNING]
 >
-> 设备类型和操作系统是通过使用公共Java库([http://java.net/projects/user-agent-utils](http://java.net/projects/user-agent-utils))和用户代理字符串派生的。 请注意，此信息仅以粗略的方式提供，用于按设备类别细分操作量度，但该Adobe对错误结果不承担任何责任。 请相应地使用新功能。
+> 设备类型和操作系统是通过使用公共Java库([http://java.net/projects/user-agent-utils](http://java.net/projects/user-agent-utils))和用户代理字符串派生的。 请注意，此信息仅以粗略的方式提供，用于按设备类别细分操作量度，但Adobe对错误结果不承担任何责任。 请相应地使用新功能。
 
 
 - 设备类型的可能值：

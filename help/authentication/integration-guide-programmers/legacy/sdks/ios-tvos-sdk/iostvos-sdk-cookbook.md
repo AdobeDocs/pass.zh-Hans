@@ -2,7 +2,7 @@
 title: iOS/tvOS指南
 description: iOS/tvOS指南
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '2424'
 ht-degree: 0%
@@ -48,7 +48,7 @@ AccessEnabler的网络活动在其自己的线程中进行，因此从不阻止U
 
 ## 配置Experience Cloud ID服务（访客ID） {#visitorIDSetup}
 
-从[的角度来看，配置](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)Experience Cloud ID[!DNL Analytics]值非常重要。 设置`visitorID`值后，SDK会随每个网络调用发送此信息，并且[!DNL Adobe Pass]身份验证服务器会收集此信息。 您可以将Adobe Pass身份验证服务中的分析与其他应用程序或网站中的任何其他分析报表相关联。 有关如何设置visitorID的信息可在[此处](#setOptions)找到。
+从[的角度来看，配置](https://experienceleague.adobe.com/docs/id-service/using/home.html)Experience Cloud ID[!DNL Analytics]值非常重要。 设置`visitorID`值后，SDK会随每个网络调用发送此信息，并且[!DNL Adobe Pass]身份验证服务器会收集此信息。 您可以将Adobe Pass身份验证服务中的分析与其他应用程序或网站中的任何其他分析报表相关联。 有关如何设置visitorID的信息可在[此处](#setOptions)找到。
 
 ## 权利流 {#entitlement}
 
@@ -120,7 +120,7 @@ H. [不带Apple SSO的注销流程](#logout_flow_wo_AppleSSO) </br>
       * 由用户操作触发(通过从Apple SSO对话框中选择“取消”或“其他电视提供商”)。
       * viewController参数是Apple SSO对话框，需要从主视图控制器中取消。
 
-![](/help//authentication/assets/iOS-flows.png)
+![](../../../../assets/iOS-flows.png)
 
 ### B.启动流程 {#startup_flow}
 
@@ -132,7 +132,7 @@ H. [不带Apple SSO的注销流程](#logout_flow_wo_AppleSSO) </br>
 
    b.调用`setRequestor()`以建立程序员的身份；传入程序员的`requestorID`和（可选）Adobe Pass身份验证终结点数组。 对于tvOS，您还需要提供公钥和密钥。 有关详细信息，请参阅[无客户端文档](#create_dev)。
 
-   * **依赖项：**&#x200B;有效的Adobe Pass身份验证请求者ID (使用您的Adobe Pass身份验证帐户)
+   * **依赖项：**有效的Adobe Pass身份验证请求者ID (使用您的Adobe Pass身份验证帐户)
 经理安排此工作)。
 
    * **触发器：**

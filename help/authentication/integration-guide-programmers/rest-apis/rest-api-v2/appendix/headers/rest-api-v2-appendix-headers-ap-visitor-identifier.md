@@ -2,7 +2,7 @@
 title: 标头 — AP-Visitor-Identifier
 description: REST API V2 — 标头 — AP-Visitor-Identifier
 exl-id: 216f398b-1cfa-4453-a81d-963675b33ec2
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: 7d19319d83af0122624ab3b80b1f31fc0cbbf182
 workflow-type: tm+mt
 source-wordcount: '91'
 ht-degree: 2%
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 <b>AP-Visitor-Identifier</b>请求标头包含客户端应用程序在所有Adobe Experience Cloud解决方案中唯一标识访客所需的`ECID`。
 
-有关在Adobe Pass身份验证中使用ECID的更多详细信息，请参阅[在Adobe Pass身份验证中使用Experience Cloud ID](/help/authentication/integration-guide-programmers/features-standard/analytics/exp-cloud-id-authn.md)文档。
+有关在Adobe Pass身份验证中使用ECID的更多详细信息，请参阅[在Adobe Pass身份验证中使用Experience Cloud ID](../../../../features-premium/analytics/exp-cloud-id-authn.md)文档。
 
 ## 语法 {#syntax}
 

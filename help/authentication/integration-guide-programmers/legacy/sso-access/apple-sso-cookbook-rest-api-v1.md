@@ -2,7 +2,7 @@
 title: Apple SSO指南(REST API V1)
 description: Apple SSO指南(REST API V1)
 exl-id: 072a011f-e1bb-4d3e-bcb5-697f2d1739cc
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '1496'
 ht-degree: 0%
@@ -55,7 +55,7 @@ Adobe Pass身份验证REST API V1支持在iOS、iPadOS或tvOS上运行的客户�
 * [启动常规身份验证工作流](#step10)
 * [继续授权流程](#step11)
 
-![](/help/authentication/assets/rest-api-v1/apple-sso-cookbook-rest-api-v1.png)
+![](../../../assets/rest-api-v1/apple-sso-cookbook-rest-api-v1.png)
 
 #### 步骤：“是否存在有效的Adobe身份验证令牌？” {#step1}
 

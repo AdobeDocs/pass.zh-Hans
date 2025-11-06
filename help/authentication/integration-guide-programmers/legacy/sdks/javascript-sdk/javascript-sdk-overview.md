@@ -41,7 +41,7 @@ Adobe Pass Authentication JavaScript集成在熟悉的JS Web应用程序开发�
 
 以下代码示例演示了如何发现和显示当前客户的服务提供商：
 
-**HTML** — 此页面向显示客户选择的提供商的页面添加了一个部分（如果客户已登录）：
+**HTML** — 此页面在显示客户选择的提供商的页面中添加了一个部分（如果客户已登录）：
 
 ```HTML
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
@@ -55,7 +55,7 @@ Adobe Pass Authentication JavaScript集成在熟悉的JS Web应用程序开发�
     </head>
     <body>
         <div id="alternative">
-        <a href="http://www.adobe.com/go/getflashplayer_cn"> 
+        <a href="http://www.adobe.com/go/getflashplayer"> 
             <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" 
                  alt="Get Adobe Flash player"/> </a>
         </div> 

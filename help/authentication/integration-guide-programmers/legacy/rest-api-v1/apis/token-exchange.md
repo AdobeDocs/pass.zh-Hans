@@ -1,6 +1,6 @@
 ---
-title: 交换Adobe令牌的平台SSO令牌
-description: 交换Adobe令牌的平台SSO令牌
+title: 用Platform SSO令牌交换Adobe令牌
+description: 用Platform SSO令牌交换Adobe令牌
 exl-id: 5ab60268-8f97-4755-8281-be45e812ed7f
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# （旧版）为Adobe令牌交换平台SSO令牌 {#exchange-a-platform-sso-token-for-an-adobe-token}
+# （旧版）用Adobe令牌交换平台SSO令牌 {#exchange-a-platform-sso-token-for-an-adobe-token}
 
 >[!NOTE]
 >

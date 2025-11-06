@@ -27,13 +27,13 @@ ht-degree: 0%
 
 ## 高级体系结构和操作系统级别的集成 {#high}
 
-为了在Amazon fireTV平台上实现TV Everywhere应用程序之间的单点登录，并提高该平台的整体体验，我们决定在fireTV OS级别集成我们的核心SDK。 程序员需要根据Adobe提供的存根库进行编译。 Amazon的fireTV操作系统中的Adobe库将提供实际功能。
+为了在Amazon fireTV平台上实现TV Everywhere应用程序之间的单点登录，并提高该平台的整体体验，我们决定在fireTV OS级别集成我们的核心SDK。 程序员需要根据Adobe提供的存根库进行编译。 Adobe的库将在Amazon的fireTV OS中提供实际功能。
 
 在Amazon提供fireTV模拟器、在操作系统级别将我们的库结合起来之前，只能使用真实的fireTV设备进行开发。
 
 ## 优点 {#bene}
 
-* Amazon fireTV平台上的所有Adobe支持TV Everywhere应用程序与所有集成MVPD之间的单点登录。
+* 在Amazon fireTV平台上由所有Adobe支持的TV Everywhere应用程序与所有集成的MVPD之间进行单点登录。
 * 能够从HBA中获益（具有受支持的MVPD）。
 * 能够使用最新的fireTV SDK，而无需在每次发布新SDK版本时更新您的应用程序。
 * 所有TVE应用程序都可以通过使用共享系统库受益，因为无需拥有AccessEnabler库的本地副本。 这还可以确保所有应用程序都使用相同的SDK版本。

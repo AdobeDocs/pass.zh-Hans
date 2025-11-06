@@ -22,11 +22,11 @@ Harman维护Primetime广告和发布产品，而Adobe则管理Adobe Pass产品�
 
 | 指南 | 描述 |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------- |
-| [Primetime动态Ad Insertion](https://experienceleague.adobe.com/docs/primetime/ad-insertion/home.html?lang=zh-Hans) | Adobe Pass Ad Insertion帮助 |
+| [Primetime动态Ad Insertion](https://experienceleague.adobe.com/docs/primetime/ad-insertion/home.html) | Adobe Pass Ad Insertion帮助 |
 
 ## Adobe Pass Guides
 
 | 指南 | 描述 |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Adobe Pass身份验证](/help/authentication/home.md) | Adobe Pass Authentication 是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。 |
+| [Adobe Pass身份验证](/help/authentication/home.md) | Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。 |
 | [Adobe Pass并发监控](/help/concurrency-monitoring/cm-home.md) | 了解如何定义并在多个应用程序上施加并发使用限制。 |

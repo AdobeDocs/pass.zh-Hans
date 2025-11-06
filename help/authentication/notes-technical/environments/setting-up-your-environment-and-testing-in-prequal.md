@@ -4,7 +4,7 @@ description: 在资格预审中设置环境和测试
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
 source-git-commit: ca95bc45027410becf8987154c7c9f8bb8c2d5f8
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '476'
 ht-degree: 0%
 
 ---
@@ -13,24 +13,24 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此 API 需要 Adobe 的最新许可证。 不得未经授权使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-本技术说明旨在帮助我们的合作伙伴设置其环境并开始测试在 Adobe 资格预审环境中部署的新版本。
+本技术说明旨在帮助我们的合作伙伴设置其环境，并开始测试在Adobe资格预审环境中部署的新内部版本。
 
-由于有两种构建风格：生产和&#x200B;**&#x200B;**&#x200B;**&#x200B;暂存&#x200B;***，***&#x200B;因此在本文档中，我们将重点介绍生产设置，并提到暂存的所有步骤都是相同的，只是 URL 不同。
+由于存在两种生成风格： ***生产***&#x200B;和&#x200B;***暂存***，在本文档中，我们将重点介绍生产设置，并提及所有步骤对于暂存都是相同的，只有URL不同。
 
-步骤1和2是在其中一台测试机器上设置测试环境，步骤3是对基本流程的验证，步骤4和5提供了一些测试指南。
+步骤1和2是在其中一台测试计算机上设置测试环境，步骤3是对基本流程的验证，步骤4和5介绍了一些测试准则。
 
 >[!IMPORTANT]
 >
-> 每次要更改测试环境（从暂存配置文件切换到生产配置文件或相反）时，执行步骤 1 和 2 非常重要
+> 每次要更改测试环境（从暂存切换到生产配置文件或其他方式）时执行步骤1和2非常重要
 
 
 ## 步骤1. 将传递域解析为IP {#resolving-pass-domain-to-an-ip}
 
 * 要查找可用于欺骗的负载平衡器IP，请运行以下命令：
 
-* Windows上的&#x200B;**&#x200B;**
+* Windows上的&#x200B;****
 
   ```cmd
   C:\>nslookup sp-prequal.auth.adobe.com
@@ -51,7 +51,7 @@ Addresses:  52.26.79.43
 ```Choose any IP from **addresses** section (e.g. `54.190.212.171)```
 
 
-* **在 Linux/Mac 上**
+* 在Linux/Mac上&#x200B;****
 
 ```sh
     $ dig sp-prequal.auth.adobe.com
@@ -77,18 +77,18 @@ Addresses:  52.26.79.43
 
 >[!NOTE]
 >
->从答案中排除的域，因为它们不相关，并且可能因用户而异。
+>从应答中排除的域与此无关，并且可能因用户而异。
 
 >[!IMPORTANT]
 >
-> 这些 IP 地址将来可能会更改，对于不同地理区域的用户，它们可能并不相同。
+> 这些IP地址在未来可能会发生更改，并且对于不同地理区域的用户来说，它们可能会不同。
 
 
-## 第 2 步。  欺骗资格预审环境以进行生产 {#spoofing-the-prequalification-environment}
+## 步骤2.  伪造要生产的预鉴定环境 {#spoofing-the-prequalification-environment}
 
-* *编辑 c：\\windows\\System32\\drivers\\etc\\hosts* 文件（在 Windows 中）或 */etc/hosts* 文件（在 Macintosh/Linux/Android 上），然后添加以下内容：
+* 编辑&#x200B;*c：\\windows\\System32\\drivers\\etc\\hosts*&#x200B;文件（在Windows中）或&#x200B;*/etc/hosts*&#x200B;文件(在Macintosh/Linux/Android上)并添加以下内容：
 
-* 恶搞制作配置文件
+* 伪造生产配置文件
    * 52.13.71.11 sp.auth.adobe.com api.auth.adobe.com
    * 54.190.212.171 entitlement.auth.adobe.com
 
@@ -97,18 +97,18 @@ Addresses:  52.26.79.43
 * 一旦设置好欺骗，您只需将常规URL用于生产和暂存配置文件即可： (即`http://sp.auth-staging.adobe.com`和`http://entitlement.auth-staging.adobe.com`，您实际上将点击*新内部版本的&#x200B;*资格预审环境/生产*。
 
 
-## 步骤3.  验证您指向的是正确的环境 {#Verify-you-are-pointing-to-the-right-environment}
+## 步骤3.  验证您是否指向正确的环境 {#Verify-you-are-pointing-to-the-right-environment}
 
 **这是一个简单的步骤：**
 
-* 加载[权利 环境和](https://entitlement-prequal.auth.adobe.com/environment.html) [权利](https://entitlement.auth.adobe.com/environment.html)。它们应返回相同的响应。
+* 加载[授权前置环境](https://entitlement-prequal.auth.adobe.com/environment.html)和[授权](https://entitlement.auth.adobe.com/environment.html)。 它们应返回相同的响应。
 
 
-## 步骤 4.  使用程序员的网站执行简单的身份验证/授权流程 {#peform-a-simple-auth-flow}
+## 步骤4.  使用程序员的网站执行简单的身份验证/授权流程 {#peform-a-simple-auth-flow}
 
-* 此步骤需要程序员的网站地址和一些有效的 MVPD 凭据（经过身份验证和授权的用户）。
+* 此步骤需要程序员的网站地址和一些有效的MVPD凭据（经过身份验证和授权的用户）。
 
-## 步骤 5.  使用程序员的网站执行场景测试 {#perform-scenario-testing-using-programmer-website}
+## 步骤5.  使用程序员的网站执行场景测试 {#perform-scenario-testing-using-programmer-website}
 
 * 完成环境设置并确保基本身份验证授权流程正常工作后，您可以继续测试更复杂的场景。
 
@@ -117,4 +117,4 @@ Addresses:  52.26.79.43
 
 * 如果您想更深入地测试Adobe Pass身份验证，我们建议您使用[API测试站点](http://entitlement-prequal.auth.adobe.com/apitest/api.html)。
 
-您可以在如何使用 Adobe 的 API 测试站点[&#128279;](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)测试身份验证和授权流中找到有关 API 测试站点的更多详细信息。
+您可以在[找到有关API测试站点的更多详细信息。如何使用Adobe的API测试站点](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)测试身份验证和授权流。

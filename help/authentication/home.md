@@ -4,7 +4,7 @@ description: 欢迎使用Adobe&amp；reg；通过身份验证
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
 source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
 workflow-type: tm+mt
-source-wordcount: '419'
+source-wordcount: '414'
 ht-degree: 0%
 
 ---
@@ -23,12 +23,12 @@ Adobe Pass身份验证是TV Everywhere (TVE)的强大权利解决方案，旨在
 
 作为SaaS (Software as a Service)解决方案，Adobe Pass身份验证可加快产品上市速度、降低欺诈风险，并实现无缝的跨平台内容访问，从而确保适当的查看者能够轻松地接收适当的内容。
 
-## ??社区和更新
+## 📢社区和更新
 
 * [产品公告](/help/authentication/product-announcements.md)\
   及时了解最新的Adobe Pass身份验证产品公告和停产时间表。
 
-## ❓支持和故障排除
+## ❓支持和疑难解答
 
 * [Zendesk客户支持门户](https://tve.zendesk.com/home)\
   登录以访问票证、提交查询或查看知识库。
@@ -42,7 +42,7 @@ Adobe Pass身份验证是TV Everywhere (TVE)的强大权利解决方案，旨在
 * [REST API V2常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md)\
   有关Adobe Pass身份验证REST API V2的常见问题。
 
-## ??文档
+## 📄文档
 
 程序员&#x200B;**：**
 
@@ -62,7 +62,7 @@ MVPD的&#x200B;**：**
 
 *使用页面顶部的搜索栏搜索特定主题，或通过左侧菜单导航。*
 
-## ??️工具和库
+## 🛠️工具和库
 
 * [Adobe Developer网站](https://developer.adobe.com/adobe-pass/)\
   访问Adobe Developer网站以试用Adobe Pass身份验证REST API。
@@ -70,7 +70,7 @@ MVPD的&#x200B;**：**
 * [媒体令牌验证器](https://tve.zendesk.com/hc/en-us/articles/204963159-Media-Token-Verifier-library)\
   集成用于验证Adobe Pass身份验证生成的媒体令牌的库。
 
-## ??联系人
+## 📧联系人
 
 * [联系Adobe支持](mailto:tve-support@adobe.com)\
   如需其他帮助或业务咨询，请发送电子邮件至Adobe支持团队。

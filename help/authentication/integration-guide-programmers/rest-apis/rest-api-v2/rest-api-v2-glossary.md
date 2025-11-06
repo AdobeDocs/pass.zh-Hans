@@ -2,7 +2,7 @@
 title: REST API V2术语表
 description: REST API V2术语表
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '1742'
 ht-degree: 0%
@@ -63,7 +63,7 @@ ht-degree: 0%
 
 降级是一种Adobe Pass身份验证功能，它允许用户访问受保护的内容，即使其[MVPD](#mvpd)遇到服务中断也是如此。
 
-有关详细信息，请参阅[降级功能](/help/premium-workflow/degraded-access/degradation-feature.md)文档。
+有关详细信息，请参阅[降级功能](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)文档。
 
 #### 设备ID {#device-id}
 
@@ -229,13 +229,13 @@ The Programmer是一家通过各种平台拥有的渠道（品牌）向消费者
 
 基本的TempPass是Adobe Pass身份验证功能，它允许用户在有限的时间内访问受保护的内容，而无需使用[MVPD](#mvpd)进行身份验证。
 
-有关详细信息，请参阅[基本TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md#basic-temp-pass)文档。
+有关详细信息，请参阅[基本TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#basic-temp-pass)文档。
 
 #### TempPass提升 {#temp-pass-promotional}
 
 提升TempPass是一种Adobe Pass身份验证功能，它允许用户在最大数量的资源和有限的时间内访问受保护的内容，而无需使用[MVPD](#mvpd)进行身份验证。
 
-有关详细信息，请参阅[促销临时传递](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)文档。
+有关详细信息，请参阅[促销临时传递](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)文档。
 
 #### TTL {#ttl}
 

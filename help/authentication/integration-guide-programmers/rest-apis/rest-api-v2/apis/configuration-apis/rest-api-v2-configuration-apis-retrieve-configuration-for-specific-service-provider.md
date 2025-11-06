@@ -2,7 +2,7 @@
 title: 检索特定服务提供商的配置
 description: REST API V2 — 检索特定服务提供商的配置
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: 1c96904f67507ad127c29628963d74a9fb010e99
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
 source-wordcount: '728'
 ht-degree: 2%
@@ -229,7 +229,7 @@ ht-degree: 2%
                         <li><b>id</b><br/>在登录过程中与身份提供程序关联的内部唯一标识符。</li>
                         <li><b>displayName</b><br/>新用户引导过程中与身份提供程序关联的商业（品牌）名称。</li>
                         <li><b>logoUrl</b><br>用于下载与身份提供程序关联的徽标的URL。</li>
-                        <li><b>isTempPass</b><br/>用于指定MVPD是否旨在提供<a href="/help/premium-workflow/temporary-access/temp-pass-feature.md">TempPass</a>功能功能的标志。</li>
+                        <li><b>isTempPass</b><br/>用于指定MVPD是否旨在提供<a href="../../../../features-premium/temporary-access/temp-pass-feature.md">TempPass</a>功能功能的标志。</li>
                         <li><b>isProxy</b><br/>指定MVPD是否为代理的MVPD的标志。</li>
                         <li><b>boardingStatus</b><br/>指定流设备平台是否已为单一登录流载入身份提供程序的状态。</li>
                         <li><b>platformMappingId</b><br/>流式设备平台与单一登录流标识提供程序关联的内部唯一标识符。</li>

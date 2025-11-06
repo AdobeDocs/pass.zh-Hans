@@ -2,7 +2,7 @@
 title: 报告
 description: 了解如何在TVE功能板报表中聚合数据。
 exl-id: d8ba48de-d743-4dc2-866c-7d6e3ff94773
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 0%
@@ -29,7 +29,7 @@ TVE仪表板的&#x200B;**报表**&#x200B;部分提供对AuthN TTL、AuthZ TTL和
    * [AuthZ TTL报表](#authz-ttl-reports)
    * [SSO报告](#sso-reports)
 
-   ![报告类型](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-tabs-view.png)
+   ![报告类型](../assets/tve-dashboard/new-tve-dashboard/reports/reports-tabs-view.png)
 
    *报告类型*
 
@@ -39,7 +39,7 @@ AuthN TTL报告(也称为身份验证生存时间(TTL))显示了在所有[平台
 
 您还可以查看和下载[特定渠道或MVPD](#selecting-specific-channels-mvpds)的数据。
 
-![导出AuthN TTL报告](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-authn-ttl-export-button.png)
+![导出AuthN TTL报告](../assets/tve-dashboard/new-tve-dashboard/reports/reports-authn-ttl-export-button.png)
 
 *导出AuthN TTL报告*
 
@@ -55,7 +55,7 @@ AuthZ TTL报告(也称为授权生存时间(TTL))显示为渠道与所有[平台
 
 您还可以查看和下载[特定渠道或MVPD](#selecting-specific-channels-mvpds)的数据。
 
-![导出AuthZ TTL报告](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-authz-ttl-export-button.png)
+![导出AuthZ TTL报告](../assets/tve-dashboard/new-tve-dashboard/reports/reports-authz-ttl-export-button.png)
 
 *导出AuthZ TTL报告*
 
@@ -71,7 +71,7 @@ SSO报告（也称为单点登录）显示为您的渠道与所有[平台](#plat
 
 您还可以查看和下载[特定渠道或MVPD](#selecting-specific-channels-mvpds)的数据。
 
-![导出SSO报告](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-sso-export-button.png)
+![导出SSO报告](../assets/tve-dashboard/new-tve-dashboard/reports/reports-sso-export-button.png)
 
 *导出SSO报告*
 
@@ -129,7 +129,7 @@ SSO报告（也称为单点登录）显示为您的渠道与所有[平台](#plat
 
 1. 选择位于所选报告顶部的&#x200B;**包含的渠道**&#x200B;下拉菜单。
 
-   ![包含的渠道下拉菜单](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-included-channels-menu.png)
+   ![包含的渠道下拉菜单](../assets/tve-dashboard/new-tve-dashboard/reports/reports-included-channels-menu.png)
 
    *包含的渠道下拉菜单*
 
@@ -145,7 +145,7 @@ SSO报告（也称为单点登录）显示为您的渠道与所有[平台](#plat
 
 1. 选择位于所选报告顶部的&#x200B;**包含的MVPD**&#x200B;下拉菜单。
 
-   ![包含的MVPD下拉菜单](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-included-mvpds-menu.png)
+   ![包含的MVPD下拉菜单](../assets/tve-dashboard/new-tve-dashboard/reports/reports-included-mvpds-menu.png)
 
    *包含的MVPD下拉菜单*
 

@@ -4,7 +4,7 @@ description: 错误报告
 exl-id: a52bd2cf-c712-40a2-a25e-7d9560b46ba6
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '3012'
+source-wordcount: '3011'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 Adobe Pass身份验证中的错误报告当前通过两种不同的方式实现：
 
-* **高级错误报告**&#x200B;为接收高级错误报告，实施者在[AccessEnabler JavaScript SDK](#accessenabler-javascript-sdk)中注册错误回调，或者在[AccessEnabler iOS/tvOS SDK](#accessenabler-ios-tvos-sdk)和[AccessEnabler Android SDK](#accessenabler-android-sdk)中实施名为“`status`”的接口方法。 错误分为&#x200B;**信息**、**警告**&#x200B;和&#x200B;**错误**&#x200B;类型。 此报表系统是&#x200B;**异步**，因为&#x200B;**无法保证触发多个错误的顺序**。  有关高级错误报告系统的详细信息，请参阅[高级错误报告](#advanced-error-reporting)部分。
+* **高级错误报告**&#x200B;为接收高级错误报告，实施者在[AccessEnabler JavaScript SDK](#accessenabler-javascript-sdk)中注册错误回调，或者在`status`AccessEnabler iOS/tvOS SDK[和](#accessenabler-ios-tvos-sdk)AccessEnabler Android SDK[中实施名为“](#accessenabler-android-sdk)”的接口方法。 错误分为&#x200B;**信息**、**警告**&#x200B;和&#x200B;**错误**&#x200B;类型。 此报表系统是&#x200B;**异步**，因为&#x200B;**无法保证触发多个错误的顺序**。  有关高级错误报告系统的详细信息，请参阅[高级错误报告](#advanced-error-reporting)部分。
 
 * **原始错误报告 —**&#x200B;静态报告系统，当特定请求失败时，错误消息将传递到特定回调函数。 错误分为通用、身份验证和授权类型。 有关在原始系统中报告的错误的列表，请参阅[原始错误报告](#original-error-reporting)部分。
 
@@ -46,7 +46,7 @@ Adobe Pass身份验证中的错误报告当前通过两种不同的方式实现�
 
 #### 实现 {#access-enab-js-imp}
 
-yourErrorHandler(errorData：Object)
+yourErrorHandler(errorData:Object)
 
 
 您的错误处理程序回调函数将接收具有以下结构的单个对象（映射）：
@@ -160,7 +160,7 @@ accessEnabler.bind('errorEvent', 'errorLogger');
 
 #### 实现 {#access-enablr-androidsdk-imp}
 
-实施者需要处理接口`IAccessEnablerDelegate`中的新`status`方法。 **`status`**&#x200B;函数将接收具有以下模型的单个&#x200B;**`AdvancedStatus`**&#x200B;对象：
+实施者需要处理接口`status`中的新`IAccessEnablerDelegate`方法。 **`status`**&#x200B;函数将接收具有以下模型的单个&#x200B;**`AdvancedStatus`**&#x200B;对象：
 
 ```C++
     class AdvancedStatus {
@@ -199,7 +199,7 @@ accessEnabler.bind('errorEvent', 'errorLogger');
 
 #### 实现 {#access-enab-fireos-sdk-}
 
-实施者需要处理接口`IAccessEnablerDelegate`中的新`status`方法。 **`status`**&#x200B;函数将接收具有以下模型的单个&#x200B;**`AdvancedStatus`**&#x200B;对象：
+实施者需要处理接口`status`中的新`IAccessEnablerDelegate`方法。 **`status`**&#x200B;函数将接收具有以下模型的单个&#x200B;**`AdvancedStatus`**&#x200B;对象：
 
 ```C++
     class AdvancedStatus {
@@ -242,8 +242,8 @@ accessEnabler.bind('errorEvent', 'errorLogger');
 | VSA404 | 信息 | 应用程序视频订阅者帐户权限未确定。 | 通过解释单点登录(SSO)用户体验的好处，激励拒绝授予访问订阅信息权限的用户。 | 用户可通过以下方式更改其决定：转到应用程序设置（访问电视提供程序），或者转到iOS/iPadOS上的“设置” — >“电视提供程序”或tvOS上的“设置” — >“帐户” — >“电视提供程序”部分。 | 不适用 | 是 | 不适用 |
 | VSA503 | 信息 | 应用程序视频订阅者帐户元数据请求失败。 | MVPD端点没有响应。 应用程序可以回退到常规的身份验证流程。 | 不适用 | 不适用 | 是 | 不适用 |
 | 500 | 错误 | 内部错误 | 使用AccessEnablerDebug并检查调试日志（console.log输出）以确定哪里出了问题。 | 不适用 | 是 | 是 | 不适用 |
-| SEC403 | 错误 | 域安全错误。 请求者正在使用无效域。 特定请求者ID使用的所有域需要按Adobe列入白名单。 |  — 仅从允许的域列表<br>中加载AccessEnabler <br> — 联系Adobe以便管理所使用Requestor ID <br>的域白名单 <br> - iOS：验证您使用的证书是否正确，以及是否正确创建了签名 | 不适用 | 不适用 | 是 | 不适用 |
-| SEC412 | 警告 | 发行版本2.5&rbrack;中的&lbrack;可用设备ID不匹配。 只要基础平台更改其设备ID，就会发生这种情况。 在这种情况下，将清除现有令牌，并且不再对用户进行身份验证。 请注意，当用户使用JS SDK并漫游时（在JS上，客户端IP是设备ID的一部分），这种情况会合法发生。 否则，这可能表示存在欺诈企图，即尝试从其他设备复制令牌。 |  — 监视警告数。 如果它们没有明显的原因（没有最近的浏览器更新；新的操作系统）而激增，这可能表明存在欺诈企图。 <br> <br>- （可选）通知用户需要重新登录。 | 再次登录。 | 是 | 是 | 3.2中的是 |
+| SEC403 | 错误 | 域安全错误。 请求者正在使用无效域。 特定请求者ID使用的所有域均需要由Adobe列入白名单。 |  — 仅从允许的域列表<br>中加载AccessEnabler <br> — 联系Adobe以管理所使用Requestor ID <br>的域白名单 <br> - iOS：验证您使用的证书是否正确，以及是否正确创建了签名 | 不适用 | 不适用 | 是 | 不适用 |
+| SEC412 | 警告 | 发行版本2.5[中的]可用设备ID不匹配。 只要基础平台更改其设备ID，就会发生这种情况。 在这种情况下，将清除现有令牌，并且不再对用户进行身份验证。 请注意，当用户使用JS SDK并漫游时（在JS上，客户端IP是设备ID的一部分），这种情况会合法发生。 否则，这可能表示存在欺诈企图，即尝试从其他设备复制令牌。 |  — 监视警告数。 如果它们没有明显的原因（没有最近的浏览器更新；新的操作系统）而激增，这可能表明存在欺诈企图。 <br> <br>- （可选）通知用户需要重新登录。 | 再次登录。 | 是 | 是 | 3.2中的是 |
 | SEC420 | 错误 | 与Adobe Pass身份验证服务器通信时出现HTTP安全错误。 此错误通常在出现欺骗/代理时发生。 |  — 在浏览器中加载`[https://]{SP_FQDN\}`并手动接受SSL证书，例如，**https://api.auth.adobe.com**&#x200B;或&#x200B;**https://api.auth-staging.adobe.com** <br> <br> — 将代理证书标记为受信任 | 如果这种情况发生在普通用户身上，则表明可能存在中间人攻击！ | 是 | 是 | 3.2中的是 |
 | CFG100 | 警告 | 客户端计算机日期/时间/时区设置不正确。 这可能会导致身份验证/授权错误。 |  — 通知用户设置正确的时间。<br> <br>采取措施以防止权利流动，因为它们可能会失败。 | 设置正确的日期/时间。 | 是 | 是 | 3.2中的是 |
 | CFG400 | 错误 | 提供的请求者ID无效。 | 开发人员必须指定有效的请求者ID。 | 不适用 | 是 | 是 | 3.2中的是 |

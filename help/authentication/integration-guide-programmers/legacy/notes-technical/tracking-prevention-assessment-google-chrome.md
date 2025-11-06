@@ -76,7 +76,7 @@ Google通过以下链接发布了一份文档，汇总了其推荐的行动手�
 
 ### 测试损坏
 
-为了测试是否损坏，请使用`--test-third-party-cookie-phaseout`命令行标志启动Chrome，或者从Chrome 118中启用`chrome://flags/`中的`#test-third-party-cookie-phaseout`。
+为了测试是否损坏，请使用`--test-third-party-cookie-phaseout`命令行标志启动Chrome，或者从Chrome 118中启用`#test-third-party-cookie-phaseout`中的`chrome://flags/`。
 
 这将设置Google Chrome以阻止第三方Cookie并确保未来功能处于活动状态，以便最好地模拟逐步停用后的状态。
 

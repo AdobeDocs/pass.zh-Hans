@@ -2,9 +2,9 @@
 title: 关于Adobe Pass身份验证
 description: 关于Adobe Pass身份验证
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: 7ca9d8996756086a6b963c0b6d5b0bb64608ecbc
+source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
 workflow-type: tm+mt
-source-wordcount: '1828'
+source-wordcount: '1832'
 ht-degree: 0%
 
 ---
@@ -72,7 +72,7 @@ TV Everywhere是一项行业计划，旨在确保付费电视订阅者能够通�
 
 Adobe Pass身份验证安全地协调程序员和付费电视提供商之间的授权交易，确保适当的客户可以轻松访问适当的内容。
 
-![](/help/authentication/assets/programmers-connect-authn.png)
+![](../assets/programmers-connect-authn.png)
 
 *通过Adobe Pass身份验证连接的一些程序员和付费电视提供商*
 
@@ -132,7 +132,7 @@ Adobe Pass身份验证安全地协调程序员和付费电视提供商之间的�
 * 集成Adobe Pass身份验证[媒体令牌验证器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier)。
 * 开发用于身份验证、授权和注销工作流程的用户界面。
 
-有关程序员集成过程的更多详细信息，请参阅[程序员kickstart指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)文档。
+有关程序员集成过程的更多详细信息，请参阅[程序员kickstart指南](/help/authentication/kickstart/programmer-kickstart-guide.md)和[程序员集成指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)文档。
 
 #### 付费电视提供商集成流程 {#pay-tv-provider-integration-process}
 
@@ -169,11 +169,11 @@ Adobe Pass Authentication充当代理，通过为双方提供安全一致的界�
    * [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * Premium Adobe Pass身份验证API：
-   * [重置临时传递API](/help/premium-workflow/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [TempPass功能](/help/premium-workflow/temporary-access/temp-pass-feature.md)
-   * [降级API](/help/premium-workflow/degraded-access/degradation-feature.md#degradation-api-access)
-      * [退化特征](/help/premium-workflow/degraded-access/degradation-feature.md)
-   * [授权服务监控API](/help/premium-workflow/esm/entitlement-service-monitoring-api.md)
+   * [重置临时传递API](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+   * [降级API](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+      * [退化特征](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+   * [授权服务监控API](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 有关权利流程的更多详细信息，请参阅[程序员集成指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md#entitlement-flow)文档。
 

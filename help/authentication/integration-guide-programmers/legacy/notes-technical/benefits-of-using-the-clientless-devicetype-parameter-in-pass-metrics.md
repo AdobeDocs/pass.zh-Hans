@@ -2,9 +2,9 @@
 title: 在Adobe Pass身份验证量度中使用无客户端deviceType参数的好处
 description: 在Adobe Pass身份验证量度中使用无客户端deviceType参数的好处
 exl-id: a5004887-d5fa-468e-971b-10806519175b
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '368'
+source-wordcount: '372'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## 上下文
 
-尽管可选，但无客户端API中的参数`deviceType`（如果存在）用于通过[授权服务监控](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md)公开的Adobe Pass身份验证指标。
+尽管可选，但无客户端API中的参数`deviceType`（如果存在）用于通过[授权服务监控](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)公开的Adobe Pass身份验证指标。
 
 考虑到`deviceType`参数及其&#x200B;**好处**&#x200B;在Adobe Pass身份验证量度上的连接最初没有声明，本技术说明的范围是添加关于它们的更多信息。
 
@@ -35,10 +35,10 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->如果参数`deviceType`设置正确，则在授权服务监控中具有以下&#x200B;**权益**：它提供了在使用无客户端程序时按设备类型[细分的指标](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#clientless_device_type)，以便可以对Roku、AppleTV、Xbox等执行不同类型的分析。
+>如果参数`deviceType`设置正确，则在授权服务监控中具有以下&#x200B;**权益**：它提供了在使用无客户端程序时按设备类型[细分的指标](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)，以便可以对Roku、AppleTV、Xbox等执行不同类型的分析。
 
 
-有关授权服务监控API的更多信息，请参阅ESM 2.0中提供的[深入分析树](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#esm_dimensions)（资源）。
+有关授权服务监控API的更多信息，请参阅[深入分析树](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md#drill-down_tree)，该树说明了ESM 2.0中可用的[维度](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#esm_dimensions)（资源）。
 
 >[!NOTE]
 >

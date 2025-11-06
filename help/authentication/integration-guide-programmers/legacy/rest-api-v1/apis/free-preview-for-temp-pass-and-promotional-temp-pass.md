@@ -2,7 +2,7 @@
 title: 临时通行证和促销临时通行证的免费预览
 description: 临时通行证和促销临时通行证的免费预览
 exl-id: c584bf0c-15c4-4a4d-b6a2-8d15ee786fe3
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
 source-wordcount: '432'
 ht-degree: 0%
@@ -56,7 +56,7 @@ ht-degree: 0%
 | mso_id | 此操作对其有效的MVPD ID。 |
 | 域名 | 将向其授予令牌的域名。 正在向授权令牌授予时与服务提供商的域进行比较。 |
 | 设备信息/</br></br>X — 设备信息 | 流设备信息。</br></br>**注意**：可以将此device_info作为URL参数传递，但由于此参数的潜在大小以及GET URL的长度限制，它应作为X-Device-Info传递到http标头。 </br></br>在[传递设备和连接信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
-| _deviceType_ | 设备类型（例如Roku、PC）。</br></br>如果此参数设置正确，ESM提供的量度在使用无客户端程序时按设备类型[进行](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#clientless_device_type)划分，因此可以对Roku、AppleTV、Xbox等执行不同类型的分析。</br></br>查看[使用无客户端设备类型参数的好处&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**： device_info将替换此参数。 |
+| _deviceType_ | 设备类型（例如Roku、PC）。</br></br>如果此参数设置正确，ESM提供的量度在使用无客户端程序时按设备类型[进行](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)划分，因此可以对Roku、AppleTV、Xbox等执行不同类型的分析。</br></br>查看[使用无客户端设备类型参数的好处&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**： device_info将替换此参数。 |
 | _设备用户_ | 设备用户标识符。</br></br>**注意**：如果使用，则deviceUser的值应与[创建注册码](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)请求中的值相同。 |
 | _appId_ | 应用程序id/名称。 </br></br>**注意**： device_info将替换此参数。 如果使用，`appId`应具有与[创建注册码](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)请求中相同的值。 |
 | generic_data | 用于限制提升临时传递的令牌范围。 |

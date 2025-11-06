@@ -2,7 +2,7 @@
 title: Android SDK指南
 description: Android SDK指南
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: 79b3856e3ab2755cc95c3fcd34121171912a5273
 workflow-type: tm+mt
 source-wordcount: '1703'
 ht-degree: 0%
@@ -113,7 +113,7 @@ AccessEnabler的网络活动发生在不同的线程中，因此从不阻止UI�
      `authorizedResources`参数表示用户有权查看的资源。
 
 
-![](/help//authentication/assets/android-entitlement-flows.png)
+![](../../../../assets/android-entitlement-flows.png)
 
 
 ### B.启动流程 {#startup_flow}

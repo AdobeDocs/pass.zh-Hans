@@ -84,4 +84,4 @@ ht-degree: 0%
 您可以在以下页面中找到策略和集成Cookbook的更多示例：
 
 * [策略决策点](/help/concurrency-monitoring/cm-policy-decision-point.md)
-* [API控制台 — Adobe并发监视](http://docs.adobeptime.io/cm-api-v2/)
+* [API控制台 — Adobe并发监控](http://docs.adobeptime.io/cm-api-v2/)

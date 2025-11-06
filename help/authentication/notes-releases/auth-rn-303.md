@@ -35,7 +35,7 @@ Adobe Pass身份验证： adobe-pass-**3.0.3**
 ##### 代码
 
 * REST API V2增强功能(由于Adobe Pass 3.0主要版本提供了[REST API V2](../integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md))。
-* 在`/sessions/{code}`中添加了`notBefore`和`notAfter`字段以返回有关身份验证代码有效性的信息。
+* 在`notBefore`中添加了`notAfter`和`/sessions/{code}`字段以返回有关身份验证代码有效性的信息。
 * 改进了平台识别。
 
 ##### 文档

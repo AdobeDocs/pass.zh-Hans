@@ -48,7 +48,7 @@ AccessEnabler支持的所有授权工作流都假定您之前已调用[`setReque
 
 - 您可以立即开始发出授权调用，并在需要时允许静默排队等候。
 
-- 通过实施[`setRequestorComplete()`](#setReqComplete)回调，您可以接收[`setRequestor()`](#setReq)成功/失败的确认。
+- 通过实施[`setRequestor()`](#setReq)回调，您可以接收[`setRequestorComplete()`](#setReqComplete)成功/失败的确认。
 
 - 您可以执行上述两项操作。
 
@@ -67,7 +67,7 @@ AccessEnabler支持的所有授权工作流都假定您之前已调用[`setReque
 1. 如果用户当前未经过身份验证，则AccessEnabler通过确定用户的最后一次身份验证尝试在给定MVPD中是否成功来继续身份验证流程。 如果缓存了MVPD ID并且`canAuthenticate`标志为true或使用[`setSelectedProvider()`](#setSelProv)选择了MVPD，则不会通过MVPD选择对话框提示用户。 身份验证流程继续使用MVPD的缓存值(即，在上次成功身份验证期间使用的MVPD值)。 系统会向后端服务器发出网络调用，并将用户重定向到MVPD登录页面（下面的步骤6）。
 1. 如果未缓存MVPD ID，并且未使用[`setSelectedProvider()`](#setSelProv)选择MVPD，或者`canAuthenticate`标志设置为false，则会调用[`displayProviderDialog()`](#dispProvDialog)回调。 此回调指示应用程序创建UI，向用户显示可供选择的MVPD列表。 提供了一系列MVPD对象，其中包含构建MVPD选择器所需的信息。 每个MVPD对象都描述一个MVPD实体，并包含MVPD的ID（例如XFINITY、AT\&amp;T等）和可以找到MVPD徽标的URL等信息。
 1. 选择特定的MVPD后，您的应用程序必须通知AccessEnabler用户所做的选择。 用户选择所需的MVPD后，您可以通过调用[`setSelectedProvider()`](#setSelProv)方法向AccessEnabler通知用户选择的内容。
-1. iOS AccessEnabler调用您的`navigateToUrl:`回调或`navigateToUrl:useSVC:`回调以将用户重定向到MVPD登录页面。 通过触发其中任一项，AccessEnabler会向应用程序发出请求，以创建`UIWebView/WKWebView or SFSafariViewController`控制器并加载回调的`url`参数中提供的URL。 这是后端服务器上的身份验证终结点的URL。 对于tvOS AccessEnabler，使用`statusDictionary`参数调用[status()](#status_callback_implementation)回调，并立即开始轮询第二个屏幕身份验证。 `statusDictionary`包含需要用于第二个屏幕身份验证的`registration code`。
+1. iOS AccessEnabler调用您的`navigateToUrl:`回调或`navigateToUrl:useSVC:`回调以将用户重定向到MVPD登录页面。 通过触发其中任一项，AccessEnabler会向应用程序发出请求，以创建`UIWebView/WKWebView or SFSafariViewController`控制器并加载回调的`url`参数中提供的URL。 这是后端服务器上的身份验证终结点的URL。 对于tvOS AccessEnabler，使用[参数调用](#status_callback_implementation)status()`statusDictionary`回调，并立即开始轮询第二个屏幕身份验证。 `statusDictionary`包含需要用于第二个屏幕身份验证的`registration code`。
 1. 如果是iOS AccessEnabler，则用户登陆MVPD的登录页面，通过应用程序`UIWebView/WKWebView or SFSafariViewController `控制器的介质输入其凭据。 请注意，在此传输过程中将执行多次重定向操作，并且您的应用程序必须监控控制器在多次重定向操作期间加载的URL。
 1. 对于iOS AccessEnabler，当`UIWebView/WKWebView or SFSafariViewController`控制器加载特定的自定义URL时，应用程序必须关闭该控制器并调用AccessEnabler的`handleExternalURL:url `API方法。 请注意，此特定自定义URL实际上无效，控制器不会将其实际加载。 只能由应用程序将其解释为验证流程已完成并且关闭`UIWebView/WKWebView or SFSafariViewController`控制器是安全的信号。 如果您的应用程序需要使用`SFSafariViewController `控制器，则特定自定义URL由`application's custom scheme`定义（例如： `adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`），否则此特定自定义URL由`ADOBEPASS_REDIRECT_URL`常量（即`adobepass://ios.app`）定义。
 1. 在您的应用程序关闭`UIWebView/WKWebView or SFSafariViewController`控制器并调用AccessEnabler的`handleExternalURL:url `API方法后，AccessEnabler将从后端服务器检索身份验证令牌并通知您的应用程序身份验证流程已完成。 AccessEnabler使用状态代码1调用[`setAuthenticationStatus()`](#setAuthNStatus)回调，表示成功。 如果在执行这些步骤的过程中出现错误，则会触发[`setAuthenticationStatus()`](#setAuthNStatus)回调，状态代码为0，表示身份验证失败以及相应的错误代码。

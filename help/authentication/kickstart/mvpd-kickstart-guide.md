@@ -2,7 +2,7 @@
 title: MVPD快速入门指南
 description: MVPD快速入门指南
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
 workflow-type: tm+mt
 source-wordcount: '934'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Adobe提供了一系列资源来帮助您与Adobe Pass身份验证集成。 请�
 
 设置过程涉及以下步骤：
 
-![Adobe®通过身份验证集成进程](/help/authentication/assets/mvpd-int-lifecycle.png)
+![Adobe®通过身份验证集成进程](../assets/mvpd-int-lifecycle.png)
 
 *Adobe®通过身份验证集成进程*
 
@@ -135,7 +135,7 @@ Adobe Pass身份验证团队可用于解答我们在集成过程中可能遇到�
 
 ## 文档访问权限 {#access-documentation}
 
-**Adobe将通过** Adobe Experience League[提供](https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/home)对公共文档的访问权限。
+**Adobe将通过** Adobe Experience League[提供](https://experienceleague.adobe.com/en/docs/pass/authentication/home)对公共文档的访问权限。
 
 Adobe Pass身份验证团队提供了[MVPD集成指南](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md)部分下可用功能和工作流的综合文档。 有关每个主题的详细信息的链接，请参阅本节下的目录。
 

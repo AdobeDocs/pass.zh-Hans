@@ -2,7 +2,7 @@
 title: 单点登录 — 服务令牌 — 流程
 description: REST API V2 — 单点登录 — 服务令牌 — 流程
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '1857'
 ht-degree: 0%
@@ -60,7 +60,7 @@ ht-degree: 0%
 
 执行给定步骤，使用服务令牌实施通过单点登录的身份验证流程，如下图所示。
 
-![使用服务令牌通过单点登录执行身份验证](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-service-token-flow.png)
+![使用服务令牌通过单点登录执行身份验证](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-service-token-flow.png)
 
 *使用服务令牌通过单点登录执行身份验证*
 
@@ -230,7 +230,7 @@ ht-degree: 0%
 
 执行给定步骤以使用服务令牌通过单点登录实施授权流，如下图所示。
 
-![使用服务令牌通过单点登录检索授权决策](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-service-token-flow.png)
+![使用服务令牌通过单点登录检索授权决策](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-service-token-flow.png)
 
 *使用服务令牌通过单点登录检索授权决策*
 
@@ -244,7 +244,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 有关以下各项的详细信息，请参阅使用特定mvpd[&#x200B; API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策：
+   > 有关以下各项的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`和`AP-Device-Identifier`
@@ -266,7 +266,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#x200B; API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策。
    > 
    > <br/>
    > 
@@ -285,7 +285,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#x200B; API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策。
    > 
    > <br/>
    > 

@@ -26,7 +26,7 @@ ht-degree: 0%
 
    1. 请求者ID：例如netgeo、CNN等。
 
-1. Adobe将创建X509证书，并在其末尾配置私钥和口令。
+1. Adobe将创建X509证书，并在其末尾配置私钥和密码。
 
 1. Adobe将在票证中或通过电子邮件向程序员提供公共证书（X509证书）。
 
@@ -49,4 +49,4 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->由于XSTS令牌的长度很大，因此XBox控制台存在技术限制：它无法将令牌作为HTTPGET参数发送到Adobe Pass付费电视身份验证API。 为了解决这个问题，Adobe Pass付费电视身份验证允许在调用API时发送XSTS令牌作为HTTP标头“Authorization”的一部分。 XSTS令牌必须使用从Adobe Pass付费电视身份验证颁发给程序员的X.509证书中的公钥进行加密。 Adobe Pass付费电视身份验证存储关联的私钥，并使用它来解密XSTS令牌并从中提取deviceId。
+>由于XSTS令牌的长度很大，因此XBox控制台存在技术限制：它无法将令牌作为HTTP GET参数发送到Adobe Pass付费电视身份验证API。 为了解决这个问题，Adobe Pass付费电视身份验证允许在调用API时发送XSTS令牌作为HTTP标头“Authorization”的一部分。 XSTS令牌必须使用从Adobe Pass付费电视身份验证颁发给程序员的X.509证书中的公钥进行加密。 Adobe Pass付费电视身份验证存储关联的私钥，并使用它来解密XSTS令牌并从中提取deviceId。

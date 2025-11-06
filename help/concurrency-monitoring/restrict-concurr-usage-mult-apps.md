@@ -14,7 +14,7 @@ ht-degree: 1%
 
 ## 用例描述
 
-MVPD M具有iPhone应用程序、iPad应用程序和网站。 在程序员P的要求下，需要与Adobe并发监控集成。程序员P在CM中定义了一组策略，这些策略具有限制并发使用的规则。 CM将根据定义的策略和规则决定允许播放哪些流。 这意味着，即使允许启动和播放流，在播放期间，CM也可以决定停止它。
+MVPD M有一个iPhone应用程序、一个iPad应用程序和一个网站。 它需要应程序员P的要求与Adobe并发监控(CM)集成。程序员P在CM中定义了一组策略，这些策略具有限制并发使用的规则。 CM将根据定义的策略和规则决定允许播放哪些流。 这意味着，即使允许启动和播放流，在播放期间，CM也可以决定停止它。
 
 
 
@@ -38,11 +38,11 @@ MVPD M具有iPhone应用程序、iPad应用程序和网站。 在程序员P的�
 
 | type | 描述 | 示例值 | 默认值 |
 | --- | --- | --- | --- |
-| 端点 | Adobe并发监控端点 | http://streams.adobeprimetime.com/v1/ | http://streams.adobeprimetime.com/v1/ |
+| 端点 | Adobe Concurrency Monitoring端点 | http://streams.adobeprimetime.com/v1/ | http://streams.adobeprimetime.com/v1/ |
 | applicationId | iPhone应用程序ID | iphone54-75b4-431b-adb2-eb6b9e546013 | - |
 | applicationId | iPad应用程序ID | ipad5d54-75b4-431b-adb2-eb6b9e546013 | - |
 | applicationId | 网站应用程序ID | website4-75b4-431b-adb2-eb6b9e546013 | - |
-| 心率间隔 | 将心跳调用发送到Adobe并发监视的时间间隔（以秒为单位） | 60 | 60 |
+| 心率间隔 | 将心率调用发送到Adobe并发监控的时间间隔（以秒为单位） | 60 | 60 |
 | 流相容间隔 | 检查流是否符合Adobe并发监控的间隔（以秒为单位） | 180 | 180 |
 
 

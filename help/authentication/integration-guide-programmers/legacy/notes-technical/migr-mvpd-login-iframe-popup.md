@@ -4,7 +4,7 @@ description: 如何将MVPD登录页面从iFrame迁移到弹出窗口
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '708'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ Adobe Pass身份验证团队&#x200B;**建议在Firefox和Safari上实施弹出�
 
 ## 在iFrame中具有登录页面的MVPD选取器 {#mvpd-pickr-iframe}
 
-以前的代码示例显示了一个HTML页面，该页面包含要创建iFrame的&lt;div>标记以及“关闭iFrame”按钮：
+以前的代码示例显示了一个HTML页面，该页面包含要在其中创建iFrame的&lt;div>标记以及“关闭iFrame”按钮：
 
 ```HTML
 <body> 
@@ -183,7 +183,7 @@ function displayProviderDialog(providers) {
 }
 ```
 
-用户从选取器中选择MVPD后，需要创建弹出窗口。 如果使用about：blank或使用其他域上的页面创建弹出窗口，则某些浏览器可能会阻止弹出窗口，因此建议使用加载AccessEnabler的主机名打开弹出窗口。
+用户从选取器中选择MVPD后，需要创建弹出窗口。 如果弹出窗口是使用大约:blank或另一个域上的页面创建的，则某些浏览器可能会阻止弹出窗口，因此建议使用加载AccessEnabler的主机名打开弹出窗口。
 
 在iFrame实施中，重置身份验证流由btnCloseIframe按钮和JavaScript函数closeIframeAction()完成，但现在无法再修饰iFrame。 因此，通过观察何时关闭弹出窗口（用户关闭或完成验证流程）可以获得相同的行为。 已添加一个代码片段，在用户失去弹出窗口的焦点时也会有帮助：
 

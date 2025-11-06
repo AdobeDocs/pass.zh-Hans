@@ -4,7 +4,7 @@ description: 通过第二屏幕Web应用程序检查身份验证流程
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '234'
+source-wordcount: '232'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ ht-degree: 0%
 
 | 端点 | </br>调用者 | 输入   </br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| SP_FQDN/api/v1/checkauthn/{注册码} | 登录Web应用程序 | 1.注册码</br>    （路径组件）</br>2。  请求者</br>    （必需） | GET | 如果失败，则包含错误详细信息的XML或JSON。 | 200 — 成功   </br>403 — 禁止访问 |
+| SP_FQDN/api/v1/checkauthn/{registration code} | 登录Web应用程序 | 1.注册码</br>    （路径组件）</br>2。  请求者</br>    （必需） | GET | 如果失败，则包含错误详细信息的XML或JSON。 | 200 — 成功   </br>403 — 禁止访问 |
 
 </br>
 

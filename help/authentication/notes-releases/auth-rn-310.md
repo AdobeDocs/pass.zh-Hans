@@ -1,7 +1,8 @@
 ---
 title: Adobe Pass Authentication 3.1.0发行说明
 description: Adobe Pass Authentication 3.1.0发行说明
-source-git-commit: 4ad5ea619f64a78a72f69228c9ae3c83a7b66f24
+exl-id: cf9fc8e2-4b37-4b0a-a6ed-cda1b6738e76
+source-git-commit: 0c6aec04ae9df410228730b5bce6ced1aeecd312
 workflow-type: tm+mt
 source-wordcount: '192'
 ht-degree: 0%
@@ -38,7 +39,7 @@ Adobe Pass身份验证： adobe-pass-**3.1.0**
 
 * 修复了阻止频谱订阅者通过REST API v2 [身份验证API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)进行身份验证的问题。
 * 修复了导致通过REST API V2 [身份验证API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)生成的事件无法在ESM中正确聚合的问题。
-* 修复了导致在REST API v2 [配置文件API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)响应中错误计算用户配置文件`notBefore`时间戳的问题。
+* 修复了导致在REST API v2 `notBefore`配置文件API[响应中错误计算用户配置文件](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)时间戳的问题。
 
 #### JavaScript SDK
 

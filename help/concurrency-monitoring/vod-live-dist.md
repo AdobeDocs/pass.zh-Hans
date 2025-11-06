@@ -15,7 +15,7 @@ ht-degree: 0%
 
 
 
-**A：**&#x200B;并发监视无法直接区分实时内容和点播视频(VOD)。 视频播放器必须知道正在播放的内容类型，并在[会话初始化调用](/help/concurrency-monitoring/cm-api-overview.md#session-initial)期间发送此信息（并发监视所需）。 常规工作流如下所示：
+**A：**&#x200B;并发监视无法直接区分实时内容与点播视频(VOD)。 视频播放器必须知道正在播放的内容类型，并在[会话初始化调用](/help/concurrency-monitoring/cm-api-overview.md#session-initial)期间发送此信息（并发监视所需）。 常规工作流如下所示：
 
 1. 并发监控客户定义了一组他们希望对其实施规则的元数据（例如content-type=live|vod、device-type=mobile|console|desktop）。
 1. 并发监控团队会实施所需的策略。 示例：

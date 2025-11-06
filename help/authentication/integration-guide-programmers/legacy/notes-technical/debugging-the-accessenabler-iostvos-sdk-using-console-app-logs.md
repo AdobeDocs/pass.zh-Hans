@@ -2,7 +2,7 @@
 title: 使用控制台应用程序日志调试AccessEnabler iOS/tvOS SDK
 description: 使用控制台应用程序日志调试AccessEnabler iOS/tvOS SDK
 exl-id: 0dad325e-db15-4ea0-a87a-75409eaf8d46
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '576'
 ht-degree: 0%
@@ -50,19 +50,19 @@ AccessEnabler iOS/tvOS日志记录机制的目的是发出有用的消息，用�
 
 首先，为了能够查看AccessEnabler框架发出的任何日志记录消息，您&#x200B;**必须**&#x200B;在控制台应用程序的“操作”部分中选择“包括信息消息”和“包括调试消息”，如下图所示。
 
-![](/help/authentication/assets/include-info-debug-msg.png)
+![](../../../assets/include-info-debug-msg.png)
 
 
 为了能够调试AccessEnabler iOS/tvOS SDK和&#x200B;**查看** AccessEnabler框架日志，您可以：
 
 * 在控制台应用程序中使用&#x200B;**子系统**&#x200B;选项进行搜索，该选项等于com.adobe.pass.AccessEnabler值，如下图所示。
 
-![](/help/authentication/assets/subsys-console-app.png)
+![](../../../assets/subsys-console-app.png)
 
-* 使用包含&#x200B;**&#x200B;**
+* 使用包含&#x200B;****
   [AccessEnabler]值，如下图所示。
 
-![](/help/authentication/assets/any-optn-console-app.png)
+![](../../../assets/any-optn-console-app.png)
 
 除了上述两个标准之外，您还可以结合使用&#x200B;**Category**&#x200B;选项和&#x200B;**Subsystem**&#x200B;或&#x200B;**Any （前缀）**&#x200B;来显式搜索由AccessEnabler iOS/tvOS SDK发出的&#x200B;**debug**&#x200B;或&#x200B;**error**&#x200B;级消息。
 

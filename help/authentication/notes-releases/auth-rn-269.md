@@ -2,7 +2,7 @@
 title: Adobe Pass Authentication 2.69发行说明
 description: Adobe Pass Authentication 2.69发行说明
 exl-id: d031c4c5-dbd5-4a77-b298-a53b992cc4c5
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
 source-wordcount: '210'
 ht-degree: 0%
@@ -34,7 +34,7 @@ Adobe Pass身份验证： adobe-pass-**2.69**
 
 * 修补了安全漏洞。
 * 增强了Dynamic Client Registration (DCR)重置Temp Pass安全层的功能。
-   * 您可以在此处找到更多详细信息： [临时传递功能](/help/premium-workflow/temporary-access/temp-pass-feature.md)
+   * 您可以在此处找到更多详细信息： [临时传递功能](../integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
 * 对Platform Identification报表的增强。
 
 #### REST API

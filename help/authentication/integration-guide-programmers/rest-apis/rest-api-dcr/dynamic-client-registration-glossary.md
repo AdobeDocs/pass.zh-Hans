@@ -1,7 +1,8 @@
 ---
 title: Dynamic Client Registration (DCR)术语表
 description: Dynamic Client Registration (DCR)术语表
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+exl-id: 4ce67fa5-b0e5-4967-b83d-c682426d9329
+source-git-commit: ae02f53afc58b7d31f57bcc1e4dd1328f12abc3e
 workflow-type: tm+mt
 source-wordcount: '299'
 ht-degree: 0%
@@ -38,7 +39,7 @@ ht-degree: 0%
 
 自定义方案是引用[程序员](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#programmer)应用程序的唯一值，可以从Adobe Pass [TVE仪表板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)生成和下载该应用程序，其目的是在iOS设备上运行的应用程序中用作最终重定向。
 
-### 日期{#d}
+### D {#d}
 
 #### DCR {#dcr}
 

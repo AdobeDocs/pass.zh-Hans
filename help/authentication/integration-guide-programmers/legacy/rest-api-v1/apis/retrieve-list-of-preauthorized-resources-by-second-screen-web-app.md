@@ -4,7 +4,7 @@ description: 按第二屏Web应用程序检索预授权资源列表
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
 source-git-commit: 1c357b918fa4f6d4b92a9055de018c55ee5861e0
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '273'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,7 @@ ht-degree: 0%
 
 | 端点 | </br>调用者 | 输入   </br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/preauthorize/{注册码} | AuthN模块 | 1.注册码</br>    （路径组件）</br>2。  请求者（必需）</br>3。  资源（必需） | GET | 包含各个预授权决策或错误详细信息的XML或JSON。 请参阅下面的示例。 | 200 — 成功</br></br>400 — 错误请求</br></br>401 — 未授权</br></br>405 — 不允许的方法</br></br>412 — 前提条件失败</br></br>500 — 内部服务器错误 |
+| &lt;SP_FQDN>/api/v1/preauthorize/{registration code} | AuthN模块 | 1.注册码</br>    （路径组件）</br>2。  请求者（必需）</br>3。  资源（必需） | GET | 包含各个预授权决策或错误详细信息的XML或JSON。 请参阅下面的示例。 | 200 — 成功</br></br>400 — 错误请求</br></br>401 — 未授权</br></br>405 — 不允许的方法</br></br>412 — 前提条件失败</br></br>500 — 内部服务器错误 |
 
 
 

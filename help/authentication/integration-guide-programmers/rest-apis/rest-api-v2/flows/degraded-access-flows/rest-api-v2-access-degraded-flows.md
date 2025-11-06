@@ -2,7 +2,7 @@
 title: 降级访问流
 description: REST API V2 — 降级访问流
 exl-id: 9276f5d9-8b1a-4282-8458-0c1e1e06bcf5
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
 source-wordcount: '1615'
 ht-degree: 0%
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 降级提供临时绕过特定MVPD身份验证和授权端点。 通常，程序员会启动此操作，但无论谁触发了降级事件，该操作都取决于与受影响的MVPD所做的预先安排。
 
-有关降级功能的更多详细信息，请参阅[降级](/help/premium-workflow/degraded-access/degradation-feature.md)文档。
+有关降级功能的更多详细信息，请参阅[降级](../../../../features-premium/degraded-access/degradation-feature.md)文档。
 
 降级访问流允许您查询以下情况：
 
@@ -55,7 +55,7 @@ ht-degree: 0%
 
 在应用降级时，请按照给定的步骤实施身份验证流程，如下图所示。
 
-![在应用降级时执行身份验证](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-perform-authentication-while-degradation-is-applied-flow.png)
+![在应用降级时执行身份验证](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-perform-authentication-while-degradation-is-applied-flow.png)
 
 *在应用降级时执行身份验证*
 
@@ -123,7 +123,7 @@ ht-degree: 0%
 
 在应用降级时，请按照给定的步骤实施授权流，如下图所示。
 
-![应用降级时检索授权决策](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-authorization-decisions-while-degradation-is-applied-flow.png)
+![应用降级时检索授权决策](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-authorization-decisions-while-degradation-is-applied-flow.png)
 
 *应用降级时检索授权决策*
 
@@ -131,7 +131,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    > 
-   > 有关以下各项的详细信息，请参阅使用特定mvpd[&#x200B; API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策：
+   > 有关以下各项的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`和`AP-Device-Identifier`
@@ -143,7 +143,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#x200B; API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策。
    >
    > <br/>
    > 
@@ -189,7 +189,7 @@ ht-degree: 0%
 
 在应用降级时，请按照给定的步骤实施预授权流，如下图所示。
 
-![应用降级时检索预授权决策](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-preauthorization-decisions-while-degradation-is-applied-flow.png)
+![应用降级时检索预授权决策](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-preauthorization-decisions-while-degradation-is-applied-flow.png)
 
 *应用降级时检索预授权决策*
 
@@ -197,7 +197,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 有关以下各项的详细信息，请参阅使用特定mvpd[&#x200B; API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)预授权决策：
+   > 有关以下各项的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)预授权决策：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`和`AP-Device-Identifier`
@@ -209,7 +209,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#x200B; API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)预授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)预授权决策。
    >
    > <br/>
    >
@@ -263,7 +263,7 @@ ht-degree: 0%
 
 在应用降级时，请按照给定的步骤来实施特定MVPD的配置文件检索流，如下图所示。
 
-![应用降级时检索配置文件](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-profile-while-degradation-is-applied-flow.png)
+![应用降级时检索配置文件](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-profile-while-degradation-is-applied-flow.png)
 
 *应用降级时检索配置文件*
 
@@ -271,7 +271,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 有关以下内容的详细信息，请参阅特定mvpd [&#x200B; API的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)检索配置文件：
+   > 有关以下内容的详细信息，请参阅特定mvpd [ API的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)检索配置文件：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`和`mvpd`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`和`AP-Device-Identifier`
@@ -283,7 +283,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 有关配置文件响应中提供的信息的详细信息，请参阅特定mvpd [&#x200B; API的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)检索配置文件。
+   > 有关配置文件响应中提供的信息的详细信息，请参阅特定mvpd [ API的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)检索配置文件。
    >
    > <br/>
    >

@@ -4,7 +4,7 @@ description: 注册页面
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '516'
+source-wordcount: '509'
 ht-degree: 0%
 
 ---
@@ -53,7 +53,7 @@ ht-degree: 0%
 | Accept | 标头<br>值： application/json | 指示客户端应该能够理解的内容类型 |
 | 请求者 | 查询参数 | 此操作有效的程序员requestorId。 |
 | deviceId | 查询参数 | 设备ID字节。 |
-| 设备信息/<br>X — 设备信息 | device_info：正文<br> X-Device-Info：标头 | 流设备信息。<br>**注意**：可以将此device_info作为URL参数传递，但由于此参数的潜在大小以及GETURL的长度限制，它应作为X-Device-Info传递到http标头。 <br>在[传递设备和连接信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
+| 设备信息/<br>X — 设备信息 | device_info：正文<br> X-Device-Info：标头 | 流设备信息。<br>**注意**：可以将此device_info作为URL参数传递，但由于此参数的潜在大小以及GET URL的长度限制，它应作为X-Device-Info传递到http标头。 <br>在[传递设备和连接信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
 | mvpd | 查询参数 | 此操作对其有效的MVPD ID。 |
 | ttl | 查询参数 | 此正则码应在秒内保持多长时间。<br>**注意**： ttl允许的最大值为36000秒（10小时）。 较高的值会导致400 HTTP响应（错误请求）。 如果`ttl`留空，则Adobe Pass身份验证将默认值设置为30分钟。 |
 | _deviceType_ | 查询参数 | 已弃用，不应使用。 |
@@ -81,7 +81,7 @@ ht-degree: 0%
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20
 >```
 >
-><br>
+<br>
 
 ### 响应JSON
 
@@ -122,12 +122,12 @@ ht-degree: 0%
 | 已生成 | 注册码创建时间戳（以自1970年1月1日GMT以来的毫秒为单位） |
 | 过期 | 注册代码过期的时间戳（以自1970年1月1日GMT以来的毫秒为单位） |
 | deviceId | Base64唯一设备ID |
-| info：deviceId | Base64设备类型 |
-| info：deviceInfo | Base64规范化的设备信息基于从User-Agent、X-Device-Info或device_info接收的信息 |
-| info：userAgent | 应用程序发送的用户代理 |
-| info：originalUserAgent | 应用程序发送的用户代理 |
-| info：authorizationType | 使用DCR的调用的OAUTH2 |
-| info：sourceApplicationInformation | DCR中配置的应用程序信息 |
+| 信息:deviceId | Base64设备类型 |
+| 信息:deviceInfo | Base64规范化的设备信息基于从User-Agent、X-Device-Info或device_info接收的信息 |
+| 信息:userAgent | 应用程序发送的用户代理 |
+| 信息:originalUserAgent | 应用程序发送的用户代理 |
+| 信息:authorizationType | 使用DCR的调用的OAUTH2 |
+| 信息:sourceApplicationInformation | DCR中配置的应用程序信息 |
 
 {style="table-layout:auto"}
 

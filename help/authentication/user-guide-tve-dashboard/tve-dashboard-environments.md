@@ -2,7 +2,7 @@
 title: TVE仪表板环境
 description: 了解TVE仪表板中不同环境的使用和工作。
 exl-id: 591becb8-2f6c-46e0-b108-c64e6df69f89
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '346'
 ht-degree: 0%
@@ -60,7 +60,7 @@ TVE Dashboard中的环境可在整个应用程序生命周期中提供各种用�
 
 1. 从左侧面板顶部的&#x200B;**环境**&#x200B;下拉菜单中选择所需的暂存或生产环境。
 
-   ![TVE仪表板环境下拉列表](/help/authentication/assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-environment-menu.png)
+   ![TVE仪表板环境下拉列表](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-environment-menu.png)
 
    *Adobe Pass身份验证TVE仪表板环境下拉菜单*
 

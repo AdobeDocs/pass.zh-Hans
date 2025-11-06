@@ -2,7 +2,7 @@
 title: TVE功能板MVPD
 description: 了解TVE仪表板中的MVPD及其配置。
 exl-id: 802c1570-9a5b-4bec-8fb2-6c7738b28bc9
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '133'
 ht-degree: 0%
@@ -23,7 +23,7 @@ TVE仪表板的&#x200B;**MVPD**&#x200B;部分允许您查看Adobe Pass身份验�
 
 * **MVPD ID**：用于在系统中设置新集成的MVPD的唯一ID。
 
-![集成MVPD列表](/help/authentication/assets/tve-dashboard/new-tve-dashboard/mvpds/mvpds-list-view.png)
+![集成MVPD列表](../assets/tve-dashboard/new-tve-dashboard/mvpds/mvpds-list-view.png)
 
 *集成MVPD列表*
 

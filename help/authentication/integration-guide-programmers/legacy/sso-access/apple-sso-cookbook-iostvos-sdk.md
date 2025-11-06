@@ -4,7 +4,7 @@ description: Apple SSO指南(iOS/tvOS SDK)
 exl-id: 2d59cd33-ccfd-41a8-9697-1ace3165bc44
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1834'
+source-wordcount: '1832'
 ht-degree: 0%
 
 ---
@@ -100,18 +100,18 @@ Adobe Pass Authentication AccessEnabler iOS/tvOS SDK支持在iOS、iPadOS或tvOS
 
 1. 应用程序必须[设置当前请求者标识符](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setrequestorrequestorid-setrequestorrequestoridserviceproviders-setreqv3)。
 
-   **重要提示：**&#x200B;如果以下任一情况为true **，则第二个步骤可能会触发特定于Apple SSO工作流的[高级错误代码](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)：**
+   **重要提示：**&#x200B;如果以下任一情况为true[，则第二个步骤可能会触发特定于Apple SSO工作流的](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)高级错误代码&#x200B;**：**
 
    * ***VSA403*** — 应用程序的用户电视提供程序权限被拒绝。
    * ***VSA404*** — 应用程序的用户电视提供程序权限未确定。
    * ***APPL*** - AccessEnabler iOS/tvOS SDK与视频订阅者帐户框架之间的通信遇到错误。
 
-   第二步将尝试静默地交换Apple SSO配置文件以获取Adobe身份验证令牌，前提是&#x200B;**以上所有条件均为false**&#x200B;且&#x200B;**以下所有条件均为true**：
+   第二步将尝试静默地交换Apple SSO配置文件以获取Adobe身份验证令牌，前提是&#x200B;**以上全部为false**&#x200B;且&#x200B;**以下全部为true**：
 
    * 已为应用程序授予用户的TV提供商权限。
    * 用户已在设备系统级别登录其电视提供商帐户。
    * AccessEnabler iOS/tvOS SDK从视频订阅者帐户框架收到了用户的电视提供程序标识符。
-   * 通过Adobe Primetime TVE功能板，可启用用户的电视提供程序与应用程序的集成。
+   * 通过Adobe Primetime TVE仪表板启用用户的电视提供程序与应用程序的集成。
    * 用户的电视提供程序通过应用程序的单点登录可通过Adobe Primetime TVE仪表板启用。
    * 用户的电视提供程序未通过Adobe Primetime TVE仪表板降级。
    * AccessEnabler iOS/tvOS SDK从视频订阅者帐户框架收到了用户的电视提供程序SAML响应。
@@ -121,7 +121,7 @@ Adobe Pass Authentication AccessEnabler iOS/tvOS SDK支持在iOS、iPadOS或tvOS
 
 1. 应用程序必须[检查身份验证状态](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#checkauthentication-checkauthn)。
 
-   **重要提示：**&#x200B;如果以下任一情况为true **，则第三个步骤可能会触发特定于Apple SSO工作流的[高级错误代码](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)：**
+   **重要提示：**&#x200B;如果以下任一情况为true[，则第三个步骤可能会触发特定于Apple SSO工作流的](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)高级错误代码&#x200B;**：**
 
    * ***VSA403** — 用户已在以下位置登录到其电视提供商帐户：
 设备系统级别，但用户的电视提供程序权限为
@@ -134,11 +134,11 @@ Adobe Pass Authentication AccessEnabler iOS/tvOS SDK支持在iOS、iPadOS或tvOS
 AccessEnabler iOS/tvOS SDK和视频订阅者帐户
 框架遇到错误。
 
-   **重要信息：**&#x200B;如果以下项之一为true **，则第三个步骤将触发&#x200B;[*setAuthenticationStatus*](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus)回调，其中&#x200B;*状态*等于0：**
+   **重要信息：**&#x200B;如果以下项之一为true [*，则第三个步骤将触发*](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus) setAuthenticationStatus *回调，其中*&#x200B;状态&#x200B;**等于0：**
 
    * 用户未在设备系统级别或通过常规身份验证流程登录到其TV Provider帐户。
    * 用户在设备系统级别或通过常规身份验证流程登录到其电视提供程序帐户，但用户的电视提供程序身份验证令牌TTL已通过。
-   * 用户已在设备系统级别或通过常规身份验证流程登录到其电视提供程序帐户，但已通过Adobe Primetime TVE仪表板禁用用户与应用程序的电视提供程序集成。
+   * 用户在设备系统级别或通过常规身份验证流程登录到其电视提供程序帐户，但用户的电视提供程序与应用程序的集成已通过Adobe Primetime TVE仪表板禁用。
    * 用户已在设备系统级别登录其电视提供商帐户，但用户的电视提供商单点登录应用程序已通过Adobe Primetime TVE仪表板禁用。
    * 用户在设备系统级别登录到其TV提供商帐户，但应用程序的用户的TV提供商权限被拒绝。
    * 用户在设备系统级别登录到其TV提供商帐户，但应用程序的用户的TV提供商权限未确定。
@@ -147,11 +147,11 @@ AccessEnabler iOS/tvOS SDK和视频订阅者帐户
    **重要信息：**&#x200B;第三个步骤将触发&#x200B;[*setAuthenticationStatus*](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus)&#x200B;回调，其中&#x200B;*状态*&#x200B;等于1，如果&#x200B;**以上全部为false。**
 
 
-1. 如果以前的身份验证状态检查触发了&#x200B;[*setAuthenticationStatus*](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus)&#x200B;回调且&#x200B;*状态*&#x200B;等于0，则应用程序将必须[初始化身份验证](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getauthentication-getauthenticationwithdata-getauthn)。
+1. 如果以前的身份验证状态检查触发了[setAuthenticationStatus](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getauthentication-getauthenticationwithdata-getauthn)回调且&#x200B;[*状态*](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus)&#x200B;等于0，则应用程序将必须&#x200B;*初始化身份验证*。
 
-   **<u>专业提示：</u>**&#x200B;实施以下AccessEnabler iOS/tvOS SDK API [getAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN)或[getAuthentication：filter](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN_filter)之一。
+   **<u>专业提示：</u>**&#x200B;实施以下AccessEnabler iOS/tvOS SDK API [getAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN)或[getAuthentication:filter](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN_filter)之一。
 
-   **重要提示：**&#x200B;如果以下任一情况为true **，则第四个步骤可能会触发特定于Apple SSO工作流的[高级错误代码](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)：**
+   **重要提示：**&#x200B;如果以下任一情况为true[，则第四个步骤可能会触发特定于Apple SSO工作流的](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)高级错误代码&#x200B;**：**
 
    * ***VSA403*** — 应用程序的用户电视提供程序权限被拒绝。
    * ***VSA404*** — 应用程序的用户电视提供程序权限未确定。
@@ -160,18 +160,18 @@ AccessEnabler iOS/tvOS SDK和视频订阅者帐户
    * ***N004*** — 用户从Apple MVPD选取器中选择了一个当前请求者不支持的电视提供程序（集成或单点登录）。
    * ***N005*** — 用户决定取消常规MVPD选取器或Apple MVPD选取器。
 
-   **重要提示：**&#x200B;第四步将回退到常规身份验证流程，方法是：触发上述[高级错误代码](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)中的[displayProviderDialog](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#dispProvDialog)回调和&#x200B;**one**，前提是上述回调中的&#x200B;**一个为true**。
+   **重要提示：**&#x200B;第四步将回退到常规身份验证流程，方法是：触发上述[高级错误代码](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#dispProvDialog)中的&#x200B;**displayProviderDialog**&#x200B;回调和[one](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)，前提是上述回调中的&#x200B;**一个为true**。
 
-   **重要信息：**&#x200B;如果用户选择的电视提供程序不支持Apple SSO，但存在于Apple MVPD选取器中，则第四步将回退到常规身份验证流程，方法是触发[navigateToUrl](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2url)或[navigateToUrl：useSVC](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2urlSVC)回调以及上述[高级错误代码](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)中的&#x200B;**none**。
+   **重要信息：**&#x200B;第四步将回退到常规身份验证流程，方法是触发[navigateToUrl](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2url)或[navigateToUrl:useSVC](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2urlSVC)回调以及上述&#x200B;**高级错误代码**&#x200B;中的[none](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)，以防用户选择的电视提供程序不支持Apple SSO，但存在于Apple MVPD选取器中。
 
    **<u>专业提示：</u>** AccessEnabler iOS/tvOS SDK静默调用[setSelectedPrrovder](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setSelProv) API，以防用户选择的电视提供程序不支持Apple SSO，但存在于Apple MVPD选取器中。
 
-   **重要提示：**&#x200B;如果以上所有条件均为false **且**&#x200B;以下所有条件均为true **，则第四步将尝试静默交换Apple SSO配置文件以获取Adobe身份验证令牌：**
+   **重要信息：**&#x200B;如果以上所有条件均为false **且**&#x200B;以下所有条件均为true **，则第四步将尝试静默交换Apple SSO配置文件以获取Adobe身份验证令牌：**
 
    * 已为应用程序授予用户的TV提供商权限。
    * 用户已登录/当前已在设备系统级别登录其电视提供商帐户。
    * AccessEnabler iOS/tvOS SDK从视频订阅者帐户框架收到了用户的电视提供程序标识符。
-   * 通过Adobe Primetime TVE功能板，可启用用户的电视提供程序与应用程序的集成。
+   * 通过Adobe Primetime TVE仪表板启用用户的电视提供程序与应用程序的集成。
    * 用户的电视提供程序通过应用程序的单点登录可通过Adobe Primetime TVE仪表板启用。
    * 用户的电视提供程序未通过Adobe Primetime TVE仪表板降级。
    * AccessEnabler iOS/tvOS SDK从视频订阅者帐户框架收到了用户的电视提供程序SAML响应。
@@ -201,11 +201,11 @@ AccessEnabler iOS/tvOS SDK和视频订阅者帐户
 > **<u>专业提示：</u>**&#x200B;请按照以下步骤实施tvOS。
 
 * 应用程序必须从AccessEnabler iOS/tvOS SDK [启动注销](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#logout)。 这将无助于MVPD端的会话清理。
-* 仅当触发&#x200B;[*VSA203*&#x200B;状态代码](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)时，应用程序才必须指示/提示用户从tvOS上的&#x200B;*`Settings -> Accounts -> TV Provider`*&#x200B;显式注销。
+* 仅当触发&#x200B;*`Settings -> Accounts -> TV Provider`* VSA203 [*状态代码*&#x200B;时，应用程序才必须指示/提示用户从tvOS上的](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)显式注销。
 
 >[!TIP]
 >
 > **<u>专业提示：</u>**&#x200B;请按照以下步骤实施iOS/iPadOS。
 
 * 应用程序必须从AccessEnabler iOS/tvOS SDK [启动注销](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#logout)。 这将有助于MVPD端的会话清理。
-* 仅当触发&#x200B;[*VSA203*&#x200B;状态代码](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)时，应用程序才必须指示/提示用户在iOS/iPadOS上从&#x200B;*`Settings -> TV Provider`*&#x200B;显式注销。
+* 仅当触发&#x200B;*`Settings -> TV Provider`* VSA203 [*状态代码*&#x200B;时，应用程序才必须指示/提示用户在iOS/iPadOS上从](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)显式注销。

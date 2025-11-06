@@ -4,7 +4,7 @@ description: 传递客户端信息（设备、连接和应用程序）
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1666'
+source-wordcount: '1665'
 ht-degree: 1%
 
 ---
@@ -65,7 +65,7 @@ ht-degree: 1%
 |            | displayheight | 否 | 设备的物理屏幕高度。 |                                                                                                                                                                                                                                                                                                                                                           |
 |            | displayPpi | 否 | 设备的物理屏幕像素密度。 | 例如294 |
 |            | 对角屏幕大小 | 否 | 设备的物理屏幕对角尺寸（英寸）。 | 例如5.5、10.1 |
-|            | connectionIp | 否 | 用于发送HTTP请求的设备的IP。 | 例如8.8.4.4 |
+|            | connectionIp | 否 | 用于发送HTTP请求的设备的IP。 | 如8.8.4.4 |
 |            | connectionPort | 否 | 用于发送HTTP请求的设备的端口。 | 例如53124 |
 |            | connectionType | 否 | 网络连接类型。 | 例如WiFi、LAN、3G、4G、5G |
 |            | connectionSecure | #是 | 网络连接安全状态。 | #值受到限制：                                                   true — 在安全网络的情况下                   false — 在公共热点的情况下 |
@@ -93,7 +93,7 @@ Adobe Pass身份验证服务支持通过以下方式接收客户端信息：
 
 AccessEnabler JavaScript SDK默认构建一个客户端信息JSON对象，除非覆盖，否则该对象将传递到Adobe Pass身份验证服务。
 
-AccessEnabler JavaScript SDK仅支持&#x200B;**通过[setRequestor](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options))的&#x200B;*applicationId*选项参数覆盖客户端信息JSON对象中的“applicationId”键**。
+AccessEnabler JavaScript SDK仅支持&#x200B;**通过** setRequestor[的](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options))applicationId *选项参数覆盖客户端信息JSON对象中的“applicationId”键*。
 
 >[!CAUTION]
 >
@@ -104,7 +104,7 @@ AccessEnabler JavaScript SDK仅支持&#x200B;**通过[setRequestor](/help/authen
 
 默认情况下，AccessEnabler iOS/tvOS SDK会构建一个客户端信息JSON对象，除非覆盖，否则该对象将传递到Adobe Pass身份验证服务。
 
-AccessEnabler iOS/tvOS SDK支持&#x200B;**通过[setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setoptions)的device_info参数覆盖整个**&#x200B;客户端信息JSON对象。
+AccessEnabler iOS/tvOS SDK支持&#x200B;**通过** setOptions[的device_info参数覆盖整个](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setoptions)客户端信息JSON对象。
 
 >[!CAUTION]
 >
@@ -116,7 +116,7 @@ AccessEnabler iOS/tvOS SDK支持&#x200B;**通过[setOptions](/help/authenticatio
 
 默认情况下，`AccessEnabler`个Android/FireOS SDK会生成一个客户端信息JSON对象，除非覆盖，否则该对象将传递到Adobe Pass身份验证服务。
 
-`AccessEnabler` Android/FireOS SDK支持通过[setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)的/[setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)的`device_info`参数覆盖整个&#x200B;**客户端信息JSON对象。**
+`AccessEnabler` Android/FireOS SDK支持通过&#x200B;**setOptions**&#x200B;的/[setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)的[参数覆盖整个](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)客户端信息JSON对象。`device_info`
 
 >[!NOTE]
 >

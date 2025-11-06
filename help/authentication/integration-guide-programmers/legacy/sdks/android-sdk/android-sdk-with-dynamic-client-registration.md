@@ -2,7 +2,7 @@
 title: Android SDK与Dynamic Client注册
 description: Android SDK与Dynamic Client注册
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '1301'
 ht-degree: 0%
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 ## 动态客户端注册 {#DCR}
 
-Android SDK v3.0+将使用[动态客户端注册概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)中定义的动态客户端注册过程。
+Android SDK v3.0+将使用[动态客户端注册概述](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)中定义的动态客户端注册过程。
 
 
 ## 功能演示 {#Demo}

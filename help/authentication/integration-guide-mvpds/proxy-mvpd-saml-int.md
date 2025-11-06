@@ -4,7 +4,7 @@ description: 代理MVPD SAML集成
 exl-id: 6c83e703-d8cd-476b-8514-05b8230902be
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
-source-wordcount: '711'
+source-wordcount: '700'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## 概述 {#overview-proxy-mvpd-saml-int}
 
-本文档介绍了用于代理集成的SAML身份验证流程。  这些流依赖于Adobe Pass身份验证服务器配置中存在的代理配置数据。 代理MVPD通过Adobe Pass身份验证代理Web服务将其代理配置数据推送到Adobe Pass身份验证服务器。
+本文档介绍了用于代理集成的SAML身份验证流程。  这些流依赖于Adobe Pass身份验证服务器配置中存在的代理配置数据。 代理MVPD通过Adobe Pass身份验证代理Web服务，将其代理配置数据推送到Adobe Pass身份验证服务器。
 
 ## 代理配置数据 {#proxy-config-data}
 
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 | 属性 | 描述 |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| MVPD ID | 表示代理的MVPD在内部到Adobe Pass身份验证的字符串。  在Adobe Pass身份验证的上下文中将由Adobe确认为唯一。 |
+| MVPD ID | 表示代理的MVPD内部到Adobe Pass身份验证的字符串。  将由Adobe确认在Adobe Pass身份验证上下文中是唯一的。 |
 | MVPD默认徽标URL | 可在用户的MVPD选择器体验中显示的徽标的URL。  应使用透明背景。 |
 | MVPD显示名称 | 用作显示名称文本（可能作为替换文本）的字符串，该文本可以与徽标一起显示。 |
 
@@ -33,15 +33,15 @@ ht-degree: 0%
 
 ## SAML集成流 {#saml-int-flows}
 
-当MVPD订阅者访问程序员的网站或应用程序时，Adobe Pass身份验证使用为该程序员激活的MVPD列表来响应来自网站或应用程序的API调用。  集成可以是直接的或代理的；对于程序员来说，它们之间没有区别。 这允许程序员以他们认为合适的任何方式显示活动MVPD列表。 订户选择其MVPD，Adobe Pass身份验证将订户重定向到MVPD的特定身份提供者。
+当MVPD订阅者访问程序员的网站或应用程序时，Adobe Pass身份验证使用为该程序员激活的MVPD列表来响应来自网站或应用程序的API调用。  集成可以是直接的或代理的；对于程序员来说，它们之间没有区别。 这允许程序员以他们认为合适的任何方式显示活动MVPD列表。 订阅者选择他们的MVPD，Adobe Pass身份验证将订阅者重定向到MVPD的特定身份提供程序。
 
-在集成的MVPD代理的情况下，会在Adobe Pass身份验证和MVPD代理之间完成集成。 Adobe Pass身份验证将用户身份验证请求发送到MVPD代理，而MVPD代理处理重定向。 为了让MVPD代理知道从何处重定向用户身份验证请求，Adobe Pass身份验证在SAML身份验证请求中发送MVPD标识符。  此标识符是由代理提供程序通过上述代理Web服务指定的MVPD ID。
+在集成的MVPD代理的情况下，会在Adobe Pass身份验证和MVPD代理之间完成集成。 Adobe Pass身份验证将用户身份验证请求发送到MVPD代理，MVPD代理处理重定向。 为了让MVPD代理知道从何处重定向用户身份验证请求，Adobe Pass身份验证在SAML身份验证请求中发送MVPD标识符。  此标识符是由代理提供程序通过上面指定的代理Web服务指定的MVPD ID。
 
 ### 身份验证 {#authn-saml-int}
 
-为了使Adobe Pass身份验证与代理MVPD集成，需要满足以下条件：
+要将Adobe Pass身份验证与代理MVPD集成，需要满足以下条件：
 
-* 代理MVPD提供了已代理MVPD的列表，已推送到Adobe代理Web服务
+* 代理MVPD提供了推送到Adobe代理Web服务的代理MVPD列表
 
 * 父MVPD代理的SAML元数据
 
@@ -65,7 +65,7 @@ ht-degree: 0%
 
 在SAML AuthN请求中，代理集成包含以下需要由MVPD代理处理的其他属性。  要代表代理的MVPD正确处理请求者并呈现正确的登录体验，此属性是必需的。 （此属性在下面的示例请求中突出显示。）
 
-**作用域属性** — 包含包含特定MVPD_ID和MVPD名称的IDPEntry项。  它表示用户实际从程序员的选取器中选择的MVPD，并且与代理Web服务中指定的MVPD_ID匹配。
+**作用域属性** — 包含包含特定的MVPD_ID和MVPD名称的IDPEntry项。  它表示用户实际从程序员的选择器中选择的MVPD，并且与在代理Web服务中指定的MVPD_ID匹配。
 
 RequestorID还有一个作用域属性，可用于自定义程序员特定品牌的登录（如果需要）。 或者，它可以仅用于分析请求的来源。
 
@@ -164,7 +164,7 @@ RequestorID还有一个作用域属性，可用于自定义程序员特定品牌
 
 ### 授权 {#authz-proxy-mvpd-saml-int}
 
-对于授权部分，MVPD需要接受由程序员指定的资源进行授权。  在大多数情况下，这是信道网络的字符串标识符，如TBS或TNT。
+对于授权部分，MVPD需要接受由程序员指定的资源以进行授权。  在大多数情况下，这是信道网络的字符串标识符，如TBS或TNT。
 
 #### 授权SAML请求和响应 {#authz-saml-req-resp}
 

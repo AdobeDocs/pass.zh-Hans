@@ -100,7 +100,7 @@ Connected Devices应用程序通过REST API直接与Adobe Pass身份验证进行
 
 1. 作为我们新的One API计划的一部分，我们计划修复此限制，并能够基于设备识别为每个平台应用规则。
 
-2. Adobe将继续与所有主要平台合作，以实施可与我们的REST API一起使用的平台SSO。 我们的“一个API”计划将在使用本机SDK实施的应用程序与使用REST API实施的应用程序之间提供SSO支持。
+2. Adobe将继续与所有主要平台合作，实施可与我们的REST API一起使用的平台SSO。 我们的“一个API”计划将在使用本机SDK实施的应用程序与使用REST API实施的应用程序之间提供SSO支持。
 
 ## 最低设备要求 {#min_reqs}
 

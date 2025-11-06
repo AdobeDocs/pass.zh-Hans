@@ -2,7 +2,7 @@
 title: REST API V2指南（客户端到服务器）
 description: REST API V2指南（客户端到服务器）
 exl-id: 6a5a89d2-ea54-4f9c-9505-e575ced4301c
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '1833'
 ht-degree: 0%
@@ -107,7 +107,7 @@ ht-degree: 0%
 * **方案2：**&#x200B;没有现有的配置文件，流应用程序可以继续执行下一步以[对用户进行身份验证](#step-3-authenticate-the-user)。
 
 
-* **方案3：**&#x200B;没有现有的配置文件，流应用程序可以继续通过[TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)功能为用户提供临时访问权限。
+* **方案3：**&#x200B;没有现有的配置文件，流应用程序可以继续通过[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)功能为用户提供临时访问权限。
 
    * 此方案超出了此文档的范围，有关详细信息，请参阅[临时访问流](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)文档。
 

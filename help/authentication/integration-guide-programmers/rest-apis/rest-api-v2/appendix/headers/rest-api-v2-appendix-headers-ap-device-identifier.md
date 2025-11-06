@@ -95,7 +95,7 @@ _(*)建议集成提供浏览器或设备指纹识别机制的库或服务。_
 
 #### iOS和iPadOS {#ios-ipados}
 
-要为运行[iOS或iPadOS](https://developer.apple.com/documentation/ios-ipados-release-notes)的设备生成`AP-Device-Identifier`标头，您可以参考以下文档：
+要为运行`AP-Device-Identifier`iOS或iPadOS[的设备生成](https://developer.apple.com/documentation/ios-ipados-release-notes)标头，您可以参考以下文档：
 
 * [identifierForVendor](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor)的Apple开发人员文档。
 
@@ -103,7 +103,7 @@ _(*)建议对OS提供的值应用SHA-256哈希函数。_
 
 #### Android {#android}
 
-要为运行[Android](https://developer.android.com/about/versions)的设备生成`AP-Device-Identifier`标头，您可以参考以下文档：
+要为运行`AP-Device-Identifier`Android[的设备生成](https://developer.android.com/about/versions)标头，您可以参考以下文档：
 
 * [ANDROID_ID](https://developer.android.com/reference/android/provider/Settings.Secure#ANDROID_ID)的Android开发人员文档。
 
@@ -113,7 +113,7 @@ _(*)建议对OS提供的值应用SHA-256哈希函数。_
 
 #### tvOS {#tvos}
 
-要为运行[tvOS](https://developer.apple.com/documentation/tvos-release-notes)的设备生成`AP-Device-Identifier`标头，您可以参考以下文档：
+要为运行`AP-Device-Identifier`tvOS[的设备生成](https://developer.apple.com/documentation/tvos-release-notes)标头，您可以参考以下文档：
 
 * [identifierForVendor](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor)的Apple开发人员文档。
 
@@ -121,7 +121,7 @@ _(*)建议对OS提供的值应用SHA-256哈希函数。_
 
 #### Fire操作系统 {#fireos}
 
-要为运行[Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html)的设备生成`AP-Device-Identifier`标头，您可以参考以下文档：
+要为运行`AP-Device-Identifier`Fire OS[的设备生成](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html)标头，您可以参考以下文档：
 
 * [ANDROID_ID](https://developer.android.com/reference/android/provider/Settings.Secure#ANDROID_ID)的Android开发人员文档。
 
@@ -129,7 +129,7 @@ _(*)建议对OS提供的值应用SHA-256哈希函数。_
 
 #### Roku OS {#rokuos}
 
-要为运行[Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md)的设备生成`AP-Device-Identifier`标头，您可以参考以下文档：
+要为运行`AP-Device-Identifier`Roku OS[的设备生成](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md)标头，您可以参考以下文档：
 
 * [GetChannelClientId](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string)的Roku开发人员文档。
 

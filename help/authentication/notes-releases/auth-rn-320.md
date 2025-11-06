@@ -1,8 +1,8 @@
 ---
 title: Adobe Pass Authentication 3.2.0发行说明
 description: Adobe Pass Authentication 3.2.0发行说明
-exl-id: 4008512a-3155-4d96-9988-da0b0a496612
-source-git-commit: 13b0bb640aa599109e8c2f68d1e16fbdc3840951
+exl-id: 43aee317-dbac-4000-893e-839ee3e9f6ba
+source-git-commit: fcdf50b2caad20deef15fceeb3e23f4195c0078d
 workflow-type: tm+mt
 source-wordcount: '190'
 ht-degree: 0%
@@ -32,7 +32,7 @@ Adobe Pass身份验证： adobe-pass-**3.2.0**
 
 #### REST API v2
 
-* 已为[会话API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)响应中缺少参数的情况添加了新原因`missing_parameters_fallback`。
+* 已为`missing_parameters_fallback`会话API[响应中缺少参数的情况添加了新原因](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)。
 * 新字段“device”已添加到[会话API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)响应。
 
 #### 新增功能

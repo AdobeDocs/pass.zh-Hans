@@ -2,7 +2,7 @@
 title: 程序员集成指南
 description: 程序员集成指南
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: 7ca9d8996756086a6b963c0b6d5b0bb64608ecbc
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '2119'
 ht-degree: 0%
@@ -28,13 +28,13 @@ ht-degree: 0%
 
 对于程序员而言，确定权利并不总是简单明了。 MVPD是其客户标识数据和访问权限的托管者。 让问题进一步复杂化的是，程序员可能会订阅各种MVPD，每个都使用独特的系统进行操作。 这些复杂性使得验证权利在技术上既具有挑战性，又具有资源密集性。
 
-![由程序员直接决定的用户权利](/help/authentication/assets/user-ent-by-progr.png){align="center"}
+![由程序员直接决定的用户权利](../assets/user-ent-by-progr.png){align="center"}
 
 *由程序员直接决定的用户权利*
 
 Adobe Pass身份验证可安全地促进程序员和MVPD之间的授权事务，使得向符合条件的查看者提供受保护内容变得快速、轻松和安全。
 
-由Adobe Pass身份验证调解的![用户权利](/help/authentication/assets/user-ent-mediatedby-authn.png){align="center"}
+由Adobe Pass身份验证调解的![用户权利](../assets/user-ent-mediatedby-authn.png){align="center"}
 
 由Adobe Pass身份验证调解的&#x200B;*用户权利*
 
@@ -47,11 +47,11 @@ Adobe Pass Authentication充当代理，通过为双方提供安全一致的界�
    * [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * Premium Adobe Pass身份验证API：
-   * [重置临时传递API](/help/premium-workflow/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [TempPass功能](/help/premium-workflow/temporary-access/temp-pass-feature.md)
-   * [降级API](/help/premium-workflow/degraded-access/degradation-feature.md#degradation-api-access)
-      * [退化特征](/help/premium-workflow/degraded-access/degradation-feature.md)
-   * [授权服务监控API](/help/premium-workflow/esm/entitlement-service-monitoring-api.md)
+   * [重置临时传递API](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+   * [降级API](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+      * [退化特征](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+   * [授权服务监控API](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 ### 用例 {#use-cases}
 
@@ -72,7 +72,7 @@ Adobe Pass Authentication充当代理，通过为双方提供安全一致的界�
 | **阶段** | **优先级** | **用例** | **文档** |
 |----------------------|--------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **身份验证** | **高** | 身份验证 | 有关更多详细信息，请参阅[身份验证阶段](#authentication-phase)部分下汇总的文档。 |
-|                      | **高** | 基于家庭的身份验证(HBA) | 有关更多详细信息，请参阅[基于主页的身份验证](/help/premium-workflow/hba-access/home-based-authentication.md)。 |
+|                      | **高** | 基于家庭的身份验证(HBA) | 有关更多详细信息，请参阅[基于主页的身份验证](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)。 |
 |                      | **高** | 单点登录(SSO) | 有关更多详细信息，请参阅[单点登录(SSO)](#sso)部分下汇总的文档。 |
 |                      | **高** | 选择MVPD | 有关更多详细信息，请参阅[配置阶段](#configuration-phase)部分下汇总的文档。 |
 |                      | **Medium** | 品牌化MVPD登录页面 | 使MVPD能够为登录页提供特定于程序员或服务提供商的品牌，包括对默认语言首选项的支持。 |

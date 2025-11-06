@@ -2,7 +2,7 @@
 title: 跟踪预防评估Apple Safari
 description: 跟踪预防评估Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '1849'
 ht-degree: 0%
@@ -33,7 +33,7 @@ ht-degree: 0%
 
 为了减轻这些限制，您可以指示用户更改Safari 10浏览器隐私设置，并对浏览器“首选项”中“隐私”选项卡上的“**Cookie和网站数据**”条目使用“**始终允许**”选项，如下图所示。
 
-![](/help/authentication/assets/always-allow-safari10.png)
+![](../../../assets/always-allow-safari10.png)
 
 
 ## Safari 11 {#safari11}
@@ -64,12 +64,12 @@ Adobe Pass身份验证服务使用并依赖于Cookie作为身份验证过程&#x2
 
 * 对于Mac OS X High Sierra及更高版本：从“首选项”取消选中浏览器“隐私”选项卡中“**网站跟踪**”条目的“**阻止跨站点跟踪**”选项，如下图所示。
 
-  ![](/help/authentication/assets/uncheck-prvnt-cr-st-tr-safari11.png)
+  ![](../../../assets/uncheck-prvnt-cr-st-tr-safari11.png)
 
 
 * 对于Mac OS X Sierra和之前的版本：从首选项的浏览器“隐私”选项卡中选中“**Cookie和网站数据**”条目的“**始终允许**”选项，如下图所示。
 
-  ![](/help/authentication/assets/always-allow-safari11.png)
+  ![](../../../assets/always-allow-safari11.png)
 
 ## Safari 12 {#safari12}
 
@@ -126,14 +126,14 @@ Adobe Pass身份验证服务使用并依赖于Cookie作为身份验证过程&#x2
 
 在撰写本文时，没有已知的缓解措施可用或可能。 Apple确实在Safari 12 (`https://webkit.org/blog/8124/introducing-storage-access-api`)中引入了“Storage Access API”，但当前实现不适用于localStorage，而仅适用于Cookie。 此外，API需要用户交互才能使用，并且在您使用它后，还会提示用户一个权限对话框，类似于以下对话框。
 
-![](/help/authentication/assets/permission-dialog-apple.png)
+![](../../../assets/permission-dialog-apple.png)
 
 
 此时，这些Safari要求/提示与我们的UX要求不一致，并且我们在其他浏览器上的行为也不一致，在这些浏览器中，一旦我们在公共域localStorage中保存了令牌，SSO“刚刚起效”。
 
 **临时传递**
 
-为了缓解个性化问题并让用户进行交互，我们建议您以交互方式使用&#x200B;**[促销临时密码](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)**，并提供至少一个有关用户的附加信息（例如电子邮件地址）。
+为了缓解个性化问题并让用户进行交互，我们建议您以交互方式使用&#x200B;**[促销临时密码](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)**，并提供至少一个有关用户的附加信息（例如电子邮件地址）。
 
 ## Safari 13 {#safari13}
 
@@ -164,8 +164,8 @@ AccessEnabler JavaScript SDK v4（版本4.x）库不使用第三方Cookie进行�
 
 * 对于Mac OS X High Sierra及更高版本：从“首选项”取消选中浏览器“隐私”选项卡中“**网站跟踪**”条目的“**阻止跨站点跟踪**”选项，如下图所示。
 
-  ![](/help/authentication/assets/prvnt-cross-site-tr-safari13.png)
+  ![](../../../assets/prvnt-cross-site-tr-safari13.png)
 
 * 对于Mac OS X Sierra和之前的版本：选中“首选项”下浏览器“隐私”选项卡中的“</span>Cookie和网站数据&#x200B;**”项的“**&#x200B;始终允许&#x200B;**”选项，如下图所示。**
 
-  ![](/help/authentication/assets/always-allow-safari13.png)
+  ![](../../../assets/always-allow-safari13.png)

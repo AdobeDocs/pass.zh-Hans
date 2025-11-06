@@ -43,7 +43,7 @@ ht-degree: 0%
 
 ## 永久解决方案
 
-Adobe将在未来版本中更改此设置，方法是在创建注册代码时将`deviceId`设为可选有效负载，并在`deviceId`不存在时将UUID而不是`deviceId`用作令牌键。
+Adobe将在未来版本中更改此设置，方法是在创建注册代码时，将`deviceId`设为可选有效负载，并在`deviceId`不存在时，使用UUID而不是`deviceId`作为令牌键。
 
 <!--
 ## Related Information

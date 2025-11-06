@@ -79,7 +79,7 @@ ht-degree: 0%
 - *appContext*： Amazon Fire OS应用程序上下文。
 - softwarestatement
 - redirectUrl ：如果是FireOS，则会忽略参数值并将其设置为默认值： adobepass://android.app
-- env_url：对于使用Adobe暂存环境进行测试，可以将env\_url设置为“sp.auth-staging.adobe.com”
+- env_url：对于使用Adobe暂存环境进行测试，可将env\_url设置为“sp.auth-staging.adobe.com”
 
 **已弃用：**
 
@@ -91,11 +91,11 @@ ht-degree: 0%
 
 ### setRequestor {#setRequestor}
 
-**描述：**&#x200B;建立程序员的身份。 在为Adobe Pass身份验证系统注册Adobe时，每个程序员都会分配一个唯一的ID。 在应用程序的生命周期中，只应执行一次此设置。
+**描述：**&#x200B;建立程序员的身份。 在为Adobe Pass身份验证系统注册Adobe后，每个程序员都会分配一个唯一的ID。 在应用程序的生命周期中，只应执行一次此设置。
 
 服务器响应包含MVPD列表以及附加到程序员标识的一些配置信息。 服务器响应由访问启用码在内部使用。 通过setRequestorComplete()回调只向应用程序显示操作的状态（即SUCCESS/FAIL）。
 
-如果未使用&#x200B;*url*&#x200B;参数，则生成的网络调用将定向默认服务提供程序URL：Adobe版本/生产环境。
+如果未使用&#x200B;*url*&#x200B;参数，则生成的网络调用将定向默认服务提供程序URL： Adobe Release/Production环境。
 
 如果为&#x200B;*url*&#x200B;参数提供了值，则生成的网络调用将针对&#x200B;*url*&#x200B;参数中提供的所有URL。 所有配置请求都在单独的线程中同时触发。 在编译MVPD列表时，优先使用第一个响应程序。 对于列表中的每个MVPD， Access Enabler会记住关联服务提供商的URL。 所有后续权利请求都定向到与服务提供商关联的URL，该URL在配置阶段与目标MVPD配对。
 
@@ -116,8 +116,8 @@ ht-degree: 0%
 
 **参数：**
 
-- *requestorID*：与程序员关联的唯一ID。 首次向Adobe Pass身份验证服务注册时，将Adobe分配的唯一ID传递到您的网站。
-- *url*：可选参数；默认情况下，使用Adobe服务提供程序(http://sp.auth.adobe.com/)。 此阵列允许您为Adobe提供的身份验证和授权服务指定端点（其他实例可能用于调试目的）。 您可以使用此选项指定多个Adobe Pass身份验证服务提供程序实例。 在执行此操作时，MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商相关联；即首先响应并支持该MVPD的提供商。
+- *requestorID*：与程序员关联的唯一ID。 首次使用Adobe身份验证服务注册时，请将Adobe Pass分配的唯一ID传递到您的网站。
+- *url*：可选参数；默认情况下，使用Adobe服务提供程序(http://sp.auth.adobe.com/)。 此阵列允许您为Adobe提供的身份验证和授权服务指定端点（不同的实例可用于调试目的）。 您可以使用此选项指定多个Adobe Pass身份验证服务提供程序实例。 在执行此操作时，MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商相关联；即首先响应并支持该MVPD的提供商。
 
 已触发&#x200B;**回调：** `setRequestorComplete()`
 
@@ -175,7 +175,7 @@ ht-degree: 0%
 
 - *选项*：包含全局SDK选项的Map\&lt;字符串，字符串\>。 当前提供以下选项：
    - **applicationProfile** — 可用于根据此值生成服务器配置。
-   - **ap\_vi** -Experience CloudID服务。 此值以后可用于高级分析报表。
+   - **ap\_vi** - Experience Cloud ID服务。 此值以后可用于高级分析报表。
    - **device\_info** — 设备信息，如&#x200B;**传递设备信息指南**&#x200B;中所述
 
 </br>
@@ -260,7 +260,7 @@ ht-degree: 0%
 | ```public void setSelectedProvider(String mvpdId)``` |
 
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **参数：**&#x200B;无
 
@@ -355,7 +355,7 @@ ht-degree: 0%
 | --- |
 | ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **参数：** `resources`参数是用户已被授权查看的资源数组。
 
@@ -427,7 +427,7 @@ ht-degree: 0%
 | --- |
 | ```public void setToken(String token, String resourceId)``` |
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **参数：**
 
@@ -625,7 +625,7 @@ Access Enabler会触发一个附加回调，该回调不一定与权利文件流
 
 >[!WARNING]
 >
-> 设备类型和操作系统通过使用公共Java库(http://java.net/projects/user-agent-utils)和用户代理字符串派生。 请注意，此信息仅以粗略的方式提供，用于按设备类别细分操作量度，但该Adobe对错误结果不承担任何责任。 请相应地使用新功能。
+> 设备类型和操作系统通过使用公共Java库(http://java.net/projects/user-agent-utils)和用户代理字符串派生。 请注意，此信息仅以粗略的方式提供，用于按设备类别细分操作量度，但Adobe对错误结果不承担任何责任。 请相应地使用新功能。
 
 - 设备类型的可能值：
    - `computer`

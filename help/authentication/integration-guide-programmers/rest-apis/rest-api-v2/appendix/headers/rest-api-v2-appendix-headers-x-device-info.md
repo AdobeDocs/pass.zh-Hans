@@ -351,7 +351,7 @@ X-Device-Info: ewogICJwcmltYXJ5SGFyZHdhcmVUeXBlIiA6ICJNb2JpbGVQaG9uZSIsCiAgIm1vZ
 
 #### iOS和iPadOS {#ios-ipados}
 
-要为运行[iOS或iPadOS](https://developer.apple.com/documentation/ios-ipados-release-notes)的设备构建`X-Device-Info`标头，您可以参考以下文档及以下代码片段：
+要为运行`X-Device-Info`iOS或iPadOS[的设备构建](https://developer.apple.com/documentation/ios-ipados-release-notes)标头，您可以参考以下文档及以下代码片段：
 
 * [UIDevice](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice)的Apple开发人员文档。
 * 有关[可访问性](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html)的Apple开发人员文档。
@@ -452,7 +452,7 @@ X-Device-Info: ewogICJwcmltYXJ5SGFyZHdhcmVUeXBlIiA6ICJNb2JpbGVQaG9uZSIsCiAgIm1vZ
 
 #### Android {#android}
 
-要为运行[Android](https://developer.android.com/about/versions)的设备生成`X-Device-Info`标头，您可以参考以下文档以及下面的代码片段：
+要为运行`X-Device-Info`Android[的设备生成](https://developer.android.com/about/versions)标头，您可以参考以下文档以及下面的代码片段：
 
 * [Build](https://developer.android.com/reference/android/os/Build.html)类的Android开发人员文档。
 
@@ -559,7 +559,7 @@ private JSONObject computeClientInformation() {
 
 #### tvOS {#tvos}
 
-要为运行[tvOS](https://developer.apple.com/documentation/tvos-release-notes)的设备生成`X-Device-Info`标头，您可以参考以下文档及以下代码片段：
+要为运行`X-Device-Info`tvOS[的设备生成](https://developer.apple.com/documentation/tvos-release-notes)标头，您可以参考以下文档及以下代码片段：
 
 * [UIDevice](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice)的Apple开发人员文档。
 * 有关[可访问性](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html)的Apple开发人员文档。
@@ -659,7 +659,7 @@ private JSONObject computeClientInformation() {
 
 #### Fire操作系统 {#fireos}
 
-要为运行[Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html)的设备生成`X-Device-Info`标头，您可以参考以下文档：
+要为运行`X-Device-Info`Fire OS[的设备生成](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html)标头，您可以参考以下文档：
 
 * [Build](https://developer.android.com/reference/android/os/Build.html)类的Android开发人员文档。
 * [识别Fire TV设备](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html)的Amazon开发人员文档。
@@ -692,7 +692,7 @@ private JSONObject computeClientInformation() {
 
 #### Roku OS {#rokuos}
 
-要为运行[Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md)的设备生成`X-Device-Info`标头，您可以参考以下文档：
+要为运行`X-Device-Info`Roku OS[的设备生成](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md)标头，您可以参考以下文档：
 
 * [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md)的Roku开发人员文档。
 

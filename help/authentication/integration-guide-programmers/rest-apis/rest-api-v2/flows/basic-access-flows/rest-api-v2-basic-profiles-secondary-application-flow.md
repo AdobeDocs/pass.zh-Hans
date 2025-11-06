@@ -2,7 +2,7 @@
 title: 基本配置文件 — 辅助应用程序 — 流量
 description: REST API V2 — 基本配置文件 — 辅助应用程序 — 流量
 exl-id: 1fcefcfa-7534-4b85-b3b5-df513685d66b
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
 source-wordcount: '418'
 ht-degree: 0%
@@ -41,7 +41,7 @@ Adobe Pass身份验证权利中的&#x200B;**配置文件流**&#x200B;允许辅�
 
 按照给定的步骤为在辅助应用程序中执行的特定身份验证代码实施基本配置文件检索流程，如下图所示。
 
-![检索特定代码的配置文件](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-secondary-application-for-specific-code.png)
+![检索特定代码的配置文件](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-secondary-application-for-specific-code.png)
 
 *检索特定代码的配置文件*
 

@@ -60,7 +60,7 @@ AccessEnabler支持的所有授权工作流都假定您之前已调用[`setReque
 1. AccessEnabler确定当前的身份验证状态。 如果用户当前已通过身份验证，则AccessEnabler将调用您的`setAuthenticationStatus()`回调函数，传递一个表示成功的身份验证状态（下面的步骤7）。
 1. 如果用户未经过身份验证，AccessEnabler将通过确定用户的最后一次身份验证尝试在给定MVPD中是否成功来继续身份验证流程。 如果缓存了MVPD ID并且`canAuthenticate`标志为true或使用[`setSelectedProvider()`](#setSelectedProvider)选择了MVPD，则不会通过MVPD选择对话框提示用户。 身份验证流程继续使用MVPD的缓存值(即，在上次成功身份验证期间使用的MVPD值)。 系统会向后端服务器发出网络调用，并将用户重定向到MVPD登录页面（下面的步骤6）。
 1. 如果未缓存MVPD ID，并且未使用[`setSelectedProvider()`](#setSelectedProvider)选择MVPD，或者`canAuthenticate`标志设置为false，则会调用[`displayProviderDialog()`](#displayProviderDialog)回调。 此回调会指示您的页面或播放器创建UI，为用户显示可从中进行选择的MVPD列表。 提供了一系列MVPD对象，其中包含构建MVPD选择器所需的信息。 每个MVPD对象都描述一个MVPD实体，并包含MVPD的ID（例如XFINITY、AT\&amp;T等）和可以找到MVPD徽标的URL等信息。
-1. 选择特定的MVPD后，您的页面或播放器必须通知AccessEnabler用户的选择。 对于非Flash客户端，一旦用户选择所需的MVPD，您就会通过调用[`setSelectedProvider()`](#setSelectedProvider)方法通知AccessEnabler用户选择的内容。 Flash客户端改为调度类型为“`mvpdSelection`”的共享`MVPDEvent`，传递选定的提供程序。
+1. 选择特定的MVPD后，您的页面或播放器必须通知AccessEnabler用户的选择。 对于非Flash客户端，一旦用户选择了所需的MVPD，您就会通过调用[`setSelectedProvider()`](#setSelectedProvider)方法向AccessEnabler通知用户选择的内容。 Flash客户端改为调度类型为“`MVPDEvent`”的共享`mvpdSelection`，传递选定的提供程序。
 1. 对于Android应用程序，如果com.android.chrome可用，则身份验证URL将加载到Chrome自定义选项卡中。
 1. 通过Chrome自定义选项卡，用户访问MVPD的登录页面并输入其凭据。 请注意，在此传输过程中会执行多个重定向操作。
 1. 当Chrome自定义选项卡检测到URL与资源“redirect\_uri”(即adobepass://com.adobepass )中的方案(adobepass://)和深层链接匹配时，AccessEnabler将从后端服务器检索实际的身份验证令牌。 请注意，最终重定向URL实际上无效，它们不适用于Chrome自定义标签页实际加载它们。 它们只能由SDK解释为身份验证流程已完成的信号。
@@ -72,7 +72,7 @@ AccessEnabler支持的所有授权工作流都假定您之前已调用[`setReque
 
 
 
-**注意：**&#x200B;从某个程序员/MVPD会话注销操作将清除
+**注意：**从某个程序员/MVPD会话注销操作将清除
 该特定MVPD的基础存储，包括所有
 通过SSO获取的其他程序员身份验证令牌
 那个装置。 为其他MVPD或未通过SSO获取的令牌将不会

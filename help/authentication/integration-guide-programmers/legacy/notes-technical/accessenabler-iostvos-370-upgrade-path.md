@@ -30,15 +30,15 @@ ht-degree: 0%
 实施人员可能会遇到如下所述的一些限制。
 
 
-1. 常规(Adobe)SSO在使用AccessEnabler 3.7.0版的应用程序和使用3.7.0以下的AccessEnabler版本的应用程序之间不起作用，即使对于同一供应商开发的应用程序也是如此。
+1. 常规(Adobe) SSO不适用于一个使用AccessEnabler 3.7.0版本的应用程序和一个使用AccessEnabler 3.7.0以下版本的应用程序，即使对于同一供应商开发的应用程序也是如此。
 
    >[!IMPORTANT]
    >
    >* 系统级别(Apple)SSO不会受到影响！
    >
-   >* 如果两个应用程序都由同一供应商开发，并且使用的AccessEnabler版本低于3.7.0，则常规(Adobe)SSO将继续工作！
+   >* 如果两个应用程序均由同一供应商开发，并且使用的AccessEnabler版本低于3.7.0，则常规(Adobe)SSO将继续工作！
    >
-   >* 如果两个应用程序都由同一供应商开发并使用AccessEnabler 3.7.0版，则常规(Adobe)SSO将正常工作！
+   >* 如果两个应用程序均由同一供应商开发并使用AccessEnabler版本3.7.0，则常规(Adobe)SSO将正常工作！
 
 
 1. 如果将使用AccessEnabler 3.7.0版的某个应用程序降级到AccessEnabler的较低版本，则不会迁移新生成的令牌。 因此，最终用户可能会遇到身份验证/授权会话丢失，而不需要身份验证/授权会话。

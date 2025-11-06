@@ -2,7 +2,7 @@
 title: 基本身份验证 — 辅助应用程序 — 流程
 description: REST API V2 — 基本身份验证 — 辅助应用程序 — 流程
 exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '2006'
 ht-degree: 0%
@@ -65,7 +65,7 @@ Adobe Pass身份验证权利中的&#x200B;**身份验证流程**&#x200B;允许�
 
 按照给定的步骤实施基本身份验证流程，该流程通过预选的MVPD在辅助应用程序中执行，如下图所示。
 
-![使用预选的mvpd在辅助应用程序中执行身份验证](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-with-preselected-mvpd.png)
+![使用预选的mvpd在辅助应用程序中执行身份验证](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-with-preselected-mvpd.png)
 
 *使用预选的mvpd在辅助应用程序中执行身份验证*
 
@@ -149,7 +149,7 @@ Adobe Pass身份验证权利中的&#x200B;**身份验证流程**&#x200B;允许�
 
    >[!IMPORTANT]
    >
-   > 有关以下内容的详细信息，请参阅用户代理[&#x200B; API文档中的](../../apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)执行身份验证：
+   > 有关以下内容的详细信息，请参阅用户代理[ API文档中的](../../apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)执行身份验证：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`和`code`
    > * 所有&#x200B;_可选_&#x200B;参数和标头
@@ -209,7 +209,7 @@ Adobe Pass身份验证权利中的&#x200B;**身份验证流程**&#x200B;允许�
 
 按照给定的步骤实施在辅助应用程序中执行的基本身份验证流程，而无需预先选择的MVPD，如下图所示。
 
-![在辅助应用程序中执行身份验证，无需预先选择mvpd](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-without-preselected-mvpd.png)
+![在辅助应用程序中执行身份验证，无需预先选择mvpd](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-without-preselected-mvpd.png)
 
 *在辅助应用程序中执行身份验证，无需预先选择mvpd*
 

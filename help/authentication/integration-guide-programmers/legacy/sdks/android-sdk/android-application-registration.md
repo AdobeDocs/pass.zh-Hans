@@ -2,7 +2,7 @@
 title: Android应用程序注册
 description: Android应用程序注册
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '609'
 ht-degree: 0%
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 从3.0版本的Android AccessEnabler SDK开始，我们正在更改Adobe服务器的身份验证机制。 我们引入了软件语句字符串的概念，这种字符串可用于获取访问令牌，该令牌稍后将用于SDK对我们的服务器进行的所有调用，而不是使用公钥和密码系统来对requestorID进行签名。 除了软件声明之外，您还需要为应用程序创建深层链接。
 
-有关详细信息，请参阅[动态客户端注册概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)。
+有关详细信息，请参阅[动态客户端注册概述](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)。
 
 ## 什么是软件声明？ {#what}
 
@@ -61,7 +61,7 @@ ht-degree: 0%
 
    下载文本文件。 将其内容用作软件声明。
 
-有关详细信息，请参阅[动态客户端注册管理](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management)。
+有关详细信息，请参阅[动态客户端注册管理](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management)。
 
 ### 如果您无权访问Adobe的TVE功能板
 

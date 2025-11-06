@@ -1,6 +1,6 @@
 ---
-title: MVPD授权
-description: MVPD授权
+title: MVPD Authorization
+description: MVPD Authorization
 exl-id: 215780e4-12b6-4ba6-8377-4d21b63b6975
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# MVPD授权
+# MVPD Authorization
 
 >[!NOTE]
 >
@@ -17,13 +17,13 @@ ht-degree: 0%
 
 ## 概述 {#mvpd-authz-overview}
 
-授权(AuthZ)通过Adobe承载的后端服务器和MVPD AuthZ端点之间的后通道（服务器到服务器）通信来执行。
+授权(AuthZ)通过Adobe托管的后端服务器和MVPD AuthZ端点之间的后通道（服务器到服务器）通信执行。
 
 对于AuthZ请求，授权端点应能够至少处理以下参数：
 
 * **Uid**。 从身份验证步骤收到的用户ID。
 
-* **资源ID**。 标识给定内容资源的字符串。 此资源ID由程序员指定，并且MVPD必须增强这些资源的业务规则（例如，通过检查用户是否订阅了特定渠道）。
+* **资源ID**。 标识给定内容资源的字符串。 此资源ID由程序员指定，MVPD必须强化这些资源的业务规则（例如，通过检查用户是否已订阅特定渠道）。
 
 除了确定用户是否获得授权之外，响应还必须包括此授权的生存时间(TTL)，即授权过期的时间。 如果未设置TTL，则AuthZ请求将失败。  因此，**TTL是Adobe Pass身份验证端**&#x200B;上的强制配置设置，以便涵盖MVPD在其请求中未包含TTL的情况。
 
@@ -40,7 +40,7 @@ AuthZ请求必须包括代表其发出请求的主题、主题尝试访问的资
 
 
 
-此时，SP必须准备一个XACML Authorization DecisionQuery并(通过HTTPPOST)将其发送到（之前商定的）Policy Decision Point (PDP)以获取IdP。 以下是简单XACML请求的示例（请参阅XACML核心规范）：
+此时，SP必须准备一个XACML授权决策查询，并（通过HTTP POST）将其发送到（之前商定的）策略决策点(PDP)以获取IdP。 以下是简单XACML请求的示例（请参阅XACML核心规范）：
 
 ```XML
 POST https://authz.site.com/XACML_endpoint
@@ -80,11 +80,11 @@ http://docs.oasis-open.org/xacml/access_control-xacml-2.0-context-schema-os.xsd"
 ```
 
 
-在收到AuthZ请求后，MVPD的PDP将评估该请求并确定是否应允许主体对资源执行所请求的操作。 然后，MVPD会返回一个包含决策、状态代码和消息的响应，如下面的授权响应中所述。
+在收到AuthZ请求后，MVPD的PDP会评估该请求，并确定是否应允许主体对资源执行请求的操作。 然后，MVPD会返回一个包含决策、状态代码和消息的响应，如下面的授权响应中所述。
 
 ## 授权响应 {#authz-response}
 
-对AuthZ请求的响应在MVPD评估请求并应用所请求的业务规则以确定是否允许主体对资源执行所请求的操作之后发出。 返回的对Adobe Pass身份验证的响应将再次按照XACML核心规范表示，其中包含SP作为策略实施点(PEP)的“决定”、“状态代码”、“消息”和“义务”。 以下是示例响应：
+对AuthZ请求的响应在MVPD评估请求并应用所请求的业务规则以确定是否允许主体对资源执行请求的操作之后发出。 返回的对Adobe Pass身份验证的响应将再次按照XACML核心规范表示，其中包含SP作为策略实施点(PEP)的“决定”、“状态代码”、“消息”和“义务”。 以下是示例响应：
 
 ```XML
 <Response xmlns="urn:oasis:names:tc:xacml:2.0:context:schema:os">

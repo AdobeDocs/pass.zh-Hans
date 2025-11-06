@@ -2,7 +2,7 @@
 title: 程序员
 description: 了解TVE仪表板中的程序员及其配置。
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1139'
 ht-degree: 0%
@@ -22,7 +22,7 @@ TVE仪表板的&#x200B;**程序员**&#x200B;部分允许您查看和管理链接
 * **程序员ID**：系统中的媒体公司标识符。
 * **渠道**：链接到程序员的关联渠道数。
 
-![现有程序员列表](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmers-list-view.png)
+![现有程序员列表](../assets/tve-dashboard/new-tve-dashboard/programmers/programmers-list-view.png)
 
 *现有程序员列表*
 
@@ -41,7 +41,7 @@ TVE仪表板的&#x200B;**程序员**&#x200B;部分允许您查看和管理链接
    * [已注册的应用程序](#registered-applications)
    * [自定义架构](#custom-schemes)
 
-   ![程序员设置](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-tabs-view.png)
+   ![程序员设置](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-tabs-view.png)
 
    *程序员设置*
 
@@ -55,7 +55,7 @@ TVE仪表板的&#x200B;**程序员**&#x200B;部分允许您查看和管理链接
 
 要为所选程序员添加新频道，请从&#x200B;**可用频道**&#x200B;部分的右上角选择&#x200B;**添加新频道**。 了解[如何添加新渠道](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#add-new-channel)。
 
-![添加新频道](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-channel-button.png)
+![添加新频道](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-channel-button.png)
 
 *添加新频道*
 
@@ -86,7 +86,7 @@ TVE仪表板的&#x200B;**程序员**&#x200B;部分允许您查看和管理链接
 
 1. 在&#x200B;**可用证书**&#x200B;部分的右上角选择&#x200B;**添加新证书**。
 
-   ![添加新证书](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-certificate-button.png)
+   ![添加新证书](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-certificate-button.png)
 
    *添加新证书*
 
@@ -112,7 +112,7 @@ TVE仪表板的&#x200B;**程序员**&#x200B;部分允许您查看和管理链接
 
 1. 选择&#x200B;**删除**。
 
-   ![删除所选的证书](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-remove-certificate-button.png)
+   ![删除所选的证书](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-remove-certificate-button.png)
 
    *删除所选的证书*
 
@@ -122,7 +122,7 @@ TVE仪表板的&#x200B;**程序员**&#x200B;部分允许您查看和管理链接
 
 ### 已注册的应用程序 {#registered-applications}
 
-此选项卡显示已注册应用程序的列表。 有关已注册应用程序使用的更多详细信息，请参阅[动态客户端注册概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)文档。
+此选项卡显示已注册应用程序的列表。 有关已注册应用程序使用的更多详细信息，请参阅[动态客户端注册概述](../integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)文档。
 
 您可以对已注册的应用程序执行以下操作：
 
@@ -135,7 +135,7 @@ TVE仪表板的&#x200B;**程序员**&#x200B;部分允许您查看和管理链接
 
 1. 在&#x200B;**已注册的应用程序**&#x200B;部分的右上角选择&#x200B;**添加新应用程序**。
 
-   ![添加新应用程序](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-application-button.png)
+   ![添加新应用程序](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-application-button.png)
 
    *添加新应用程序*
 
@@ -179,7 +179,7 @@ TVE仪表板的&#x200B;**程序员**&#x200B;部分允许您查看和管理链接
 
 1. 选择&#x200B;**下载**。
 
-   ![下载软件语句](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-download-software-statement-button.png)
+   ![下载软件语句](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-download-software-statement-button.png)
 
    *下载软件语句*
 
@@ -198,7 +198,7 @@ TVE仪表板的&#x200B;**程序员**&#x200B;部分允许您查看和管理链接
 
 1. 选择&#x200B;**生成新的自定义方案**。
 
-   ![生成新的自定义方案](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-custom-scheme-button.png)
+   ![生成新的自定义方案](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-custom-scheme-button.png)
 
    *生成新的自定义方案*
 
@@ -212,7 +212,7 @@ TVE仪表板的&#x200B;**程序员**&#x200B;部分允许您查看和管理链接
 
 1. 在&#x200B;**程序员**&#x200B;部分的右上角选择&#x200B;**添加新程序员**。
 
-   ![添加新程序员](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-programmer-button.png)
+   ![添加新程序员](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-programmer-button.png)
 
    *添加新程序员*
 

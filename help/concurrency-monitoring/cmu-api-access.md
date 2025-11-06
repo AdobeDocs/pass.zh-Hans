@@ -4,7 +4,7 @@ description: CMU API访问
 exl-id: 8d216703-aabc-489e-93fe-d4d105616b1d
 source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '420'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,6 @@ ht-degree: 0%
    3. 转到&#x200B;*已注册的应用程序*&#x200B;选项卡
    4. 选择应用程序
    5. 在要获取软件语句的已注册应用程序行上单击下载，并将其另存为本地计算机上的文件
-
       <figure>
           <img src="assets/programmer-download-software-statement-button.png"
                alt="下载软件声明">
@@ -47,7 +46,6 @@ ht-degree: 0%
 
 3. 获取访问令牌
    1. 使用以上获得的软件语句并执行下面的调用以获取客户端凭据。 这样将获得client_id - client_secret对，该对可用于获取访问令牌。
-
       *不应每次都执行此步骤。 仅当凭据过期时，才应再次执行此操作。*
       <figure>
           <img src="assets/dcr_request_1_get_client_credentials.png"
@@ -55,7 +53,6 @@ ht-degree: 0%
        </figure>
 
    2. 使用下面的调用获取访问令牌。 使用此访问令牌可调用任何CMU API，直到令牌过期。
-
       *仅当上次生成的令牌过期时，才应执行此步骤。*
       <figure>
           <img src="assets/dcr_get_access_token_call.png"

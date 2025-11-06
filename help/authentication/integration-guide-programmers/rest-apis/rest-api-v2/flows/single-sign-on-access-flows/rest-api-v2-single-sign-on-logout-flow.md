@@ -2,7 +2,7 @@
 title: 单次注销 — 流量
 description: REST API V2 — 单次注销 — 流量
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
 source-wordcount: '587'
 ht-degree: 0%
@@ -46,7 +46,7 @@ ht-degree: 0%
 
 执行给定步骤以实施特定MVPD的单一注销流程，如下图所示。
 
-![启动特定mvpd的单一注销](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-initiate-single-logout-for-specific-mvpd-flow.png)
+![启动特定mvpd的单一注销](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-initiate-single-logout-for-specific-mvpd-flow.png)
 
 *启动特定mvpd的单一注销*
 
@@ -54,7 +54,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 有关以下内容的详细信息，请参阅特定mvpd [&#x200B; API的](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Initiate注销：
+   > 有关以下内容的详细信息，请参阅特定mvpd [ API的](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Initiate注销：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`redirectUrl`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`
@@ -80,7 +80,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 有关注销响应中提供的信息的详细信息，请参阅特定mvpd [&#x200B; API的](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)启动注销。
+   > 有关注销响应中提供的信息的详细信息，请参阅特定mvpd [ API的](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)启动注销。
    > 
    > <br/>
    > 

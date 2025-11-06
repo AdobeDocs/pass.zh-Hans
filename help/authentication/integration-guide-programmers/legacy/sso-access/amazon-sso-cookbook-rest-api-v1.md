@@ -136,10 +136,10 @@ Amazon SSO SDK提供同步和异步API来获取SSO令牌（平台身份）有效
 确保流应用程序正在处理：
 
 * 缺少应在Amazon设备上运行的Amazon配套应用程序。
-   * 流应用程序可能在运行时在以下类`com.amazon.ottssotokenlib.SSOEnabler`上遇到`ClassNotFoundException`。
+   * 流应用程序可能在运行时在以下类`ClassNotFoundException`上遇到`com.amazon.ottssotokenlib.SSOEnabler`。
 
 * 缺少应由上述API返回的SSO令牌（平台身份）有效负载。
-   * 流媒体应用程序可以联系Amazon和Adobe代表进行调查。
+   * 流应用程序可以联系Amazon和Adobe代表进行调查。
 
 ### 工作流 {#workflow}
 

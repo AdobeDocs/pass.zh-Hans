@@ -2,7 +2,7 @@
 title: 检查身份验证令牌
 description: 检查身份验证令牌
 exl-id: 9020f261-44d8-4bd5-b85b-a8667679f563
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '292'
 ht-degree: 0%
@@ -53,7 +53,7 @@ ht-degree: 0%
 | 请求者 | 此操作有效的程序员requestorId。 |
 | deviceId | 设备ID字节。 |
 | 设备信息/</br></br>X — 设备信息 | 流设备信息。</br></br>**注意**：可以将此device_info作为URL参数传递，但由于此参数的潜在大小以及GET URL的长度限制，它应作为X-Device-Info传递到http标头。</br></br><!--See the full details in [Passing Device and Connection Information](/help/authentication/passing-client-information-device-connection-and-application.md)(/help/authentication/passing-client-information-device-connection-and-application.md)-->。 |
-| _deviceType_ | 设备类型（例如Roku、PC）。</br></br>如果此参数设置正确，ESM提供的量度在使用无客户端程序时按设备类型[进行](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#clientless_device_type)划分，因此可以对Roku、AppleTV、Xbox等执行不同类型的分析。</br></br>有关详细信息，请参阅[在Adobe Pass身份验证量度中使用Clienless deviceType参数的好处&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**注意**： device_info将替换此参数。 |
+| _deviceType_ | 设备类型（例如Roku、PC）。</br></br>如果此参数设置正确，ESM提供的量度在使用无客户端程序时按设备类型[进行](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)划分，因此可以对Roku、AppleTV、Xbox等执行不同类型的分析。</br></br>有关详细信息，请参阅[在Adobe Pass身份验证量度中使用Clienless deviceType参数的好处&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**注意**： device_info将替换此参数。 |
 | _设备用户_ | 设备用户标识符。 |
 | _appId_ | 应用程序id/名称。</br>**注意**： device_info将替换此参数。 |
 

@@ -17,7 +17,7 @@ ht-degree: 0%
 
 提供了描述Adobe环境的官方文档[在预测试中设置环境和测试](/help/authentication/notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md)：
 
-Adobe环境，总结如下：
+Adobe环境，可以用几个词概括：
 
 Adobe有两个环境：**资格预审**&#x200B;和&#x200B;**版本**。
 
