@@ -2,7 +2,7 @@
 title: 渠道
 description: 了解TVE仪表板中的渠道及其各种配置。
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1556'
 ht-degree: 0%

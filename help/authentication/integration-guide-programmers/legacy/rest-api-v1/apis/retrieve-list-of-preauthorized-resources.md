@@ -2,7 +2,7 @@
 title: 检索预授权资源的列表
 description: 检索预授权资源的列表
 exl-id: 3821378c-bab5-4dc9-abd7-328df4b60cc3
-source-git-commit: 1c357b918fa4f6d4b92a9055de018c55ee5861e0
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '390'
 ht-degree: 0%

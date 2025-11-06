@@ -2,7 +2,7 @@
 title: 基本配置文件 — 主要应用程序 — 流量
 description: REST API V2 — 基本配置文件 — 主应用程序 — 流量
 exl-id: 19ddf382-9a32-4b94-aa84-7611c0e1780e
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '974'
 ht-degree: 0%
@@ -99,7 +99,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**配置文件流**&#x200B;允�
 
    >[!IMPORTANT]
    >
-   > 有关以下内容的详细信息，请参阅特定mvpd [&#x200B; API的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)检索配置文件：
+   > 有关以下内容的详细信息，请参阅特定mvpd [ API的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)检索配置文件：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`和`mvpd`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`
@@ -111,7 +111,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**配置文件流**&#x200B;允�
 
    >[!IMPORTANT]
    >
-   > 有关配置文件响应中提供的信息的详细信息，请参阅特定mvpd [&#x200B; API的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)检索配置文件。
+   > 有关配置文件响应中提供的信息的详细信息，请参阅特定mvpd [ API的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)检索配置文件。
    > 
    > <br/>
    > 

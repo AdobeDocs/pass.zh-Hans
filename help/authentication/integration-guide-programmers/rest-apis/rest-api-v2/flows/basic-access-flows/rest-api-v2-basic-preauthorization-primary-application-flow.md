@@ -2,7 +2,7 @@
 title: 基本预授权 — 主要应用程序 — 流程
 description: REST API V2 — 基本预授权 — 主要应用程序 — 流程
 exl-id: f557f6c3-d5b2-4ec8-be51-91a90fbd31c0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 0%
@@ -45,7 +45,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**预授权流**&#x200B;允许�
 
    >[!IMPORTANT]
    >
-   > 有关以下各项的详细信息，请参阅使用特定mvpd[&#x200B; API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)预授权决策：
+   > 有关以下各项的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)预授权决策：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`和`AP-Device-Identifier`
@@ -61,7 +61,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**预授权流**&#x200B;允许�
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#x200B; API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)预授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[ API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)预授权决策。
    > 
    > <br/>
    > 

@@ -2,7 +2,7 @@
 title: Adobe Pass Authentication 2.70发行说明
 description: Adobe Pass Authentication 2.70发行说明
 exl-id: 81713f8e-bc51-4057-9b00-6a2d6c83cd02
-source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '136'
 ht-degree: 0%

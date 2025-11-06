@@ -2,7 +2,7 @@
 title: REST API指南（服务器到服务器）
 description: Rest API指南服务器到服务器。
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1856'
 ht-degree: 0%
@@ -171,7 +171,7 @@ Adobe Pass服务运行于分布在美国各地的多个数据中心上。  为�
     
     
     
-    需要在&#x200B;**regcode**&#x200B;和**authorize**&#x200B;调用中添加标头
+    需要在**regcode**和**authorize**调用中添加标头
     
     示例：
     

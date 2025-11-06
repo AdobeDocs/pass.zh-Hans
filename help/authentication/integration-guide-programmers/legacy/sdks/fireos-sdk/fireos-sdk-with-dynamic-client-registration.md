@@ -2,7 +2,7 @@
 title: Amazon FireOS SDK与Dynamic Client注册
 description: Amazon FireOS SDK与Dynamic Client注册
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1169'
 ht-degree: 0%
@@ -152,7 +152,7 @@ ht-degree: 0%
    - 已取消登录：重置MVPD选择
    - URL方案将建立为“adobepass://android.app”，以便在身份验证完成时捕获
 
-- e. get/checkAuthorization ： SDK将在标头中包含&#x200B;**access\_token**&#x200B;作为授权：持有者&#x200B;**access\_token**
+- e. get/checkAuthorization ： SDK将在标头中包含**access\_token**作为授权：持有者&#x200B;**access\_token**
 
 - 如果授权成功，将调用以获取媒体令牌
 

@@ -2,7 +2,7 @@
 title: JavaScript SDK API参考
 description: JavaScript SDK API参考
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '2883'
 ht-degree: 0%
@@ -196,7 +196,7 @@ ht-degree: 0%
 
 ## checkPreauthorizedResources(resources) {#checkPreauthorizedResources(resources)}
 
-**描述：**&#x200B;请求列表的“预检”授权状态
+**描述：**请求列表的“预检”授权状态
 资源。
 
 **参数：**
@@ -309,7 +309,7 @@ ht-degree: 0%
 **描述：**&#x200B;当用户从您的提供程序选择UI中选择了MVPD以便将该提供程序选择发送到Access Enabler时，调用此函数，或者使用null参数调用此函数，以防用户未选择提供程序而关闭您的提供程序选择UI。
 
 **回调
-已触发：**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+已触发：**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -365,7 +365,7 @@ ht-degree: 0%
 
 ## entitlementLoaded() {#entitlementLoaded}
 
-**描述：**&#x200B;在Access Enabler已完成初始化并准备好接收请求时触发。 实施此回调以了解何时可以使用Access Enabler API开始通信。
+**描述：**在Access Enabler已完成初始化并准备好接收请求时触发。 实施此回调以了解何时可以使用Access Enabler API开始通信。
 </br>
 
 [返回页首](#top)
@@ -415,7 +415,7 @@ ht-degree: 0%
 
 **描述：**&#x200B;如果用户选择的MVPD需要一个iFrame来显示其身份验证登录页UI，则实施此回调。
 
-**触发者：**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**触发者：**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [返回页首](#top)
 

@@ -2,7 +2,7 @@
 title: 启动授权
 description: 启动授权
 exl-id: 2f8a5499-e94f-40dd-9fb0-aac8e080de66
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '446'
 ht-degree: 0%
@@ -89,7 +89,7 @@ ht-degree: 0%
   * **XML：**
   </br>
 
-    &grave;&grave;XML
+    ``XML
     &lt;？xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;？>
     &lt;authorization>
     &lt;expires>1348148289000&lt;/expires>
@@ -97,7 +97,7 @@ ht-degree: 0%
     &lt;requestor>sampleRequestorId&lt;/requestor>
     &lt;resource>sampleResourceId&lt;/resource>
     &lt;/authorization>
-    &grave;&#39;
+    `&#39;
 
 
 

@@ -2,7 +2,7 @@
 title: 检索授权令牌
 description: 检索授权令牌
 exl-id: 0b010958-efa8-4dd9-b11b-5d10f51f5680
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '373'
 ht-degree: 0%

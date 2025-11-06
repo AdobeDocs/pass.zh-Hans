@@ -2,7 +2,7 @@
 title: 程序员kickstart指南
 description: 程序员kickstart指南
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
-source-git-commit: 37858fa83aecbdf443a4a6058c78e4f9246eee42
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '758'
 ht-degree: 0%
@@ -75,7 +75,7 @@ Adobe Pass身份验证团队可以帮助您解决在集成过程中可能遇到�
 
 ## 文档访问权限 {#access-documentation}
 
-**Adobe将通过** Adobe Experience League[提供](https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/home)对公共文档的访问权限。
+**Adobe将通过** Adobe Experience League[提供](https://experienceleague.adobe.com/en/docs/pass/authentication/home)对公共文档的访问权限。
 
 Adobe Pass身份验证团队提供了[程序员集成指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)部分下可用功能和API的综合文档。 有关每个主题的详细信息的链接，请参阅本节下的目录。
 

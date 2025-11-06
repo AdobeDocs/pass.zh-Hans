@@ -2,7 +2,7 @@
 title: 检索特定服务提供商的配置
 description: REST API V2 — 检索特定服务提供商的配置
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '728'
 ht-degree: 2%
