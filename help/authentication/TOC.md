@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
 user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: 151c64276377be5ef21bca4c0d3eaa04ac3da495
 workflow-type: tm+mt
-source-wordcount: '1279'
+source-wordcount: '1285'
 ht-degree: 3%
 
 ---
@@ -161,6 +161,8 @@ ht-degree: 3%
          - [授权服务监控概述](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)
          - [授权服务监控API](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
          - [服务器端量度](integration-guide-programmers/features-premium/esm/understanding-serverside-metrics.md)
+      - SSO服务 {#sso-service}
+         - [Adobe单点登录服务](integration-guide-programmers/features-premium/sso-service/sso-service.md)
       - 分析 {#analytics}
          - [将Adobe Pass身份验证服务器端数据集成到Adobe Analytics](integration-guide-programmers/features-premium/analytics/integrate-authn-servr-data-analytics.md)
          - [在Adobe Pass身份验证中使用Experience Cloud ID](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
