@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
 user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: 151c64276377be5ef21bca4c0d3eaa04ac3da495
+source-git-commit: 53ebbd82fc160f68fccdddb18cf98e249ad6ecce
 workflow-type: tm+mt
-source-wordcount: '1285'
+source-wordcount: '1287'
 ht-degree: 3%
 
 ---
@@ -292,6 +292,7 @@ ht-degree: 3%
    - [集成](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md)
    - [报告](/help/authentication/user-guide-tve-dashboard/tve-dashboard-reports.md)
    - [更改日志](/help/authentication/user-guide-tve-dashboard/tve-dashboard-changes-log.md)
+   - [ESM仪表板](/help/authentication/user-guide-tve-dashboard/tve-dashboard-esm.md)
 - 技术说明 {#tech-notes}
    - 环境 {#environments}
       - [了解Adobe环境](notes-technical/environments/understanding-the-adobe-environments.md)
