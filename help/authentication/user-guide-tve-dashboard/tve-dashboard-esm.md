@@ -25,7 +25,7 @@ ESM Dashboard提供了权限和事件数据的统一视图，可帮助您跨MVPD
 - 比较MVPD性能
 - 了解每个应用程序的客户使用情况
 
-有关ESM数据和事件的更多详细信息可在[授权服务监视概述](https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview)中找到。
+有关ESM数据和事件的更多详细信息可在[授权服务监视概述](https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview)中找到。
 
 ## 报告 {#reports}
 
