@@ -2,7 +2,7 @@
 title: 术语表
 description: 并发监控中的术语表
 exl-id: 3b3b36fe-9f04-4de9-bd84-9f8d766bbc71
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
 source-wordcount: '762'
 ht-degree: 0%
@@ -28,7 +28,7 @@ ht-degree: 0%
 ## 应用程序 {#application-defn}
 
 * 由租户为视频内容访问而开发
-* 根据并发监视服务提供的信息做出并强制执行有关内容访问权限的决策（这在[策略信息点](/help/concurrency-monitoring/policy-info-pt-versionone.md)情况下有效）
+* 根据并发监视服务提供的信息做出并强制执行有关内容访问权限的决策（这在[策略信息点](/help/concurrency-monitoring/technical/policy-info-pt-versionone.md)情况下有效）
 * 将具有Adobe提供的唯一&#x200B;**应用程序ID**。
 
 ## 并发监控服务 {#cm-service-defn}
@@ -94,7 +94,7 @@ ht-degree: 0%
 
 ## 主题 {#subj-defn}
 
-* 互联网上（视频）内容的消费者。 我们正在刻意避免使用术语&#x200B;_&#x200B;**用户**&#x200B;_，因为并发监视通常处理MVPD帐户ID（这涉及多个实际用户共享同一合同，例如家庭成员）。
+* 互联网上（视频）内容的消费者。 我们正在刻意避免使用术语&#x200B;_**用户**_，因为并发监视通常处理MVPD帐户ID（这涉及多个实际用户共享同一合同，例如家庭成员）。
 
 * 对于每个流，可以使用与使用该服务的实际人员、他们的网络连接设备等相关的属性来增强主题。
 
