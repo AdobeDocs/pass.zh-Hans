@@ -18,7 +18,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> 确保随时了解汇总在[产品公告](https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements)页中的最新Adobe Pass身份验证产品公告和停用时间表。
+> 确保随时了解汇总在[产品公告](https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/product-announcements)页中的最新Adobe Pass身份验证产品公告和停用时间表。
 
 本页介绍了此版本的新增功能、更改和已知问题：
 
