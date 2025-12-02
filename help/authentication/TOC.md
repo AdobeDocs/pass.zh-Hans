@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 身份验证
 user-guide-description: Adobe Pass 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架，以供确定请求访问资源的人员是否有权访问该资源。
-source-git-commit: 53ebbd82fc160f68fccdddb18cf98e249ad6ecce
+source-git-commit: 6ff46a124f5f3c78173028ae3efed68d71ee6e41
 workflow-type: tm+mt
-source-wordcount: '1287'
+source-wordcount: '1294'
 ht-degree: 3%
 
 ---
@@ -19,6 +19,7 @@ ht-degree: 3%
 - 产品版本 {#product-releases}
    - 2025 {#2025}
       - [Adobe Pass Authentication Android 3.8.0发行说明](notes-releases/authn-rn-android-380.md)
+      - [Adobe Pass Authentication 3.5.0发行说明](notes-releases/auth-rn-350.md)
       - [Adobe Pass Authentication 3.4.0发行说明](notes-releases/auth-rn-340.md)
       - [Adobe Pass Authentication 3.3.0发行说明](notes-releases/auth-rn-330.md)
       - [Adobe Pass Authentication 3.2.0发行说明](notes-releases/auth-rn-320.md)
