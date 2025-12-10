@@ -2,9 +2,9 @@
 title: 渠道
 description: 了解TVE仪表板中的渠道及其各种配置。
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b4276ee12d57bc061d26afc0a192b799fe1681ae
 workflow-type: tm+mt
-source-wordcount: '1556'
+source-wordcount: '1637'
 ht-degree: 0%
 
 ---
@@ -268,7 +268,8 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 
 ### 自定义架构 {#custom-schemes}
 
-此选项卡显示自定义方案列表。 有关自定义方案使用的更多详细信息，请参阅[iOS/tvOS应用程序注册](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md)。
+此选项卡显示自定义方案列表。
+自定义方案可用于Android和iOS设备。
 
 您可以对自定义方案进行以下更改：
 
@@ -286,7 +287,38 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 
 已创建新的配置更改，可以随时更新服务器。 若要使用&#x200B;**自定义方案**&#x200B;部分中列出的新自定义方案，请继续[审核并推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)流程。
 
-#### 继承的自定义架构 {#inherited-custom-schemes}
+#### 如果您无权访问Adobe的TVE功能板：
+
+向<tve-support@adobe.com>提交票证。 请包含渠道ID，我们的支持团队中的某人将为您创建一个自定义方案。
+
+#### Android {#Android}
+
+1. 自定义方案 — 在TVE功能板中创建的自定义方案可用于Android设备应用程序。
+
+1. 在应用程序的资源文件`strings.xml`中添加以下代码：
+
+```XML
+       <string name="software_statement">softwarestatement value</string>
+       <string name="redirect_uri">adbe.TTIFAaWuR-CmxXv1Di8PlQ://</string>
+```
+
+#### iOS {#iOS}
+
+可以在应用程序的`info.plist`文件中使用自定义方案。 请查找以下示例，其中您需要添加在TVE仪表板中生成的URL：
+
+```plist
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>adbe.u-XFXJeTSDuJiIQs0HVRAg</string> // replace this with your custom scheme
+            </array>
+        </dict>
+    </array>
+```
+
+### 继承的自定义架构 {#inherited-custom-schemes}
 
 媒体公司根据自己的级别定义这些自定义方案。 与同一媒体公司关联的所有渠道都可以使用这些自定义方案。
 
