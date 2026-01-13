@@ -2,9 +2,9 @@
 title: 标头 — AP-Partner-Framework-Status
 description: REST API V2 — 标头 — AP-Partner-Framework-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: 5c912bbbe97fff65d38dbade32cd4554ad8c2fac
+source-git-commit: 22529618db679f7dbfb493906e1aeb4a0443a40c
 workflow-type: tm+mt
-source-wordcount: '404'
+source-wordcount: '415'
 ht-degree: 0%
 
 ---
@@ -70,8 +70,8 @@ ht-degree: 0%
                   <ul>
                      <li><b>已授予</b><br/>用户允许应用程序访问订阅信息。</li>
                      <li><b>拒绝</b><br/>用户拒绝应用程序访问订阅信息。</li>
-                     <li><b>挂起</b><br/>用户尚未选择允许应用程序访问订阅信息。</li>
-                     <li><b>notDetermined</b><br/>不允许应用程序访问订阅信息。</li>
+                     <li><b>受限制</b><br/>不允许应用程序访问订阅信息。</li>
+                     <li><b>notDetermined</b><br/>用户尚未选择是否允许应用程序访问订阅信息。</li>
                   </ul>
                </td>
             </tr>
