@@ -259,7 +259,7 @@ ht-degree: 1%
 | 特定MVPD API的[配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | 检索与特定MVPD关联的用户配置文件。 | **用户在上次访问中进行身份验证后返回到客户端应用程序**<br/><br/>&#x200B;在这种情况下，客户端应用程序必须将用户之前选择的MVPD标识符缓存在永久存储中。<br/><br/>因此，它将发送单个请求以检索该特定MVPD的用户配置文件。 |
 | [特定（身份验证）代码API的配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 检索与特定身份验证代码关联的用户配置文件。 | **用户启动身份验证过程**<br/><br/>&#x200B;在这种情况下，客户端应用程序必须确定用户是否已成功完成身份验证并检索其配置文件信息。<br/><br/>因此，它将启动轮询机制以检索与身份验证代码关联的用户配置文件。 |
 
-有关详细信息，请参阅在主应用程序[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)中执行的[基本配置文件流和在辅助应用程序](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)文档中执行的基本配置文件流。
+有关详细信息，请参阅在主应用程序](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)中执行的[基本配置文件流和在辅助应用程序](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)文档中执行的[基本配置文件流。
 
 配置文件SSO端点具有不同的用途，它使客户端应用程序能够使用合作伙伴身份验证响应创建用户配置文件，并在单次、一次性操作中检索该配置文件。
 
