@@ -2,7 +2,7 @@
 title: REST API V2常见问题解答
 description: REST API V2常见问题解答
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 44fa75eb7b19ff44a41809d44c171baff6853b52
+source-git-commit: eaadf0aa7ddc58250e23715b7068d3497a30d258
 workflow-type: tm+mt
 source-wordcount: '11089'
 ht-degree: 1%
@@ -254,17 +254,17 @@ ht-degree: 1%
 每个端点都适合特定的用例，如下所示：
 
 | API | 描述 | 用例 |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--- |--- |--- |
 | [配置文件端点API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) | 检索所有用户配置文件。 | **用户首次打开客户端应用程序**<br/><br/>&#x200B;在这种情况下，客户端应用程序不会将用户所选的MVPD标识符缓存到永久存储中。<br/><br/>因此，它将发送单个请求以检索所有可用的用户配置文件。 |
 | 特定MVPD API的[配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | 检索与特定MVPD关联的用户配置文件。 | **用户在上次访问中进行身份验证后返回到客户端应用程序**<br/><br/>&#x200B;在这种情况下，客户端应用程序必须将用户之前选择的MVPD标识符缓存在永久存储中。<br/><br/>因此，它将发送单个请求以检索该特定MVPD的用户配置文件。 |
 | [特定（身份验证）代码API的配置文件端点](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 检索与特定身份验证代码关联的用户配置文件。 | **用户启动身份验证过程**<br/><br/>&#x200B;在这种情况下，客户端应用程序必须确定用户是否已成功完成身份验证并检索其配置文件信息。<br/><br/>因此，它将启动轮询机制以检索与身份验证代码关联的用户配置文件。 |
 
-有关详细信息，请参阅在主应用程序[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)中执行的[基本配置文件流和在辅助应用程序](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)文档中执行的基本配置文件流。
+有关详细信息，请参阅在主应用程序](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)中执行的[基本配置文件流和在辅助应用程序](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)文档中执行的[基本配置文件流。
 
 配置文件SSO端点具有不同的用途，它使客户端应用程序能够使用合作伙伴身份验证响应创建用户配置文件，并在单次、一次性操作中检索该配置文件。
 
 | API | 描述 | 用例 |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --- | --- | --- |
 | [配置文件SSO端点API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) | 使用合作伙伴身份验证响应创建和检索用户配置文件。 | **用户允许应用程序使用合作伙伴单点登录进行身份验证**<br/><br/>&#x200B;在此方案中，客户端应用程序必须在收到合作伙伴身份验证响应后创建用户配置文件，并在单次、一次性操作中检索该配置文件。 |
 
 对于任何后续查询，必须使用基本配置文件端点确定用户的身份验证状态、访问用户元数据信息、查找用于身份验证的方法或用于提供身份的实体。
@@ -551,7 +551,7 @@ REST API v2支持多个配置文件以适应：
 以下时间戳描述整体授权决策的有效期：
 
 | 属性 | 描述 | 注释 |
-|-------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-------------|-------------|---------|
 | `notBefore` | 发出授权决策的时间（以毫秒为单位）。 | 这将标记授权有效性窗口的开始。 |
 | `notAfter` | 授权决策过期的时间（以毫秒为单位）。 | [授权生存时间(TTL)](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#authorization-ttl-management)确定授权在需要重新授权之前保持有效的时间。 此TTL将与MVPD代表协商。 |
 
