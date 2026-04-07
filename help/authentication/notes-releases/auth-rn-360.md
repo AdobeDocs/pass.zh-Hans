@@ -1,7 +1,7 @@
 ---
 title: Adobe Pass Authentication 3.6.0发行说明
 description: Adobe Pass Authentication 3.6.0发行说明
-source-git-commit: a406afacfe95321f46a740ab9c84fdaf576c971a
+source-git-commit: 41bfd38eec7cd3eaf18a6dd41965244376ac61ec
 workflow-type: tm+mt
 source-wordcount: '126'
 ht-degree: 0%
@@ -24,7 +24,7 @@ ht-degree: 0%
 ### 内部版本号 {#build-number-360}
 
 Adobe Pass身份验证： adobe-pass-**3.6.0**\
-发行日期：**04/07/2025 - 04/09/2025**
+发行日期：**04/07/2026 - 04/09/2026**
 
 ### 发行版概述 {#release-overview-360}
 
