@@ -2,9 +2,9 @@
 title: 授权服务监控API
 description: 授权服务监控API
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '2027'
+source-wordcount: '2098'
 ht-degree: 0%
 
 ---
@@ -94,9 +94,9 @@ REST API根据维度路径、提供的过滤器和所选的量度，在请求中
 
 * 通过用不同的值多次添加相同的维度名称参数，可以指定&#x200B;**IN**&#x200B;筛选器： dimension=value1\&amp;dimension=value2
 
-* **不等于**&#x200B;筛选器必须使用“\！” 生成“\！”的维度名称后的符号=&#39; &quot;operator&quot;： dimension\！=value
+* **不等于**&#x200B;筛选器必须在维度名称后面使用“\！”符号，从而生成“\!=”运算符： dimension\!=value
 
-* **NOT IN**&#x200B;筛选器需要“\！”=&#39;运算符使用多次，每个值在集合中使用一次： dimension\！=value1\维度\！=value2&amp;...
+* **NOT IN**&#x200B;筛选器要求多次使用“\!=”运算符，一次用于集合中的每个值： dimension\!=value1\&amp;dimension\!=value2&amp;...
 
 查询字符串中的维名称也有特殊用法：如果维名称用作无值的查询字符串参数，这将指示API返回报表中包含该维的投影。
 
@@ -106,8 +106,8 @@ REST API根据维度路径、提供的过滤器和所选的量度，在请求中
 |---|---|
 | /dimension1/dimension2/dimension3？dimension1=值1 | SELECT * from projection WHERE dimension1 = &#39;value1&#39; </br> GROUP BY dimension1， dimension2， dimension3 |
 | /dimension1/dimension2/dimension3？dimension1=value1&amp;dimension1=value2 | 从投影中选择*，其中dimension1位于(&#39;value1&#39;， &#39;value2&#39;) </br>分组依据dimension1， dimension2， dimension3 |
-| /dimension1/dimension2/dimension3？dimension1！=value1 | 从投影中选择* WHERE dimension1 &lt;> &#39;value1&#39; | </br>按维度1、维度2、维度3分组 |
-| /dimension1/dimension2/dimension3？dimension1！=value1&amp;dimension2！=value2 | 从投影中选择*，其中dimension1不在(&#39;value1&#39;， &#39;value2&#39;) | </br>按维度1、维度2、维度3分组 |
+| /dimension1/dimension2/dimension3？dimension1!=value1 | 从投影中选择*，其中dimension1 &lt;> &#39;value1&#39; \| </br>分组依据dimension1、dimension2、dimension3 |
+| /dimension1/dimension2/dimension3？dimension1!=value1&amp;dimension2!=value2 | 从投影中选择*，其中dimension1不在(&#39;value1&#39;， &#39;value2&#39;) \| </br>按dimension1， dimension2， dimension3分组 |
 | 假定没有直接路径： /dimension1/dimension3 </br>，但存在路径： /dimension1/dimension2/dimension3 </br> </br> /dimension1？dimension3 | 从投影分组中选取*，按维1，维3 |
 
 >[!NOTE]

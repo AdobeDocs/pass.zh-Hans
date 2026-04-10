@@ -2,9 +2,9 @@
 title: JavaScript SDK API参考
 description: JavaScript SDK API参考
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '2883'
+source-wordcount: '2902'
 ht-degree: 0%
 
 ---
@@ -88,7 +88,7 @@ ht-degree: 0%
 ```
 
 
-上述模板中的所有顶级键均为可选键，且具有默认值(*backgroundLogin*、*backgroundLogut*&#x200B;默认情况下为false，而mvpdConfig为null — 这意味着不会覆盖任何MVPD设置)。
+上述模板中的所有顶级键均为可选键，且具有默认值（*backgroundLogin*、*backgroundLogut*&#x200B;默认情况下为false，而mvpdConfig为null — 这意味着不会覆盖任何MVPD设置）。
 
 
 - **注意**：为上述参数指定无效值/类型将导致未定义的行为。
@@ -196,7 +196,7 @@ ht-degree: 0%
 
 ## checkPreauthorizedResources(resources) {#checkPreauthorizedResources(resources)}
 
-**描述：**&#x200B;请求列表的“预检”授权状态
+**描述：**请求列表的“预检”授权状态
 资源。
 
 **参数：**
@@ -230,7 +230,7 @@ ht-degree: 0%
 有两种类型的元数据：
 
 - **静态**（身份验证令牌TTL、授权令牌TTL和设备ID）
-- **用户元数据** (这包括在身份验证和/或授权流期间从MVPD传递到用户设备的用户特定信息)
+- **用户元数据** （这包括在身份验证和/或授权流期间从MVPD传递到用户设备的用户特定信息）
 
 **更多信息：** [用户元数据](#UserMetadata)
 
@@ -309,7 +309,7 @@ ht-degree: 0%
 **描述：**&#x200B;当用户从您的提供程序选择UI中选择了MVPD以便将该提供程序选择发送到Access Enabler时，调用此函数，或者使用null参数调用此函数，以防用户未选择提供程序而关闭您的提供程序选择UI。
 
 **回调
-已触发：**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+已触发：**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -365,7 +365,7 @@ ht-degree: 0%
 
 ## entitlementLoaded() {#entitlementLoaded}
 
-**描述：**&#x200B;在Access Enabler已完成初始化并准备好接收请求时触发。 实施此回调以了解何时可以使用Access Enabler API开始通信。
+**描述：**在Access Enabler已完成初始化并准备好接收请求时触发。 实施此回调以了解何时可以使用Access Enabler API开始通信。
 </br>
 
 [返回页首](#top)
@@ -378,7 +378,7 @@ ht-degree: 0%
 
 **参数：**
 
-- *configXML*：包含当前REQUESTOR(包括MVPD列表)的配置的xml对象。
+- *configXML*：包含当前REQUESTOR（包括MVPD列表）的配置的xml对象。
 
 
 **触发者：** [setRequestor()](#setrequestor-inrequestorid-endpoints-optionssetreq)
@@ -415,7 +415,7 @@ ht-degree: 0%
 
 **描述：**&#x200B;如果用户选择的MVPD需要一个iFrame来显示其身份验证登录页UI，则实施此回调。
 
-**触发者：**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**触发者：**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [返回页首](#top)
 
@@ -531,7 +531,7 @@ ht-degree: 0%
 
 - *inRequestedResourceID* — 提供授权请求中使用的资源ID的字符串。
 - *inRequestErrorCode* — 显示Adobe Pass身份验证错误代码的字符串，用于指示失败的原因；可能的值是“用户未验证错误”和“用户未授权错误”；有关更多详细信息，请参阅下面的“回调错误代码”。
-- *inRequestDetailedErrorMessage* — 适用于显示的附加描述性字符串。 如果此描述性字符串由于任何原因不可用，则Adobe Pass身份验证发送空字符串&#x200B;**(&quot;)**。  MVPD可使用此功能传递自定义错误消息或与销售相关的消息。 例如，如果订阅者被拒绝对资源的授权，MVPD可能会回复`*inRequestDetailedErrorMessage*`，例如： **&quot;您当前在包中无法访问此渠道。 如果要升级包，请单击\*此处\*。”**&#x200B;消息由Adobe Pass身份验证通过此回调传递到程序员网站。 然后，程序员可以选择显示或忽略它。 Adobe Pass身份验证还可以使用`*inRequestDetailedErrorMessage*`将可能导致错误的情况通知程序员。 例如，**“与提供商的授权服务通信时出现网络错误”。**
+- *inRequestDetailedErrorMessage* — 适用于显示的附加描述性字符串。 如果此描述性字符串由于任何原因不可用，则Adobe Pass身份验证发送空字符串&#x200B;**(&quot;)**。  MVPD可使用此功能传递自定义错误消息或与销售相关的消息。 例如，如果订阅者被拒绝对资源的授权，MVPD可能会回复`*inRequestDetailedErrorMessage*`，例如： **&quot;您当前在包中无法访问此渠道。 如果要升级包，请单击\*此处\*。&quot;** 消息由Adobe Pass身份验证通过此回调传递到程序员网站。 然后，程序员可以选择显示或忽略它。 Adobe Pass身份验证还可以使用`*inRequestDetailedErrorMessage*`将可能导致错误的情况通知程序员。 例如，**“与提供商的授权服务通信时出现网络错误”。**
 
 
 
@@ -568,7 +568,7 @@ ht-degree: 0%
 
 - *键（字符串）*：发出请求的元数据的键。
 - *encrypted (Boolean)*：表示“值”是否已加密的标志。 如果为“true”，则“value”实际上将是实际值的JSON Web加密表示形式。
-- *数据（JSON对象）*：表示元数据的JSON对象。对于简单请求(“`TTL_AUTHN`”、“`TTL_AUTHZ`”、“`DEVICEID`”)，结果是一个字符串（表示身份验证TTL、授权TTL或设备ID）。 在用户元数据请求的情况下，结果可以是表示元数据有效负载的原始或JSON对象。 JSON用户元数据对象的实际结构类似于以下内容：
+- *数据（JSON对象）*：表示元数据的JSON对象。对于简单请求(“`TTL_AUTHN`”、“`TTL_AUTHZ`”、“`DEVICEID`”)，结果为字符串（表示身份验证TTL、授权TTL或设备ID）。 在用户元数据请求的情况下，结果可以是表示元数据有效负载的原始或JSON对象。 JSON用户元数据对象的实际结构类似于以下内容：
 
 ```JSON
     {
@@ -627,20 +627,20 @@ ht-degree: 0%
 ### 回调错误代码 {#callback-error-codes}
 
 | 一般错误 | |
-|:--- | :--- | 
+|:--- | :--- |
 | 内部错误 | 尝试处理请求时发生系统错误。 |
 | 未选择提供程序错误 | 当客户在提供商选择对话框中取消时发生 |
 | 提供程序不可用错误 | 当没有可用的提供程序时发生。 |
 
 | 身份验证错误 | |
-|:--- | :--- | 
+|:--- | :--- |
 | 一般身份验证错误 | 当原因未知或无法发布时返回。 |
 | 内部身份验证错误 | 尝试进行身份验证时出现系统错误。 |
 | 用户未验证错误 | 用户未经过身份验证。 |
 | 多个身份验证请求错误 | 在完成第一个身份验证请求之前，已收到其他身份验证请求。 |
 
 | 授权错误 | |
-|:--- | :--- | 
+|:--- | :--- |
 | 一般授权错误 | 当原因未知或无法发布时返回。 |
 | 内部授权错误 | 尝试授权时出现系统错误。 |
 | 用户未授权错误 | 客户无权查看请求的内容。 |

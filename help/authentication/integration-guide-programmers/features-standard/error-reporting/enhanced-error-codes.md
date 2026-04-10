@@ -2,9 +2,9 @@
 title: 增强的错误代码
 description: 增强的错误代码
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '2696'
+source-wordcount: '2747'
 ht-degree: 3%
 
 ---
@@ -45,9 +45,9 @@ ht-degree: 3%
 
 | Adobe Pass身份验证API | JSON | XML |
 |-------------------------------|---------|---------|
-| REST API v2 | &amp;amp；检查； |         |
-| REST API v1 | &amp;amp；检查； | &amp;amp；检查； |
-| SDK预授权API | &amp;amp；检查； |         |
+| REST API v2 | 检查(&amp;C)； |         |
+| REST API v1 | 检查(&amp;C)； | 检查(&amp;C)； |
+| SDK预授权API | 检查(&amp;C)； |         |
 
 >[!IMPORTANT]
 >
@@ -101,7 +101,7 @@ Content-Type: application/json
         "code": "authorization_denied_by_mvpd",
         "message": "The MVPD has returned a \"Deny\" decision when requesting authorization for the specified resource",
         "details": "Your subscription package does not include the \"Live\" channel",
-        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
         "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
       }
     }
@@ -120,7 +120,7 @@ Content-Type: application/json
   "status": 400,
   "code": "invalid_parameter_service_provider",
   "message": "The service provider parameter value is missing or invalid.",
-  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
   "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
 }
 ```
@@ -154,7 +154,7 @@ Content-Type: application/json
         "code": "authorization_denied_by_mvpd",
         "message": "The MVPD has returned a \"Deny\" decision when requesting authorization for the specified resource",
         "details": "Your subscription package does not include the \"Live\" channel",
-        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
         "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
       }
     }
@@ -173,7 +173,7 @@ Content-Type: application/json
   "status": 400,
   "code": "invalid_requestor",
   "message": "The requestor parameter is missing or invalid.",
-  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
   "trace": "8bcb17f9-b172-47d2-86d9-3eb146eba85e"
 }
 ```
@@ -189,7 +189,7 @@ Content-Type: application/xml
   <status>400</status>
   <code>invalid_requestor</code>
   <message>The requestor parameter is missing or invalid.</message>
-  <helpUrl>https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans</helpUrl>
+  <helpUrl>https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html</helpUrl>
   <trace>8bcb17f9-b172-47d2-86d9-3eb146eba85e</trace>
 </error>
 ```
@@ -202,12 +202,12 @@ Content-Type: application/xml
 
 | 名称 | 类型 | 示例 | 受限 | 描述 |
 |-----------|-----------|---------------------------------------------------------------------------------------------------------------------|:----------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *操作* | *字符串* | *无* | &amp;amp；检查； | Adobe Pass身份验证推荐的操作，该操作可能会修正本文档中定义的情况。 <br/><br/>有关更多详细信息，请参阅[操作](#enhanced-error-codes-action)部分。 |
-| *状态* | *整数* | *403* | &amp;amp；检查； | [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6)文档中定义的HTTP响应状态代码。 <br/><br/>有关更多详细信息，请参阅[状态](#enhanced-error-codes-status)部分。 |
-| *代码* | *字符串* | *authorization_denied_by_mvpd* | &amp;amp；检查； | 与本文档中定义的错误关联的Adobe Pass身份验证唯一标识符代码。 <br/><br/>有关更多详细信息，请参阅[代码](#enhanced-error-codes-code)部分。 |
-| *消息* | *字符串* | *请求对指定资源的授权时，MVPD返回了“拒绝”决定* |            | 在某些情况下，可以向最终用户显示的可读消息。 <br/><br/>有关更多详细信息，请参阅[响应处理](#enhanced-error-codes-response-handling)部分。 |
+| *操作* | *字符串* | *无* | 检查(&amp;C)； | Adobe Pass身份验证推荐的操作，该操作可能会修正本文档中定义的情况。<br/><br/> 有关更多详细信息，请参阅[操作](#enhanced-error-codes-action)部分。 |
+| *状态* | *整数* | *403* | 检查(&amp;C)； | [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6)文档中定义的HTTP响应状态代码。<br/><br/> 有关更多详细信息，请参阅[状态](#enhanced-error-codes-status)部分。 |
+| *代码* | *字符串* | *authorization_denied_by_mvpd* | 检查(&amp;C)； | 与本文档中定义的错误关联的Adobe Pass身份验证唯一标识符代码。<br/><br/> 有关更多详细信息，请参阅[代码](#enhanced-error-codes-code)部分。 |
+| *消息* | *字符串* | *请求对指定资源的授权时，MVPD返回了“拒绝”决定* |            | 在某些情况下，可以向最终用户显示的可读消息。<br/><br/> 有关更多详细信息，请参阅[响应处理](#enhanced-error-codes-response-handling)部分。 |
 | *详细信息* | *字符串* | *您的订阅包不包含“实时”频道* |            | 在某些情况下，服务合作伙伴可以提供的详细消息，<br/><br/>如果服务合作伙伴不提供任何自定义消息，则此字段可能不存在。 |
-| *helpUrl* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans* |            | Adobe Pass身份验证公共文档URL，该URL链接到有关出现此错误的原因和可能解决方案的更多信息。 <br/><br/>此字段包含绝对URL，不应从错误代码推断，根据错误上下文，可以提供不同的URL。 |
+| *helpUrl* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html* |            | Adobe Pass身份验证公共文档URL，该URL链接到有关出现此错误的原因和可能解决方案的更多信息。<br/><br/> 此字段包含绝对URL，不应从错误代码推断，根据错误上下文，可以提供不同的URL。 |
 | *跟踪* | *字符串* | *12f6fef9-d2e0-422b-a9d7-60d799abe353* |            | 响应的唯一标识符，在联系Adobe Pass身份验证支持团队以解决特定问题时可以使用该标识符。 |
 
 >[!IMPORTANT]
@@ -331,24 +331,24 @@ _(*)对于某些错误，多个操作可能是可能的解决方案，但“acti
 | **无** | *invalid_requestor* | 400 | 请求者参数缺失或无效。 |
 |                    | *invalid_device_info* | 400 | 设备信息缺失或无效。 |
 |                    | *invalid_device_id* | 400 | 设备标识符缺失或无效。 |
-|                    | *missing_resource* | 400， 412 | 缺少资源参数。 |
-|                    | *格式错误的authz_request* | 400， 412 | 授权请求为null或无效。 |
+|                    | *missing_resource* | 400, 412 | 缺少资源参数。 |
+|                    | *格式错误的authz_request* | 400, 412 | 授权请求为null或无效。 |
 |                    | *preauthorization_denied_by_mvpd* | 403 | 在请求指定资源的预授权时，MVPD返回了“拒绝”决定。 |
 |                    | *authorization_denied_by_mvpd* | 403 | 请求对指定资源的授权时，MVPD返回了“拒绝”决定。 |
 |                    | *authorization_denied_by_parental_controls* | 403 | 由于指定资源的家长控制设置，MVPD已返回“拒绝”决定。 |
-|                    | *内部错误* | 400， 405， 500 | 由于内部服务器错误，请求失败。 |
-| **配置** | *未知集成* | 400， 412 | 指定的程序员和标识提供程序之间的集成不存在。 使用TVE功能板创建所需的集成。 |
+|                    | *内部错误* | 400, 405, 500 | 由于内部服务器错误，请求失败。 |
+| **配置** | *未知集成* | 400, 412 | 指定的程序员和标识提供程序之间的集成不存在。 使用TVE功能板创建所需的集成。 |
 |                    | *太多资源* | 403 | 授权或预授权请求失败，因为查询的资源过多。 请联系支持团队以正确配置授权和预授权限制。 |
 | **身份验证** | *authentication_session_issuer_mismatch* | 400 | 授权请求失败，因为为授权流指示的MVPD与颁发身份验证会话的不同。 用户必须使用所需的MVPD重新进行身份验证才能继续。 |
 |                    | *authorization_denied_by_hba_policies* | 403 | 由于基于主页的身份验证策略，MVPD已返回“拒绝”决策。 当前身份验证是使用基于主目录的身份验证流程(HBA)获得的，但在请求指定资源的授权时，设备不再位于主目录。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
 |                    | *authorization_denied_by_session_invalidated* | 403 | 身份验证会话被身份提供程序失效。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
 |                    | *identity_not_recovered_by_mvpd* | 403 | 由于MVPD无法识别用户身份，授权请求失败。 |
 |                    | *authentication_session_invalidated* | 403 | 身份验证会话被身份提供程序失效。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
-|                    | *authentication_session_missing* | 403， 412 | 无法检索与此请求关联的身份验证会话。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
-|                    | *authentication_session_expired* | 403， 412 | 当前的身份验证会话已过期。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
+|                    | *authentication_session_missing* | 403, 412 | 无法检索与此请求关联的身份验证会话。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
+|                    | *authentication_session_expired* | 403, 412 | 当前的身份验证会话已过期。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
 |                    | *preauthorization_authentication_session_missing* | 412 | 无法检索与此请求关联的身份验证会话。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
 |                    | *preauthorization_authentication_session_expired* | 412 | 当前的身份验证会话已过期。 用户必须使用支持的MVPD重新进行身份验证才能继续。 |
-| **授权** | *authorization_not_found* | 403， 404 | 未找到指定资源的授权。 用户必须获得新授权才能继续。 |
+| **授权** | *authorization_not_found* | 403, 404 | 未找到指定资源的授权。 用户必须获得新授权才能继续。 |
 |                    | *authorization_expired* | 410 | 指定资源的先前授权已过期。 用户必须获得新授权才能继续。 |
 | **重试** | *network_received_error* | 403 | 从关联的合作伙伴服务检索响应时出现读取错误。 重试请求可能会解决此问题。 |
 |                    | *network_connection_timeout* | 403 | 与关联的合作伙伴服务的连接超时。 重试请求可能会解决此问题。 |

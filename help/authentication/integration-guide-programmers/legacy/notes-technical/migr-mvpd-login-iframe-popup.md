@@ -2,9 +2,9 @@
 title: 如何将MVPD登录页面从iFrame迁移到弹出窗口
 description: 如何将MVPD登录页面从iFrame迁移到弹出窗口
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '708'
+source-wordcount: '712'
 ht-degree: 0%
 
 ---
@@ -22,10 +22,12 @@ ht-degree: 0%
 ## 弹出窗口与iFrame {#popup-vs-iframe}
 
 某些用户在MVPD登录页面的iFrame实施中遇到第三方Cookie问题。
-<!--These issues are described in the tech notes linked below:
+<!--
+These issues are described in the tech notes linked below:
 
 * [Adobe Pass Authentication and Safari login issues](https://tve.helpdocsonline.com/adobe-pass)
-* [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)-->
+* [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)
+-->
 
 Adobe Pass身份验证团队&#x200B;**建议在Firefox和Safari上实施弹出窗口/新窗口登录页面**，而不是iFrame版本。  但是，如果您实施的是Internet Explorer的登录页面，则可能会遇到弹出窗口实施问题。 导致出现IE问题的原因在于，用户在弹出窗口中使用MVPD进行身份验证后，Adobe Pass身份验证将强制实施父页面重定向，而Internet Explorer将重定向视为弹出窗口阻止程序。 Adobe Pass身份验证团队&#x200B;**建议为Internet Explorer**&#x200B;实现iFrame登录。
 

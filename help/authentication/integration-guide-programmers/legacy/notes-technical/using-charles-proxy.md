@@ -2,9 +2,9 @@
 title: 使用Charles代理
 description: 使用Charles代理
 exl-id: bb38543f-f6bc-4b5a-91b8-41bc51ee4c56
-source-git-commit: 175755aa7463257487b29c5f4da989cf34e91bfd
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '376'
+source-wordcount: '379'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,8 @@ ht-degree: 0%
 
 选中“启用SSL代理”复选框并添加所有HTTPS位置。
 
-<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+<!-- 
+NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/ProxySettings.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/SSLSettings.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/AddHttpsLocations.PNG)
 -->
 
@@ -68,7 +69,8 @@ ht-degree: 0%
 
 当尝试将请求重定向到其他IP时，DNS欺骗会非常有用，尤其是在使用移动设备时：
 
-<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+<!-- 
+NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/DNSSpoofing.PNG)
 -->
 
@@ -83,7 +85,8 @@ ht-degree: 0%
 
 使用映射远程，您可以将“传入”请求重定向到其他端点。 此功能最常见的使用案例是“映射”`AccessEnabler.swf`到`AccessEnablerDebug.swf:`
 
-<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+<!-- 
+NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/MapRemote.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/MapRemoteAdd.PNG)
 -->
 
@@ -103,7 +106,8 @@ ht-degree: 0%
 
 从您的iOS设备浏览到<http://charlesproxy.com/charles.crt>。  这将启动证书安装对话框：
 
-<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+<!-- 
+NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate1\(1\).PNG)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate2\(1\).PNG)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate3.PNG)
 -->
 
@@ -122,7 +126,8 @@ ht-degree: 0%
 
 </br>
 
-<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+<!-- 
+NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy1.png)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy2.PNG)
 -->
 
@@ -131,7 +136,8 @@ ht-degree: 0%
 
 </br>
 
-<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+<!-- 
+NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy3.PNG)
 -->
 

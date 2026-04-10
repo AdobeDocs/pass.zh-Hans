@@ -2,9 +2,9 @@
 title: 注册页面
 description: 注册页面
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '509'
+source-wordcount: '528'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,7 @@ ht-degree: 0%
 
 | 端点 | <br>调用者 | 输入   <br>参数 | HTTP <br>方法 | 响应 | HTTP <br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>例如：<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | 流式处理应用程序<br>或<br>程序员服务 | 1.请求者<br>    （路径组件）<br>2。  deviceId (Hashed)   <br>    （必需）<br>3。  device_info/X-Device-Info （必需）<br>4。  mvpd （可选）<br>5。  ttl （可选）<br> | POST | 包含注册码和信息的XML或JSON，如果失败，则显示错误详细信息。 请参阅下面的示例。 | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>例如：<br>REGGIE_FQDN/regggie/v1/sampleRequestorId/regcode | 流式处理应用程序<br>或<br>程序员服务 | &#x200B;1.  请求者<br>    （路径组件）<br>2。  deviceId (Hashed)   <br>    （必需）<br>3。  device_info/X-Device-Info （必需）<br>4。  mvpd （可选）<br>5。  ttl （可选）<br> | POST | 包含注册码和信息的XML或JSON，如果失败，则显示错误详细信息。 请参阅下面的示例。 | 201 |
 
 {style="table-layout:auto"}
 
@@ -53,9 +53,9 @@ ht-degree: 0%
 | Accept | 标头<br>值： application/json | 指示客户端应该能够理解的内容类型 |
 | 请求者 | 查询参数 | 此操作有效的程序员requestorId。 |
 | deviceId | 查询参数 | 设备ID字节。 |
-| 设备信息/<br>X — 设备信息 | device_info：正文<br> X-Device-Info：标头 | 流设备信息。<br>**注意**：可以将此device_info作为URL参数传递，但由于此参数的潜在大小以及GET URL的长度限制，它应作为X-Device-Info传递到http标头。 <br>在[传递设备和连接信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
+| 设备信息/<br>X — 设备信息 | device_info：正文<br> X-Device-Info：标头 | 流式设备信息。<br>**注意**：可以将此device_info作为URL参数传递，但由于此参数的潜在大小以及GET URL的长度限制，它应作为X-Device-Info传递到http标头。 <br>在[传递设备和连接信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
 | mvpd | 查询参数 | 此操作对其有效的MVPD ID。 |
-| ttl | 查询参数 | 此正则码应在秒内保持多长时间。<br>**注意**： ttl允许的最大值为36000秒（10小时）。 较高的值会导致400 HTTP响应（错误请求）。 如果`ttl`留空，则Adobe Pass身份验证将默认值设置为30分钟。 |
+| ttl | 查询参数 | 此regcode应该以秒为单位存留多长时间。<br>**注意**：允许的ttl的最大值为36000秒（10小时）。 较高的值会导致400 HTTP响应（错误请求）。 如果`ttl`留空，则Adobe Pass身份验证将默认值设置为30分钟。 |
 | _deviceType_ | 查询参数 | 已弃用，不应使用。 |
 | _设备用户_ | 查询参数 | 已弃用，不应使用。 |
 | _appId_ | 查询参数 | 已弃用，不应使用。 |
@@ -65,8 +65,7 @@ ht-degree: 0%
 >[!CAUTION]
 >
 >**流设备IP地址**
-><br>
->对于客户端到服务器实施，流设备IP地址将随此调用隐式发送。  对于服务器到服务器实施，如果将&#x200B;**regcode**&#x200B;调用设置为程序员服务而不是流设备，则需要以下标头来传递流设备IP地址：
+><br>>对于客户端到服务器实施，流设备IP地址将随此调用隐式发送。  对于服务器到服务器实施，如果将&#x200B;**regcode**&#x200B;调用设置为程序员服务而不是流设备，则需要以下标头来传递流设备IP地址：
 >
 >
 >```
@@ -74,14 +73,13 @@ ht-degree: 0%
 >```
 >
 >其中`<streaming\_device\_ip>`是流设备公共IP地址。
-><br><br>
->示例：<br>
+><br><br>>示例：<br>
 >
 >```
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20
 >```
 >
-><br>
+<br>
 
 ### 响应JSON
 

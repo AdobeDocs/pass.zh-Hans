@@ -4,17 +4,17 @@ feature: Concurrency Monitoring
 audience: end-user
 user-guide-title: Adobe Pass 并发监控
 user-guide-description: 了解如何定义并在多个应用程序上施加并发使用限制。
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '276'
-ht-degree: 5%
+source-wordcount: '252'
+ht-degree: 6%
 
 ---
 
 
 # Adobe Pass并发监控帮助 {#cm}
 
-- [CM简介](cm-home.md) {#cm-intro}
+- [CM简介](cm-home.md)
 - 快速入门 {#getting-started}
    - [开始使用并发监视](getting-started/getting-started-overview.md)
    - [重要概念](getting-started/key-concepts.md)
@@ -34,7 +34,7 @@ ht-degree: 5%
    - [实施模型](technical/implementation-models.md)
    - [单个租户策略多个应用程序](technical/single-tenant-policy-mult-app.md)
    - [限制多个应用程序的并发使用](technical/restrict-concurr-usage-mult-apps.md)
-- [CM使用情况报告](reports/cm-usage-reports.md) {#cm-usage-reports}
+- [CM使用情况报表](reports/cm-usage-reports.md)
 - 技术说明 {#tech-notes}
    - [标准元数据属性](technical/standard-metadata-attributes.md)
    - [自定义元数据](technical/custom-metadata.md)
@@ -72,4 +72,4 @@ ht-degree: 5%
    - [并发监控 — 2.5.0发行说明](releases/rn-cm-250.md)
    - [并发监控 — 2.3.2发行说明](releases/rn-cm-232.md)
    - [并发监控 — 2.2.2发行说明](releases/rn-cm-222.md)
-- [支持过程](support/cm-escalation-procedures.md) {#support-procedures}
+- [支持程序](support/cm-escalation-procedures.md)

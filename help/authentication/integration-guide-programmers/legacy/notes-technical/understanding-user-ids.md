@@ -2,9 +2,9 @@
 title: 了解用户ID
 description: 了解用户ID
 exl-id: 813a8501-db72-4850-a387-c8db6120db80
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '625'
+source-wordcount: '627'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 0%
 | --- | --- | --- | --- | --- |
 | sendTrackingData() GUID属性 | 跟踪/分析 | 是 | 否 | - MVPD用户ID，由Adobe进行哈希处理。 用户ID无法回溯到MVPD的源中。</br> </br> — 此形式的ID未经过数字签名，因此对于防欺诈而言是不安全的。 但是，它足以用于分析。 </br> </br> — 此形式的用户ID是在Adobe Pass身份验证在AuthN/AuthZ流中生成的所有事件的客户端提供的。 |
 | 短媒体令牌的sessionGUID属性 | 对并发使用情况的欺诈跟踪 | 是 | 是 |  — 这与通过sendTrackingData()发送的用户ID相同，但是，此ID经过数字签名以保护其完整性，并且足以用于欺诈跟踪。</br> </br> — 此视频将在使用我们的验证器库后在服务器端进行处理，并且可以在向客户端发布视频流之前分析欺诈模式。  这些任务中的任何一个都由程序员来完成。 |
-| getMetadata() userID属性 | 帐户关联，与MVPD的欺诈调查 | 否 | 否 |  — 此属性允许Adobe向程序员公开实际的源MVPD用户ID。</br> </br> — 在Adobe的配置中，可以将其设置为已加密或不加密(具体取决于MVPD首选项)。 如果已加密，则使用提供给Adobe的程序员证书中的公钥对其进行加密，这样客户端就不会清楚地看到该密钥。</br> </br> — 这将为程序员提供MVPD中的实际用户ID，因此可用于直接与MVPD关联帐户或调查欺诈行为。 |
+| getMetadata() userID属性 | 帐户关联，与MVPD的欺诈调查 | 否 | 否 |  — 此属性允许Adobe向程序员公开实际的源MVPD用户ID。</br> </br> — 在Adobe的配置中，可以将其设置为已加密或不加密（具体取决于MVPD首选项）。 如果已加密，则使用提供给Adobe的程序员证书中的公钥对其进行加密，这样客户端就不会清楚地看到该密钥。</br> </br> — 这将为程序员提供MVPD中的实际用户ID，因此可用于直接与MVPD关联帐户或调查欺诈行为。 |
 
 
 **结论**

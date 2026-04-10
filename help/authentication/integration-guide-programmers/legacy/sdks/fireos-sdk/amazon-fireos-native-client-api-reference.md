@@ -2,9 +2,9 @@
 title: Amazon FireOS Native Client API参考
 description: Amazon FireOS Native Client API参考
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '3451'
+source-wordcount: '3498'
 ht-degree: 0%
 
 ---
@@ -68,8 +68,7 @@ ht-degree: 0%
 
 | API调用：构造函数 |
 | --- |
-| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br> |
-| ```public static AccessEnabler getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) throws AccessEnablerException``` |
+| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br>  <code>公共静态AccessEnabler getInstance(Context appContext， String env_url， String softwareStatement， String redirectUrl)引发AccessEnablerException </code> |
 
 **可用性：** v3.0+
 
@@ -159,7 +158,7 @@ ht-degree: 0%
 
 ### setOptions {#fire_setOption}
 
-**描述：**&#x200B;配置全局SDK选项。 它接受&#x200B;**Map\&lt;字符串，字符串\>**&#x200B;作为参数。 映射中的值将与SDK发出的每个网络调用一起传递到服务器。
+**描述：**&#x200B;配置全局SDK选项。 它接受&#x200B;**Map\&lt;String， String\>**&#x200B;作为参数。 映射中的值将与SDK发出的每个网络调用一起传递到服务器。
 
 这些值将传递到服务器，与当前流（身份验证/授权）无关。 如果要更改值，可以随时调用此方法。
 
@@ -232,7 +231,7 @@ ht-degree: 0%
 
 ### displayProviderDialog {#displayProviderDialog}
 
-**描述**&#x200B;回调由Access Enabler触发，用于通知应用程序需要实例化适当的UI元素以允许用户选择所需的MVPD。 回调提供了MVPD对象的列表以及其他有助于正确构建选择UI面板的信息(例如指向MVPD徽标的URL、友好的显示名称等)
+**描述**&#x200B;回调由Access Enabler触发，用于通知应用程序需要实例化适当的UI元素以允许用户选择所需的MVPD。 回调提供了MVPD对象的列表以及其他有助于正确构建选择UI面板的信息（例如指向MVPD徽标的URL、友好的显示名称等）
 
 用户选择所需的MVPD后，需要上层应用程序通过调用&#x200B;*setSelectedProvider()*&#x200B;并向其传递与用户的选择相对应的MVPD ID来恢复身份验证流程。
 
@@ -260,7 +259,7 @@ ht-degree: 0%
 | ```public void setSelectedProvider(String mvpdId)``` |
 
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **参数：**&#x200B;无
 
@@ -297,7 +296,7 @@ ht-degree: 0%
 
 **参数：**
 
-- *Cookie*：在Target域中设置的Cookie(请参阅SDK中的演示应用程序以了解参考实施)。
+- *Cookie*：在Target域中设置的Cookie（请参阅SDK中的演示应用程序以了解参考实施）。
 
 已触发&#x200B;**回调：** `setAuthenticationStatus(), sendTrackingData()`
 
@@ -355,7 +354,7 @@ ht-degree: 0%
 | --- |
 | ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **参数：** `resources`参数是用户已被授权查看的资源数组。
 
@@ -427,7 +426,7 @@ ht-degree: 0%
 | --- |
 | ```public void setToken(String token, String resourceId)``` |
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **参数：**
 
@@ -522,7 +521,7 @@ ht-degree: 0%
 有两种类型的元数据可供程序员使用：
 
 - 静态元数据（身份验证令牌TTL、授权令牌TTL和设备ID）
-- 用户元数据(特定于用户的信息，例如用户ID和邮政编码；在身份验证和/或授权流期间，从MVPD传递到用户设备)
+- 用户元数据（特定于用户的信息，例如用户ID和邮政编码；在身份验证和/或授权流期间，从MVPD传递到用户设备）
 
 **参数：**
 

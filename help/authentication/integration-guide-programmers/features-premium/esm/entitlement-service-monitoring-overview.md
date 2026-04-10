@@ -2,9 +2,9 @@
 title: 授权服务监控概述
 description: 授权服务监控概述
 exl-id: ebd5d650-0a32-4583-9045-5156356494e2
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '1303'
+source-wordcount: '1349'
 ht-degree: 0%
 
 ---
@@ -44,8 +44,8 @@ ESM API不公开发布。  有关可用性问题，请联系您的Adobe代表。
 | authz-rejected | Adobe服务提供商认为具有恶意并因DoS攻击预防而拒绝的授权尝试次数 |
 | 授权延迟 | 在MVPD端点上花费的总毫秒数 |
 | media-tokens | 生成的短媒体令牌数量（与播放请求数量相同） |
-| 独特帐户 | 在所选时间间隔内执行授权(AuthN / AuthZ)操作的独特用户数。 （此量度仅在请求每日值时显示。） </br>这是为每个单独的数据中心计算的。 当未请求“dc”维度时，将不显示此量度。 |
-| 独特会话 | 在所选时间间隔内对Adobe Pass身份验证服务执行身份验证流调用的唯一会话数。 （此量度仅在请求每日值时显示。） </br>这是为每个单独的数据中心计算的。 当未请求“dc”维度时，将不显示此量度。 |
+| 独特帐户 | 在所选时间间隔内执行授权(AuthN / AuthZ)操作的独特用户数。 （此量度仅在请求每日值时显示。） </br> 这是为每个单独的数据中心计算的。 当未请求“dc”维度时，将不显示此量度。 |
+| 独特会话 | 在所选时间间隔内对Adobe Pass身份验证服务执行身份验证流调用的唯一会话数。 （此量度仅在请求每日值时显示。） </br> 这是为每个单独的数据中心计算的。 当未请求“dc”维度时，将不显示此量度。 |
 | count | 在事件导向报表中使用的简单计数器 |
 
 </br>
@@ -68,14 +68,14 @@ ESM API不公开发布。  有关可用性问题，请联系您的Adobe代表。
 | 渠道 | 渠道网站，从资源字段提取（从MRSS有效负载中提取作为渠道/标题，如果提供，或映射到资源值，前提是它不是RSS格式）。 |
 | resource-id | 授权请求中涉及的实际资源标题（从MRSS有效负载提取为项目/标题，如果提供） |
 | 设备 | 设备平台（PC、移动设备、控制台等） |
-| eap | 通过外部系统执行身份验证流程时的外部身份验证提供程序。 </br>值可以是： </br> - N/A - Adobe Pass身份验证</br> - Apple — 提供身份验证的外部系统是Apple |
+| eap | 通过外部系统执行身份验证流程时的外部身份验证提供程序。</br> 值可以是： </br> - N/A - Adobe Pass身份验证</br>提供了身份验证 — Apple — 提供身份验证的外部系统是Apple |
 | os系列 | 设备上运行的操作系统 |
 | browser-family | 用于访问Adobe Pass身份验证的用户代理 |
-| cdt | 当前用于无客户端的设备平台（替代）。 </br>值可以是： </br> - N/A — 事件不是源自无客户端SDK </br> — 未知 — 由于无客户端API中的deviceType参数是可选的，因此有些调用不包含任何值。 </br> — 通过无客户端API发送的任何其他值，例如xbox、appletv、roku等。</br> |
+| cdt | 当前用于无客户端的设备平台（替代）。</br>  值可以是： </br> - N/A — 事件并非源自无客户端SDK </br> — 未知 — 由于无客户端API中的deviceType参数是可选的，因此有些调用不包含任何值。</br> — 通过无客户端API发送的任何其他值，例如xbox、appletv、roku等。</br> |
 | platform-version | 无客户端SDK的版本 |
 | 操作系统类型 | 设备上运行的操作系统，替代（当前未使用） |
 | browser-version | 用户代理版本 |
-| nsdk | SDK使用的客户端(android、fireTV、js、iOS、tvOS、非sdk) |
+| nsdk | SDK使用的客户端（android、fireTV、js、iOS、tvOS、非sdk） |
 | nsdk-version | Adobe Pass身份验证客户端SDK的版本 |
 | 事件 | Adobe Pass身份验证事件名称 |
 | 原因 | 失败的原因，由Adobe Pass身份验证报告 |
@@ -113,18 +113,18 @@ ESM API不公开发布。  有关可用性问题，请联系您的Adobe代表。
 | 分钟 | 该小时中的第几分钟 |
 | mvpd | 用于执行授权请求的mvpd ID |
 | 请求者ID | 用于执行授权请求的请求者ID |
-| eap | 通过外部系统执行身份验证流程时的外部身份验证提供程序。 </br>值可以是： </br> - N/A - Adobe Pass身份验证</br> - Apple — 提供身份验证的外部系统是Apple |
-| cdt | 当前用于无客户端的设备平台（替代）。 </br>值可以是： </br> - N/A — 事件不是源自无客户端SDK </br> — 未知 — 由于无客户端API中的deviceType参数是可选的，因此有些调用不包含任何值。 </br> — 通过无客户端API发送的任何其他值，例如xbox、appletv、roku等。</br> |
-| sdk-type | 使用的客户端SDK(Flash、HTML5、Android Native、iOS、Clienless等) |
+| eap | 通过外部系统执行身份验证流程时的外部身份验证提供程序。</br> 值可以是： </br> - N/A - Adobe Pass身份验证</br>提供了身份验证 — Apple — 提供身份验证的外部系统是Apple |
+| cdt | 当前用于无客户端的设备平台（替代）。</br>  值可以是： </br> - N/A — 事件并非源自无客户端SDK </br> — 未知 — 由于无客户端API中的deviceType参数是可选的，因此有些调用不包含任何值。</br> — 通过无客户端API发送的任何其他值，例如xbox、appletv、roku等。</br> |
+| sdk-type | 使用的客户端SDK（Flash、HTML5、Android Native、iOS、Clienless等） |
 | 平台 | 设备已识别平台。 可能的值： </br> - Android </br> - FireTV </br> - Roku </br> - iOS </br> - tvOS </br> — 等 |
-| nsdk | SDK使用的客户端(android、fireTV、js、iOS、tvOS、非sdk) |
+| nsdk | SDK使用的客户端（android、fireTV、js、iOS、tvOS、非sdk） |
 | nsdk-version | Adobe Pass身份验证客户端SDK的版本 |
 
 ## 用例 {#use-cases}
 
 您可以将ESM数据用于以下用例：
 
-- **监控** — 操作或监控团队可以创建每分钟调用一次API的仪表板或图表。 使用显示的信息，他们可以在问题出现的一分钟就检测到问题(Adobe Pass身份验证或MVPD)。
+- **监控** — 操作或监控团队可以创建每分钟调用一次API的仪表板或图表。 使用显示的信息，他们可以在问题出现的一分钟就检测到问题（Adobe Pass身份验证或MVPD）。
 
 - **调试/质量测试** — 由于数据也按平台、设备、浏览器和操作系统进行划分，因此分析使用模式可以查明特定组合上的问题（例如，OSX上的Safari）。
 
