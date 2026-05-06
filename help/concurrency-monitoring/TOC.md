@@ -5,9 +5,9 @@ audience: end-user
 user-guide-title: Adobe Pass 并发监控
 user-guide-description: 了解如何定义并在多个应用程序上施加并发使用限制。
 nudge: true
-source-git-commit: e02007a3ec5bd581f84c887ac50249009a2121fd
+source-git-commit: 80ffef1e8e0cfb3752c01e155854f7d87dfa134c
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '257'
 ht-degree: 6%
 
 ---
@@ -45,6 +45,7 @@ ht-degree: 6%
    - [方法：在并发监控中区分VOD和实时内容](technical/vod-live-dist.md)
    - [数据保留策略](technical/data-retention-policy.md)
 - 版本 {#cm-release-notes}
+   - [并发监控 — 4.0.1发行说明](releases/rn-cm-services-401.md)
    - [并发监控 — 3.6.2发行说明](releases/rn-cm-services-362.md)
    - [并发监控 — 3.6.1发行说明](releases/rn-cm-services-361.md)
    - [并发监控 — 3.6.0发行说明](releases/rn-cm-services-360.md)
