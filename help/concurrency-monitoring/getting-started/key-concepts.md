@@ -1,13 +1,13 @@
 ---
 title: 重要概念
 description: 了解并发监控的基本概念，包括会话、策略、元数据等
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 9721055a-70e6-4ba1-a1e0-04406eec25e6
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '697'
+source-wordcount: '702'
 ht-degree: 0%
 
 ---
-
 
 # 重要概念 {#key-concepts}
 
@@ -76,11 +76,11 @@ ht-degree: 0%
 
 | 类别 | 示例 | 用途 |
 |-----------------|------------------------------------------|---------------------------------|
-| **设备** | `deviceId`，`deviceType`，`osName` | 识别设备并对其进行分类 |
-| **内容** | `channel`，`contentType`，`assetId` | 描述正在观看的内容 |
-| **用户** | `subject`，`subscriptionTier` | 用户特定信息 |
-| **应用程序** | `applicationName`，`applicationPlatform` | 特定于应用程序的详细信息 |
-| **位置** | `country`，`hba` | 地理和网络信息 |
+| **设备** | `deviceId`, `deviceType`, `osName` | 识别设备并对其进行分类 |
+| **内容** | `channel`, `contentType`, `assetId` | 描述正在观看的内容 |
+| **用户** | `subject`, `subscriptionTier` | 用户特定信息 |
+| **应用程序** | `applicationName`, `applicationPlatform` | 特定于应用程序的详细信息 |
+| **位置** | `country`, `hba` | 地理和网络信息 |
 
 #### 必需与可选元数据
 
@@ -269,4 +269,3 @@ Tenant: "Streaming Company"
 | **先进先出** | 先进先出冲突解决 |
 | **租户** | 拥有应用程序的组织 |
 | **应用程序** | 使用CM的软件程序 |
-
