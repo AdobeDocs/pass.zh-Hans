@@ -2,9 +2,9 @@
 title: Amazon FireOS Native Client API参考
 description: Amazon FireOS Native Client API参考
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '3498'
+source-wordcount: '3519'
 ht-degree: 0%
 
 ---
@@ -68,7 +68,7 @@ ht-degree: 0%
 
 | API调用：构造函数 |
 | --- |
-| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br>  <code>公共静态AccessEnabler getInstance(Context appContext， String env_url， String softwareStatement， String redirectUrl)引发AccessEnablerException </code> |
+| <code>公共静态AccessEnabler getInstance(Context appContext， String softwareStatement， String redirectUrl)<br>引发AccessEnablerException<br><br>公共静态AccessEnabler getInstance(Context appContext， String env_url， String softwareStatement， String redirectUrl)引发AccessEnablerException </code> |
 
 **可用性：** v3.0+
 
@@ -100,7 +100,7 @@ ht-degree: 0%
 
 | API调用：请求者配置 |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 
 **可用性：** v3.0+
@@ -108,7 +108,7 @@ ht-degree: 0%
 
 | API调用：请求者配置 |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **可用性：** v3.0+
 
@@ -139,7 +139,7 @@ ht-degree: 0%
 
 | 回调：请求者配置完成 |
 | --- |
-| ```public void setRequestorComplete(int status)``` |
+| `public void setRequestorComplete(int status)` |
 
 **可用性：** v1.0+
 
@@ -158,7 +158,7 @@ ht-degree: 0%
 
 ### setOptions {#fire_setOption}
 
-**描述：**&#x200B;配置全局SDK选项。 它接受&#x200B;**Map\&lt;String， String\>**&#x200B;作为参数。 映射中的值将与SDK发出的每个网络调用一起传递到服务器。
+**描述：**&#x200B;配置全局SDK选项。 它接受&#x200B;**Map\&lt;字符串，字符串\>**&#x200B;作为参数。 映射中的值将与SDK发出的每个网络调用一起传递到服务器。
 
 这些值将传递到服务器，与当前流（身份验证/授权）无关。 如果要更改值，可以随时调用此方法。
 
@@ -166,7 +166,7 @@ ht-degree: 0%
 
 | API调用： setOptions |
 | --- |
-| ```public void setOptions(HashMap<String,String> options)``` |
+| `public void setOptions(HashMap<String,String> options)` |
 
 **可用性：** v3.0+
 
@@ -187,7 +187,7 @@ ht-degree: 0%
 
 | API调用：检查身份验证状态 |
 | --- |
-| ```public void checkAuthentication()``` |
+| `public void checkAuthentication()` |
 
 **可用性：** v1.0+
 
@@ -210,13 +210,13 @@ ht-degree: 0%
 
 | API调用：启动身份验证流程 |
 | --- |
-| ```public void getAuthentication()``` |
+| `public void getAuthentication()` |
 
 **可用性：** v1.0+
 
 | API调用：启动身份验证流程 |
 | --- |
-| ```public void getAuthentication(boolean forceAuthN, Map<String, Object> genericData)``` |
+| `public void getAuthentication(boolean forceAuthN, Map<String, Object> genericData)` |
 
 **可用性：** v1.0+
 
@@ -238,7 +238,7 @@ ht-degree: 0%
 
 | **回调：显示MVPD选择UI** |
 | --- |
-| ```public void displayProviderDialog(ArrayList<Mvpd> mvpds)``` |
+| `public void displayProviderDialog(ArrayList<Mvpd> mvpds)` |
 
 **可用性：** v1.0+
 
@@ -256,15 +256,15 @@ ht-degree: 0%
 
 | **API调用：设置当前选择的提供程序** |
 | --- |
-| ```public void setSelectedProvider(String mvpdId)``` |
+| `public void setSelectedProvider(String mvpdId)` |
 
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **参数：**&#x200B;无
 
-已触发&#x200B;**回调：** `setAuthenticationStatus(), sendTrackingData()`
-</br>
+已触发&#x200B;**回调：** 
+
 
 ### navigateToUrl {#navigagteToUrl}
 
@@ -272,7 +272,7 @@ ht-degree: 0%
 
 | **回调：显示MVPD登录页面** |
 | --- |
-| ```public void navigateToUrl(String url)``` |
+| `public void navigateToUrl(String url)` |
 
 **可用性：** v1.0+
 
@@ -290,7 +290,7 @@ ht-degree: 0%
 
 | **API调用：检索身份验证令牌** |
 | --- |
-| ```public void getAuthenticationToken(String cookies)``` |
+| `public void getAuthenticationToken(String cookies)` |
 
 **可用性：** v1.0+
 
@@ -310,7 +310,7 @@ ht-degree: 0%
 
 | **回调：报告身份验证流的状态** |
 | --- |
-| ```public void setAuthenticationStatus(int status, String errorCode)``` |
+| `public void setAuthenticationStatus(int status, String errorCode)` |
 
 **可用性：** v1.0+
 
@@ -336,7 +336,7 @@ ht-degree: 0%
 
 | **API调用：设置当前选择的提供程序** |
 | --- |
-| ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
+| `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
 **可用性：** v1.0+
 
@@ -352,9 +352,9 @@ ht-degree: 0%
 
 | **API调用：设置当前选择的提供程序** |
 | --- |
-| ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
+| `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **参数：** `resources`参数是用户已被授权查看的资源数组。
 
@@ -368,13 +368,13 @@ ht-degree: 0%
 
 | **API调用：检查授权状态** |
 | --- |
-| ```public void checkAuthorization(String resourceId)``` |
+| `public void checkAuthorization(String resourceId)` |
 
 **可用性：** v1.0+
 
 | **API调用：检查授权状态** |
 | --- |
-| ```public void checkAuthorization(String resourceId, Map<String, Object> genericData)``` |
+| `public void checkAuthorization(String resourceId, Map<String, Object> genericData)` |
 
 **可用性：** v1.0+
 
@@ -393,13 +393,13 @@ ht-degree: 0%
 
 | **API调用：启动授权流** |
 | --- |
-| ```public void getAuthorization(String resourceId)``` |
+| `public void getAuthorization(String resourceId)` |
 
 **可用性：** v1.0+
 
 | **API调用：启动授权流** |
 | --- |
-| ```public void getAuthorization(String resourceId, Map<String, Object> genericData)``` |
+| `public void getAuthorization(String resourceId, Map<String, Object> genericData)` |
 
 **可用性：** v1.0+
 
@@ -424,9 +424,9 @@ ht-degree: 0%
 
 | **回调：授权流已成功完成** |
 | --- |
-| ```public void setToken(String token, String resourceId)``` |
+| `public void setToken(String token, String resourceId)` |
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **参数：**
 
@@ -443,7 +443,7 @@ ht-degree: 0%
 
 | **回调：授权流失败** |
 | --- |
-| ```public void tokenRequestFailed(String resourceId, <br>        String errorCode, String errorDescription)``` |
+| <code>public void tokenRequestFailed(String resourceId， <br> String errorCode， String errorDescription)</code> |
 
 **可用性：** v1.0+
 
@@ -464,7 +464,7 @@ ht-degree: 0%
 
 | **API调用：启动注销流程** |
 | --- |
-| ```public void logout()``` |
+| `public void logout()` |
 
 **可用性：** v1.0+
 
@@ -480,7 +480,7 @@ ht-degree: 0%
 
 | **API调用：确定当前选定的MVPD** |
 | --- |
-| ```public void getSelectedProvider()``` |
+| `public void getSelectedProvider()` |
 
 **可用性：** v1.0+
 
@@ -496,7 +496,7 @@ ht-degree: 0%
 
 | **回调：有关当前所选MVPD的信息** |
 | --- |
-| ```public void selectedProvider(Mvpd mvpd)``` |
+| `public void selectedProvider(Mvpd mvpd)` |
 
 **可用性：** v1.0+
 
@@ -514,7 +514,7 @@ ht-degree: 0%
 
 | **API调用：查询AccessEnabler以获取元数据** |
 | --- |
-| ```public void getMetadata(MetadataKey metadataKey)``` |
+| `public void getMetadata(MetadataKey metadataKey)` |
 
 **可用性：** v1.0+
 
@@ -550,7 +550,7 @@ ht-degree: 0%
 
 | **回调：元数据检索请求的结果** |
 | --- |
-| ```public void setMetadataStatus(MetadataKey key, MetadataStatus result)``` |
+| `public void setMetadataStatus(MetadataKey key, MetadataStatus result)` |
 
 **可用性：** v1.0+
 
@@ -612,7 +612,7 @@ ht-degree: 0%
 
 | **API调用：获取AccessEnabler版本** |
 | --- |
-| ```public static String getVersion()``` |
+| `public static String getVersion()` |
 
 ## 跟踪事件 {#tracking}
 
@@ -643,7 +643,7 @@ Access Enabler会触发一个附加回调，该回调不一定与权利文件流
 
 | 回调：跟踪事件 |
 | --- |
-| ```public void sendTrackingData(Event event, ArrayList<String> data)``` |
+| `public void sendTrackingData(Event event, ArrayList<String> data)` |
 
 **可用性：** v1.0+
 

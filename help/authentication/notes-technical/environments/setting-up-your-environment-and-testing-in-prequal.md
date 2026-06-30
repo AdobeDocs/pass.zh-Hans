@@ -2,9 +2,9 @@
 title: 在资格预审中设置环境和测试
 description: 在资格预审中设置环境和测试
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: ca95bc45027410becf8987154c7c9f8bb8c2d5f8
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '492'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 0%
 
 * 要查找可用于欺骗的负载平衡器IP，请运行以下命令：
 
-* Windows上的&#x200B;**&#x200B;**
+* Windows上的&#x200B;****
 
   ```cmd
   C:\>nslookup sp-prequal.auth.adobe.com
@@ -39,7 +39,7 @@ ht-degree: 0%
               54.184.208.150
   ```
 
-```Choose any IP from **addresses** section (e.g. `52.13.71.11)```
+``Choose any IP from **addresses** section (e.g. `52.13.71.11)``
 
 ```cmd
 C:\>nslookup entitlement-prequal.auth.adobe.com 
@@ -48,10 +48,10 @@ Addresses:  52.26.79.43
             54.190.212.171
 ```
 
-```Choose any IP from **addresses** section (e.g. `54.190.212.171)```
+``Choose any IP from **addresses** section (e.g. `54.190.212.171)``
 
 
-* 在Linux/Mac上&#x200B;**&#x200B;**
+* 在Linux/Mac上&#x200B;****
 
 ```sh
     $ dig sp-prequal.auth.adobe.com
@@ -62,7 +62,7 @@ Addresses:  52.26.79.43
     ............ 60 IN A      54.184.208.150
 ```
 
-```Choose any IP from **A records (**e.g `52.13.71.11)```
+``Choose any IP from **A records (**e.g `52.13.71.11)``
 
 ```sh
     $ dig entitlement-prequal.auth.adobe.com
@@ -73,7 +73,7 @@ Addresses:  52.26.79.43
     ............ 60 IN A      54.190.212.171
 ```
 
-```Choose any IP from **A records (**e.g `54.190.212.171)```
+``Choose any IP from **A records (**e.g `54.190.212.171)``
 
 >[!NOTE]
 >
@@ -86,7 +86,7 @@ Addresses:  52.26.79.43
 
 ## 步骤2.  伪造要生产的预鉴定环境 {#spoofing-the-prequalification-environment}
 
-* 编辑&#x200B;*c：\\windows\\System32\\drivers\\etc\\hosts*&#x200B;文件（在Windows中）或&#x200B;*/etc/hosts*&#x200B;文件(在Macintosh/Linux/Android上)并添加以下内容：
+* 编辑&#x200B;*c：\\windows\\System32\\drivers\\etc\\hosts*&#x200B;文件（在Windows中）或&#x200B;*/etc/hosts*&#x200B;文件（在Macintosh/Linux/Android上）并添加以下内容：
 
 * 伪造生产配置文件
    * 52.13.71.11 sp.auth.adobe.com api.auth.adobe.com
@@ -94,7 +94,7 @@ Addresses:  52.26.79.43
 
 **在Android上欺骗：**&#x200B;为了欺骗Android，您必须使用Android模拟器。
 
-* 一旦设置好欺骗，您只需将常规URL用于生产和暂存配置文件即可： (即`http://sp.auth-staging.adobe.com`和`http://entitlement.auth-staging.adobe.com`，您实际上将点击*新内部版本的&#x200B;*资格预审环境/生产*。
+* 一旦设置好欺骗，您只需将常规URL用于生产和暂存配置文件即可： (即`http://sp.auth-staging.adobe.com`和`http://entitlement.auth-staging.adobe.com`，您实际上将点击&#x200B;*新内部版本的*&#x200B;资格预审环境/生产*。
 
 
 ## 步骤3.  验证您是否指向正确的环境 {#Verify-you-are-pointing-to-the-right-environment}

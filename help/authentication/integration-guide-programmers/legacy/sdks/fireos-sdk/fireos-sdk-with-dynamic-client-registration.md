@@ -2,10 +2,10 @@
 title: Amazon FireOS SDK与Dynamic Client注册
 description: Amazon FireOS SDK与Dynamic Client注册
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '1169'
-ht-degree: 0%
+source-wordcount: '1185'
+ht-degree: 1%
 
 ---
 
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 | API调用：构造函数 |
 | --- |
-| 公共静态AccessEnabler getInstance(Context appContext， String softwareStatement， String redirectUrl)<br>        引发AccessEnablerException |
+| 公共静态AccessEnabler getInstance(Context appContext， String softwareStatement， String redirectUrl)<br>引发AccessEnablerException |
 
 **可用性：** v3.0+
 
@@ -70,7 +70,7 @@ ht-degree: 0%
 
 | API调用：请求者配置 |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **可用性：** v3.0+
 
@@ -81,7 +81,7 @@ ht-degree: 0%
 
 已弃用：
 
-- *signedRequestorID*：用您的私钥进行数字签名的请求者ID的副本。<!--For more details, see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->。
+- *signedRequestorID*：用您的私钥进行数字签名的请求者ID的副本。 <!--For more details, see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
 
 已触发&#x200B;**回调：** `setRequestorComplete()`
 
@@ -117,9 +117,9 @@ ht-degree: 0%
 
 
 
-### **2。 配置应用程序**
+### **2. 配置应用程序**
 
-- a. setRequestor(requestor\_id)
+- 答：  setRequestor(requestor\_id)
 
   SDK将执行以下操作：
 
@@ -145,18 +145,18 @@ ht-degree: 0%
    - 未选择mvpd ：displayProviderDialog
    - 已选择mvpd ：转到setSelectedProvider(mvpd\_id)
 
-- d. setSelectProvider
+- d. setSelectedProvider
 
    - mvpd\_id身份验证URL加载到ChromeCustomTables中
    - 登录成功：delegate.setAuthenticationStatus ( SUCCESS )
    - 已取消登录：重置MVPD选择
    - URL方案将建立为“adobepass://android.app”，以便在身份验证完成时捕获
 
-- e. get/checkAuthorization ： SDK将在标头中包含&#x200B;**access\_token**&#x200B;作为授权：持有者&#x200B;**access\_token**
+- e. get/checkAuthorization ： SDK将在标头中包含&#x200B;**access\_token**&#x200B;作为授权：持有者**access\_token**
 
 - 如果授权成功，将调用以获取媒体令牌
 
-- f.注销：
+- f. 注销：
 
    - SDK将删除当前请求者的有效令牌（由其他应用程序而非通过SSO获得的身份验证将保持有效）
    - SDK将打开Chrome自定义选项卡以访问mvpd\_id注销端点。 完成后，Chrome自定义选项卡将关闭
