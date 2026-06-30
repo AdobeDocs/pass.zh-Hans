@@ -2,9 +2,9 @@
 title: Android SDK API参考
 description: Android SDK API参考
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '4560'
+source-wordcount: '4628'
 ht-degree: 0%
 
 ---
@@ -92,13 +92,13 @@ ht-degree: 0%
 
 | API调用：请求者配置 |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 **可用性：** v3.0+
 
 | API调用：请求者配置 |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **可用性：** v3.0+
 
@@ -107,7 +107,7 @@ ht-degree: 0%
 
 - *requestorID*：与程序员关联的唯一ID。 首次使用Adobe身份验证服务注册时，请将Adobe Pass分配的唯一ID传递到您的网站。
 
-- *signedRequestorID*：用您的私钥进行数字签名的请求者ID的副本。<!--For more details. see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->。
+- *signedRequestorID*：用您的私钥进行数字签名的请求者ID的副本。 <!--For more details. see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
 
 - *url*：可选参数；默认情况下，使用Adobe服务提供程序(http://sp.auth.adobe.com/)。 此阵列允许您为Adobe提供的身份验证和授权服务指定端点（不同的实例可用于调试目的）。 您可以使用此选项指定多个Adobe Pass身份验证服务提供程序实例。 在执行此操作时，MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商相关联；即首先响应并支持该MVPD的提供商。
 
@@ -226,15 +226,13 @@ ht-degree: 0%
 
 ### displayProviderDialog {#displayProviderDialog}
 
-**描述**&#x200B;回调由Access Enabler触发，用于通知应用程序需要实例化适当的UI元素以允许用户选择所需的MVPD。 回调提供了MVPD对象的列表以及其他有助于正确构建选择UI面板的信息(例如指向MVPD徽标的URL、友好的显示名称等)
+**描述**&#x200B;回调由Access Enabler触发，用于通知应用程序需要实例化适当的UI元素以允许用户选择所需的MVPD。 回调提供了MVPD对象的列表以及其他有助于正确构建选择UI面板的信息（例如指向MVPD徽标的URL、友好的显示名称等）
 
 用户选择所需的MVPD后，需要上层应用程序通过调用&#x200B;*setSelectedProvider()*&#x200B;并向其传递与用户的选择相对应的MVPD ID来恢复身份验证流程。
 
 >[!NOTE]
 >
-> 中止身份验证流程
-> </br></br>
-> 请注意，这是用户能够按下“返回”按钮的时刻，这相当于身份验证流中止。 在这种情况下，您的应用程序需要调用`setSelectedProvider()`方法，并将&#x200B;*null*&#x200B;作为参数传递，以便为Access Enabler提供重置其身份验证状态计算机的机会。
+> 中止身份验证流程请注意，这是用户能够按下“返回”按钮的时刻，这相当于身份验证流中止。 在这种情况下，您的应用程序需要调用`setSelectedProvider()`方法，并将&#x200B;*null*&#x200B;作为参数传递，以便为Access Enabler提供重置其身份验证状态计算机的机会。
 
 | 回调：显示MVPD选择UI |
 | --- |
@@ -259,7 +257,7 @@ ht-degree: 0%
 
 请注意，这不适用于提升临时传递，因为getAuthentication()方法提供了额外的参数。
 
-将&#x200B;*null*&#x200B;作为参数传递时，Access Enabler假定用户已取消身份验证流程（即按“返回”按钮），并通过重置身份验证状态计算机和使用&#x200B;*错误代码调用* setAuthenticationStatus()`AccessEnablerConstants.PROVIDER_NOT_SELECTED_ERROR`回调进行响应。
+将&#x200B;*null*&#x200B;作为参数传递时，Access Enabler假定用户已取消身份验证流程（即按“返回”按钮），并通过重置身份验证状态计算机和使用`AccessEnablerConstants.PROVIDER_NOT_SELECTED_ERROR`错误代码调用&#x200B;*setAuthenticationStatus()*&#x200B;回调进行响应。
 
 | API调用：设置当前选定的提供程序 |
 | --- |
@@ -313,7 +311,7 @@ ht-degree: 0%
 
 **参数：**
 
-- *Cookie*：在Target域中设置的Cookie(请参阅SDK中的演示应用程序以了解参考实施)。
+- *Cookie*：在Target域中设置的Cookie（请参阅SDK中的演示应用程序以了解参考实施）。
 
 已触发&#x200B;**回调：** `setAuthenticationStatus()`，`sendTrackingData()`
 
@@ -493,7 +491,7 @@ ht-degree: 0%
 
 | 回调：授权流失败 |
 | --- |
-| 公共void tokenRequestFailed(String resourceId， <br>        String errorCode， String errorDescription) |
+| 公共void tokenRequestFailed(String resourceId， <br> String errorCode， String errorDescription) |
 
 **可用性：** v1.0+
 
@@ -581,7 +579,7 @@ ht-degree: 0%
 有两种类型的元数据可供程序员使用：
 
 - 静态元数据（身份验证令牌TTL、授权令牌TTL和设备ID）
-- 用户元数据(特定于用户的信息，例如用户ID和邮政编码；在身份验证和/或授权流期间，从MVPD传递到用户设备)
+- 用户元数据（特定于用户的信息，例如用户ID和邮政编码；在身份验证和/或授权流期间，从MVPD传递到用户设备）
 
 **参数：**
 
@@ -624,7 +622,7 @@ ht-degree: 0%
 
 | 回调：元数据检索请求的结果 |
 | --- |
-| ```public void setMetadataStatus(MetadataKey key, MetadataStatus result)``` |
+| `public void setMetadataStatus(MetadataKey key, MetadataStatus result)` |
 
 **可用性：** v1.0+
 
@@ -688,7 +686,7 @@ ht-degree: 0%
 
 | API调用：获取AccessEnabler版本 |
 | --- |
-| ```public static String getVersion()``` |
+| `public static String getVersion()` |
 
 
 [返回到Android API...](#api)
@@ -727,7 +725,7 @@ Access Enabler会触发一个附加回调，该回调不一定与权利文件流
 
 | 回调：跟踪事件 |
 | --- |
-| ```public void sendTrackingData(Event event, ArrayList<String> data)``` |
+| `public void sendTrackingData(Event event, ArrayList<String> data)` |
 
 **可用性：** v1.0+
 
@@ -739,7 +737,7 @@ Access Enabler会触发一个附加回调，该回调不一定与权利文件流
    - **mvpdSelection：**&#x200B;用户在MVPD选择表单中选择MVPD时（事件类型为`EVENT_MVPD_SELECTION`）
 - *数据*：与报告事件关联的其他数据。 此数据以值列表的形式提供。
 
-以下说明用于解释&#x200B;*data*中的值
+以下说明用于解释&#x200B;*数据中的值*
 数组：
 
 - 对于事件类型&#x200B;*`EVENT_AUTHN_DETECTION`：*

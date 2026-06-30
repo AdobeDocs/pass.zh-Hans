@@ -2,10 +2,10 @@
 title: Android SDK与Dynamic Client注册
 description: Android SDK与Dynamic Client注册
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '1301'
-ht-degree: 0%
+source-wordcount: '1321'
+ht-degree: 1%
 
 ---
 
@@ -53,7 +53,7 @@ Android SDK v3.0+将使用[动态客户端注册概述](../../../rest-apis/rest-
 
 | API调用：构造函数 |
 | --- |
-| 公共静态AccessEnabler getInstance(Context appContext， String softwareStatement， String redirectUrl)<br>        引发AccessEnablerException |
+| 公共静态AccessEnabler getInstance(Context appContext， String softwareStatement， String redirectUrl)<br>引发AccessEnablerException |
 
 
 **可用性：** v3.0+
@@ -64,8 +64,7 @@ Android SDK v3.0+将使用[动态客户端注册概述](../../../rest-apis/rest-
 - softwareStatement：从TVE仪表板获取的值，或如果字符串中设置了“software\_statement”，则为&#x200B;*null*
 - redirectUrl ：唯一URL，它是在TVE仪表板中显式添加的反向顺序域之一；如果在strings.xml中设置了“redirect\_uri”，则为&#x200B;*null*
 
-注意：无效的softwareStatement或redirectUrl将导致应用程序无法初始化AccessEnabler或注册Adobe Pass身份验证和授权的应用程序
-</br>
+注意：无效的softwareStatement或redirectUrl将导致应用程序无法初始化AccessEnabler或注册Adobe Pass身份验证和授权的应用程序</br>
 注意：strings.xml中的redirectUrl参数或redirect\_uri应为应用程序在TVE功能板中以相反顺序添加的域值(例如：对于在TVE功能板中添加的域“adobe.com”，redirectUrl应为“com.adobe”。
 
 
@@ -81,13 +80,13 @@ Android SDK v3.0+将使用[动态客户端注册概述](../../../rest-apis/rest-
 
 | API调用：请求者配置 |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 **可用性：** v3.0+
 
 | API调用：请求者配置 |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **可用性：** v3.0+
 
@@ -98,7 +97,7 @@ Android SDK v3.0+将使用[动态客户端注册概述](../../../rest-apis/rest-
 
 已弃用：
 
-- *signedRequestorID*：用您的私钥进行数字签名的请求者ID的副本。<!--For more details, see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->。
+- *signedRequestorID*：用您的私钥进行数字签名的请求者ID的副本。 <!--For more details, see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
 
 已触发&#x200B;**回调：** `setRequestorComplete()`
 
@@ -114,16 +113,16 @@ Android SDK v3.0+将使用[动态客户端注册概述](../../../rest-apis/rest-
 
 **参数：**&#x200B;无
 
-已触发&#x200B;**回调：** `setAuthenticationStatus()`
-</br></br>
+已触发&#x200B;**回调：** 
+
 
 ## 程序员实施流程 {#Progr}
 
 ### **1. 注册应用程序**
 
-a.从Adobe Pass获取software\_statement和redirect\_uri （ TVE功能板）
+答： 从Adobe Pass （ TVE功能板）获取software\_statement和redirect\_uri
 
-b.可使用以下两个选项将这些值传递到Adobe Pass SDK：
+b. 可使用以下两个选项将这些值传递到Adobe Pass SDK：
 
 在strings.xml中，添加：
 
@@ -136,9 +135,9 @@ b.可使用以下两个选项将这些值传递到Adobe Pass SDK：
 redirectUrl)
 
 
-### 2.配置应用程序
+### &#x200B;2. 配置应用程序
 
-a. setRequestor(requestor\_id)
+答： setRequestor(requestor\_id)
 
 SDK将执行以下操作：
 
@@ -167,19 +166,19 @@ c. getAuthentication ：SDK将在调用参数中包含&#x200B;**access_token**
 - 未选择mvpd ：displayProviderDialog
 - 已选择mvpd ：转到setSelectedProvider(mvpd_id)
 
-d. setSelectProvider
+d. setSelectedProvider
 
 - mvpd\_id身份验证URL加载到ChromeCustomTables中
 - 登录成功：delegate.setAuthenticationStatus ( SUCCESS )
 - 已取消登录：重置MVPD选择
 - URL方案将建立为“adobepass://redirect_uri”，以便在身份验证完成时捕获
 
-e. get/checkAuthorization ： SDK将在标头中包含&#x200B;**access_token**，作为授权：持有者&#x200B;**access_token**
+e. get/checkAuthorization ： SDK将在标头中包含&#x200B;**access_token**，以作为授权：持有者&#x200B;**access_token**
 
 - 如果授权成功，将调用以获取
 媒体令牌
 
-f.注销：
+f. 注销：
 
 - SDK将删除当前请求者的有效令牌（由其他应用程序而非通过SSO获得的身份验证将保持有效）
 - SDK将打开Chrome自定义选项卡以访问mvpd_id注销端点。 完成后，Chrome自定义选项卡将关闭

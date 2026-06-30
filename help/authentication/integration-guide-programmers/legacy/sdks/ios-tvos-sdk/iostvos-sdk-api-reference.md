@@ -2,9 +2,9 @@
 title: iOS/tvOS API参考
 description: iOS/tvOS API参考
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '6935'
+source-wordcount: '7035'
 ht-degree: 0%
 
 ---
@@ -137,7 +137,7 @@ ht-degree: 0%
 
 | API调用： iOS AccessEnabler构造函数 |
 | --- |
-| ```- (id) init;``` |
+| `- (id) init;` |
 
 **可用性：** v1.0+ **截止时间：** v3.0
 
@@ -157,7 +157,7 @@ ht-degree: 0%
 
 | API调用： setOptions |
 | --- |
-| ```- (void) setOptions:(NSDictionary *)options;``` |
+| `- (void) setOptions:(NSDictionary *)options;` |
 
 **可用性：** v2.3.0+
 
@@ -166,7 +166,7 @@ ht-degree: 0%
 * *options*：包含全局SDK选项的NSDictionary。 目前，以下选项可用：
    * **applicationProfile** — 可用于根据此值生成服务器配置。
    * **visitorID** - Experience Cloud ID服务。 此值以后可用于高级分析报表。
-   * **handleSVC** — 布尔值，指示程序员是否将处理SFSafariViewControllers。 有关详细信息，请参阅iOS SDK 3.2+[上的](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)SFSafariViewController支持。
+   * **handleSVC** — 布尔值，指示程序员是否将处理SFSafariViewControllers。 有关详细信息，请参阅iOS SDK 3.2+[&#128279;](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的SFSafariViewController支持。
       * 如果设置为&#x200B;**false，**，SDK将自动向最终用户显示SFSafariViewController。 SDK将进一步导航到MVPD登录页面URL。
       * 如果设置为&#x200B;**true，** SDK将&#x200B;**NOT**&#x200B;自动向最终用户显示SFSafariViewController。 SDK将进一步触发&#x200B;**navigate(toUrl：{url}， useSVC:YES)**。
 * **device\_info** — 客户端信息，如[传递客户端信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中所述。
@@ -174,7 +174,7 @@ ht-degree: 0%
 [返回页首……](#apis)
 
 
-### `setRequestor:requestorID`，`setRequestor:requestorID:serviceProviders:` {#setReqV3}
+### `setRequestor:requestorID`, `setRequestor:requestorID:serviceProviders:` {#setReqV3}
 
 **文件：** AccessEnabler/headers/AccessEnabler.h
 
@@ -189,7 +189,7 @@ ht-degree: 0%
 
 | API调用：请求者配置 |
 | --- |
-| ```- (void) setRequestor:(NSString *)requestorID``` |
+| `- (void) setRequestor:(NSString *)requestorID` |
 
 
 **可用性：** v3.0+
@@ -208,7 +208,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->如果未使用`serviceProviders`参数调用，则库将从默认服务提供程序（即，生产配置文件的`https://sp.auth.adobe.com`或暂存配置文件的`https://sp.auth-staging.adobe.com`）中检索配置。 如果提供了`serviceProviders`参数，它必须是URL的数组。从所有指定的端点检索配置信息并合并。 如果不同的服务提供者响应中存在重复信息，则冲突将得到解决，以支持响应最快的服务器（即，响应时间最短的服务器优先）。
+>如果未使用`serviceProviders`参数调用，则库将从默认服务提供程序（即，生产配置文件的`https://sp.auth.adobe.com`或暂存配置文件的`https://sp.auth-staging.adobe.com`）中检索配置。 如果提供了`serviceProviders`参数，它必须是URL的数组。 从所有指定的端点检索配置信息并合并。 如果不同的服务提供者响应中存在重复信息，则冲突将得到解决，以支持响应最快的服务器（即，响应时间最短的服务器优先）。
 
 已触发&#x200B;**回调：** [`setRequestorComplete:`](#setReqComplete)
 
@@ -243,10 +243,10 @@ ht-degree: 0%
 **参数：**
 
 * *requestorID*：与程序员关联的唯一ID。 首次使用Adobe身份验证服务注册时，请将Adobe Pass分配的唯一ID传递到您的网站。
-* *signedRequestorID*： **此参数存在于iOS AccessEnabler 1.2及更高版本中。**&#x200B;用您的私钥进行数字签名的请求者ID的副本。<!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->。
+* *signedRequestorID*： **此参数存在于iOS AccessEnabler 1.2和更高版本中。** 用您的私钥进行数字签名的请求者ID的副本。 <!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->.
 * *url*：可选参数；默认情况下，使用Adobe服务提供程序(http://sp.auth.adobe.com/)。 此阵列允许您为Adobe提供的身份验证和授权服务指定端点（不同的实例可用于调试目的）。 您可以使用此选项指定多个Adobe Pass身份验证服务提供程序实例。 在执行此操作时，MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商相关联；即首先响应并支持该MVPD的提供商。
 
-**注意：**&#x200B;如果在不使用`serviceProviders`参数的情况下调用，则库将从默认服务提供程序（即，`https://sp.auth.adobe.com`用于生产配置文件，或者`https://sp.auth-staging.adobe.com`用于暂存配置文件）中检索配置。 如果提供了`serviceProviders`参数，它必须是URL的数组。从所有指定的端点检索配置信息并合并。 如果不同的服务提供者响应中存在重复信息，则冲突将得到解决，以支持响应最快的服务器（即，响应时间最短的服务器优先）。
+**注意：**&#x200B;如果在不使用`serviceProviders`参数的情况下调用，则库将从默认服务提供程序（即，`https://sp.auth.adobe.com`用于生产配置文件，或者`https://sp.auth-staging.adobe.com`用于暂存配置文件）中检索配置。 如果提供了`serviceProviders`参数，它必须是URL的数组。 从所有指定的端点检索配置信息并合并。 如果不同的服务提供者响应中存在重复信息，则冲突将得到解决，以支持响应最快的服务器（即，响应时间最短的服务器优先）。
 
 已触发&#x200B;**回调：** [`setRequestorComplete:`](#setReqComplete)
 
@@ -313,12 +313,12 @@ ht-degree: 0%
 
 **参数：**
 
-* *requestorID*：与程序员关联的唯一ID。 首次将由Adobe分配的唯一ID传递到您的网站   已在Adobe Pass身份验证服务中注册。
-* *signedRequestorID*： **iOS AccessEnabler中存在此参数   版本1.2及更高版本。**&#x200B;用您的私钥进行数字签名的请求者ID的副本。<!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->。
-* *url*：可选参数；默认情况下，为Adobe服务提供程序   使用(http://sp.auth.adobe.com/)。 此阵列允许您为Adobe提供的身份验证和授权服务指定端点（不同的实例可用于调试目的）。 您可以使用此选项指定多个Adobe Pass身份验证服务提供程序实例。 在执行此操作时，MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商相关联；即首先响应并支持该MVPD的提供商。
+* *requestorID*：与程序员关联的唯一ID。 首次使用Adobe身份验证服务注册时，请将Adobe Pass分配的唯一ID传递到您的网站。
+* *signedRequestorID*： **此参数存在于iOS AccessEnabler 1.2和更高版本中。** 用您的私钥进行数字签名的请求者ID的副本。 <!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->.
+* *url*：可选参数；默认情况下，使用Adobe服务提供程序(http://sp.auth.adobe.com/)。 此阵列允许您为Adobe提供的身份验证和授权服务指定端点（不同的实例可用于调试目的）。 您可以使用此选项指定多个Adobe Pass身份验证服务提供程序实例。 在执行此操作时，MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商相关联；即首先响应并支持该MVPD的提供商。
 * secret和publicKey：用于签署第二个屏幕调用的密钥和公钥。 有关详细信息，请参阅[无客户端文档](#create_dev)。
 
-如果未使用`serviceProviders`参数调用，则库将从默认服务提供商中检索配置(即，生产配置文件的`https://sp.auth.adobe.com`或暂存配置文件的https://sp.auth-staging.adobe.com)。 如果提供了`serviceProviders`参数，它必须是URL的数组。从所有指定的端点检索配置信息并合并。 如果不同的服务提供者响应中存在重复信息，则冲突将得到解决，以支持响应最快的服务器（即，响应时间最短的服务器优先）。
+如果未使用`serviceProviders`参数调用，则库将从默认服务提供商中检索配置（即，生产配置文件的`https://sp.auth.adobe.com`或暂存配置文件的https://sp.auth-staging.adobe.com）。 如果提供了`serviceProviders`参数，它必须是URL的数组。 从所有指定的端点检索配置信息并合并。 如果不同的服务提供者响应中存在重复信息，则冲突将得到解决，以支持响应最快的服务器（即，响应时间最短的服务器优先）。
 
 已触发&#x200B;**回调：** [`setRequestorComplete:`](#setReqComplete)
 
@@ -369,10 +369,8 @@ ht-degree: 0%
 
 **文件：** AccessEnabler/headers/AccessEnabler.h
 
-**描述：**&#x200B;检查当前用户的身份验证状态。
-它通过在本地搜索有效的身份验证令牌来完成此操作
-令牌存储空间。 此方法不执行任何网络调用，我们建议在主线程上调用它。
-应用程序使用它来查询用户的身份验证状态并
+**描述：**&#x200B;检查当前用户的身份验证状态。它通过在本地搜索有效的身份验证令牌来完成此操作
+令牌存储空间。 此方法不执行任何网络调用，我们建议在主线程上调用它。应用程序使用它来查询用户的身份验证状态并
 相应地更新UI（即，更新登录/注销UI）。 此
 身份验证状态通过以下方式通知应用程序
 [`setAuthenticationStatus:errorCode:`](#setAuthNStatus)回调。
@@ -398,21 +396,21 @@ ht-degree: 0%
 
 **参数：**&#x200B;无
 
-已触发&#x200B;**回调：**
-[`setAuthenticationStatus:errorCode:`](#setAuthNStatus)
+已触发&#x200B;**回调：
+
 
 [返回页首……](#apis)
 
 </br>
 
-### `getAuthentication`，`getAuthentication:withData:` {#getAuthN}
+### `getAuthentication`, `getAuthentication:withData:` {#getAuthN}
 
 **文件：** AccessEnabler/headers/AccessEnabler.h
 
 **描述：**&#x200B;启动完整的身份验证工作流。 首先检查身份验证状态。 如果尚未经过身份验证，则身份验证流状态 — 计算机将启动：
 
-* 如果上次身份验证尝试成功，则MVPD   已跳过选择阶段，并且   已触发[`navigateToUrl:`](#nav2url)回调。 此   应用程序使用此回调实例化向用户显示MVPD登录页的WebView控件。 **[注意：从Access Enabler 1.5开始，此功能不可用，因为SDK]存在限制。**
-* 如果上次身份验证尝试不成功，或者用户明确注销，[`displayProviderDialog:`](#dispProvDialog)回调为   已触发。 您的应用程序使用此回调来显示MVPD选择UI。 此外，还需要您的应用程序通过[`setSelectedProvider:`](#setSelProv)方法通知AccessEnabler库有关用户的MVPD选择以恢复身份验证流程。
+* 如果上次身份验证尝试成功，则会跳过MVPD选择阶段并触发[`navigateToUrl:`](#nav2url)回调。 应用程序使用此回调实例化向用户显示MVPD登录页的WebView控件。 **[注意：从Access Enabler 1.5开始，此功能不可用，因为SDK]存在限制。**
+* 如果上次身份验证尝试不成功，或者用户明确注销，则会触发[`displayProviderDialog:`](#dispProvDialog)回调。 您的应用程序使用此回调来显示MVPD选择UI。 此外，还需要您的应用程序通过[`setSelectedProvider:`](#setSelProv)方法通知AccessEnabler库有关用户的MVPD选择以恢复身份验证流程。
 
 在MVPD登录页面上验证用户的凭据时，您的应用程序需要监视在用户在MVPD的登录页面进行身份验证期间发生的多个重定向操作。 输入正确的凭据后，WebView控件将被重定向到由`ADOBEPASS_REDIRECT_URL`常量定义的自定义URL。 此URL不打算由WebView加载。 应用程序必须拦截此URL，并将此事件解释为登录阶段已完成的信号。 然后，它应将控制权移交给AccessEnabler以完成身份验证流程（通过调用[handleExternalURL](#handleExternalURL)方法）。
 
@@ -472,7 +470,7 @@ ht-degree: 0%
 
 </br>
 
-### `getAuthentication:filter`，`getAuthentication:withData:andFilter` {#getAuthN_filter}
+### `getAuthentication:filter`, `getAuthentication:withData:andFilter` {#getAuthN_filter}
 
 **文件：** AccessEnabler/headers/AccessEnabler.h
 
@@ -594,7 +592,7 @@ ht-degree: 0%
 
 **文件：** AccessEnabler/headers/EntitlementDelegate.h
 
-**描述**&#x200B;由AccessEnabler触发的回调通知应用程序需要实例化适当的UI元素，以允许用户选择所需的MVPD。 回调提供了MVPD对象的列表以及其他有助于正确构建选择UI面板的信息(例如指向MVPD徽标的URL、友好的显示名称等)
+**描述**&#x200B;由AccessEnabler触发的回调通知应用程序需要实例化适当的UI元素，以允许用户选择所需的MVPD。 回调提供了MVPD对象的列表以及其他有助于正确构建选择UI面板的信息（例如指向MVPD徽标的URL、友好的显示名称等）
 
 用户选择所需的MVPD后，需要上层应用程序通过调用`setSelectedProvider:`并向其传递与用户的选择相对应的MVPD ID来恢复身份验证流程。
 
@@ -640,7 +638,7 @@ ht-degree: 0%
 
 请注意，这不适用于提升临时传递，因为getAuthentication()方法提供了额外的参数。
 
-将&#x200B;*null*&#x200B;作为参数传递时，Access Enabler假定用户已取消身份验证流程（即按下“返回”按钮），并通过重置身份验证状态机和使用[`setAuthenticationStatus:errorCode:`](#setAuthNStatus)错误代码调用`AccessEnabler.PROVIDER_NOT_SELECTED_ERROR`回调进行响应。
+将&#x200B;*null*&#x200B;作为参数传递时，Access Enabler假定用户已取消身份验证流程（即按下“返回”按钮），并通过重置身份验证状态机和使用`AccessEnabler.PROVIDER_NOT_SELECTED_ERROR`错误代码调用[`setAuthenticationStatus:errorCode:`](#setAuthNStatus)回调进行响应。
 
 <table class="pass_api_table">
 <colgroup>
@@ -712,11 +710,11 @@ ht-degree: 0%
 
 **文件：** AccessEnabler/headers/EntitlementDelegate.h
 
-**描述：**&#x200B;由AccessEnabler而不是`navigateToUrl:`回调触发的回调，以防您的应用程序之前通过[setOptions(\[&quot;handleSVC&quot;:true&quot;\])](#setOptions)调用启用了手动Safari视图控制器(SVC)处理，并且仅适用于MVPD需要Safari视图控制器(SVC)的情况。 对于所有其他MVPD，将调用`navigateToUrl:`回调。 有关如何管理Safari视图控制器(SVC)的详细信息，请参阅iOS SDK 3.2+[上的](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)SFSafariViewController支持。
+**描述：**&#x200B;由AccessEnabler而不是`navigateToUrl:`回调触发的回调，以防您的应用程序之前通过[setOptions(\[&quot;handleSVC&quot;:true&quot;\])](#setOptions)调用启用了手动Safari视图控制器(SVC)处理，并且仅适用于MVPD需要Safari视图控制器(SVC)的情况。 对于所有其他MVPD，将调用`navigateToUrl:`回调。 有关如何管理Safari视图控制器(SVC)的详细信息，请参阅iOS SDK 3.2+[&#128279;](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的SFSafariViewController支持。
 
-与`navigateToUrl:`回调类似，`navigateToUrl:useSVC:`由AccessEnabler触发，请求应用程序实例化`SFSafariViewController`控制器并加载回调的&#x200B;**`url`**&#x200B;参数中提供的URL。 callback传递表示身份验证终结点URL或注销终结点URL的&#x200B;**`url`**&#x200B;参数，以及指定应用程序必须使用&#x200B;**`useSVC`**&#x200B;的`SFSafariViewController`参数。
+与`navigateToUrl:`回调类似，`navigateToUrl:useSVC:`由AccessEnabler触发，请求应用程序实例化`SFSafariViewController`控制器并加载回调的&#x200B;**`url`**&#x200B;参数中提供的URL。 callback传递表示身份验证终结点URL或注销终结点URL的&#x200B;**`url`**&#x200B;参数，以及指定应用程序必须使用`SFSafariViewController`的&#x200B;**`useSVC`**&#x200B;参数。
 
-在`SFSafariViewController`控制器执行多次重定向时，您的应用程序必须监控该控制器的活动，并检测其加载`application's custom scheme`定义的特定自定义URL的时间(例&#x200B;**，**`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`)。 请注意，此特定自定义URL实际上无效，控制器不会将其实际加载。 必须由应用程序将其解释为验证或注销流程已完成，并且关闭控制器是安全的信号。 当控制器加载此特定自定义URL时，应用程序必须关闭`SFSafariViewController`并调用AccessEnabler的`handleExternalURL:url `API方法。
+在`SFSafariViewController`控制器执行多次重定向时，您的应用程序必须监控该控制器的活动，并检测其加载`application's custom scheme`定义的特定自定义URL的时间（例&#x200B;**，**`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`）。 请注意，此特定自定义URL实际上无效，控制器不会将其实际加载。 必须由应用程序将其解释为验证或注销流程已完成，并且关闭控制器是安全的信号。 当控制器加载此特定自定义URL时，应用程序必须关闭`SFSafariViewController`并调用AccessEnabler的`handleExternalURL:url `API方法。
 
 **注意：**&#x200B;请注意，对于身份验证流程，用户可以按下“上一步”按钮，这等同于身份验证流程中止。 在这种情况下，应用程序需要调用[setSelectedProvider：](#setSelProv)方法，将&#x200B;**`nil`**&#x200B;作为参数传递，并为AccessEnabler提供重置其身份验证状态计算机的机会。
 
@@ -744,7 +742,7 @@ ht-degree: 0%
 * *url：*&#x200B;指向MVPD登录页面的URL
 * *useSVC：*&#x200B;是否应在SFSafariViewController中加载URL。
 
-**由**&#x200B;[&#x200B; setSelectedProvider：](#setOptions)之前的[setOptions：](#setSelProv)触发
+**由[setSelectedProvider：](#setSelProv)之前的**&#x200B;[&#x200B; setOptions：](#setOptions)触发
 
 [返回页首……](#apis)
 
@@ -853,7 +851,7 @@ ht-degree: 0%
    * `ACCESS_ENABLER_STATUS_ERROR` — 身份验证流失败
 * *代码*：失败原因。 如果&#x200B;*状态*&#x200B;为`ACCESS_ENABLER_STATUS_SUCCESS`，则&#x200B;*代码*&#x200B;为空字符串（即，由`USER_AUTHENTICATED`常量定义）。 如果失败，此参数可以采用以下值之一：
    * `USER_NOT_AUTHENTICATED_ERROR` — 用户未经过身份验证。 在本地令牌缓存中没有有效的身份验证令牌时，响应[checkAuthentication：](#checkAuthN)方法调用。
-   * `PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler已重置       上层应用之后的身份验证状态机       已将&#x200B;*null*&#x200B;传递给[`setSelectedProvider:`](#setSelProv)以中止身份验证流程。  用户可能已取消身份验证流程（例如，已按下“后退”按钮）。
+   * `PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler在上层应用程序将&#x200B;*null*&#x200B;传递到[`setSelectedProvider:`](#setSelProv)后重置了身份验证状态计算机以中止身份验证流程。  用户可能已取消身份验证流程（例如，已按下“后退”按钮）。
    * `GENERIC_AUTHENTICATION_ERROR` — 由于网络不可用或用户显式取消身份验证流等原因，身份验证流失败。
 
 **触发者：** `checkAuthentication`，`getAuthentication`，[`getAuthentication:withData:`](#getAuthN)，`checkAuthorization:`，[`checkAuthorization:withData:`](#checkAuthZ)
@@ -889,7 +887,7 @@ ht-degree: 0%
 
 **参数：**
 
-* *资源：*&#x200B;应检查其授权的资源数组。 列表中的每个元素都应该是一个表示资源ID的字符串。 此     资源ID受到与调用中的资源ID相同的限制，即，它应该是程序员和MVPD之间建立的商定值或媒体RSS片段。
+* *资源：*&#x200B;应检查其授权的资源数组。 列表中的每个元素都应该是一个表示资源ID的字符串。 资源ID受到与调用中的资源ID相同的限制，即，它应该是程序员和MVPD之间建立的商定值或媒体RSS片段。
 
 已触发&#x200B;**回调：** [`preauthorizedResources:`](#preauthResources)
 
@@ -972,7 +970,7 @@ ht-degree: 0%
 
 </br>
 
-### `checkAuthorization:`，`checkAuthorization:withData:` {#checkAuthZ}
+### `checkAuthorization:`, `checkAuthorization:withData:` {#checkAuthZ}
 
 **文件：** AccessEnabler/headers/AccessEnabler.h
 
@@ -1023,13 +1021,13 @@ ht-degree: 0%
 
 已触发&#x200B;**回调：**
 
-[`tokenRequestFailed:errorCode:errorDescription:`](#tokenReqFailed)，`setToken:forResource:`，`sendTrackingData:forEventType:`，`setAuthenticationStatus:errorCode:`
+[`tokenRequestFailed:errorCode:errorDescription:`](#tokenReqFailed),`setToken:forResource:`, `sendTrackingData:forEventType:`, `setAuthenticationStatus:errorCode:`
 
 [返回页首……](#apis)
 
 </br>
 
-### `getAuthorization:`，`getAuthorization:withData:` {#getAuthZ}
+### `getAuthorization:`, `getAuthorization:withData:` {#getAuthZ}
 
 **文件：** AccessEnabler/headers/AccessEnabler.h
 
@@ -1290,7 +1288,7 @@ ht-degree: 0%
 有两种类型的元数据可供程序员使用：
 
 * 静态元数据（身份验证令牌TTL、授权令牌TTL和设备ID）
-* 用户元数据(特定于用户的信息，例如用户ID、邮政编码；可以在身份验证和授权流程中从MVPD传递到用户设备)
+* 用户元数据（特定于用户的信息，例如用户ID、邮政编码；可以在身份验证和授权流程中从MVPD传递到用户设备）
 
 <table class="pass_api_table">
 <colgroup>
