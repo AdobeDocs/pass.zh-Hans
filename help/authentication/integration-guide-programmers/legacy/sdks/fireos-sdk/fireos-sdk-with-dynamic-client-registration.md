@@ -2,7 +2,7 @@
 title: Amazon FireOS SDK与Dynamic Client注册
 description: Amazon FireOS SDK与Dynamic Client注册
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '1185'
 ht-degree: 1%
@@ -152,7 +152,7 @@ ht-degree: 1%
    - 已取消登录：重置MVPD选择
    - URL方案将建立为“adobepass://android.app”，以便在身份验证完成时捕获
 
-- e. get/checkAuthorization ： SDK将在标头中包含&#x200B;**access\_token**&#x200B;作为授权：持有者&#x200B;**access\_token**
+- e. get/checkAuthorization ： SDK将在标头中包含&#x200B;**access\_token**&#x200B;作为授权：持有者**access\_token**
 
 - 如果授权成功，将调用以获取媒体令牌
 
@@ -172,3 +172,4 @@ ht-degree: 1%
 | invalid_request | 400 | 请求的格式不正确。 SDK应停止执行对服务器的调用。 |
 | invalid_client | 403 | 不再允许客户端id执行请求。 sdk必须再次执行客户端注册。 |
 | access_denied | 401 | access_token无效。 sdk必须请求新的access_token。 |
+

@@ -2,7 +2,7 @@
 title: 在资格预审中设置环境和测试
 description: 在资格预审中设置环境和测试
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '492'
 ht-degree: 0%
@@ -30,7 +30,7 @@ ht-degree: 0%
 
 * 要查找可用于欺骗的负载平衡器IP，请运行以下命令：
 
-* Windows上的&#x200B;**&#x200B;**
+* Windows上的&#x200B;****
 
   ```cmd
   C:\>nslookup sp-prequal.auth.adobe.com
@@ -51,7 +51,7 @@ Addresses:  52.26.79.43
 ``Choose any IP from **addresses** section (e.g. `54.190.212.171)``
 
 
-* 在Linux/Mac上&#x200B;**&#x200B;**
+* 在Linux/Mac上&#x200B;****
 
 ```sh
     $ dig sp-prequal.auth.adobe.com
@@ -118,3 +118,4 @@ Addresses:  52.26.79.43
 * 如果您想更深入地测试Adobe Pass身份验证，我们建议您使用[API测试站点](http://entitlement-prequal.auth.adobe.com/apitest/api.html)。
 
 您可以在[找到有关API测试站点的更多详细信息。如何使用Adobe的API测试站点](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)测试身份验证和授权流。
+

@@ -2,7 +2,7 @@
 title: Amazon FireOS Native Client API参考
 description: Amazon FireOS Native Client API参考
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '3519'
 ht-degree: 0%
@@ -259,7 +259,7 @@ ht-degree: 0%
 | `public void setSelectedProvider(String mvpdId)` |
 
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **参数：**&#x200B;无
 
@@ -354,7 +354,7 @@ ht-degree: 0%
 | --- |
 | `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **参数：** `resources`参数是用户已被授权查看的资源数组。
 
@@ -426,7 +426,7 @@ ht-degree: 0%
 | --- |
 | `public void setToken(String token, String resourceId)` |
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **参数：**
 
@@ -684,3 +684,4 @@ Access Enabler会触发一个附加回调，该回调不一定与权利文件流
    - **3** — 操作系统类型
 
 **触发者：** `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`
+

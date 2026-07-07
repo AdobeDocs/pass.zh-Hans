@@ -2,7 +2,7 @@
 title: Android SDK API参考
 description: Android SDK API参考
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '4628'
 ht-degree: 0%
@@ -320,7 +320,7 @@ ht-degree: 0%
 
 ### setAuthenticationStatus {#setAuthNStatus}
 
-**描述：**&#x200B;由Access Enabler触发的回调，它会通知
+**描述：**由Access Enabler触发的回调，它会通知
 身份验证流状态的应用。 有很多
 可能导致此流失败的位置，原因可能是用户的
 互动或由于其他不可预见的情况(即网络
@@ -778,3 +778,4 @@ Access Enabler会触发一个附加回调，该回调不一定与权利文件流
 - [Android Technical Overview](/help/authentication/android-sdk-overview.md)
 
 -->
+
