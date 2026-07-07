@@ -4,7 +4,7 @@ description: REST API V2指南（服务器到服务器）
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2497'
+source-wordcount: '2524'
 ht-degree: 0%
 
 ---
@@ -214,7 +214,7 @@ API
 
    * 程序员服务必须在以下条件下&#x200B;**启动轮询**&#x200B;机制：
 
-      * **在主（屏幕）应用程序内执行的身份验证：**&#x200B;当浏览器组件加载`redirectUrl`会话[终结点请求中为](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)参数指定的URL后，程序员服务应在用户到达最终目标页面时开始轮询。
+      * **在主（屏幕）应用程序内执行的身份验证：**&#x200B;当浏览器组件加载[会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)终结点请求中为`redirectUrl`参数指定的URL后，程序员服务应在用户到达最终目标页面时开始轮询。
 
       * **在辅助（屏幕）应用程序内执行的身份验证：**&#x200B;程序员服务应用程序应在用户启动身份验证过程后立即开始轮询 — 在收到[会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)终结点响应并向用户显示身份验证代码之后。
 
@@ -222,7 +222,7 @@ API
 
       * **身份验证成功：**&#x200B;已成功检索用户的配置文件信息，确认其身份验证状态。 此时，不再需要轮询。
 
-      * **身份验证会话和代码过期：**&#x200B;身份验证会话和代码过期，如`notAfter`会话[终结点响应中的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)时间戳（如30分钟）所指示。 如果发生这种情况，用户必须重新启动身份验证过程，使用以前的身份验证代码的轮询应立即停止。
+      * **身份验证会话和代码过期：**&#x200B;身份验证会话和代码过期，如[会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)终结点响应中的`notAfter`时间戳（如30分钟）所指示。 如果发生这种情况，用户必须重新启动身份验证过程，使用以前的身份验证代码的轮询应立即停止。
 
       * **生成的新身份验证代码：**&#x200B;如果用户请求在主（屏幕）设备上生成新的身份验证代码，则现有会话不再有效，使用以前的身份验证代码的轮询应立即停止。
 
@@ -234,7 +234,7 @@ API
 
    * 程序员服务应将用户的部分配置文件信息缓存在永久性存储中，以避免不必要的请求并改善用户体验。
 
-## C.（可选）预授权阶段 {#preauthorization-phase}
+## C. （可选）预授权阶段 {#preauthorization-phase}
 
 预授权阶段的目的是为流式应用程序提供从用户有权访问的目录呈现资源子集的能力。
 

@@ -4,8 +4,8 @@ description: REST API V2 — 使用合作伙伴身份验证响应创建和检索
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '850'
-ht-degree: 1%
+source-wordcount: '934'
+ht-degree: 2%
 
 ---
 
@@ -49,7 +49,7 @@ ht-degree: 1%
    </tr>
     <tr>
       <td style="background-color: #DEEBFF;">合作伙伴</td>
-      <td>提供与Adobe Pass身份验证流集成的单点登录框架的合作伙伴的名称(例如Apple)。</td>
+      <td>提供与Adobe Pass身份验证流集成的单点登录框架的合作伙伴的名称（例如Apple）。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -60,10 +60,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">SAMLResponse</td>
       <td>
-        包含创建和保存合作伙伴配置文件所需的用户元数据的合作伙伴身份验证响应。
-        <br/><br/>
-        该值必须为Base64编码和随后的URL编码。
-      </td>
+        包含创建和保存合作伙伴配置文件所需的用户元数据的合作伙伴身份验证响应。<br/><br/>
+        该值必须为Base64编码和随后的URL编码。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -79,10 +77,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>
-         所发送资源的接受媒体类型。
-         <br/><br/>
-         必须是application/x-www-form-urlencoded。
-      </td>
+         所发送资源的接受媒体类型。<br/><br/>
+         必须是application/x-www-form-urlencoded。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -93,33 +89,25 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>标头文档中介绍了设备信息有效负载的生成。
-         <br/><br/>
-         强烈建议在应用程序的设备平台允许显式提供有效值时始终使用它。
-         <br/><br/>
-         提供该属性后，Adobe Pass身份验证后端将隐式地将显式设置的值与提取的值合并（默认情况下）。
-         <br/><br/>
-         如果未提供，Adobe Pass身份验证后端将隐式使用提取的值（默认情况下）。
-      </td>
+         <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>标头文档中介绍了设备信息有效负载的生成。<br/><br/>
+         强烈建议在应用程序的设备平台允许显式提供有效值时始终使用它。<br/><br/>
+         提供该属性后，Adobe Pass身份验证后端将隐式地将显式设置的值与提取的值合并（默认情况下）。<br/><br/>
+         如果未提供，Adobe Pass身份验证后端将隐式使用提取的值（默认情况下）。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP — 合作伙伴 — 框架 — 状态</td>
       <td>
-        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>标头文档介绍了为Partner方法生成单一登录有效负载的过程。
-        <br/><br/>
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>标头文档介绍了为Partner方法生成单一登录有效负载的过程。<br/><br/>
         有关使用合作伙伴启用单点登录流程的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">使用合作伙伴流程进行单点登录</a>文档。</td>
       <td>可选</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         流设备的IP地址。
-         <br/><br/>
-         强烈建议始终将其用于服务器到服务器的实施，尤其是在由程序员服务而不是流设备进行调用时。
-         <br/><br/>
-         对于客户端到服务器实施，流设备的IP地址将隐式发送。
-      </td>
+         流设备的IP地址。<br/><br/>
+         强烈建议始终将其用于服务器到服务器的实施，尤其是在由程序员服务而不是流设备进行调用时。<br/><br/>
+         对于客户端到服务器实施，流设备的IP地址将隐式发送。</td>
       <td>可选</td>
    </tr>
    <tr>
@@ -131,10 +119,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         客户端应用程序接受的媒体类型。
-         <br/><br/>
-         如果指定，则必须为application/json；charset=utf-8。
-      </td>
+         客户端应用程序接受的媒体类型。<br/><br/>
+         如果指定，则必须为application/json；charset=utf-8。</td>
       <td>可选</td>
    </tr>
    <tr>
@@ -163,29 +149,25 @@ ht-degree: 1%
       <td>400</td>
       <td>错误请求</td>
       <td>
-        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。
-      </td>
+        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。</td>
    </tr>
    <tr>
       <td>401</td>
       <td>未授权</td>
       <td>
-        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">动态客户端注册概述</a>文档。
-      </td>
+        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">动态客户端注册概述</a>文档。</td>
    </tr>
    <tr>
       <td>405</td>
       <td>不允许使用该方法</td>
       <td>
-        HTTP方法无效，客户端需要使用请求资源允许的HTTP方法并重试。 有关更多详细信息，请参阅<a href="#request">请求</a>部分。
-      </td>
+        HTTP方法无效，客户端需要使用请求资源允许的HTTP方法并重试。 有关更多详细信息，请参阅<a href="#request">请求</a>部分。</td>
    </tr>
    <tr>
       <td>500</td>
       <td>内部服务器错误</td>
       <td>
-        服务器端遇到问题。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。
-      </td>
+        服务器端遇到问题。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。</td>
    </tr>
 </table>
 
@@ -215,10 +197,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">用户档案</td>
       <td>
-         JSON包含键、值对的映射。
-         <br/><br/>
-         键元素由以下值定义：
-         <table style="table-layout:auto">
+         JSON包含键、值对的映射。<br/><br/>
+         键元素由以下值定义：<table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">值</th>
                <th style="background-color: #EFF2F7"></th>
@@ -250,10 +230,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">发行者</td>
                <td>
-                  拥有该配置文件的实体。
-                  <br/><br/>
-                  可能的值包括：
-                  <ul>
+                  拥有该配置文件的实体。<br/><br/>
+                  可能的值包括：<ul>
                     <li><b>Apple</b><br/>创建配置文件的原因是：使用合作伙伴Apple进行单点登录。</li>
                   </ul>
                </td>
@@ -262,10 +240,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">type</td>
                <td>
-                  配置文件的类型。
-                  <br/><br/>
-                  可能的值包括：
-                  <ul>
+                  配置文件的类型。<br/><br/>
+                  可能的值包括：<ul>
                     <li><b>appleSSO</b><br/>创建配置文件的原因是：使用合作伙伴Apple进行单点登录。</li>
                   </ul>
                </td>
@@ -274,10 +250,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">属性</td>
                <td>
-                    JSON包含键、值对的映射。
-                    <br/><br/>
-                    关键元素由用户元数据属性定义，可以是：
-                    <ul>
+                    JSON包含键、值对的映射。<br/><br/>
+                    关键元素由用户元数据属性定义，可以是：<ul>
                         <li>必填，如“userID”</li>
                         <li>非强制性的，如“zip”、“householdID”、“maxRating”等。</li>
                     </ul>
@@ -306,7 +280,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">状态</td>
-      <td>400， 401， 405， 500</td>
+      <td>400, 401, 405, 500</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -322,10 +296,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            响应正文可能提供附加的错误信息，这些信息将遵循<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档。
-            <br/><br/>
-            客户端应用程序必须实施一种错误处理机制，该机制能够正确处理此API最常返回的错误代码：
-            <ul>
+            响应正文可能提供附加的错误信息，这些信息将遵循<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档。<br/><br/>
+            客户端应用程序必须实施一种错误处理机制，该机制能够正确处理此API最常返回的错误代码：<ul>
                 <li>invalid_header_pfs_permission_access_not_present</li>
                 <li>invalid_header_pfs_permission_access_not_determined</li>
                 <li>invalid_header_pfs_permission_access_not_granted</li>
@@ -335,15 +307,14 @@ ht-degree: 1%
                 <li>invalid_parameter_saml_response</li>
                 <li>等等。</li>
             </ul>
-            以上列表并非详尽无遗。 客户端应用程序必须能够处理<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">公共文档</a>中定义的所有增强型错误代码。
-      </td>
+            以上列表并非详尽无遗。 客户端应用程序必须能够处理<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">公共文档</a>中定义的所有增强型错误代码。</td>
       <td><i>必填</i></td>
    </tr>
 </table>
 
 ## 示例 {#samples}
 
-### 1.使用合作伙伴身份验证响应创建和检索配置文件
+### &#x200B;1. 使用合作伙伴身份验证响应创建和检索配置文件
 
 >[!BEGINTABS]
 
@@ -400,7 +371,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2.使用合作伙伴身份验证响应创建和检索用户档案，但应用了性能降级
+### &#x200B;2. 使用合作伙伴身份验证响应创建和检索用户档案，但会应用性能下降
 
 >[!BEGINTABS]
 
