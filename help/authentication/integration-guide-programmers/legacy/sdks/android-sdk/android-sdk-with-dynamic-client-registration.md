@@ -2,7 +2,7 @@
 title: Android SDK与Dynamic Client注册
 description: Android SDK与Dynamic Client注册
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '1321'
 ht-degree: 1%
@@ -193,3 +193,4 @@ f. 注销：
 | invalid_request | 400 | 请求的格式不正确。 SDK应停止执行对服务器的调用。 |
 | invalid_client | 403 | 不再允许客户端id执行请求。 sdk必须再次执行客户端注册。 |
 | access_denied | 401 | access\_token无效。 sdk必须请求新的access_token。 |
+
