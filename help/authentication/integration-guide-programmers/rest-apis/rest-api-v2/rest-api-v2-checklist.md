@@ -4,7 +4,7 @@ description: REST API V2检查表
 exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
 source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '2563'
+source-wordcount: '2578'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 ## 强制性要求 {#mandatory-requirements}
 
-### 1.登记阶段 {#mandatory-requirements-registration-phase}
+### &#x200B;1. 注册阶段 {#mandatory-requirements-registration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -50,7 +50,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 2.配置阶段 {#mandatory-requirements-configuration-phase}
+### &#x200B;2. 配置阶段 {#mandatory-requirements-configuration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -60,7 +60,7 @@ ht-degree: 0%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>配置检索</i></td>
-      <td>仅在要求在身份验证阶段之前提示用户选择其MVPD（电视提供商）时检索配置响应。<br/><br/>在以下情况下，无需检索配置响应：<ul><li>用户已经过身份验证。</li><li>授予用户临时访问权限。</li><li>用户身份验证已过期，但可以提示用户确认他们仍然是之前选择的MVPD的订阅者。</li></ul></td>
+      <td>只有在需要在身份验证阶段之前提示用户选择其MVPD（电视提供商）时，才检索配置响应。<br/><br/>在以下情况下，无需检索配置响应：<ul><li>用户已经过身份验证。</li><li>授予用户临时访问权限。</li><li>用户身份验证已过期，但可以提示用户确认他们仍然是之前选择的MVPD的订阅者。</li></ul></td>
       <td>存在系统资源过载和延迟增加的风险。</td>
    </tr>
    <tr>
@@ -70,7 +70,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 3.身份验证阶段 {#mandatory-requirements-authentication-phase}
+### &#x200B;3. 身份验证阶段 {#mandatory-requirements-authentication-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -111,7 +111,7 @@ ht-degree: 0%
    <tr>
       <td style="background-color: #DEEBFF;"><i>预授权决策检索</i></td>
       <td>将预授权决策用于内容过滤，从不用于播放决策。</td>
-      <td>违反程序员、MVPD和Adobe之间的合同协议的风险。<br/><br/>绕过我们的监控和警报系统的风险。</td>
+      <td>违反程序员、MVPD和Adobe之间合同协议的风险。<br/><br/>绕过我们的监控和警报系统的风险。</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>预授权决策检索重试</i></td>
@@ -125,7 +125,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 5.授权阶段 {#mandatory-requirements-authorization-phase}
+### &#x200B;5. 授权阶段 {#mandatory-requirements-authorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -136,7 +136,7 @@ ht-degree: 0%
    <tr>
       <td style="background-color: #DEEBFF;"><i>授权决策检索</i></td>
       <td>在播放之前获取授权决策 — 无论是否存在预授权决策。<br/><br/>即使媒体令牌在播放期间过期，并允许流继续无中断运行，并在用户发出下次播放请求时请求包含（新增）媒体令牌的新授权决策，而不考虑它是针对同一资源还是其他资源。<br/><br/>长时间运行的实时流可以选择在视频操作后请求新的授权决策，例如在MRSS发生更改时暂停内容、启动商业中断或修改资产级配置。</td>
-      <td>违反程序员、MVPD和Adobe之间的合同协议的风险。<br/><br/>绕过我们的监控和警报系统的风险。</td>
+      <td>违反程序员、MVPD和Adobe之间合同协议的风险。<br/><br/>绕过我们的监控和警报系统的风险。</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>授权决策检索重试</i></td>
@@ -145,7 +145,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 6.注销阶段 {#mandatory-requirements-logout-phase}
+### &#x200B;6. 注销阶段 {#mandatory-requirements-logout-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -155,12 +155,12 @@ ht-degree: 0%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>注销支持</i></td>
-      <td>实施注销API以允许用户手动注销，终止其已验证的配置文件，并遵循为每个已删除的配置文件指定的REST API v2操作名称：<ul><li>对于支持注销端点的MVPD，客户端应用程序需要导航到用户代理中提供的“url”。</li><li>对于“appleSSO”类型配置文件，客户端应用程序需要引导用户也从合作伙伴级别(Apple的系统设置)注销。</li></ul></td>
+      <td>实施注销API以允许用户手动注销，终止其已验证的配置文件，并遵循为每个已删除的配置文件指定的REST API v2操作名称：<ul><li>对于支持注销端点的MVPD，客户端应用程序需要导航到用户代理中提供的“url”。</li><li>对于“appleSSO”类型配置文件，客户端应用程序需要引导用户也从合作伙伴级别（Apple的系统设置）注销。</li></ul></td>
       <td>由于缺少对客户端应用程序端的支持，导致客户端应用程序出现故障的风险。</td>
    </tr>
 </table>
 
-### 7.参数和标头 {#mandatory-requirements-parameters-headers}
+### &#x200B;7. 参数和标头 {#mandatory-requirements-parameters-headers}
 
 <table style="table-layout:auto">
    <tr>
@@ -181,7 +181,7 @@ ht-degree: 0%
    <tr>
       <td style="background-color: #DEEBFF;"><i>发送X-Device-Info头</i></td>
       <td>为每个REST API v2请求发送<a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>标头。<br/><br/>即使请求来自代表设备的服务器，X-Device-Info标头值也必须反映实际的流设备信息。</td>
-      <td>风险被分类为源自未知平台并被视为不安全，因而受到更严格的规则的约束，例如较短的身份验证TTL。<br/><br/>此外，某些字段，如流式设备connectionIp和connectionPort，对于频谱的Home Base Authentication等功能是必需的。</td>
+      <td>风险被分类为源自未知平台并被视为不安全，因而会受更严格的规则的约束，如更短的身份验证TTL。<br/><br/>此外，某些字段，如流设备connectionIp和connectionPort，对于频谱的Home Base Authentication等功能是必需的。</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>稳定设备标识符</i></td>
@@ -195,7 +195,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 8.错误处理 {#mandatory-requirements-error-handling}
+### &#x200B;8. 错误处理 {#mandatory-requirements-error-handling}
 
 <table style="table-layout:auto">
    <tr>
@@ -215,7 +215,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 9.测试 {#mandatory-requirements-testing}
+### &#x200B;9. 测试 {#mandatory-requirements-testing}
 
 <table style="table-layout:auto">
    <tr>
@@ -225,14 +225,14 @@ ht-degree: 0%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>生命周期测试</i></td>
-      <td>使用官方的Adobe Pass身份验证非生产环境开发和测试应用程序：<ul><li>前期生产</li><li>Release-Staging</li></ul><br/>在启动到发布生产之前，在这些环境中执行彻底的质量保证(QA)。<br/><br/>客户端应用程序必须先在非生产环境中完成端到端验证，然后才能进入发布生产环境。</td>
+      <td>使用官方的Adobe Pass身份验证非生产环境开发和测试应用程序：<ul><li>前期生产</li><li>Release-Staging</li></ul><br/>在启动到发布生产环境之前，在这些环境中执行彻底的质量保证(QA)。<br/><br/>客户端应用程序必须首先在非生产环境中完成端到端验证，才能进入发布生产环境。</td>
       <td>带有严重和主要缺陷的风险启动。<br/><br/>缺少简短而有效的调试路径可能会阻碍Adobe支持和工程部门快速干预。</td>
    </tr>
 </table>
 
 ## 推荐做法 {#recommended-practices}
 
-### 1.登记阶段 {#recommended-practices-registration-phase}
+### &#x200B;1. 注册阶段 {#recommended-practices-registration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -247,7 +247,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 2.配置阶段 {#recommended-practices-configuration-phase}
+### &#x200B;2. 配置阶段 {#recommended-practices-configuration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -262,7 +262,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 3.身份验证阶段 {#recommended-practices-authentication-phase}
+### &#x200B;3. 身份验证阶段 {#recommended-practices-authentication-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -272,7 +272,7 @@ ht-degree: 0%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>验证代码验证（第2屏验证）</i></td>
-      <td>在以下条件下，在调用/api/v2/authenticate API之前，验证通过辅助(2)应用程序（屏幕）上的用户输入提交的身份验证代码：<br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md#perform-authentication-within-secondary-application-with-preselected-mvpd">在辅助（屏幕）应用程序内使用预先选择的mvpd执行的身份验证</a></b><ul><li>利用<a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md">恢复身份验证会话</a> - POST /api/v2/{serviceProvider}/sessions/{code}</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md#perform-authentication-within-secondary-application-without-preselected-mvpd">在辅助（屏幕）应用程序中执行的身份验证，但未预先选择mvpd</a></b><ul><li>使用<a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md">检索身份验证会话</a> - GET /api/v2/{serviceProvider}/sessions/{code}</li></ul><br/>如果键入的身份验证代码错误或身份验证会话过期，客户端应用程序将收到错误。</td>
+      <td>在以下条件下，在调用/api/v2/authenticate API之前，验证通过辅助(2)应用程序（屏幕）上的用户输入提交的身份验证代码：<br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md#perform-authentication-within-secondary-application-with-preselected-mvpd">在辅助（屏幕）应用程序内使用预先选择的mvpd执行的身份验证</a></b><ul><li>使用<a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md">恢复身份验证会话</a> - POST /api/v2/{serviceProvider}/sessions/{code}</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md#perform-authentication-within-secondary-application-without-preselected-mvpd">在辅助（屏幕）应用程序中执行的身份验证，但未预先选择mvpd</a></b><ul><li>使用<a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md">检索身份验证会话</a> - GET /api/v2/{serviceProvider}/sessions/{code}</li></ul><br/>如果键入的身份验证代码错误或身份验证会话过期，客户端应用程序将收到错误。</td>
       <td>在身份验证期间可能会出现各种错误响应和工作流问题。</td>
    </tr>
    <tr>
@@ -302,7 +302,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 5.授权阶段 {#recommended-practices-authorization-phase}
+### &#x200B;5. 授权阶段 {#recommended-practices-authorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -322,7 +322,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 6.注销阶段 {#recommended-practices-logout-phase}
+### &#x200B;6. 注销阶段 {#recommended-practices-logout-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -337,7 +337,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 7.参数和标头 {#recommended-practices-parameters-headers}
+### &#x200B;7. 参数和标头 {#recommended-practices-parameters-headers}
 
 <table style="table-layout:auto">
    <tr>
@@ -352,7 +352,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 8.测试 {#recommended-practices-testing}
+### &#x200B;8. 测试 {#recommended-practices-testing}
 
 <table style="table-layout:auto">
    <tr>

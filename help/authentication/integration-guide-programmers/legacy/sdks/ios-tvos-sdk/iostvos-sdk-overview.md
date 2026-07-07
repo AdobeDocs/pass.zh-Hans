@@ -4,7 +4,7 @@ description: iOS/tvOS SDK概述
 exl-id: b02a6234-d763-46c0-bc69-9cfd65917a19
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '3754'
+source-wordcount: '3801'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,7 @@ AccessEnabler支持的所有授权工作流都假定您之前已调用[`setReque
 
 - 您可以立即开始发出授权调用，并在需要时允许静默排队等候。
 
-- 通过实施[`setRequestor()`](#setReq)回调，您可以接收[`setRequestorComplete()`](#setReqComplete)成功/失败的确认。
+- 通过实施[`setRequestorComplete()`](#setReqComplete)回调，您可以接收[`setRequestor()`](#setReq)成功/失败的确认。
 
 - 您可以执行上述两项操作。
 
@@ -64,10 +64,10 @@ AccessEnabler支持的所有授权工作流都假定您之前已调用[`setReque
 
 1. 您的应用程序通过调用AccessEnabler的`getAuthentication() `API方法来启动身份验证工作流，此方法检查有效的缓存身份验证令牌。
 1. 如果用户当前已通过身份验证，则AccessEnabler将调用您的[`setAuthenticationStatus()`](#setAuthNStatus)回调函数，传递表示成功的身份验证状态，并结束流。
-1. 如果用户当前未经过身份验证，则AccessEnabler通过确定用户的最后一次身份验证尝试在给定MVPD中是否成功来继续身份验证流程。 如果缓存了MVPD ID并且`canAuthenticate`标志为true或使用[`setSelectedProvider()`](#setSelProv)选择了MVPD，则不会通过MVPD选择对话框提示用户。 身份验证流程继续使用MVPD的缓存值(即，在上次成功身份验证期间使用的MVPD值)。 系统会向后端服务器发出网络调用，并将用户重定向到MVPD登录页面（下面的步骤6）。
-1. 如果未缓存MVPD ID，并且未使用[`setSelectedProvider()`](#setSelProv)选择MVPD，或者`canAuthenticate`标志设置为false，则会调用[`displayProviderDialog()`](#dispProvDialog)回调。 此回调指示应用程序创建UI，向用户显示可供选择的MVPD列表。 提供了一系列MVPD对象，其中包含构建MVPD选择器所需的信息。 每个MVPD对象都描述一个MVPD实体，并包含MVPD的ID（例如XFINITY、AT\&amp;T等）和可以找到MVPD徽标的URL等信息。
+1. 如果用户当前未经过身份验证，则AccessEnabler通过确定用户的最后一次身份验证尝试在给定MVPD中是否成功来继续身份验证流程。 如果缓存了MVPD ID并且`canAuthenticate`标志为true或使用[`setSelectedProvider()`](#setSelProv)选择了MVPD，则不会通过MVPD选择对话框提示用户。 身份验证流程继续使用MVPD的缓存值（即，在上次成功身份验证期间使用的MVPD值）。 系统会向后端服务器发出网络调用，并将用户重定向到MVPD登录页面（下面的步骤6）。
+1. 如果未缓存MVPD ID，并且未使用[`setSelectedProvider()`](#setSelProv)选择MVPD，或者`canAuthenticate`标志设置为false，则会调用[`displayProviderDialog()`](#dispProvDialog)回调。 此回调指示应用程序创建UI，向用户显示可供选择的MVPD列表。 提供了一系列MVPD对象，其中包含构建MVPD选择器所需的信息。 每个MVPD对象描述一个MVPD实体，并包含MVPD的ID等信息（例如XFINITY、AT\&amp;T等） 以及可以找到MVPD徽标的URL。
 1. 选择特定的MVPD后，您的应用程序必须通知AccessEnabler用户所做的选择。 用户选择所需的MVPD后，您可以通过调用[`setSelectedProvider()`](#setSelProv)方法向AccessEnabler通知用户选择的内容。
-1. iOS AccessEnabler调用您的`navigateToUrl:`回调或`navigateToUrl:useSVC:`回调以将用户重定向到MVPD登录页面。 通过触发其中任一项，AccessEnabler会向应用程序发出请求，以创建`UIWebView/WKWebView or SFSafariViewController`控制器并加载回调的`url`参数中提供的URL。 这是后端服务器上的身份验证终结点的URL。 对于tvOS AccessEnabler，使用[参数调用](#status_callback_implementation)status()`statusDictionary`回调，并立即开始轮询第二个屏幕身份验证。 `statusDictionary`包含需要用于第二个屏幕身份验证的`registration code`。
+1. iOS AccessEnabler调用您的`navigateToUrl:`回调或`navigateToUrl:useSVC:`回调以将用户重定向到MVPD登录页面。 通过触发其中任一项，AccessEnabler会向应用程序发出请求，以创建`UIWebView/WKWebView or SFSafariViewController`控制器并加载回调的`url`参数中提供的URL。 这是后端服务器上的身份验证终结点的URL。 对于tvOS AccessEnabler，使用`statusDictionary`参数调用[status()](#status_callback_implementation)回调，并立即开始轮询第二个屏幕身份验证。 `statusDictionary`包含需要用于第二个屏幕身份验证的`registration code`。
 1. 如果是iOS AccessEnabler，则用户登陆MVPD的登录页面，通过应用程序`UIWebView/WKWebView or SFSafariViewController `控制器的介质输入其凭据。 请注意，在此传输过程中将执行多次重定向操作，并且您的应用程序必须监控控制器在多次重定向操作期间加载的URL。
 1. 对于iOS AccessEnabler，当`UIWebView/WKWebView or SFSafariViewController`控制器加载特定的自定义URL时，应用程序必须关闭该控制器并调用AccessEnabler的`handleExternalURL:url `API方法。 请注意，此特定自定义URL实际上无效，控制器不会将其实际加载。 只能由应用程序将其解释为验证流程已完成并且关闭`UIWebView/WKWebView or SFSafariViewController`控制器是安全的信号。 如果您的应用程序需要使用`SFSafariViewController `控制器，则特定自定义URL由`application's custom scheme`定义（例如： `adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`），否则此特定自定义URL由`ADOBEPASS_REDIRECT_URL`常量（即`adobepass://ios.app`）定义。
 1. 在您的应用程序关闭`UIWebView/WKWebView or SFSafariViewController`控制器并调用AccessEnabler的`handleExternalURL:url `API方法后，AccessEnabler将从后端服务器检索身份验证令牌并通知您的应用程序身份验证流程已完成。 AccessEnabler使用状态代码1调用[`setAuthenticationStatus()`](#setAuthNStatus)回调，表示成功。 如果在执行这些步骤的过程中出现错误，则会触发[`setAuthenticationStatus()`](#setAuthNStatus)回调，状态代码为0，表示身份验证失败以及相应的错误代码。
@@ -136,7 +136,7 @@ Adobe Pass身份验证权利解决方案围绕Adobe Pass身份验证在成功完
 <!-- end list -->
 
 1. 如果“每个请求者的身份验证”功能被禁用，则单个身份验证令牌将本地存储在全局粘贴板中；此令牌将在与当前MVPD集成的所有应用程序之间共享。
-1. 如果启用了“每个请求者的身份验证”功能，则令牌将与执行身份验证流的程序员显式关联（令牌不会存储在全局粘贴板中，而是存储在只能由该程序员的应用程序看到的私有文件中）。 更具体地说，将禁用不同应用程序之间的单点登录(SSO)；在切换到新应用程序时，用户将需要明确执行身份验证流程(前提是第二个应用程序的程序员已与当前MVPD集成，并且本地缓存中没有该程序员的身份验证令牌)。
+1. 如果启用了“每个请求者的身份验证”功能，则令牌将与执行身份验证流的程序员显式关联（令牌不会存储在全局粘贴板中，而是存储在只能由该程序员的应用程序看到的私有文件中）。 更具体地说，将禁用不同应用程序之间的单点登录(SSO)；在切换到新应用程序时，用户将需要明确执行身份验证流程（前提是第二个应用程序的程序员已与当前MVPD集成，并且本地缓存中没有该程序员的身份验证令牌）。
 
 
 
@@ -187,8 +187,7 @@ iOS AccessEnabler库通过将令牌数据存储到名为&#x200B;*粘贴板*&#x20
 
 **iOS 7粘贴板更改 —**&#x200B;由于粘贴板在iOS 7上的功能发生了更改，在iOS 7上运行的应用程序之间的跨SSO将受限。 具有相同`<Bundle Seed ID>`（也称为`<Team ID>`）的应用程序将共享令牌，这意味着来自同一程序员X的应用程序A1和A2将共享令牌，而应用程序A1 （程序员X）和应用程序A3 （程序员Y）将不共享令牌。
 
-- 如果两个应用程序中的捆绑包种子ID/团队ID由同一配置配置文件生成，则它们是相同的。 要查找更多信息，请访问以下链接：
-  [http://developer.apple.com/library/ios/\#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html](http://developer.apple.com/library/ios/#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html)
+- 如果两个应用程序中的捆绑包种子ID/团队ID由同一配置配置文件生成，则它们是相同的。 要查找更多信息，请访问以下链接：  [http://developer.apple.com/library/ios/\#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html](http://developer.apple.com/library/ios/#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html)
 - 无论使用什么Adobe Pass身份验证SDK，iOS 7中将存在这种“跨SSO”限制。
 
 请阅读此技术说明，了解有关在iOS 7和更高版本上配置SSO的更多信息（此技术说明适用于Access Enabler v1.8和更高版本）： <https://tve.zendesk.com/entries/58233434-Configuring-Pay-TV-pass-SSO-on-iOS>
@@ -211,7 +210,7 @@ iOS AccessEnabler库通过将令牌数据存储到名为&#x200B;*粘贴板*&#x20
 
 
 
-从某个程序员/MVPD会话中注销将会清除整个底层存储，包括设备上的所有其他程序员/MVPD身份验证令牌。 另一方面，取消身份验证流程（调用[`setSelectedProvider(null)`](#setSelProv)）将不会清除基础存储，但只会影响当前的程序员/MVPD身份验证尝试(通过清除当前程序员的MVPD)。
+从某个程序员/MVPD会话中注销将会清除整个底层存储，包括设备上的所有其他程序员/MVPD身份验证令牌。 另一方面，取消身份验证流程（调用[`setSelectedProvider(null)`](#setSelProv)）将不会清除基础存储，但只会影响当前的程序员/MVPD身份验证尝试（通过清除当前程序员的MVPD）。
 
 
 
@@ -228,11 +227,11 @@ AccessEnabler 1.7中包含的另一个与存储相关的功能允许从旧存储
 
 ### 令牌清理器(AccessEnabler 1.7.5)
 
-从AccessEnabler 1.7.5开始，此服务在[`setRequestor()`](#setReq)`. `上运行。它是通过iOS 7从WiFi MAC地址切换到IDFA进行跟踪而开发的。 清理器可确保当前存储仅包含有效的身份验证令牌(根据设备ID有效，以前使用MAC地址计算，在iOS7之前)。 令牌清理器会删除所有无效令牌。
+从AccessEnabler 1.7.5开始，此服务在[`setRequestor()`](#setReq)`. `上运行。它是通过iOS 7从WiFi MAC地址切换到IDFA进行跟踪而开发的。 清理器可确保当前存储仅包含有效的身份验证令牌（根据设备ID有效，以前使用MAC地址计算，在iOS7之前）。 令牌清理器会删除所有无效令牌。
 
 
 
-在iOS 6上使用AccessEnabler 1.7.5应用程序，然后用户更新到iOS 7时，“令牌清理器”服务最有用。 发生这种情况时，在iOS 6上获取的所有身份验证令牌现在都将无效(因为设备ID算法已由使用MAC地址更改为IDFA)。 清理器将清除所有无效令牌，然后用户将进行未经身份验证。
+在iOS 6上使用AccessEnabler 1.7.5应用程序，然后用户更新到iOS 7时，“令牌清理器”服务最有用。 发生这种情况时，在iOS 6上获取的所有身份验证令牌现在都将无效（因为设备ID算法已由使用MAC地址更改为IDFA）。 清理器将清除所有无效令牌，然后用户将进行未经身份验证。
 
 
 

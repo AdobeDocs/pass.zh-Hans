@@ -1,13 +1,13 @@
 ---
 title: ESM仪表板
 description: 了解如何使用ESM Dashboard监控MVPD合作伙伴的权利和事件数据。
-source-git-commit: 53ebbd82fc160f68fccdddb18cf98e249ad6ecce
+exl-id: ac5f289a-c26d-4156-bc56-7968c49c100f
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '472'
+source-wordcount: '487'
 ht-degree: 1%
 
 ---
-
 
 # ESM仪表板 {#esm-dashboard}
 
@@ -25,7 +25,7 @@ ESM Dashboard提供了权限和事件数据的统一视图，可帮助您跨MVPD
 - 比较MVPD性能
 - 了解每个应用程序的客户使用情况
 
-有关ESM数据和事件的更多详细信息可在[授权服务监视概述](https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview)中找到。
+有关ESM数据和事件的更多详细信息可在[授权服务监视概述](https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview)中找到。
 
 ## 报告 {#reports}
 
@@ -69,7 +69,7 @@ ESM Dashboard提供了权限和事件数据的统一视图，可帮助您跨MVPD
 
 ### 成功的授权 {#successful-authorizations}
 
-显示所选时间间隔内的成功授权(MVPD的“允许”响应)总数。
+显示所选时间间隔内的成功授权（MVPD的“允许”响应）总数。
 
 **图形样式** — 折线。
 
@@ -107,7 +107,7 @@ ESM Dashboard提供了权限和事件数据的统一视图，可帮助您跨MVPD
 
 ### 过滤器提示 {#filter-tips}
 
-- 合并多个过滤器以隔离同类群组(例如，移动平台上的一个用于渠道的MVPD)。
+- 合并多个过滤器以隔离同类群组（例如，移动平台上的一个用于渠道的MVPD）。
 - 切入之前，请勿添加筛选器以缩小和建立基线。
 
 ## 时间间隔 {#time-intervals}

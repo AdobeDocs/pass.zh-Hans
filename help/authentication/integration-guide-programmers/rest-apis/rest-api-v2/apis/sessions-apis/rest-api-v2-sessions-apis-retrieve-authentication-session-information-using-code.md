@@ -4,8 +4,8 @@ description: REST API V2 — 使用代码检索身份验证会话
 exl-id: 5cc209eb-ee6b-4bb9-9c04-3444408844b7
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '532'
-ht-degree: 2%
+source-wordcount: '549'
+ht-degree: 3%
 
 ---
 
@@ -69,12 +69,9 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         流设备的IP地址。
-         <br/><br/>
-         强烈建议始终将其用于服务器到服务器的实施，尤其是在由程序员服务而不是流设备进行调用时。
-         <br/><br/>
-         对于客户端到服务器实施，流设备的IP地址将隐式发送。
-      </td> 
+         流设备的IP地址。<br/><br/>
+         强烈建议始终将其用于服务器到服务器的实施，尤其是在由程序员服务而不是流设备进行调用时。<br/><br/>
+         对于客户端到服务器实施，流设备的IP地址将隐式发送。</td> 
       <td>可选</td>
    </tr>
    <tr>
@@ -86,10 +83,8 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         客户端应用程序接受的媒体类型。
-         <br/><br/>
-         如果指定，则必须为application/json；charset=utf-8。
-      </td>
+         客户端应用程序接受的媒体类型。<br/><br/>
+         如果指定，则必须为application/json；charset=utf-8。</td>
       <td>可选</td>
    </tr>
    <tr>
@@ -118,29 +113,25 @@ ht-degree: 2%
       <td>400</td>
       <td>错误请求</td>
       <td>
-        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。
-      </td>
+        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。</td>
    </tr>
    <tr>
       <td>401</td>
       <td>未授权</td>
       <td>
-        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">动态客户端注册概述</a>文档。
-      </td>
+        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">动态客户端注册概述</a>文档。</td>
    </tr>
    <tr>
       <td>405</td>
       <td>不允许使用该方法</td>
       <td>
-        HTTP方法无效，客户端需要使用请求资源允许的HTTP方法并重试。 有关更多详细信息，请参阅<a href="#request">请求</a>部分。
-      </td>
+        HTTP方法无效，客户端需要使用请求资源允许的HTTP方法并重试。 有关更多详细信息，请参阅<a href="#request">请求</a>部分。</td>
    </tr>
    <tr>
       <td>500</td>
       <td>内部服务器错误</td>
       <td>
-        服务器端遇到问题。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。
-      </td>
+        服务器端遇到问题。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。</td>
    </tr>
 </table>
 
@@ -212,7 +203,7 @@ ht-degree: 2%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">状态</td>
-      <td>400， 401， 405， 500</td>
+      <td>400, 401, 405, 500</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -228,23 +219,20 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            响应正文可能提供附加的错误信息，这些信息将遵循<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档。
-            <br/><br/>
-            客户端应用程序必须实施一种错误处理机制，该机制能够正确处理此API最常返回的错误代码：
-            <ul>
+            响应正文可能提供附加的错误信息，这些信息将遵循<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档。<br/><br/>
+            客户端应用程序必须实施一种错误处理机制，该机制能够正确处理此API最常返回的错误代码：<ul>
                 <li>invalid_authentication_session</li>
                 <li>invalid_parameter_code</li>
                 <li>等等。</li>
             </ul>
-            以上列表并非详尽无遗。 客户端应用程序必须能够处理<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">公共文档</a>中定义的所有增强型错误代码。
-      </td>
+            以上列表并非详尽无遗。 客户端应用程序必须能够处理<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">公共文档</a>中定义的所有增强型错误代码。</td>
       <td><i>必填</i></td>
    </tr>
 </table>
 
 ## 示例 {#samples}
 
-### 1.检索身份验证会话，但不缺少参数
+### &#x200B;1. 检索身份验证会话，但不缺少参数
 
 >[!BEGINTABS]
 
@@ -339,7 +327,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 1.检索缺少参数的身份验证会话
+### &#x200B;1. 使用缺少的参数检索身份验证会话
 
 >[!BEGINTABS]
 

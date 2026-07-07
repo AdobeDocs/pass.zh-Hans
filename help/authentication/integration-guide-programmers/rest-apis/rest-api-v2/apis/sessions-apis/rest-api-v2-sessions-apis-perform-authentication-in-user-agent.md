@@ -4,8 +4,8 @@ description: REST API V2 — 在用户代理中执行身份验证
 exl-id: d615dde0-71a8-4b6c-a12e-1e3b5e20728c
 source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '240'
-ht-degree: 4%
+source-wordcount: '242'
+ht-degree: 5%
 
 ---
 
@@ -94,8 +94,7 @@ ht-degree: 4%
       <td>405</td>
       <td>不允许使用该方法</td>
       <td>
-        HTTP方法无效，客户端需要使用请求资源允许的HTTP方法并重试。 有关更多详细信息，请参阅<a href="#request">请求</a>部分。
-      </td>
+        HTTP方法无效，客户端需要使用请求资源允许的HTTP方法并重试。 有关更多详细信息，请参阅<a href="#request">请求</a>部分。</td>
    </tr>
    <tr>
       <td>500</td>
@@ -120,7 +119,7 @@ ht-degree: 4%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">状态</td>
-      <td>400， 405， 500</td>
+      <td>400, 405, 500</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -142,7 +141,7 @@ ht-degree: 4%
 
 ## 示例 {#samples}
 
-### 1.在用户代理中执行身份验证
+### &#x200B;1. 在用户代理中执行身份验证
 
 >[!BEGINTABS]
 

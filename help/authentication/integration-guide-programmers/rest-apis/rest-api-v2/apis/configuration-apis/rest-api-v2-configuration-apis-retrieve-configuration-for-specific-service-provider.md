@@ -4,7 +4,7 @@ description: REST API V2 — 检索特定服务提供商的配置
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '728'
+source-wordcount: '749'
 ht-degree: 2%
 
 ---
@@ -79,34 +79,25 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>标头文档中介绍了设备信息有效负载的生成。
-         <br/><br/>
-         强烈建议在应用程序的设备平台允许显式提供有效值时始终使用它。
-         <br/><br/>
-         提供该属性后，Adobe Pass身份验证后端将隐式地将显式设置的值与提取的值合并（默认情况下）。
-         <br/><br/>
-         如果未提供，Adobe Pass身份验证后端将隐式使用提取的值（默认情况下）。
-      </td>
+         <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>标头文档中介绍了设备信息有效负载的生成。<br/><br/>
+         强烈建议在应用程序的设备平台允许显式提供有效值时始终使用它。<br/><br/>
+         提供该属性后，Adobe Pass身份验证后端将隐式地将显式设置的值与提取的值合并（默认情况下）。<br/><br/>
+         如果未提供，Adobe Pass身份验证后端将隐式使用提取的值（默认情况下）。</td>
       <td>可选</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         流设备的IP地址。
-         <br/><br/>
-         强烈建议始终将其用于服务器到服务器的实施，尤其是在由程序员服务而不是流设备进行调用时。
-         <br/><br/>
-         对于客户端到服务器实施，流设备的IP地址将隐式发送。
-      </td>
+         流设备的IP地址。<br/><br/>
+         强烈建议始终将其用于服务器到服务器的实施，尤其是在由程序员服务而不是流设备进行调用时。<br/><br/>
+         对于客户端到服务器实施，流设备的IP地址将隐式发送。</td>
       <td>可选</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         客户端应用程序接受的媒体类型。
-         <br/><br/>
-         如果指定，则必须为application/json；charset=utf-8。
-      </td>
+         客户端应用程序接受的媒体类型。<br/><br/>
+         如果指定，则必须为application/json；charset=utf-8。</td>
       <td>可选</td>
    </tr>
    <tr>
@@ -135,29 +126,25 @@ ht-degree: 2%
       <td>400</td>
       <td>错误请求</td>
       <td>
-        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。
-      </td>
+        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。</td>
    </tr>
    <tr>
       <td>401</td>
       <td>未授权</td>
       <td>
-        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">动态客户端注册概述</a>文档。
-      </td>
+        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">动态客户端注册概述</a>文档。</td>
    </tr>
    <tr>
       <td>405</td>
       <td>不允许使用该方法</td>
       <td>
-        HTTP方法无效，客户端需要使用请求资源允许的HTTP方法并重试。 有关更多详细信息，请参阅<a href="#request">请求</a>部分。
-      </td>
+        HTTP方法无效，客户端需要使用请求资源允许的HTTP方法并重试。 有关更多详细信息，请参阅<a href="#request">请求</a>部分。</td>
    </tr>
    <tr>
       <td>500</td>
       <td>内部服务器错误</td>
       <td>
-        服务器端遇到问题。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。
-      </td>
+        服务器端遇到问题。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。</td>
    </tr>
 </table>
 
@@ -260,7 +247,7 @@ ht-degree: 2%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">状态</td>
-      <td>400， 401， 405， 500</td>
+      <td>400, 401, 405, 500</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -282,7 +269,7 @@ ht-degree: 2%
 
 ## 示例 {#samples}
 
-### 1.检索特定服务提供商的配置
+### &#x200B;1. 检索特定服务提供商的配置
 
 >[!BEGINTABS]
 

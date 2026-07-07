@@ -4,7 +4,7 @@ description: REST API V2 — 创建身份验证会话
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1083'
+source-wordcount: '1190'
 ht-degree: 1%
 
 ---
@@ -59,30 +59,23 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">mvpd</td>
       <td>
-        在新用户引导过程中与身份提供商关联的内部唯一标识符。
-        <br/><br/>
-        如果流设备平台在提供值方面存在限制，则应用程序必须恢复身份验证会话并提供有效值。
-      </td>
+        在新用户引导过程中与身份提供商关联的内部唯一标识符。<br/><br/>
+        如果流设备平台在提供值方面存在限制，则应用程序必须恢复身份验证会话并提供有效值。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">域名</td>
       <td>
-        执行MVPD登录的应用程序的原始域。
-        <br/><br/>
-        如果流设备平台在提供值方面存在限制，则应用程序必须恢复身份验证会话并提供有效值。
-      </td>
+        执行MVPD登录的应用程序的原始域。<br/><br/>
+        如果流设备平台在提供值方面存在限制，则应用程序必须恢复身份验证会话并提供有效值。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
       <td>
-        MVPD的身份验证流程完成后，用户代理将导航到的最终重定向URL。
-        <br/><br/>
-        该值必须为URL编码。
-        <br/><br/>
-        如果流设备平台在提供值方面存在限制，则应用程序必须恢复身份验证会话并提供有效值。
-        </td>
+        MVPD的身份验证流程完成后，用户代理将导航到的最终重定向URL。<br/><br/>
+        该值必须为URL编码。<br/><br/>
+        如果流设备平台在提供值方面存在限制，则应用程序必须恢复身份验证会话并提供有效值。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -98,10 +91,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>
-         所发送资源的接受媒体类型。
-         <br/><br/>
-         必须是application/x-www-form-urlencoded。
-      </td>
+         所发送资源的接受媒体类型。<br/><br/>
+         必须是application/x-www-form-urlencoded。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -112,43 +103,32 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>标头文档中介绍了设备信息有效负载的生成。
-         <br/><br/>
-         强烈建议在应用程序的设备平台允许显式提供有效值时始终使用它。
-         <br/><br/>
-         提供该属性后，Adobe Pass身份验证后端将隐式地将显式设置的值与提取的值合并（默认情况下）。
-         <br/><br/>
-         如果未提供，Adobe Pass身份验证后端将隐式使用提取的值（默认情况下）。
-      </td>
+         <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>标头文档中介绍了设备信息有效负载的生成。<br/><br/>
+         强烈建议在应用程序的设备平台允许显式提供有效值时始终使用它。<br/><br/>
+         提供该属性后，Adobe Pass身份验证后端将隐式地将显式设置的值与提取的值合并（默认情况下）。<br/><br/>
+         如果未提供，Adobe Pass身份验证后端将隐式使用提取的值（默认情况下）。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         流设备的IP地址。
-         <br/><br/>
-         强烈建议始终将其用于服务器到服务器的实施，尤其是在由程序员服务而不是流设备进行调用时。
-         <br/><br/>
-         对于客户端到服务器实施，流设备的IP地址将隐式发送。
-      </td>
+         流设备的IP地址。<br/><br/>
+         强烈建议始终将其用于服务器到服务器的实施，尤其是在由程序员服务而不是流设备进行调用时。<br/><br/>
+         对于客户端到服务器实施，流设备的IP地址将隐式发送。</td>
       <td>可选</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>或<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>标头文档中介绍了为Platform Identity方法生成单点登录有效负载的过程。
-        <br/><br/>
-        有关使用平台标识启用单点登录的流的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台标识流的单点登录</a>文档。
-      </td>
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>标头文档中介绍了为Platform Identity方法生成单点登录有效负载的过程。<br/><br/>
+        有关使用平台标识启用单点登录的流的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台标识流的单点登录</a>文档。</td>
       <td>可选</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>标头文档介绍了服务令牌方法单点登录有效负载的生成。
-        <br/><br/>
-        有关使用服务令牌启用单点登录的流的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">使用服务令牌流的单点登录</a>文档。
-      <td>可选</td>
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>标头文档介绍了服务令牌方法单点登录有效负载的生成。<br/><br/>
+        有关使用服务令牌启用单点登录的流的更多详细信息，请参阅<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">使用服务令牌流的单点登录</a>文档。<td>可选</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
@@ -159,10 +139,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         客户端应用程序接受的媒体类型。
-         <br/><br/>
-         如果指定，则必须为application/json；charset=utf-8。
-      </td>
+         客户端应用程序接受的媒体类型。<br/><br/>
+         如果指定，则必须为application/json；charset=utf-8。</td>
       <td>可选</td>
    </tr>
    <tr>
@@ -191,29 +169,25 @@ ht-degree: 1%
       <td>400</td>
       <td>错误请求</td>
       <td>
-        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。
-      </td>
+        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。</td>
    </tr>
    <tr>
       <td>401</td>
       <td>未授权</td>
       <td>
-        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">动态客户端注册概述</a>文档。
-      </td>
+        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">动态客户端注册概述</a>文档。</td>
    </tr>
    <tr>
       <td>405</td>
       <td>不允许使用该方法</td>
       <td>
-        HTTP方法无效，客户端需要使用请求资源允许的HTTP方法并重试。 有关更多详细信息，请参阅<a href="#request">请求</a>部分。
-      </td>
+        HTTP方法无效，客户端需要使用请求资源允许的HTTP方法并重试。 有关更多详细信息，请参阅<a href="#request">请求</a>部分。</td>
    </tr>
    <tr>
       <td>500</td>
       <td>内部服务器错误</td>
       <td>
-        服务器端遇到问题。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。
-      </td>
+        服务器端遇到问题。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。</td>
    </tr>
 </table>
 
@@ -253,10 +227,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
                <td>
-                  流设备完成身份验证流程所需执行的操作。
-                  <br/><br/>
-                  可能的值包括：
-                  <ul>
+                  流设备完成身份验证流程所需执行的操作。<br/><br/>
+                  可能的值包括：<ul>
                     <li><b>身份验证</b><br/>流设备或其他设备需要在用户代理中打开提供的URL。</li>
                     <li><b>resume</b><br/>流设备或其他设备需要提供缺少的参数并使用代码恢复身份验证会话。</li>
                     <li><b>授权</b><br/>流式设备可以直接继续决策流程。</li>
@@ -266,10 +238,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionType</td>
                <td>
-                  流设备必须执行的交互类型，以便通过“actionName”属性指定的操作继续流程。
-                  <br/><br/>
-                  可能的值包括：
-                  <ul>
+                  流设备必须执行的交互类型，以便通过“actionName”属性指定的操作继续流程。<br/><br/>
+                  可能的值包括：<ul>
                     <li><b>交互式</b><br/>流继续使用用户代理导航到提供的URL。</li>
                     <li><b>direct</b><br/>流继续使用可用于客户端实施的HTTP客户端直接调用提供的URL。</li>
                   </ul>
@@ -278,10 +248,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">原因类型</td>
                <td>
-                  说明“actionName”的原因类型。
-                  <br/><br/>
-                  可能的值包括：
-                  <ul>
+                  说明“actionName”的原因类型。<br/><br/>
+                  可能的值包括：<ul>
                     <li><b>无</b><br/>需要客户端应用程序才能继续验证。</li>
                     <li><b>已通过身份验证</b><br/>客户端应用程序已通过基本访问流进行身份验证。</li>
                     <li><b>临时</b><br/>客户端应用程序已通过临时访问流进行身份验证。</li>
@@ -345,7 +313,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">状态</td>
-      <td>400， 401， 405， 500</td>
+      <td>400, 401, 405, 500</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -367,7 +335,7 @@ ht-degree: 1%
 
 ## 示例 {#samples}
 
-### 1.创建身份验证会话，但不缺少参数
+### &#x200B;1. 创建身份验证会话，但不缺少参数
 
 >[!BEGINTABS]
 
@@ -411,7 +379,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2.创建缺少参数的身份验证会话
+### &#x200B;2. 创建缺少参数的身份验证会话
 
 >[!BEGINTABS]
 
@@ -453,7 +421,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3.在有效配置文件已存在时创建身份验证会话
+### &#x200B;3. 在有效配置文件已存在时创建身份验证会话
 
 >[!BEGINTABS]
 
@@ -494,7 +462,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4.使用基本或提升TempPass创建身份验证会话（非必需）
+### &#x200B;4. 使用基本或提升TempPass创建身份验证会话（非必需）
 
 >[!BEGINTABS]
 
@@ -535,7 +503,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5.在应用降级时创建身份验证会话
+### &#x200B;5. 在应用降级时创建身份验证会话
 
 >[!BEGINTABS]
 

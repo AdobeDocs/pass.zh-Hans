@@ -4,8 +4,8 @@ description: REST API V2 — 标头 — X-Device-Info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
 source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
 workflow-type: tm+mt
-source-wordcount: '1133'
-ht-degree: 2%
+source-wordcount: '1234'
+ht-degree: 3%
 
 ---
 
@@ -53,7 +53,7 @@ JSON元素的`Base64-encoded`值，至少包含下表要求标记的属性。
         <td></td>
         <td>主要硬件类型</td>
         <td>设备的主要硬件类型。</td>
-        <td>&amp;amp；检查；</td>
+        <td>检查(&amp;C)；</td>
         <td>
             值受限制：
             <ul>
@@ -110,7 +110,7 @@ JSON元素的`Base64-encoded`值，至少包含下表要求标记的属性。
         <td><i>必填</i></td>
         <td>操作系统名称</td>
         <td>设备的操作系统(OS)名称。</td>
-        <td>&amp;amp；检查；</td>
+        <td>检查(&amp;C)；</td>
         <td>
             值受限制：
             <ul>
@@ -132,7 +132,7 @@ JSON元素的`Base64-encoded`值，至少包含下表要求标记的属性。
         <td></td>
         <td>osFamily</td>
         <td>设备的操作系统(OS)组名称。</td>
-        <td>&amp;amp；检查；</td>
+        <td>检查(&amp;C)；</td>
         <td>
             值受限制：
             <ul>
@@ -155,7 +155,7 @@ JSON元素的`Base64-encoded`值，至少包含下表要求标记的属性。
         <td></td>
         <td>操作系统供应商</td>
         <td>设备的操作系统(OS)供应商。</td>
-        <td>&amp;amp；检查；</td>
+        <td>检查(&amp;C)；</td>
         <td>
             值受限制：
             <ul>
@@ -185,7 +185,7 @@ JSON元素的`Base64-encoded`值，至少包含下表要求标记的属性。
         <td></td>
         <td>browserName</td>
         <td>浏览器的名称。</td>
-        <td>&amp;amp；检查；</td>
+        <td>检查(&amp;C)；</td>
         <td>
             值受限制：
             <ul>
@@ -205,7 +205,7 @@ JSON元素的`Base64-encoded`值，至少包含下表要求标记的属性。
         <td></td>
         <td>browserVendor</td>
         <td>浏览器的构建公司/组织。</td>
-        <td>&amp;amp；检查；</td>
+        <td>检查(&amp;C)；</td>
         <td>
             值受限制：
             <ul>
@@ -228,14 +228,14 @@ JSON元素的`Base64-encoded`值，至少包含下表要求标记的属性。
         <td>browserVersion</td>
         <td>设备的浏览器版本。</td>
         <td></td>
-        <td>例如60.0.3112</td>
+        <td>e.g. 60.0.3112</td>
     </tr>
     <tr>
         <td></td>
         <td>userAgent</td>
         <td>设备的用户代理。</td>
         <td></td>
-        <td>例如，Mozilla/5.0(Macintosh；英特尔Mac OS X 10_12_3) AppleWebKit/602.4.8（KHTML，如Gecko）版本/10.0.3 Safari/602.4.8</td>
+        <td>例如，Mozilla/5.0（Macintosh；英特尔Mac OS X 10_12_3） AppleWebKit/602.4.8（KHTML，如Gecko）版本/10.0.3 Safari/602.4.8</td>
     </tr>
     <tr>
         <td></td>
@@ -256,28 +256,28 @@ JSON元素的`Base64-encoded`值，至少包含下表要求标记的属性。
         <td>displayPpi</td>
         <td>设备的物理屏幕像素密度。</td>
         <td></td>
-        <td>例如294</td>
+        <td>e.g. 294</td>
     </tr>
     <tr>
         <td></td>
         <td>对角屏幕大小</td>
         <td>设备的物理屏幕对角尺寸（英寸）。</td>
         <td></td>
-        <td>例如5.5、10.1</td>
+        <td>e.g. 5.5, 10.1</td>
     </tr>
     <tr>
         <td></td>
         <td>connectionIp</td>
         <td>用于发送HTTP请求的设备的IP。</td>
         <td></td>
-        <td>例如8.8.4.4</td>
+        <td>e.g. 8.8.4.4</td>
     </tr>
     <tr>
         <td></td>
         <td>connectionPort</td>
         <td>用于发送HTTP请求的设备的端口。</td>
         <td></td>
-        <td>例如53124</td>
+        <td>e.g. 53124</td>
     </tr>
     <tr>
         <td><i>必填</i></td>
@@ -290,7 +290,7 @@ JSON元素的`Base64-encoded`值，至少包含下表要求标记的属性。
         <td></td>
         <td>connectionSecure</td>
         <td>网络连接安全状态。</td>
-        <td>&amp;amp；检查；</td>
+        <td>检查(&amp;C)；</td>
         <td>
             值受限制：
             <ul>
@@ -351,7 +351,7 @@ X-Device-Info: ewogICJwcmltYXJ5SGFyZHdhcmVUeXBlIiA6ICJNb2JpbGVQaG9uZSIsCiAgIm1vZ
 
 #### iOS和iPadOS {#ios-ipados}
 
-要为运行`X-Device-Info`iOS或iPadOS[的设备构建](https://developer.apple.com/documentation/ios-ipados-release-notes)标头，您可以参考以下文档及以下代码片段：
+要为运行[iOS或iPadOS](https://developer.apple.com/documentation/ios-ipados-release-notes)的设备构建`X-Device-Info`标头，您可以参考以下文档及以下代码片段：
 
 * [UIDevice](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice)的Apple开发人员文档。
 * 有关[可访问性](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html)的Apple开发人员文档。
@@ -452,7 +452,7 @@ X-Device-Info: ewogICJwcmltYXJ5SGFyZHdhcmVUeXBlIiA6ICJNb2JpbGVQaG9uZSIsCiAgIm1vZ
 
 #### Android {#android}
 
-要为运行`X-Device-Info`Android[的设备生成](https://developer.android.com/about/versions)标头，您可以参考以下文档以及下面的代码片段：
+要为运行[Android](https://developer.android.com/about/versions)的设备生成`X-Device-Info`标头，您可以参考以下文档以及下面的代码片段：
 
 * [Build](https://developer.android.com/reference/android/os/Build.html)类的Android开发人员文档。
 
@@ -536,9 +536,9 @@ private JSONObject computeClientInformation() {
 | 模型 | Build.MODEL | GT-I9505 |
 | 供应商 | Build.BRAND | 三星 |
 | 制造商 | Build.MANUFACTURER | 三星 |
-| 版本 | Build.DEVICE | jflte |
-| 显示宽度 | DisplayMetrics.widthPixels | 600 |
-| displayheight | DisplayMetrics.heightPixels | 800 |
+| 版本 | Build.Device | jflte |
+| 显示宽度 | DisplayMetrics.widthPixel | 600 |
+| displayheight | DisplayMetrics.heightPixel | 800 |
 | 操作系统名称 | 硬编码 | Android |
 | osVersion | Build.VERSION.RELEASE | 5.0.1 |
 
@@ -559,7 +559,7 @@ private JSONObject computeClientInformation() {
 
 #### tvOS {#tvos}
 
-要为运行`X-Device-Info`tvOS[的设备生成](https://developer.apple.com/documentation/tvos-release-notes)标头，您可以参考以下文档及以下代码片段：
+要为运行[tvOS](https://developer.apple.com/documentation/tvos-release-notes)的设备生成`X-Device-Info`标头，您可以参考以下文档及以下代码片段：
 
 * [UIDevice](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice)的Apple开发人员文档。
 * 有关[可访问性](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html)的Apple开发人员文档。
@@ -659,7 +659,7 @@ private JSONObject computeClientInformation() {
 
 #### Fire操作系统 {#fireos}
 
-要为运行`X-Device-Info`Fire OS[的设备生成](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html)标头，您可以参考以下文档：
+要为运行[Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html)的设备生成`X-Device-Info`标头，您可以参考以下文档：
 
 * [Build](https://developer.android.com/reference/android/os/Build.html)类的Android开发人员文档。
 * [识别Fire TV设备](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html)的Amazon开发人员文档。
@@ -671,9 +671,9 @@ private JSONObject computeClientInformation() {
 | 模型 | Build.MODEL | AFTM |
 | 供应商 | Build.BRAND | Amazon |
 | 制造商 | Build.MANUFACTURER | Amazon |
-| 版本 | Build.DEVICE | 蒙托亚 |
-| 显示宽度 | DisplayMetrics.widthPixels |                 |
-| displayheight | DisplayMetrics.heightPixels |                 |
+| 版本 | Build.Device | 蒙托亚 |
+| 显示宽度 | DisplayMetrics.widthPixel |                 |
+| displayheight | DisplayMetrics.heightPixel |                 |
 | 操作系统名称 | 硬编码 | Android |
 | osVersion | Build.VERSION.RELEASE | 5.1.1 |
 
@@ -692,7 +692,7 @@ private JSONObject computeClientInformation() {
 
 #### Roku OS {#rokuos}
 
-要为运行`X-Device-Info`Roku OS[的设备生成](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md)标头，您可以参考以下文档：
+要为运行[Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md)的设备生成`X-Device-Info`标头，您可以参考以下文档：
 
 * [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md)的Roku开发人员文档。
 
@@ -701,11 +701,11 @@ private JSONObject computeClientInformation() {
 | 键 | Source | 值（示例） |
 |---------------|--------------------------------------------|-----------------|
 | 模型 | 硬编码 | “Roku” |
-| 供应商 | ifDeviceInfo.GetModelDetails().VendorName | “Sharp”、“Roku” |
-| 制造商 | ifDeviceInfo.GetModelDetails().VendorName | “Sharp”、“Roku” |
-| 版本 | ifDeviceInfo.GetModelDetails().ModelNumber | “5303X” |
-| 显示宽度 | ifDeviceInfo.GetDisplaySize().w | 1920 |
-| displayheight | ifDeviceInfo.GetDisplaySize().h | 1080 |
+| 供应商 | ifDeviceInfo.GetModelDetails()。VendorName | “Sharp”、“Roku” |
+| 制造商 | ifDeviceInfo.GetModelDetails()。VendorName | “Sharp”、“Roku” |
+| 版本 | ifDeviceInfo.GetModelDetails()。ModelNumber | “5303X” |
+| 显示宽度 | ifDeviceInfo.GetDisplaySize()。w | 1920 |
+| displayheight | ifDeviceInfo.GetDisplaySize()。h | 1080 |
 | 操作系统名称 | 硬编码 | “Roku” |
 | osVersion | ifDeviceInfo.getVersion() |                 |
 
@@ -722,6 +722,6 @@ private JSONObject computeClientInformation() {
 |---------------|-----------|-----------------|
 | applicationId | 硬编码 | REF30 |
 
-### 其他  {#others}
+### 其他 {#others}
 
 对于文档中未涵盖的设备平台，客户端信息（设备、连接和应用程序）应链接到任何可用的硬件和操作系统(OS)属性，通常在设备的硬件和操作系统手册中指定。
