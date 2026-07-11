@@ -1,13 +1,13 @@
 ---
 title: API参考概述
 description: 并发监控API的完整参考，包括端点、身份验证和响应格式
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 6a1c6507-03d5-4003-8b88-502eb4019346
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '438'
+source-wordcount: '444'
 ht-degree: 2%
 
 ---
-
 
 # API参考概述 {#api-reference-overview}
 
@@ -33,7 +33,7 @@ https://streams-stage.adobeprimetime.com/v2/
 
 所有API调用都需要使用应用程序凭据进行HTTP基本身份验证：
 
-- **用户名：**&#x200B;您的应用程序ID(由Adobe提供)
+- **用户名：**&#x200B;您的应用程序ID（由Adobe提供）
 - **密码：**&#x200B;空字符串
 
 ### 身份验证标头示例
@@ -154,7 +154,7 @@ curl -u "demo-app:" https://streams-stage.adobeprimetime.com/v2/sessions
 作为URL路径一部分的必需参数：
 
 1. `{idp}` — 身份提供程序标识符
-2. `{subject}` — 用户标识符(通常来自Adobe Pass)
+2. `{subject}` — 用户标识符（通常来自Adobe Pass）
 3. `{sessionId}` — 会话标识符（在Location标头中返回）
 
 ### 其他参数
@@ -192,7 +192,7 @@ X-Client-Version: 1.0.0
 当您收到409冲突响应时：
 
 1. **分析评估结果**&#x200B;以了解策略冲突
-2. **从**&#x200B;提取冲突信息`associatedAdvice`
+2. **从`associatedAdvice`提取冲突信息**
 3. **根据您的后进先出/先进先出策略向用户显示选项**
 4. 如果实现LIFO行为，则&#x200B;**使用终止代码**
 
