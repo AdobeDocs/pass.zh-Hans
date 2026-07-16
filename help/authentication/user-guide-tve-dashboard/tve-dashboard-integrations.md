@@ -4,7 +4,7 @@ description: 了解您的渠道和MVPD之间的集成以及如何管理集成。
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2093'
+source-wordcount: '2105'
 ht-degree: 0%
 
 ---
@@ -79,11 +79,11 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 
 * **Default for All**：如果未定义特定平台值，则为适用于所有平台的属性设置值，而不管程序员的实施如何。
 
-* **桌面设备**：设置适用于所有台式机和笔记本电脑的属性值，不考虑编程方法(JS SDK或REST API)。
+* **桌面设备**：设置适用于所有台式机和笔记本电脑的属性值，不考虑编程方法（JS SDK或REST API）。
 
-* **移动设备**：设置适用于所有移动设备的属性值，包括&#x200B;**iOS**、**Android**&#x200B;和其他设备，而不管编程方法如何(SDK或REST API)。
+* **移动设备**：设置适用于所有移动设备的属性值，包括&#x200B;**iOS**、**Android**&#x200B;和其他设备，而不管编程方法如何（SDK或REST API）。
 
-* **TV连接设备**：设置适用于所有电视连接设备的属性值，包括&#x200B;**tvOS**、**Roku**、**FireTV**&#x200B;和其他设备，不考虑编程方法(SDK或REST API)。
+* **TV连接设备**：设置适用于所有电视连接设备的属性值，包括&#x200B;**tvOS**、**Roku**、**FireTV**&#x200B;和其他设备，不考虑编程方法（SDK或REST API）。
 
 * **未识别的设备**：设置适用于当前机制无法准确识别平台的所有设备的属性值。 在这种情况下，应应用MVPD定义的最严格的规则。
 
@@ -125,13 +125,13 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 
 1. 选择向上和向下箭头可调整&#x200B;**AuthN TTL**&#x200B;和&#x200B;**AuthZ TTL**&#x200B;属性中天数、小时数、分钟数和秒数的持续时间。
 
-只有在&#x200B;**查看和推送更改**&#x200B;之后，才会更新所有平台上的&#x200B;**AuthN TTL**&#x200B;和[AuthZ TTL](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)的持续时间。
+只有在[查看和推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)之后，才会更新所有平台上的&#x200B;**AuthN TTL**&#x200B;和&#x200B;**AuthZ TTL**&#x200B;的持续时间。
 
 **启用平台SSO**
 
 >[!IMPORTANT]
 >
->**在** iOS、tvOS、Roku和FireTV *平台上专门支持启用单点登录*&#x200B;属性。 它仅适用于与支持这些平台单点登录的MVPD的集成。
+>**在&#x200B;*iOS、tvOS、Roku和FireTV*平台上专门支持启用单点登录**&#x200B;属性。 它仅适用于与支持这些平台单点登录的MVPD的集成。
 
 按照以下步骤为特定集成和平台启用或禁用SSO。
 
@@ -157,7 +157,7 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 
    例如，如果同时启用了&#x200B;**启用单点登录**&#x200B;和&#x200B;**强制平台权限**，并且用户选择拒绝平台访问其电视提供商订阅，则相应的应用程序（频道）将无法使用由其他应用程序（频道）获得的Adobe Pass身份验证令牌。
 
-仅在&#x200B;**查看和推送更改**&#x200B;之后，才能启用或禁用所选平台的[单点登录](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)属性。
+仅在[查看和推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)之后，才能启用或禁用所选平台的&#x200B;**单点登录**&#x200B;属性。
 
 **启用基于主目录的身份验证**
 
@@ -183,7 +183,7 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 >
 >应避免更改&#x200B;**HBA AuthN TTL**&#x200B;属性的持续时间。 它可能会导致授权过程中出现意外故障。
 
-只有在&#x200B;**查看和推送更改**&#x200B;之后，才能启用或禁用特定MVPD的[尝试HBA](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)属性。
+只有在[查看和推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)之后，才能启用或禁用特定MVPD的&#x200B;**尝试HBA**&#x200B;属性。
 
 #### 添加更多属性 {#add-more-properties}
 
@@ -200,7 +200,7 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 **更改预授权资源的数量**
 
 默认情况下，大多数MVPD支持最多使用5个资源ID的预检authZ调用。
-但是，如果MVPD同意提高此限制，则可以导航到&#x200B;**添加更多属性**，然后从选项菜单中选择&#x200B;**预检最大资源**。
+但是，如果MVPD同意提高此限制，则可以导航到**添加更多属性**，然后从选项菜单中选择&#x200B;**预检最大资源**。
 
 **预检最大资源**&#x200B;将添加新的属性，以便指定与MVPD商定的限制。
 
@@ -232,7 +232,7 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 
 *为每个聚合器属性添加身份验证*
 
-仅在&#x200B;**审阅和推送更改**&#x200B;之后才会添加每个聚合器[的身份验证](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)属性。
+仅在[审阅和推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)之后才会添加每个聚合器&#x200B;**的身份验证**&#x200B;属性。
 
 添加后，选择&#x200B;**是**&#x200B;为选定的集成启用每个聚合器的&#x200B;**身份验证**&#x200B;属性。
 
@@ -244,7 +244,7 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 >
 >无法删除某些属性，因为它们是所选MVPD的必需要求。
 
-只有在&#x200B;**审阅和推送更改**&#x200B;后，属性才会从[平台设置](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)部分中删除。
+只有在[审阅和推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)后，属性才会从&#x200B;**平台设置**&#x200B;部分中删除。
 
 ### 用户元数据 {#user-metadata}
 

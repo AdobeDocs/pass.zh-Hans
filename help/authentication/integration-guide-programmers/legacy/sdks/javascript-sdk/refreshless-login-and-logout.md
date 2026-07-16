@@ -4,7 +4,7 @@ description: 无刷新登录和注销
 exl-id: 3ce8dfec-279a-4d10-93b4-1fbb18276543
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1784'
+source-wordcount: '1817'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 0%
 - 某些MVPD要求您在网站上打开iFrame以显示MVPD的登录页面
 - 某些浏览器无法很好地处理iFrame场景，因此对于这些浏览器，更好的替代方法是使用弹出窗口而不是iFrame
 
-在Adobe Pass Authentication 2.7之前，所有这些用于验证用户的场景都涉及程序员页面的完整页面刷新。对于2.7和后续版本，Adobe Pass身份验证团队改进了这些流程，以便用户不必在登录和注销期间在应用程序上经历页面刷新。
+在Adobe Pass Authentication 2.7之前，所有这些用于验证用户的情形都涉及到程序员页面的整页刷新。对于2.7及后续版本，Adobe Pass身份验证团队改进了这些流程，这样用户就不必在登录和注销期间在应用程序上体验页面刷新。
 
 
 ## 详细说明 {#detailed_description}
@@ -48,7 +48,7 @@ ht-degree: 0%
 
 Adobe Pass身份验证Web客户端有两种身份验证方式，具体取决于MVPD的要求：
 
-1. **全页重定向 —**&#x200B;用户选择提供程序后    MVPD （使用全页重定向进行配置）时，可选择    在AccessEnabler上调用程序员网站`setSelectedProvider(<mvpd>)`，用户将被重定向到MVPD的登录页面。 用户提供有效凭据后，他将被重定向回程序员网站。 AccessEnabler已初始化，并在`setRequestor`期间从Adobe Pass身份验证中检索身份验证令牌。
+1. **全页重定向 —**&#x200B;用户从程序员网站上的MVPD选取器中选择提供程序（配置了全页重定向）后，将在AccessEnabler上调用`setSelectedProvider(<mvpd>)`，并将用户重定向到MVPD的登录页面。 用户提供有效凭据后，他将被重定向回程序员网站。 AccessEnabler已初始化，并在`setRequestor`期间从Adobe Pass身份验证中检索身份验证令牌。
 1. **iFrame/弹出窗口 —**&#x200B;用户选择提供程序（配置了iFrame）后，将在AccessEnabler上调用`setSelectedProvider(<mvpd>)`。 此操作将触发`createIFrame(width, height)`回调，通知程序员使用名称`"mvpdframe"`和提供的维度创建一个iFrame（或弹出窗口，具体取决于浏览器/首选项）。 创建iFrame/弹出窗口后，AccessEnabler会在iFrame/弹出窗口中加载MVPD的登录页面。 用户提供有效凭据，iFrame/弹出窗口被重定向到Adobe Pass身份验证，该身份验证返回一个JS代码片段，该代码片段关闭iFrame/弹出窗口并重新加载父页面（程序员网站）。 与流程1类似，在`setRequestor`期间检索身份验证令牌。
 
 `displayProviderDialog`回调（由`getAuthentication`/`getAuthorization`触发）返回MVPD及其相应设置的列表。 MVPD的`iFrameRequired`属性允许程序员知道它应激活流1还是流2。 请注意，程序员仅需要对流程2执行额外操作（创建iFrame/弹出窗口）。
@@ -79,7 +79,7 @@ AccessEnabler的注销API会清除库的本地状态，并在当前选项卡/窗
 >
 >经过改进的无刷新登录和注销流程要求浏览器支持现代HTML5技术，包括Web消息传送。
 
-上面讨论的身份验证（登录）和注销流都通过在每个流完成后重新加载主页提供了类似的用户体验。  当前功能旨在通过提供无刷新（后台）登录和注销来改善用户体验。 通过向`backgroundLogin` API的`backgroundLogout`参数传递两个布尔标记（`configInfo`和`setRequestor`），程序员可以启用/禁用后台登录和注销。 默认情况下，后台登录/注销处于禁用状态（这提供了与以前实施的兼容性）。
+上面讨论的身份验证（登录）和注销流都通过在每个流完成后重新加载主页提供了类似的用户体验。  当前功能旨在通过提供无刷新（后台）登录和注销来改善用户体验。 通过向`setRequestor` API的`configInfo`参数传递两个布尔标记（`backgroundLogin`和`backgroundLogout`），程序员可以启用/禁用后台登录和注销。 默认情况下，后台登录/注销处于禁用状态（这提供了与以前实施的兼容性）。
 
 **示例：**
 
@@ -96,7 +96,7 @@ AccessEnabler的注销API会清除库的本地状态，并在当前选项卡/窗
 
 以下几点描述了原始验证流和改进流之间的过渡：
 
-1. 全页重定向将被新的浏览器选项卡替换，在新的浏览器选项卡中执行MVPD登录。 当用户选择带有`window.open`的MVPD时，程序员需要创建名为`mvpdwindow`的新选项卡（通过`iFrameRequired = false`）。 然后程序员执行`setSelectedProvider(<mvpd>)`，允许AccessEnabler在新选项卡中加载MVPD登录URL。 在用户提供有效凭据后，Adobe Pass身份验证将关闭选项卡，并向程序员的网站发送window.postMessage，以向AccessEnabler发出身份验证流程已完成的信号。 将触发以下回调：
+1. 全页重定向将被新的浏览器选项卡替换，在新的浏览器选项卡中执行MVPD登录。 当用户选择带有`iFrameRequired = false`的MVPD时，程序员需要创建名为`mvpdwindow`的新选项卡（通过`window.open`）。 然后程序员执行`setSelectedProvider(<mvpd>)`，允许AccessEnabler在新选项卡中加载MVPD登录URL。 在用户提供有效凭据后，Adobe Pass身份验证将关闭选项卡，并向程序员的网站发送window.postMessage，以向AccessEnabler发出身份验证流程已完成的信号。 将触发以下回调：
 
    - 如果流程由`getAuthentication`启动： `setAuthenticationStatus`和`sendTrackingData(AUTHENTICATION_DETECTION...)`将触发以表示身份验证成功/不成功。
 
