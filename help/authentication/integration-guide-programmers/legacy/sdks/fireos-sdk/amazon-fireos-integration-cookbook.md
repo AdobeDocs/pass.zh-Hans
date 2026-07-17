@@ -4,7 +4,7 @@ description: Amazon FireOS集成指南
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1447'
+source-wordcount: '1430'
 ht-degree: 0%
 
 ---
@@ -30,9 +30,9 @@ ht-degree: 0%
 
 - UI域 — 这是上层应用程序层，它实现UI并使用`AccessEnabler`库提供的服务来提供对受限内容的访问权限。
 - `AccessEnabler`域 — 这是权利工作流的实施形式：
-   - 对Adobe后端服务器发出的网络调用
-   - 与身份验证和授权工作流相关的业务逻辑规则
-   - 管理各种资源和处理工作流状态（如令牌缓存）
+  - 对Adobe后端服务器发出的网络调用
+  - 与身份验证和授权工作流相关的业务逻辑规则
+  - 管理各种资源和处理工作流状态（如令牌缓存）
 
 `AccessEnabler`域的目标是隐藏授权工作流的所有复杂内容，并（通过`AccessEnabler`库）向上层应用程序提供一组简单的授权基元。 通过此流程，您可以实施授权工作流：
 
@@ -58,53 +58,53 @@ ht-degree: 0%
 ### A.先决条件 {#prereqs}
 
 1. 创建回调函数：
-   - [&#39;setRequestorComplete()&#39;](#$setRequestorComplete)
+   - [`setRequestorComplete()`](#$setRequestorComplete)
 
-      - 由`setRequestor()`触发，返回成功或失败。     成功表示您可以继续权利调用。
+     - 由`setRequestor()`触发，返回成功或失败。     成功表示您可以继续权利调用。
 
    - [displayProviderDialog(mvpd)](#$displayProviderDialog)
 
-      - 仅当用户尚未选择提供程序(MVPD)且尚未进行身份验证时，才由`getAuthentication()`触发。 `mvpds`参数是用户可用的提供程序数组。
+     - 仅当用户尚未选择提供程序(MVPD)且尚未进行身份验证时，才由`getAuthentication()`触发。 `mvpds`参数是用户可用的提供程序数组。
 
-   - [&#39;setAuthenticationStatus(status， reason)&#39;](#$setAuthNStatus)
+   - [`setAuthenticationStatus(status, reason)`](#$setAuthNStatus)
 
-      - 每次由`checkAuthentication()`触发。 仅当用户已验证并已选择提供程序时，才由`getAuthentication()`触发。
+     - 每次由`checkAuthentication()`触发。 仅当用户已验证并已选择提供程序时，才由`getAuthentication()`触发。
 
-      - 返回的状态已验证或未验证，原因描述了验证失败或注销操作。
+     - 返回的状态已验证或未验证，原因描述了验证失败或注销操作。
 
    - [navigateToUrl(url)](#$navigateToUrl)
 
-      - 在AmazonFireOS SDK中忽略，该方法在Android平台上使用，在此平台上由`getAuthentication()`在用户选择MVPD后触发。  `url`参数提供MVPD登录页面的位置。
+     - 在AmazonFireOS SDK中忽略，该方法在Android平台上使用，在此平台上由`getAuthentication()`在用户选择MVPD后触发。  `url`参数提供MVPD登录页面的位置。
 
-   - [&#39;sendTrackingData(event， data)&#39;](#$sendTrackingData)
+   - [`sendTrackingData(event, data)`](#$sendTrackingData)
 
-      - 由`checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`触发。
-`event`参数指示发生的授权事件；`data`参数是与事件相关的值列表。
+     - 由`checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`触发。
+       `event`参数指示发生的授权事件；`data`参数是与事件相关的值列表。
 
-   - [&#39;setToken(token， resource)&#39;](#$setToken)
+   - [`setToken(token, resource)`](#$setToken)
 
-      - 成功授权查看资源后由`checkAuthorization()`和`getAuthorization()`触发。
-      - `token`参数是短期媒体令牌；`resource`参数是用户有权查看的内容。
+     - 成功授权查看资源后由`checkAuthorization()`和`getAuthorization()`触发。
+     - `token`参数是短期媒体令牌；`resource`参数是用户有权查看的内容。
 
-   - [&#39;tokenRequestFailed(resource， code， description)&#39;](#$tokenRequestFailed)
+   - [`tokenRequestFailed(resource, code, description)`](#$tokenRequestFailed)
 
-      - 在授权失败后由`checkAuthorization()`和`getAuthorization()`触发。
-      - `resource`参数是用户尝试查看的内容；`code`参数是指示所发生失败类型的错误代码；`description`参数描述与错误代码关联的错误。
+     - 在授权失败后由`checkAuthorization()`和`getAuthorization()`触发。
+     - `resource`参数是用户尝试查看的内容；`code`参数是指示所发生失败类型的错误代码；`description`参数描述与错误代码关联的错误。
 
-   - [&#39;selectedProvider(mvpd)&#39;](#$selectedProvider)
+   - [`selectedProvider(mvpd)`](#$selectedProvider)
 
-      - 由`getSelectedProvider()`触发。
-      - `mvpd`参数提供有关用户选择的提供程序的信息。
+     - 由`getSelectedProvider()`触发。
+     - `mvpd`参数提供有关用户选择的提供程序的信息。
 
-   - [&#39;setMetadataStatus(metadata， key， arguments)&#39;](#$setMetadataStatus)
+   - [`setMetadataStatus(metadata, key, arguments)`](#$setMetadataStatus)
 
-      - 由`getMetadata().`触发
-      - `metadata`参数提供您请求的特定数据；`key`参数是`getMetadata()`请求中使用的键；`arguments`参数是传递给`getMetadata()`的同一词典。
+     - 由`getMetadata().`触发
+     - `metadata`参数提供您请求的特定数据；`key`参数是`getMetadata()`请求中使用的键；`arguments`参数是传递给`getMetadata()`的同一词典。
 
-   - [&#39;预授权资源（资源）&#39;](#$preauthResources)
+   - [`preauthorizedResources(resources)`](#$preauthResources)
 
-      - 由`checkPreauthorizedResources()`触发。
-      - `authorizedResources`参数表示用户有权查看的资源。
+     - 由`checkPreauthorizedResources()`触发。
+     - `authorizedResources`参数表示用户有权查看的资源。
 
 
 ![](../../../../assets/android-entitlement-flows.png)
@@ -121,7 +121,7 @@ ht-degree: 0%
 
    1. 调用` setRequestor()`以建立程序员的标识；传入程序员的`requestorID`和（可选）Adobe Pass身份验证终结点数组。
 
-      - **依赖项：**&#x200B;有效的Adobe Pass身份验证请求者ID(请与Adobe Pass身份验证帐户管理员合作安排此过程。)
+      - **依赖项：**&#x200B;有效的Adobe Pass身份验证请求者ID（请与Adobe Pass身份验证帐户管理员合作安排此过程。）
 
       - **触发器：** setRequestorComplete()回调
 
@@ -176,9 +176,9 @@ ht-degree: 0%
 
    - 如果`getAuthorization()`调用成功：用户具有有效的AuthN和AuthZ令牌（用户已通过身份验证并有权观看请求的媒体）。
    - 如果`getAuthorization()`失败：检查引发的异常以确定其类型（AuthN、AuthZ或其他内容）：
-      - 如果这是身份验证(AuthN)错误，则重新启动身份验证流程。
-      - 如果是授权(AuthZ)错误，则用户无权观看请求的媒体，并且应向用户显示某种错误消息。
-      - 如果出现其他类型的错误（连接错误、网络错误等），则向用户显示相应的错误消息。
+     - 如果这是身份验证(AuthN)错误，则重新启动身份验证流程。
+     - 如果是授权(AuthZ)错误，则用户无权观看请求的媒体，并且应向用户显示某种错误消息。
+     - 是否存在其他类型的错误（连接错误、网络错误等） 然后向用户显示相应的错误消息。
 
 1. 验证短媒体令牌。
 

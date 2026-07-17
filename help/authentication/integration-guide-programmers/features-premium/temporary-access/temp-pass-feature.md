@@ -4,7 +4,7 @@ description: TempPass功能
 exl-id: 1df14090-8e71-4e3e-82d8-f441d07c6f64
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2203'
+source-wordcount: '2245'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ TempPass功能通过在Adobe Pass身份验证服务器配置中引入伪MVPD（�
 * **TempPass1**：已配置4小时的生存时间(TTL)，以涵盖初始的免费访问期限。
 * **TempPass2**：为后续的每日免费访问间隔配置了10分钟的生存时间(TTL)。
 
-为确保日常访问正常运行，必须在每天00:00小时为所有设备重置TempPass2。
+为确保日常访问正常运行，必须在每天00:00为所有设备重置TempPass2。
 
 ### 功能详细信息 {#basic-temp-pass-feature-details}
 
@@ -120,7 +120,7 @@ Basic TempPass不需要注销，因此您可以使用实际用户MVPD直接切�
 * 定义在促销期间可访问的VOD标题的最大数量。
 * 设置促销访问有效的时段。
 
-一旦用户超过预定义的访问限制(VOD标题的数量或持续时间)，他们将无法再在同一设备上或使用同一用户标识符查看内容，除非重置他们的TempPass。
+一旦用户超过预定义的访问限制（VOD标题的数量或持续时间），他们将无法再在同一设备上或使用同一用户标识符查看内容，除非重置他们的TempPass。
 
 ### 功能详细信息 {#promotional-temp-pass-feature-details}
 
