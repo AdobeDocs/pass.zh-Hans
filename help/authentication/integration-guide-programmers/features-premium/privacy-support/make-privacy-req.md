@@ -4,7 +4,7 @@ description: 如何提出隐私请求
 exl-id: abb21306-98d6-4899-914a-bdfa85cbd204
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '558'
+source-wordcount: '603'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 * **mvpdID** - MVPD的唯一标识符。
 * **userID** — 唯一标识程序员应用程序的用户，但源自MVPD。 请参阅程序员概述中的了解用户ID 。
-* **IMSOrgID** - Adobe Experience Cloud Identity Management服务组织ID，用于在Adobe Experience Cloud中唯一标识客户
+* **IMSOrgID** - Adobe Experience Cloud Identity Management服务组织ID，用于唯一标识Adobe Experience Cloud中的客户
 
 
 请检查下面的示例：
@@ -238,8 +238,8 @@ Adobe Experience Platform Privacy Service为访问/删除请求和私人数据�
 
 **使用Postman（免费的第三方软件）可视化API调用：**
 
-* GitHub上的[Privacy Service API Postman收藏集](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
-* [用于创建Postman环境的视频指南](https://video.tv.adobe.com/v/31668?captions=chi_hans)
+* [GitHub上的Privacy Service API Postman收集](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
+* [有关创建Postman环境的视频指南](https://video.tv.adobe.com/v/31668?captions=chi_hans)
 * [在Postman中导入环境和收藏集的步骤](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
 
@@ -253,7 +253,7 @@ Adobe Experience Platform Privacy Service为访问/删除请求和私人数据�
 **必需的标头：**
 
 * 所有调用都需要标头`Authorization`、`x-gw-ims-org-id`和`x-api-key`。 有关如何获取这些值的详细信息，请参阅&#x200B;**身份验证教程**。
-* 所有在请求正文中具有有效负载的请求(如POST、PUT和PATCH调用)都必须包含标头`Content-Type`，其值为`application/json`。
+* 请求正文中具有有效负载的所有请求（例如POST、PUT和PATCH调用）必须包含值为`application/json`的标头`Content-Type`。
 
 <!--
 

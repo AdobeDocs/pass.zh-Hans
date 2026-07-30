@@ -4,7 +4,7 @@ description: iOS身份验证错误 — 找不到adobepass.ios.app
 exl-id: cd97c6fb-f0fa-45c2-82c1-f28aa6b2fd12
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '387'
+source-wordcount: '389'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 0%
 
 问题是`adobepass.ios.app`实际上不存在，将在`webView`中触发错误消息。 旧版iOS DemoApp假定此错误将始终在AuthN流结束时触发，并设置为相应地处理它(`indidFailLoadWithError`)。
 
-**注意：**&#x200B;此问题已在DemoApp的更高版本中修复(包含在iOS SDK下载中)。
+**注意：**&#x200B;此问题已在DemoApp的更高版本中修复（包含在iOS SDK下载中）。
 
 不幸的是，这一假设并不正确。 有一些所谓的“智能” DNS或代理服务器不仅传递所引发的错误，而且会执行以下操作之一：
 
