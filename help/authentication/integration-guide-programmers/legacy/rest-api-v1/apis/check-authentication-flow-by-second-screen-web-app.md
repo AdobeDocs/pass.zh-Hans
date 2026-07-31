@@ -2,10 +2,10 @@
 title: 通过第二屏幕Web应用程序检查身份验证流程
 description: 通过第二屏幕Web应用程序检查身份验证流程
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 689e2f86550d9fa59337c15dd38767975a1d6d30
 workflow-type: tm+mt
-source-wordcount: '232'
-ht-degree: 0%
+source-wordcount: '240'
+ht-degree: 1%
 
 ---
 
@@ -42,9 +42,9 @@ ht-degree: 0%
 此API应由第二个屏幕登录Web应用程序使用，以确认Adobe Pass身份验证已确认从MVPD成功登录。 我们建议先调用此API，然后再向最终用户显示一条成功消息，指示他/她继续进入设备控制台以继续执行工作流。
 
 
-| 端点 | </br>调用者 | 输入   </br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
+| 端点 | </br>调用者 | 输入</br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| SP_FQDN/api/v1/checkauthn/{registration code} | 登录Web应用程序 | 1.注册码</br>    （路径组件）</br>2。  请求者</br>    （必需） | GET | 如果失败，则包含错误详细信息的XML或JSON。 | 200 — 成功   </br>403 — 禁止访问 |
+| SP_FQDN/api/v1/checkauthn/{registration code} | 登录Web应用程序 | &#x200B;1.  注册码</br> （路径组件）</br>2。  请求者</br> （必需） | GET | 如果失败，则包含错误详细信息的XML或JSON。 | 200 — 成功</br>403 — 禁止访问 |
 
 </br>
 
@@ -63,4 +63,4 @@ ht-degree: 0%
     }
 ```
 
-### [返回REST API引用](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
+**[返回REST API引用](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)**
