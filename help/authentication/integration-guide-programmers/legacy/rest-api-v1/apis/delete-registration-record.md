@@ -2,10 +2,10 @@
 title: 删除注册记录
 description: 删除注册资源
 exl-id: 42707070-2e1f-4847-93fd-30025aef56c1
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 689e2f86550d9fa59337c15dd38767975a1d6d30
 workflow-type: tm+mt
-source-wordcount: '174'
-ht-degree: 1%
+source-wordcount: '180'
+ht-degree: 2%
 
 ---
 
@@ -42,9 +42,9 @@ ht-degree: 1%
 
 删除注册代码记录并释放注册代码以供重用。
 
-| 端点 | </br>调用者 | 输入   </br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
+| 端点 | </br>调用者 | 输入</br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>例如：</br></br>&lt;REGGIE_FQDN>/reggie/v1/regcode/ER45RTY | 流式处理应用程序</br></br>或</br></br>程序员服务 | 1.请求者ID </br>    （路径组件）</br>2。  注册码</br>    （路径组件） | DELETE | 无 | 204 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>例如：</br></br>&lt;REGGIE_FQDN>/reggie/v1/regcode/ER45RTY | 流式处理应用程序</br></br>或</br></br>程序员服务 | &#x200B;1.  请求者ID </br> （路径组件）</br>2。  注册码</br> （路径组件） | DELETE | 无 | 204 |
 
 {style="table-layout:auto"}
 
@@ -59,4 +59,4 @@ ht-degree: 1%
 
 </br>
 
-### [返回REST API引用](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
+**[返回REST API引用](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)**
