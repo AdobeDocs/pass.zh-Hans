@@ -4,7 +4,7 @@ description: Amazon SSO指南(REST API V1)
 exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '613'
+source-wordcount: '629'
 ht-degree: 0%
 
 ---
@@ -89,13 +89,13 @@ Amazon SSO SDK提供同步和异步API来获取SSO令牌（平台身份）有效
   ```
 
   SSO令牌成功响应包将包含：
-   * 作为`string`的SSO令牌，带有密钥“SSOToken”。
+  * 作为`string`的SSO令牌，带有密钥“SSOToken”。
 
   <br/>
 
   SSO令牌失败响应包将包含：
-   * 带有键“ErrorCode”的`int`形式的错误代码。
-   * 带有键“ErrorDescription”的`string`的错误描述。
+  * 带有键“ErrorCode”的`int`形式的错误代码。
+  * 带有键“ErrorDescription”的`string`的错误描述。
 
   <br/>
 
@@ -136,10 +136,10 @@ Amazon SSO SDK提供同步和异步API来获取SSO令牌（平台身份）有效
 确保流应用程序正在处理：
 
 * 缺少应在Amazon设备上运行的Amazon配套应用程序。
-   * 流应用程序可能在运行时在以下类`ClassNotFoundException`上遇到`com.amazon.ottssotokenlib.SSOEnabler`。
+  * 流应用程序可能在运行时在以下类`com.amazon.ottssotokenlib.SSOEnabler`上遇到`ClassNotFoundException`。
 
 * 缺少应由上述API返回的SSO令牌（平台身份）有效负载。
-   * 流应用程序可以联系Amazon和Adobe代表进行调查。
+  * 流应用程序可以联系Amazon和Adobe代表进行调查。
 
 ### 工作流 {#workflow}
 

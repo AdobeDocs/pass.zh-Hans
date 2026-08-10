@@ -4,7 +4,7 @@ description: Amazon SSO指南(REST API V2)
 exl-id: 63e4fa63-8ca3-40eb-b49a-84dd75c2ca1d
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '587'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Adobe Pass身份验证REST API V2支持在FireOS上运行的客户端应用程序的最终用户的平台单点登录(SSO)。
 
-此文档用作现有[REST API V2概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)的扩展，该视图提供了高级视图以及描述如何使用平台标识流[实施](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)单点登录的文档。
+此文档用作现有[REST API V2概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)的扩展，该视图提供了高级视图以及描述如何使用平台标识流[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)实施单点登录的文档。
 
 ## 使用平台标识流的Amazon单点登录 {#cookbook}
 
@@ -87,13 +87,13 @@ Amazon SSO SDK提供同步和异步API来获取SSO令牌（平台身份）有效
   ```
 
   SSO令牌成功响应包将包含：
-   * 作为`string`的SSO令牌，带有密钥“SSOToken”。
+  * 作为`string`的SSO令牌，带有密钥“SSOToken”。
 
   <br/>
 
   SSO令牌失败响应包将包含：
-   * 带有键“ErrorCode”的`int`形式的错误代码。
-   * 带有键“ErrorDescription”的`string`的错误描述。
+  * 带有键“ErrorCode”的`int`形式的错误代码。
+  * 带有键“ErrorDescription”的`string`的错误描述。
 
   <br/>
 
@@ -134,10 +134,10 @@ Amazon SSO SDK提供同步和异步API来获取SSO令牌（平台身份）有效
 确保流应用程序正在处理：
 
 * 缺少应在Amazon设备上运行的Amazon配套应用程序。
-   * 流应用程序可能在运行时在以下类`ClassNotFoundException`上遇到`com.amazon.ottssotokenlib.SSOEnabler`。
+  * 流应用程序可能在运行时在以下类`com.amazon.ottssotokenlib.SSOEnabler`上遇到`ClassNotFoundException`。
 
 * 缺少应由上述API返回的SSO令牌（平台身份）有效负载。
-   * 流应用程序可以联系Amazon和Adobe代表进行调查。
+  * 流应用程序可以联系Amazon和Adobe代表进行调查。
 
 ### 工作流 {#workflow}
 
