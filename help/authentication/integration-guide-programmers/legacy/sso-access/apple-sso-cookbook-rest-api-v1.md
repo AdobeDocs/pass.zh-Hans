@@ -403,7 +403,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 > **<u>专业提示：</u>**&#x200B;请按照以下步骤实施tvOS。
 
 * 应用程序必须使用Adobe Pass身份验证服务中的&quot;*tokenSource&quot;* [user metadata](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)，确定是否由于通过合作伙伴SSO登录而发生了身份验证。
-* 如果&#x200B;*“tokenSource”*&#x200B;值等于“*Apple”，则应用程序必须指示/提示用户仅在tvOS **上**从&#x200B;*`Settings -> Accounts -> TV Provider`*显式注销。*
+* 如果&#x200B;*“tokenSource”*&#x200B;值等于“*Apple”，则应用程序必须指示/提示用户仅在tvOS **上**&#x200B;从&#x200B;*`Settings -> Accounts -> TV Provider`*显式注销。*
 * 应用程序必须使用直接HTTP调用从Adobe Pass身份验证服务[启动注销](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)。 这将无助于MVPD端的会话清理。
 
 >[!TIP]
