@@ -4,7 +4,7 @@ description: Adobe Pass Authentication 3.4.0发行说明
 exl-id: ad572617-f607-419d-a085-70c025465080
 source-git-commit: c9958a17ad9dfb518bab1d24087c85fdcb6fd057
 workflow-type: tm+mt
-source-wordcount: '185'
+source-wordcount: '190'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
 ### 内部版本号 {#build-number-340}
 
 Adobe Pass身份验证： adobe-pass-**3.4.0**
-发行日期： **09/16/2025 - 09/18/2025**
+发行日期： **2025年9月16日 — 2025年9月18日**
 
 ### 发行版概述 {#release-overview-340}
 

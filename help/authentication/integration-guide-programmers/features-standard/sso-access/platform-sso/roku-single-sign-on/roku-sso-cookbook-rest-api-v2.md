@@ -2,9 +2,9 @@
 title: Roku SSO指南(REST API V2)
 description: Roku SSO指南(REST API V2)
 exl-id: 77b154bc-c09f-49d4-b1af-cc33bc6dd22b
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '599'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Adobe Pass身份验证REST API V2支持在RokuOS上运行的客户端应用程序的最终用户的平台单点登录(SSO)。
 
-此文档用作现有[REST API V2概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)的扩展，该视图提供了高级视图以及描述如何使用平台标识流[实施](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)单点登录的文档。
+此文档用作现有[REST API V2概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)的扩展，该视图提供了高级视图以及描述如何使用平台标识流](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)实施[单点登录的文档。
 
 ## 使用平台标识流进行Roku单点登录 {#cookbook}
 

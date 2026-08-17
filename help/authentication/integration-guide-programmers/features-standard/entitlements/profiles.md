@@ -1,9 +1,9 @@
 ---
 title: 轮廓
 description: 轮廓
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '333'
+source-wordcount: '343'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,7 @@ ht-degree: 0%
 身份验证生存时间(TTL)定义用户在需要重新身份验证之前保持身份验证状态的时间。 此时间范围是有限的，必须与MVPD代表商定。 TTL值可能因以下原因而异：
 
 * 平台类别（例如，台式机、移动设备、电视连接设备）
-* 特定平台(例如iOS、Android、tvOS、Roku、FireTV)
+* 特定平台（例如iOS、Android、tvOS、Roku、FireTV）
 
 您的组织管理员或代表您行事的Adobe Pass身份验证代表可通过Adobe Pass [TVE仪表板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)查看和更改身份验证(authN) TTL。
 

@@ -2,9 +2,9 @@
 title: Adobe Pass Authentication JavaScript 4.4.0发行说明
 description: Adobe Pass Authentication JavaScript 4.4.0发行说明
 exl-id: 28cc0ccc-7a1d-45bd-8455-26cfde25c5c5
-source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '241'
+source-wordcount: '250'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ Adobe Pass身份验证： JavaScript 4.4.0
 
 * 在所有SDK调用中添加AP-SDK-Identifier标头，以便更好地识别SDK类型和版本。
 
-其他 
+其他
 
 * 内部架构改进。
 

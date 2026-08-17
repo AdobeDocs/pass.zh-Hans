@@ -2,9 +2,9 @@
 title: 程序员
 description: 了解TVE仪表板中的程序员及其配置。
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1144'
 ht-degree: 0%
 
 ---
@@ -118,7 +118,7 @@ TVE仪表板的&#x200B;**程序员**&#x200B;部分允许您查看和管理链接
 
 1. 在&#x200B;**删除证书**&#x200B;对话框中选择&#x200B;**删除**。
 
-已创建新的配置更改，可以随时更新服务器。 仅在&#x200B;**审阅和推送更改**&#x200B;后，证书才会从[可用证书](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)部分中删除。
+已创建新的配置更改，可以随时更新服务器。 仅在[审阅和推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)后，证书才会从&#x200B;**可用证书**&#x200B;部分中删除。
 
 ### 已注册的应用程序 {#registered-applications}
 

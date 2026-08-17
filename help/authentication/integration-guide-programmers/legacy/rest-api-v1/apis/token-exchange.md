@@ -4,8 +4,8 @@ description: 用Platform SSO令牌交换Adobe令牌
 exl-id: 5ab60268-8f97-4755-8281-be45e812ed7f
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '251'
-ht-degree: 0%
+source-wordcount: '258'
+ht-degree: 3%
 
 ---
 
@@ -41,9 +41,9 @@ ht-degree: 0%
 
 允许将平台SSO配置文件“交换”为Adobe令牌。
 
-| 端点 | </br>调用者 | 输入   </br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
+| 端点 | </br>调用者 | 输入</br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/tokens/authn | 流式处理应用程序</br></br>或</br></br>程序员服务 | 1.请求者（必需）</br>    </br>2。  deviceId （必需）</br>    </br>3。  mvpd （必需）</br>    </br>4。  deviceType （必需）</br>    </br>5。  SAMLResponse （必需）</br>    </br>6。  deviceUser（已弃用）</br>    </br>7。  appId（已弃用） | POST | 成功的响应将为“204无内容”，这表示已成功创建令牌并准备好用于授权流。 | 204 — 无内容   </br>400 — 错误请求 |
+| &lt;SP_FQDN>/api/v1/tokens/authn | 流式处理应用程序</br></br>或</br></br>程序员服务 | &#x200B;1.  请求者（必需）</br>    </br>2.  deviceId （必需）</br>    </br>3.  mvpd （必需）</br>    </br>4.  deviceType （必需）</br>    </br>5.  SAMLResponse （必需）</br>    </br>6.  deviceUser（已弃用）</br>    </br>7.  appId（已弃用） | POST | 成功的响应将为“204无内容”，这表示已成功创建令牌并准备好用于授权流。 | 204 — 无内容</br>400 — 错误请求 |
 
 
 | 输入参数 | 描述 |

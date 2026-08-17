@@ -36,9 +36,9 @@ Adobe Pass身份验证权利文件中的&#x200B;**注销流**&#x200B;允许流�
 在使用注销端点为特定MVPD启动注销之前，请确保满足以下先决条件：
 
 * 流应用程序必须具有已使用以下基本身份验证流之一为MVPD成功创建的有效的常规配置文件：
-   * [在主应用程序中执行身份验证](rest-api-v2-basic-authentication-primary-application-flow.md)
-   * [使用预选的mvpd在辅助应用程序中执行身份验证](rest-api-v2-basic-authentication-secondary-application-flow.md)
-   * [无需预选mvpd就可在辅助应用程序中执行身份验证](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [在主应用程序中执行身份验证](rest-api-v2-basic-authentication-primary-application-flow.md)
+  * [使用预选的mvpd在辅助应用程序中执行身份验证](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [无需预选mvpd就可在辅助应用程序中执行身份验证](rest-api-v2-basic-authentication-secondary-application-flow.md)
 * 当流应用程序需要注销MVPD时，它必须启动注销流程。
 
 >[!IMPORTANT]
@@ -61,7 +61,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**注销流**&#x200B;允许流�
 
    >[!IMPORTANT]
    >
-   > 有关以下内容的详细信息，请参阅特定mvpd [&#x200B; API的](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Initiate注销：
+   > 有关以下内容的详细信息，请参阅特定mvpd ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的[Initiate注销：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`redirectUrl`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`
@@ -78,7 +78,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**注销流**&#x200B;允许流�
 
    >[!IMPORTANT]
    >
-   > 有关注销响应中提供的信息的详细信息，请参阅特定mvpd [&#x200B; API的](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)启动注销。
+   > 有关注销响应中提供的信息的详细信息，请参阅特定mvpd ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的[启动注销。
    > 
    > <br/>
    > 
@@ -102,9 +102,9 @@ Adobe Pass身份验证权利文件中的&#x200B;**注销流**&#x200B;允许流�
 在没有注销端点的情况下为特定MVPD启动注销之前，请确保满足以下先决条件：
 
 * 流应用程序必须具有已使用以下基本身份验证流之一为MVPD成功创建的有效的常规配置文件：
-   * [在主应用程序中执行身份验证](rest-api-v2-basic-authentication-primary-application-flow.md)
-   * [使用预选的mvpd在辅助应用程序中执行身份验证](rest-api-v2-basic-authentication-secondary-application-flow.md)
-   * [无需预选mvpd就可在辅助应用程序中执行身份验证](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [在主应用程序中执行身份验证](rest-api-v2-basic-authentication-primary-application-flow.md)
+  * [使用预选的mvpd在辅助应用程序中执行身份验证](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [无需预选mvpd就可在辅助应用程序中执行身份验证](rest-api-v2-basic-authentication-secondary-application-flow.md)
 * 当流应用程序需要注销MVPD时，它必须启动注销流程。
 
 >[!IMPORTANT]
@@ -127,7 +127,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**注销流**&#x200B;允许流�
 
    >[!IMPORTANT]
    >
-   > 有关以下内容的详细信息，请参阅特定mvpd [&#x200B; API的](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Initiate注销：
+   > 有关以下内容的详细信息，请参阅特定mvpd ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的[Initiate注销：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`redirectUrl`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`
@@ -144,7 +144,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**注销流**&#x200B;允许流�
 
    >[!IMPORTANT]
    >
-   > 有关注销响应中提供的信息的详细信息，请参阅特定mvpd [&#x200B; API的](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)启动注销。
+   > 有关注销响应中提供的信息的详细信息，请参阅特定mvpd ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的[启动注销。
    > 
    > <br/>
    > 

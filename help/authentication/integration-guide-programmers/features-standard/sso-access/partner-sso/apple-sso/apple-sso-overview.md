@@ -2,9 +2,9 @@
 title: Apple SSO概述
 description: Apple SSO概述
 exl-id: 7cf47d01-a35a-4c85-b562-e5ebb6945693
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '1260'
+source-wordcount: '1311'
 ht-degree: 0%
 
 ---
@@ -23,8 +23,8 @@ Adobe Pass身份验证与Apple合作，为iPhone、iPad和Apple电视所有者�
 
 最终结果将创建一个与以下用户流程一致的体验，我们建议您在开始开发应用程序之前进行咨询：
 
-* 用于iPhone和iPad[设备的单点登录(SSO) &#x200B;](https://tve.zendesk.com/hc/article_attachments/205624966/User_flows_AppleSSO_iOS_v2.pdf)用户流程。
-* Apple TV[设备的单点登录(SSO) &#x200B;](https://tve.zendesk.com/hc/article_attachments/206669126/User_flows_tvOS.pdf)用户流。
+* 用于iPhone和iPad](https://tve.zendesk.com/hc/article_attachments/205624966/User_flows_AppleSSO_iOS_v2.pdf)设备的单点登录(SSO) [用户流程。
+* Apple TV](https://tve.zendesk.com/hc/article_attachments/206669126/User_flows_tvOS.pdf)设备的单点登录(SSO) [用户流。
 
 ## 先决条件 {#apple-sso-prerequisites}
 
@@ -36,28 +36,28 @@ Adobe Pass身份验证与Apple合作，为iPhone、iPad和Apple电视所有者�
 
 * 请联系Apple以将[视频订阅者帐户框架](https://developer.apple.com/documentation/videosubscriberaccount)作为Apple团队ID的一部分启用，并将[视频订阅者单点登录权利](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_video-subscriber-single-sign-on)作为Apple开发人员帐户的一部分配置。
 
-   * 使用Xcode版本8或更高版本，以及iOS/tvOS版本10或更高版本。
+  * 使用Xcode版本8或更高版本，以及iOS/tvOS版本10或更高版本。
 
-* 通过将[属性设置为](https://experience.adobe.com/#/pass/authentication)，通过`Enable Single Sign On`Adobe Pass TVE功能板`Yes`为每个所需的集成和平台(iOS/tvOS)启用单点登录(SSO)。
+* 通过将`Enable Single Sign On`属性设置为`Yes`，通过[Adobe Pass TVE功能板](https://experience.adobe.com/#/pass/authentication)为每个所需的集成和平台(iOS/tvOS)启用单点登录(SSO)。
 
 | Adobe启用单点登录 | Apple **已载入（支持）** MVPD | Apple **选取器** MVPD | Apple **未载入（不支持）** MVPD |
 |-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| 是（已启用） | 身份验证和注销流将同时涉及Apple和Adobe Pass身份验证解决方案，而所有其他流（授权、预授权、元数据等）将仅由Adobe Pass身份验证提供服务。 | 身份验证和注销流将回退到仅由Adobe Pass身份验证提供服务的常规流。 | 身份验证和注销流将回退到仅由Adobe Pass身份验证提供服务的常规流。 |
+| 是（已启用） | 身份验证和注销流将同时涉及Apple和Adobe Pass身份验证解决方案，而所有其他流（授权、预授权、元数据等） 将仅由Adobe Pass身份验证提供服务。 | 身份验证和注销流将回退到仅由Adobe Pass身份验证提供服务的常规流。 | 身份验证和注销流将回退到仅由Adobe Pass身份验证提供服务的常规流。 |
 | 否（已禁用） | 身份验证和注销流将回退到仅由Adobe Pass身份验证提供服务的常规流。 | 身份验证和注销流将回退到仅由Adobe Pass身份验证提供服务的常规流。 | 身份验证和注销流将回退到仅由Adobe Pass身份验证提供服务的常规流。 |
 
 * 使用Adobe Pass身份验证为iOS、iPadOS或tvOS上运行的客户端应用程序的最终用户提供的以下解决方案之一，集成单点登录(SSO)用户流。
 
-   * Adobe Pass身份验证REST API V2支持合作伙伴单点登录(SSO)。
+  * Adobe Pass身份验证REST API V2支持合作伙伴单点登录(SSO)。
 
-     请参阅[Apple SSO指南(REST API V2)](apple-sso-cookbook-rest-api-v2.md)文档。
+    请参阅[Apple SSO指南(REST API V2)](apple-sso-cookbook-rest-api-v2.md)文档。
 
-   * 旧版Adobe Pass身份验证REST API V1支持合作伙伴单点登录(SSO)。
+  * 旧版Adobe Pass身份验证REST API V1支持合作伙伴单点登录(SSO)。
 
-     请参阅[（旧版） Apple SSO指南(REST API V1)](../../../../legacy/sso-access/apple-sso-cookbook-rest-api-v1.md)文档。
+    请参阅[（旧版） Apple SSO指南(REST API V1)](../../../../legacy/sso-access/apple-sso-cookbook-rest-api-v1.md)文档。
 
-   * 旧版Adobe Pass Authentication AccessEnabler iOS/tvOS SDK支持合作伙伴单点登录(SSO)。
+  * 旧版Adobe Pass Authentication AccessEnabler iOS/tvOS SDK支持合作伙伴单点登录(SSO)。
 
-     请参阅[（旧版） Apple SSO指南(iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)文档。
+    请参阅[（旧版） Apple SSO指南(iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)文档。
 
 ### MVPD {#apple-sso-prerequisites-mvpd}
 
@@ -65,11 +65,11 @@ Adobe Pass身份验证与Apple合作，为iPhone、iPad和Apple电视所有者�
 
 * 联系Apple以在Apple一方启动载入流程。
 
-   * 请求获取有关如何集成和开发能够处理用户登录表单的JavaScript TVML应用程序的技术文档。
+  * 请求获取有关如何集成和开发能够处理用户登录表单的JavaScript TVML应用程序的技术文档。
 
 * 联系Adobe Pass身份验证以在Adobe一方启动载入流程。
 
-   * 提供表示Apple在新用户引导过程中分配的电视提供商标识符的字符串值。
+  * 提供表示Apple在新用户引导过程中分配的电视提供商标识符的字符串值。
 
 ## 常见问题解答 {#FAQ}
 
@@ -93,7 +93,7 @@ Adobe Pass身份验证与Apple合作，为iPhone、iPad和Apple电视所有者�
   当用户启动应用程序时，将无法通过Apple SSO工作流对用户进行身份验证。 因此，应用程序必须回退到常规身份验证流程，并显示自己的MVPD选取器。
 
 
-* 如果用户通过使用在&#x200B;*`Settings -> TV Provider`* NO *`Settings -> Accounts -> TV Provider`*&#x200B;上设置&#x200B;**启用单点登录**&#x200B;的MVPD(通过适用于iOS/tvOS平台的&#x200B;**Adobe Pass TVE功能板**)，转到iOS/iPadOS上的[或tvOS上的](https://experience.adobe.com/#/pass/authentication)分区进行登录，会出现什么情况？
+* 如果用户通过使用在&#x200B;**NO**&#x200B;上设置&#x200B;**启用单点登录**&#x200B;的MVPD（通过适用于iOS/tvOS平台的[Adobe Pass TVE功能板](https://experience.adobe.com/#/pass/authentication)），转到iOS/iPadOS上的&#x200B;*`Settings -> TV Provider`*&#x200B;或tvOS上的&#x200B;*`Settings -> Accounts -> TV Provider`*&#x200B;分区进行登录，会出现什么情况？
 
   当用户启动应用程序时，将无法通过Apple SSO工作流对用户进行身份验证。 因此，应用程序必须回退到常规身份验证流程，并显示自己的MVPD选取器。
 
@@ -124,5 +124,5 @@ Adobe Pass身份验证与Apple合作，为iPhone、iPad和Apple电视所有者�
 
 |                                      | Adobe Pass身份验证TTL已过期 | Adobe Pass身份验证TTL有效 |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| **Apple的设备令牌TTL已过期** | 用户未经过身份验证(应显示MVPD选取器) | 用户已完成身份验证，并且TTL是其Adobe Pass身份验证令牌/配置文件的剩余时间 |
+| **Apple的设备令牌TTL已过期** | 用户未经过身份验证（应显示MVPD选取器） | 用户已完成身份验证，并且TTL是其Adobe Pass身份验证令牌/配置文件的剩余时间 |
 | **Apple的设备令牌TTL有效** | 用户通过静默身份验证，并使用TVE仪表板中指定的TTL获取另一个Adobe Pass身份验证令牌/配置文件 | 用户已完成身份验证，并且TTL是其Adobe Pass身份验证令牌/配置文件的剩余时间 |

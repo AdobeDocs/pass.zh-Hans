@@ -2,9 +2,9 @@
 title: 基本身份验证 — 主要应用程序 — 流量
 description: REST API V2 — 基本身份验证 — 主应用程序 — 流程
 exl-id: 8122108d-e9da-43c5-9abb-ab177cb21eb6
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '903'
+source-wordcount: '904'
 ht-degree: 0%
 
 ---
