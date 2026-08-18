@@ -2,7 +2,7 @@
 title: 使用iOS Authentication Access Enabler时Adobe Pass上的SSO
 description: 使用iOS Authentication Access Enabler时Adobe Pass上的SSO
 exl-id: 882f0abb-2e6e-461d-a375-3ab410991935
-source-git-commit: 'null'
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '1216'
 ht-degree: 0%

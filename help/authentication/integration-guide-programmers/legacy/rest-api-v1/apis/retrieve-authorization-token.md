@@ -2,7 +2,7 @@
 title: 检索授权令牌
 description: 检索授权令牌
 exl-id: 0b010958-efa8-4dd9-b11b-5d10f51f5680
-source-git-commit: 'null'
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '375'
 ht-degree: 1%
@@ -56,7 +56,7 @@ ht-degree: 1%
 | deviceId | 设备ID字节。 |
 | 资源 | 一个字符串，它包含resourceId（或MRSS片段），可标识用户请求的内容并由MVPD授权端点识别。 |
 | 设备信息/</br></br>X — 设备信息 | 流式设备信息。</br></br>**注意**：这可能作为URL参数传递device_info，但由于此参数的潜在大小以及GET URL的长度限制，它应该作为X-Device-Info传递到http标头。 </br></br>在[传递设备和连接信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
-| _deviceType_ | 设备类型（例如，Roku、PC）。</br></br>如果正确设置了此参数，则ESM在使用无客户端程序时提供按设备类型[&#128279;](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)划分的指标，以便可以执行不同类型的分析，例如，Roku、AppleTV和Xbox。</br></br>请参阅，[在传递指标中使用无客户端程序设备类型参数的好处&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**：device_info将替换此参数。 |
+| _deviceType_ | 设备类型（例如，Roku、PC）。</br></br>如果正确设置了此参数，则ESM在使用无客户端程序时提供按设备类型](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)划分的[指标，以便可以执行不同类型的分析，例如，Roku、AppleTV和Xbox。</br></br>请参阅，[在传递指标中使用无客户端程序设备类型参数的好处&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**：device_info将替换此参数。 |
 | _设备用户_ | 设备用户标识符。 |
 | _appId_ | 应用程序id/名称。 </br></br>**注意**： device_info将替换此参数。 |
 

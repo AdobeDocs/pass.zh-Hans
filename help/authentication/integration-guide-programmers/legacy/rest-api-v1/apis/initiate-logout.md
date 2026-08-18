@@ -2,7 +2,7 @@
 title: 启动注销
 description: 启动注销
 exl-id: 9625b5a2-31d9-4e20-8703-4a9e4eeb1618
-source-git-commit: 'null'
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '344'
 ht-degree: 1%
@@ -52,7 +52,7 @@ ht-degree: 1%
 | 请求者 | 此操作有效的程序员requestorId。 |
 | deviceId | 设备ID字节。 |
 | 设备信息/</br></br>X — 设备信息 | 流式设备信息。</br></br>**注意**：这可能作为URL参数传递device_info，但由于此参数的潜在大小以及GET URL的长度限制，它应该作为X-Device-Info传递到http标头。 </br></br>在[传递设备和连接信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
-| _deviceType_ | 设备类型（如Roku、PC）。</br></br>如果正确设置了此参数，ESM会在使用无客户端程序时提供按设备类型[&#128279;](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)划分的指标，以便可以对Roku、AppleTV、Xbox等执行不同类型的分析。</br></br>查看[在传递量度中使用无客户端设备类型参数的好处&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**： device_info将替换此参数。 |
+| _deviceType_ | 设备类型（如Roku、PC）。</br></br>如果正确设置了此参数，ESM会在使用无客户端程序时提供按设备类型](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)划分的[指标，以便可以对Roku、AppleTV、Xbox等执行不同类型的分析。</br></br>查看[在传递量度中使用无客户端设备类型参数的好处&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**： device_info将替换此参数。 |
 | _设备用户_ | 设备用户标识符。</br></br>**注意**：如果使用，则deviceUser的值应该与[创建注册码](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)请求中的值相同。 |
 | _appId_ | 应用程序id/名称。 </br></br>**注意**： device_info将替换此参数。 如果使用，`appId`应具有与[创建注册码](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)请求中相同的值。 |
 

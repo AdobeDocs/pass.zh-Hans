@@ -2,7 +2,7 @@
 title: 基本身份验证 — 辅助应用程序 — 流程
 description: REST API V2 — 基本身份验证 — 辅助应用程序 — 流程
 exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
-source-git-commit: 'null'
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '2008'
 ht-degree: 0%
@@ -149,7 +149,7 @@ Adobe Pass身份验证权利中的&#x200B;**身份验证流程**&#x200B;允许�
 
    >[!IMPORTANT]
    >
-   > 有关以下内容的详细信息，请参阅用户代理[&#128279;](../../apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) API文档中的执行身份验证：
+   > 有关以下内容的详细信息，请参阅用户代理](../../apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) API文档中的[执行身份验证：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`和`code`
    > * 所有&#x200B;_可选_&#x200B;参数和标头

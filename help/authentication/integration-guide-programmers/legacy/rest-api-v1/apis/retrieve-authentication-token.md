@@ -2,7 +2,7 @@
 title: 检索身份验证令牌
 description: 检索身份验证令牌
 exl-id: 7fb03854-edad-41e7-b218-1858fc071876
-source-git-commit: 'null'
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
 source-wordcount: '306'
 ht-degree: 0%
