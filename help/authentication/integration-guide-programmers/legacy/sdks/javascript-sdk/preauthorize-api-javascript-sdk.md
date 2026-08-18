@@ -388,7 +388,7 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;status&quot;： 403，
     &quot;code&quot;： &quot;maximum_execution_time_exceeded&quot;，
     &quot;message&quot;： &quot;请求未在允许的最长时间内完成。 重试请求可能会解决此问题。”，
-    “helpUrl”：“https://experienceleague.adobe.com/docs/primetime/authentication/home.html”，
+    “helpUrl”：“https://experienceleague.adobe.com/docs/primetime/authentication/home.html?lang=zh-Hans”，
     “action”：“retry”
     &rbrace;
     &rbrace;
@@ -502,7 +502,7 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;status&quot;： 403，
     &quot;code&quot;： &quot;network_received_error&quot;，
     &quot;message&quot;： &quot;从关联的合作伙伴服务检索响应时出现读取错误。 重试请求可能会解决此问题。”，
-    “helpUrl”：“https://experienceleague.adobe.com/docs/primetime/authentication/home.html”，
+    “helpUrl”：“https://experienceleague.adobe.com/docs/primetime/authentication/home.html?lang=zh-Hans”，
     “action”：“retry”
     &rbrace;
     &rbrace;
