@@ -4,7 +4,7 @@ description: MVPD身份验证
 exl-id: 9ff4a46e-a37b-414c-a163-9e586252a9c3
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
-source-wordcount: '1851'
+source-wordcount: '1908'
 ht-degree: 0%
 
 ---
@@ -189,7 +189,7 @@ ht-degree: 0%
 | InResponseTo | SAML协议消息的ID，证明实体可以针对该ID提供声明。 该值必须等于在身份验证请求中发送的ID属性中的值。 请参阅SAML core 2.0-os |
 | 问题即时 | 发出请求的时间。 |
 | 版本 | 请求的版本。 |
-| saml:Issuer | 标识生成请求消息的实体。 (有关此元素的更多信息，请参阅第2.2.5部分。SAML core 2.0-os ) |
+| saml:Issuer | 标识生成请求消息的实体。 (有关此元素的更多信息，请参阅第2.2.5部分。 SAML core 2.0-os ) |
 | samlp:Status | 表示相应请求状态的代码。 |
 | samlp:StatusCode | 表示响应相应请求而执行的活动的状态的代码。 |
 | saml:Assertion | 此类型指定所有断言通用的基本信息。 |

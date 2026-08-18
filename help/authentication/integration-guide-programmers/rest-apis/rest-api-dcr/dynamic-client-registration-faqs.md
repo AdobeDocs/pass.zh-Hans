@@ -4,8 +4,8 @@ description: 动态客户端注册(DCR)常见问题解答
 exl-id: 12268163-632e-4884-b35d-a29cc8ef45bf
 source-git-commit: 747c3d9b6de537be5e7e0a0244b2b301603d9b18
 workflow-type: tm+mt
-source-wordcount: '1135'
-ht-degree: 0%
+source-wordcount: '1147'
+ht-degree: 1%
 
 ---
 
@@ -31,7 +31,7 @@ ht-degree: 0%
 
 +++REST API V2访问常见问题解答
 
-#### 1.登记阶段的目的是什么？ {#rest-api-v2-access-faq1}
+#### &#x200B;1. 注册阶段的目的是什么？ {#rest-api-v2-access-faq1}
 
 注册阶段的目的是通过[动态客户端注册(DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#dcr)进程针对Adobe Pass身份验证注册客户端应用程序。
 
@@ -39,11 +39,11 @@ ht-degree: 0%
 
 有关详细信息，请参阅[动态客户端注册概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)文档。
 
-#### 2.登记阶段是否为强制性的？ {#rest-api-v2-access-faq2}
+#### &#x200B;2. 注册阶段是否为必填项？ {#rest-api-v2-access-faq2}
 
 注册阶段是强制性的，但如果客户端应用程序具有缓存的客户端凭据对和仍然有效的访问令牌，则该客户端应用程序可以跳过此阶段。
 
-#### 3.什么是软件声明，它的有效期是多久？ {#rest-api-v2-access-faq3}
+#### &#x200B;3. 什么是软件语句，它的有效时间是多久？ {#rest-api-v2-access-faq3}
 
 软件语句是[术语表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#software-statement)文档中定义的术语。
 
@@ -55,19 +55,19 @@ ht-degree: 0%
 
 有关更多详细信息，请参阅[动态客户端注册概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)文档。
 
-#### 4.如何生成和下载软件声明？ {#rest-api-v2-access-faq4}
+#### &#x200B;4. 如何生成和下载软件声明？ {#rest-api-v2-access-faq4}
 
 此操作可以由您的组织管理员或代表您行事的Adobe Pass身份验证代表通过Adobe Pass [TVE仪表板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)完成。
 
 有关更多详细信息，请参阅[TVE仪表板渠道用户指南](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#registered-applications)或[TVE仪表板程序员用户指南](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#registered-applications)文档。
 
-#### 5.如果软件声明被撤销，会发生什么情况？ {#rest-api-v2-access-faq5}
+#### &#x200B;5. 如果软件声明被撤销，会发生什么情况？ {#rest-api-v2-access-faq5}
 
 撤销软件语句时，需要考虑以下重要后果：
 
 * 使用已撤销的软件声明的客户端应用程序将无法再通过[权利](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#entitlement)流程，这意味着用户将被阻止播放内容。
 
-#### 6.什么是客户端凭据以及这些凭据的有效期？ {#rest-api-v2-access-faq6}
+#### &#x200B;6. 什么是客户端凭据以及它们的有效时间长短？ {#rest-api-v2-access-faq6}
 
 客户端凭据是[词汇表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#client-credentials)文档中定义的术语。
 
@@ -79,15 +79,15 @@ ht-degree: 0%
 
 有关详细信息，请参阅[检索客户端凭据](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)文档。
 
-#### 7.如何管理客户端凭证？ {#rest-api-v2-access-faq7}
+#### &#x200B;7. 如何管理客户端凭据？ {#rest-api-v2-access-faq7}
 
 对于与Adobe Pass身份验证的客户端到服务器和服务器到服务器集成，我们建议客户端应用程序为每个用户应用程序实例管理一对唯一的客户端凭据。
 
-#### 8.客户端应用程序是否应在永久存储中缓存客户端凭据？ {#rest-api-v2-access-faq8}
+#### &#x200B;8. 客户端应用程序是否应在永久存储中缓存客户端凭据？ {#rest-api-v2-access-faq8}
 
 客户端应用程序必须存储客户端凭据，并在需要检索访问令牌时无限期使用这些凭据。
 
-#### 9.如果缓存的客户端凭据丢失，会发生什么情况？ {#rest-api-v2-access-faq9}
+#### &#x200B;9. 如果缓存的客户端凭据丢失，会发生什么情况？ {#rest-api-v2-access-faq9}
 
 当缓存的客户端凭据丢失时，需要考虑三个重要后果：
 
@@ -95,7 +95,7 @@ ht-degree: 0%
 * 客户端应用程序必须使用新客户端凭据对获取新的访问令牌。
 * 客户端应用程序将需要请求用户重新进行身份验证，因为客户端应用程序将失去对之前获取的已验证配置文件的访问权限。
 
-#### 10.访问令牌是什么以及它有效多长时间？ {#rest-api-v2-access-faq10}
+#### &#x200B;10. 什么是访问令牌？该令牌的有效时间是多久？ {#rest-api-v2-access-faq10}
 
 访问令牌是[术语表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#access-token)文档中定义的术语。
 
@@ -109,11 +109,11 @@ ht-degree: 0%
 
 有关详细信息，请参阅[检索访问令牌](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)文档。
 
-#### 11.客户端应用程序是否应将访问令牌缓存到永久存储中？ {#rest-api-v2-access-faq11}
+#### &#x200B;11. 客户端应用程序是否应将访问令牌缓存到永久存储中？ {#rest-api-v2-access-faq11}
 
 客户端应用程序必须存储和使用访问令牌，直到它过期，然后丢弃它并获取一个新的访问令牌。
 
-#### 12.客户端应用程序如何刷新访问令牌？ {#rest-api-v2-access-faq12}
+#### &#x200B;12. 客户端应用程序如何刷新访问令牌？ {#rest-api-v2-access-faq12}
 
 客户端应用程序刷新访问令牌的方式必须与检索新访问令牌的方式相同，但会使用缓存的客户端凭据。
 
@@ -135,7 +135,7 @@ ht-degree: 0%
 
 +++REST API V2迁移常见问题解答
 
-#### 1.客户端应用程序能否重新使用现有的已注册应用程序（软件语句）？ {#rest-api-v2-migration-faq1}
+#### &#x200B;1. 客户端应用程序是否可以重复使用现有的已注册应用程序（软件语句）？ {#rest-api-v2-migration-faq1}
 
 客户端应用程序不能重复使用现有的已注册应用程序（软件语句），因此必须生成并下载专用于使用REST API V2的新已注册应用程序（软件语句）。
 
@@ -147,7 +147,7 @@ ht-degree: 0%
 
 为了区分使用REST API V2的客户端应用程序中使用的已注册应用程序（软件语句），我们要求您在已注册应用程序名称中添加特定的后缀，例如“RESTV2”。
 
-#### 2.客户端应用程序能否重复使用现有的自定义方案？ {#rest-api-v2-migration-faq2}
+#### &#x200B;2. 客户端应用程序可以重复使用现有的自定义方案吗？ {#rest-api-v2-migration-faq2}
 
 客户端应用程序可以重复使用通过Adobe Pass [TVE仪表板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)生成的现有自定义方案。
 

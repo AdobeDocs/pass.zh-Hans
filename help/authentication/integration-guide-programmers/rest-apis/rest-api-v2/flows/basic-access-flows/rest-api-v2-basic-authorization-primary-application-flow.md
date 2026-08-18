@@ -30,9 +30,9 @@ Adobe Pass身份验证权利中的&#x200B;**授权流**&#x200B;允许流式应�
 在使用特定MVPD检索授权决策之前，请确保满足以下先决条件：
 
 * 流应用程序必须具有已使用以下基本身份验证流之一为MVPD成功创建的有效的常规配置文件：
-   * [在主应用程序中执行身份验证](rest-api-v2-basic-authentication-primary-application-flow.md)
-   * [使用预选的mvpd在辅助应用程序中执行身份验证](rest-api-v2-basic-authentication-secondary-application-flow.md)
-   * [无需预选mvpd就可在辅助应用程序中执行身份验证](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [在主应用程序中执行身份验证](rest-api-v2-basic-authentication-primary-application-flow.md)
+  * [使用预选的mvpd在辅助应用程序中执行身份验证](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [无需预选mvpd就可在辅助应用程序中执行身份验证](rest-api-v2-basic-authentication-secondary-application-flow.md)
 * 流应用程序必须先检索授权决策，然后才能播放用户选择的资源。
 
 ### 工作流 {#workflow-retrieve-authorization-decisions-using-specific-mvpd}
@@ -47,7 +47,7 @@ Adobe Pass身份验证权利中的&#x200B;**授权流**&#x200B;允许流式应�
 
    >[!IMPORTANT]
    >
-   > 有关以下各项的详细信息，请参阅使用特定mvpd[&#x200B; API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策：
+   > 有关以下各项的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`和`AP-Device-Identifier`
@@ -61,7 +61,7 @@ Adobe Pass身份验证权利中的&#x200B;**授权流**&#x200B;允许流式应�
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#x200B; API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策。
    > 
    > <br/>
    > 
@@ -80,7 +80,7 @@ Adobe Pass身份验证权利中的&#x200B;**授权流**&#x200B;允许流式应�
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#x200B; API检索](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策。
    > 
    > <br/>
    > 

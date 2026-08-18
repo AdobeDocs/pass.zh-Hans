@@ -4,7 +4,7 @@ description: 使用iOS Authentication Access Enabler时Adobe Pass上的SSO
 exl-id: 882f0abb-2e6e-461d-a375-3ab410991935
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1144'
+source-wordcount: '1216'
 ht-degree: 0%
 
 ---
@@ -32,14 +32,14 @@ ht-degree: 0%
 iOS上的SSO受以下条件限制：
 
 - 应用必须使用相同的&#x200B;**令牌存储**（采用Access Enabler创建的自定义粘贴板的形式）。
-- 应用必须生成相同的&#x200B;**设备ID** (Access Enabler根据MAC地址或IDFV计算设备ID，具体取决于操作系统版本)。
+- 应用必须生成相同的&#x200B;**设备ID** （Access Enabler根据MAC地址或IDFV计算设备ID，具体取决于操作系统版本）。
 
 ## 行为
 
 SSO行为如下所示：
 
-- **iOS 6及更低版本**： SSO在同一团队或其他团队开发的应用之间自动工作。 设备ID根据MAC地址进行计算（相同的值在所有应用程序中产生），并且存储区域对所有应用程序都是通用的(自定义粘贴板可在iOS 6及更低版本上的各个应用程序之间共享)。
-   - **重要信息：**&#x200B;请注意，iOS SDK 1.9.4版本已[将最低iOS部署目标增加到iOS 7。](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
+- **iOS 6及更低版本**： SSO在同一团队或其他团队开发的应用之间自动工作。 设备ID根据MAC地址进行计算（相同的值在所有应用程序中产生），并且存储区域对所有应用程序都是通用的（自定义粘贴板可在iOS 6及更低版本上的各个应用程序之间共享）。
+  - **重要信息：**&#x200B;请注意，iOS SDK 1.9.4版本已[将最低iOS部署目标增加到iOS 7。](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
 - **iOS 7及更高版本**： SSO将在以下条件下工作：
 
 1. 使用相同的Apple分发配置文件或属于同一团队的配置文件发布应用程序。 这是应用程序在iOS 7和更高版本上共享自定义粘贴板的唯一方法。 在所有其他情况下，粘贴板是按应用程序沙箱的。 来自&#x200B;[*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html)： \+\[`UIPasteboard pasteboardWithName:create:\`]和+\[`UIPasteboard pasteboardWithUniqueName`\]的给定名称现在是唯一的，仅允许同一应用程序组中的这些应用程序访问粘贴板。 如果开发人员尝试使用已存在的名称创建粘贴板，并且这些名称不属于同一应用程序包，则将获取他们自己的独特专用粘贴板。 请注意，这不会影响系统提供的粘贴板、“常规”和“查找”。

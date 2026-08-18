@@ -4,7 +4,7 @@ description: JavaScript预授权
 exl-id: b7493ca6-1862-4cea-a11e-a634c935c86e
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1488'
+source-wordcount: '1527'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 应用程序使用预授权API方法获取一个或多个资源的预授权决策。 应使用Preauthorize API请求进行UI提示和/或内容筛选。 在允许用户访问指定的资源之前，必须发出实际的授权API请求。
 
-如果Adobe Pass身份验证服务处理预授权API请求时发生了意外错误(例如，网络问题和MVPD授权端点不可用)，则作为预授权API响应结果的一部分，将为受影响的资源包含一个或多个单独的错误信息。
+如果Adobe Pass身份验证服务处理预授权API请求时发生了意外错误（例如，网络问题和MVPD授权端点不可用），则作为预授权API响应结果的一部分，将为受影响的资源包含一个或多个单独的错误信息。
 
 ### public preauthorize(request： PreauthorizeRequest， callback： AccessEnablerCallback&lt;any>)： void {#preauth-method}
 
@@ -143,14 +143,14 @@ public func build() -> PreauthorizeRequest
 #### 公共行动：字符串； {#public-action-string}
 
 * 建议采取的补救措施。
-   * **无**：很遗憾，没有预定义操作可修复此问题。 这可能表明对公共API的调用不正确
-   * **配置**：需要通过TVE仪表板或联系支持部门更改配置。
-   * **application-registration**：应用程序必须重新注册自身。
-   * **身份验证**：用户必须验证或重新验证。
-   * **授权**：用户必须获得特定资源的授权。
-   * **降级**：应该应用某种形式的降级。
-   * **重试**：重试请求可能会解决此问题
-   * **&#x200B;**&#x200B;后重试：在指定的时间段后重试请求可能会解决此问题。
+  * **无**：很遗憾，没有预定义操作可修复此问题。 这可能表明对公共API的调用不正确
+  * **配置**：需要通过TVE仪表板或联系支持部门更改配置。
+  * **application-registration**：应用程序必须重新注册自身。
+  * **身份验证**：用户必须验证或重新验证。
+  * **授权**：用户必须获得特定资源的授权。
+  * **降级**：应该应用某种形式的降级。
+  * **重试**：重试请求可能会解决此问题
+  * **&#x200B;**&#x200B;后重试：在指定的时间段后重试请求可能会解决此问题。
 * 可能包含空字符串或`null`值。
 
 ### 类别决策 {#class-decision}

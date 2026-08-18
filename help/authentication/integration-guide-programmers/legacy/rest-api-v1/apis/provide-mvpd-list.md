@@ -4,7 +4,7 @@ description: 提供MVPD列表
 exl-id: db2d8f19-d0b9-4195-bf0b-f9de0d96062b
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '254'
+source-wordcount: '262'
 ht-degree: 2%
 
 ---
@@ -41,9 +41,9 @@ ht-degree: 2%
 
 返回请求者的已配置MVPD列表。
 
-| 端点 | </br>调用者 | 输入   </br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
+| 端点 | </br>调用者 | 输入</br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>例如：</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Adobe Pass 身份验证 | 1.请求者</br>    （路径组件）</br>_2。  deviceType（已弃用）_ | GET | 包含MVPD列表的XML或JSON。 | 200 |
+| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>例如：</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Adobe Pass 身份验证 | &#x200B;1.  请求者</br> （路径组件）</br>_2。  deviceType（已弃用）_ | GET | 包含MVPD列表的XML或JSON。 | 200 |
 
 {style="table-layout:auto"}
 

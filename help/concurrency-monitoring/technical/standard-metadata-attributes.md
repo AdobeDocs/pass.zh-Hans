@@ -4,7 +4,7 @@ description: 标准元数据属性
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
 source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
-source-wordcount: '1053'
+source-wordcount: '1295'
 ht-degree: 0%
 
 ---
@@ -54,8 +54,8 @@ ht-degree: 0%
 | 应用程序 | 应用程序名称 | 字符串 | 应用程序的“用户友好”或用户可读的名称 | 不适用 | Sample_Application |                                                                                   |
 |                 | applicationId | 字符串 | 唯一标识客户端应用程序的应用程序ID。 | 不适用 | de305d54-75b4-431b-adb2-eb6b9e546013 |                                                                                   |
 |                 | applicationplatform | 字符串 | 应用程序的本机平台 | 不适用 | ios、android |                                                                                   |
-|                 | applicationversion | 字符串 | 此值可用于分析目的 | 不适用 | 1.0、2.0 |                                                                                   |
-| 主题 | accountId | 字符串 | 并发监控主体的帐户ID(在MVPD范围内) | 不适用 | test-account |                                                                                   |
+|                 | applicationversion | 字符串 | 此值可用于分析目的 | 不适用 | 1.0, 2.0 |                                                                                   |
+| 主题 | accountId | 字符串 | 并发监控主体的帐户ID（在MVPD范围内） | 不适用 | test-account |                                                                                   |
 |                 | contracttype | 字符串 | 高级，基本。 客户可以将其添加为自定义元数据，并在其自己的领域中使用它 | 不适用 | 高级，基本 |                                                                                   |
 | 用户 | name | 字符串 | 某些MVPD提供与播放内容的特定用户相关的信息。 | 不适用 |                                                                                                                                                         |                                                                                   |
 |                 | hba | 布尔型 | 标识用户是否尝试从其家乡启动流 | 不适用 | true， false | true或false |
@@ -71,13 +71,13 @@ ht-degree: 0%
 
 标准元数据字段可用于根据其字段值定义服务器端策略：
 
-* 您可以将策略配置为仅应用于特定字段值(例如，专用iOS策略：其中`osType`为`iOS`)
+* 您可以将策略配置为仅应用于特定字段值（例如，专用iOS策略：其中`osType`为`iOS`）
 * 您可以限制给定字段的不同值的数量。 以下是一些示例：
-   * 不多于X个不同的设备： `HAVING DISTINCT COUNT(deviceId) <= 2`
-   * 不多于X个不同的邮政编码： `HAVING DISTINCT COUNT(zipcode) <= 3`
+  * 不多于X个不同的设备： `HAVING DISTINCT COUNT(deviceId) <= 2`
+  * 不多于X个不同的邮政编码： `HAVING DISTINCT COUNT(zipcode) <= 3`
 * 您可以限制每个字段值的活动流数量。 以下是一些示例：
-   * 单个设备类型不超过X个活动流： `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
-   * 实时内容流的活动流不超过X个： `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
+  * 单个设备类型不超过X个活动流： `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
+  * 实时内容流的活动流不超过X个： `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
 
 通过[在Zendesk](mailto:tve-support@adobe.com)中创建票证联系并发监控团队，并指示要实施的策略。
 

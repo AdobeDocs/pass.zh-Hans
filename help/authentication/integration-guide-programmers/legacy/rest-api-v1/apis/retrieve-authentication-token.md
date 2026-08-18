@@ -4,7 +4,7 @@ description: 检索身份验证令牌
 exl-id: 7fb03854-edad-41e7-b218-1858fc071876
 source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
-source-wordcount: '297'
+source-wordcount: '306'
 ht-degree: 0%
 
 ---
@@ -41,9 +41,9 @@ ht-degree: 0%
 
 检索身份验证(AuthN)标记。
 
-| 端点 | </br>调用者 | 输入   </br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
+| 端点 | </br>调用者 | 输入</br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/tokens/authn</br></br>例如：</br></br>&lt;SP_FQDN>/api/v1/tokens/authn | 流式处理应用程序</br></br>或</br></br>程序员服务 | 1.请求者（必需）</br>2。  deviceId （必需）</br>3。  device_info/X-Device-Info （必需）</br>4。  _deviceType_ （已弃用）</br>5。  _deviceUser_ （已弃用）</br>6。  _appId_（已弃用） | GET | XML或JSON，其中包含身份验证信息或错误详细信息（如果未成功）。 | 200 — 成功。  </br>404 — 未找到令牌</br>410 — 令牌已过期 |
+| &lt;SP_FQDN>/api/v1/tokens/authn</br></br>例如：</br></br>&lt;SP_FQDN>/api/v1/tokens/authn | 流式处理应用程序</br></br>或</br></br>程序员服务 | &#x200B;1.  请求者（必需）</br>2。  deviceId （必需）</br>3。  device_info/X-Device-Info （必需）</br>4。  _deviceType_ （已弃用）</br>5。  _deviceUser_ （已弃用）</br>6。  _appId_（已弃用） | GET | XML或JSON，其中包含身份验证信息或错误详细信息（如果未成功）。 | 200 — 成功。 </br>404 — 未找到令牌</br>410 — 令牌已过期 |
 
 {style="table-layout:auto"}
 
@@ -52,9 +52,9 @@ ht-degree: 0%
 | --- | --- |
 | 请求者 | 此操作有效的程序员requestorId。 |
 | deviceId | 设备ID字节。 |
-| 设备信息/</br></br>X — 设备信息 | 流设备信息。</br></br>**注意**：可以将此device_info作为URL参数传递，但由于此参数的潜在大小以及GET URL的长度限制，它应作为X-Device-Info传递到http标头。 </br></br>在[传递设备和连接信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
+| 设备信息/</br></br>X — 设备信息 | 流式设备信息。</br></br>**注意**：这可能作为URL参数传递device_info，但由于此参数的潜在大小以及GET URL的长度限制，它应该作为X-Device-Info传递到http标头。 </br></br>在[传递设备和连接信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中查看完整的详细信息。 |
 | _deviceType_ | 设备类型（例如，Roku、PC）。</br></br>**注意**： device_info将替换此参数。 |
-| _设备用户_ | 设备用户标识符。</br></br>**注意**：如果使用，则deviceUser的值应与[创建注册码](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)请求中的值相同。 |
+| _设备用户_ | 设备用户标识符。</br></br>**注意**：如果使用，则deviceUser的值应该与[创建注册码](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)请求中的值相同。 |
 | _appId_ | 应用程序id/名称。 </br></br>**注意**： device_info将替换此参数。 如果使用，`appId`应具有与[创建注册码](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)请求中相同的值。 |
 
 {style="table-layout:auto"}

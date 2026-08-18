@@ -4,7 +4,7 @@ description: 了解Adobe Pass身份验证中使用的限制机制。 在此页�
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
 source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1141'
+source-wordcount: '1162'
 ht-degree: 0%
 
 ---
@@ -65,11 +65,11 @@ Pass Authentication引入了Throttling机制，以确保在客户的用户之间
 - /api/v1/mediatoken
 - /api/v1/authenticate/freepreview
 - /api/v1/authenticate/
-- /api/v1/。+/profile-requests/.+
+- /api/v1/.+/profile-requests/.+
 - /api/v1/identities
 - /adobe-services/config/
-- /reggie/v1/。+/regcode
-- /reggie/v1/。+/regcode/.+
+- /reggie/v1/.+/regcode
+- /reggie/v1/.+/regcode/.+
 
 ### SDK实施消除混淆
 

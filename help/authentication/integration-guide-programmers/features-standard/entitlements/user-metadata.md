@@ -4,7 +4,7 @@ description: 用户元数据
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
 source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '1902'
+source-wordcount: '1936'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 > 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-用户元数据是指由MVPD维护并通过Adobe Pass身份验证[REST API V2](#attributes)提供给程序员的用户特定的[属性](#apis)（例如邮政编码、家长评级、用户ID等）。
+用户元数据是指特定于用户的[属性](#attributes)（例如，邮政编码、家长分级、用户ID等） 通过Adobe Pass身份验证[REST API V2](#apis)由MVPD维护并提供给程序员的服务。
 
 在身份验证流程完成后，用户元数据将变为可用，但在授权流程期间，某些元数据属性可能会更新，具体取决于MVPD和有问题的特定元数据属性。
 
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 当MVPD以不同格式提供数据时，Adobe Pass身份验证会标准化用户元数据值。 此外，对于某些属性（例如，邮政编码），可以使用程序员的证书[加密](#encryption)。
 
-Adobe Pass身份验证使程序员能够查看在其MVPD集成中提供的用户元数据，并[通过](#management)Adobe Pass TVE仪表板[管理这些元数据](https://experience.adobe.com/#/pass/authentication)。
+Adobe Pass身份验证使程序员能够查看在其MVPD集成中提供的用户元数据，并[&#128279;](#management)通过[Adobe Pass TVE仪表板](https://experience.adobe.com/#/pass/authentication)管理这些元数据。
 
 ## 用户元数据属性 {#attributes}
 
@@ -34,13 +34,13 @@ Adobe Pass身份验证使程序员能够查看在其MVPD集成中提供的用户
 | `userID` | 字符串 | “1o7241p” | 否 | 帐户标识符。 | 属性值可以是家庭标识符或子帐户标识符。 如果MVPD支持子帐户并且当前用户不是主帐户所有者，则`userID`值将与`householdID`值不同。 |
 | `upstreamUserID` | 字符串 | “1o7241p” | 否 | 用于并发监控的帐户标识符。 | 属性值可用于在MVPD和程序员网站及应用程序中强制实施并发限制。 对于大多数MVPD，`upstreamUserID`值与`userID`值相同。 |
 | `householdID` | 字符串 | “1o7241p” | 否 | 用于家长控制的帐户标识符。 | 属性值可用于区分家庭和子帐户使用情况。 有时，如果无法提供真实评级，则将其用作家长控制的替代项；如果用户使用家庭帐户登录，则可以观看分级内容，否则，不会显示分级内容。 在MVPD中，此值表示方式存在很大差异（例如，家庭用户ID、户主ID、家庭负责人标志等），如果MVPD不支持子帐户，则它将与`userID`相同。 |
-| `primaryOID` | 字符串 | “uuidd1e19ec9-012c-124f-b520-acaf118d16a0” | 否 | 帐户标识符。 | 该属性特定于AT&amp;T。当`primaryOID`值设置为“Primary”时，`userID`值与`typeID`值相同。 |
-| `typeID` | 字符串 | &quot;Primary&quot; | 否 | 指示当前用户是主帐户持有人还是辅助帐户持有人的属性。 | 该属性特定于AT&amp;T。当`primaryOID`值设置为“Primary”时，`userID`值与`typeID`值相同。 |
+| `primaryOID` | 字符串 | “uuidd1e19ec9-012c-124f-b520-acaf118d16a0” | 否 | 帐户标识符。 | 该属性特定于AT&amp;T。当`typeID`值设置为“Primary”时，`primaryOID`值与`userID`值相同。 |
+| `typeID` | 字符串 | &quot;Primary&quot; | 否 | 指示当前用户是主帐户持有人还是辅助帐户持有人的属性。 | 该属性特定于AT&amp;T。当`typeID`值设置为“Primary”时，`primaryOID`值与`userID`值相同。 |
 | `is_hoh` | 字符串 | &quot;1&quot; | 否 | 指示当前用户是否为户主的属性。 | 该属性特定于Synacor。 |
 | `hba_status` | 布尔型 | &quot;true&quot; | 否 | 指示当前用户是否通过HBA进行身份验证的属性。 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `allowMirroring` | 布尔型 | &quot;true&quot; | 否 | 指示当前设备是否可以镜像屏幕的属性。 | 该属性特定于频谱。 |
-| `zip` | 数组 | \[&quot;77754&quot;， &quot;12345&quot;\] | 是 | 用户的邮政编码。 | 属性值可用于投放本地化的新闻、天气更新或体育赛事。 `zip`值表示需要与MVPD签订法律协议的敏感数据。 加密后，`zip`密钥的表示形式将为`String`，而不是`Array`。 |
-| `encryptedZip` | 字符串 | “” | 是 | 用户的加密邮政编码。 | 该属性专用于Comcast。 |
+| `zip` | 数组 | \[&quot;77754&quot;, &quot;12345&quot;\] | 是 | 用户的邮政编码。 | 属性值可用于投放本地化的新闻、天气更新或体育赛事。 `zip`值表示需要与MVPD签订法律协议的敏感数据。 加密后，`zip`密钥的表示形式将为`String`，而不是`Array`。 |
+| `encryptedZip` | 字符串 | &quot;&quot; | 是 | 用户的加密邮政编码。 | 该属性专用于Comcast。 |
 | `channelID` | 数组 | \[&quot;channel-1&quot;， &quot;channel-2&quot;\] | 否 | 用户有权查看的渠道列表。 | 属性值可用于从聚合多个网络的门户过滤各种渠道。 我们建议使用[预授权API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)而不是此用户元数据属性来过滤掉用户不可用的渠道。 |
 | `maxRating` | 对象 | { MPAA： &quot;NR&quot;， VCHIP： &quot;X&quot;， URL： &quot;http://manage.my/parental&quot; } | 否 | 当前用户的最大家长分级。 | 属性值可用于根据“MPAA”或“VCHIP”等级筛选不适合于当前用户的内容。 |
 | `language` | 字符串 | &quot;English&quot; | 否 | 语言设置。 | 属性值可用于根据用户的语言偏好显示消息。 |
@@ -68,7 +68,7 @@ Adobe Pass身份验证使程序员能够查看在其MVPD集成中提供的用户
 | RCN | **是** | **是** | **是** | **是（仅限AuthN）** | **否** | **否** | **否** | **否** | **否** | **是（仅限AuthN）** | **否** | **是（仅限AuthN）** | **否** | **否** | **否** |                                                                                                                                           |
 | 东链 | **否** | **是** | **是** | **是（仅限AuthN）** | **否** | **否** | **否** | **否** | **否** | **是（仅限AuthN）** | **是** | **是（仅限AuthN）** | **否** | **否** | **否** |                                                                                                                                           |
 | Cogeco | **否** | **是** | **是** | **是（仅限AuthN）** | **否** | **否** | **否** | **否** | **否** | **是（仅限AuthN）** | **否** | **否** | **否** | **否** | **否** |                                                                                                                                           |
-| Videotron | **否** | **是** | **是** | **是*** | **否** | **否** | **否** | **否** | **否** | **是（仅限AuthN）** | **否** | **否** | **否** | **否** | **否** | 它公开与`householdID`具有相同值的`userID`。 |
+| Videotron | **否** | **是** | **是** | **是*** | **否** | **否** | **否** | **否** | **否** | **是（仅限AuthN）** | **否** | **否** | **否** | **否** | **否** | 它公开与`userID`具有相同值的`householdID`。 |
 | 代理马西隆 | **是** | **是** | **是** | **是（仅限AuthN）** | **否** | **否** | **否** | **否** | **否** | **是（仅限AuthN）** | **否** | **否** | **否** | **否** | **否** | 签署了法律协议。 |
 | 代理Clearleap | **是** | **是** | **是** | **否** | **否** | **否** | **否** | **否** | **否** | **是（仅限AuthN）** | **否** | **是（仅限AuthZ）** | **是** | **否** | **否** | 签署了法律协议。 |
 | 代理GLDS | **否** | **是** | **是** | **否** | **否** | **否** | **否** | **否** | **否** | **是（仅限AuthN）** | **否** | **否** | **否** | **否** | **否** |                                                                                                                                           |
@@ -80,7 +80,7 @@ Adobe Pass身份验证使程序员能够查看在其MVPD集成中提供的用户
 
 ## 用户元数据加密 {#encryption}
 
-若要加密和解密用户元数据属性，程序员需要生成证书（公钥/私钥对）并[通过](#management)Adobe Pass TVE仪表板[自行配置](https://experience.adobe.com/#/pass/authentication)证书或与Adobe Pass身份验证代表共享公钥。
+若要加密和解密用户元数据属性，程序员需要生成证书（公钥/私钥对）并[&#128279;](#management)通过[Adobe Pass TVE仪表板](https://experience.adobe.com/#/pass/authentication)自行配置证书或与Adobe Pass身份验证代表共享公钥。
 
 请按照以下步骤操作，以确保正确生成并配置证书：
 
@@ -142,7 +142,7 @@ Adobe Pass身份验证使程序员能够查看在其MVPD集成中提供的用户
      openssl x509 -in mycompany-license-temp.pem -inform PEM -out mycompany-license.pem -outform PEM
      ```
 
-1. 使用PEM文件通过[Adobe Pass TVE仪表板](#management)配置[证书或将PEM文件发送到Adobe Pass身份验证代表。](https://experience.adobe.com/#/pass/authentication)
+1. 使用PEM文件通过[Adobe Pass TVE仪表板](https://experience.adobe.com/#/pass/authentication)配置[&#128279;](#management)证书或将PEM文件发送到Adobe Pass身份验证代表。
 
    * 有关如何通过[Adobe Pass TVE仪表板](https://experience.adobe.com/#/pass/authentication)管理证书的更多详细信息，请参阅下一节。
 
