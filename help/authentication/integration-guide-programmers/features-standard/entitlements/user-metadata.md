@@ -23,7 +23,7 @@ ht-degree: 0%
 
 当MVPD以不同格式提供数据时，Adobe Pass身份验证会标准化用户元数据值。 此外，对于某些属性（例如，邮政编码），可以使用程序员的证书[加密](#encryption)。
 
-Adobe Pass身份验证使程序员能够查看在其MVPD集成中提供的用户元数据，并[通过[Adobe Pass TVE仪表板](https://experience.adobe.com/#/pass/authentication)管理这些元数据](#management)。
+Adobe Pass身份验证使程序员能够查看在其MVPD集成中提供的用户元数据，并[&#128279;](#management)通过[Adobe Pass TVE仪表板](https://experience.adobe.com/#/pass/authentication)管理这些元数据。
 
 ## 用户元数据属性 {#attributes}
 
@@ -80,7 +80,7 @@ Adobe Pass身份验证使程序员能够查看在其MVPD集成中提供的用户
 
 ## 用户元数据加密 {#encryption}
 
-若要加密和解密用户元数据属性，程序员需要生成证书（公钥/私钥对）并[通过[Adobe Pass TVE仪表板](https://experience.adobe.com/#/pass/authentication)自行配置](#management)证书或与Adobe Pass身份验证代表共享公钥。
+若要加密和解密用户元数据属性，程序员需要生成证书（公钥/私钥对）并[&#128279;](#management)通过[Adobe Pass TVE仪表板](https://experience.adobe.com/#/pass/authentication)自行配置证书或与Adobe Pass身份验证代表共享公钥。
 
 请按照以下步骤操作，以确保正确生成并配置证书：
 
@@ -142,7 +142,7 @@ Adobe Pass身份验证使程序员能够查看在其MVPD集成中提供的用户
      openssl x509 -in mycompany-license-temp.pem -inform PEM -out mycompany-license.pem -outform PEM
      ```
 
-1. 使用PEM文件通过[Adobe Pass TVE仪表板](https://experience.adobe.com/#/pass/authentication)配置](#management)证书或将PEM文件发送到Adobe Pass身份验证代表。[
+1. 使用PEM文件通过[Adobe Pass TVE仪表板](https://experience.adobe.com/#/pass/authentication)配置[&#128279;](#management)证书或将PEM文件发送到Adobe Pass身份验证代表。
 
    * 有关如何通过[Adobe Pass TVE仪表板](https://experience.adobe.com/#/pass/authentication)管理证书的更多详细信息，请参阅下一节。
 

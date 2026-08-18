@@ -99,7 +99,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**配置文件流**&#x200B;允�
 
    >[!IMPORTANT]
    >
-   > 有关以下内容的详细信息，请参阅特定mvpd ](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API的[检索配置文件：
+   > 有关以下内容的详细信息，请参阅特定mvpd [&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API的检索配置文件：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`和`mvpd`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`
@@ -111,7 +111,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**配置文件流**&#x200B;允�
 
    >[!IMPORTANT]
    >
-   > 有关配置文件响应中提供的信息的详细信息，请参阅特定mvpd ](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API的[检索配置文件。
+   > 有关配置文件响应中提供的信息的详细信息，请参阅特定mvpd [&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API的检索配置文件。
    > 
    > <br/>
    > 
