@@ -2,9 +2,9 @@
 title: 预授权
 description: JavaScript预授权
 exl-id: b7493ca6-1862-4cea-a11e-a634c935c86e
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 7208b16831e1c6c4cbb37bf925a798d931ab8ea3
 workflow-type: tm+mt
-source-wordcount: '1527'
+source-wordcount: '1149'
 ht-degree: 0%
 
 ---
@@ -150,7 +150,7 @@ public func build() -> PreauthorizeRequest
   * **授权**：用户必须获得特定资源的授权。
   * **降级**：应该应用某种形式的降级。
   * **重试**：重试请求可能会解决此问题
-  * **&#x200B;**&#x200B;后重试：在指定的时间段后重试请求可能会解决此问题。
+  * ****&#x200B;后重试：在指定的时间段后重试请求可能会解决此问题。
 * 可能包含空字符串或`null`值。
 
 ### 类别决策 {#class-decision}
@@ -253,26 +253,25 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已禁用</td>
     <td>
 
-    &grave;&grave;JavaScript
-    
-    &lbrace;
-    `decisions`： &lbrack;
-    &lbrace;
-    `id`： &quot;RES01&quot;，
-    &grave;authorized&quot;： true
-    &rbrace;，
-    &lbrace;
-    `id`： &quot;RES02&quot;，
-    &grave;authorized&quot;： false
-    &rbrace;，
-    &lbrace;
-    `id`： &quot;RES03&quot;，
-    &grave;authorized&quot;： true
-    &rbrace;
-    &rbrack;
-    &rbrace;
-    
-    &grave;
+```JavaScript
+        {
+    "decisions": [
+        {
+        "id": "RES01",
+        "authorized": true
+        },
+        {
+        "id": "RES02",
+        "authorized": false
+        },
+        {
+        "id": "RES03",
+        "authorized": true
+        }
+    ]
+    }
+       
+```
 
 </td>
   </tr>
@@ -281,32 +280,32 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已启用</td>
     <td>
 
-    &grave;&grave;JavaScript
-    &lbrace;
-    `decisions`： &lbrack;
-    &lbrace;
-    `id`： &quot;RES01&quot;，
-    &grave;authorized&quot;： true
-    &rbrace;，
-    &lbrace;
-    `id`： &quot;RES02&quot;，
-    &grave;authorized&quot;： false，
-    &grave;error&quot;： &lbrace;
-    &grave;status&quot;： 403，
-    &grave;code&quot;： &quot;preauthorization_denied_by_mvpd&quot;，
-    &grave;message&quot;： &quot;MVPD在请求预授权时返回了\&quot;拒绝决定指定的资源。”，
-    “helpUrl”： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
-    &quot;action&quot;： &quot;none&quot;
-    &rbrace;
-    &rbrace;，
-    &lbrace;
-    &quot;id&quot;： &quot;RES03&quot;，
-    &quot;authorized&quot;： true
-    &rbrace;，
-    &rbrack;
-    &rbrace;
+```JavaScript
+    {
+      "decisions": [
+        {
+        "id": "RES01",
+        "authorized": true
+        },
+        {
+        "id": "RES02",
+        "authorized": false,
+        "error": {
+            "status": 403,
+            "code": "preauthorization_denied_by_mvpd",
+            "message": "The MVPD has returned a \"Deny\" decision when requesting pre-authorization for the specified resource.",
+            "helpUrl": "https://experienceleague.adobe.com/docs/primetime/authentication/home.html",
+            "action": "none"
+        }
+        },
+        {
+        "id": "RES03",
+        "authorized": true
+        },
+    ]
+    }
     
-    &quot;&#39;
+```
 
 </td>
   </tr>
@@ -327,26 +326,25 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已禁用</td>
     <td>
 
-    &grave;&grave;JavaScript
-    
-    &lbrace;
-    `decisions`： &lbrack;
-    &lbrace;
-    `id`： &quot;RES01&quot;，
-    &grave;authorized&quot;： false
-    &rbrace;，
-    &lbrace;
-    `id`： &quot;RES02&quot;，
-    &grave;authorized&quot;： false
-    &rbrace;，
-    &lbrace;
-    `id`： &quot;RES03&quot;，
-    &grave;authorized&quot;： false
-    &rbrace;
-    &rbrack;
-    &rbrace;
-    
-    &grave;
+```JavaScript
+        {
+    "decisions": [
+        {
+        "id": "RES01",
+        "authorized": false
+        },
+        {
+        "id": "RES02",
+        "authorized": false
+        },
+        {
+        "id": "RES03",
+        "authorized": false
+        }
+    ]
+    }
+       
+```
 
 </td>
   </tr>
@@ -355,47 +353,46 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已启用</td>
     <td>
 
-    &grave;&grave;JavaScript
+```JavaScript
+    {
+    "decisions": [
+        {
+        "id": "RES01",
+        "authorized": false,
+        "error": {
+            "status": 403,
+            "code": "preauthorization_denied_by_mvpd",
+            "message": "The MVPD has returned a \"Deny\" decision when requesting pre-authorization for the specified resource.",
+            "helpUrl": "https://experienceleague.adobe.com/docs/primetime/authentication/home.html",
+            "action": "none"
+            }
+        },
+        {
+            "id": "RES02",
+            "authorized": false,
+            "error": {
+                "status": 403,
+                "code": "preauthorization_denied_by_mvpd",
+                "message": "The MVPD has returned a \"Deny\" decision when requesting pre-authorization for the specified resource.",
+                "helpUrl": "https://experienceleague.adobe.com/docs/primetime/authentication/home.html",
+                "action": "none"
+            }
+        },
+        {
+        "id": "RES03",
+        "authorized": false,
+        "error": {
+            "status": 403,
+            "code": "maximum_execution_time_exceeded",
+            "message": "The request did not complete in the maximum allowed time. Retrying the request might solve the issue.",
+            "helpUrl": "https://experienceleague.adobe.com/docs/primetime/authentication/home.html",
+            "action": "retry"
+                }
+            }
+        ]
+    }
     
-    &lbrace;
-    `decisions`： &lbrack;
-    &lbrace;
-    `id`： &quot;RES01&quot;，
-    &grave;authorized&quot;： false，
-    &grave;error&quot;： &lbrace;
-    &grave;status&quot;： 403，
-    &grave;code&quot;： &quot;preauthorization_denied_by_mvpd&quot;，
-    &grave;message&quot;： &quot;MVPD在请求对指定资源的预授权时返回了\&quot;Deny\&quot;决定。&quot;，
-    `helpUrl`： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
-    &grave;action&quot;： &quot;none&quot;
-    &rbrace;
-    &rbrace;，
-    &lbrace;
-    &quot;id&quot;： &quot;RES02&quot;，
-    &quot;authorized&quot;： false，
-    &quot;error&quot;： &lbrace;
-    &quot;status&quot;： 403，
-    &quot;code&quot;： &quot;preauthorization_denied_by_mvpd&quot;，
-    &quot;message&quot;： &quot;MVPD在请求指定资源的预授权时返回了\&quot;Deny\&quot;决定。&quot;，
-    &quot;helpUrl&quot;： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
-    &quot;action&quot;： &quot;none&quot;
-    &rbrace;
-    &rbrace;，
-    &lbrace;
-    &quot;id&quot;： &quot;RES03&quot;，
-    &quot;authorized&quot;： false，
-    &quot;error&quot;： &lbrace;
-    &quot;status&quot;： 403，
-    &quot;code&quot;： &quot;maximum_execution_time_exceeded&quot;，
-    &quot;message&quot;： &quot;请求未在允许的最长时间内完成。 重试请求可能会解决此问题。”，
-    “helpUrl”：“https://experienceleague.adobe.com/docs/primetime/authentication/home.html?lang=zh-Hans”，
-    “action”：“retry”
-    &rbrace;
-    &rbrace;
-    &rbrack;
-    
-    
-    ”&#39;
+```
 
 </td>
   </tr>
@@ -416,19 +413,19 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已禁用/已启用</td>
     <td>
 
-    &quot;&#39;JavaScript
-    &lbrace;
-    &quot;状态&quot;： &lbrace;
-    &quot;状态&quot;： 400，
-    &quot;代码&quot;： &quot;internal_error&quot;，
-    &quot;message&quot;： &quot;由于内部错误，请求失败。&quot;，
-    &quot;details&quot;： &quot;Required String[]参数&quot;resource&quot;不存在&quot;，
-    &quot;helpUrl&quot;： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
-    &quot;action&quot;： &quot;none&quot;
-    &rbrace;，
-    &quot;decisions&quot;： []
-    &rbrace;
-    &quot;
+```JavaScript
+    {
+    "status": {
+    "status": 400,
+    "code": "internal_error",
+    "message": "The request failed due to an internal error.",
+    "details": "Required String[] parameter 'resource' is not present",
+    "helpUrl": "https://experienceleague.adobe.com/docs/primetime/authentication/home.html",
+    "action": "none"
+    },
+    "decisions": []
+    }
+```
 
 </td>
   </tr>
@@ -449,18 +446,18 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已禁用/已启用</td>
     <td>
 
-    &grave;&grave;JavaScript
-    &lbrace;
-    &grave;状态&quot;： &lbrace;
-    &grave;状态&quot;： 412，
-    &grave;代码&quot;： &quot;missing_resource&quot;，
-    &grave;message&quot;： &quot;缺少资源参数&quot;，
-    &grave;helpUrl&quot;： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
-    &grave;action&quot;： &quot;none&quot;
-    &rbrace;，
-    &grave;decisions&quot;： []
-    &rbrace;
-    &grave;&grave;&#39;
+```JavaScript
+    {
+    "status": {
+    "status": 412,
+    "code": "missing_resource",
+    "message": "The resource parameter is missing",
+    "helpUrl": "https://experienceleague.adobe.com/docs/primetime/authentication/home.html",
+    "action": "none"
+    },
+    "decisions": []
+    }
+```
 
 </td>
   </tr>
@@ -481,34 +478,34 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已启用</td>
     <td>
 
-    &grave;&grave;JavaScript
-    &lbrace;
-    `decisions`： &lbrack;
-    &lbrace;
-    `id`： &quot;RES01&quot;，
-    &grave;authorized&quot;： false，
-    &grave;error&quot;： &lbrace;
-    &grave;status&quot;： 403，
-    &grave;code&quot;： &quot;network_received_error&quot;，
-    &grave;message&quot;： &quot;从关联的合作伙伴服务检索响应时出现读取错误。 重试请求可能会解决此问题。&quot;，
-    &quot;helpUrl&quot;： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
-    &quot;action&quot;： &quot;retry&quot;
-    &rbrace;
-    &rbrace;，
-    &lbrace;
-    &quot;id&quot;： &quot;RES02&quot;，
-    &quot;authorized&quot;： false，
-    &quot;error&quot;： &lbrace;
-    &quot;status&quot;： 403，
-    &quot;code&quot;： &quot;network_received_error&quot;，
-    &quot;message&quot;： &quot;从关联的合作伙伴服务检索响应时出现读取错误。 重试请求可能会解决此问题。”，
-    “helpUrl”：“https://experienceleague.adobe.com/docs/primetime/authentication/home.html?lang=zh-Hans”，
-    “action”：“retry”
-    &rbrace;
-    &rbrace;
-    &rbrack;
-    
-    ”&#39;
+```JavaScript
+    {
+    "decisions": [
+        {
+        "id": "RES01",
+        "authorized": false,
+        "error": {
+            "status": 403,
+            "code": "network_received_error",
+            "message": "There was a read error while retrieving the response from the associated partner service. Retrying the request might solve the issue.",
+            "helpUrl": "https://experienceleague.adobe.com/docs/primetime/authentication/home.html",
+            "action": "retry"
+            }
+        },
+        {
+            "id": "RES02",
+            "authorized": false,
+            "error": {
+                "status": 403,
+                "code": "network_received_error",
+                "message": "There was a read error while retrieving the response from the associated partner service. Retrying the request might solve the issue.",
+                "helpUrl": "https://experienceleague.adobe.com/docs/primetime/authentication/home.html",
+                "action": "retry"
+                }   
+        }
+    ]
+    }
+```
 
 </td>
   </tr>
@@ -529,18 +526,17 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已禁用/已启用</td>
     <td>
 
-    &grave;&grave;JavaScript
-    &lbrace;
-    &grave;状态&quot;： &lbrace;
-    &grave;状态&quot;： 0，
-    &grave;代码&quot;： &quot;authentication_session_missing&quot;，
-    &grave;message&quot;： &quot;无法检索与此请求关联的身份验证会话。 用户必须使用支持的MVPD重新进行身份验证才能继续。&quot;，
-    &quot;action&quot;： &quot;authentication&quot;
-    &rbrace;，
-    &quot;decisions&quot;： []
-    &rbrace;
-    
-    &quot;&#39;
+```JavaScript
+    {
+    "status": {
+    "status": 0,
+    "code": "authentication_session_missing",
+    "message": "The authentication session associated with this request could not be retrieved. The user must re-authenticate with a supported MVPD in order to continue.",
+    "action": "authentication"
+    },
+    "decisions": []
+    }
+```
 
 </td>
   </tr>
@@ -563,17 +559,17 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已禁用/已启用</td>
     <td>
 
-    &quot;&#39;JavaScript
-    &lbrace;
-    &quot;状态&quot;： &lbrace;
-    &quot;状态&quot;： 0，
-    &quot;代码&quot;： &quot;requestor_not_configured&quot;，
-    &quot;消息&quot;： &quot;尚未配置请求者，这是使用除setRequestor API之外的任何API的先决条件。&quot;，
-    &quot;操作&quot;： &quot;retry&quot;
-    &rbrace;，
-    &quot;decisions&quot;： []
-    &rbrace;
-    &quot;&#39;
+```JavaScript
+    {
+    "status": {
+    "status": 0,
+    "code": "requestor_not_configured",
+    "message": "The requestor is not yet configured which is a prerequisite for using any API apart from the setRequestor API.",
+    "action": "retry"
+    },
+    "decisions": []
+    }
+```
 
 </td>
   </tr>
