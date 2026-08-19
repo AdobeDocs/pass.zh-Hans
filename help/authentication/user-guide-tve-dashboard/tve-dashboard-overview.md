@@ -4,7 +4,7 @@ description: 了解TVE功能板和资源。
 exl-id: 91baeb34-a32a-4dc3-94d8-f6cfca59dc4e
 source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '305'
+source-wordcount: '314'
 ht-degree: 0%
 
 ---
@@ -22,8 +22,8 @@ ht-degree: 0%
 * **属性配置**：为每个集成配置多个属性，以实施针对特定平台需求自定义的粒度业务规则。
 
 * **报告生成**：访问和导出有关跨MVPD的配置设置的详细报告。 这些报告包括：
-   * 平台类别，如&#x200B;*台式机、移动设备和电视连接设备*
-   * 平台如&#x200B;*iOS、Android™、tvOS、Roku和FireTV*
+  * 平台类别，如&#x200B;*台式机、移动设备和电视连接设备*
+  * 平台如&#x200B;*iOS、Android™、tvOS、Roku和FireTV*
 
   这些报告提供对MVPD和平台级别的单点登录(SSO)支持和订阅者身份验证或授权会话持续时间的分析。
 
