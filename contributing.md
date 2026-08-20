@@ -1,8 +1,8 @@
 ---
 source-git-commit: e1fcfc03f1084e9159a73ad4e18b864d796bff3c
 workflow-type: tm+mt
-source-wordcount: '281'
-ht-degree: 3%
+source-wordcount: '300'
+ht-degree: 0%
 
 ---
 # 投稿
@@ -13,13 +13,13 @@ ht-degree: 3%
 
 ## 行为准则
 
-此项目遵循 Adobe [行为准则](code-of-conduct.md)。通过参与，
+此项目遵守Adobe [行为准则](code-of-conduct.md)。 通过参与，
 您应遵守本准则。 请将不可接受的行为报告给
 [Grp-opensourceoffice@adobe.com](mailto:Grp-opensourceoffice@adobe.com)。
 
 ## 参与者指南文档
 
-请参阅[参与者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=zh-Hans)。
+请参阅[参与者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html)。
 
 ## 有疑问吗？
 
@@ -38,7 +38,7 @@ ht-degree: 3%
 ## 代码审阅
 
 所有提交都应采用拉取请求的形式，并且需要审核
-由项目提交者创建。 阅读[GitHub的拉取请求文档](https://help.github.com/cn/articles/about-pull-requests/)
+由项目提交者创建。 阅读[GitHub的拉取请求文档](https://help.github.com/articles/about-pull-requests/)
 以了解有关发送拉取请求的更多信息。
 
 <!--
