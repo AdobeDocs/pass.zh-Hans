@@ -1,14 +1,12 @@
 ---
 title: 开始使用并发监视
 description: 了解并发监控的基础知识以及如何开始使用集成
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: d2b8c7c4-b02d-4bea-9310-162064fd7216
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '372'
 ht-degree: 0%
-
 ---
-
-
 # 开始使用并发监视 {#getting-started-overview}
 
 欢迎使用并发监控！ 本指南将帮助您了解基础知识，并让您的集成快速启动和运行。
@@ -80,7 +78,7 @@ ht-degree: 0%
 2. 您要与并发监视集成的&#x200B;**应用程序**。 对于每个应用程序，请提供：
    1. 应用程序名称
    2. 应用程序平台
-3. **集成合作伙伴**(如果您是应另一方、程序员或MVPD的要求订阅并发监视)
+3. **集成合作伙伴**（如果您是应另一方、程序员或MVPD的要求订阅并发监视）
 
 
 ## 需要帮助？ {#need-help}
