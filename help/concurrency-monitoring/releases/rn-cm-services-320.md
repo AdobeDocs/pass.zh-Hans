@@ -1,14 +1,12 @@
 ---
 title: 并发监控3.2.0发行说明
 description: 并发监控3.2.0发行说明
-exl-id: 6f803884-3c6c-4554-b382-7f1391690cb3
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: a50aa34f-6b88-4859-94f9-9aeb7caf7d7f
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '54'
+source-wordcount: '52'
 ht-degree: 3%
-
 ---
-
 # 并发监控3.2.0发行说明 {#cm-320-rn}
 
 本页介绍了此版本的新增功能、更改和已知问题。
