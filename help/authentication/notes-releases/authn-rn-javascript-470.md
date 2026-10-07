@@ -4,11 +4,9 @@ description: Adobe Pass Authentication JavaScript 4.7.0发行说明
 exl-id: 07f90270-e64a-4c6b-a072-183af0f53352
 source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '116'
+source-wordcount: '136'
 ht-degree: 0%
-
 ---
-
 # Adobe Pass Authentication JavaScript 4.7.0发行说明 {#javascript-sdk-470-rn}
 
 >[!IMPORTANT]
@@ -27,11 +25,11 @@ Adobe Pass身份验证： JavaScript 4.7.0
 
 * 由于安全漏洞，删除了Access Enabler JavaScript SDK版本2.0.1。
   <br/><br/>
-以下URL不再受支持，将返回HTTP 410状态代码：
-   * https://entitlement.auth.adobe.com/entitlement/AccessEnabler.js
-   * http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js
-   * https://entitlement.auth.adobe.com/entitlement/AccessEnablerDebug.js
-   * http://entitlement.auth.adobe.com/entitlement/AccessEnablerDebug.js
+  以下URL不再受支持，将返回HTTP 410状态代码：
+  * https://entitlement.auth.adobe.com/entitlement/AccessEnabler.js
+  * http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js
+  * https://entitlement.auth.adobe.com/entitlement/AccessEnablerDebug.js
+  * http://entitlement.auth.adobe.com/entitlement/AccessEnablerDebug.js
 
 ## 发行包 {#release-package-470}
 
