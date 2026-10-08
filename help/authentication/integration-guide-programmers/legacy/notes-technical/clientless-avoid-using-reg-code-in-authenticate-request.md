@@ -2,13 +2,14 @@
 title: 避免在/authenticate请求中使用'&'reg_code
 description: 避免在/authenticate请求中使用'&'reg_code
 exl-id: c0ecb6f9-2167-498c-8a2d-a692425b31c5
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '246'
+source-wordcount: '252'
 ht-degree: 0%
-
 ---
-
 # （旧版）避免在/authenticate请求中使用&#39;&amp;&#39;reg_code {#clientless-avoid-using-reg_code-in-authenticate-request}
 
 >[!NOTE]
@@ -61,6 +62,6 @@ IE 9浏览器将“\&amp;reg”解释为特殊命令并将其转换为®。
 
    这样，`&reg`参数将不会被错误解释。
 
-1. 使用`&reg_code`标准化`&amp;reg_code`。
+1. 使用`&amp;reg_code`标准化`&reg_code`。
 
 1. 如果AuthN令牌创建失败，Adobe可能会引入新功能，以便在响应身份验证调用时将错误代码发送回第2屏幕。

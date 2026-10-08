@@ -2,13 +2,14 @@
 title: REST API指南（服务器到服务器）
 description: Rest API指南服务器到服务器。
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1891'
 ht-degree: 1%
-
 ---
-
 # （旧版）REST API指南（服务器到服务器） {#rest-api-cookbook-server-to-server}
 
 >[!NOTE]
@@ -119,7 +120,8 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
 
 ### \[Optional\]元数据
 
-元数据可用于检索由MVPD共享的用户信息。例如，用户ID、邮政编码等。
+元数据可用于检索由MVPD共享的用户信息。
+例如，用户ID、邮政编码等。
 
 1. 用户通过身份验证后，程序员服务可能会调用Adobe Pass **usermetadata** API来请求有关已验证用户的信息。
 
@@ -170,7 +172,7 @@ Adobe Pass服务运行于分布在美国各地的多个数据中心上。  为�
     
     
     
-    需要在&#x200B;**regcode**&#x200B;和**authorize**&#x200B;调用中添加标头
+    需要在**regcode**和**authorize**调用中添加标头
     
     示例：
     

@@ -2,13 +2,14 @@
 title: 基本注销 — 主要应用程序 — 流程
 description: REST API V2 — 基本注销 — 主应用程序 — 流程
 exl-id: 21dbff4a-0d69-4f81-b04f-e99d743c35b3
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
-
 ---
-
 # 在主应用程序中执行的基本注销流程 {#basic-logout-flow-performed-within-primary-application}
 
 >[!IMPORTANT]
@@ -61,7 +62,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**注销流**&#x200B;允许流�
 
    >[!IMPORTANT]
    >
-   > 有关以下内容的详细信息，请参阅特定mvpd [&#128279;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的Initiate注销：
+   > 有关以下内容的详细信息，请参阅特定mvpd ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的[Initiate注销：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`redirectUrl`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`
@@ -78,7 +79,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**注销流**&#x200B;允许流�
 
    >[!IMPORTANT]
    >
-   > 有关注销响应中提供的信息的详细信息，请参阅特定mvpd [&#128279;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的启动注销。
+   > 有关注销响应中提供的信息的详细信息，请参阅特定mvpd ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的[启动注销。
    > 
    > <br/>
    > 
@@ -127,7 +128,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**注销流**&#x200B;允许流�
 
    >[!IMPORTANT]
    >
-   > 有关以下内容的详细信息，请参阅特定mvpd [&#128279;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的Initiate注销：
+   > 有关以下内容的详细信息，请参阅特定mvpd ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的[Initiate注销：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`redirectUrl`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`、`AP-Device-Identifier`
@@ -144,7 +145,7 @@ Adobe Pass身份验证权利文件中的&#x200B;**注销流**&#x200B;允许流�
 
    >[!IMPORTANT]
    >
-   > 有关注销响应中提供的信息的详细信息，请参阅特定mvpd [&#128279;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的启动注销。
+   > 有关注销响应中提供的信息的详细信息，请参阅特定mvpd ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的[启动注销。
    > 
    > <br/>
    > 

@@ -2,13 +2,14 @@
 title: 单点登录 — 服务令牌 — 流程
 description: REST API V2 — 单点登录 — 服务令牌 — 流程
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1899'
 ht-degree: 0%
-
 ---
-
 # 使用服务令牌流进行单点登录{#single-sign-on-service-token-full-flows}
 
 >[!IMPORTANT]
@@ -244,7 +245,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 有关以下各项的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策：
+   > 有关以下各项的详细信息，请参阅使用特定mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索[授权决策：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`和`AP-Device-Identifier`
@@ -266,7 +267,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索[授权决策。
    > 
    > <br/>
    > 
@@ -285,7 +286,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索[授权决策。
    > 
    > <br/>
    > 
@@ -302,4 +303,4 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> 预授权流的步骤与授权流的步骤相同，不同之处在于，使用的终结点是使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)文档的Retrieve preauthorization决策中描述的终结点。
+> 预授权流的步骤与授权流的步骤相同，不同之处在于，使用的终结点是使用特定mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)文档的[Retrieve preauthorization决策中描述的终结点。

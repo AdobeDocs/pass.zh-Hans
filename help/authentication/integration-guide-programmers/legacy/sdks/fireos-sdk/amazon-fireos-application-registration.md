@@ -2,13 +2,14 @@
 title: Amazon FireOS应用程序注册
 description: Amazon FireOS应用程序注册
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '538'
+source-wordcount: '541'
 ht-degree: 0%
-
 ---
-
 # （旧版）Amazon FireOS应用程序注册 {#amazon-fireos-application-registration}
 
 >[!NOTE]
@@ -45,7 +46,7 @@ ht-degree: 0%
 
 1. 单击&#x200B;**[!UICONTROL Add new application]**。
 
-1. 提供应用程序的名称和版本，并选择可在其中使用该应用程序的平台(例如Android)。
+1. 提供应用程序的名称和版本，并选择可在其中使用该应用程序的平台（例如Android）。
 
 1. 通过从已为程序员配置的域列表中进行选择，提供&#x200B;**[!UICONTROL Domain Name]**。
 

@@ -2,13 +2,14 @@
 title: 术语表
 description: 并发监控中的术语表
 exl-id: 3b3b36fe-9f04-4de9-bd84-9f8d766bbc71
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '762'
+source-wordcount: '766'
 ht-degree: 0%
-
 ---
-
 # 术语表 {#glossary}
 
 ## 帐户 ID {#accid-defn}
@@ -66,8 +67,8 @@ ht-degree: 0%
 ## 策略信息点(PIP) {#policy-info-pt-defn}
 
 * 属性值的来源。 并发监控通过提供以下功能充当信息点：
-   * 直通流元数据。
-   * 有关并发流的活动量度。
+  * 直通流元数据。
+  * 有关并发流的活动量度。
 
 ## 程序员 {#programmer-defn}
 
@@ -94,7 +95,7 @@ ht-degree: 0%
 
 ## 主题 {#subj-defn}
 
-* 互联网上（视频）内容的消费者。 我们正在刻意避免使用术语&#x200B;_&#x200B;**用户**&#x200B;_，因为并发监视通常处理MVPD帐户ID（这涉及多个实际用户共享同一合同，例如家庭成员）。
+* 互联网上（视频）内容的消费者。 我们正在刻意避免使用术语&#x200B;_**用户**_，因为并发监视通常处理MVPD帐户ID（这涉及多个实际用户共享同一合同，例如家庭成员）。
 
 * 对于每个流，可以使用与使用该服务的实际人员、他们的网络连接设备等相关的属性来增强主题。
 
@@ -104,7 +105,7 @@ ht-degree: 0%
 * 通过并发监控服务，使用上述服务的客户端应用程序可以阻止观看内容。
 * 在最佳情况下，用户不会注意到存在并发监控服务
 
-## Target {#target-defn}
+## 目标 {#target-defn}
 
 * 将返回规则是否适用于给定流的流谓词。 CM中的隐式目标是引用相关策略的应用程序所创建的任何流。 此外，可以添加属性值条件，以便在应用规则之前优化活动筛选。
 

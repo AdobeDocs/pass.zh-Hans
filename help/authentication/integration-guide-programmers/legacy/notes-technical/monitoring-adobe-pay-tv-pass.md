@@ -2,13 +2,14 @@
 title: 监控Adobe Pass身份验证
 description: 监控Adobe Pass身份验证
 exl-id: fb000e9d-b5aa-45b1-a914-9e419ec8a4d9
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '211'
+source-wordcount: '213'
 ht-degree: 0%
-
 ---
-
 # （旧版）监控Adobe Pass身份验证 {#monitoring-adobe-primetime-authentication}
 
 >[!NOTE]
@@ -31,8 +32,8 @@ ht-degree: 0%
 
 * 以下端点是Adobe Pass身份验证Web SDK的一部分。  如果缺少该参数，则意味着所有程序员和所有Web属性的pay-TVpass都将关闭：
 
-   * `https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js`
-   * `https://entitlement.auth.adobe.com/entitlement/js/AccessEnabler.js`
+  * `https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js`
+  * `https://entitlement.auth.adobe.com/entitlement/js/AccessEnabler.js`
 
 
 ### 不应监视的端点 {#endpoints-not-monitor}

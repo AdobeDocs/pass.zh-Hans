@@ -2,13 +2,14 @@
 title: iOS/tvOS SDK概述
 description: iOS/tvOS SDK概述
 exl-id: b02a6234-d763-46c0-bc69-9cfd65917a19
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '3801'
 ht-degree: 0%
-
 ---
-
 # （旧版）iOS/tvOS SDK概述 {#iostvos-sdk-overview}
 
 >[!NOTE]
@@ -187,7 +188,8 @@ iOS AccessEnabler库通过将令牌数据存储到名为&#x200B;*粘贴板*&#x20
 
 **iOS 7粘贴板更改 —**&#x200B;由于粘贴板在iOS 7上的功能发生了更改，在iOS 7上运行的应用程序之间的跨SSO将受限。 具有相同`<Bundle Seed ID>`（也称为`<Team ID>`）的应用程序将共享令牌，这意味着来自同一程序员X的应用程序A1和A2将共享令牌，而应用程序A1 （程序员X）和应用程序A3 （程序员Y）将不共享令牌。
 
-- 如果两个应用程序中的捆绑包种子ID/团队ID由同一配置配置文件生成，则它们是相同的。 要查找更多信息，请访问以下链接：  [http://developer.apple.com/library/ios/\#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html](http://developer.apple.com/library/ios/#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html)
+- 如果两个应用程序中的捆绑包种子ID/团队ID由同一配置配置文件生成，则它们是相同的。 要查找更多信息，请访问以下链接：
+  [http://developer.apple.com/library/ios/\#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html](http://developer.apple.com/library/ios/#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html)
 - 无论使用什么Adobe Pass身份验证SDK，iOS 7中将存在这种“跨SSO”限制。
 
 请阅读此技术说明，了解有关在iOS 7和更高版本上配置SSO的更多信息（此技术说明适用于Access Enabler v1.8和更高版本）： <https://tve.zendesk.com/entries/58233434-Configuring-Pay-TV-pass-SSO-on-iOS>

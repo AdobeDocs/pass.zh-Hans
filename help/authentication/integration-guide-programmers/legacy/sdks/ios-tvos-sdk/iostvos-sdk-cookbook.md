@@ -2,13 +2,14 @@
 title: iOS/tvOS指南
 description: iOS/tvOS指南
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2436'
 ht-degree: 0%
-
 ---
-
 # （旧版）iOS/tvOS SDK指南 {#iostvos-sdk-cookbook}
 
 >[!NOTE]
@@ -48,7 +49,7 @@ AccessEnabler的网络活动在其自己的线程中进行，因此从不阻止U
 
 ## 配置Experience Cloud ID服务（访客ID） {#visitorIDSetup}
 
-从[!DNL Analytics]的角度来看，配置[Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)值非常重要。 设置`visitorID`值后，SDK会随每个网络调用发送此信息，并且[!DNL Adobe Pass]身份验证服务器会收集此信息。 您可以将Adobe Pass身份验证服务中的分析与其他应用程序或网站中的任何其他分析报表相关联。 有关如何设置visitorID的信息可在[此处](#setOptions)找到。
+从[!DNL Analytics]的角度来看，配置[Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html)值非常重要。 设置`visitorID`值后，SDK会随每个网络调用发送此信息，并且[!DNL Adobe Pass]身份验证服务器会收集此信息。 您可以将Adobe Pass身份验证服务中的分析与其他应用程序或网站中的任何其他分析报表相关联。 有关如何设置visitorID的信息可在[此处](#setOptions)找到。
 
 ## 权利流 {#entitlement}
 
@@ -132,7 +133,7 @@ I.  使用Apple SSO [注销流程](#logout_flow_with_AppleSSO) </br>
 
    b.  调用`setRequestor()`以建立程序员的身份；传入程序员的`requestorID`和（可选）Adobe Pass身份验证终结点数组。 对于tvOS，您还需要提供公钥和密钥。 有关详细信息，请参阅[无客户端文档](#create_dev)。
 
-   * **依赖项：**&#x200B;有效的Adobe Pass身份验证请求者ID （使用您的Adobe Pass身份验证帐户）
+   * **依赖项：**有效的Adobe Pass身份验证请求者ID （使用您的Adobe Pass身份验证帐户）
      经理安排此工作)。
 
    * **触发器：**

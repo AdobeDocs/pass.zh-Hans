@@ -2,13 +2,14 @@
 title: Amazon FireOS Native Client API参考
 description: Amazon FireOS Native Client API参考
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '3519'
 ht-degree: 0%
-
 ---
-
 # （旧版）Amazon FireOS Native Client API参考 {#amazon-fireos-native-client-api-reference}
 
 >[!NOTE]
@@ -146,10 +147,10 @@ ht-degree: 0%
 **参数：**
 
 - *状态*：可以采用以下值之一：
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` — 配置
-阶段已成功完成
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` — 配置
-阶段失败
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` — 配置
+    阶段已成功完成
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` — 配置
+    阶段失败
 
 **触发者：** `setRequestor()`
 
@@ -173,9 +174,9 @@ ht-degree: 0%
 **参数：**
 
 - *选项*：包含全局SDK选项的Map\&lt;字符串，字符串\>。 当前提供以下选项：
-   - **applicationProfile** — 可用于根据此值生成服务器配置。
-   - **ap\_vi** - Experience Cloud ID服务。 此值以后可用于高级分析报表。
-   - **device\_info** — 设备信息，如&#x200B;**传递设备信息指南**&#x200B;中所述
+  - **applicationProfile** — 可用于根据此值生成服务器配置。
+  - **ap\_vi** - Experience Cloud ID服务。 此值以后可用于高级分析报表。
+  - **device\_info** — 设备信息，如&#x200B;**传递设备信息指南**&#x200B;中所述
 
 </br>
 
@@ -259,12 +260,12 @@ ht-degree: 0%
 | `public void setSelectedProvider(String mvpdId)` |
 
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **参数：**&#x200B;无
 
-已触发&#x200B;**回调：** 
-
+已触发&#x200B;**回调：** `setAuthenticationStatus(), sendTrackingData()`
+</br>
 
 ### navigateToUrl {#navigagteToUrl}
 
@@ -317,14 +318,14 @@ ht-degree: 0%
 **参数：**
 
 - *状态*：可以采用以下值之一：
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` — 身份验证流程已成功完成
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` — 身份验证流失败
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_LOGOUT` — 注销
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` — 身份验证流程已成功完成
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` — 身份验证流失败
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_LOGOUT` — 注销
 - *代码*：呈现状态的原因。 如果&#x200B;*状态*&#x200B;为`AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS`，则&#x200B;*代码*&#x200B;为空字符串（即，由`AccessEnabler.USER_AUTHENTICATED`常量定义）。 如果未经过身份验证，此参数可以采用以下值之一：
-   - `AccessEnabler.USER_NOT_AUTHENTICATED_ERROR` — 用户未经过身份验证。 在本地令牌缓存中没有有效的身份验证令牌时响应&#x200B;*checkAuthentication()*&#x200B;方法调用。
-   - `AccessEnabler.PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler在上层应用程序将&#x200B;*null*&#x200B;传递到`setSelectedProvider()`后重置了身份验证状态计算机以中止身份验证流程。  用户可能已取消身份验证流程（例如，已按下“后退”按钮）。
-   - `AccessEnabler.GENERIC_AUTHENTICATION_ERROR` — 由于网络不可用或用户显式取消身份验证流等原因，身份验证流失败。
-   - `AccessEnabler.LOGOUT` — 由于注销操作，用户未进行身份验证。
+  - `AccessEnabler.USER_NOT_AUTHENTICATED_ERROR` — 用户未经过身份验证。 在本地令牌缓存中没有有效的身份验证令牌时响应&#x200B;*checkAuthentication()*&#x200B;方法调用。
+  - `AccessEnabler.PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler在上层应用程序将&#x200B;*null*&#x200B;传递到`setSelectedProvider()`后重置了身份验证状态计算机以中止身份验证流程。  用户可能已取消身份验证流程（例如，已按下“后退”按钮）。
+  - `AccessEnabler.GENERIC_AUTHENTICATION_ERROR` — 由于网络不可用或用户显式取消身份验证流等原因，身份验证流失败。
+  - `AccessEnabler.LOGOUT` — 由于注销操作，用户未进行身份验证。
 
 **触发者：** `checkAuthentication(), getAuthentication(), checkAuthorization()`
 
@@ -354,7 +355,7 @@ ht-degree: 0%
 | --- |
 | `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **参数：** `resources`参数是用户已被授权查看的资源数组。
 
@@ -426,7 +427,7 @@ ht-degree: 0%
 | --- |
 | `public void setToken(String token, String resourceId)` |
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **参数：**
 
@@ -451,7 +452,7 @@ ht-degree: 0%
 
 - *resourceId*：为其获取授权的资源
 - *错误代码*：与失败方案关联的错误代码。 可能的值：
-   - `AccessEnabler.USER_NOT_AUTHORIZED_ERROR` — 用户无法授权给定资源
+  - `AccessEnabler.USER_NOT_AUTHORIZED_ERROR` — 用户无法授权给定资源
 - *errorDescription*：有关失败情况的其他详细信息。 如果此描述性字符串由于任何原因不可用，则Adobe Pass身份验证发送空字符串>**(&quot;)**。  MVPD可使用此字符串传递自定义错误消息或与销售相关的消息。 例如，如果订阅者被拒绝对资源的授权，MVPD会发送消息，例如：“您当前在包中无法访问此渠道。 如果要升级包，请单击此处。” 消息由Adobe Pass身份验证通过此回调传递给程序员，程序员可以选择显示或忽略该消息。 Adobe Pass身份验证还可以使用此参数来提供可能导致错误的状况通知。 例如，“与提供商的授权服务通信时出现网络错误。”
 
 **触发者：** `checkAuthorization(), getAuthorization()`
@@ -526,15 +527,15 @@ ht-degree: 0%
 **参数：**
 
 - *metadataKey*：封装键和args变量的数据结构，其含义如下：
-   - 如果密钥为`METADATA_KEY_TTL_AUTHN`，则进行查询以获取身份验证令牌过期时间。
-   - 如果键为`METADATA_KEY_TTL_AUTHZ`且参数包含名为`METADATA_ARG_RESOURCE_ID`且值为`[resource_id]`的SerializableNameValuePair对象，则进行查询以获取与指定资源关联的授权令牌的过期时间。
-   - 如果键为`METADATA_KEY_DEVICE_ID`，则进行查询以获取当前设备ID。 请注意，此功能默认处于禁用状态，程序员应联系Adobe以获取有关启用和费用的信息。
-   - 如果键为`METADATA_KEY_USER_META`且参数包含名为`METADATA_KEY_USER_META`且值= `[metadata_name]`的SerializableNameValuePair对象，则将对用户元数据进行查询。 可用用户元数据类型的当前列表：
-      - `zip` — 邮政编码
-      - `householdID` — 家庭标识符。 如果MVPD不支持子帐户，则它将与`userID`相同。
-      - `maxRating` — 用户的最大家长评级
-      - `userID` — 用户标识符。 如果MVPD支持子帐户，并且该用户不是主帐户，
-      - `channelID` — 用户有权查看的渠道列表
+  - 如果密钥为`METADATA_KEY_TTL_AUTHN`，则进行查询以获取身份验证令牌过期时间。
+  - 如果键为`METADATA_KEY_TTL_AUTHZ`且参数包含名为`METADATA_ARG_RESOURCE_ID`且值为`[resource_id]`的SerializableNameValuePair对象，则进行查询以获取与指定资源关联的授权令牌的过期时间。
+  - 如果键为`METADATA_KEY_DEVICE_ID`，则进行查询以获取当前设备ID。 请注意，此功能默认处于禁用状态，程序员应联系Adobe以获取有关启用和费用的信息。
+  - 如果键为`METADATA_KEY_USER_META`且参数包含名为`METADATA_KEY_USER_META`且值= `[metadata_name]`的SerializableNameValuePair对象，则将对用户元数据进行查询。 可用用户元数据类型的当前列表：
+    - `zip` — 邮政编码
+    - `householdID` — 家庭标识符。 如果MVPD不支持子帐户，则它将与`userID`相同。
+    - `maxRating` — 用户的最大家长评级
+    - `userID` — 用户标识符。 如果MVPD支持子帐户，并且该用户不是主帐户，
+    - `channelID` — 用户有权查看的渠道列表
 
 程序员可用的实际用户元数据取决于MVPD提供的内容。  此列表将随着新元数据的推出和添加到Adobe Pass身份验证系统中而进一步扩展。
 
@@ -558,42 +559,42 @@ ht-degree: 0%
 
 - *key*：包含为其请求元数据值的键和相关参数的MetadataKey对象（请参阅演示应用程序以了解参考实现）。
 - *result*：包含所请求元数据的复合对象。 该对象具有以下字段：
-   - *simpleResult*：一个字符串，它表示在请求身份验证TTL、授权TTL或设备ID时的元数据值。 如果为用户元数据发出请求，则此值为null。
+  - *simpleResult*：一个字符串，它表示在请求身份验证TTL、授权TTL或设备ID时的元数据值。 如果为用户元数据发出请求，则此值为null。
 
-   - *userMetadataResult*：一个对象，它包含JSON用户元数据负载的Java表示形式。 例如：
+  - *userMetadataResult*：一个对象，它包含JSON用户元数据负载的Java表示形式。 例如：
 
-     ```json
-     {
-     "street": "Main Avenue",
-     "buildings": ["150", "320"]
-     }
-     ```
+    ```json
+    {
+    "street": "Main Avenue",
+    "buildings": ["150", "320"]
+    }
+    ```
 
-     翻译为Java的形式：
+    翻译为Java的形式：
 
-     ```java
-     Map("street" -> "Main Avenue", "buildings" -> List("150", "320")))
-     ```
+    ```java
+    Map("street" -> "Main Avenue", "buildings" -> List("150", "320")))
+    ```
 
-     **用户元数据对象的实际结构类似于以下内容：**
+    **用户元数据对象的实际结构类似于以下内容：**
 
-     ```json
-     {
-         updated: 1334243471,
-         encrypted: ["encryptedProp"],
-         data: {
-             zip: ["12345", "34567"],
-             maxRating: { 
-                 "MPAA": "PG-13",
-                 "VCHIP": "TV-Y", 
-                 "URL": "http://exam.pl/e/manage/ratings"
-             },
-             householdID: "3456",
-             userID: "BgSdasfsdk23/dsaf3+saASesadgfsShggssd=",
-             channelID: ["channel-1", "channel-2"]
-         }
-     }
-     ```
+    ```json
+    {
+        updated: 1334243471,
+        encrypted: ["encryptedProp"],
+        data: {
+            zip: ["12345", "34567"],
+            maxRating: { 
+                "MPAA": "PG-13",
+                "VCHIP": "TV-Y", 
+                "URL": "http://exam.pl/e/manage/ratings"
+            },
+            householdID: "3456",
+            userID: "BgSdasfsdk23/dsaf3+saASesadgfsShggssd=",
+            channelID: ["channel-1", "channel-2"]
+        }
+    }
+    ```
 
 
 请求简单元数据（身份验证TTL、授权TTL或设备ID）时，该值为空。
@@ -627,19 +628,19 @@ Access Enabler会触发一个附加回调，该回调不一定与权利文件流
 > 设备类型和操作系统通过使用公共Java库(http://java.net/projects/user-agent-utils)和用户代理字符串派生。 请注意，此信息仅以粗略的方式提供，用于按设备类别细分操作量度，但Adobe对错误结果不承担任何责任。 请相应地使用新功能。
 
 - 设备类型的可能值：
-   - `computer`
-   - `tablet`
-   - `mobile`
-   - `gameconsole`
-   - `unknown`
+  - `computer`
+  - `tablet`
+  - `mobile`
+  - `gameconsole`
+  - `unknown`
 
 - Access Enabler客户端类型的可能值：
-   - `flash`
-   - `html5`
-   - `ios`
-   - `tvos`
-   - `android`
-   - `firetv`
+  - `flash`
+  - `html5`
+  - `ios`
+  - `tvos`
+  - `android`
+  - `firetv`
 
 | 回调：跟踪事件 |
 | --- |
@@ -650,38 +651,38 @@ Access Enabler会触发一个附加回调，该回调不一定与权利文件流
 **参数：**
 
 - *event*：正在跟踪的事件。 有三种可能的跟踪事件类型：
-   - **authorizationDetection：**&#x200B;每次返回授权令牌请求时（事件类型为`EVENT_AUTHZ_DETECTION`）
-   - **authenticationDetection：**&#x200B;任何时候进行身份验证检查（事件类型为`EVENT_AUTHN_DETECTION`）
-   - **mvpdSelection：**&#x200B;用户在MVPD选择表单中选择MVPD时（事件类型为`EVENT_MVPD_SELECTION`）
+  - **authorizationDetection：**&#x200B;每次返回授权令牌请求时（事件类型为`EVENT_AUTHZ_DETECTION`）
+  - **authenticationDetection：**&#x200B;任何时候进行身份验证检查（事件类型为`EVENT_AUTHN_DETECTION`）
+  - **mvpdSelection：**&#x200B;用户在MVPD选择表单中选择MVPD时（事件类型为`EVENT_MVPD_SELECTION`）
 - *数据*：与报告事件关联的其他数据。 此数据以值列表的形式提供。
 
 以下说明用于解释&#x200B;*data*&#x200B;数组中的值：
 
 - 对于事件类型&#x200B;*`EVENT_AUTHN_DETECTION`：*
-   - **0** — 令牌请求是否成功(true/false)，如果以上为true：
-   - **1** - MVPD ID字符串
-   - **2** - GUID （md5散列）
-   - **3** — 令牌已在缓存中(true/false)
-   - **4** — 设备类型
-   - **5** - Access Enabler客户端类型
-   - **6** — 操作系统类型
+  - **0** — 令牌请求是否成功(true/false)，如果以上为true：
+  - **1** - MVPD ID字符串
+  - **2** - GUID （md5散列）
+  - **3** — 令牌已在缓存中(true/false)
+  - **4** — 设备类型
+  - **5** - Access Enabler客户端类型
+  - **6** — 操作系统类型
 
 - 对于事件类型`EVENT_AUTHZ_DETECTION`
-   - **0** — 令牌请求是否成功(true/false)，如果成功：
-   - **1** - MVPD ID
-   - **2** - GUID （md5散列）
-   - **3** — 令牌已在缓存中(true/false)
-   - **4** — 错误
-   - **5** — 详细信息
-   - **6** — 设备类型
-   - **7** - Access Enabler客户端类型
-   - **8** — 操作系统类型
+  - **0** — 令牌请求是否成功(true/false)，如果成功：
+  - **1** - MVPD ID
+  - **2** - GUID （md5散列）
+  - **3** — 令牌已在缓存中(true/false)
+  - **4** — 错误
+  - **5** — 详细信息
+  - **6** — 设备类型
+  - **7** - Access Enabler客户端类型
+  - **8** — 操作系统类型
 
 - 对于事件类型`EVENT_MVPD_SELECTION`
-   - **0** — 当前所选MVPD的ID
-   - **1** — 设备类型
-   - **2** - Access Enabler客户端类型
-   - **3** — 操作系统类型
+  - **0** — 当前所选MVPD的ID
+  - **1** — 设备类型
+  - **2** - Access Enabler客户端类型
+  - **3** — 操作系统类型
 
 **触发者：** `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`
 

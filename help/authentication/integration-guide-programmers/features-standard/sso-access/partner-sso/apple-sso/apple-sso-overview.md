@@ -2,13 +2,14 @@
 title: Apple SSO概述
 description: Apple SSO概述
 exl-id: 7cf47d01-a35a-4c85-b562-e5ebb6945693
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1311'
 ht-degree: 0%
-
 ---
-
 # Apple SSO概述 {#apple-sso-overview}
 
 >[!IMPORTANT]
@@ -23,8 +24,8 @@ Adobe Pass身份验证与Apple合作，为iPhone、iPad和Apple电视所有者�
 
 最终结果将创建一个与以下用户流程一致的体验，我们建议您在开始开发应用程序之前进行咨询：
 
-* 用于iPhone和iPad[&#128279;](https://tve.zendesk.com/hc/article_attachments/205624966/User_flows_AppleSSO_iOS_v2.pdf)设备的单点登录(SSO) 用户流程。
-* Apple TV[&#128279;](https://tve.zendesk.com/hc/article_attachments/206669126/User_flows_tvOS.pdf)设备的单点登录(SSO) 用户流。
+* 用于iPhone和iPad](https://tve.zendesk.com/hc/article_attachments/205624966/User_flows_AppleSSO_iOS_v2.pdf)设备的单点登录(SSO) [用户流程。
+* Apple TV](https://tve.zendesk.com/hc/article_attachments/206669126/User_flows_tvOS.pdf)设备的单点登录(SSO) [用户流。
 
 ## 先决条件 {#apple-sso-prerequisites}
 

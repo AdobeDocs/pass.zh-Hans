@@ -2,13 +2,14 @@
 title: Amazon SSO指南(REST API V2)
 description: Amazon SSO指南(REST API V2)
 exl-id: 63e4fa63-8ca3-40eb-b49a-84dd75c2ca1d
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '587'
 ht-degree: 0%
-
 ---
-
 # Amazon SSO指南(REST API V2) {#amazon-sso-cookbook-rest-api-v2}
 
 >[!IMPORTANT]
@@ -17,7 +18,7 @@ ht-degree: 0%
 
 Adobe Pass身份验证REST API V2支持在FireOS上运行的客户端应用程序的最终用户的平台单点登录(SSO)。
 
-此文档用作现有[REST API V2概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)的扩展，该视图提供了高级视图以及描述如何使用平台标识流[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)实施单点登录的文档。
+此文档用作现有[REST API V2概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)的扩展，该视图提供了高级视图以及描述如何使用平台标识流](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)实施[单点登录的文档。
 
 ## 使用平台标识流的Amazon单点登录 {#cookbook}
 

@@ -2,13 +2,14 @@
 title: Adobe单点登录服务
 description: 了解Adobe Pass SSO服务，该服务可跨多个设备和应用程序实现无缝身份验证。
 exl-id: ffca2bcc-c933-4688-8d98-c5e03390f66c
-source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '4447'
 ht-degree: 2%
-
 ---
-
 # Adobe单点登录服务 {#sso-service}
 
 本文档介绍了Adobe单点登录服务的用例、端点和API。
@@ -120,7 +121,7 @@ Adobe Pass SSO服务支持跨多个设备和应用程序的无缝身份验证，
 
 ### 步骤3 — 将Adobe Pass REST API V2与TVE MVPD一起进行身份验证 {#step-3}
 
-应使用服务令牌实施Adobe Pass的身份验证： [REST API V2 — 单点登录服务令牌流程](https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-flows/rest-api-v2-single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows)
+应使用服务令牌实施Adobe Pass的身份验证： [REST API V2 — 单点登录服务令牌流程](https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-flows/rest-api-v2-single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows)
 
 ### 步骤4 — 链接其他设备 {#step-4}
 
@@ -210,43 +211,54 @@ Adobe Pass SSO服务支持跨多个设备和应用程序的无缝身份验证，
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">授权</td>
-      <td><a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">授权</a>标头文档中描述了持有者令牌有效负载的生成。</td>
+      <td><a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">授权</a>标头文档中描述了持有者令牌有效负载的生成。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP设备标识符</td>
       <td>
-         <a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>标头文档中描述了设备标识符有效负载的生成。<br/><br/>
-         如果未提供X-SSO-ID，则此标识符用作默认的SSO标识符。</td>
+         <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>标头文档中描述了设备标识符有效负载的生成。
+         <br/><br/>
+         如果未提供X-SSO-ID，则此标识符用作默认的SSO标识符。
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         <a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-x-device-info">X-Device-Info</a>标头文档中指定的设备信息。<br/><br/>
-         <b>强烈建议</b>在应用程序的设备平台允许显式提供有效值时使用。<br/><br/>
-         Adobe Pass身份验证后端会将显式设置的值与隐式提取的值合并。 如果未提供，则将使用默认的提取值。</td>
+         <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-x-device-info">X-Device-Info</a>标头文档中指定的设备信息。
+         <br/><br/>
+         <b>强烈建议</b>在应用程序的设备平台允许显式提供有效值时使用。
+         <br/><br/>
+         Adobe Pass身份验证后端会将显式设置的值与隐式提取的值合并。 如果未提供，则将使用默认的提取值。
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-SSO链接</td>
       <td>
-         将此请求与现有的已验证配置文件关联的链接代码。 提供后，响应将包含用于SSO的服务令牌以及生成链接代码的配置文件。<br/><br/>
-         当辅助应用程序或设备想要从主应用程序或设备连接到已验证的配置文件时，通常使用此选项。</td>
+         将此请求与现有的已验证配置文件关联的链接代码。 提供后，响应将包含用于SSO的服务令牌以及生成链接代码的配置文件。
+         <br/><br/>
+         当辅助应用程序或设备想要从主应用程序或设备连接到已验证的配置文件时，通常使用此选项。
+      </td>
       <td>如果未提供x-sso-id，则此为必填字段</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-SSO-ID</td>
       <td>
-         应用程序请求作为SSO基础的通用标识符。<br/><br/>
-         如果提供，此标识符将用于在设备和/或应用程序之间建立通用SSO配置文件。</td>
+         应用程序请求作为SSO基础的通用标识符。
+         <br/><br/>
+         如果提供，此标识符将用于在设备和/或应用程序之间建立通用SSO配置文件。
+      </td>
       <td>如果未提供x-sso-link，则此为必填字段</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         客户端应用程序接受的媒体类型。<br/><br/>
-         如果指定，则必须是application/json。</td>
+         客户端应用程序接受的媒体类型。
+         <br/><br/>
+         如果指定，则必须是application/json。
+      </td>
       <td>可选</td>
    </tr>
    <tr>
@@ -275,19 +287,22 @@ Adobe Pass SSO服务支持跨多个设备和应用程序的无缝身份验证，
       <td>400</td>
       <td>错误请求</td>
       <td>
-        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。</td>
+        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>未授权</td>
       <td>
-        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">动态客户端注册概述</a>文档。</td>
+        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">动态客户端注册概述</a>文档。
+      </td>
    </tr>
    <tr>
       <td>500</td>
       <td>内部服务器错误</td>
       <td>
-        服务器端遇到问题。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。</td>
+        服务器端遇到问题。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。
+      </td>
    </tr>
 </table>
 
@@ -361,7 +376,7 @@ Adobe Pass SSO服务支持跨多个设备和应用程序的无缝身份验证，
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>响应正文可能提供附加的错误信息，这些信息将遵循<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档。</td>
+      <td>响应正文可能提供附加的错误信息，这些信息将遵循<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档。</td>
       <td><i>必填</i></td>
    </tr>
 </table>
@@ -472,21 +487,25 @@ Content-Type: application/json
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">授权</td>
-      <td><a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">授权</a>标头文档中描述了持有者令牌有效负载的生成。</td>
+      <td><a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">授权</a>标头文档中描述了持有者令牌有效负载的生成。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-         以前获取的需要刷新的服务令牌。<br/><br/>
-         此令牌必须有效或最近已过期才能进行刷新。</td>
+         以前获取的需要刷新的服务令牌。
+         <br/><br/>
+         此令牌必须有效或最近已过期才能进行刷新。
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         客户端应用程序接受的媒体类型。<br/><br/>
-         如果指定，则必须是application/json。</td>
+         客户端应用程序接受的媒体类型。
+         <br/><br/>
+         如果指定，则必须是application/json。
+      </td>
       <td>可选</td>
    </tr>
    <tr>
@@ -515,19 +534,22 @@ Content-Type: application/json
       <td>400</td>
       <td>错误请求</td>
       <td>
-        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。</td>
+        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>未授权</td>
       <td>
-        访问令牌或服务令牌无效，客户端需要获取新的访问令牌或服务令牌，然后重试。 有关更多详细信息，请参阅<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">动态客户端注册概述</a>文档。</td>
+        访问令牌或服务令牌无效，客户端需要获取新的访问令牌或服务令牌，然后重试。 有关更多详细信息，请参阅<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">动态客户端注册概述</a>文档。
+      </td>
    </tr>
    <tr>
       <td>500</td>
       <td>内部服务器错误</td>
       <td>
-        服务器端遇到问题。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。</td>
+        服务器端遇到问题。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。
+      </td>
    </tr>
 </table>
 
@@ -601,7 +623,7 @@ Content-Type: application/json
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>响应正文可能提供附加的错误信息，这些信息将遵循<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档。</td>
+      <td>响应正文可能提供附加的错误信息，这些信息将遵循<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档。</td>
       <td><i>必填</i></td>
    </tr>
 </table>
@@ -689,26 +711,30 @@ Link API可用于请求可以在多个应用程序或设备之间启用单点登
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">授权</td>
-      <td><a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">授权</a>标头文档中描述了持有者令牌有效负载的生成。</td>
+      <td><a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">授权</a>标头文档中描述了持有者令牌有效负载的生成。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP设备标识符</td>
-      <td><a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>标头文档中描述了设备标识符有效负载的生成。</td>
+      <td><a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>标头文档中描述了设备标识符有效负载的生成。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-         服务令牌API文档对服务令牌的生成进行了描述。<br/><br/>
-         此服务令牌标识要为其生成链接代码的已验证配置文件。</td>
+         服务令牌API文档对服务令牌的生成进行了描述。
+         <br/><br/>
+         此服务令牌标识要为其生成链接代码的已验证配置文件。
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         客户端应用程序接受的媒体类型。<br/><br/>
-         如果指定，则必须是application/json。</td>
+         客户端应用程序接受的媒体类型。
+         <br/><br/>
+         如果指定，则必须是application/json。
+      </td>
       <td>可选</td>
    </tr>
    <tr>
@@ -737,19 +763,22 @@ Link API可用于请求可以在多个应用程序或设备之间启用单点登
       <td>400</td>
       <td>错误请求</td>
       <td>
-        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。</td>
+        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>未授权</td>
       <td>
-        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">动态客户端注册概述</a>文档。</td>
+        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">动态客户端注册概述</a>文档。
+      </td>
    </tr>
    <tr>
       <td>500</td>
       <td>内部服务器错误</td>
       <td>
-        服务器端遇到问题。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。</td>
+        服务器端遇到问题。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。
+      </td>
    </tr>
 </table>
 
@@ -823,7 +852,7 @@ Link API可用于请求可以在多个应用程序或设备之间启用单点登
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>响应正文可能提供附加的错误信息，这些信息将遵循<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档。</td>
+      <td>响应正文可能提供附加的错误信息，这些信息将遵循<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档。</td>
       <td><i>必填</i></td>
    </tr>
 </table>
@@ -913,8 +942,10 @@ Content-Type: application/json
    <tr>
       <td style="background-color: #DEEBFF;">设备</td>
       <td>
-         要取消链接的设备标识符数组。<br/><br/>
-         示例：</td>
+         要取消链接的设备标识符数组。
+         <br/><br/>
+         示例：<br/><code>["deviceid1", "deviceid2", "deviceid3"]</code>
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -924,33 +955,39 @@ Content-Type: application/json
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">授权</td>
-      <td><a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">授权</a>标头文档中描述了持有者令牌有效负载的生成。</td>
+      <td><a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">授权</a>标头文档中描述了持有者令牌有效负载的生成。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>
-         所发送资源的接受媒体类型。<br/><br/>
-         它必须是application/json。</td>
+         所发送资源的接受媒体类型。
+         <br/><br/>
+         它必须是application/json。
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP设备标识符</td>
-      <td><a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>标头文档中描述了设备标识符有效负载的生成。</td>
+      <td><a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>标头文档中描述了设备标识符有效负载的生成。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-         服务令牌API文档对服务令牌的生成进行了描述。<br/><br/>
-         此服务令牌标识要取消其设备链接的已验证配置文件。</td>
+         服务令牌API文档对服务令牌的生成进行了描述。
+         <br/><br/>
+         此服务令牌标识要取消其设备链接的已验证配置文件。
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         客户端应用程序接受的媒体类型。<br/><br/>
-         如果指定，则必须是application/json。</td>
+         客户端应用程序接受的媒体类型。
+         <br/><br/>
+         如果指定，则必须是application/json。
+      </td>
       <td>可选</td>
    </tr>
    <tr>
@@ -979,13 +1016,15 @@ Content-Type: application/json
       <td>400</td>
       <td>错误请求</td>
       <td>
-        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。</td>
+        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>未授权</td>
       <td>
-        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">动态客户端注册概述</a>文档。</td>
+        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">动态客户端注册概述</a>文档。
+      </td>
    </tr>
    <tr>
       <td>405</td>
@@ -998,7 +1037,8 @@ Content-Type: application/json
       <td>500</td>
       <td>内部服务器错误</td>
       <td>
-        服务器端遇到问题。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。</td>
+        服务器端遇到问题。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。
+      </td>
    </tr>
 </table>
 
@@ -1033,8 +1073,10 @@ Content-Type: application/json
    <tr>
       <td style="background-color: #DEEBFF;">unlinkedDevices</td>
       <td>
-         已成功取消链接的设备列表。<br/><br/>
-         示例：</td>
+         已成功取消链接的设备列表。
+         <br/><br/>
+         示例：<br/><code>["deviceid1", "deviceid2", "deviceid3"]</code>
+      </td>
       <td><i>必填</i></td>
    </tr>
 </table>
@@ -1064,7 +1106,7 @@ Content-Type: application/json
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>响应正文可能提供附加的错误信息，这些信息将遵循<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档。</td>
+      <td>响应正文可能提供附加的错误信息，这些信息将遵循<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档。</td>
       <td><i>必填</i></td>
    </tr>
 </table>
@@ -1209,26 +1251,30 @@ List API返回与已验证配置文件（SSO配置文件）中的每个设备相
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">授权</td>
-      <td><a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">授权</a>标头文档中描述了持有者令牌有效负载的生成。</td>
+      <td><a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">授权</a>标头文档中描述了持有者令牌有效负载的生成。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP设备标识符</td>
-      <td><a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>标头文档中描述了设备标识符有效负载的生成。</td>
+      <td><a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>标头文档中描述了设备标识符有效负载的生成。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-         服务令牌API文档对服务令牌的生成进行了描述。<br/><br/>
-         此服务令牌标识要检索其设备列表的已验证配置文件。</td>
+         服务令牌API文档对服务令牌的生成进行了描述。
+         <br/><br/>
+         此服务令牌标识要检索其设备列表的已验证配置文件。
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         客户端应用程序接受的媒体类型。<br/><br/>
-         如果指定，则必须是application/json。</td>
+         客户端应用程序接受的媒体类型。
+         <br/><br/>
+         如果指定，则必须是application/json。
+      </td>
       <td>可选</td>
    </tr>
    <tr>
@@ -1257,13 +1303,15 @@ List API返回与已验证配置文件（SSO配置文件）中的每个设备相
       <td>400</td>
       <td>错误请求</td>
       <td>
-        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。</td>
+        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>未授权</td>
       <td>
-        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">动态客户端注册概述</a>文档。</td>
+        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">动态客户端注册概述</a>文档。
+      </td>
    </tr>
    <tr>
       <td>405</td>
@@ -1276,7 +1324,8 @@ List API返回与已验证配置文件（SSO配置文件）中的每个设备相
       <td>500</td>
       <td>内部服务器错误</td>
       <td>
-        服务器端遇到问题。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。</td>
+        服务器端遇到问题。 响应正文可能包含遵守<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档的错误信息。
+      </td>
    </tr>
 </table>
 
@@ -1306,9 +1355,12 @@ List API返回与已验证配置文件（SSO配置文件）中的每个设备相
    <tr>
       <td style="background-color: #DEEBFF;">设备</td>
       <td>
-         JSON包含键、值对的映射。<br/><br/>
-         <b>密钥：</b> deviceId - <a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>标头文档中所述的设备标识符有效负载<br/><br/>
-         <b>值：</b>属性 — JSON包含设备元数据属性映射，包括：<ul>
+         JSON包含键、值对的映射。
+         <br/><br/>
+         <b>密钥：</b> deviceId - <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>标头文档中所述的设备标识符有效负载
+         <br/><br/>
+         <b>值：</b>属性 — JSON包含设备元数据属性映射，包括：
+         <ul>
             <li>设备类型</li>
             <li>平台</li>
             <li>用户代理</li>
@@ -1345,7 +1397,7 @@ List API返回与已验证配置文件（SSO配置文件）中的每个设备相
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>响应正文可能提供附加的错误信息，这些信息将遵循<a href="https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档。</td>
+      <td>响应正文可能提供附加的错误信息，这些信息将遵循<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增强型错误代码</a>文档。</td>
       <td><i>必填</i></td>
    </tr>
 </table>
@@ -1462,7 +1514,7 @@ Content-Type: application/json
     "code": "header_missing",
     "message": "Required header is missing",
     "action": "check_headers",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "trace": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
   }
 }

@@ -2,13 +2,14 @@
 title: 基本授权 — 主要应用程序 — 流程
 description: REST API V2 — 基本授权 — 主应用程序 — 流程
 exl-id: 46bc9326-966e-44fc-8546-2f58be01b7bc
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '603'
 ht-degree: 0%
-
 ---
-
 # 在主应用程序中执行的基本授权流程 {#basic-authorization-flow-performed-within-primary-application}
 
 >[!IMPORTANT]
@@ -47,7 +48,7 @@ Adobe Pass身份验证权利中的&#x200B;**授权流**&#x200B;允许流式应�
 
    >[!IMPORTANT]
    >
-   > 有关以下各项的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策：
+   > 有关以下各项的详细信息，请参阅使用特定mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索[授权决策：
    >
    > * 所有&#x200B;_必需的_&#x200B;参数，如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必需的_&#x200B;标头，如`Authorization`和`AP-Device-Identifier`
@@ -61,7 +62,7 @@ Adobe Pass身份验证权利中的&#x200B;**授权流**&#x200B;允许流式应�
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索[授权决策。
    > 
    > <br/>
    > 
@@ -80,7 +81,7 @@ Adobe Pass身份验证权利中的&#x200B;**授权流**&#x200B;允许流式应�
 
    >[!IMPORTANT]
    >
-   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索授权决策。
+   > 有关决策响应中提供的信息的详细信息，请参阅使用特定mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API检索[授权决策。
    > 
    > <br/>
    > 

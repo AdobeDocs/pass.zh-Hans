@@ -2,13 +2,14 @@
 title: REST API V2指南（服务器到服务器）
 description: REST API V2指南（服务器到服务器）
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2524'
 ht-degree: 0%
-
 ---
-
 # REST API V2指南（服务器到服务器） {#rest-api-v2-cookbook-server-to-server}
 
 >[!IMPORTANT]
@@ -75,11 +76,11 @@ ht-degree: 0%
 
 * Adobe Pass服务在美国各地多个分散的数据中心中运行，以优化性能并最大程度地减少延迟。
 
-   * 程序员服务应采用类似的基础架构策略，确保Adobe Pass提供低延迟的响应时间。
+  * 程序员服务应采用类似的基础架构策略，确保Adobe Pass提供低延迟的响应时间。
 
 * 程序员必须提供其生产环境的公共IP范围。
 
-   * 这些IP将添加到Adobe Pass基础架构中的允许列表。
+  * 这些IP将添加到Adobe Pass基础架构中的允许列表。
 
 * 程序员服务必须将DNS缓存限制在最多30秒，以允许动态重新路由，以防由于数据中心不可用而Adobe需要重定向流量。
 
@@ -93,9 +94,9 @@ ht-degree: 0%
 
 * 理想情况下，暂存环境应连接到Adobe Pass测试环境，以便：
 
-   * 允许程序员针对Adobe的基础设施进行测试。
+  * 允许程序员针对Adobe的基础设施进行测试。
 
-   * 启用Adobe ，以便在必要时协助进行测试和故障排除。
+  * 启用Adobe ，以便在必要时协助进行测试和故障排除。
 
 ## 工作流 {#workflow}
 
@@ -134,12 +135,12 @@ API：
 
 * 检索客户端凭据：程序员服务通过调用&#x200B;[**/o/client/register**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)&#x200B;终结点来检索客户端凭据。
 
-   * 程序员服务或程序员应用程序必须存储客户端凭据，并在需要检索访问令牌时无限期使用这些凭据。
+  * 程序员服务或程序员应用程序必须存储客户端凭据，并在需要检索访问令牌时无限期使用这些凭据。
 
 
 * 检索访问令牌：程序员服务通过调用&#x200B;[**/o/client/token**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)&#x200B;终结点检索访问令牌。
 
-   * 程序员服务或程序员应用程序必须存储和使用访问令牌，直到它过期，然后丢弃它并获取新的访问令牌。
+  * 程序员服务或程序员应用程序必须存储和使用访问令牌，直到它过期，然后丢弃它并获取新的访问令牌。
 
 ## B.认证阶段 {#authentication-phase}
 
@@ -185,54 +186,54 @@ API
 
 * **方案3：**&#x200B;没有现有的配置文件，程序员服务可以继续通过[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)功能为用户提供临时访问权限。
 
-   * 此方案超出了此文档的范围，有关详细信息，请参阅[临时访问流](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)文档。
+  * 此方案超出了此文档的范围，有关详细信息，请参阅[临时访问流](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)文档。
 
 ### 步骤3：对用户进行身份验证 {#step-3-authenticate-the-user}
 
 * **检索配置：**&#x200B;程序员服务通过调用&#x200B;[**/api/v2/{serviceProvider}/configuration**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)&#x200B;终结点检索可用MVPD的列表。
 
-   * 程序员服务可以实施自定义筛选机制，以根据配置响应细化MVPD列表，从而使流应用程序仅显示预期的提供程序，而隐藏其他提供程序（例如，正在开发的MVPD、测试MVPD、TempPass）。 这可以确保在选择电视提供商时，向用户呈现精选内容。
+  * 程序员服务可以实施自定义筛选机制，以根据配置响应细化MVPD列表，从而使流应用程序仅显示预期的提供程序，而隐藏其他提供程序（例如，正在开发的MVPD、测试MVPD、TempPass）。 这可以确保在选择电视提供商时，向用户呈现精选内容。
 
 
 * **创建身份验证会话：**&#x200B;程序员服务通过调用&#x200B;[**/api/v2/{serviceProvider}/sessions**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)&#x200B;终结点来启动身份验证会话。
 
-   * 程序员服务必须将`code`和`url`返回到流应用程序。
+  * 程序员服务必须将`code`和`url`返回到流应用程序。
 
 
 * **方案1：**&#x200B;流式应用程序可以打开浏览器或Web视图，因此必须加载身份验证`url`。
 
-   * 用户在MVPD登录页面中提交用户名和密码。 成功验证后，最终重定向会显示成功页面。
+  * 用户在MVPD登录页面中提交用户名和密码。 成功验证后，最终重定向会显示成功页面。
 
 
 * **方案2：**&#x200B;流式应用程序无法打开浏览器，因此必须显示身份验证`code`。 需要单独的Web应用程序来提示用户输入`code`、构造身份验证`url`并打开： [**/api/v2/authenticate/{serviceProvider}/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)。
 
-   * 用户在MVPD登录页面中提交用户名和密码。 成功验证后，最终重定向会显示成功页面。
+  * 用户在MVPD登录页面中提交用户名和密码。 成功验证后，最终重定向会显示成功页面。
 
 ### 步骤4：检查已验证的用户档案 {#step-4-check-for-authenticated-profiles}
 
 * **检索特定代码的配置文件：**&#x200B;程序员服务必须使用`code`实施轮询机制，以通过调用&#x200B;[**/api/v2/{serviceProvider}/profiles/code/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)终结点来检查是否成功生成并保存了配置文件。
 
-   * 程序员服务必须在以下条件下&#x200B;**启动轮询**&#x200B;机制：
+  * 程序员服务必须在以下条件下&#x200B;**启动轮询**&#x200B;机制：
 
-      * **在主（屏幕）应用程序内执行的身份验证：**&#x200B;当浏览器组件加载[会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)终结点请求中为`redirectUrl`参数指定的URL后，程序员服务应在用户到达最终目标页面时开始轮询。
+    * **在主（屏幕）应用程序内执行的身份验证：**&#x200B;当浏览器组件加载[会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)终结点请求中为`redirectUrl`参数指定的URL后，程序员服务应在用户到达最终目标页面时开始轮询。
 
-      * **在辅助（屏幕）应用程序内执行的身份验证：**&#x200B;程序员服务应用程序应在用户启动身份验证过程后立即开始轮询 — 在收到[会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)终结点响应并向用户显示身份验证代码之后。
+    * **在辅助（屏幕）应用程序内执行的身份验证：**&#x200B;程序员服务应用程序应在用户启动身份验证过程后立即开始轮询 — 在收到[会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)终结点响应并向用户显示身份验证代码之后。
 
-   * 程序员服务必须在以下条件下&#x200B;**停止轮询**&#x200B;机制：
+  * 程序员服务必须在以下条件下&#x200B;**停止轮询**&#x200B;机制：
 
-      * **身份验证成功：**&#x200B;已成功检索用户的配置文件信息，确认其身份验证状态。 此时，不再需要轮询。
+    * **身份验证成功：**&#x200B;已成功检索用户的配置文件信息，确认其身份验证状态。 此时，不再需要轮询。
 
-      * **身份验证会话和代码过期：**&#x200B;身份验证会话和代码过期，如[会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)终结点响应中的`notAfter`时间戳（如30分钟）所指示。 如果发生这种情况，用户必须重新启动身份验证过程，使用以前的身份验证代码的轮询应立即停止。
+    * **身份验证会话和代码过期：**&#x200B;身份验证会话和代码过期，如[会话](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)终结点响应中的`notAfter`时间戳（如30分钟）所指示。 如果发生这种情况，用户必须重新启动身份验证过程，使用以前的身份验证代码的轮询应立即停止。
 
-      * **生成的新身份验证代码：**&#x200B;如果用户请求在主（屏幕）设备上生成新的身份验证代码，则现有会话不再有效，使用以前的身份验证代码的轮询应立即停止。
+    * **生成的新身份验证代码：**&#x200B;如果用户请求在主（屏幕）设备上生成新的身份验证代码，则现有会话不再有效，使用以前的身份验证代码的轮询应立即停止。
 
-   * 程序员服务必须在以下条件下&#x200B;**配置轮询**&#x200B;机制频率：
+  * 程序员服务必须在以下条件下&#x200B;**配置轮询**&#x200B;机制频率：
 
-      * **在主（屏幕）应用程序内执行的身份验证：**&#x200B;程序员服务应每3-5秒或更长时间轮询一次。
+    * **在主（屏幕）应用程序内执行的身份验证：**&#x200B;程序员服务应每3-5秒或更长时间轮询一次。
 
-      * **在辅助（屏幕）应用程序内执行的身份验证：**&#x200B;程序员服务应每3-5秒或更长时间轮询一次。
+    * **在辅助（屏幕）应用程序内执行的身份验证：**&#x200B;程序员服务应每3-5秒或更长时间轮询一次。
 
-   * 程序员服务应将用户的部分配置文件信息缓存在永久性存储中，以避免不必要的请求并改善用户体验。
+  * 程序员服务应将用户的部分配置文件信息缓存在永久性存储中，以避免不必要的请求并改善用户体验。
 
 ## C. （可选）预授权阶段 {#preauthorization-phase}
 
@@ -262,13 +263,13 @@ API
 
 * **检索预授权决策：**&#x200B;程序员服务通过调用&#x200B;[**/api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)终结点来检索资源列表的预授权决策。
 
-   * 程序员服务必须将允许列表和拒绝预授权决策传递给流应用程序。
+  * 程序员服务必须将允许列表和拒绝预授权决策传递给流应用程序。
 
-   * 将预授权决策存储在永久存储中不需要程序员服务。 但是，建议将允许决策缓存到内存中以改进用户体验。 这有助于避免对已预授权的资源进行不必要的调用，从而减少延迟并提高性能。
+  * 将预授权决策存储在永久存储中不需要程序员服务。 但是，建议将允许决策缓存到内存中以改进用户体验。 这有助于避免对已预授权的资源进行不必要的调用，从而减少延迟并提高性能。
 
-   * 通过检查决策预授权终结点响应中包含的[错误代码和消息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，程序员服务可以确定拒绝预授权决策的原因。 这些详细信息可为insight提供预授权请求被拒绝的特定原因，帮助通知用户体验或在应用程序中触发任何必要的处理。 请确保在预授权决策被拒绝时，为检索预授权决策而实施的任何重试机制都不会导致无限循环。 考虑将重试限制为合理数字，并通过向用户提供明确的反馈，谨慎处理拒绝请求。
+  * 通过检查决策预授权终结点响应中包含的[错误代码和消息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，程序员服务可以确定拒绝预授权决策的原因。 这些详细信息可为insight提供预授权请求被拒绝的特定原因，帮助通知用户体验或在应用程序中触发任何必要的处理。 请确保在预授权决策被拒绝时，为检索预授权决策而实施的任何重试机制都不会导致无限循环。 考虑将重试限制为合理数字，并通过向用户提供明确的反馈，谨慎处理拒绝请求。
 
-   * 由于MVPD施加的条件，程序员服务可以在单个API请求中为有限数量的资源获取预授权决策，通常最多可达5个。 在通过Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)与MVPD达成一致后，您的组织管理员或代表您行事的Adobe Pass身份验证代表可以查看和更改资源的最大数量。
+  * 由于MVPD施加的条件，程序员服务可以在单个API请求中为有限数量的资源获取预授权决策，通常最多可达5个。 在通过Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)与MVPD达成一致后，您的组织管理员或代表您行事的Adobe Pass身份验证代表可以查看和更改资源的最大数量。
 
 ## D.授权阶段 {#authorization-phase}
 
@@ -296,15 +297,15 @@ API
 
 * **检索授权决定：**&#x200B;程序员服务通过调用&#x200B;[**/api/v2/{serviceProvider}/decision/authorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)终结点，检索流应用程序传递的特定资源的授权决定。
 
-   * 将授权决策存储在永久存储中不需要程序员服务。
+  * 将授权决策存储在永久存储中不需要程序员服务。
 
-   * 通过检查决策授权终结点响应中包含的[错误代码和消息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，程序员服务可以确定拒绝授权决策的原因。 这些详细信息可为insight提供授权请求被拒绝的具体原因，有助于告知用户体验或在流应用程序中触发任何必要的处理。 请确保在授权决策被拒绝时，为检索授权决策而实施的任何重试机制都不会导致无限循环。 考虑将重试限制为合理数字，并通过向用户提供明确的反馈，谨慎处理拒绝请求。
+  * 通过检查决策授权终结点响应中包含的[错误代码和消息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，程序员服务可以确定拒绝授权决策的原因。 这些详细信息可为insight提供授权请求被拒绝的具体原因，有助于告知用户体验或在流应用程序中触发任何必要的处理。 请确保在授权决策被拒绝时，为检索授权决策而实施的任何重试机制都不会导致无限循环。 考虑将重试限制为合理数字，并通过向用户提供明确的反馈，谨慎处理拒绝请求。
 
-   * 程序员服务可以评估其他业务规则，并向流应用程序返回适当的授权决定。
+  * 程序员服务可以评估其他业务规则，并向流应用程序返回适当的授权决定。
 
-   * 当流正在播放时，不需要程序员服务来刷新过期的媒体令牌。 如果媒体令牌在播放期间过期，则应该允许流继续而不会中断。 但是，下次用户尝试播放资源时，客户端必须请求新的授权决定，并获取新的媒体令牌。
+  * 当流正在播放时，不需要程序员服务来刷新过期的媒体令牌。 如果媒体令牌在播放期间过期，则应该允许流继续而不会中断。 但是，下次用户尝试播放资源时，客户端必须请求新的授权决定，并获取新的媒体令牌。
 
-   * 由于MVPD施加的条件，程序员服务可以在单个API请求中为有限数量的资源获取授权决策，通常最多可达1。
+  * 由于MVPD施加的条件，程序员服务可以在单个API请求中为有限数量的资源获取授权决策，通常最多可达1。
 
 ## E.注销阶段 {#logout-phase}
 
@@ -332,12 +333,12 @@ API
 
 * 启动Adobe Pass注销：程序员服务通过调用[/api/v2/{serviceProvider}/logout/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)终结点来启动流应用程序请求的注销流程。
 
-   * 程序员服务可清除其存储的有关已验证用户的任何信息。
+  * 程序员服务可清除其存储的有关已验证用户的任何信息。
 
-   * 程序员服务必须按照注销终结点响应的`actionName`和`actionType`属性中提供的说明进行操作，以确保正确完成注销过程。
+  * 程序员服务必须按照注销终结点响应的`actionName`和`actionType`属性中提供的说明进行操作，以确保正确完成注销过程。
 
-      * 如果响应中的`actionType`属性设置为“interactive”，则程序员服务必须将`url`属性值返回到流应用程序。
+    * 如果响应中的`actionType`属性设置为“interactive”，则程序员服务必须将`url`属性值返回到流应用程序。
 
-         * **方案1：**&#x200B;流应用程序可以打开浏览器或Web视图，因此必须加载注销`url`。
+      * **方案1：**&#x200B;流应用程序可以打开浏览器或Web视图，因此必须加载注销`url`。
 
-         * **场景2：**&#x200B;流应用程序无法打开浏览器，因此注销过程可以停止，因为MVPD会话未保留在流设备浏览器缓存中。
+      * **场景2：**&#x200B;流应用程序无法打开浏览器，因此注销过程可以停止，因为MVPD会话未保留在流设备浏览器缓存中。

@@ -2,13 +2,14 @@
 title: JavaScript SDK概述
 description: JavaScript SDK概述
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '515'
 ht-degree: 0%
-
 ---
-
 # （旧版）JavaScript SDK概述 {#javascript-sdk-overview}
 
 >[!NOTE]
@@ -29,7 +30,7 @@ Adobe Pass Authentication JavaScript集成在熟悉的JS Web应用程序开发�
 
 >[!IMPORTANT]
 >
->本文档介绍了桌面Web解决方案的实施。 移动平台(例如，iOS上的Safari、Android上的Chrome)上不支持JavaScript库。 如果您希望定位移动平台(iOS、Android、Windows)，请使用我们的本机SDK。
+>本文档介绍了桌面Web解决方案的实施。 移动平台（例如，iOS上的Safari、Android上的Chrome）上不支持JavaScript库。 如果您希望定位移动平台(iOS、Android、Windows)，请使用我们的本机SDK。
 
 ## 创建“MVPD选择”对话框 {#creating-the-mvpd-selection-dialog}
 
@@ -55,7 +56,7 @@ Adobe Pass Authentication JavaScript集成在熟悉的JS Web应用程序开发�
     </head>
     <body>
         <div id="alternative">
-        <a href="http://www.adobe.com/go/getflashplayer_cn"> 
+        <a href="http://www.adobe.com/go/getflashplayer"> 
             <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" 
                  alt="Get Adobe Flash player"/> </a>
         </div> 
@@ -207,7 +208,7 @@ Adobe Pass Authentication JavaScript集成在熟悉的JS Web应用程序开发�
 
 
 
-- **从未与Adobe Pass身份验证集成的站点启动注销时。**&#x200B;在这种情况下，MVPD可以通过浏览器重定向调用Adobe Pass身份验证单一注销服务。 （当前不支持通过回通道调用调用SLO。）
+- **从未与Adobe Pass身份验证集成的站点启动注销时。** 在这种情况下，MVPD可以通过浏览器重定向调用Adobe Pass身份验证单一注销服务。 （当前不支持通过回通道调用调用SLO。）
 
 >[!NOTE]
 >

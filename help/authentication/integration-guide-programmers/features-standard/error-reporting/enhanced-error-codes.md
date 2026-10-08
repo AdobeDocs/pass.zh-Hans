@@ -2,13 +2,14 @@
 title: 增强的错误代码
 description: 增强的错误代码
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2747'
 ht-degree: 3%
-
 ---
-
 # 增强的错误代码 {#enhanced-error-codes}
 
 >[!IMPORTANT]
@@ -18,12 +19,12 @@ ht-degree: 3%
 增强的错误代码表示Adobe Pass身份验证功能，该功能向与集成的客户端应用程序提供其他错误信息：
 
 * Adobe Pass身份验证REST API：
-   * [REST API v2](../../rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
-   * [（旧版）REST API v1](../../legacy/rest-api-v1/rest-api-overview.md)
+  * [REST API v2](../../rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [（旧版）REST API v1](../../legacy/rest-api-v1/rest-api-overview.md)
 * Adobe Pass身份验证SDK预授权API：
-   * [（旧版）JavaScript SDK（预授权API）](../../legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
-   * [（旧版）iOS/tvOS SDK（预授权API）](../../legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
-   * [（旧版）Android SDK（预授权API）](../../legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
+  * [（旧版）JavaScript SDK（预授权API）](../../legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
+  * [（旧版）iOS/tvOS SDK（预授权API）](../../legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
+  * [（旧版）Android SDK（预授权API）](../../legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
 
   _(*) Preauthorize API是唯一支持增强错误代码的Adobe Pass身份验证SDK API。_
 
@@ -101,7 +102,7 @@ Content-Type: application/json
         "code": "authorization_denied_by_mvpd",
         "message": "The MVPD has returned a \"Deny\" decision when requesting authorization for the specified resource",
         "details": "Your subscription package does not include the \"Live\" channel",
-        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
         "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
       }
     }
@@ -120,7 +121,7 @@ Content-Type: application/json
   "status": 400,
   "code": "invalid_parameter_service_provider",
   "message": "The service provider parameter value is missing or invalid.",
-  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
   "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
 }
 ```
@@ -154,7 +155,7 @@ Content-Type: application/json
         "code": "authorization_denied_by_mvpd",
         "message": "The MVPD has returned a \"Deny\" decision when requesting authorization for the specified resource",
         "details": "Your subscription package does not include the \"Live\" channel",
-        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
         "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
       }
     }
@@ -173,7 +174,7 @@ Content-Type: application/json
   "status": 400,
   "code": "invalid_requestor",
   "message": "The requestor parameter is missing or invalid.",
-  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
   "trace": "8bcb17f9-b172-47d2-86d9-3eb146eba85e"
 }
 ```
@@ -189,7 +190,7 @@ Content-Type: application/xml
   <status>400</status>
   <code>invalid_requestor</code>
   <message>The requestor parameter is missing or invalid.</message>
-  <helpUrl>https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans</helpUrl>
+  <helpUrl>https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html</helpUrl>
   <trace>8bcb17f9-b172-47d2-86d9-3eb146eba85e</trace>
 </error>
 ```
@@ -207,7 +208,7 @@ Content-Type: application/xml
 | *代码* | *字符串* | *authorization_denied_by_mvpd* | 检查(&amp;C)； | 与本文档中定义的错误关联的Adobe Pass身份验证唯一标识符代码。<br/><br/> 有关更多详细信息，请参阅[代码](#enhanced-error-codes-code)部分。 |
 | *消息* | *字符串* | *请求对指定资源的授权时，MVPD返回了“拒绝”决定* |            | 在某些情况下，可以向最终用户显示的可读消息。<br/><br/> 有关更多详细信息，请参阅[响应处理](#enhanced-error-codes-response-handling)部分。 |
 | *详细信息* | *字符串* | *您的订阅包不包含“实时”频道* |            | 在某些情况下，服务合作伙伴可以提供的详细消息，<br/><br/>如果服务合作伙伴不提供任何自定义消息，则此字段可能不存在。 |
-| *helpUrl* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hans* |            | Adobe Pass身份验证公共文档URL，该URL链接到有关出现此错误的原因和可能解决方案的更多信息。<br/><br/> 此字段包含绝对URL，不应从错误代码推断，根据错误上下文，可以提供不同的URL。 |
+| *helpUrl* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html* |            | Adobe Pass身份验证公共文档URL，该URL链接到有关出现此错误的原因和可能解决方案的更多信息。<br/><br/> 此字段包含绝对URL，不应从错误代码推断，根据错误上下文，可以提供不同的URL。 |
 | *跟踪* | *字符串* | *12f6fef9-d2e0-422b-a9d7-60d799abe353* |            | 响应的唯一标识符，在联系Adobe Pass身份验证支持团队以解决特定问题时可以使用该标识符。 |
 
 >[!IMPORTANT]

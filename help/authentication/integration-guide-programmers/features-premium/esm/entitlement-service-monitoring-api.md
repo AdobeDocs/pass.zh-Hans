@@ -2,13 +2,14 @@
 title: 授权服务监控API
 description: 授权服务监控API
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2098'
 ht-degree: 0%
-
 ---
-
 # 授权服务监控API {#entitlement-service-monitoring-api}
 
 >[!IMPORTANT]
@@ -63,13 +64,13 @@ REST API根据维度路径、提供的过滤器和所选的量度，在请求中
 
 ![](../../../assets/esm-mvpd-dimensions.png)
 
-`https://mgmt.auth.adobe.com/esm/v3` API端点的GET将返回包含以下内容的表示形式：
+对`https://mgmt.auth.adobe.com/esm/v3` API终结点的GET将返回包含以下内容的表示形式：
 
 * 可用根向下钻取路径的链接：
 
-   * `<link rel="drill-down" href="/v3/dimensionA"/>`
+  * `<link rel="drill-down" href="/v3/dimensionA"/>`
 
-   * `<link rel="drill-down" href="/v3/dimensionB"/>`
+  * `<link rel="drill-down" href="/v3/dimensionB"/>`
 
 * 所有量度的概要（聚合值）(默认情况下，
 间隔，因为未提供查询字符串参数，请参见下文)。
@@ -128,7 +129,7 @@ REST API根据维度路径、提供的过滤器和所选的量度，在请求中
 | 量度 | 是 | 要返回的量度名称列表（以逗号分隔）；这应当用于筛选可用量度的子集（以减小有效负载大小），并且还用于强制API返回包含所请求量度的投影（而不是默认的最佳投影）。 | 如果未提供此参数，则将返回可用于当前投影的所有量度。 | metrics=m1，m2 |
 | 开始 | 是 | 报表的开始时间设置为ISO8601；如果仅提供前缀，服务器将填充剩余部分：例如，start=2024将导致开始时间=2024-01-01:00:00:00 | 服务器在自链接中报告；服务器尝试根据选定的时间粒度提供合理的默认值 | start=2024-07-15 |
 
-目前唯一可用的HTTP方法是GET。
+当前唯一可用的HTTP方法是GET。
 
 ## ESM API状态代码 {#esm-api-status-codes}
 
@@ -139,7 +140,7 @@ REST API根据维度路径、提供的过滤器和所选的量度，在请求中
 | 401 | 未授权 | 由请求导致的，该请求不包含正确的OAuth标头，用于对用户进行身份验证 |
 | 403 | 禁止 | 指示在当前安全上下文中不允许该请求；当用户通过身份验证但无权访问请求的信息时，会发生这种情况 |
 | 404 | 未找到 | 在请求中提供了无效的URL路径时发生。 如果客户端遵循随200个响应提供的“深入分析”/“汇总”链接，则绝不会发生这种情况 |
-| 405 | 不允许使用该方法 | 表示在请求中使用了不受支持的方法。 虽然当前仅支持GET方法，但未来的版本可能允许HEAD或OPTIONS |
+| 405 | 不允许使用该方法 | 表示在请求中使用了不受支持的方法。 虽然当前仅支持GET方法，但未来版本可能允许HEAD或OPTIONS |
 | 406 | 不可接受 | 表示客户端请求的媒体类型不受支持 |
 | 500 | 内部服务器错误 | “这绝不应该发生” |
 | 503 | 服务不可用 | 表示应用程序或其依赖项中的错误 |

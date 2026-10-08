@@ -2,13 +2,14 @@
 title: REST API指南（客户端到服务器）
 description: Rest API指南客户端到服务器。
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '906'
 ht-degree: 0%
-
 ---
-
 # （旧版）REST API指南（客户端到服务器） {#rest-api-cookbook-client-to-server}
 
 >[!NOTE]
@@ -84,7 +85,7 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
 
 1. 用户从第二屏应用程序返回并按设备上的“继续”按钮。 或者，您可以实施轮询机制来检查身份验证状态，但Adobe Pass身份验证建议使用继续按钮方法而不是轮询。<!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)--> 例如： [\&lt;SP\_FQDN\>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)
 
-2. 将GET请求发送到Adobe Pass身份验证授权服务以启动授权。 例如： `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
+2. 向Adobe Pass身份验证授权服务发送GET请求以启动授权。 例如： `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
 
 <!-- end list -->
 
@@ -92,11 +93,11 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
 
 * 如果响应指示失败：请检查引发的异常，以确定其类型（AuthN、AuthZ或其他）：
 
-   * 如果是AuthN错误，则重新启动注册流。
+  * 如果是AuthN错误，则重新启动注册流。
 
-   * 如果是AuthZ错误，则用户无权观看请求的媒体，应向用户显示某种错误消息。
+  * 如果是AuthZ错误，则用户无权观看请求的媒体，应向用户显示某种错误消息。
 
-   * 如果发生其他错误（连接错误、网络错误等）， 然后向用户显示相应的错误消息。
+  * 如果发生其他错误（连接错误、网络错误等）， 然后向用户显示相应的错误消息。
 
 
 
@@ -109,10 +110,10 @@ Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务
    答：  您的应用程序会检查媒体是否受保护。
 
    b.  如果媒体受到保护，您的应用程序将启动授权
-(AuthZ)以上流量。
+   (AuthZ)以上流量。
 
    c.  如果媒体未受保护，则播放的媒体
-用户。
+   用户。
 
 3. 播放媒体。
 

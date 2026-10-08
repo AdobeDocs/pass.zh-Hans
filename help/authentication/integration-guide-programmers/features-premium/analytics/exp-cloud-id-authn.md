@@ -2,13 +2,14 @@
 title: 在Adobe Pass身份验证中使用Experience Cloud ID
 description: 在Adobe Pass身份验证中使用Experience Cloud ID
 exl-id: 03354c01-5aad-4d81-beee-1c3834599134
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '428'
 ht-degree: 0%
-
 ---
-
 # 在Adobe Pass身份验证中使用Experience Cloud ID
 
 >[!NOTE]
@@ -21,7 +22,7 @@ Experience Cloud ID（简称ECID）是Adobe Experience Cloud为您应用程序/�
 
 如果您已具有提供访客ID的系统，则应该对此文档的范围使用同一ID。
 
-获取ECID的一种方法是使用Experience Cloud ID服务。 您可以使用基于TDM、JS库、服务器端、直接集成或移动设备平台本机库的首选实施类型。 要全面了解可用的服务、库、SDK和实施指南，请参阅：<https://experienceleague.adobe.com/docs/id-service/using/implementation/implementation-guides.html?lang=zh-Hans>
+获取ECID的一种方法是使用Experience Cloud ID服务。 您可以使用基于TDM、JS库、服务器端、直接集成或移动设备平台本机库的首选实施类型。 要全面了解可用的服务、库、SDK和实施指南，请参阅：<https://experienceleague.adobe.com/docs/id-service/using/implementation/implementation-guides.html>
 
 ## 在Adobe Pass身份验证中使用Experience Cloud ID有何好处？ {#benefit-ex-cloud-id}
 

@@ -2,13 +2,14 @@
 title: 在资格预审中设置环境和测试
 description: 在资格预审中设置环境和测试
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '492'
 ht-degree: 0%
-
 ---
-
 # 在资格预审中设置环境和测试{#setting-up-your-environment-and-testing-in-prequal}
 
 >[!NOTE]
@@ -30,7 +31,7 @@ ht-degree: 0%
 
 * 要查找可用于欺骗的负载平衡器IP，请运行以下命令：
 
-* Windows上的&#x200B;**&#x200B;**
+* Windows上的&#x200B;****
 
   ```cmd
   C:\>nslookup sp-prequal.auth.adobe.com
@@ -51,7 +52,7 @@ Addresses:  52.26.79.43
 ``Choose any IP from **addresses** section (e.g. `54.190.212.171)``
 
 
-* 在Linux/Mac上&#x200B;**&#x200B;**
+* 在Linux/Mac上&#x200B;****
 
 ```sh
     $ dig sp-prequal.auth.adobe.com
@@ -89,8 +90,8 @@ Addresses:  52.26.79.43
 * 编辑&#x200B;*c：\\windows\\System32\\drivers\\etc\\hosts*&#x200B;文件（在Windows中）或&#x200B;*/etc/hosts*&#x200B;文件（在Macintosh/Linux/Android上）并添加以下内容：
 
 * 伪造生产配置文件
-   * 52.13.71.11 sp.auth.adobe.com api.auth.adobe.com
-   * 54.190.212.171 entitlement.auth.adobe.com
+  * 52.13.71.11 sp.auth.adobe.com api.auth.adobe.com
+  * 54.190.212.171 entitlement.auth.adobe.com
 
 **在Android上欺骗：**&#x200B;为了欺骗Android，您必须使用Android模拟器。
 

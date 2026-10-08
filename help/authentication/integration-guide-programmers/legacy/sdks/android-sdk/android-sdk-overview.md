@@ -2,13 +2,14 @@
 title: Android SDK概述
 description: Android SDK概述
 exl-id: a1d98325-32a1-4881-8635-9a3c38169422
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2801'
 ht-degree: 0%
-
 ---
-
 # （旧版）Android SDK概述 {#android-sdk-overview}
 
 >[!NOTE]
@@ -72,7 +73,7 @@ AccessEnabler支持的所有授权工作流都假定您之前已调用[`setReque
 
 
 
-**注意：**&#x200B;从某个程序员/MVPD会话注销操作将清除
+**注意：**从某个程序员/MVPD会话注销操作将清除
 该特定MVPD的基础存储，包括所有
 通过SSO获取的其他程序员身份验证令牌
 那个装置。 为其他MVPD或未通过SSO获取的令牌将不会

@@ -2,13 +2,14 @@
 title: 传递客户端信息（设备、连接和应用程序）
 description: 传递客户端信息（设备、连接和应用程序）
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1725'
 ht-degree: 2%
-
 ---
-
 # （旧版）传递客户端信息（设备、连接和应用程序） {#pass-client-info}
 
 >[!NOTE]
@@ -97,7 +98,8 @@ AccessEnabler JavaScript SDK仅支持&#x200B;**通过[setRequestor](/help/authen
 
 >[!CAUTION]
 >
->`applicationId`参数值必须是纯文本字符串值。如果程序员应用程序决定传递applicationId，则其余的客户端信息密钥仍由AccessEnabler JavaScript SDK计算。
+>`applicationId`参数值必须是纯文本字符串值。
+>如果程序员应用程序决定传递applicationId，则其余的客户端信息密钥仍由AccessEnabler JavaScript SDK计算。
 
 #### iOS/tvOS SDK {#ios-tvos-sdk}
 

@@ -2,13 +2,14 @@
 title: 决策
 description: 决策
 exl-id: 1efd70af-8c1d-43c4-87fc-14488d42b23d
-source-git-commit: a19f4fd40c9cd851a00f05f82adbabb85edd8422
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1014'
 ht-degree: 0%
-
 ---
-
 # 决策 {#decisions}
 
 >[!IMPORTANT]
@@ -88,10 +89,10 @@ MVPD可能支持通过各种机制进行预授权，每种机制对性能以及�
 受保护的资源遵循分层树结构，每个级别都为内容授权提供了更大的粒度：
 
 * 网络
-   * 渠道
-      * 显示
-         * 集
-            * 资产
+  * 渠道
+    * 显示
+      * 集
+        * 资产
 
 >[!IMPORTANT]
 >
@@ -148,4 +149,5 @@ MVPD可能支持通过各种机制进行预授权，每种机制对性能以及�
 
 >[!MORELIKETHIS]
 >
-> [预授权阶段常见问题解答授权阶段常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)
+> [预授权阶段常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#preauthorization-phase-faqs-general)
+> [授权阶段常见问题解答](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)

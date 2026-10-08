@@ -2,20 +2,21 @@
 title: MVPD快速入门指南
 description: MVPD快速入门指南
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '934'
+source-wordcount: '965'
 ht-degree: 0%
-
 ---
-
 # MVPD快速入门指南 {#mvpd-kickstart-guide}
 
 >[!IMPORTANT]
 >
 > 此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-本Kickstart指南面向计划与Adobe® Pass Authentication集成的多渠道视频节目分发商(MVPD)。
+本Kickstart指南面向计划与® Pass Authentication集成的多渠道视频节目分发商(MVPD)。
 
 本文档概述了确保顺利高效地启动集成流程的关键初始步骤。 它旨在明确我们的期望，并为我们如何与合作伙伴协作以实现成功集成提供指导。
 
@@ -33,9 +34,9 @@ Adobe提供了一系列资源来帮助您与Adobe Pass身份验证集成。 请�
 
 设置过程涉及以下步骤：
 
-![Adobe®通过身份验证集成进程](../assets/mvpd-int-lifecycle.png)
+![®通过身份验证集成进程](../assets/mvpd-int-lifecycle.png)
 
-*Adobe®通过身份验证集成进程*
+*®通过身份验证集成进程*
 
 ### 启动 {#kickoff}
 
@@ -81,7 +82,7 @@ Adobe提供了一系列资源来帮助您与Adobe Pass身份验证集成。 请�
 
 ### 连接性 {#connectivity}
 
-**您将提供**&#x200B;一种从Adobe允许列表IP的方法，因为Adobe Pass身份验证要求防火墙允许通过端口80和443的流量在身份验证和授权过程中启用对受限资源的访问。
+**您将提供**&#x200B;一种从允许列表IP的方法，因为Adobe Pass身份验证要求防火墙允许通过端口80和443的流量在身份验证和授权过程中启用对受限资源的访问。
 
 **您将在暂存配置文件中提供**&#x200B;部署以测试连接。
 
@@ -129,16 +130,16 @@ Adobe提供了一系列资源来帮助您与Adobe Pass身份验证集成。 请�
 
 ## 访问客户支持 {#access-customer-support}
 
-**Adobe将通过** Zendesk[提供](https://tve.zendesk.com/home)访问我们的客户支持系统的权限。 要访问Zendesk，您必须在https://tve.zendesk.com/home上注册并创建一个帐户。
+**Adobe将通过[Zendesk](https://tve.zendesk.com/home)提供**&#x200B;访问我们的客户支持系统的权限。 要访问Zendesk，您必须在https://tve.zendesk.com/home上注册并创建一个帐户。
 
 Adobe Pass身份验证团队可用于解答我们在集成过程中可能遇到的任何问题或技术问题。 请通过[tve-support@adobe.com](mailto:tve-support@adobe.com)联系我们。
 
 ## 文档访问权限 {#access-documentation}
 
-**Adobe将通过** Adobe Experience League[提供](https://experienceleague.adobe.com/zh-hans/docs/pass/authentication/home)对公共文档的访问权限。
+**Adobe将通过[Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home)提供**&#x200B;对公共文档的访问权限。
 
 Adobe Pass身份验证团队提供了[MVPD集成指南](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md)部分下可用功能和工作流的综合文档。 有关每个主题的详细信息的链接，请参阅本节下的目录。
 
 ## 访问测试工具 {#access-testing-tool}
 
-**Adobe将通过** Adobe Developer[网站提供](https://developer.adobe.com/adobe-pass/)对我们API探索工具的访问权限。
+**Adobe将通过[Adobe Developer](https://developer.adobe.com/adobe-pass/)网站提供**&#x200B;对我们API探索工具的访问权限。

@@ -2,13 +2,14 @@
 title: 在用户代理中执行身份验证
 description: REST API V2 — 在用户代理中执行身份验证
 exl-id: d615dde0-71a8-4b6c-a12e-1e3b5e20728c
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '242'
 ht-degree: 5%
-
 ---
-
 # 在用户代理中执行身份验证 {#perform-authentication-in-user-agent}
 
 >[!IMPORTANT]
@@ -94,7 +95,8 @@ ht-degree: 5%
       <td>405</td>
       <td>不允许使用该方法</td>
       <td>
-        HTTP方法无效，客户端需要使用请求资源允许的HTTP方法并重试。 有关更多详细信息，请参阅<a href="#request">请求</a>部分。</td>
+        HTTP方法无效，客户端需要使用请求资源允许的HTTP方法并重试。 有关更多详细信息，请参阅<a href="#request">请求</a>部分。
+      </td>
    </tr>
    <tr>
       <td>500</td>

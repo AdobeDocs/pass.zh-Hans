@@ -2,13 +2,14 @@
 title: TVE功能板集成
 description: 了解您的渠道和MVPD之间的集成以及如何管理集成。
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2105'
 ht-degree: 0%
-
 ---
-
 # 集成
 
 >[!NOTE]
@@ -200,7 +201,7 @@ TVE仪表板的&#x200B;**集成**&#x200B;部分允许您查看和管理渠道与
 **更改预授权资源的数量**
 
 默认情况下，大多数MVPD支持最多使用5个资源ID的预检authZ调用。
-但是，如果MVPD同意提高此限制，则可以导航到&#x200B;**添加更多属性**，然后从选项菜单中选择&#x200B;**预检最大资源**。
+但是，如果MVPD同意提高此限制，则可以导航到**添加更多属性**，然后从选项菜单中选择&#x200B;**预检最大资源**。
 
 **预检最大资源**&#x200B;将添加新的属性，以便指定与MVPD商定的限制。
 

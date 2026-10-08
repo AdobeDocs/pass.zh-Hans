@@ -2,13 +2,14 @@
 title: 动态客户端注册流程
 description: 动态客户端注册流程
 exl-id: d881cf0a-de09-4b1d-a094-d5490f944796
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '564'
+source-wordcount: '567'
 ht-degree: 0%
-
 ---
-
 # 动态客户端注册流程 {#dynamic-client-registration-flow}
 
 >[!IMPORTANT]
@@ -102,15 +103,15 @@ ht-degree: 0%
    >
    > 访问令牌必须仅在指定的时间内（例如，24小时存留期）缓存和使用。 过期后，客户端应用程序必须请求新的访问令牌。
 
-1. **继续访问受保护的API：**&#x200B;客户端应用程序使用访问令牌访问其他受Adobe Pass保护的API。 客户端应用程序必须在使用`Authorization`身份验证方案（即`Bearer`）的`Authorization: Bearer <access_token>`请求标头中包含访问令牌。
+1. **继续访问受保护的API：**&#x200B;客户端应用程序使用访问令牌访问其他受Adobe Pass保护的API。 客户端应用程序必须在使用`Bearer`身份验证方案（即`Authorization: Bearer <access_token>`）的`Authorization`请求标头中包含访问令牌。
 
    >[!IMPORTANT]
    >
    > 受Adobe Pass保护的API验证访问令牌，以确保满足基本条件：
    >
-   > * _access_token_&#x200B;必须有效。
-   > * _access_token_&#x200B;必须与有效的&#x200B;_client_id_&#x200B;和&#x200B;_client_secret_&#x200B;关联。
-   > * _access_token_&#x200B;必须与有效的&#x200B;_software_statement_&#x200B;关联。
+   > * _access_ token_必须有效。
+   > * _access_ token _必须与有效的_ client _id_&#x200B;和_client_secret_关联。
+   > * _access_ token _必须与有效的_ software_statement_关联。
    >
    > <br/>
    >

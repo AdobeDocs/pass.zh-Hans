@@ -2,13 +2,14 @@
 title: 节流机构
 description: 节流机构
 exl-id: 15236570-1a75-42fb-9bba-0e2d7a59c9f6
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '614'
+source-wordcount: '616'
 ht-degree: 1%
-
 ---
-
 # 节流机构 {#throttling-mechanism}
 
 ## 简介 {#introduction}
@@ -20,7 +21,7 @@ Adobe作为您的数据处理者，必须采取适当措施，确保客户的用
 ## 机制概述 {#mechanism-overview}
 
 该机制可确定在特定时间间隔内每个并发监控端点接受的最大调用数。
-一旦达到最大呼叫数，我们的服务将作出“429请求过多”的响应。 429响应“Expires”标头包含下一次调用被视为有效或限制过期的时间戳。 现在，限制在完成后过期   第一个429响应后的分钟。
+一旦达到最大呼叫数，我们的服务将作出“429请求过多”的响应。 429响应“Expires”标头包含下一次调用被视为有效或限制过期的时间戳。 现在，限制在前429响应开始一分钟后过期。
 
 配置了节流的端点包括：
 1. 创建新会话： POST /sessions/{idp}/{subject}
@@ -28,8 +29,8 @@ Adobe作为您的数据处理者，必须采取适当措施，确保客户的用
 3. 终止会话：DELETE/sessions/{idp}/{subject}/{sessionId}
 
 可在两个级别上配置限制：
-1. 会话：在{sessionId}调用和`Heartbeat`调用中发送了相同的唯一`Terminate a session`参数。
-2. 用户：在{subject}调用中发送了相同的唯一`Create a new session`参数。
+1. 会话：在`Heartbeat`调用和`Terminate a session`调用中发送了相同的唯一{sessionId}参数。
+2. 用户：在`Create a new session`调用中发送了相同的唯一{subject}参数。
 
 会话级别限制设置为1分钟内200个请求。\
 用户级别限制设置为1分钟内200个请求。\

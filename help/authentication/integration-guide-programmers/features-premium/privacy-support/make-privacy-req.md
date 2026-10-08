@@ -2,13 +2,14 @@
 title: 如何提出隐私请求
 description: 如何提出隐私请求
 exl-id: abb21306-98d6-4899-914a-bdfa85cbd204
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '603'
 ht-degree: 0%
-
 ---
-
 # 如何提出隐私请求 {#howto-make-privacy-request}
 
 >[!NOTE]
@@ -226,7 +227,7 @@ Adobe Pass身份验证支持访问和删除请求。
 
 ### 使用Privacy Service UI {#privacy-service-ui}
 
-有关如何访问和使用Privacy Service用户界面的[完整教程](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=zh-Hans#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)可通过Adobe I/O服务在线获取。 此外，客户可以使用此链接访问有关隐私法规的视频和文章库。 单击Adobe Experience Cloud和GDPR菜单。 该操作将打开多个视频 — “GDPR UI操作说明”将介绍其使用方法。
+有关如何访问和使用Privacy Service用户界面的[完整教程](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)可通过Adobe I/O服务在线获取。 此外，客户可以使用此链接访问有关隐私法规的视频和文章库。 单击Adobe Experience Cloud和GDPR菜单。 该操作将打开多个视频 — “GDPR UI操作说明”将介绍其使用方法。
 
 在UI中，客户需要加载他们自己的IMSOrgID和包含每个产品的GDPR请求详细信息的JSON。
 
@@ -239,7 +240,7 @@ Adobe Experience Platform Privacy Service为访问/删除请求和私人数据�
 **使用Postman（免费的第三方软件）可视化API调用：**
 
 * [GitHub上的Privacy Service API Postman收集](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
-* [有关创建Postman环境的视频指南](https://video.tv.adobe.com/v/31668?captions=chi_hans)
+* [有关创建Postman环境的视频指南](https://video.tv.adobe.com/v/28832)
 * [在Postman中导入环境和收藏集的步骤](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
 
@@ -259,7 +260,7 @@ Adobe Experience Platform Privacy Service为访问/删除请求和私人数据�
 
 >[!RELATEDINFORMATION]
 >
->* [Privacy Services Overview](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=zh-Hans#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)
+>* [Privacy Services Overview](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)
 >* Privacy Service API documentation
 
 -->

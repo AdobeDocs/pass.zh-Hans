@@ -2,13 +2,14 @@
 title: 退化特征
 description: 退化特征
 exl-id: c7d6685b-a235-42eb-9c9c-0ffa1747f614
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '493'
 ht-degree: 0%
-
 ---
-
 # 退化特征 {#degradation-feature}
 
 >[!IMPORTANT]
@@ -43,7 +44,7 @@ Adobe Pass身份验证通过其&#x200B;**降级功能**&#x200B;解决这些挑�
 
 降级API是一个RESTful API，它允许程序员管理特定MVPD的降级规则。 API提供了激活、删除以及检索处于活动状态的降级规则状态的方法。
 
-要了解有关降级API的更多信息，请参阅以下Zendesk文档[Adobe Pass身份验证 | 降级API v3](https://tve.zendesk.com/hc/en-us/articles/33912526308372-Adobe-Pass-Authentication-Degradation-API-v3)并查找要下载的PDF文件。
+要了解有关降级API的更多信息，请参阅以下Zendesk文档[Adobe Pass身份验证 |降级API v3](https://tve.zendesk.com/hc/en-us/articles/33912526308372-Adobe-Pass-Authentication-Degradation-API-v3)并查找要下载的PDF文件。
 
 ## REST API V2 {#rest-api-v2}
 
