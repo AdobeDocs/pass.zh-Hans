@@ -2,13 +2,14 @@
 title: JavaScript SDK指南
 description: JavaScript SDK指南
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '957'
+source-wordcount: '972'
 ht-degree: 0%
-
 ---
-
 # （旧版）JavaScript SDK指南 {#javascript-sdk-cookbook}
 
 >[!NOTE]
@@ -56,13 +57,13 @@ ht-degree: 0%
 - `displayProviderDialog(mvpds)`
 
   **触发器：** `getAuthentication(),`仅当用户尚未选择提供程序(MVPD)且尚未通过身份验证时
-mvpds参数是用户可用的提供程序数组。
+  mvpds参数是用户可用的提供程序数组。
 
 - `setAuthenticationStatus(status, errorcode)`
 
   **触发器：**
-   - `checkAuthentication()`每次。
-   - 仅当用户已经过身份验证并已选择提供程序时，`getAuthentication()`。
+  - `checkAuthentication()`每次。
+  - 仅当用户已经过身份验证并已选择提供程序时，`getAuthentication()`。
 
   返回的状态是成功或失败；错误代码描述了失败的类型。
 
@@ -87,7 +88,7 @@ mvpds参数是用户可用的提供程序数组。
 - `selectedProvider(mvpd)`
 
   **触发器：** [`getSelectedProvider()`]&#x200B;(#$getSelProv`mvpd`参数提供有关由选择的提供程序的信息
-用户。
+  用户。
 
 - `setMetadataStatus(metadata, key, arguments)`
 
@@ -95,9 +96,9 @@ mvpds参数是用户可用的提供程序数组。
   `metadata`参数提供您请求的特定数据；键参数是`getMetadata()`请求中使用的键；`arguments`参数是传递给`getMetadata()`的同一词典。
 
 
-## 2.启动流程
+## &#x200B;2. 启动流程
 
-**I.加载AccessEnabler JavaScript：**
+**I.  加载AccessEnabler JavaScript：**
 
 暂存配置文件的&#x200B;**&#x200B;**
 
@@ -121,14 +122,14 @@ src="https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js">
 身份验证调用您的`entitlementLoaded()`回调函数。 这是应用程序与AccessEnabler通信的入口点。
 
 
-**II。**&#x200B;调用`setRequestor()`以建立
+**II.** 调用`setRequestor()`以建立
 程序员的身份；传入程序员的`requestorID`和
 （可选）Adobe Pass身份验证端点数组。
 
 **触发器：**&#x200B;无，但允许在需要时调用`displayProviderDialog()`。
 
 
-**III。**&#x200B;调用`checkAuthentication()`以检查现有身份验证，而不启动完整的[身份验证流程]。  如果此调用成功，您可以直接转到`authorization flow`。  如果不是，则继续执行`authentication flow`。
+**III.** 调用`checkAuthentication()`以检查现有身份验证，而不启动完整的[身份验证流程]。  如果此调用成功，您可以直接转到`authorization flow`。  如果不是，则继续执行`authentication flow`。
 
 **依赖项：**&#x200B;成功调用`setRequestor()`（此依赖项也适用于所有后续调用）。
 
@@ -136,7 +137,7 @@ src="https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js">
 
 </br>
 
-## 3.身份验证流程</span>
+## &#x200B;3. 身份验证流</span>
 
 
 **依赖项：**&#x200B;成功调用`setRequestor()`（此依赖项也适用于所有后续调用）。
@@ -149,9 +150,9 @@ src="https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js">
 - 如果用户尚未通过身份验证，`displayProviderDialog()`
 - 如果已进行身份验证，则为`setAuthenticationStatus()`
 
-当AccessEnabler使用`setAuthenticationStatus()`调用`isAuthenticated == 1`时到达身份验证流程的完成状态。
+当AccessEnabler使用`isAuthenticated == 1`调用`setAuthenticationStatus()`时到达身份验证流程的完成状态。
 
-## 4.授权流程 {#authz}
+## &#x200B;4. 授权流程 {#authz}
 
 **依赖项：**
 
@@ -164,7 +165,7 @@ src="https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js">
 - 如果调用失败：检查引发的异常，以确定其类型（AuthN、AuthZ或其他）：
 - 如果调用是AuthN错误，则重新启动AuthN流。
 - 如果调用是AuthZ错误，则用户无权观看请求的媒体，并且应向用户显示某种错误消息。
-- 如果发生其他错误（连接错误、网络错误等），则向用户显示相应的错误消息。
+- 如果发生其他错误（连接错误、网络错误等）， 然后向用户显示相应的错误消息。
 
 使用媒体令牌验证器验证从成功的`getAuthorization()`调用返回的shortMediaToken。
 
@@ -175,14 +176,14 @@ AccessEnabler库)
 - 如果验证通过：为用户显示/回放请求的媒体。
 - 如果失败：AuthZ令牌无效，应拒绝媒体请求，并向用户显示错误消息。
 
-## 5.查看Media流程 {#logout}
+## &#x200B;5. 查看媒体流 {#logout}
 
 - 用户选择要查看的媒体。
-   - 媒体是否受保护？
-      - 您的应用程序会检查媒体是否受保护：
-         - 如果媒体受到保护，您的应用程序将启动上述授权(AuthZ)流程。
-         - 如果媒体未受保护，请继续查看媒体流。
-         - 播放媒体
+  - 媒体是否受保护？
+    - 您的应用程序会检查媒体是否受保护：
+      - 如果媒体受到保护，您的应用程序将启动上述授权(AuthZ)流程。
+      - 如果媒体未受保护，请继续查看媒体流。
+      - 播放媒体
 
 ## 配置访客Id {#visitorID}
 

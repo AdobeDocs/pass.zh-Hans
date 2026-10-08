@@ -2,13 +2,14 @@
 title: Adobe Pass身份验证和Android 6“Marshmallow”新权限模型
 description: Adobe Pass身份验证和Android 6“Marshmallow”新权限模型
 exl-id: 3c96769e-b25b-48ab-bb74-40f13d4e5a84
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '503'
+source-wordcount: '521'
 ht-degree: 0%
-
 ---
-
 # （旧版）Adobe Pass身份验证和Android 6“Marshmallow”新权限模型 {#adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model}
 
 >[!NOTE]
@@ -74,7 +75,7 @@ if (ContextCompat.checkSelfPermission(thisActivity,
 
 >[!TIP]
 >
->引入存储恢复功能的功能目前正在为Adobe Pass Authentication SDK 1.9开发。新的SDK计划在10月&#x200B;**的最后一周发布**。 当无法使用常规存储时，应用程序将回退到在应用程序的沙盒存储中进行写入。 这涵盖了对于在API级别23中开发的应用程序，用户不接受全局存储中的读/写权限的情况。 每个应用程序分别存储这些令牌，这意味着将禁用使用Adobe Pass身份验证的应用程序之间的单点登录。
+>引入存储恢复功能的功能目前正在为Adobe Pass Authentication SDK 1.9开发。 新的SDK计划在10月&#x200B;**的最后一周发布**。 当无法使用常规存储时，应用程序将回退到在应用程序的沙盒存储中进行写入。 这涵盖了对于在API级别23中开发的应用程序，用户不接受全局存储中的读/写权限的情况。 每个应用程序分别存储这些令牌，这意味着将禁用使用Adobe Pass身份验证的应用程序之间的单点登录。
 
 
 ![](../../../assets/android-permissions-request.png)

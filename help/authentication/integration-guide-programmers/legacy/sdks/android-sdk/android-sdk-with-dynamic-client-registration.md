@@ -2,13 +2,14 @@
 title: Android SDK与Dynamic Client注册
 description: Android SDK与Dynamic Client注册
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1321'
 ht-degree: 1%
-
 ---
-
 # （旧版）Android SDK，带有动态客户端注册功能 {#android-sdk-with-dynamic-client-registration}
 
 >[!NOTE]
@@ -64,7 +65,8 @@ Android SDK v3.0+将使用[动态客户端注册概述](../../../rest-apis/rest-
 - softwareStatement：从TVE仪表板获取的值，或如果字符串中设置了“software\_statement”，则为&#x200B;*null*
 - redirectUrl ：唯一URL，它是在TVE仪表板中显式添加的反向顺序域之一；如果在strings.xml中设置了“redirect\_uri”，则为&#x200B;*null*
 
-注意：无效的softwareStatement或redirectUrl将导致应用程序无法初始化AccessEnabler或注册Adobe Pass身份验证和授权的应用程序</br>
+注意：无效的softwareStatement或redirectUrl将导致应用程序无法初始化AccessEnabler或注册Adobe Pass身份验证和授权的应用程序
+</br>
 注意：strings.xml中的redirectUrl参数或redirect\_uri应为应用程序在TVE功能板中以相反顺序添加的域值(例如：对于在TVE功能板中添加的域“adobe.com”，redirectUrl应为“com.adobe”。
 
 
@@ -113,8 +115,8 @@ Android SDK v3.0+将使用[动态客户端注册概述](../../../rest-apis/rest-
 
 **参数：**&#x200B;无
 
-已触发&#x200B;**回调：** 
-
+已触发&#x200B;**回调：** `setAuthenticationStatus()`
+</br></br>
 
 ## 程序员实施流程 {#Progr}
 

@@ -2,13 +2,14 @@
 title: REST API概述
 description: Rest API概述
 exl-id: 5533d852-f644-417e-bf80-6f7aa1edd6b2
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1635'
+source-wordcount: '1659'
 ht-degree: 0%
-
 ---
-
 # （旧版）REST API概述 {#rest-api-overview}
 
 >[!NOTE]
@@ -21,7 +22,7 @@ ht-degree: 0%
 
 ## 概述 {#over}
 
-Adobe Pass身份验证REST API允许直接访问TV Everywhere (TVE)身份验证和授权服务。 此API支持两种主要体系结构：服务器到服务器或连接的设备（如游戏机、智能电视、机顶盒等）应用程序，这些应用程序没有Web浏览功能。
+Adobe Pass身份验证REST API允许直接访问TV Everywhere (TVE)身份验证和授权服务。 此API支持两种主要体系结构：服务器到服务器或连接的设备（例如游戏机、智能电视、机顶盒等） 没有Web浏览功能的应用程序。
 
 ### 节流机构
 
@@ -84,8 +85,8 @@ Connected Devices应用程序通过REST API直接与Adobe Pass身份验证进行
 
 | **功能** | **负责处理功能** | **当前无客户端API的限制以及与本机SDK的差异的说明** |
 | --- | --- | --- |
-| 每个平台应用的配置设置 | Adobe | 在所有平台(包括iOS和Android等移动设备)上使用REST API的一个&#x200B;**主要限制**&#x200B;是，与我们的TVE仪表板配置工具中的REST API对应的配置设置适用于所有设备(即使有一个iOS设备运行在REST API之上实现的本机应用程序)。 此限制&#x200B;**可能会破坏**&#x200B;与MVPD之间约定的TTL和约定平台设置 — 如果每个平台的TTL和约定设置不同。 [1](#1) |
-| 单点登录 | 程序员 | 使用REST API时，仅在支持平台SSO的平台(例如Apple、Roku、Amazon)上提供SSO，而使用REST API时，无法为其他平台保证SSO。 SDK以跨站点/应用程序方式缓存数据。 这意味着用户在网站/应用程序上登录一次，并且已在参与网站中登录，无需任何用户交互。 [2](#2) |
+| 每个平台应用的配置设置 | Adobe | 在所有平台（包括iOS和Android等移动设备）上使用REST API的一个&#x200B;**主要限制**&#x200B;是，与我们的TVE仪表板配置工具中的REST API对应的配置设置适用于所有设备（即使有一个iOS设备运行在REST API之上实现的本机应用程序）。 此限制&#x200B;**可能会破坏**&#x200B;与MVPD之间约定的TTL和约定平台设置 — 如果每个平台的TTL和约定设置不同。 [1](#1) |
+| 单点登录 | 程序员 | 使用REST API时，仅在支持平台SSO的平台（例如Apple、Roku、Amazon）上提供SSO，而使用REST API时，无法为其他平台保证SSO。 SDK以跨站点/应用程序方式缓存数据。 这意味着用户在网站/应用程序上登录一次，并且已在参与网站中登录，无需任何用户交互。 [2](#2) |
 | 单次注销 | 程序员 | 在本机SDK SSO方案中，从参与的一个应用程序中注销将会从所有位置注销用户。 在当前REST API上，我们不支持SLO，从某个应用程序注销将只为该特定应用程序注销用户。 |
 | 缓存 | 程序员 | REST API实施必须实施自己的缓存机制来处理业务认可的数据项。 SDK在考虑到各种业务规则的情况下自动缓存各种数据项。 例如，使用与身份验证令牌相同的TTL来缓存用户元数据，而某些项目可以通过编程方式从缓存中排除（预检）。 |
 | 详细的错误报告机制 | 程序员 | REST API主要依赖于HTTP错误代码来报告应用程序错误，而SDK具有详细的错误报告机制，可帮助应用程序开发人员更好地了解所发生的情况。 |

@@ -2,13 +2,14 @@
 title: Amazon FireOS SDK与Dynamic Client注册
 description: Amazon FireOS SDK与Dynamic Client注册
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1185'
 ht-degree: 1%
-
 ---
-
 
 # （旧版）Amazon FireOS SDK，带有动态客户端注册功能 {#amazon-fireos-sdk-with-dynamic-client-registration}
 
@@ -123,8 +124,8 @@ ht-degree: 1%
 
   SDK将执行以下操作：
 
-   - 注册应用程序：使用&#x200B;**software\_statement**，SDK将获得&#x200B;**client\_id， client\_secret， client\_id\_issued\_at， redirect\_uris， grant\_types**。 此信息将存储在应用程序的内部存储中。
-   - 使用client\_id、client\_secret和grant\_type=&quot;client\_credentials&quot;获取&#x200B;**access\_token**。 此access\_token将用于SDK对Adobe Pass服务器进行的每次调用。
+  - 注册应用程序：使用&#x200B;**software\_statement**，SDK将获得&#x200B;**client\_id， client\_secret， client\_id\_issued\_at， redirect\_uris， grant\_types**。 此信息将存储在应用程序的内部存储中。
+  - 使用client\_id、client\_secret和grant\_type=&quot;client\_credentials&quot;获取&#x200B;**access\_token**。 此access\_token将用于SDK对Adobe Pass服务器进行的每次调用。
 
 | 令牌错误响应： |  |  |
 |--- | --- | --- |
@@ -136,21 +137,21 @@ ht-degree: 1%
 
 - b. checkAuthentication()
 
-   - *true* ：转至授权
-   - *false* ：转到选择MVPD
+  - *true* ：转至授权
+  - *false* ：转到选择MVPD
 
 - c. getAuthentication ：SDK将在调用参数中包含&#x200B;**access_token**
 
-   - 记住mvpd ：转到setSelectedProvider(mvpd\_id)
-   - 未选择mvpd ：displayProviderDialog
-   - 已选择mvpd ：转到setSelectedProvider(mvpd\_id)
+  - 记住mvpd ：转到setSelectedProvider(mvpd\_id)
+  - 未选择mvpd ：displayProviderDialog
+  - 已选择mvpd ：转到setSelectedProvider(mvpd\_id)
 
 - d. setSelectedProvider
 
-   - mvpd\_id身份验证URL加载到ChromeCustomTables中
-   - 登录成功：delegate.setAuthenticationStatus ( SUCCESS )
-   - 已取消登录：重置MVPD选择
-   - URL方案将建立为“adobepass://android.app”，以便在身份验证完成时捕获
+  - mvpd\_id身份验证URL加载到ChromeCustomTables中
+  - 登录成功：delegate.setAuthenticationStatus ( SUCCESS )
+  - 已取消登录：重置MVPD选择
+  - URL方案将建立为“adobepass://android.app”，以便在身份验证完成时捕获
 
 - e. get/checkAuthorization ： SDK将在标头中包含&#x200B;**access\_token**&#x200B;作为授权：持有者&#x200B;**access\_token**
 
@@ -158,10 +159,10 @@ ht-degree: 1%
 
 - f. 注销：
 
-   - SDK将删除当前请求者的有效令牌（由其他应用程序而非通过SSO获得的身份验证将保持有效）
-   - SDK将打开Chrome自定义选项卡以访问mvpd\_id注销端点。 完成后，Chrome自定义选项卡将关闭
-   - URL方案将建立为“adobepass://logout”，以捕获注销完成时的时间
-   - 注销将触发sendTrackingData(new Event(EVENT\_LOGOUT，USER\_NOT\_AUTHENTICATED\_ERROR)和回调：setAuthenticationStatus(0，&quot;Logout&quot;)
+  - SDK将删除当前请求者的有效令牌（由其他应用程序而非通过SSO获得的身份验证将保持有效）
+  - SDK将打开Chrome自定义选项卡以访问mvpd\_id注销端点。 完成后，Chrome自定义选项卡将关闭
+  - URL方案将建立为“adobepass://logout”，以捕获注销完成时的时间
+  - 注销将触发sendTrackingData(new Event(EVENT\_LOGOUT，USER\_NOT\_AUTHENTICATED\_ERROR)和回调：setAuthenticationStatus(0，&quot;Logout&quot;)
 
 
 

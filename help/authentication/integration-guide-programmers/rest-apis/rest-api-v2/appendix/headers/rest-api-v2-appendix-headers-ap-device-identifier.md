@@ -2,13 +2,14 @@
 title: 标头 — AP-Device-Identifier
 description: REST API V2 — 标头 — AP-Device-Identifier
 exl-id: 90a5882b-2e6d-4e67-994a-050465cac6c6
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '561'
 ht-degree: 0%
-
 ---
-
 # 标头 — AP-Device-Identifier {#header-ap-device-identifier}
 
 >[!NOTE]
@@ -51,8 +52,10 @@ ht-degree: 0%
    <tr>
       <td>指纹</td>
       <td>
-            设备标识符由客户端应用程序为每个设备创建和管理的稳定且唯一的标识符组成。<br/>
-            客户端应用程序应将设备标识符缓存在永久存储中，因为丢失或更改它会使身份验证失效。 客户端应用程序应防止由于用户操作（如应用程序卸载、重新安装或升级）而导致值更改。</td>
+            设备标识符由客户端应用程序为每个设备创建和管理的稳定且唯一的标识符组成。
+            <br/>
+            客户端应用程序应将设备标识符缓存在永久存储中，因为丢失或更改它会使身份验证失效。 客户端应用程序应防止由于用户操作（如应用程序卸载、重新安装或升级）而导致值更改。
+      </td>
    </tr>
 </table>
 

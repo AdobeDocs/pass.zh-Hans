@@ -2,13 +2,14 @@
 title: 启动身份验证
 description: 启动身份验证
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '316'
 ht-degree: 0%
-
 ---
-
 # （旧版）启动身份验证 {#initiate-authentication}
 
 >[!NOTE]
@@ -44,9 +45,9 @@ ht-degree: 0%
 
 
 
-| 端点 | </br>调用者 | 输入   </br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
+| 端点 | </br>调用者 | 输入</br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/身份验证 | AuthN模块 | &#x200B;1. requestor_id （必需）</br>2。  mso_id （必需）</br>3。  reg_code （必需）</br>4。  domain_name （必需）</br>5。  noflash=true - </br>    （必需，剩余参数）</br>6。  no_iframe=true （必需，剩余参数）</br>7。  额外参数（可选）</br>8。  redirect_url（必需） | GET | 登录Web应用程序将被重定向到MVPD登录页面。 | 302（完全重定向实施） |
+| &lt;SP_FQDN>/api/v1/身份验证 | AuthN模块 | &#x200B;1.  requestor_id （必需）</br>2。  mso_id （必需）</br>3。  reg_code （必需）</br>4。  domain_name （必需）</br>5。  noflash=true - </br> （必需，剩余参数）</br>6。  no_iframe=true （必需，剩余参数）</br>7。  额外参数（可选）</br>8。  redirect_url（必需） | GET | 登录Web应用程序将被重定向到MVPD登录页面。 | 302（完全重定向实施） |
 
 {style="table-layout:auto"}
 

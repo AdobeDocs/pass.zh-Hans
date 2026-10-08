@@ -2,13 +2,14 @@
 title: Android SDK API参考
 description: Android SDK API参考
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '4628'
 ht-degree: 0%
-
 ---
-
 # （旧版）Android SDK API参考 {#android-sdk-api-reference}
 
 >[!NOTE]
@@ -134,12 +135,12 @@ ht-degree: 0%
 **参数：**
 
 - *状态*：可以采用以下值之一：
-   - SDK \>= 3.4.0
-      - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_SUCCESS` — 配置阶段已成功完成
-      - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_ERROR` — 配置阶段失败
-   - SDK \&lt; 3.4
-      - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` — 配置阶段已成功完成
-      - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` — 配置阶段失败
+  - SDK \>= 3.4.0
+    - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_SUCCESS` — 配置阶段已成功完成
+    - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_ERROR` — 配置阶段失败
+  - SDK \&lt; 3.4
+    - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` — 配置阶段已成功完成
+    - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` — 配置阶段失败
 
 **触发者：** `setRequestor()`
 
@@ -160,10 +161,10 @@ ht-degree: 0%
 **参数：**
 
 - *选项*：包含全局SDK选项的Map&lt;字符串，字符串>。 目前，以下选项可用：
-   - **applicationProfile** — 可用于根据此值生成服务器配置。
-   - **ap_vi** - Experience Cloud ID (visitorID)。 此值以后可用于高级分析报表。
-   - **ap_ai** - Advertising ID
-   - **device_info** — 客户端信息，如下所述： [传递客户端信息设备连接和应用程序](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)。
+  - **applicationProfile** — 可用于根据此值生成服务器配置。
+  - **ap_vi** - Experience Cloud ID (visitorID)。 此值以后可用于高级分析报表。
+  - **ap_ai** - Advertising ID
+  - **device_info** — 客户端信息，如下所述： [传递客户端信息设备连接和应用程序](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)。
 
 [返回页首……](#apis)
 
@@ -232,7 +233,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> 中止身份验证流程请注意，这是用户能够按下“返回”按钮的时刻，这相当于身份验证流中止。 在这种情况下，您的应用程序需要调用`setSelectedProvider()`方法，并将&#x200B;*null*&#x200B;作为参数传递，以便为Access Enabler提供重置其身份验证状态计算机的机会。
+> 中止身份验证流程
+> </br></br>
+> 请注意，这是用户能够按下“返回”按钮的时刻，这相当于身份验证流中止。 在这种情况下，您的应用程序需要调用`setSelectedProvider()`方法，并将&#x200B;*null*&#x200B;作为参数传递，以便为Access Enabler提供重置其身份验证状态计算机的机会。
 
 | 回调：显示MVPD选择UI |
 | --- |
@@ -337,12 +340,12 @@ ht-degree: 0%
 **参数：**
 
 - *状态*：可以采用以下值之一：
-   - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_SUCCESS` — 身份验证流程已成功完成
-   - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_ERROR` — 身份验证流失败
+  - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_SUCCESS` — 身份验证流程已成功完成
+  - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_ERROR` — 身份验证流失败
 - *代码*：失败原因。 如果&#x200B;*状态*&#x200B;为`AccessEnablerConstants.ACCESS_ENABLER_STATUS_SUCCESS`，则&#x200B;*代码*&#x200B;为空字符串（即，由`AccessEnablerConstants.USER_AUTHENTICATED`常量定义）。 如果失败，此参数可以采用以下值之一：
-   - `AccessEnablerConstants.USER_NOT_AUTHENTICATED_ERROR` — 用户未经过身份验证。 在本地令牌缓存中没有有效的身份验证令牌时响应&#x200B;*checkAuthentication()*&#x200B;方法调用。
-   - `AccessEnablerConstants.PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler在上层应用程序将&#x200B;*null*&#x200B;传递到`setSelectedProvider()`后重置了身份验证状态计算机以中止身份验证流程。  用户可能已取消身份验证流程（例如，已按下“后退”按钮）。
-   - `AccessEnablerConstants.GENERIC_AUTHENTICATION_ERROR` — 由于网络不可用或用户显式取消身份验证流等原因，身份验证流失败。
+  - `AccessEnablerConstants.USER_NOT_AUTHENTICATED_ERROR` — 用户未经过身份验证。 在本地令牌缓存中没有有效的身份验证令牌时响应&#x200B;*checkAuthentication()*&#x200B;方法调用。
+  - `AccessEnablerConstants.PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler在上层应用程序将&#x200B;*null*&#x200B;传递到`setSelectedProvider()`后重置了身份验证状态计算机以中止身份验证流程。  用户可能已取消身份验证流程（例如，已按下“后退”按钮）。
+  - `AccessEnablerConstants.GENERIC_AUTHENTICATION_ERROR` — 由于网络不可用或用户显式取消身份验证流等原因，身份验证流失败。
 
 **触发者：** `checkAuthentication(), getAuthentication(), checkAuthorization()`
 
@@ -499,7 +502,7 @@ ht-degree: 0%
 
 - *resourceId*：为其获取授权的资源
 - *错误代码*：与失败方案关联的错误代码。 可能的值：
-   - `AccessEnablerConstants.USER_NOT_AUTHORIZED_ERROR` — 用户无法授权给定资源
+  - `AccessEnablerConstants.USER_NOT_AUTHORIZED_ERROR` — 用户无法授权给定资源
 - *errorDescription*：有关失败情况的其他详细信息。 如果此描述性字符串由于任何原因不可用，则Adobe Pass身份验证发送空字符串&#x200B;**(&quot;)**。
 
   MVPD可使用此字符串传递自定义错误消息或与销售相关的消息。 例如，如果订阅者被拒绝对资源的授权，MVPD会发送消息，例如：“您当前在包中无法访问此渠道。 如果要升级包，请单击此处。” 消息由Adobe Pass身份验证通过此回调传递给程序员，程序员可以选择显示或忽略该消息。 Adobe Pass身份验证还可以使用此参数来提供可能导致错误的状况通知。 例如，“与提供商的授权服务通信时出现网络错误。”
@@ -584,19 +587,19 @@ ht-degree: 0%
 **参数：**
 
 - *metadataKey*：封装键和args变量的数据结构，其含义如下：
-   - 如果键为`METADATA_KEY_USER_META`且参数包含名为`METADATA_ARG_USER_META`且值= `[metadata_name]`的SerializableNameValuePair对象，则将对用户元数据进行查询。 可用用户元数据类型的当前列表：
-      - `zip` — 邮政编码
+  - 如果键为`METADATA_KEY_USER_META`且参数包含名为`METADATA_ARG_USER_META`且值= `[metadata_name]`的SerializableNameValuePair对象，则将对用户元数据进行查询。 可用用户元数据类型的当前列表：
+    - `zip` — 邮政编码
 
-      - `householdID` — 家庭标识符。 如果MVPD不支持子帐户，则它将与`userID`相同。
+    - `householdID` — 家庭标识符。 如果MVPD不支持子帐户，则它将与`userID`相同。
 
-      - `maxRating` — 用户的最大家长评级
+    - `maxRating` — 用户的最大家长评级
 
-      - `userID` — 用户标识符。 如果MVPD支持子帐户，并且该用户不是主帐户，则`userID`将不同于`householdID`。
+    - `userID` — 用户标识符。 如果MVPD支持子帐户，并且该用户不是主帐户，则`userID`将不同于`householdID`。
 
-      - `channelID` — 用户有权查看的渠道列表
-   - 如果键为`METADATA_KEY_DEVICE_ID`，则进行查询以获取当前设备ID。 请注意，此功能默认处于禁用状态，程序员应联系Adobe以获取有关启用和费用的信息。
-   - 如果键为`METADATA_KEY_TTL_AUTHZ`且参数包含名为`METADATA_ARG_RESOURCE_ID`且值为`[resource_id]`的SerializableNameValuePair对象，则进行查询以获取与指定资源关联的授权令牌的过期时间。
-   - 如果密钥为`METADATA_KEY_TTL_AUTHN`，则进行查询以获取身份验证令牌过期时间。
+    - `channelID` — 用户有权查看的渠道列表
+  - 如果键为`METADATA_KEY_DEVICE_ID`，则进行查询以获取当前设备ID。 请注意，此功能默认处于禁用状态，程序员应联系Adobe以获取有关启用和费用的信息。
+  - 如果键为`METADATA_KEY_TTL_AUTHZ`且参数包含名为`METADATA_ARG_RESOURCE_ID`且值为`[resource_id]`的SerializableNameValuePair对象，则进行查询以获取与指定资源关联的授权令牌的过期时间。
+  - 如果密钥为`METADATA_KEY_TTL_AUTHN`，则进行查询以获取身份验证令牌过期时间。
 
 
 
@@ -630,10 +633,10 @@ ht-degree: 0%
 
 - *key*：包含为其请求元数据值的键和相关参数的MetadataKey对象（请参阅演示应用程序以了解参考实现）。
 - *result*：包含所请求元数据的复合对象。 该对象具有以下字段：
-   - *simpleResult*：一个字符串，它表示在请求身份验证TTL、授权TTL或设备ID时的元数据值。 如果为用户元数据发出请求，则此值为null。
+  - *simpleResult*：一个字符串，它表示在请求身份验证TTL、授权TTL或设备ID时的元数据值。 如果为用户元数据发出请求，则此值为null。
 
-   - *userMetadataResult*：一个对象，它包含JSON用户元数据负载的Java表示形式。\
-     例如：
+  - *userMetadataResult*：一个对象，它包含JSON用户元数据负载的Java表示形式。\
+    例如：
 
 ```json
           '{
@@ -708,18 +711,18 @@ Access Enabler会触发一个附加回调，该回调不一定与权利文件流
 
 
 - 设备类型的可能值：
-   - `computer`
-   - `tablet`
-   - `mobile`
-   - `gameconsole`
-   - `unknown`
+  - `computer`
+  - `tablet`
+  - `mobile`
+  - `gameconsole`
+  - `unknown`
 
 
 - Access Enabler客户端类型的可能值：
-   - `flash`
-   - `html5`
-   - `ios`
-   - `android`
+  - `flash`
+  - `html5`
+  - `ios`
+  - `android`
 
 </br>
 
@@ -732,39 +735,39 @@ Access Enabler会触发一个附加回调，该回调不一定与权利文件流
 **参数：**
 
 - *event*：正在跟踪的事件。 有三种可能的跟踪事件类型：
-   - **authorizationDetection：**&#x200B;每次返回授权令牌请求时（事件类型为`EVENT_AUTHZ_DETECTION`）
-   - **authenticationDetection：**&#x200B;任何时候进行身份验证检查（事件类型为`EVENT_AUTHN_DETECTION`）
-   - **mvpdSelection：**&#x200B;用户在MVPD选择表单中选择MVPD时（事件类型为`EVENT_MVPD_SELECTION`）
+  - **authorizationDetection：**&#x200B;每次返回授权令牌请求时（事件类型为`EVENT_AUTHZ_DETECTION`）
+  - **authenticationDetection：**&#x200B;任何时候进行身份验证检查（事件类型为`EVENT_AUTHN_DETECTION`）
+  - **mvpdSelection：**&#x200B;用户在MVPD选择表单中选择MVPD时（事件类型为`EVENT_MVPD_SELECTION`）
 - *数据*：与报告事件关联的其他数据。 此数据以值列表的形式提供。
 
 以下说明用于解释&#x200B;*数据中的值*
 数组：
 
 - 对于事件类型&#x200B;*`EVENT_AUTHN_DETECTION`：*
-   - **0** — 令牌请求是否成功(true/false)，如果以上为true：
-   - **1** - MVPD ID字符串
-   - **2** - GUID （md5散列）
-   - **3** — 令牌已在缓存中(true/false)
-   - **4** — 设备类型
-   - **5** - Access Enabler客户端类型
-   - **6** — 操作系统类型
+  - **0** — 令牌请求是否成功(true/false)，如果以上为true：
+  - **1** - MVPD ID字符串
+  - **2** - GUID （md5散列）
+  - **3** — 令牌已在缓存中(true/false)
+  - **4** — 设备类型
+  - **5** - Access Enabler客户端类型
+  - **6** — 操作系统类型
 
 - 对于事件类型`EVENT_AUTHZ_DETECTION`
-   - **0** — 令牌请求是否成功(true/false)，如果成功：
-   - **1** - MVPD ID
-   - **2** - GUID （md5散列）
-   - **3** — 令牌已在缓存中(true/false)
-   - **4** — 错误
-   - **5** — 详细信息
-   - **6** — 设备类型
-   - **7** - Access Enabler客户端类型
-   - **8** — 操作系统类型
+  - **0** — 令牌请求是否成功(true/false)，如果成功：
+  - **1** - MVPD ID
+  - **2** - GUID （md5散列）
+  - **3** — 令牌已在缓存中(true/false)
+  - **4** — 错误
+  - **5** — 详细信息
+  - **6** — 设备类型
+  - **7** - Access Enabler客户端类型
+  - **8** — 操作系统类型
 
 - 对于事件类型`EVENT_MVPD_SELECTION`
-   - **0** — 当前所选MVPD的ID
-   - **1** — 设备类型
-   - **2** - Access Enabler客户端类型
-   - **3** — 操作系统类型
+  - **0** — 当前所选MVPD的ID
+  - **1** — 设备类型
+  - **2** - Access Enabler客户端类型
+  - **3** — 操作系统类型
 
 **触发者：** `checkAuthentication()`，`getAuthentication()`，`checkAuthorization()`，`getAuthorization()`，`setSelectedProvider()`
 

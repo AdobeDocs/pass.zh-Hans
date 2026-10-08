@@ -2,13 +2,14 @@
 title: iOS SDK 3.2+上的SFSafariViewController支持
 description: iOS SDK 3.2+上的SFSafariViewController支持
 exl-id: 6691550f-c36f-4fae-aa77-082ca7d8a60a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '432'
+source-wordcount: '431'
 ht-degree: 0%
-
 ---
-
 # （旧版）iOS SDK 3.2+上的SFSafariViewController支持 {#sfsafariviewcontroller-support-on-ios-sdk-3.2}
 
 >[!NOTE]
@@ -39,7 +40,7 @@ SDK版本3.1自动从应用程序的根视图控制器中显示SFSafariViewContr
 要手动管理SVC，实施人员必须执行以下步骤：
 
 
-1. 在AccessEnabler初始化后调用&#x200B;**setOptions([&quot;handleSVC&quot;:true])** （确保在身份验证开始前执行此调用）。 这将启用“手动”SVC管理，SDK不会自动提供SVC，而是在需要时提供     调用&#x200B;**navigate(toUrl：*{url}* useSVC:true)**。
+1. 在AccessEnabler初始化后调用&#x200B;**setOptions([&quot;handleSVC&quot;:true])** （确保在身份验证开始前执行此调用）。 这将启用“手动”SVC管理，SDK不会自动呈现SVC，而是在需要时调用&#x200B;**navigate(toUrl：*{url}* useSVC:true)**。
 
 1. 在实施中实施可选回调&#x200B;**`navigateToUrl:useSVC:`**，您必须使用提供的URL使用SFSafariViewController实例创建svc实例，并将其显示在屏幕上：
 

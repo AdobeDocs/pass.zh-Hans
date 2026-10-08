@@ -2,13 +2,14 @@
 title: 自定义元数据
 description: 自定义元数据
 exl-id: 0cfd1158-8c6c-47c2-b838-5490ff4bf0ce
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '367'
+source-wordcount: '370'
 ht-degree: 0%
-
 ---
-
 # 自定义元数据 {#cm}
 
 >[!NOTE]
@@ -30,7 +31,7 @@ ht-degree: 0%
 * 在获取帐户的流列表（/streams资源）时请求额外的字段（通过字段查询字符串参数）
 * 通过指定要作为分组依据的维度（ /activity资源）来划分帐户活动
 * 根据字段值或基数定义服务器端策略（本示例使用伪SQL来明确说明）：
-* 将策略配置为仅适用于特定字段值(例如，专用的iOS策略：其中osType为“iOS”)
+* 将策略配置为仅适用于特定字段值（例如，专用的iOS策略：其中osType为“iOS”）
 * 限制给定字段的非重复值的数量(例如，不超过X个非重复设备：HAVING DISTINCT COUNT(deviceId) >= 2)
 * 限制每个字段值的活动流数量(例如，对于单个设备类型，不超过X个活动流：GROUP BY deviceType HAVING COUNT(streamId) >= 3)
 

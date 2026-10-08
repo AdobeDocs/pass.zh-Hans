@@ -2,13 +2,14 @@
 title: 关于Adobe Pass身份验证
 description: 关于Adobe Pass身份验证
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1863'
 ht-degree: 0%
-
 ---
-
 # 关于®通过身份验证 {#about-adobe-pass-authentication}
 
 >[!IMPORTANT]
@@ -165,15 +166,15 @@ Adobe Pass Authentication充当代理，通过为双方提供安全一致的界�
 对于程序员，Adobe Pass身份验证将API作为&#x200B;**Standard**&#x200B;或&#x200B;**Premium**&#x200B;层的一部分提供：
 
 * 标准Adobe Pass身份验证API：
-   * [REST API DCR](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
-   * [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [REST API DCR](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+  * [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * Premium Adobe Pass身份验证API：
-   * [重置临时传递API](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
-   * [降级API](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
-      * [退化特征](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
-   * [授权服务监控API](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
+  * [重置临时传递API](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+    * [TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+  * [降级API](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+    * [退化特征](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+  * [授权服务监控API](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 有关权利流程的更多详细信息，请参阅[程序员集成指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md#entitlement-flow)文档。
 
@@ -208,18 +209,18 @@ Adobe Pass身份验证解决方案围绕着权限创建来考虑的，权限是�
 程序员至少必须：
 
 * **实现提供程序选择接口**
-   * 允许新用户识别其付费电视提供商并首次登录。
-   * 有些付费电视提供商会将用户重定向到外部登录页面，而另一些提供商则需要在iframe内登录。 程序员必须实施回调函数才能在需要时生成iframe。
+  * 允许新用户识别其付费电视提供商并首次登录。
+  * 有些付费电视提供商会将用户重定向到外部登录页面，而另一些提供商则需要在iframe内登录。 程序员必须实施回调函数才能在需要时生成iframe。
 
 * **管理支持的付费电视提供商列表**
-   * 确保用户只能通过批准的提供商访问内容。
+  * 确保用户只能通过批准的提供商访问内容。
 
 * **指示身份验证状态**
-   * 显示用户在应用程序或网站中经过身份验证的时间。
+  * 显示用户在应用程序或网站中经过身份验证的时间。
 
 * **识别受保护的资源**
-   * 明确指示哪些内容在查看之前需要授权。
-   * 在授予访问权限后，更新UI以反映成功的授权。
+  * 明确指示哪些内容在查看之前需要授权。
+  * 在授予访问权限后，更新UI以反映成功的授权。
 
 ## 常见问题解答 {#faqs}
 

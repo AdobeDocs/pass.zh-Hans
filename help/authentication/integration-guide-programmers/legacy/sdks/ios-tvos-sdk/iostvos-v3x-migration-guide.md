@@ -2,13 +2,14 @@
 title: iOS/tvOS v3.x迁移指南
 description: iOS/tvOS v3.x迁移指南
 exl-id: 4c43013c-40af-48b7-af26-0bd7f8df2bdb
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '581'
+source-wordcount: '584'
 ht-degree: 0%
-
 ---
-
 # （旧版） iOS/tvOS v3.x迁移指南 {#iostvos-v3x-migration-guide}
 
 >[!NOTE]
@@ -74,7 +75,7 @@ ht-degree: 0%
 
 这仅适用于应用程序之前通过[setOptions(\[&quot;handleSVC&quot;:true&quot;\])](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)调用启用了手动Safari视图控制器(SVC)处理的情况，以及需要Safari视图控制器(SVC)的特定MVPD，因此需要由SFSafariViewController而不是UIWebView/WKWebView控制器加载身份验证和注销终结点的URL的情况。
 
-在身份验证和注销流期间，应用程序必须监控`SFSafariViewController `控制器的活动，因为它经过多次重定向。 您的应用程序必须检测其加载`application's custom URL scheme`定义的特定自定义URL的时刻（例如`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com)`）。 当控制器加载此特定自定义URL时，应用程序必须关闭`SFSafariViewController`并调用AccessEnabler的`handleExternalURL:url `API方法。
+在身份验证和注销流期间，应用程序必须监控`SFSafariViewController `控制器的活动，因为它经过多次重定向。 您的应用程序必须检测其加载`application's custom URL scheme`定义的特定自定义URL的时刻（例如`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com)`）。当控制器加载此特定自定义URL时，应用程序必须关闭`SFSafariViewController`并调用AccessEnabler的`handleExternalURL:url `API方法。
 
 在您的`AppDelegate`中添加以下方法：
 

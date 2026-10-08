@@ -2,13 +2,14 @@
 title: Adobe Pass Authentication 3.5.0发行说明
 description: 了解此版本的新增功能、更改和已知问题。
 exl-id: b196f636-26a5-4974-903e-40b5f8b93a24
-source-git-commit: 1cbddf081fc7d57a187c9701e4ade8593baf8759
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '273'
 ht-degree: 0%
-
 ---
-
 # Adobe Pass Authentication 3.5.0发行说明
 
 上次更新：2025年12月9日星期二00:00:00 GMT+0000（协调世界时）

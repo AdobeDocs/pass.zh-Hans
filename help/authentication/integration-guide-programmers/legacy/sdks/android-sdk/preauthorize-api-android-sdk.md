@@ -2,13 +2,14 @@
 title: 预先授权Android
 description: 预先授权Android
 exl-id: b5337595-135f-4981-a578-2da432f125d6
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '218'
 ht-degree: 0%
-
 ---
-
 # （旧版）预授权 {#preuthorize-android}
 
 >[!NOTE]
@@ -26,7 +27,7 @@ ht-degree: 0%
 
 
 
-如果在Adobe Pass身份验证服务处理预授权API请求时发生了意外错误(例如，网络问题、MVPD授权端点不可用等)，作为预授权API响应结果的一部分，受影响资源将包含一个或多个单独的错误信息。
+在出现意外错误（例如，网络问题、MVPD授权端点不可用等）时 在Adobe Pass身份验证服务处理预授权API请求时发生，作为预授权API响应结果的一部分，受影响资源将包含一个或多个分隔的错误信息。
 
 
 ## `public void preauthorize(PreauthorizeRequest request, AccessEnablerCallback<PreauthorizeResponse> callback);`

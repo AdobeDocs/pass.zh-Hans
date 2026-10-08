@@ -2,13 +2,14 @@
 title: 重要概念
 description: 了解并发监控的基本概念，包括会话、策略、元数据等
 exl-id: 9721055a-70e6-4ba1-a1e0-04406eec25e6
-source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '702'
-ht-degree: 0%
-
+source-wordcount: '714'
+ht-degree: 2%
 ---
-
 # 重要概念 {#key-concepts}
 
 了解并发监控的核心概念对于成功实施至关重要。 本指南介绍构建基块以及它们如何协同工作。

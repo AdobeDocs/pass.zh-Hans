@@ -2,13 +2,14 @@
 title: API参考概述
 description: 并发监控API的完整参考，包括端点、身份验证和响应格式
 exl-id: 6a1c6507-03d5-4003-8b88-502eb4019346
-source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '444'
 ht-degree: 2%
-
 ---
-
 # API参考概述 {#api-reference-overview}
 
 并发监控API提供了一个RESTful接口，用于管理流会话和强制实施并发使用策略。 此参考提供了有关所有端点、身份验证方法、请求/响应格式和错误处理的完整文档。

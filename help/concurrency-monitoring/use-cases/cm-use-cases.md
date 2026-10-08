@@ -2,13 +2,14 @@
 title: 用例
 description: 并发监控中的用例。
 exl-id: 6cc30bb6-e985-4d9a-9f99-a7f04ae8deb7
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '443'
+source-wordcount: '446'
 ht-degree: 0%
-
 ---
-
 # 用例 {#use-cases}
 
 流计数服务的主要用例是计数用户观看的并发视频流的数量，并提供有关其对于同一帐户ID的并发使用的决策。

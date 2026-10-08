@@ -2,20 +2,21 @@
 title: 策略决策点
 description: 策略决策点
 exl-id: 94bc638c-bef8-45ea-b20a-9b7038adecdd
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '731'
 ht-degree: 0%
-
 ---
-
 # 策略决策点 {#policy-desc-pt}
 
 ## 域模型 {#domain-model}
 
 本页旨在作为策略的不同用例和实施的参考。 我们建议您也参阅文档的[术语表](/help/concurrency-monitoring/cm-glossary.md)部分以了解术语定义。
 
-**租户**&#x200B;拥有&#x200B;**要强制实施**&#x200B;策略&#x200B;**的应用程序**。 **客户端应用程序**&#x200B;必须配置有&#x200B;**应用程序ID**(由Adobe提供)。
+**租户**&#x200B;拥有&#x200B;**要强制实施**&#x200B;策略&#x200B;**的应用程序**。 **客户端应用程序**&#x200B;必须配置有&#x200B;**应用程序ID**（由Adobe提供）。
 
 然后，租户将每个应用程序与一个或多个策略相关联，这些策略由租户创建或由其他人创建和共享。 策略可以在多个租户之间链接。
 
@@ -33,7 +34,7 @@ ht-degree: 0%
 
 下面的演练旨在根据某些用例验证模型。 我们将逐步做到这一点，从基本设置开始，并以各种方式增加复杂性。
 
-### 1.一个租户。 一个应用程序。 一个政策。 一个流 {#onetenant-oneapp-onepolicy-onestream}
+### &#x200B;1. 一个租户。 一个应用程序。 一个政策。 一个流 {#onetenant-oneapp-onepolicy-onestream}
 
 我们将从单个租户开始，其中关联单个应用程序和单个策略。 假设该策略声明，任何用户最多只能有一个活动流（最新的流允许播放）。
 
@@ -42,7 +43,7 @@ ht-degree: 0%
 ![一个租户。 一个应用程序。 一个政策。 一个流](../assets/onetenant-app-policy-stream.png)
 
 
-### 2.一个租户。 一个应用程序。 一个政策。 两股。 {#onetenant-oneapp-onepolicy-twostreams}
+### &#x200B;2. 一个租户。 一个应用程序。 一个政策。 两股。 {#onetenant-oneapp-onepolicy-twostreams}
 
 启动第二个流（由同一主题使用同一应用程序）后，用于验证的活动将同时包含&#x200B;**s1**&#x200B;和&#x200B;**s2**。
 
@@ -54,7 +55,7 @@ ht-degree: 0%
 >
 >这些图显示了用户活动上的系统视图。 对于流初始化尝试，访问决策将包含在响应中。 对于活动流，将在心跳响应中返回决策。
 
-### 3.两个租户。 两个应用程序。 一个政策。 两股。 {#twotenant-twoapp-onepolicy-twostreams}
+### &#x200B;3. 两个租户。 两个应用程序。 一个政策。 两股。 {#twotenant-twoapp-onepolicy-twostreams}
 
 现在，假设一个新租户希望在其应用程序中实施相同的策略：
 
@@ -62,7 +63,7 @@ ht-degree: 0%
 
 由于两个租户由同一策略链接，因此用例2中描述的情况适用于此处，并且允许&#x200B;**s3**&#x200B;播放，因为它是最新的流。
 
-### 4.两个租户。 三个应用程序。 两种策略。 两股。 {#twotenants-threeapps-twopolicies-twostreams}
+### &#x200B;4. 两个租户。 三个应用程序。 两种策略。 两股。 {#twotenants-threeapps-twopolicies-twostreams}
 
 现在，假设第二个租户部署了新应用程序并想要定义将在&#x200B;**app2**&#x200B;和&#x200B;**app3**&#x200B;之间共享的新策略。
 
@@ -72,7 +73,7 @@ ht-degree: 0%
 
 策略&#x200B;**P2**&#x200B;应用于两个流，它将同时包含&#x200B;**s3**&#x200B;和&#x200B;**s4**&#x200B;作为相关活动。 由于此活动在两个流的范围内，因此允许这两个流。
 
-### 5.两个租户。 三个应用程序。 两种策略。 三流。 {#twotenants-threeapps-twopolicies-threestreams}
+### &#x200B;5. 两个租户。 三个应用程序。 两种策略。 三流。 {#twotenants-threeapps-twopolicies-threestreams}
 
 现在，假定使用&#x200B;**app2**&#x200B;执行了新的流初始化尝试：
 

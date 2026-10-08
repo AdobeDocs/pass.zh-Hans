@@ -2,13 +2,14 @@
 title: 返回注册记录
 description: 返回注册记录
 exl-id: 7b9e63a2-59b6-4123-a19b-ee1f021219ea
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '285'
 ht-degree: 2%
-
 ---
-
 # （旧版）退货注册记录 {#return-registration-record}
 
 >[!NOTE]
@@ -25,12 +26,12 @@ ht-degree: 2%
 
 ## REST API端点 {#clientless-endpoints}
 
-`<REGGIE_FQDN>`：
+`<REGGIE_FQDN>`:
 
 * 生产 — [api.auth.adobe.com](http://api.auth.adobe.com/)
 * 暂存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-`<SP_FQDN>`：
+`<SP_FQDN>`:
 
 * 生产 — [api.auth.adobe.com](http://api.auth.adobe.com/)
 * 暂存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -47,9 +48,9 @@ ht-degree: 2%
 
 
 
-| 端点 | </br>调用者 | 输入   </br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
+| 端点 | </br>调用者 | 输入</br>参数 | HTTP </br>方法 | 响应 | HTTP </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| `<REGGIE_FQDN>`；/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>例如：<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJCFK？format=xml | 流式处理应用程序</br></br>或</br></br>程序员服务 | 1.请求者</br>    （路径组件）</br>2。  注册码</br>    （路径组件） | GET | 包含注册代码和信息的XML或JSON。 请参阅下面的架构和示例。 | 200 |
+| `<REGGIE_FQDN>`；/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>例如：<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJCFK？format=xml | 流式处理应用程序</br></br>或</br></br>程序员服务 | &#x200B;1.  请求者</br> （路径组件）</br>2。  注册码</br> （路径组件） | GET | 包含注册代码和信息的XML或JSON。 请参阅下面的架构和示例。 | 200 |
 
 {style="table-layout:auto"}
 

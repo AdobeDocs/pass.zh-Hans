@@ -2,13 +2,14 @@
 title: 渠道
 description: 了解TVE仪表板中的渠道及其各种配置。
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: b4276ee12d57bc061d26afc0a192b799fe1681ae
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1637'
+source-wordcount: '1641'
 ht-degree: 0%
-
 ---
-
 # 渠道 {#channels}
 
 >[!NOTE]
@@ -152,7 +153,7 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 
 1. 从&#x200B;**删除活动证书**&#x200B;对话框中选择&#x200B;**删除**。
 
-已创建新的配置更改，可以随时更新服务器。 仅在&#x200B;**审阅和推送更改**&#x200B;后，证书才会从[可用证书](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)部分中删除。
+已创建新的配置更改，可以随时更新服务器。 仅在[审阅和推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)后，证书才会从&#x200B;**可用证书**&#x200B;部分中删除。
 
 #### 继承的可用证书 {#inherited-avail-certificates}
 
@@ -205,7 +206,7 @@ TVE仪表板的&#x200B;**渠道**&#x200B;部分允许您查看和管理与特定
 
 1. 在&#x200B;**删除域**&#x200B;对话框中选择&#x200B;**删除**。
 
-已创建新的配置更改，可以随时更新服务器。 只有在&#x200B;**审阅并推送更改**&#x200B;后，才会从[可用域](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)部分删除该域。
+已创建新的配置更改，可以随时更新服务器。 只有在[审阅并推送更改](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)后，才会从&#x200B;**可用域**&#x200B;部分删除该域。
 
 所选域不再可用。 因此，与此域关联的应用程序将无法访问Adobe Pass身份验证服务。
 

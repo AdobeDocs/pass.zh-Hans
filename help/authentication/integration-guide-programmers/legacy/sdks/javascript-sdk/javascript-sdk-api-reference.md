@@ -2,13 +2,14 @@
 title: JavaScript SDK API参考
 description: JavaScript SDK API参考
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2902'
+source-wordcount: '2904'
 ht-degree: 0%
-
 ---
-
 # （旧版）JavaScript SDK API参考 {#javascript-sdk-api-reference}
 
 >[!NOTE]
@@ -44,14 +45,14 @@ ht-degree: 0%
 
 - *端点* — 此参数是可选的。 它可以是以下值之一：
 
-   - 一个数组，允许您为Adobe提供的身份验证和授权服务指定端点（不同的实例可用于调试目的）。 如果提供了多个URL，则MVPD列表将由所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商相关联；即首先响应并支持该MVPD的提供商。 默认情况下（如果未指定值），将使用Adobe服务提供程序(<http://sp.auth.adobe.com/>)。
+  - 一个数组，允许您为Adobe提供的身份验证和授权服务指定端点（不同的实例可用于调试目的）。 如果提供了多个URL，则MVPD列表将由所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商相关联；即首先响应并支持该MVPD的提供商。 默认情况下（如果未指定值），将使用Adobe服务提供程序(<http://sp.auth.adobe.com/>)。
 
   示例：
-   - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
+  - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
 
 - *选项* — 包含应用程序ID值、访客ID值无刷新设置（后台登录注销）和MVPD设置(iFrame)的JSON对象。 所有值都是可选的。
-   1. 如果指定，将会在库执行的所有网络调用中报告Experience Cloud visitorID。 该值以后可用于高级分析报表。
-   2. 如果指定了应用程序的唯一标识符 — `applicationId` — 则该值将作为X-Device-Info HTTP标头的一部分添加到应用程序发出的所有后续调用中。 稍后可以使用正确的查询从[ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)报表中获取此值。
+  1. 如果指定，将会在库执行的所有网络调用中报告Experience Cloud visitorID。 该值以后可用于高级分析报表。
+  2. 如果指定了应用程序的唯一标识符 — `applicationId` — 则该值将作为X-Device-Info HTTP标头的一部分添加到应用程序发出的所有后续调用中。 稍后可以使用正确的查询从[ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)报表中获取此值。
 
   **注意：**&#x200B;所有JSON密钥都区分大小写。
 
@@ -237,39 +238,39 @@ ht-degree: 0%
 **参数：**
 
 - *key*：指定所请求元数据的ID：
-   - 如果密钥为`"TTL_AUTHN",`，则进行查询以获取身份验证令牌过期时间。
+  - 如果密钥为`"TTL_AUTHN",`，则进行查询以获取身份验证令牌过期时间。
 
-   - 如果键为`"TTL_AUTHZ"`，而params是包含资源ID作为字符串的数组，则进行查询以获取与指定资源关联的授权令牌的过期时间。
+  - 如果键为`"TTL_AUTHZ"`，而params是包含资源ID作为字符串的数组，则进行查询以获取与指定资源关联的授权令牌的过期时间。
 
-   - 如果键为`"DEVICEID"`，则进行查询以获取当前设备ID。 请注意，此功能默认处于禁用状态，程序员应联系Adobe以获取有关启用和费用的信息。
+  - 如果键为`"DEVICEID"`，则进行查询以获取当前设备ID。 请注意，此功能默认处于禁用状态，程序员应联系Adobe以获取有关启用和费用的信息。
 
-   - 如果键来自以下用户元数据类型列表，则会将包含相应用户元数据的JSON对象发送到[`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata)回调函数：
+  - 如果键来自以下用户元数据类型列表，则会将包含相应用户元数据的JSON对象发送到[`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata)回调函数：
 
-   - `"zip"` — 邮政编码
+  - `"zip"` — 邮政编码
 
-   - `"encryptedZip"` — 加密的邮政编码
+  - `"encryptedZip"` — 加密的邮政编码
 
-   - `"householdID"` — 家庭标识符。 在MVPD不支持子帐户的情况下，这将与用户ID相同。
+  - `"householdID"` — 家庭标识符。 在MVPD不支持子帐户的情况下，这将与用户ID相同。
 
-   - `"maxRating"` — 用户的最大家长评级
+  - `"maxRating"` — 用户的最大家长评级
 
-   - `"userID"` — 用户标识符。 如果MVPD支持子帐户，并且用户不是主帐户，则用户ID将不同于家庭ID。
+  - `"userID"` — 用户标识符。 如果MVPD支持子帐户，并且用户不是主帐户，则用户ID将不同于家庭ID。
 
-   - `"channelID"` — 用户有权查看的渠道列表
+  - `"channelID"` — 用户有权查看的渠道列表
 
-   - `"is_hoh"` — 标识用户是否为户主的标记
+  - `"is_hoh"` — 标识用户是否为户主的标记
 
-   - `"encryptedZip"` — 加密的邮政编码
+  - `"encryptedZip"` — 加密的邮政编码
 
-   - `"typeID"` — 标识用户帐户是否为主/辅助帐户的标志
+  - `"typeID"` — 标识用户帐户是否为主/辅助帐户的标志
 
-   - `"primaryOID"` — 家庭标识符
+  - `"primaryOID"` — 家庭标识符
 
-   - `"postalCode"` — 类似于邮政编码
+  - `"postalCode"` — 类似于邮政编码
 
-   - `"acctID"` — 帐户ID
+  - `"acctID"` — 帐户ID
 
-   - `"acctParentID"` — 帐户父级ID
+  - `"acctParentID"` — 帐户父级ID
 
   **注意**：程序员可用的实际用户元数据取决于MVPD提供的内容。  有关可用用户元数据的当前列表，请参阅[用户元数据](#UserMetadata)。
 
@@ -453,16 +454,16 @@ ht-degree: 0%
 **描述：**&#x200B;实施此回调以在发生特定事件时接收跟踪数据。 例如，您可以使用它来跟踪有多少用户使用相同的凭据登录。 跟踪当前不可配置。 使用Adobe Pass Authentication 1.6时，`sendTrackingData()`还报告有关设备、 Access Enabler客户端和操作系统类型的信息。 `sendTrackingData()`回调保持向后兼容。
 
 - 设备类型的可能值：
-   - 计算机
-   - 平板电脑
-   - 移动设备
-   - gameconsole
-   - 未知
+  - 计算机
+  - 平板电脑
+  - 移动设备
+  - gameconsole
+  - 未知
 
 - Access Enabler客户端类型的可能值：
-   - html5
-   - ios
-   - android
+  - html5
+  - ios
+  - android
 
 
 传递事件类型和关联信息的数组。 事件类型包括：

@@ -2,13 +2,14 @@
 title: API使用示例
 description: 并发监控的API端点使用情况
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2083'
 ht-degree: 0%
-
 ---
-
 # API概述 {#api-overview}
 
 查看[联机API文档](https://streams-stage.adobeprimetime.com/swagger-ui/index.html)以了解更多详细信息。
@@ -188,7 +189,10 @@ curl -i -X GET -u ${user}:%{pass} http://streams-stage.adobeprimetime.com/v2/run
 
 对于每个会话，都将获得&#x200B;**terminationCode**&#x200B;并完成元数据。
 
-请注意&#x200B;**过期**&#x200B;标头。 这是第一个会话在发送心跳之前应过期的时间。元数据字段将填充会话启动时发送的所有元数据。 我们不筛选它，你将收到你发送的所有内容。只要其他租户的应用程序共享相同的策略，响应就会包含这些应用程序上运行的所有流。如果调用时没有针对特定用户的运行会话，您将收到此响应：
+请注意&#x200B;**过期**&#x200B;标头。 这是第一个会话在发送心跳之前应过期的时间。
+元数据字段将填充会话启动时发送的所有元数据。 我们不筛选它，你将收到你发送的所有内容。
+只要其他租户的应用程序共享相同的策略，响应就会包含这些应用程序上运行的所有流。
+如果调用时没有针对特定用户的运行会话，您将收到此响应：
 
 ```http
 # Response Code

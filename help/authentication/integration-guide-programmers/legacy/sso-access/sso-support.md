@@ -2,13 +2,14 @@
 title: 单点登录支持
 description: 单点登录支持
 exl-id: edc3719e-c627-464c-9b10-367a425698c6
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1167'
+source-wordcount: '1174'
 ht-degree: 0%
-
 ---
-
 # （旧版）单点登录支持
 
 >[!NOTE]
@@ -60,7 +61,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->无客户端API SSO的重要注意事项：某些MVPD要求每个网络（请求者ID）执行其自身的身份验证流程。 对于基于SDK的流(iOS等)，这将由SDK自动处理。 但是，对于无客户端API，这需要由程序员来处理。 我们强烈建议程序员此时不要为无客户端API启用SSO流，而是将设备ID +应用程序ID组合用于设备ID。 Adobe还将致力于改进无客户端API流，以便建立适当的SSO。
+>无客户端API SSO的重要注意事项：某些MVPD要求每个网络（请求者ID）执行其自身的身份验证流程。 对于基于SDK的流（iOS等），这将由SDK自动处理。 但是，对于无客户端API，这需要由程序员来处理。 我们强烈建议程序员此时不要为无客户端API启用SSO流，而是将设备ID +应用程序ID组合用于设备ID。 Adobe还将致力于改进无客户端API流，以便建立适当的SSO。
 
 ### 注销 {#logout-sso-support}
 

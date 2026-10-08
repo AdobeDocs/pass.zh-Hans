@@ -2,13 +2,14 @@
 title: 标头 — AP-Partner-Framework-Status
 description: REST API V2 — 标头 — AP-Partner-Framework-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: 22529618db679f7dbfb493906e1aeb4a0443a40c
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '415'
+source-wordcount: '439'
 ht-degree: 0%
-
 ---
-
 # 标头 — AP-Partner-Framework-Status {#header-ap-partner-framework-status}
 
 >[!NOTE]
@@ -132,7 +133,7 @@ ht-degree: 0%
                   <br/><br/>
                   这是经过身份验证的用户配置文件的过期日期，以防用户已在合作伙伴框架级别使用支持的MVPD成功登录。
                   <br/><br/>
-                  这必须是自Unix纪元以来以毫秒为单位的时间戳(例如“1735689600000”)，以字符串形式表示。
+                  这必须是自Unix纪元以来以毫秒为单位的时间戳（例如“1735689600000”），以字符串形式表示。
                </td>
             </tr>
             <tr>

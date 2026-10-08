@@ -2,13 +2,14 @@
 title: 并发监控简介
 description: 并发监控简介
 exl-id: 725cc64b-6b03-46e3-a038-41e9b1341c6b
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '225'
 ht-degree: 0%
-
 ---
-
 # 并发监控简介 {#intro}
 
 并发监控是一项服务，它允许内容提供商和身份提供程序（MVPD和程序员）定义并强制实施跨多个应用程序、设备和平台的并发视频流限制。 无论您是希望控制订阅者可以同时观看的流数量的程序员，还是MVPD希望跨内容合作伙伴实施使用策略，并发监控都能提供您所需的工具。

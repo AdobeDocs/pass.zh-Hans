@@ -2,13 +2,14 @@
 title: 单次注销 — 流量
 description: REST API V2 — 单次注销 — 流量
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '599'
 ht-degree: 0%
-
 ---
-
 # 单个注销流程 {#single-logout-flow}
 
 >[!IMPORTANT]
@@ -30,8 +31,8 @@ ht-degree: 0%
 在启动特定MVPD的单一注销之前，请确保满足以下先决条件：
 
 * 第二个流应用程序必须具有有效的单点登录配置文件，该配置文件已成功使用其中一个单点登录身份验证流程为MVPD创建：
-   * [使用平台身份通过单点登录执行身份验证](rest-api-v2-single-sign-on-platform-identity-flows.md)
-   * [使用服务令牌通过单点登录执行身份验证](rest-api-v2-single-sign-on-service-token-flows.md)
+  * [使用平台身份通过单点登录执行身份验证](rest-api-v2-single-sign-on-platform-identity-flows.md)
+  * [使用服务令牌通过单点登录执行身份验证](rest-api-v2-single-sign-on-service-token-flows.md)
 * 第二个流应用程序必须在需要注销MVPD时启动单个注销流程。
 
 >[!IMPORTANT]

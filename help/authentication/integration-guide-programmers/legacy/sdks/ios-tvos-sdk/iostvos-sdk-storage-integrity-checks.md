@@ -2,13 +2,14 @@
 title: iOS/tvOS存储完整性检查机制
 description: iOS/tvOS完整性检查机制
 exl-id: 5d7cdc46-3e51-4e14-9e30-d7f48bc87506
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '346'
+source-wordcount: '345'
 ht-degree: 0%
-
 ---
-
 # （旧版）iOS/tvOS完整性检查机制 {#iostvos-sdk-storage-integrity-checks}
 
 >[!NOTE]
@@ -73,5 +74,5 @@ IntegrityCheckType枚举向客户端应用程序公开，并具有以下值：
 | 值 | 执行的检查 | 已清除存储 | 描述 | 推荐用例 |
 |-----------------------|-----------------------------------------------------|-----------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | INTEGRITY_CHECK_NONE | 无 | 从不 | 在存储初始化时不会执行完整性检查 | 当SDK流按预期运行时 |
-| INTEGRITY_CHECK_ALL | 存储可操作性<br/>存储值的有效性 | 检查时失败 | 在存储初始化时执行所有可用的完整性检查 | 当怀疑SDK存储已损坏时。 <br/>如果任何完整性检查失败，用户将被注销 |
+| INTEGRITY_CHECK_ALL | 存储可操作性<br/>存储值的有效性 | 检查时失败 | 在存储初始化时执行所有可用的完整性检查 | 当怀疑SDK存储已损坏时。<br/> 如果任何完整性检查失败，用户将被注销 |
 | INTEGRITY_CHECK_CLEAR | 无 | 始终 | 在存储初始化时，将清除存储 | 当SDK流无法按预期完成时 |

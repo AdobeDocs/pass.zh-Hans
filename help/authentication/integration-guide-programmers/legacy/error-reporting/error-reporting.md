@@ -2,13 +2,14 @@
 title: 错误报告
 description: 错误报告
 exl-id: a52bd2cf-c712-40a2-a25e-7d9560b46ba6
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '3034'
 ht-degree: 1%
-
 ---
-
 # （旧版）错误报告 {#error-reporting}
 
 >[!NOTE]
@@ -260,10 +261,10 @@ accessEnabler.bind('errorEvent', 'errorLogger');
 | N111 | 警告 | 已过期的TempPass。 |  — 通知用户。<br> <br> — 提供常规MVPD的列表。<br> <br> — 隐藏“临时传递”选项。 | 使用常规MVPD登录。 | 是 | 是 | 3.2中的是 |
 | N130 | 错误 | **在会话中找不到身份验证令牌。**  这可能是由于以下原因造成的： <br> <br> 1. 浏览器已禁用（第三方）Cookie（不适用于AccessEnabler JavaScript SDK版本4.x） <br> <br> 2. 浏览器已启用“阻止跨站点跟踪”(Safari 11+) <br> <br> 3. 会话已过期<br> <br> 4. 程序员以不正确的顺序调用身份验证API <br> <br>注意：此错误代码不适用于整页重定向身份验证流程。 | &#x200B;1. 提示用户启用（第三方） Cookie <br> <br> 2. 提示用户禁用跨站点跟踪<br> <br> 3. 提示用户重新验证<br> <br> 4. 按正确的顺序调用API | &#x200B;1. 启用（第三方） Cookie <br> <br> 2. 禁用跨站点跟踪<br> <br> 3. 重新验证<br> <br> 4. 不适用 | 是 | 是 | 3.2中的是 |
 | N500 | 错误 | 内部错误。<br> <br>注意：这是原始错误系统的“一般身份验证错误”和“内部身份验证错误”。 此错误将最终淘汰。 | 使用AccessEnablerDebug并检查调试日志（console.log输出）以确定哪里出了问题。 | 不适用 | 是 | 是 | 不适用 |
-| R401 | 错误 | 尝试获取访问令牌时出错。<br> <br>注意：这是一个无法恢复的错误。 通知用户该应用程序不可用。 | - iOS：检查应用程序中的软件语句和自定义方案。<br> <br> - JavaScript：检查网站应用程序中的软件声明。<br> <br>使用Zendesk打开票证，并通知用户系统暂时不可用 | 不适用 | 是，从v4.0开始 | Yes From v3.0 | 3.2中的是 |
-| R400 | 错误 | Application is not registered. The software statement is invalid or it has been revoked. <br> <br>注意：这是一个无法恢复的错误。 通知用户该应用程序不可用。 | - iOS：检查应用程序中的软件语句和自定义方案。<br> <br> - JavaScript：检查网站应用程序中的软件声明。<br> <br>使用Zendesk打开票证，并通知用户系统暂时不可用 | 不适用 | 是，从v4.0开始 | Yes From v3.0 | 3.2中的是 |
-| REG500 | 错误 | Registration code could not be fetched from server. <br> <br>注意：这是一个无法恢复的错误。 通知用户该应用程序不可用。 | Open a ticket using Zendesk and inform the user that the system is temporarily unavailable. | 不适用 | 是，从v4.0开始 | Yes From v3.0 | 3.2中的是 |
-| REGCODE | Success | 在tvOS平台上调用setSelectedProvider API的应用程序。 | 指示/提示用户使用第二台设备（屏幕）使用提供的注册码登录。 | 在第2台设备（屏幕）上使用regcode启动身份验证。 | 不适用 | 是，仅适用于tvOS | 不适用 |
+| R401 | 错误 | 尝试获取访问令牌时出错。<br> <br>注意：这是一个无法恢复的错误。 通知用户该应用程序不可用。 | - iOS：检查应用程序中的软件语句和自定义方案。<br> <br> - JavaScript：检查网站应用程序中的软件声明。<br> <br>使用Zendesk打开票证，并通知用户系统暂时不可用 | 不适用 | 是，从v4.0开始 | 是（从v3.0） | 3.2中的是 |
+| R400 | 错误 | 应用程序未注册。 软件语句无效或已被撤销。<br> <br>注意：这是一个无法恢复的错误。 通知用户该应用程序不可用。 | - iOS：检查应用程序中的软件语句和自定义方案。<br> <br> - JavaScript：检查网站应用程序中的软件声明。<br> <br>使用Zendesk打开票证，并通知用户系统暂时不可用 | 不适用 | 是，从v4.0开始 | 是（从v3.0） | 3.2中的是 |
+| REG500 | 错误 | 无法从服务器获取注册码。<br> <br>注意：这是一个无法恢复的错误。 通知用户该应用程序不可用。 | 使用Zendesk打开票证，并通知用户系统暂时不可用。 | 不适用 | 是，从v4.0开始 | 是（从v3.0） | 3.2中的是 |
+| REGCODE | 成功 | 在tvOS平台上调用setSelectedProvider API的应用程序。 | 指示/提示用户使用第二台设备（屏幕）使用提供的注册码登录。 | 在第2台设备（屏幕）上使用regcode启动身份验证。 | 不适用 | 是，仅适用于tvOS | 不适用 |
 | Z010 | 警告 | 在为选定的MVPD设置全部身份验证或全部授权降级规则时，用户已获得授权。 | （可选）告知用户，由于MVPD困难，他可以“免费”免费访问。 | 不适用 | 是 | 是 | 3.2中的是 |
 | Z011 | 信息 | 用户已使用TempPass获得授权 | 通知用户（可选） | 不适用 | 是 | 是 | 3.2中的是 |
 | Z100 | 错误 | 授权失败，因为用户没有对请求的资源的订阅，或者源自MVPD的其他原因，例如视频与用户帐户的家长控制设置不匹配 |  — 不允许播放。<br> <br> — 通知用户。<br> <br> — 错误消息中的“message”键可能包含MVPD提供的更详细的消息。 | 不适用 | 是 | 是 | 3.2中的是 |
@@ -272,10 +273,10 @@ accessEnabler.bind('errorEvent', 'errorLogger');
 | Z130 | 错误 | 授权被拒绝，因为使用了无效/格式错误的资源。 | 检查资源字符串并更正它。 通常，此错误是由于MRSS格式错误或使用纯字符串而不是MRSS导致的。 | 不适用 | 是 | 是 | 3.2中的是 |
 | Z169 | 错误 | 授权被拒绝，因为authzNone降级规则已应用于指定资源。 | 通知用户 | 不适用 | 是 | 是 | 3.2中的是 |
 | Z500 | 错误 | 内部错误。<br> <br>注意：这是旧版“一般身份验证错误”和“内部身份验证错误”。 此错误将最终淘汰。 | 使用AccessEnablerDebug并检查调试日志（console.log输出）以确定哪里出了问题。 | 不适用 | 是 | 是 | 3.2中的是 |
-| P100 | 错误 | 预授权失败。 Most likely this is due to requesting authorization for too many resources. | - Do NOT use more than the maximum number of allowed resources. <br> <br> -  Contact Adobe Pass Authentication support to find / set up the maximum number of allowed resources. | 不适用 | Yes From v3.0 | 是 | 3.2中的是 |
-| IS2XX | 错误 | These error codes are returned when the individualization server endpoint response data has an invalid format or is missing required individualization information. | Open a ticket using Zendesk and inform the user that the system is temporarily unavailable | 不适用 | Yes From v3.0 | 不适用 | 不适用 |
-| IS4XX | 错误 | These error codes are returned in case of individualization server endpoint failure 4XX - is the HTTP status code of the response. | Open a ticket using Zendesk and inform the user that the system is temporarily unavailable | 不适用 | Yes From v3.0 | 不适用 | 不适用 |
-| IS5XX | 错误 | These error codes are returned in case of individualization server endpoint failure 5XX - is the HTTP status code of the response. | Open a ticket using Zendesk and inform the user that the system is temporarily unavailable | 不适用 | 是（从v3.0） | 不适用 | 不适用 |
+| P100 | 错误 | 预授权失败。 这很可能是由于请求授权的资源过多。 |  — 请勿使用超过允许的最大资源数。<br> <br> — 联系Adobe Pass身份验证支持部门以查找/设置允许的最大资源数。 | 不适用 | 是（从v3.0） | 是 | 3.2中的是 |
+| IS2XX | 错误 | 当个性化服务器终结点响应数据的格式无效或缺少所需的个性化信息时，将返回这些错误代码。 | 使用Zendesk打开票证，并通知用户系统暂时不可用 | 不适用 | 是（从v3.0） | 不适用 | 不适用 |
+| IS4XX | 错误 | 如果个性化服务器终结点失败4XX — 是响应的HTTP状态代码，则会返回这些错误代码。 | 使用Zendesk打开票证，并通知用户系统暂时不可用 | 不适用 | 是（从v3.0） | 不适用 | 不适用 |
+| IS5XX | 错误 | 如果个性化服务器终结点失败5XX — 是响应的HTTP状态代码，则会返回这些错误代码。 | 使用Zendesk打开票证，并通知用户系统暂时不可用 | 不适用 | 是（从v3.0） | 不适用 | 不适用 |
 | IS0 | 错误 | 当个性化服务器端点完全没有响应，因此连接已超时时，将返回此代码 | 使用Zendesk打开票证，并通知用户系统暂时不可用 | 不适用 | 是（从v3.0） | 不适用 | 不适用 |
 | LS011 | 警告 | 由于LSO/LocalStorage问题和WebStorage问题（或不可用），AccessEnabler正在使用易失性存储。<br> <br>身份验证/授权在当前页面之后持续存在！ 每次页面加载都会导致用户需要身份验证。 重新加载页面时不会强制执行配置的TTL。 |  — 通知用户限制。<br> <br> — 通知用户如何增加可用存储空间。<br> <br> — 或者注销以清除存储。 |  — 增加存储。<br> <br> — 注销以清除存储。 | 是 | 不适用 | 不适用 |
 

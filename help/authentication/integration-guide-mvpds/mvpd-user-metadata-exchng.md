@@ -2,13 +2,14 @@
 title: MVPD用户元数据交换
 description: MVPD用户元数据交换
 exl-id: 8bce6acc-cd33-476c-af5e-27eb2239cad1
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '940'
+source-wordcount: '947'
 ht-degree: 0%
-
 ---
-
 # MVPD用户元数据交换
 
 >[!NOTE]
@@ -105,13 +106,13 @@ Adobe Pass身份验证做出了以下假设：
 
 ### 注释 {#notes-mvpd-progr-metadata-exch-flow}
 
-**资源规范化和验证。**&#x200B;资源ID可以作为纯字符串或MRSS字符串进行传递。 程序员可以决定使用纯字符串格式或MRSS，但需要事先与MVPD达成协议，以便MVPD知道如何处理该资源。
+**资源规范化和验证。** 资源ID可以作为纯字符串或MRSS字符串进行传递。 程序员可以决定使用纯字符串格式或MRSS，但需要事先与MVPD达成协议，以便MVPD知道如何处理该资源。
 
 **资源ID和元数据规范。** Adobe Pass身份验证使用带有Media RSS扩展的RSS标准指定资源及其元数据。 Adobe Pass身份验证与Media RSS扩展结合使用时，支持多种元数据，例如家长控制（通过`<media:rating>`）或地理位置(`<media:location>`)。
 
 Adobe Pass身份验证还可以支持从旧版渠道字符串到需要RSS的MVPD的对应RSS资源的透明转换。 另一方面，Adobe Pass身份验证支持从RSS+MRSS转换为纯通道标题，适用于纯通道MVPD。
 
-**Adobe Pass身份验证确保与现有集成完全向后兼容。**&#x200B;也就是说，对于使用渠道级别身份验证的程序员，Adobe Pass身份验证在将该渠道ID发送到了解该格式的MVPD之前，会注意以必要的格式对其进行打包。 反之亦然：如果程序员以新格式指定其所有资源，并且仅针对进行渠道级别授权的Adobe Pass进行授权，则MVPD身份验证会将新格式转换为简单的渠道字符串。
+**Adobe Pass身份验证确保与现有集成完全向后兼容。** 也就是说，对于使用渠道级别身份验证的程序员而言，Adobe Pass身份验证在将渠道ID发送到了解该格式的MVPD之前，会注意以必要的格式将其打包。 反之亦然：如果程序员以新格式指定其所有资源，并且仅针对进行渠道级别授权的Adobe Pass进行授权，则MVPD身份验证会将新格式转换为简单的渠道字符串。
 
 ## 用户元数据用例 {#user-metadata-use-cases}
 

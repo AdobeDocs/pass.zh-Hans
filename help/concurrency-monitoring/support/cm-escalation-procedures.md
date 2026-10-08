@@ -2,13 +2,14 @@
 title: 并发监控升级过程
 description: 并发监控升级过程
 exl-id: eb110465-3a74-489e-a521-0e17f5aeecb8
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '849'
+source-wordcount: '857'
 ht-degree: 0%
-
 ---
-
 # 并发监控升级过程 {#esc-procedures}
 
 >[!NOTE]
@@ -79,7 +80,7 @@ ht-degree: 0%
 1. Adobe致力于解决此事件，并随时向所有受影响的合作伙伴告知最新信息。
 
 
-针对合作伙伴问题(程序员/MVPD)**...1&rbrace;**
+针对合作伙伴问题（程序员/MVPD）**...1&rbrace;**
 
 1. Adobe标识与与MVPD集成或程序员网站集成相关的问题。
 

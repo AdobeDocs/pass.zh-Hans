@@ -2,13 +2,14 @@
 title: Adobe Pass Authentication 3.0.3发行说明
 description: Adobe Pass Authentication 3.0.3发行说明
 exl-id: f54b7c4a-78c5-4536-bed7-3c5f15640dea
-source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '148'
+source-wordcount: '152'
 ht-degree: 0%
-
 ---
-
 # Adobe Pass Authentication 3.0.3发行说明 {#authn-303-rn}
 
 >[!IMPORTANT]
@@ -34,8 +35,8 @@ Adobe Pass身份验证： adobe-pass-**3.0.3**
 
 ##### 代码
 
-* REST API V2增强功能(由于Adobe Pass 3.0主要版本提供了[REST API V2](../integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md))。
-* 在`notBefore`中添加了`notAfter`和`/sessions/{code}`字段以返回有关身份验证代码有效性的信息。
+* REST API V2增强功能（由于Adobe Pass 3.0主要版本提供了[REST API V2](../integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)）。
+* 在`/sessions/{code}`中添加了`notBefore`和`notAfter`字段以返回有关身份验证代码有效性的信息。
 * 改进了平台识别。
 
 ##### 文档

@@ -2,13 +2,14 @@
 title: Android SDK指南
 description: Android SDK指南
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1690'
 ht-degree: 0%
-
 ---
-
 # （旧版）Android SDK指南 {#android-sdk-cookbook}
 
 >[!NOTE]
@@ -30,9 +31,9 @@ ht-degree: 0%
 
 - UI域 — 这是上层应用程序层，用于实施UI并使用AccessEnabler库提供的服务来提供对受限内容的访问。
 - AccessEnabler域 — 这是权利工作流的实施形式：
-   - 对Adobe后端服务器发出的网络调用
-   - 与身份验证和授权工作流相关的业务逻辑规则
-   - 管理各种资源和处理工作流状态（如令牌缓存）
+  - 对Adobe后端服务器发出的网络调用
+  - 与身份验证和授权工作流相关的业务逻辑规则
+  - 管理各种资源和处理工作流状态（如令牌缓存）
 
 AccessEnabler域的目标是隐藏授权工作流的所有复杂内容，并（通过AccessEnabler库）向上层应用程序提供一组用于实施授权工作流的简单授权基元：
 
@@ -124,7 +125,7 @@ AccessEnabler的网络活动发生在不同的线程中，因此从不阻止UI�
    答：  调用[`getInstance`](#$getInstance)以创建单个Adobe Pass Authentication AccessEnabler实例。
 
    - **依赖项：** Adobe Pass身份验证（本机）
-Android Library (AccessEnabler)
+     Android Library (AccessEnabler)
 
    b.  调用` setRequestor()`以建立程序员的标识；传入程序员的`requestorID`和（可选）Adobe Pass身份验证终结点数组。
 
@@ -185,9 +186,9 @@ Android Library (AccessEnabler)
 
    - 如果`getAuthorization()`调用成功：用户具有有效的AuthN和AuthZ令牌（用户已通过身份验证并有权观看请求的媒体）。
    - 如果`getAuthorization()`失败：检查引发的异常以确定其类型（AuthN、AuthZ或其他内容）：
-      - 如果这是身份验证(AuthN)错误，则重新启动身份验证流程。
-      - 如果是授权(AuthZ)错误，则用户无权观看请求的媒体，并且应向用户显示某种错误消息。
-      - 是否存在其他类型的错误（连接错误、网络错误等） 然后向用户显示相应的错误消息。
+     - 如果这是身份验证(AuthN)错误，则重新启动身份验证流程。
+     - 如果是授权(AuthZ)错误，则用户无权观看请求的媒体，并且应向用户显示某种错误消息。
+     - 是否存在其他类型的错误（连接错误、网络错误等） 然后向用户显示相应的错误消息。
 
 1. 验证短媒体令牌。\
    使用Adobe Pass身份验证媒体令牌验证器库验证从上述`getAuthorization()`调用返回的短期媒体令牌：

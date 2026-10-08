@@ -2,13 +2,14 @@
 title: 处理409冲突错误
 description: 了解如何在达到并发使用限制时处理409冲突错误
 exl-id: 23a73e48-8ae0-4e0e-85db-dfc09d1386a7
-source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '283'
 ht-degree: 1%
-
 ---
-
 # 处理409冲突错误 {#handling-409-errors}
 
 当用户尝试启动新流并点击并发使用限制时，并发监视返回&#x200B;**409冲突**&#x200B;响应。 了解如何处理此错误对于提供良好的用户体验至关重要。

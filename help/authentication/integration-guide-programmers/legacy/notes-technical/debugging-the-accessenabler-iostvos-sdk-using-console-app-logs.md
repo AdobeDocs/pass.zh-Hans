@@ -2,13 +2,14 @@
 title: 使用控制台应用程序日志调试AccessEnabler iOS/tvOS SDK
 description: 使用控制台应用程序日志调试AccessEnabler iOS/tvOS SDK
 exl-id: 0dad325e-db15-4ea0-a87a-75409eaf8d46
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '576'
+source-wordcount: '577'
 ht-degree: 0%
-
 ---
-
 # （旧版）使用控制台应用程序日志调试AccessEnabler iOS/tvOS SDK {#debugging-the-accessenabler-iostvos-sdk-using-console-app-logs}
 
 >[!NOTE]
@@ -71,7 +72,7 @@ AccessEnabler iOS/tvOS日志记录机制的目的是发出有用的消息，用�
 为了能够更好地调试其他组件的功能和&#x200B;**排除** AccessEnabler框架日志，您可以：
 
 * 在Console应用程序中使用&#x200B;**Subsystem**&#x200B;选项进行搜索，该选项不等于com.adobe.pass.AccessEnabler值。
-* 使用不包含&#x200B;**AccessEnabler**&#x200B;值的[Any]选项在控制台应用程序中搜索。
+* 使用不包含[AccessEnabler]值的&#x200B;**Any**&#x200B;选项在控制台应用程序中搜索。
 
 ## 报告问题
 

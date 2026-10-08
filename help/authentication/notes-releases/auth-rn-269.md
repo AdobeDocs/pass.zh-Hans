@@ -2,13 +2,14 @@
 title: Adobe Pass Authentication 2.69发行说明
 description: Adobe Pass Authentication 2.69发行说明
 exl-id: d031c4c5-dbd5-4a77-b298-a53b992cc4c5
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '210'
+source-wordcount: '212'
 ht-degree: 0%
-
 ---
-
 # Adobe Pass Authentication 2.69发行说明 {#authn-269-rn}
 
 >[!IMPORTANT]
@@ -34,22 +35,22 @@ Adobe Pass身份验证： adobe-pass-**2.69**
 
 * 修补了安全漏洞。
 * 增强了Dynamic Client Registration (DCR)重置Temp Pass安全层的功能。
-   * 您可以在此处找到更多详细信息： [临时传递功能](../integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+  * 您可以在此处找到更多详细信息： [临时传递功能](../integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
 * 对Platform Identification报表的增强。
 
 #### REST API
 
 * 正在开发新的REST API。
-   * 即将发布的专用版本将引入新的端点和流程，这些端点和流程将在单独的通知中公告。
-   * 更新文档以使用这些新API正在进行中。
+  * 即将发布的专用版本将引入新的端点和流程，这些端点和流程将在单独的通知中公告。
+  * 更新文档以使用这些新API正在进行中。
 
 #### 动态仪表板
 
 * 正在开发新的TVE功能板。
-   * 即将发布的专用版本将引入新的TVE功能板，该功能板将在单独的通知中宣布。
-   * 正在更新文档以使用此新TVE功能板。
+  * 即将发布的专用版本将引入新的TVE功能板，该功能板将在单独的通知中宣布。
+  * 正在更新文档以使用此新TVE功能板。
 
 #### JavaScript SDK 4.7.0
 
 * 由于安全漏洞，删除了已弃用的Access Enabler JavaScript SDK版本2.0.1。
-   * 有关更多详细信息，请参阅链接： [Adobe Pass Authentication JavaScript 4.7.0发行说明](authn-rn-javascript-470.md)
+  * 有关更多详细信息，请参阅链接： [Adobe Pass Authentication JavaScript 4.7.0发行说明](authn-rn-javascript-470.md)

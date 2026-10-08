@@ -2,13 +2,14 @@
 title: iOS/tvOS API参考
 description: iOS/tvOS API参考
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '7035'
 ht-degree: 0%
-
 ---
-
 # （旧版）iOS/tvOS SDK API参考 {#iostvos-sdk-api-reference}
 
 >[!NOTE]
@@ -164,11 +165,11 @@ ht-degree: 0%
 **参数：**
 
 * *options*：包含全局SDK选项的NSDictionary。 目前，以下选项可用：
-   * **applicationProfile** — 可用于根据此值生成服务器配置。
-   * **visitorID** - Experience Cloud ID服务。 此值以后可用于高级分析报表。
-   * **handleSVC** — 布尔值，指示程序员是否将处理SFSafariViewControllers。 有关详细信息，请参阅iOS SDK 3.2+[&#128279;](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的SFSafariViewController支持。
-      * 如果设置为&#x200B;**false，**，SDK将自动向最终用户显示SFSafariViewController。 SDK将进一步导航到MVPD登录页面URL。
-      * 如果设置为&#x200B;**true，** SDK将&#x200B;**NOT**&#x200B;自动向最终用户显示SFSafariViewController。 SDK将进一步触发&#x200B;**navigate(toUrl：{url}， useSVC:YES)**。
+  * **applicationProfile** — 可用于根据此值生成服务器配置。
+  * **visitorID** - Experience Cloud ID服务。 此值以后可用于高级分析报表。
+  * **handleSVC** — 布尔值，指示程序员是否将处理SFSafariViewControllers。 有关详细信息，请参阅iOS SDK 3.2+[&#128279;](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的SFSafariViewController支持。
+    * 如果设置为&#x200B;**false，**，SDK将自动向最终用户显示SFSafariViewController。 SDK将进一步导航到MVPD登录页面URL。
+    * 如果设置为&#x200B;**true，** SDK将&#x200B;**NOT**&#x200B;自动向最终用户显示SFSafariViewController。 SDK将进一步触发&#x200B;**navigate(toUrl：{url}， useSVC:YES)**。
 * **device\_info** — 客户端信息，如[传递客户端信息](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中所述。
 
 [返回页首……](#apis)
@@ -354,8 +355,8 @@ ht-degree: 0%
 **参数**：
 
 * *状态*：可以采用以下值之一：
-   * `ACCESS_ENABLER_STATUS_SUCCESS` — 配置阶段已成功完成
-   * `ACCESS_ENABLER_STATUS_ERROR` — 配置阶段失败
+  * `ACCESS_ENABLER_STATUS_SUCCESS` — 配置阶段已成功完成
+  * `ACCESS_ENABLER_STATUS_ERROR` — 配置阶段失败
 
 **触发者：**
 
@@ -369,8 +370,10 @@ ht-degree: 0%
 
 **文件：** AccessEnabler/headers/AccessEnabler.h
 
-**描述：**&#x200B;检查当前用户的身份验证状态。它通过在本地搜索有效的身份验证令牌来完成此操作
-令牌存储空间。 此方法不执行任何网络调用，我们建议在主线程上调用它。应用程序使用它来查询用户的身份验证状态并
+**描述：**&#x200B;检查当前用户的身份验证状态。
+它通过在本地搜索有效的身份验证令牌来完成此操作
+令牌存储空间。 此方法不执行任何网络调用，我们建议在主线程上调用它。
+应用程序使用它来查询用户的身份验证状态并
 相应地更新UI（即，更新登录/注销UI）。 此
 身份验证状态通过以下方式通知应用程序
 [`setAuthenticationStatus:errorCode:`](#setAuthNStatus)回调。
@@ -396,8 +399,8 @@ ht-degree: 0%
 
 **参数：**&#x200B;无
 
-已触发&#x200B;**回调：
-
+已触发&#x200B;**回调：**
+[`setAuthenticationStatus:errorCode:`](#setAuthNStatus)
 
 [返回页首……](#apis)
 
@@ -528,8 +531,8 @@ ht-degree: 0%
 * *forceAuthn*：指定是否应启动身份验证流程的标志，无论用户是否已通过身份验证。
 * *数据*：包含要发送到Pay-TV密码服务的键值对的字典。 Adobe可以使用此数据启用未来的功能，而无需更改SDK。
 * 筛选器：包含两个MVPD ID列表的词典，应显示在Apple SSO对话框中。 任何不支持SSO的MVPD都将被忽略，但将遵守该顺序。 字典需要两把钥匙：
-   * TV\_PROVIDERS：包含所有应显示在选取器中的MVPD的列表
-   * FEATURED\_TV\_PROVIDERS：包含所有应在选取器中标记为特色的MVPD的列表。 还必须在TV\_PROVIDERS列表中指定此列表中的MVPD。
+  * TV\_PROVIDERS：包含所有应显示在选取器中的MVPD的列表
+  * FEATURED\_TV\_PROVIDERS：包含所有应在选取器中标记为特色的MVPD的列表。 还必须在TV\_PROVIDERS列表中指定此列表中的MVPD。
 
 **可用性：** v2.0 - v2.3.1
 
@@ -730,7 +733,7 @@ ht-degree: 0%
 <tbody>
 <tr class="odd">
 <td><pre><code>@optional
-&#x200B;- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
+- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
 </tr>
 </tbody>
 </table>
@@ -847,12 +850,12 @@ ht-degree: 0%
 **参数**：
 
 * *状态*：可以采用以下值之一：
-   * `ACCESS_ENABLER_STATUS_SUCCESS` — 身份验证流程已成功完成
-   * `ACCESS_ENABLER_STATUS_ERROR` — 身份验证流失败
+  * `ACCESS_ENABLER_STATUS_SUCCESS` — 身份验证流程已成功完成
+  * `ACCESS_ENABLER_STATUS_ERROR` — 身份验证流失败
 * *代码*：失败原因。 如果&#x200B;*状态*&#x200B;为`ACCESS_ENABLER_STATUS_SUCCESS`，则&#x200B;*代码*&#x200B;为空字符串（即，由`USER_AUTHENTICATED`常量定义）。 如果失败，此参数可以采用以下值之一：
-   * `USER_NOT_AUTHENTICATED_ERROR` — 用户未经过身份验证。 在本地令牌缓存中没有有效的身份验证令牌时，响应[checkAuthentication：](#checkAuthN)方法调用。
-   * `PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler在上层应用程序将&#x200B;*null*&#x200B;传递到[`setSelectedProvider:`](#setSelProv)后重置了身份验证状态计算机以中止身份验证流程。  用户可能已取消身份验证流程（例如，已按下“后退”按钮）。
-   * `GENERIC_AUTHENTICATION_ERROR` — 由于网络不可用或用户显式取消身份验证流等原因，身份验证流失败。
+  * `USER_NOT_AUTHENTICATED_ERROR` — 用户未经过身份验证。 在本地令牌缓存中没有有效的身份验证令牌时，响应[checkAuthentication：](#checkAuthN)方法调用。
+  * `PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler在上层应用程序将&#x200B;*null*&#x200B;传递到[`setSelectedProvider:`](#setSelProv)后重置了身份验证状态计算机以中止身份验证流程。  用户可能已取消身份验证流程（例如，已按下“后退”按钮）。
+  * `GENERIC_AUTHENTICATION_ERROR` — 由于网络不可用或用户显式取消身份验证流等原因，身份验证流失败。
 
 **触发者：** `checkAuthentication`，`getAuthentication`，[`getAuthentication:withData:`](#getAuthN)，`checkAuthorization:`，[`checkAuthorization:withData:`](#checkAuthZ)
 
@@ -1157,8 +1160,8 @@ ht-degree: 0%
 
 * *资源*：已获得授权的资源。
 * *代码*：与失败方案关联的错误代码。 可能的值：
-   * `USER_NOT_AUTHORIZED_ERROR` — 用户无法授权
-指定资源的
+  * `USER_NOT_AUTHORIZED_ERROR` — 用户无法授权
+    指定资源的
 * *description*：有关失败情况的其他详细信息。 如果此描述性字符串由于任何原因不可用，则Adobe Pass身份验证发送空字符串&#x200B;**(&quot;)**。\
   MVPD可使用此字符串传递自定义错误消息或与销售相关的消息。 例如，如果订阅者被拒绝对资源的授权，MVPD会发送消息，例如：“您当前在包中无法访问此渠道。 如果要升级包，请单击&#x200B;**此处**。” 消息由Adobe Pass身份验证通过此回调传递给程序员，程序员可以选择显示或忽略该消息。 Adobe Pass身份验证还可以使用此参数来提供可能导致错误的状况通知。 例如，“与提供商的授权服务通信时出现网络错误”。
 
@@ -1312,16 +1315,16 @@ ht-degree: 0%
 
 * *keyDictionary*：字典数据结构，具有以下内容
 格式：
-   * 如果密钥为`METADATA_OPCODE_KEY`且值为`METADATA_AUTHENTICATION`，则进行查询以获取身份验证令牌过期时间。
-   * 如果键为`METADATA_OPCODE_KEY`且值为`METADATA_AUTHORIZATION` **和**\
-     键为`METADATA_RESOURCE_ID_KEY`且值为特定资源ID，则进行查询以获取与指定资源关联的授权令牌的过期时间。
-   * 如果键为`METADATA_OPCODE_KEY`且值为`METADATA_DEVICE_ID`，则进行查询以获取当前设备ID。 请注意，此功能默认处于禁用状态，程序员应联系Adobe以获取有关启用和费用的信息。
-   * 如果键为`METADATA_OPCODE_KEY`且值是`METADATA_USER_META` **且**&#x200B;键为`METADATA_USER_META_KEY`且值是元数据的名称，则将对用户元数据进行查询。 可用用户元数据类型的列表：
-      * `zip` — 邮政编码列表
-      * `householdID` — 家庭标识符。 在MVPD不支持子帐户的情况下，这将与`userID`相同。
-      * `maxRating` — 用户的最大家长分级的集合
-      * `userID` — 用户标识符。 如果MVPD支持子帐户，并且该用户不是主帐户，则`userID`将不同于`householdID.`
-      * `channelID` — 用户有权查看的渠道列表。
+  * 如果密钥为`METADATA_OPCODE_KEY`且值为`METADATA_AUTHENTICATION`，则进行查询以获取身份验证令牌过期时间。
+  * 如果键为`METADATA_OPCODE_KEY`且值为`METADATA_AUTHORIZATION` **和**\
+    键为`METADATA_RESOURCE_ID_KEY`且值为特定资源ID，则进行查询以获取与指定资源关联的授权令牌的过期时间。
+  * 如果键为`METADATA_OPCODE_KEY`且值为`METADATA_DEVICE_ID`，则进行查询以获取当前设备ID。 请注意，此功能默认处于禁用状态，程序员应联系Adobe以获取有关启用和费用的信息。
+  * 如果键为`METADATA_OPCODE_KEY`且值是`METADATA_USER_META` **且**&#x200B;键为`METADATA_USER_META_KEY`且值是元数据的名称，则将对用户元数据进行查询。 可用用户元数据类型的列表：
+    * `zip` — 邮政编码列表
+    * `householdID` — 家庭标识符。 在MVPD不支持子帐户的情况下，这将与`userID`相同。
+    * `maxRating` — 用户的最大家长分级的集合
+    * `userID` — 用户标识符。 如果MVPD支持子帐户，并且该用户不是主帐户，则`userID`将不同于`householdID.`
+    * `channelID` — 用户有权查看的渠道列表。
 
   >[!NOTE]
   >
@@ -1485,9 +1488,9 @@ ht-degree: 0%
 * (NSString) logoURL - MVPD徽标地址。
 * (BOOL) enablePlatformServices — 如果为true，则MVPD支持[Apple SSO](#presentTvDialog)等SSO服务。
 * (NSString) boardingStatus — 可以有3个值：
-   * 无 — MVPD不支持Apple SSO。
-   * 选取器 — MVPD可显示在Apple选取器中，但身份验证流程由Adobe完成。
-   * 支持 — Apple完全支持MVPD，并将使用Apple的SSO令牌。
+  * 无 — MVPD不支持Apple SSO。
+  * 选取器 — MVPD可显示在Apple选取器中，但身份验证流程由Adobe完成。
+  * 支持 — Apple完全支持MVPD，并将使用Apple的SSO令牌。
 
 [返回页首……](#apis)
 
@@ -1515,25 +1518,25 @@ AccessEnabler会触发一个附加回调，该回调不一定与权利文件流�
 **注意：**&#x200B;设备类型和操作系统是通过使用公共Java库(<http://java.net/projects/user-agent-utils>)和用户代理字符串派生的。 请注意，此信息仅以粗略的方式提供，用于按设备类别细分操作量度，但Adobe对错误结果不承担任何责任。 请相应地使用新功能。
 
 * 设备类型的可能值：
-   * `computer`
-   * `tablet`
-   * `mobile`
-   * `gameconsole`
-   * `unknown`
+  * `computer`
+  * `tablet`
+  * `mobile`
+  * `gameconsole`
+  * `unknown`
 
 * AccessEnabler客户端类型的可能值：
-   * `flash`
-   * `html5`
-   * `ios`
-   * `android`
+  * `flash`
+  * `html5`
+  * `ios`
+  * `android`
 
 
 **参数**：
 
 * *event*：正在跟踪的事件的代码。 有三种可能的跟踪事件类型：
-   * **authorizationDetection：**&#x200B;每次返回授权令牌请求时（事件为`TRACKING_AUTHORIZATION`）
-   * **authenticationDetection：**&#x200B;每次进行身份验证检查时（事件为`TRACKING_AUTHENTICATION`）
-   * **mvpdSelection：**&#x200B;用户在MVPD选择表单中选择MVPD时（事件为`TRACKING_GET_SELECTED_PROVIDER`）
+  * **authorizationDetection：**&#x200B;每次返回授权令牌请求时（事件为`TRACKING_AUTHORIZATION`）
+  * **authenticationDetection：**&#x200B;每次进行身份验证检查时（事件为`TRACKING_AUTHENTICATION`）
+  * **mvpdSelection：**&#x200B;用户在MVPD选择表单中选择MVPD时（事件为`TRACKING_GET_SELECTED_PROVIDER`）
 * *数据*：与报告事件关联的其他数据。 此数据以值列表的形式提供。
 
 **触发者：** `checkAuthentication`，`getAuthentication`，[`getAuthentication:withData:`](#getAuthN)，`checkAuthorization:`，[`checkAuthorization:withData:`](#checkAuthZ)，`getAuthorization:`，[`getAuthorization:withData:`](#getAuthZ)，`setSelectedProvider:`
@@ -1541,29 +1544,29 @@ AccessEnabler会触发一个附加回调，该回调不一定与权利文件流�
 解释&#x200B;*数据*&#x200B;数组中值的说明：
 
 * 对于trackingEventType `TRACKING_AUTHENTICATION:`
-   * **0** — 令牌请求是否成功(true/false)，如果成功：
-   * **1** - MVPD ID字符串
-   * **2** - GUID （md5散列）
-   * **3** — 令牌已在缓存中(true/false)
-   * **4** — 设备类型
-   * **5** - AccessEnabler客户端类型
-   * **6** — 操作系统类型
+  * **0** — 令牌请求是否成功(true/false)，如果成功：
+  * **1** - MVPD ID字符串
+  * **2** - GUID （md5散列）
+  * **3** — 令牌已在缓存中(true/false)
+  * **4** — 设备类型
+  * **5** - AccessEnabler客户端类型
+  * **6** — 操作系统类型
 
 * 对于trackingEventType `TRACKING_AUTHORIZATION:`
-   * **0** — 令牌请求是否成功(true/false)，如果成功：
-   * **1** - MVPD ID
-   * **2** - GUID （md5散列）
-   * **3** — 令牌已在缓存中(true/false)
-   * **4** — 错误
-   * **5** — 详细信息
-   * **6** — 设备类型
-   * **7** - AccessEnabler客户端类型
-   * **8** — 操作系统类型
+  * **0** — 令牌请求是否成功(true/false)，如果成功：
+  * **1** - MVPD ID
+  * **2** - GUID （md5散列）
+  * **3** — 令牌已在缓存中(true/false)
+  * **4** — 错误
+  * **5** — 详细信息
+  * **6** — 设备类型
+  * **7** - AccessEnabler客户端类型
+  * **8** — 操作系统类型
 * 对于trackingEventType `TRACKING_GET_SELECTED_PROVIDER:`
-   * **0** — 当前所选MVPD的ID
-   * **1** — 设备类型
-   * **2** - AccessEnabler客户端类型
-   * **3** — 操作系统类型
+  * **0** — 当前所选MVPD的ID
+  * **1** — 设备类型
+  * **2** - AccessEnabler客户端类型
+  * **3** — 操作系统类型
 
 </br>
 

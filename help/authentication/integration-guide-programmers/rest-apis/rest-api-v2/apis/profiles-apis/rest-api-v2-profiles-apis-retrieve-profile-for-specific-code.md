@@ -2,13 +2,14 @@
 title: 检索特定代码的配置文件
 description: REST API V2 — 检索特定代码的配置文件
 exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
-source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '851'
 ht-degree: 2%
-
 ---
-
 # 检索特定代码的配置文件 {#retrieve-profile-for-specific-code}
 
 >[!IMPORTANT]
@@ -69,9 +70,12 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         流设备的IP地址。<br/><br/>
-         强烈建议始终将其用于服务器到服务器的实施，尤其是在由程序员服务而不是流设备进行调用时。<br/><br/>
-         对于客户端到服务器实施，流设备的IP地址将隐式发送。</td>
+         流设备的IP地址。
+         <br/><br/>
+         强烈建议始终将其用于服务器到服务器的实施，尤其是在由程序员服务而不是流设备进行调用时。
+         <br/><br/>
+         对于客户端到服务器实施，流设备的IP地址将隐式发送。
+      </td>
       <td>可选</td>
    </tr>
    <tr>
@@ -88,8 +92,10 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         客户端应用程序接受的媒体类型。<br/><br/>
-         如果指定，则必须为application/json；charset=utf-8。</td>
+         客户端应用程序接受的媒体类型。
+         <br/><br/>
+         如果指定，则必须为application/json；charset=utf-8。
+      </td>
       <td>可选</td>
    </tr>
    <tr>
@@ -118,31 +124,36 @@ ht-degree: 2%
       <td>400</td>
       <td>错误请求</td>
       <td>
-        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。</td>
+        请求无效，客户端需要更正请求并重试。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>未授权</td>
       <td>
-        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">动态客户端注册概述</a>文档。</td>
+        访问令牌无效，客户端需要获取新的访问令牌并重试。 有关更多详细信息，请参阅<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">动态客户端注册概述</a>文档。
+      </td>
    </tr>
    <tr>
       <td>403</td>
       <td>禁止</td>
       <td>
-        临时访问生存时间(TTL)已过期或超出最大资源数，客户端需要指示用户使用常规MVPD启动基本身份验证流程。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。</td>
+        临时访问生存时间(TTL)已过期或超出最大资源数，客户端需要指示用户使用常规MVPD启动基本身份验证流程。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。
+      </td>
    </tr> 
    <tr>
       <td>405</td>
       <td>不允许使用该方法</td>
       <td>
-        HTTP方法无效，客户端需要使用请求资源允许的HTTP方法并重试。 有关更多详细信息，请参阅<a href="#request">请求</a>部分。</td>
+        HTTP方法无效，客户端需要使用请求资源允许的HTTP方法并重试。 有关更多详细信息，请参阅<a href="#request">请求</a>部分。
+      </td>
    </tr>
    <tr>
       <td>500</td>
       <td>内部服务器错误</td>
       <td>
-        服务器端遇到问题。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。</td>
+        服务器端遇到问题。 响应正文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的错误信息。
+      </td>
    </tr>
 </table>
 
@@ -172,8 +183,10 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">用户档案</td>
       <td>
-        JSON包含键、值对的映射。<br/><br/>
-        键元素由以下值定义：<table style="table-layout:auto">
+        JSON包含键、值对的映射。
+        <br/><br/>
+        键元素由以下值定义：
+        <table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">值</th>
                <th style="background-color: #EFF2F7"></th>
@@ -205,8 +218,10 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">发行者</td>
                <td>
-                  拥有该配置文件的实体。<br/><br/>
-                  可能的值包括：<ul>
+                  拥有该配置文件的实体。
+                  <br/><br/>
+                  可能的值包括：
+                  <ul>
                     <li><b>mvpd（例如，Spectrum、Cablevision等）</b><br/>创建配置文件的原因是：基本身份验证。</li>
                     <li><b>Adobe</b><br/>创建配置文件的原因是：访问能力降低，临时访问。</li>
                   </ul>
@@ -215,8 +230,10 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">type</td>
                <td>
-                  配置文件的类型。<br/><br/>
-                  可能的值包括：<ul>
+                  配置文件的类型。
+                  <br/><br/>
+                  可能的值包括：
+                  <ul>
                     <li><b>常规</b><br/>创建配置文件的原因是：基本身份验证。</li>
                     <li><b>已降级</b><br/>由于访问已降级，因此创建了配置文件。</li>
                     <li><b>临时</b><br/>创建配置文件的原因是：临时访问。</li>
@@ -226,8 +243,10 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">属性</td>
                <td>
-                    JSON包含键、值对的映射。<br/><br/>
-                    关键元素由用户元数据属性定义，可以是：<ul>
+                    JSON包含键、值对的映射。
+                    <br/><br/>
+                    关键元素由用户元数据属性定义，可以是：
+                    <ul>
                         <li>必填，如“userID”</li>
                         <li>非强制性的，如“zip”、“householdID”、“maxRating”等。</li>
                     </ul>
@@ -272,13 +291,16 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            响应正文可能提供附加的错误信息，这些信息将遵循<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档。<br/><br/>
-            客户端应用程序必须实施一种错误处理机制，该机制能够正确处理此API最常返回的错误代码：<ul>
+            响应正文可能提供附加的错误信息，这些信息将遵循<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档。
+            <br/><br/>
+            客户端应用程序必须实施一种错误处理机制，该机制能够正确处理此API最常返回的错误代码：
+            <ul>
                 <li>invalid_authentication_session</li>
                 <li>invalid_parameter_code</li>
                 <li>等等。</li>
             </ul>
-            以上列表并非详尽无遗。 客户端应用程序必须能够处理<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">公共文档</a>中定义的所有增强型错误代码。</td>
+            以上列表并非详尽无遗。 客户端应用程序必须能够处理<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">公共文档</a>中定义的所有增强型错误代码。
+      </td>
       <td><i>必填</i></td>
    </tr>
 </table>
