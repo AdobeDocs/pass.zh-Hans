@@ -57,7 +57,7 @@ Adobe Pass身份验证REST API受[限制机制](/help/authentication/integration
 下表列出了适用于无客户端方法的Web服务。 单击Web服务端点以了解更多信息（示例请求和响应、输入参数、HTTP方法等）
 
 
-| Sr | Web服务端点 | 描述 | <!--[Diag.  </br>Ref](http://tve.helpdocsonline.com/api-reference-v2-test#illustration)-->. | 托管位置 | 调用者 |
+&#x200B;| Sr | Web服务端点 | 描述 | <!--[Diag.  </br>Ref](http://tve.helpdocsonline.com/api-reference-v2-test#illustration)-->. | 托管位置 | 调用者 |
 |-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------|
 | 1. | [&lt;REGGIE_FQDN>/reggie/v1/ </br>  {requestorId}/regcode](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) | 返回随机生成的注册代码和登录页面URI | 2 | Adobe </br>注册代码服务 | 智能设备 |
 | 2. | [&lt;REGGIE_FQDN>/reggie/v1/ </br>  {requestorId}/regcode/ </br>{registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md) | 返回包含注册码UUID、注册码和哈希设备ID的注册码记录 | 8 | Adobe </br>注册代码服务 | Adobe Pass 身份验证 |

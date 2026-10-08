@@ -24,8 +24,8 @@ Adobe Pass身份验证与Apple合作，为iPhone、iPad和Apple电视所有者�
 
 最终结果将创建一个与以下用户流程一致的体验，我们建议您在开始开发应用程序之前进行咨询：
 
-* 用于iPhone和iPad](https://tve.zendesk.com/hc/article_attachments/205624966/User_flows_AppleSSO_iOS_v2.pdf)设备的单点登录(SSO) [用户流程。
-* Apple TV](https://tve.zendesk.com/hc/article_attachments/206669126/User_flows_tvOS.pdf)设备的单点登录(SSO) [用户流。
+* 用于iPhone和iPad[&#128279;](https://tve.zendesk.com/hc/article_attachments/205624966/User_flows_AppleSSO_iOS_v2.pdf)设备的单点登录(SSO) 用户流程。
+* Apple TV[&#128279;](https://tve.zendesk.com/hc/article_attachments/206669126/User_flows_tvOS.pdf)设备的单点登录(SSO) 用户流。
 
 ## 先决条件 {#apple-sso-prerequisites}
 
