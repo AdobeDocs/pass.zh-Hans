@@ -5,9 +5,9 @@ exl-id: e8889395-4434-4bec-a212-a8341bb9c310
 product_v2:
   - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
     internal-label: Pass
-source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
+source-git-commit: af03be1d866ad60b601f0fbe8799bd1b87e5c9b6
 workflow-type: tm+mt
-source-wordcount: '1137'
+source-wordcount: '1170'
 ht-degree: 1%
 ---
 # 使用特定的mvpd检索授权决策 {#retrieve-authorization-decisions-using-specific-mvpd}
@@ -300,6 +300,13 @@ ht-degree: 1%
                <td>可选</td>
             </tr>
             <tr>
+               <td style="background-color: #DEEBFF;">userMetadata</td>
+               <td>
+                  由MVPD共享的可选userMetadata。 可用的密钥取决于MVPD配置。 每个元数据键作为包含<b>值</b>和<b>状态</b>的对象返回。 例如，频谱可能返回<code>packageType</code>。
+               </td>
+               <td>可选</td>
+            </tr>
+            <tr>
                <td style="background-color: #DEEBFF;">错误</td>
                <td>该错误提供了有关遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增强型错误代码</a>文档的“拒绝”决定的其他信息。</td>
                <td>可选</td>
@@ -397,7 +404,13 @@ Content-Type: application/json;charset=UTF-8
                 "serializedToken": "PHNpZ25hdHVyZUluZm8..."
             },
             "notBefore": 1697094207324,
-            "notAfter": 1697098802367
+            "notAfter": 1697098802367,
+            "userMetadata": {
+                "packageType": {
+                    "value": "INCLUSION",
+                    "state": "plain"
+                }
+            }
         }
     ]
 }
