@@ -5,9 +5,9 @@ exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
 product_v2:
   - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
     internal-label: Pass
-source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
+source-git-commit: 35c6ed6491cd47e6f85ee8974d72236c19fb8a6d
 workflow-type: tm+mt
-source-wordcount: '152'
+source-wordcount: '268'
 ht-degree: 0%
 ---
 # REST API V2 API概述 {#rest-api-v2-apis-overview}
@@ -17,6 +17,27 @@ ht-degree: 0%
 > 确保随时了解汇总在[产品公告](/help/authentication/product-announcements.md)页中的最新Adobe Pass身份验证产品公告和停用时间表。
 
 要开始配置，请访问以下列表中您感兴趣的API的公共文档。
+
+## 基本URL {#rest-api-v2-apis-base-urls}
+
+请使用下面特定于环境的基本URL来处理REST API V2请求。 附加
+为此基础URL的每个API记录的相对`path`。
+
+某些API响应会返回流设备必须打开的交互URL
+在浏览器或用户代理中。 示例包括返回的`url`特性
+[启动特定mvpd的注销](logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
+和返回的`Location`重定向
+[在用户代理](sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)中执行身份验证。
+
+这些交互式URL使用相同的Adobe Pass服务提供程序(SP)主机。
+完全按照返回内容打开一个绝对的交互式URL。 如果Adobe Pass返回
+以`/adobe-services/`开头的相对交互式URL，请对其进行解析
+目标环境的SP主机：
+
+| 环境 | REST API V2和交互式URL基本URL |
+| --- | --- |
+| 生产 | `https://sp.auth.adobe.com` |
+| 暂存 | `https://sp.auth-staging.adobe.com` |
 
 ## 配置 {#rest-api-v2-apis-configuration}
 
